@@ -1,7 +1,0 @@
-{
-  "task_description": "Franchise ve chain restoranlar i\u00e7in locations tablosu olu\u015fturulmal\u0131, organization hierarchy yap\u0131s\u0131 kurulmal\u0131, lokasyon bazl\u0131 men\u00fc y\u00f6netimi eklenmeli ve URL yap\u0131s\u0131 /menu/{organization-slug}/{location-slug} olarak g\u00fcncellenmeli.",
-  "scoped_services": [],
-  "files_to_modify": [],
-  "files_to_reference": [],
-  "created_at": "2026-01-11T10:48:24.303275"
-}

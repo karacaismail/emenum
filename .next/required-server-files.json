@@ -297,8 +297,8 @@
       "root": "/Users/karaca/Desktop/ozon"
     }
   },
-  "appDir": "/Users/karaca/Desktop/ozon/.worktrees/008-multi-location-ube-sistemi",
-  "relativeAppDir": ".worktrees/008-multi-location-ube-sistemi",
+  "appDir": "/Users/karaca/Desktop/ozon",
+  "relativeAppDir": "",
   "files": [
     ".next/routes-manifest.json",
     ".next/server/pages-manifest.json",

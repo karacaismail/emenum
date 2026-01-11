@@ -1,4 +1,4 @@
-// File: /Users/karaca/Desktop/ozon/.worktrees/008-multi-location-ube-sistemi/app/api/locations/route.ts
+// File: /Users/karaca/Desktop/ozon/app/api/locations/route.ts
 import * as entry from '../../../../../app/api/locations/route.js'
 import type { NextRequest } from 'next/server.js'
 

@@ -1,4 +1,4 @@
-// File: /Users/karaca/Desktop/ozon/.worktrees/008-multi-location-ube-sistemi/app/auth/callback/route.ts
+// File: /Users/karaca/Desktop/ozon/app/auth/callback/route.ts
 import * as entry from '../../../../../app/auth/callback/route.js'
 import type { NextRequest } from 'next/server.js'
 

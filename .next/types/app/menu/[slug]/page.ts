@@ -1,4 +1,4 @@
-// File: /Users/karaca/Desktop/ozon/.worktrees/008-multi-location-ube-sistemi/app/menu/[slug]/page.tsx
+// File: /Users/karaca/Desktop/ozon/app/menu/[slug]/page.tsx
 import * as entry from '../../../../../app/menu/[slug]/page.js'
 import type { ResolvingMetadata, ResolvingViewport } from 'next/dist/lib/metadata/types/metadata-interface.js'
 

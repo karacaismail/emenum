@@ -20,6 +20,14 @@
   },
   "dynamicRoutes": [
     {
+      "page": "/api/locations/[id]",
+      "regex": "^/api/locations/([^/]+?)(?:/)?$",
+      "routeKeys": {
+        "nxtPid": "nxtPid"
+      },
+      "namedRegex": "^/api/locations/(?<nxtPid>[^/]+?)(?:/)?$"
+    },
+    {
       "page": "/menu/[organization-slug]/[location-slug]",
       "regex": "^/menu/([^/]+?)/([^/]+?)(?:/)?$",
       "routeKeys": {

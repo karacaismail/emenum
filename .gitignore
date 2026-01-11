@@ -1,2 +1,8 @@
 .auto-claude/.env
 node_modules/
+
+# Auto Claude data directory
+.auto-claude/
+node_modules/
+.env
+.env.local
