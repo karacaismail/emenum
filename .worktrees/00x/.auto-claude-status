@@ -1,0 +1,25 @@
+{
+  "active": true,
+  "spec": "008-multi-location-ube-sistemi",
+  "state": "building",
+  "subtasks": {
+    "completed": 12,
+    "total": 17,
+    "in_progress": 1,
+    "failed": 0
+  },
+  "phase": {
+    "current": "UI Components",
+    "id": null,
+    "total": 2
+  },
+  "workers": {
+    "active": 0,
+    "max": 1
+  },
+  "session": {
+    "number": 13,
+    "started_at": "2026-01-11T10:57:44.414271"
+  },
+  "last_update": "2026-01-11T11:44:54.126088"
+}

@@ -1,0 +1,176 @@
+=== AUTO-BUILD PROGRESS ===
+
+Project: Multi-Location Restaurant System
+Workspace: .auto-claude/specs/008-multi-location-ube-sistemi
+Started: 2026-01-11 (Planning Phase)
+
+Workflow Type: feature
+Rationale: New feature extending single-location system to support multi-location franchises/chains. Introduces database schema, routing patterns, and business logic while maintaining backward compatibility.
+
+Session 1 (Planner):
+- ✅ Investigated existing codebase structure
+- ✅ Analyzed database patterns (Supabase migrations, type definitions)
+- ✅ Reviewed current menu routing (single-level /menu/[slug])
+- ✅ Examined QR code generation service
+- ✅ Created implementation_plan.json
+- ✅ Created init.sh development environment script
+- ✅ Created build-progress.txt tracking document
+
+Phases: 7
+Total subtasks: 16
+
+Phase Summary:
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+Phase 1 - Database Schema & Migration: 3 subtasks
+  Dependencies: None (can start immediately)
+  - Create locations table with org relationship
+  - Add location_id to products table
+  - Migrate existing organizations to default locations
+
+Phase 2 - TypeScript Type Definitions: 2 subtasks
+  Dependencies: Phase 1 (requires database schema)
+  - Add Location interfaces (Row/Insert/Update)
+  - Update Database interface for Supabase client
+
+Phase 3 - Location Services & Utilities: 3 subtasks
+  Dependencies: Phase 2 (requires type definitions)
+  - Create location query functions
+  - Create slug generation/validation utilities
+  - Update product queries for location filtering
+
+Phase 4 - URL Routing & Page Handlers: 3 subtasks
+  Dependencies: Phase 3 (requires services)
+  - Create new /menu/[org]/[location] route
+  - Update existing /menu/[org] for redirect/selector
+  - Update QR generator for location URLs
+
+Phase 5 - UI Components: 2 subtasks
+  Dependencies: Phase 4 (requires routing)
+  - Create LocationSelector component
+  - Create LocationBadge component
+
+Phase 6 - API Routes for Location CRUD: 1 subtask
+  Dependencies: Phase 3 (requires services)
+  - Create location API endpoints
+
+Phase 7 - Integration & Testing: 3 subtasks
+  Dependencies: Phases 5 & 6 (final integration)
+  - End-to-end location menu flow testing
+  - Data migration verification
+  - Security & isolation testing
+
+Services Involved:
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+- main (Next.js/TypeScript)
+  - Framework: Next.js App Router
+  - Database: Supabase (PostgreSQL)
+  - Port: 3000
+  - Testing: Vitest
+
+Parallelism Analysis:
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+Max parallel phases: 3
+Recommended workers: 2
+
+Parallel Group 1:
+  - Phase 2 (Types)
+  - Phase 3 (Services)
+  - Phase 4 (Routing)
+  Reason: Different file sets after database complete
+
+Parallel Group 2:
+  - Phase 5 (UI Components)
+  - Phase 6 (API Routes)
+  Reason: Both depend on services, no overlap
+
+Speedup estimate: 1.6x faster than sequential
+
+Key Files to Create:
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+Database:
+  - supabase/migrations/008_create_locations.sql
+  - supabase/migrations/009_add_location_to_products.sql
+  - supabase/migrations/010_migrate_existing_organizations.sql
+
+Types:
+  - types/database.ts (modify)
+
+Services:
+  - lib/db/locations.ts
+  - lib/utils/slugify.ts
+  - lib/services/index.ts (modify)
+  - lib/services/qr-generator.ts (modify)
+
+Routing:
+  - app/menu/[organization-slug]/[location-slug]/page.tsx
+  - app/menu/[organization-slug]/[location-slug]/loading.tsx
+  - app/menu/[organization-slug]/[location-slug]/error.tsx
+  - app/menu/[organization-slug]/[location-slug]/not-found.tsx
+  - app/menu/[slug]/page.tsx (modify)
+
+Components:
+  - components/menu/LocationSelector.tsx
+  - components/menu/LocationBadge.tsx
+
+API:
+  - app/api/locations/route.ts
+  - app/api/locations/[id]/route.ts
+
+Tests:
+  - tests/__tests__/e2e/location-menu-flow.test.ts
+  - tests/__tests__/integration/location-isolation.test.ts
+
+Verification Strategy:
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+Risk Level: HIGH
+Reason: Database schema changes affecting core multi-tenant data model.
+        Migration involves existing production data.
+        Security critical for location-based data isolation.
+
+Required Tests:
+  ✓ Unit tests (locations, slugify, qr-generator)
+  ✓ Integration tests (location isolation)
+  ✓ End-to-end tests (location menu flow)
+  ✓ Security scans (SQL injection, secrets)
+  ✓ Database migration verification
+
+Acceptance Criteria (13 items):
+  1. All database migrations run successfully
+  2. All existing orgs have >= 1 default location
+  3. Location-specific menu URLs work
+  4. Invalid org/location combos return 404
+  5. Single-location orgs redirect seamlessly
+  6. Multi-location orgs show location selector
+  7. No data leakage between locations
+  8. Slug uniqueness enforced at org scope
+  9. All existing tests pass
+  10. New location tests pass
+  11. No security vulnerabilities
+  12. TypeScript compilation succeeds
+  13. QR codes generate correct URLs
+
+Patterns Observed from Codebase:
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+✓ Database: UUID primary keys, timestamps, CASCADE deletes
+✓ Soft deletes: is_active boolean flag (not hard deletes)
+✓ Slugs: Unique constraints, URL-safe format (lowercase, hyphens)
+✓ Types: Row/Insert/Update pattern for each table
+✓ Queries: Server-side Supabase client, nested selects for joins
+✓ Routing: Next.js App Router, server components
+✓ Components: Tailwind CSS, responsive design
+✓ Validation: Server-side for data integrity
+
+=== STARTUP COMMAND ===
+
+To continue building this spec, run:
+
+  source auto-claude/.venv/bin/activate && python auto-claude/run.py --spec 008 --parallel 2
+
+Example with specific phase:
+
+  source auto-claude/.venv/bin/activate && python auto-claude/run.py --spec 008 --phase phase-1-database
+
+=== END SESSION 1 ===
+
+Next Session: Coder Agent will implement Phase 1 (Database Schema & Migration)

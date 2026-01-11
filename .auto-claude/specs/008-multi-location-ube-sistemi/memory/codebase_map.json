@@ -1,0 +1,50 @@
+{
+  "discovered_files": {
+    "supabase/migrations/008_create_locations.sql": {
+      "description": "Created locations table migration with organization relationship, unique slug constraint per org, helper functions for location lookups, and proper indexes",
+      "category": "database",
+      "discovered_at": "2026-01-11T07:58:53.302537+00:00"
+    },
+    "supabase/migrations/009_add_location_to_products.sql": {
+      "description": "Migration adds location_id FK to products table enabling location-scoped menus. Products with location_id=NULL are org-level (available at all locations). Includes trigger to ensure product/location org consistency.",
+      "category": "database",
+      "discovered_at": "2026-01-11T08:01:18.111955+00:00"
+    },
+    "supabase/migrations/010_migrate_existing_organizations.sql": {
+      "description": "Data migration creates default 'main' location for each organization without locations. Idempotent design using INSERT...SELECT with NOT EXISTS. Products kept as org-level (location_id=NULL) for backward compatibility - they appear at all locations.",
+      "category": "migration",
+      "discovered_at": "2026-01-11T08:02:48.123081+00:00"
+    },
+    "lib/db/locations.ts": {
+      "description": "Location database queries module with CRUD operations, slug validation, and soft delete support. Uses createServerSupabaseClient for server-side queries. Includes getLocationBySlug for URL routing, getDefaultLocation for single-location redirects, and isSlugAvailable for uniqueness checks.",
+      "category": "database",
+      "discovered_at": "2026-01-11T08:13:11.296917+00:00"
+    },
+    "lib/utils/slugify.ts": {
+      "description": "Slug generation and validation utilities module. Provides generateSlug(), validateSlug(), handleSlugCollision() for URL-safe slug creation with full Turkish character support. Use generateLocationSlug() or generateOrganizationSlug() as convenience aliases. Includes collision handling that appends -2, -3, etc. for duplicate slugs.",
+      "category": "utility",
+      "discovered_at": "2026-01-11T08:19:22.160030+00:00"
+    },
+    "lib/services/index.ts": {
+      "description": "Services barrel export now includes location query functions from lib/db/locations and slug utilities from lib/utils/slugify. Users can import getLocationBySlug, createLocation, generateSlug, validateSlug, etc. directly from @/lib/services for location-scoped product filtering.",
+      "category": "service",
+      "discovered_at": "2026-01-11T08:22:26.835600+00:00"
+    },
+    "app/menu/[organization-slug]/[location-slug]/page.tsx": {
+      "description": "Location-specific menu page route handler. Uses two-level URL pattern /menu/{org-slug}/{loc-slug}. Fetches location with getLocationBySlug(), shows location badge with link to other locations. Menu items filtered by location_id matching OR null (org-level products). Contact info uses location-specific data with org fallback.",
+      "category": "routing",
+      "discovered_at": "2026-01-11T08:29:09.809050+00:00"
+    },
+    "lib/services/qr-generator.ts": {
+      "description": "QR generator now supports multi-location URLs. Use locationSlug parameter in generateMenuUrl() and generateTableQRCode() for multi-location format /menu/{org}/{location}?table_id=... - backward compatible with legacy format when locationSlug is undefined. Includes extractLocationSlugFromUrl() and isMultiLocationUrl() utilities for URL parsing.",
+      "category": "architecture",
+      "discovered_at": "2026-01-11T08:39:38.555922+00:00"
+    },
+    "components/menu/LocationSelector.tsx": {
+      "description": "Reusable LocationSelector component for multi-location menu navigation. Supports 'full' mode (org pages with title/description) and 'compact' mode (location switching). Features: LocationCard sub-component, active location highlighting, address/phone display, empty state handling, table_id preservation. Import from @/components/menu/LocationSelector.",
+      "category": "component",
+      "discovered_at": "2026-01-11T08:44:26.885349+00:00"
+    }
+  },
+  "last_updated": "2026-01-11T08:44:26.885359+00:00"
+}

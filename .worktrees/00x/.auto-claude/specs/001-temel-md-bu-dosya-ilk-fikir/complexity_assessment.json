@@ -1,0 +1,177 @@
+{
+  "complexity": "complex",
+  "workflow_type": "feature",
+  "confidence": 0.95,
+  "reasoning": "This is a greenfield SaaS platform for Turkish Ministry of Trade regulatory compliance (Fiyat Etiketi Yönetmeliği). Core requirements: multi-tenant architecture with RLS, immutable price ledger for legal auditing, 3-tier package system (Lite/Pro/Premium) with 17+ distinct features, hybrid RBAC/ABAC authorization, Supabase Realtime for waiter notifications. The scope spans 60+ files across frontend (merchant dashboard, customer QR menu, super admin panel) and backend (15+ database tables, RLS policies, Edge Functions). External integrations include Google My Business API and WhatsApp Business API for Premium tier.",
+
+  "analysis": {
+    "scope": {
+      "estimated_files": 60,
+      "estimated_services": 4,
+      "is_cross_cutting": true,
+      "notes": "Full SaaS platform including: (1) Next.js frontend with 3 main interfaces - merchant dashboard, customer-facing QR menu, super admin panel, (2) Supabase backend with Auth, Database, Realtime, Edge Functions, Storage, (3) Multi-tenant architecture with RLS policies on all tables, (4) Vercel deployment configuration."
+    },
+    "integrations": {
+      "external_services": [
+        "Supabase Auth",
+        "Supabase Realtime",
+        "Supabase Edge Functions",
+        "Supabase Storage",
+        "Vercel"
+      ],
+      "new_dependencies": [
+        "@supabase/supabase-js",
+        "@supabase/ssr",
+        "qrcode",
+        "crypto (SHA-256 for price snapshots)"
+      ],
+      "research_needed": true,
+      "notes": "Supabase Realtime for waiter call notifications, Edge Functions for price snapshot generation and hashing, RLS policies for multi-tenancy, and Next.js App Router auth guard patterns all require research. Most dependencies already exist in package.json but implementation patterns need design."
+    },
+    "infrastructure": {
+      "docker_changes": false,
+      "database_changes": true,
+      "config_changes": true,
+      "notes": "Complex PostgreSQL schema with 15+ tables: organizations, users, profiles, plans, features, plan_features, subscriptions, organization_feature_overrides, menu_categories, products, price_ledger (immutable), restaurant_tables, service_requests, audit_logs. RLS policies for every table. Supabase Edge Functions for snapshot creation. Environment variables for Supabase keys."
+    },
+    "knowledge": {
+      "patterns_exist": false,
+      "research_required": true,
+      "unfamiliar_tech": [
+        "Supabase RLS policies for multi-tenancy",
+        "Supabase Realtime subscriptions",
+        "Supabase Edge Functions (Deno)",
+        "Immutable Price Ledger pattern (INSERT-only with temporal validity)",
+        "Feature flagging with hybrid RBAC/ABAC",
+        "Next.js App Router auth guards with Supabase SSR"
+      ],
+      "notes": "This is a greenfield project with no existing patterns in the codebase. Every major architectural component (Price Ledger immutability, Feature Flags, Multi-tenant RLS, Realtime waiter notifications) needs to be designed from scratch with research."
+    },
+    "risk": {
+      "level": "high",
+      "concerns": [
+        "Regulatory compliance - Turkish Ministry of Trade Fiyat Etiketi Yönetmeliği requirements",
+        "Multi-tenant data isolation - RLS policies must prevent any cross-tenant data access",
+        "Immutable price history - INSERT-only pattern for legal evidence in audits",
+        "Manual EFT payment activation - Super Admin security is critical",
+        "Realtime system reliability - waiter notification system must be responsive",
+        "Plan-based feature restrictions - prevent unauthorized feature access",
+        "Hash integrity for price snapshots - SHA-256 cryptographic correctness for legal validity"
+      ],
+      "notes": "High-stakes regulatory compliance project. Price manipulation or data breaches between tenants could have legal consequences for businesses using the platform. The immutable Price Ledger pattern is critical for Ministry of Trade audits and inspections."
+    }
+  },
+
+  "recommended_phases": [
+    "discovery",
+    "requirements",
+    "research",
+    "context",
+    "spec_writing",
+    "self_critique",
+    "planning",
+    "validation"
+  ],
+
+  "flags": {
+    "needs_research": true,
+    "needs_self_critique": true,
+    "needs_infrastructure_setup": true
+  },
+
+  "validation_recommendations": {
+    "risk_level": "high",
+    "skip_validation": false,
+    "minimal_mode": false,
+    "test_types_required": ["unit", "integration", "e2e"],
+    "security_scan_required": true,
+    "staging_deployment_required": true,
+    "reasoning": "Multi-tenant SaaS with regulatory compliance requirements demands comprehensive validation. RLS policies must be tested for data isolation between tenants. Price Ledger immutability needs verification to ensure no UPDATE/DELETE operations are possible. Authentication/authorization flows require E2E testing for all user roles (Owner, Manager, Waiter). Security scan needed for auth patterns, payment activation flow, and cross-tenant data access prevention. Staging deployment required to verify Supabase integration, Realtime subscriptions, and Vercel deployment."
+  },
+
+  "key_technical_decisions": {
+    "price_ledger": "INSERT-only pattern for price changes. Each price entry has valid_from/valid_until timestamps. No UPDATE/DELETE allowed. JSON snapshot + SHA-256 hash stored for legal evidence.",
+    "multi_tenancy": "organization_id column on all tables with RLS policies enforcing tenant isolation. All queries automatically filtered by authenticated user's organization.",
+    "authorization": "Dual-layer system: (1) Plan-based/ABAC - organization must have feature in subscription plan or override, (2) Role-based/RBAC - user must have permission for action based on role (owner/manager/waiter).",
+    "realtime": "Supabase Realtime for waiter call notifications. service_requests table with SUBSCRIBE pattern. Push notifications to garson panel.",
+    "qr_codes": "UUID-based table_id in URL parameters (?table_id=uuid). Stored in localStorage for session persistence. Each table gets unique QR code.",
+    "feature_flags": "Database-driven feature control. features, plans, plan_features, subscriptions, organization_feature_overrides tables. No hardcoded package checks in code."
+  },
+
+  "estimated_subtasks": [
+    "Database schema design (15+ tables with relationships)",
+    "RLS policies implementation for all tables",
+    "Supabase Edge Functions for price snapshots",
+    "Auth system with Supabase Auth + custom profile/roles",
+    "Dynamic plan-based feature flag system",
+    "Merchant dashboard (CRUD for menu, categories, products, tables)",
+    "Customer-facing QR menu (mobile-first, multi-language ready)",
+    "Super Admin panel (organization management, subscription activation)",
+    "QR code generation with table_id context",
+    "Realtime waiter notification system",
+    "Price ledger with immutable history and snapshots",
+    "Subscription and payment activation flow (manual EFT)",
+    "Turkish README with complete setup instructions"
+  ],
+
+  "package_feature_matrix": {
+    "lite": {
+      "category_limit": 3,
+      "product_limit": 20,
+      "price_revision_limit": 2,
+      "features": ["basic_menu", "basic_qr"]
+    },
+    "professional": {
+      "category_limit": null,
+      "product_limit": null,
+      "price_revision_limit": null,
+      "features": [
+        "unlimited_categories",
+        "unlimited_products",
+        "unlimited_revisions",
+        "image_system",
+        "logo_usage",
+        "background_color",
+        "chef_recommendation",
+        "daily_special",
+        "multi_language_1",
+        "priority_support"
+      ]
+    },
+    "premium": {
+      "category_limit": null,
+      "product_limit": null,
+      "price_revision_limit": null,
+      "features": [
+        "all_professional_features",
+        "multi_language_3",
+        "cross_sell",
+        "happy_hour_scheduler",
+        "social_share_button",
+        "nutrition_info",
+        "google_my_business_integration",
+        "whatsapp_revisions"
+      ]
+    }
+  },
+
+  "external_api_research_needed": [
+    {
+      "api": "Google My Business API",
+      "usage": "Premium tier - redirect to Google review page on first menu visit",
+      "research_priority": "medium"
+    },
+    {
+      "api": "WhatsApp Business API",
+      "usage": "Premium tier - receive revision requests via WhatsApp",
+      "research_priority": "low"
+    },
+    {
+      "api": "Supabase Realtime",
+      "usage": "Core feature - waiter call notifications",
+      "research_priority": "high"
+    }
+  ],
+
+  "created_at": "2026-01-11T03:50:00.000Z"
+}

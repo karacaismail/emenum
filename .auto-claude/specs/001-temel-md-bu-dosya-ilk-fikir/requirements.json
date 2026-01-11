@@ -1,0 +1,6 @@
+{
+  "task_description": "Bu proje, T\u00fcrkiye'deki restoran, kafe ve benzeri i\u015fletmeler i\u00e7in **Ticaret Bakanl\u0131\u011f\u0131 reg\u00fclasyonlar\u0131na uyumlu** bir **Dijital Fiyat Defteri ve QR Men\u00fc** platformu in\u015fa etmeyi ama\u00e7lamaktad\u0131r. Uygulama sadece g\u00f6rsel bir men\u00fc de\u011fil, yasal olarak ge\u00e7erli, denetlenebilir ve de\u011fi\u015fmez fiyat kayd\u0131 tutan bir SaaS \u00e7\u00f6z\u00fcm\u00fcd\u00fcr. Sistem, multi-tenant mimarisi ile her i\u015fletmenin kendi verisine g\u00fcvenli eri\u015fimini sa\u011flarken, paket bazl\u0131 \u00f6zellik kontrol\u00fc (Feature Flagging) ve rol bazl\u0131 yetkilendirme (RBAC) ile esnek bir yap\u0131 sunar.",
+  "workflow_type": "feature",
+  "services_involved": [],
+  "created_at": "2026-01-11T03:45:12.087443"
+}
