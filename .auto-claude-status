@@ -1,25 +1,25 @@
 {
   "active": true,
-  "spec": "008-multi-location-ube-sistemi",
-  "state": "building",
+  "spec": "009-fix-all-url-routes-for-e-menum-net-domain",
+  "state": "planning",
   "subtasks": {
-    "completed": 12,
-    "total": 17,
+    "completed": 0,
+    "total": 0,
     "in_progress": 1,
     "failed": 0
   },
   "phase": {
-    "current": "UI Components",
-    "id": null,
-    "total": 2
+    "current": "",
+    "id": 0,
+    "total": 0
   },
   "workers": {
     "active": 0,
     "max": 1
   },
   "session": {
-    "number": 13,
-    "started_at": "2026-01-11T10:57:44.414271"
+    "number": 1,
+    "started_at": "2026-01-11T18:54:33.175942"
   },
-  "last_update": "2026-01-11T11:44:54.126088"
+  "last_update": "2026-01-11T18:54:33.180522"
 }
