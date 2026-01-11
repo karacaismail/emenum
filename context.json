@@ -1,0 +1,39 @@
+{
+  "files_to_modify": {
+    "main": [
+      "types/database.ts",
+      "app/api/locations/[id]/route.ts",
+      "app/api/locations/route.ts",
+      "app/menu/[organization-slug]/[location-slug]/page.tsx",
+      "lib/__tests__/price-ledger-immutability.test.ts",
+      "lib/__tests__/price-ledger.test.ts",
+      "tests/__tests__/e2e/location-menu-flow.test.ts",
+      "tests/__tests__/integration/price-change-flow.test.ts",
+      "tests/__tests__/integration/waiter-call-flow.test.ts"
+    ]
+  },
+  "files_to_reference": [
+    "types/database.ts",
+    "tests/__mocks__/supabase.ts"
+  ],
+  "patterns": {
+    "type_definition": "Use JSDoc comments, UUID type alias, null union for nullable fields",
+    "unused_parameter": "Prefix with underscore (_) for intentionally unused parameters",
+    "unused_import": "Remove entirely or convert to type-only import",
+    "test_type_assertion": "Use explicit type assertions (as Type) for mock data with Supabase types"
+  },
+  "existing_implementations": {
+    "description": "MenuView interface exists in types/database.ts but lacks location_id field needed for multi-location support",
+    "relevant_files": ["types/database.ts", "tests/__tests__/e2e/location-menu-flow.test.ts"]
+  },
+  "issues_summary": {
+    "typescript_errors": 22,
+    "eslint_errors": 8,
+    "root_causes": [
+      "MenuView missing location_id property (causes 11 TS errors)",
+      "never type inference in integration tests (causes 8 TS errors)",
+      "Object possibly undefined in test assertions (causes 3 TS errors)",
+      "Unused variables in API routes and test files (causes 8 ESLint errors)"
+    ]
+  }
+}

@@ -1,0 +1,31 @@
+{
+  "project_type": "single",
+  "services": {
+    "main": {
+      "path": ".",
+      "tech_stack": ["typescript", "next.js", "react", "supabase"],
+      "port": 3000,
+      "dev_command": "npm run dev",
+      "test_command": "npm run test:run",
+      "typecheck_command": "npm run typecheck",
+      "lint_command": "npm run lint"
+    }
+  },
+  "infrastructure": {
+    "docker": false,
+    "database": "supabase"
+  },
+  "conventions": {
+    "linter": "eslint",
+    "formatter": "prettier",
+    "testing": "vitest"
+  },
+  "key_directories": {
+    "app": "Next.js app router pages and API routes",
+    "components": "React components",
+    "hooks": "Custom React hooks",
+    "lib": "Utility functions and services",
+    "types": "TypeScript type definitions",
+    "tests": "Test files and mocks"
+  }
+}
