@@ -208,34 +208,20 @@ export default function ProductsPage() {
     try {
       const supabase = createClient()
 
-      // Fetch products
+      // Fetch products with nested relationships (single query)
       const { data: productsData, error: productsError } = await supabase
         .from('products')
-        .select('*')
+        .select(`
+          *,
+          current_price:current_prices!product_id(*),
+          category:categories(*)
+        `)
         .eq('organization_id', organization.id)
         .order('created_at', { ascending: false })
 
       if (productsError) throw productsError
 
-      // Fetch current prices
-      const productIds = productsData?.map(p => p.id) || []
-      let pricesMap: Record<string, CurrentPrice> = {}
-
-      if (productIds.length > 0) {
-        const { data: pricesData, error: pricesError } = await supabase
-          .from('current_prices')
-          .select('*')
-          .in('product_id', productIds)
-
-        if (pricesError) throw pricesError
-
-        pricesMap = (pricesData || []).reduce((acc, price) => {
-          acc[price.product_id] = price
-          return acc
-        }, {} as Record<string, CurrentPrice>)
-      }
-
-      // Fetch categories for reference
+      // Fetch categories for filter dropdown
       const { data: categoriesData, error: categoriesError } = await supabase
         .from('categories')
         .select('*')
@@ -243,18 +229,16 @@ export default function ProductsPage() {
 
       if (categoriesError) throw categoriesError
 
-      const categoriesMap: Record<string, Category> = (categoriesData || []).reduce((acc, cat) => {
-        acc[cat.id] = cat
-        return acc
-      }, {} as Record<string, Category>)
-
       setCategories(categoriesData || [])
 
-      // Combine products with prices and categories
+      // Transform products to match expected interface
+      // current_prices view returns an array, we want the first (and only) item
       const productsWithDetails: ProductWithDetails[] = (productsData || []).map(product => ({
         ...product,
-        current_price: pricesMap[product.id] || null,
-        category: product.category_id ? categoriesMap[product.category_id] : null,
+        current_price: Array.isArray(product.current_price) && product.current_price.length > 0
+          ? product.current_price[0]
+          : null,
+        category: product.category || null,
       }))
 
       setProducts(productsWithDetails)
