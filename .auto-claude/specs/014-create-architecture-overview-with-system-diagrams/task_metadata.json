@@ -1,0 +1,9 @@
+{
+  "sourceType": "ideation",
+  "ideationType": "documentation_gaps",
+  "ideaId": "doc-003",
+  "rationale": "New team members need to understand the big picture before diving into code. The platform has complex flows: multi-tenant isolation via RLS, dynamic feature flags from database, menu snapshot with SHA-256 hashing for compliance, and Supabase Realtime for waiter notifications. These architectural decisions are scattered across spec.md, todos.md, and inline comments.",
+  "category": "documentation",
+  "priority": "medium",
+  "archivedAt": "2026-01-15T13:28:35.653Z"
+}

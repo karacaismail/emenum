@@ -1,0 +1,74 @@
+{
+  "files_to_modify": {
+    "frontend": [
+      "app/(admin)/admin/ai/page.tsx",
+      "app/(admin)/admin/organizations/page.tsx",
+      "app/(admin)/admin/overrides/page.tsx",
+      "app/(admin)/admin/page.tsx",
+      "app/(admin)/admin/plans/page.tsx",
+      "app/(auth)/login/page.tsx",
+      "app/(auth)/password-recovery/page.tsx",
+      "app/(auth)/register/page.tsx",
+      "app/(auth)/reset-password/page.tsx",
+      "app/(auth)/verify-email/page.tsx",
+      "app/(dashboard)/audit/page.tsx",
+      "app/(dashboard)/categories/page.tsx",
+      "app/(dashboard)/products/[id]/page.tsx",
+      "app/(dashboard)/products/new/page.tsx",
+      "app/(dashboard)/products/page.tsx",
+      "app/(dashboard)/settings/page.tsx",
+      "app/(dashboard)/snapshots/page.tsx",
+      "app/(dashboard)/tables/page.tsx",
+      "app/(dashboard)/waiter/page.tsx",
+      "hooks/useTableContext.ts"
+    ]
+  },
+  "files_to_create": [
+    "components/ui/alert.tsx"
+  ],
+  "files_to_reference": [
+    "components/ui/button.tsx",
+    "components/ui/card.tsx",
+    "components/ui/modal.tsx",
+    "components/ui/index.ts"
+  ],
+  "patterns": {
+    "component_pattern": "UI components use 'use client', forwardRef, TypeScript interfaces, variant-based styling",
+    "styling_pattern": "Tailwind CSS with dark mode support (dark: prefix)",
+    "export_pattern": "Export from components/ui/index.ts for centralized imports",
+    "accessibility_pattern": "Use role='alert' for alert messages, proper ARIA attributes",
+    "typescript_pattern": "Strict TypeScript with interfaces for props, Record types for variant styles"
+  },
+  "existing_implementations": {
+    "description": "Found 37 alert occurrences across 20 files with duplicated JSX structure",
+    "alert_variants": {
+      "error": {
+        "pattern": "rounded-lg bg-red-50 border border-red-200 p-3 text-sm text-red-700 dark:bg-red-900/20 dark:border-red-800 dark:text-red-400",
+        "count": "~20 occurrences"
+      },
+      "success": {
+        "pattern": "rounded-lg bg-green-50 border border-green-200 p-4 text-sm text-green-700 dark:bg-green-900/20 dark:border-green-800 dark:text-green-400",
+        "count": "~10 occurrences"
+      },
+      "info": {
+        "pattern": "Similar pattern with blue colors (less common)",
+        "count": "~5 occurrences"
+      },
+      "warning": {
+        "pattern": "Similar pattern with yellow/amber colors (rare)",
+        "count": "~2 occurrences"
+      }
+    },
+    "common_usage": "Conditional rendering with error/success state: {error && <div>...}",
+    "relevant_files": [
+      "app/(auth)/login/page.tsx",
+      "app/(dashboard)/categories/page.tsx",
+      "app/(dashboard)/products/page.tsx"
+    ]
+  },
+  "duplication_stats": {
+    "total_occurrences": 37,
+    "files_affected": 20,
+    "estimated_lines_duplicated": 185
+  }
+}

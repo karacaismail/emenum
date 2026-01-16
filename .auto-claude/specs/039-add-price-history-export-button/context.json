@@ -1,0 +1,39 @@
+{
+  "files_to_modify": {
+    "nextjs": ["app/(dashboard)/audit/page.tsx"]
+  },
+  "files_to_reference": [
+    "app/(dashboard)/dashboard/dashboard-client.tsx",
+    "lib/services/price-ledger.ts",
+    "components/ui/button.tsx",
+    "components/ui/input.tsx"
+  ],
+  "patterns": {
+    "export_pattern": "Dashboard page uses handleDownloadQR pattern with async download, loading states, and link.download for file downloads",
+    "page_structure": "Audit page is a client component with Card, CardHeader, CardContent structure and Button components from @/components/ui",
+    "service_calls": "Service functions imported from @/lib/services and called with organization.id from useAuth hook",
+    "error_handling": "Pages use try/catch with setError state and display errors in red alert boxes",
+    "date_inputs": "Use Input component with type='date' for date selections"
+  },
+  "existing_implementations": {
+    "description": "exportPriceLedgerForCompliance() function exists in lib/services/price-ledger.ts (lines 517-559) and is ready to use",
+    "function_signature": "exportPriceLedgerForCompliance(organizationId: string, startDate: Date, endDate: Date)",
+    "returns": "Promise with success, data array, error, exportedAt, and dateRange fields",
+    "relevant_files": [
+      "lib/services/price-ledger.ts",
+      "app/(dashboard)/audit/page.tsx",
+      "app/(dashboard)/dashboard/dashboard-client.tsx"
+    ]
+  },
+  "task_specifics": {
+    "location": "Add export button to audit page header area alongside 'Yenile' button",
+    "requirements": [
+      "Add date range inputs (start date and end date)",
+      "Add export button that calls exportPriceLedgerForCompliance()",
+      "Download result as JSON file",
+      "Show loading state while exporting",
+      "Display error if export fails",
+      "Use existing button and input components"
+    ]
+  }
+}

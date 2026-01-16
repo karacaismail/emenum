@@ -1,0 +1,90 @@
+=== AUTO-BUILD PROGRESS ===
+
+Project: Add Price History Export Button
+Spec ID: 039
+Workspace: /Users/karaca/Desktop/ozon/.worktrees/039-add-price-history-export-button
+Started: 2026-01-15T06:35:00Z
+
+Workflow Type: simple
+Rationale: This is a simple frontend enhancement that adds a button to call an existing backend function. No multi-service coordination or complex refactoring needed - just UI additions to a single page.
+
+Session 1 (Planner):
+- Completed deep codebase investigation
+- Located existing exportPriceLedgerForCompliance function in lib/services/price-ledger.ts
+- Analyzed audit page structure and identified insertion point for export functionality
+- Identified download pattern from dashboard-client.tsx (handleDownloadQR)
+- Created project_index.json
+- Created context.json
+- Created implementation_plan.json
+- Phases: 1
+- Total subtasks: 3
+- Created init.sh
+
+Phase Summary:
+- Phase 1 (Add Export Functionality to Audit Page): 3 subtasks, no dependencies
+  - Subtask 1-1: Add date range state and export button UI
+  - Subtask 1-2: Implement handleExportPriceHistory function
+  - Subtask 1-3: Add input validation and user feedback
+
+Services Involved:
+- nextjs: Frontend React/Next.js application
+
+Parallelism Analysis:
+- Max parallel phases: 1
+- Recommended workers: 1
+- Parallel groups: None (sequential single-page modification)
+
+Investigation Summary:
+✓ Found exportPriceLedgerForCompliance in lib/services/price-ledger.ts (lines 517-559)
+✓ Function takes organizationId, startDate, endDate parameters
+✓ Returns formatted JSON with success, data, error, exportedAt, dateRange fields
+✓ Audit page at app/(dashboard)/audit/page.tsx uses Card, Button, Input components
+✓ Download pattern: Create blob, link.download, link.click() (see dashboard-client.tsx)
+✓ Turkish labels used throughout (Baslangic Tarihi, Bitis Tarihi, etc.)
+✓ Error handling pattern: try/catch with setError state
+✓ Loading state pattern: Boolean state + disabled buttons
+
+Key Patterns Identified:
+1. Download Pattern (from dashboard-client.tsx):
+   - Create async function with loading state
+   - Set loading to true
+   - Call service function
+   - Create blob from result
+   - Create temporary link element
+   - Set link.download with filename
+   - Trigger click
+   - Clean up in finally block
+
+2. Date Input Pattern:
+   - Use Input component with type='date'
+   - Format dates as YYYY-MM-DD for input value
+   - Parse to Date objects for service calls
+
+3. UI Layout Pattern (from audit page):
+   - Page header with title, subtitle, and action buttons
+   - Filters in Card/CardContent
+   - Turkish labels for all UI text
+
+=== STARTUP COMMAND ===
+
+To continue building this spec, run:
+
+  npm run dev
+
+Or use the init script:
+
+  ./.auto-claude/specs/039-add-price-history-export-button/init.sh
+
+Then implement subtasks in order:
+  1. subtask-1-1: Add UI elements (date inputs + export button)
+  2. subtask-1-2: Implement export handler function
+  3. subtask-1-3: Add validation and error handling
+
+Manual Testing:
+  1. Navigate to http://localhost:3000/audit
+  2. Verify date inputs and export button render
+  3. Select date range and click export
+  4. Verify JSON file downloads
+  5. Test error cases (invalid dates, no org)
+
+=== END SESSION 1 ===

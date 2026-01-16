@@ -1,0 +1,28 @@
+{
+  "file_path": "hooks/useCrudState.ts",
+  "main_branch_history": [],
+  "task_views": {
+    "005-extract-duplicated-crud-state-management-into-reus": {
+      "task_id": "005-extract-duplicated-crud-state-management-into-reus",
+      "branch_point": {
+        "commit_hash": "2b028be920d271c6e53b44319d1c871dc3d27076",
+        "content": "",
+        "timestamp": "2026-01-15T06:33:12.581832"
+      },
+      "worktree_state": {
+        "content": "'use client'\n\nimport { useState, useCallback } from 'react'\n\n/**\n * CRUD state interface\n */\nexport interface CrudState {\n  /** Whether data is being initially loaded */\n  isLoading: boolean\n  /** Error message if an operation failed */\n  error: string | null\n  /** Whether a save operation is in progress */\n  isSaving: boolean\n  /** Whether a delete operation is in progress */\n  isDeleting: boolean\n}\n\n/**\n * CRUD state actions interface\n */\nexport interface CrudActions {\n  /** Set the loading state */\n  setIsLoading: (isLoading: boolean) => void\n  /** Set an error message (or clear it with null) */\n  setError: (error: string | null) => void\n  /** Set the saving state */\n  setIsSaving: (isSaving: boolean) => void\n  /** Set the deleting state */\n  setIsDeleting: (isDeleting: boolean) => void\n  /** Clear all error states */\n  clearError: () => void\n  /** Reset all states to initial values */\n  reset: () => void\n}\n\n/**\n * Complete CRUD state value combining state and actions\n */\nexport type CrudStateValue = CrudState & CrudActions\n\n/**\n * Options for useCrudState hook\n */\nexport interface UseCrudStateOptions {\n  /** Initial loading state (default: true) */\n  initialLoading?: boolean\n  /** Initial error state (default: null) */\n  initialError?: string | null\n}\n\n/**\n * Hook to manage common CRUD operation states (loading, error, saving, deleting)\n *\n * This hook extracts the duplicated state management pattern found across 19+ CRUD pages\n * in the application. It provides a consistent, reusable way to manage the four core states\n * that nearly every CRUD page needs:\n *\n * 1. isLoading: Tracks initial data fetch state\n * 2. error: Manages error messages from failed operations\n * 3. isSaving: Indicates save/update operation in progress\n * 4. isDeleting: Indicates delete operation in progress\n *\n * Benefits:\n * - Reduces boilerplate code across CRUD pages\n * - Ensures consistent state management patterns\n * - Provides type-safe state and actions\n * - Includes convenient helper methods (clearError, reset)\n *\n * @example\n * Basic usage with data loading and saving:\n * ```tsx\n * function ProductsPage() {\n *   const {\n *     isLoading,\n *     error,\n *     isSaving,\n *     isDeleting,\n *     setIsLoading,\n *     setError,\n *     setIsSaving,\n *     setIsDeleting,\n *     clearError\n *   } = useCrudState()\n *\n *   useEffect(() => {\n *     loadProducts()\n *   }, [])\n *\n *   async function loadProducts() {\n *     try {\n *       setIsLoading(true)\n *       clearError()\n *       const data = await fetchProducts()\n *       setProducts(data)\n *     } catch (err) {\n *       setError(err.message)\n *     } finally {\n *       setIsLoading(false)\n *     }\n *   }\n *\n *   async function saveProduct(product: Product) {\n *     try {\n *       setIsSaving(true)\n *       clearError()\n *       await updateProduct(product)\n *     } catch (err) {\n *       setError(err.message)\n *     } finally {\n *       setIsSaving(false)\n *     }\n *   }\n *\n *   return (\n *     <div>\n *       {isLoading && <LoadingSpinner />}\n *       {error && <ErrorMessage>{error}</ErrorMessage>}\n *       <button disabled={isSaving}>Save</button>\n *     </div>\n *   )\n * }\n * ```\n *\n * @example\n * Usage with custom initial state:\n * ```tsx\n * const crudState = useCrudState({\n *   initialLoading: false,  // Don't show loading on mount\n *   initialError: 'Please select an item'  // Show initial message\n * })\n * ```\n *\n * @param options - Configuration options for initial state\n * @returns CrudStateValue - CRUD state properties and action methods\n */\nexport function useCrudState(\n  options: UseCrudStateOptions = {}\n): CrudStateValue {\n  const { initialLoading = true, initialError = null } = options\n\n  // State\n  const [isLoading, setIsLoading] = useState<boolean>(initialLoading)\n  const [error, setError] = useState<string | null>(initialError)\n  const [isSaving, setIsSaving] = useState<boolean>(false)\n  const [isDeleting, setIsDeleting] = useState<boolean>(false)\n\n  /**\n   * Clear the error state\n   */\n  const clearError = useCallback(() => {\n    setError(null)\n  }, [])\n\n  /**\n   * Reset all states to their initial values\n   */\n  const reset = useCallback(() => {\n    setIsLoading(initialLoading)\n    setError(initialError)\n    setIsSaving(false)\n    setIsDeleting(false)\n  }, [initialLoading, initialError])\n\n  return {\n    // State\n    isLoading,\n    error,\n    isSaving,\n    isDeleting,\n    // Actions\n    setIsLoading,\n    setError,\n    setIsSaving,\n    setIsDeleting,\n    clearError,\n    reset,\n  }\n}\n",
+        "last_modified": "2026-01-15T16:04:15.624949"
+      },
+      "task_intent": {
+        "title": "005-extract-duplicated-crud-state-management-into-reus",
+        "description": "",
+        "from_plan": false
+      },
+      "commits_behind_main": 5,
+      "status": "active",
+      "merged_at": null
+    }
+  },
+  "created_at": "2026-01-15T02:45:13.499869",
+  "last_updated": "2026-01-15T06:33:17.927272"
+}

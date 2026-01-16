@@ -1,0 +1,25 @@
+{
+  "project_type": "single",
+  "services": {
+    "frontend": {
+      "path": ".",
+      "tech_stack": ["next.js", "react", "typescript", "tailwind", "supabase"],
+      "port": 3000,
+      "dev_command": "npm run dev",
+      "test_command": "npm test"
+    }
+  },
+  "infrastructure": {
+    "docker": false,
+    "database": "supabase-postgresql",
+    "authentication": "supabase-auth"
+  },
+  "conventions": {
+    "linter": "eslint",
+    "formatter": "prettier",
+    "testing": "vitest",
+    "component_style": "function components with TypeScript",
+    "state_management": "react hooks",
+    "styling": "tailwind-css"
+  }
+}

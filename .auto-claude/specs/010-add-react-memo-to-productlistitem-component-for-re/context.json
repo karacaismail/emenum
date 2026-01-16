@@ -1,0 +1,32 @@
+{
+  "files_to_modify": {
+    "frontend": ["app/(dashboard)/products/page.tsx"]
+  },
+  "files_to_reference": [],
+  "patterns": {
+    "component_pattern": "Function components with TypeScript interfaces for props",
+    "import_pattern": "React hooks imported from 'react', no existing React.memo usage found in codebase",
+    "naming_convention": "PascalCase for component names, camelCase for handlers"
+  },
+  "existing_implementations": {
+    "description": "No existing React.memo usage found in the codebase. This will be the first memoized component.",
+    "relevant_files": ["app/(dashboard)/products/page.tsx"],
+    "component_details": {
+      "name": "ProductListItem",
+      "location": "app/(dashboard)/products/page.tsx (lines 35-166)",
+      "props": {
+        "product": "ProductWithDetails",
+        "onEdit": "callback function",
+        "onDelete": "callback function",
+        "onToggleVisibility": "callback function"
+      },
+      "current_renders": "Re-renders on every parent state change (search, filter, modal state)",
+      "optimization_target": "Only re-render when product prop actually changes"
+    }
+  },
+  "performance_context": {
+    "issue": "With 50+ products, typing in search or opening modals causes noticeable lag",
+    "solution": "Wrap ProductListItem with React.memo to prevent re-renders when props haven't changed",
+    "impact": "Significant performance improvement for large product lists"
+  }
+}

@@ -1,0 +1,205 @@
+{
+  "file_path": ".auto-claude/specs/001-ozon-e-menum-net-vibe-coding-v1/memory/session_insights/session_009.json",
+  "main_branch_history": [],
+  "task_views": {
+    "001-ozon-e-menum-net-vibe-coding-v1": {
+      "task_id": "001-ozon-e-menum-net-vibe-coding-v1",
+      "branch_point": {
+        "commit_hash": "2b028be920d271c6e53b44319d1c871dc3d27076",
+        "content": "",
+        "timestamp": "2026-01-14T09:55:04.472899"
+      },
+      "worktree_state": null,
+      "task_intent": {
+        "title": "001-ozon-e-menum-net-vibe-coding-v1",
+        "description": "",
+        "from_plan": false
+      },
+      "commits_behind_main": 0,
+      "status": "active",
+      "merged_at": null
+    },
+    "037-add-search-to-categories-page": {
+      "task_id": "037-add-search-to-categories-page",
+      "branch_point": {
+        "commit_hash": "2b028be920d271c6e53b44319d1c871dc3d27076",
+        "content": "",
+        "timestamp": "2026-01-14T18:38:07.376896"
+      },
+      "worktree_state": {
+        "content": "{\n  \"session_number\": 9,\n  \"timestamp\": \"2026-01-14T07:40:47.282823+00:00\",\n  \"subtasks_completed\": [\n    \"subtask-12-4\"\n  ],\n  \"discoveries\": {\n    \"file_insights\": [\n      {\n        \"filename\": \"tests/__tests__/integration/waiter-call-flow.test.ts\",\n        \"type\": \"Integration Test\",\n        \"description\": \"Comprehensive test suite for waiter call flow system\",\n        \"complexity\": \"High\",\n        \"lines_of_code\": 1186\n      }\n    ],\n    \"patterns_discovered\": [\n      \"Extensive use of mock data and test helpers\",\n      \"Simulating API and database interactions\",\n      \"Spam prevention logic implementation\",\n      \"Detailed test scenario coverage\",\n      \"TypeScript with strict type definitions\"\n    ],\n    \"gotchas_discovered\": [\n      \"Complex spam prevention mechanism (30-second cooldown)\",\n      \"Multiple state transitions for service requests\",\n      \"Detailed error handling for various edge cases\",\n      \"UUID validation requirements\"\n    ],\n    \"approach_outcome\": {\n      \"status\": \"SUCCESS\",\n      \"subtask_id\": \"subtask-12-4\",\n      \"test_coverage\": \"Comprehensive\",\n      \"key_scenarios_tested\": [\n        \"Service request creation\",\n        \"Table validation\",\n        \"Spam prevention\",\n        \"Table status updates\",\n        \"Realtime notification flow\",\n        \"Service request status transitions\"\n      ]\n    },\n    \"recommendations\": [\n      \"Maintain detailed mock data structures\",\n      \"Continue using TypeScript for type safety\",\n      \"Implement granular error messages\",\n      \"Keep testing complex state management scenarios\"\n    ],\n    \"subtask_id\": \"subtask-12-4\",\n    \"session_num\": 9,\n    \"success\": true,\n    \"changed_files\": [\n      \"tests/__tests__/integration/waiter-call-flow.test.ts\"\n    ]\n  },\n  \"what_worked\": [\n    \"Implemented subtask: subtask-12-4\"\n  ],\n  \"what_failed\": [],\n  \"recommendations_for_next_session\": []\n}",
+        "last_modified": "2026-01-15T15:07:08.822922"
+      },
+      "task_intent": {
+        "title": "037-add-search-to-categories-page",
+        "description": "Add search functionality to the categories page, allowing users to filter categories by name. This mirrors the existing search pattern already implemented in the products page.",
+        "from_plan": true
+      },
+      "commits_behind_main": 0,
+      "status": "active",
+      "merged_at": null
+    },
+    "032-add-mobile-navigation-menu-to-landing-page": {
+      "task_id": "032-add-mobile-navigation-menu-to-landing-page",
+      "branch_point": {
+        "commit_hash": "2b028be920d271c6e53b44319d1c871dc3d27076",
+        "content": "",
+        "timestamp": "2026-01-14T18:38:22.963353"
+      },
+      "worktree_state": {
+        "content": "{\n  \"session_number\": 9,\n  \"timestamp\": \"2026-01-14T07:40:47.282823+00:00\",\n  \"subtasks_completed\": [\n    \"subtask-12-4\"\n  ],\n  \"discoveries\": {\n    \"file_insights\": [\n      {\n        \"filename\": \"tests/__tests__/integration/waiter-call-flow.test.ts\",\n        \"type\": \"Integration Test\",\n        \"description\": \"Comprehensive test suite for waiter call flow system\",\n        \"complexity\": \"High\",\n        \"lines_of_code\": 1186\n      }\n    ],\n    \"patterns_discovered\": [\n      \"Extensive use of mock data and test helpers\",\n      \"Simulating API and database interactions\",\n      \"Spam prevention logic implementation\",\n      \"Detailed test scenario coverage\",\n      \"TypeScript with strict type definitions\"\n    ],\n    \"gotchas_discovered\": [\n      \"Complex spam prevention mechanism (30-second cooldown)\",\n      \"Multiple state transitions for service requests\",\n      \"Detailed error handling for various edge cases\",\n      \"UUID validation requirements\"\n    ],\n    \"approach_outcome\": {\n      \"status\": \"SUCCESS\",\n      \"subtask_id\": \"subtask-12-4\",\n      \"test_coverage\": \"Comprehensive\",\n      \"key_scenarios_tested\": [\n        \"Service request creation\",\n        \"Table validation\",\n        \"Spam prevention\",\n        \"Table status updates\",\n        \"Realtime notification flow\",\n        \"Service request status transitions\"\n      ]\n    },\n    \"recommendations\": [\n      \"Maintain detailed mock data structures\",\n      \"Continue using TypeScript for type safety\",\n      \"Implement granular error messages\",\n      \"Keep testing complex state management scenarios\"\n    ],\n    \"subtask_id\": \"subtask-12-4\",\n    \"session_num\": 9,\n    \"success\": true,\n    \"changed_files\": [\n      \"tests/__tests__/integration/waiter-call-flow.test.ts\"\n    ]\n  },\n  \"what_worked\": [\n    \"Implemented subtask: subtask-12-4\"\n  ],\n  \"what_failed\": [],\n  \"recommendations_for_next_session\": []\n}",
+        "last_modified": "2026-01-15T15:05:31.786405"
+      },
+      "task_intent": {
+        "title": "032-add-mobile-navigation-menu-to-landing-page",
+        "description": "The landing page navigation on mobile devices only shows a 'Basla' button, hiding all other navigation links. Add a proper hamburger menu for mobile users.",
+        "from_plan": true
+      },
+      "commits_behind_main": 0,
+      "status": "active",
+      "merged_at": null
+    },
+    "031-add-mobile-navigation-menu-to-landing-page": {
+      "task_id": "031-add-mobile-navigation-menu-to-landing-page",
+      "branch_point": {
+        "commit_hash": "2b028be920d271c6e53b44319d1c871dc3d27076",
+        "content": "",
+        "timestamp": "2026-01-14T18:50:42.638180"
+      },
+      "worktree_state": {
+        "content": "{\n  \"session_number\": 9,\n  \"timestamp\": \"2026-01-14T07:40:47.282823+00:00\",\n  \"subtasks_completed\": [\n    \"subtask-12-4\"\n  ],\n  \"discoveries\": {\n    \"file_insights\": [\n      {\n        \"filename\": \"tests/__tests__/integration/waiter-call-flow.test.ts\",\n        \"type\": \"Integration Test\",\n        \"description\": \"Comprehensive test suite for waiter call flow system\",\n        \"complexity\": \"High\",\n        \"lines_of_code\": 1186\n      }\n    ],\n    \"patterns_discovered\": [\n      \"Extensive use of mock data and test helpers\",\n      \"Simulating API and database interactions\",\n      \"Spam prevention logic implementation\",\n      \"Detailed test scenario coverage\",\n      \"TypeScript with strict type definitions\"\n    ],\n    \"gotchas_discovered\": [\n      \"Complex spam prevention mechanism (30-second cooldown)\",\n      \"Multiple state transitions for service requests\",\n      \"Detailed error handling for various edge cases\",\n      \"UUID validation requirements\"\n    ],\n    \"approach_outcome\": {\n      \"status\": \"SUCCESS\",\n      \"subtask_id\": \"subtask-12-4\",\n      \"test_coverage\": \"Comprehensive\",\n      \"key_scenarios_tested\": [\n        \"Service request creation\",\n        \"Table validation\",\n        \"Spam prevention\",\n        \"Table status updates\",\n        \"Realtime notification flow\",\n        \"Service request status transitions\"\n      ]\n    },\n    \"recommendations\": [\n      \"Maintain detailed mock data structures\",\n      \"Continue using TypeScript for type safety\",\n      \"Implement granular error messages\",\n      \"Keep testing complex state management scenarios\"\n    ],\n    \"subtask_id\": \"subtask-12-4\",\n    \"session_num\": 9,\n    \"success\": true,\n    \"changed_files\": [\n      \"tests/__tests__/integration/waiter-call-flow.test.ts\"\n    ]\n  },\n  \"what_worked\": [\n    \"Implemented subtask: subtask-12-4\"\n  ],\n  \"what_failed\": [],\n  \"recommendations_for_next_session\": []\n}",
+        "last_modified": "2026-01-15T15:03:39.194564"
+      },
+      "task_intent": {
+        "title": "031-add-mobile-navigation-menu-to-landing-page",
+        "description": "The landing page navigation on mobile devices only shows a 'Basla' button, hiding all other navigation links. Add a proper hamburger menu for mobile users.",
+        "from_plan": true
+      },
+      "commits_behind_main": 0,
+      "status": "active",
+      "merged_at": null
+    },
+    "040-add-bulk-qr-code-download-for-all-tables": {
+      "task_id": "040-add-bulk-qr-code-download-for-all-tables",
+      "branch_point": {
+        "commit_hash": "2b028be920d271c6e53b44319d1c871dc3d27076",
+        "content": "",
+        "timestamp": "2026-01-14T18:53:11.069414"
+      },
+      "worktree_state": {
+        "content": "{\n  \"session_number\": 9,\n  \"timestamp\": \"2026-01-14T07:40:47.282823+00:00\",\n  \"subtasks_completed\": [\n    \"subtask-12-4\"\n  ],\n  \"discoveries\": {\n    \"file_insights\": [\n      {\n        \"filename\": \"tests/__tests__/integration/waiter-call-flow.test.ts\",\n        \"type\": \"Integration Test\",\n        \"description\": \"Comprehensive test suite for waiter call flow system\",\n        \"complexity\": \"High\",\n        \"lines_of_code\": 1186\n      }\n    ],\n    \"patterns_discovered\": [\n      \"Extensive use of mock data and test helpers\",\n      \"Simulating API and database interactions\",\n      \"Spam prevention logic implementation\",\n      \"Detailed test scenario coverage\",\n      \"TypeScript with strict type definitions\"\n    ],\n    \"gotchas_discovered\": [\n      \"Complex spam prevention mechanism (30-second cooldown)\",\n      \"Multiple state transitions for service requests\",\n      \"Detailed error handling for various edge cases\",\n      \"UUID validation requirements\"\n    ],\n    \"approach_outcome\": {\n      \"status\": \"SUCCESS\",\n      \"subtask_id\": \"subtask-12-4\",\n      \"test_coverage\": \"Comprehensive\",\n      \"key_scenarios_tested\": [\n        \"Service request creation\",\n        \"Table validation\",\n        \"Spam prevention\",\n        \"Table status updates\",\n        \"Realtime notification flow\",\n        \"Service request status transitions\"\n      ]\n    },\n    \"recommendations\": [\n      \"Maintain detailed mock data structures\",\n      \"Continue using TypeScript for type safety\",\n      \"Implement granular error messages\",\n      \"Keep testing complex state management scenarios\"\n    ],\n    \"subtask_id\": \"subtask-12-4\",\n    \"session_num\": 9,\n    \"success\": true,\n    \"changed_files\": [\n      \"tests/__tests__/integration/waiter-call-flow.test.ts\"\n    ]\n  },\n  \"what_worked\": [\n    \"Implemented subtask: subtask-12-4\"\n  ],\n  \"what_failed\": [],\n  \"recommendations_for_next_session\": []\n}",
+        "last_modified": "2026-01-14T18:53:20.424229"
+      },
+      "task_intent": {
+        "title": "040-add-bulk-qr-code-download-for-all-tables",
+        "description": "",
+        "from_plan": false
+      },
+      "commits_behind_main": 0,
+      "status": "active",
+      "merged_at": null
+    },
+    "005-extract-duplicated-crud-state-management-into-reus": {
+      "task_id": "005-extract-duplicated-crud-state-management-into-reus",
+      "branch_point": {
+        "commit_hash": "2b028be920d271c6e53b44319d1c871dc3d27076",
+        "content": "",
+        "timestamp": "2026-01-15T06:33:12.581832"
+      },
+      "worktree_state": {
+        "content": "{\n  \"session_number\": 9,\n  \"timestamp\": \"2026-01-14T07:40:47.282823+00:00\",\n  \"subtasks_completed\": [\n    \"subtask-12-4\"\n  ],\n  \"discoveries\": {\n    \"file_insights\": [\n      {\n        \"filename\": \"tests/__tests__/integration/waiter-call-flow.test.ts\",\n        \"type\": \"Integration Test\",\n        \"description\": \"Comprehensive test suite for waiter call flow system\",\n        \"complexity\": \"High\",\n        \"lines_of_code\": 1186\n      }\n    ],\n    \"patterns_discovered\": [\n      \"Extensive use of mock data and test helpers\",\n      \"Simulating API and database interactions\",\n      \"Spam prevention logic implementation\",\n      \"Detailed test scenario coverage\",\n      \"TypeScript with strict type definitions\"\n    ],\n    \"gotchas_discovered\": [\n      \"Complex spam prevention mechanism (30-second cooldown)\",\n      \"Multiple state transitions for service requests\",\n      \"Detailed error handling for various edge cases\",\n      \"UUID validation requirements\"\n    ],\n    \"approach_outcome\": {\n      \"status\": \"SUCCESS\",\n      \"subtask_id\": \"subtask-12-4\",\n      \"test_coverage\": \"Comprehensive\",\n      \"key_scenarios_tested\": [\n        \"Service request creation\",\n        \"Table validation\",\n        \"Spam prevention\",\n        \"Table status updates\",\n        \"Realtime notification flow\",\n        \"Service request status transitions\"\n      ]\n    },\n    \"recommendations\": [\n      \"Maintain detailed mock data structures\",\n      \"Continue using TypeScript for type safety\",\n      \"Implement granular error messages\",\n      \"Keep testing complex state management scenarios\"\n    ],\n    \"subtask_id\": \"subtask-12-4\",\n    \"session_num\": 9,\n    \"success\": true,\n    \"changed_files\": [\n      \"tests/__tests__/integration/waiter-call-flow.test.ts\"\n    ]\n  },\n  \"what_worked\": [\n    \"Implemented subtask: subtask-12-4\"\n  ],\n  \"what_failed\": [],\n  \"recommendations_for_next_session\": []\n}",
+        "last_modified": "2026-01-15T16:04:15.482339"
+      },
+      "task_intent": {
+        "title": "005-extract-duplicated-crud-state-management-into-reus",
+        "description": "",
+        "from_plan": false
+      },
+      "commits_behind_main": 5,
+      "status": "active",
+      "merged_at": null
+    },
+    "002-add-unit-test-coverage-for-dashboard-page-componen": {
+      "task_id": "002-add-unit-test-coverage-for-dashboard-page-componen",
+      "branch_point": {
+        "commit_hash": "2b028be920d271c6e53b44319d1c871dc3d27076",
+        "content": "",
+        "timestamp": "2026-01-15T14:04:12.520457"
+      },
+      "worktree_state": {
+        "content": "{\n  \"session_number\": 9,\n  \"timestamp\": \"2026-01-14T07:40:47.282823+00:00\",\n  \"subtasks_completed\": [\n    \"subtask-12-4\"\n  ],\n  \"discoveries\": {\n    \"file_insights\": [\n      {\n        \"filename\": \"tests/__tests__/integration/waiter-call-flow.test.ts\",\n        \"type\": \"Integration Test\",\n        \"description\": \"Comprehensive test suite for waiter call flow system\",\n        \"complexity\": \"High\",\n        \"lines_of_code\": 1186\n      }\n    ],\n    \"patterns_discovered\": [\n      \"Extensive use of mock data and test helpers\",\n      \"Simulating API and database interactions\",\n      \"Spam prevention logic implementation\",\n      \"Detailed test scenario coverage\",\n      \"TypeScript with strict type definitions\"\n    ],\n    \"gotchas_discovered\": [\n      \"Complex spam prevention mechanism (30-second cooldown)\",\n      \"Multiple state transitions for service requests\",\n      \"Detailed error handling for various edge cases\",\n      \"UUID validation requirements\"\n    ],\n    \"approach_outcome\": {\n      \"status\": \"SUCCESS\",\n      \"subtask_id\": \"subtask-12-4\",\n      \"test_coverage\": \"Comprehensive\",\n      \"key_scenarios_tested\": [\n        \"Service request creation\",\n        \"Table validation\",\n        \"Spam prevention\",\n        \"Table status updates\",\n        \"Realtime notification flow\",\n        \"Service request status transitions\"\n      ]\n    },\n    \"recommendations\": [\n      \"Maintain detailed mock data structures\",\n      \"Continue using TypeScript for type safety\",\n      \"Implement granular error messages\",\n      \"Keep testing complex state management scenarios\"\n    ],\n    \"subtask_id\": \"subtask-12-4\",\n    \"session_num\": 9,\n    \"success\": true,\n    \"changed_files\": [\n      \"tests/__tests__/integration/waiter-call-flow.test.ts\"\n    ]\n  },\n  \"what_worked\": [\n    \"Implemented subtask: subtask-12-4\"\n  ],\n  \"what_failed\": [],\n  \"recommendations_for_next_session\": []\n}",
+        "last_modified": "2026-01-15T16:20:44.209394"
+      },
+      "task_intent": {
+        "title": "002-add-unit-test-coverage-for-dashboard-page-componen",
+        "description": "",
+        "from_plan": false
+      },
+      "commits_behind_main": 5,
+      "status": "active",
+      "merged_at": null
+    },
+    "034-create-reusable-select-component-for-consistent-fo": {
+      "task_id": "034-create-reusable-select-component-for-consistent-fo",
+      "branch_point": {
+        "commit_hash": "2b028be920d271c6e53b44319d1c871dc3d27076",
+        "content": "",
+        "timestamp": "2026-01-15T14:05:37.956433"
+      },
+      "worktree_state": {
+        "content": "{\n  \"session_number\": 9,\n  \"timestamp\": \"2026-01-14T07:40:47.282823+00:00\",\n  \"subtasks_completed\": [\n    \"subtask-12-4\"\n  ],\n  \"discoveries\": {\n    \"file_insights\": [\n      {\n        \"filename\": \"tests/__tests__/integration/waiter-call-flow.test.ts\",\n        \"type\": \"Integration Test\",\n        \"description\": \"Comprehensive test suite for waiter call flow system\",\n        \"complexity\": \"High\",\n        \"lines_of_code\": 1186\n      }\n    ],\n    \"patterns_discovered\": [\n      \"Extensive use of mock data and test helpers\",\n      \"Simulating API and database interactions\",\n      \"Spam prevention logic implementation\",\n      \"Detailed test scenario coverage\",\n      \"TypeScript with strict type definitions\"\n    ],\n    \"gotchas_discovered\": [\n      \"Complex spam prevention mechanism (30-second cooldown)\",\n      \"Multiple state transitions for service requests\",\n      \"Detailed error handling for various edge cases\",\n      \"UUID validation requirements\"\n    ],\n    \"approach_outcome\": {\n      \"status\": \"SUCCESS\",\n      \"subtask_id\": \"subtask-12-4\",\n      \"test_coverage\": \"Comprehensive\",\n      \"key_scenarios_tested\": [\n        \"Service request creation\",\n        \"Table validation\",\n        \"Spam prevention\",\n        \"Table status updates\",\n        \"Realtime notification flow\",\n        \"Service request status transitions\"\n      ]\n    },\n    \"recommendations\": [\n      \"Maintain detailed mock data structures\",\n      \"Continue using TypeScript for type safety\",\n      \"Implement granular error messages\",\n      \"Keep testing complex state management scenarios\"\n    ],\n    \"subtask_id\": \"subtask-12-4\",\n    \"session_num\": 9,\n    \"success\": true,\n    \"changed_files\": [\n      \"tests/__tests__/integration/waiter-call-flow.test.ts\"\n    ]\n  },\n  \"what_worked\": [\n    \"Implemented subtask: subtask-12-4\"\n  ],\n  \"what_failed\": [],\n  \"recommendations_for_next_session\": []\n}",
+        "last_modified": "2026-01-15T14:05:43.665641"
+      },
+      "task_intent": {
+        "title": "034-create-reusable-select-component-for-consistent-fo",
+        "description": "",
+        "from_plan": false
+      },
+      "commits_behind_main": 5,
+      "status": "active",
+      "merged_at": null
+    },
+    "023-add-mobile-navigation-menu-to-landing-page": {
+      "task_id": "023-add-mobile-navigation-menu-to-landing-page",
+      "branch_point": {
+        "commit_hash": "c709a6c45b4887c1a0ad6e04c6142783760a46ec",
+        "content": "",
+        "timestamp": "2026-01-15T13:47:09.808921"
+      },
+      "worktree_state": {
+        "content": "{\n  \"session_number\": 9,\n  \"timestamp\": \"2026-01-14T07:40:47.282823+00:00\",\n  \"subtasks_completed\": [\n    \"subtask-12-4\"\n  ],\n  \"discoveries\": {\n    \"file_insights\": [\n      {\n        \"filename\": \"tests/__tests__/integration/waiter-call-flow.test.ts\",\n        \"type\": \"Integration Test\",\n        \"description\": \"Comprehensive test suite for waiter call flow system\",\n        \"complexity\": \"High\",\n        \"lines_of_code\": 1186\n      }\n    ],\n    \"patterns_discovered\": [\n      \"Extensive use of mock data and test helpers\",\n      \"Simulating API and database interactions\",\n      \"Spam prevention logic implementation\",\n      \"Detailed test scenario coverage\",\n      \"TypeScript with strict type definitions\"\n    ],\n    \"gotchas_discovered\": [\n      \"Complex spam prevention mechanism (30-second cooldown)\",\n      \"Multiple state transitions for service requests\",\n      \"Detailed error handling for various edge cases\",\n      \"UUID validation requirements\"\n    ],\n    \"approach_outcome\": {\n      \"status\": \"SUCCESS\",\n      \"subtask_id\": \"subtask-12-4\",\n      \"test_coverage\": \"Comprehensive\",\n      \"key_scenarios_tested\": [\n        \"Service request creation\",\n        \"Table validation\",\n        \"Spam prevention\",\n        \"Table status updates\",\n        \"Realtime notification flow\",\n        \"Service request status transitions\"\n      ]\n    },\n    \"recommendations\": [\n      \"Maintain detailed mock data structures\",\n      \"Continue using TypeScript for type safety\",\n      \"Implement granular error messages\",\n      \"Keep testing complex state management scenarios\"\n    ],\n    \"subtask_id\": \"subtask-12-4\",\n    \"session_num\": 9,\n    \"success\": true,\n    \"changed_files\": [\n      \"tests/__tests__/integration/waiter-call-flow.test.ts\"\n    ]\n  },\n  \"what_worked\": [\n    \"Implemented subtask: subtask-12-4\"\n  ],\n  \"what_failed\": [],\n  \"recommendations_for_next_session\": []\n}",
+        "last_modified": "2026-01-15T13:47:16.694546"
+      },
+      "task_intent": {
+        "title": "023-add-mobile-navigation-menu-to-landing-page",
+        "description": "",
+        "from_plan": false
+      },
+      "commits_behind_main": 0,
+      "status": "active",
+      "merged_at": null
+    },
+    "026-add-mobile-navigation-menu-to-landing-page": {
+      "task_id": "026-add-mobile-navigation-menu-to-landing-page",
+      "branch_point": {
+        "commit_hash": "2b028be920d271c6e53b44319d1c871dc3d27076",
+        "content": "",
+        "timestamp": "2026-01-15T14:15:55.210168"
+      },
+      "worktree_state": {
+        "content": "{\n  \"session_number\": 9,\n  \"timestamp\": \"2026-01-14T07:40:47.282823+00:00\",\n  \"subtasks_completed\": [\n    \"subtask-12-4\"\n  ],\n  \"discoveries\": {\n    \"file_insights\": [\n      {\n        \"filename\": \"tests/__tests__/integration/waiter-call-flow.test.ts\",\n        \"type\": \"Integration Test\",\n        \"description\": \"Comprehensive test suite for waiter call flow system\",\n        \"complexity\": \"High\",\n        \"lines_of_code\": 1186\n      }\n    ],\n    \"patterns_discovered\": [\n      \"Extensive use of mock data and test helpers\",\n      \"Simulating API and database interactions\",\n      \"Spam prevention logic implementation\",\n      \"Detailed test scenario coverage\",\n      \"TypeScript with strict type definitions\"\n    ],\n    \"gotchas_discovered\": [\n      \"Complex spam prevention mechanism (30-second cooldown)\",\n      \"Multiple state transitions for service requests\",\n      \"Detailed error handling for various edge cases\",\n      \"UUID validation requirements\"\n    ],\n    \"approach_outcome\": {\n      \"status\": \"SUCCESS\",\n      \"subtask_id\": \"subtask-12-4\",\n      \"test_coverage\": \"Comprehensive\",\n      \"key_scenarios_tested\": [\n        \"Service request creation\",\n        \"Table validation\",\n        \"Spam prevention\",\n        \"Table status updates\",\n        \"Realtime notification flow\",\n        \"Service request status transitions\"\n      ]\n    },\n    \"recommendations\": [\n      \"Maintain detailed mock data structures\",\n      \"Continue using TypeScript for type safety\",\n      \"Implement granular error messages\",\n      \"Keep testing complex state management scenarios\"\n    ],\n    \"subtask_id\": \"subtask-12-4\",\n    \"session_num\": 9,\n    \"success\": true,\n    \"changed_files\": [\n      \"tests/__tests__/integration/waiter-call-flow.test.ts\"\n    ]\n  },\n  \"what_worked\": [\n    \"Implemented subtask: subtask-12-4\"\n  ],\n  \"what_failed\": [],\n  \"recommendations_for_next_session\": []\n}",
+        "last_modified": "2026-01-15T14:16:00.948110"
+      },
+      "task_intent": {
+        "title": "026-add-mobile-navigation-menu-to-landing-page",
+        "description": "",
+        "from_plan": false
+      },
+      "commits_behind_main": 5,
+      "status": "active",
+      "merged_at": null
+    }
+  },
+  "created_at": "2026-01-14T09:55:04.648224",
+  "last_updated": "2026-01-15T14:15:56.091583"
+}

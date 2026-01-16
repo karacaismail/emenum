@@ -1,0 +1,40 @@
+{
+  "files_to_modify": {
+    "frontend": [
+      "app/(dashboard)/settings/page.tsx"
+    ]
+  },
+  "files_to_create": {
+    "frontend": [
+      "components/dashboard/usage-limits.tsx"
+    ]
+  },
+  "files_to_reference": [
+    "app/(dashboard)/dashboard/dashboard-client.tsx",
+    "lib/guards/limits.ts",
+    "components/ui/card.tsx"
+  ],
+  "patterns": {
+    "stats_card_pattern": "Dashboard uses Card component in a grid with icon, label, and value. Each card has CardContent with flex layout, colored icon background, and responsive typography",
+    "client_component_pattern": "All interactive components use 'use client' directive and hooks like useAuth, useState, useEffect",
+    "data_fetching_pattern": "Use createClient() from @/lib/supabase/client for client-side data fetching",
+    "dark_mode": "All components support dark mode with dark: prefix classes in Tailwind",
+    "turkish_ui": "All UI text is in Turkish language"
+  },
+  "existing_implementations": {
+    "description": "getAllLimitStatuses() function already exists in lib/guards/limits.ts (lines 258-305). It returns LimitStatus[] with featureKey, currentCount, limit, isUnlimited, usagePercent, source, planName. Dashboard shows similar stats cards in a responsive grid layout.",
+    "relevant_files": [
+      "lib/guards/limits.ts",
+      "app/(dashboard)/dashboard/dashboard-client.tsx"
+    ],
+    "data_structure": {
+      "featureKey": "string (e.g., 'limit_categories', 'limit_products')",
+      "currentCount": "number",
+      "limit": "number (-1 for unlimited)",
+      "isUnlimited": "boolean",
+      "usagePercent": "number (0-100)",
+      "source": "'plan' | 'override' | 'none'",
+      "planName": "string | undefined"
+    }
+  }
+}

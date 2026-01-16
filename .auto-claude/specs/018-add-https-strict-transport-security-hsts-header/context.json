@@ -1,0 +1,27 @@
+{
+  "files_to_modify": {
+    "frontend": ["next.config.ts"]
+  },
+  "files_to_reference": [],
+  "patterns": {
+    "config_pattern": "Next.js configuration uses TypeScript with type NextConfig from 'next'",
+    "security_headers_pattern": "Security headers are configured in the headers() async function that returns an array of header objects",
+    "header_format": "Each header object contains source (route pattern) and headers array with key-value pairs"
+  },
+  "existing_implementations": {
+    "description": "The spec indicates that next.config.ts already has a security headers configuration, but is missing the Strict-Transport-Security header",
+    "relevant_files": ["next.config.ts"],
+    "missing_header": "Strict-Transport-Security"
+  },
+  "security_context": {
+    "task_type": "security_hardening",
+    "severity": "medium",
+    "rationale": "HSTS prevents protocol downgrade attacks and cookie hijacking, critical for SaaS platform handling authentication and business data",
+    "hsts_recommendation": {
+      "max_age": "31536000",
+      "include_subdomains": true,
+      "preload": false,
+      "reason": "1 year max-age with includeSubDomains is industry standard; preload requires careful consideration and domain-wide HTTPS"
+    }
+  }
+}

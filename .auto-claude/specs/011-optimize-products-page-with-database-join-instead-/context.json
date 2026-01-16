@@ -1,0 +1,37 @@
+{
+  "files_to_modify": {
+    "frontend": ["app/(dashboard)/products/page.tsx"]
+  },
+  "files_to_reference": [
+    "lib/supabase/client.ts",
+    "lib/supabase/server.ts"
+  ],
+  "patterns": {
+    "supabase_query_pattern": "Use Supabase select() with nested relationships instead of multiple queries",
+    "current_issue": "Three sequential queries: products, current_prices, categories",
+    "solution_approach": "Single query with .select('*, current_prices(*), categories(*)')"
+  },
+  "existing_implementations": {
+    "description": "Project uses Supabase PostgreSQL with RLS. Database has views like current_prices for latest price_ledger entries.",
+    "relevant_tables": ["products", "price_ledger", "categories", "current_prices view"],
+    "database_views": ["current_prices - view showing latest prices from price_ledger"]
+  },
+  "database_schema": {
+    "products": {
+      "fields": ["id", "name", "description", "category_id", "organization_id"],
+      "relationships": ["categories (foreign key)", "price_ledger (one-to-many)"]
+    },
+    "categories": {
+      "fields": ["id", "name", "organization_id"]
+    },
+    "price_ledger": {
+      "fields": ["id", "product_id", "price", "valid_from", "change_reason"],
+      "immutable": true,
+      "note": "INSERT-only table for legal compliance"
+    },
+    "current_prices": {
+      "type": "view",
+      "purpose": "Shows latest price for each product from price_ledger"
+    }
+  }
+}

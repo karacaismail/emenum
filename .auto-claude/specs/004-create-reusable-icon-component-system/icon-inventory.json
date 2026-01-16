@@ -1,0 +1,555 @@
+{
+  "summary": {
+    "total_unique_icons": 29,
+    "total_svg_occurrences": 261,
+    "files_containing_svgs": 33,
+    "component_files": 5,
+    "page_files": 28,
+    "most_common_sizes": ["h-5 w-5", "h-4 w-4", "h-6 w-6"],
+    "audit_date": "2026-01-15"
+  },
+  "size_variants": {
+    "sm": "h-4 w-4",
+    "md": "h-5 w-5",
+    "lg": "h-6 w-6",
+    "xl": "h-8 w-8",
+    "2xl": "h-12 w-12",
+    "custom": ["h-3 w-3", "20x20"]
+  },
+  "icon_families": {
+    "navigation": ["home", "chevron-right", "chevron-left", "chevron-down", "chevron-up", "arrow-left", "arrow-right"],
+    "features": ["products", "categories", "tables", "waiter-bell", "settings", "clipboard", "document"],
+    "actions": ["check", "plus", "minus", "close", "eye", "eye-off", "edit", "delete", "search"],
+    "status": ["check-circle", "shield-check", "warning", "image-placeholder", "loading-spinner"],
+    "organization": ["building", "users", "menu"],
+    "admin": ["sliders", "tv-monitor", "book-open"],
+    "special": ["qr-code", "external-link"]
+  },
+  "icons": [
+    {
+      "id": "home",
+      "name": "Home/Dashboard",
+      "description": "Dashboard home navigation icon",
+      "category": "navigation",
+      "path": "M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6",
+      "sizes_used": ["h-5 w-5", "h-4 w-4"],
+      "usage_count": 4,
+      "files": [
+        "components/dashboard/sidebar.tsx",
+        "app/not-found.tsx",
+        "app/(admin)/admin-layout-client.tsx"
+      ]
+    },
+    {
+      "id": "categories",
+      "name": "Categories Grid",
+      "description": "4-square grid icon for categories",
+      "category": "features",
+      "path": "M4 6a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2H6a2 2 0 01-2-2V6zM14 6a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2V6zM4 16a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2H6a2 2 0 01-2-2v-2zM14 16a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2v-2z",
+      "sizes_used": ["h-5 w-5"],
+      "usage_count": 3,
+      "files": [
+        "components/dashboard/sidebar.tsx",
+        "components/snapshots/version-comparison-modal.tsx"
+      ]
+    },
+    {
+      "id": "products",
+      "name": "Products Package",
+      "description": "3D package/box icon for products",
+      "category": "features",
+      "path": "M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4",
+      "sizes_used": ["h-5 w-5", "h-6 w-6"],
+      "usage_count": 8,
+      "files": [
+        "components/dashboard/sidebar.tsx",
+        "app/(dashboard)/products/page.tsx",
+        "components/snapshots/version-comparison-modal.tsx",
+        "app/(admin)/admin/page.tsx"
+      ]
+    },
+    {
+      "id": "tables",
+      "name": "Restaurant Tables",
+      "description": "Table management icon",
+      "category": "features",
+      "path": "M12 4v1m6 11h2m-6 0h-2v4m0-11v3m0 0h.01M12 12h4.01M16 20h4M4 12h4m12 0h.01M5 8h2a1 1 0 001-1V5a1 1 0 00-1-1H5a1 1 0 00-1 1v2a1 1 0 001 1zm12 0h2a1 1 0 001-1V5a1 1 0 00-1-1h-2a1 1 0 00-1 1v2a1 1 0 001 1zM5 20h2a1 1 0 001-1v-2a1 1 0 00-1-1H5a1 1 0 00-1 1v2a1 1 0 001 1z",
+      "sizes_used": ["h-5 w-5"],
+      "usage_count": 2,
+      "files": [
+        "components/dashboard/sidebar.tsx",
+        "app/(dashboard)/tables/page.tsx"
+      ]
+    },
+    {
+      "id": "waiter-bell",
+      "name": "Waiter Bell",
+      "description": "Service request/waiter call bell icon",
+      "category": "features",
+      "path": "M15 17h5l-1.405-1.405A2.032 2.032 0 0118 14.158V11a6.002 6.002 0 00-4-5.659V5a2 2 0 10-4 0v.341C7.67 6.165 6 8.388 6 11v3.159c0 .538-.214 1.055-.595 1.436L4 17h5m6 0v1a3 3 0 11-6 0v-1m6 0H9",
+      "sizes_used": ["h-5 w-5"],
+      "usage_count": 4,
+      "files": [
+        "components/dashboard/sidebar.tsx",
+        "app/(dashboard)/waiter/page.tsx",
+        "app/(admin)/admin/page.tsx"
+      ]
+    },
+    {
+      "id": "clipboard",
+      "name": "Clipboard/Audit",
+      "description": "Audit trail and document history icon",
+      "category": "features",
+      "path": "M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-3 7h3m-3 4h3m-6-4h.01M9 16h.01",
+      "sizes_used": ["h-5 w-5"],
+      "usage_count": 4,
+      "files": [
+        "components/dashboard/sidebar.tsx",
+        "app/(dashboard)/audit/page.tsx",
+        "app/(admin)/admin/page.tsx",
+        "app/(admin)/admin-layout-client.tsx"
+      ]
+    },
+    {
+      "id": "settings",
+      "name": "Settings Gear",
+      "description": "Settings and configuration icon",
+      "category": "features",
+      "paths": [
+        "M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z",
+        "M15 12a3 3 0 11-6 0 3 3 0 016 0z"
+      ],
+      "sizes_used": ["h-5 w-5"],
+      "usage_count": 2,
+      "files": [
+        "components/dashboard/sidebar.tsx",
+        "app/(dashboard)/settings/page.tsx"
+      ]
+    },
+    {
+      "id": "close",
+      "name": "Close/X",
+      "description": "Close dialog or cancel action",
+      "path": "M6 18L18 6M6 6l12 12",
+      "category": "actions",
+      "sizes_used": ["h-6 w-6", "20x20"],
+      "usage_count": 5,
+      "files": [
+        "components/ui/modal.tsx",
+        "components/dashboard/sidebar.tsx",
+        "app/(admin)/admin-layout-client.tsx",
+        "app/pricing/page.tsx"
+      ]
+    },
+    {
+      "id": "eye",
+      "name": "Eye/Visible",
+      "description": "Show or mark as visible",
+      "category": "actions",
+      "paths": [
+        "M15 12a3 3 0 11-6 0 3 3 0 016 0z",
+        "M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"
+      ],
+      "sizes_used": ["h-5 w-5"],
+      "usage_count": 8,
+      "files": [
+        "app/(dashboard)/products/page.tsx",
+        "app/(dashboard)/categories/page.tsx",
+        "app/(auth)/password-recovery/page.tsx",
+        "app/(auth)/reset-password/page.tsx"
+      ]
+    },
+    {
+      "id": "eye-off",
+      "name": "Eye Off/Hidden",
+      "description": "Hide or mark as invisible",
+      "category": "actions",
+      "path": "M13.875 18.825A10.05 10.05 0 0112 19c-4.478 0-8.268-2.943-9.543-7a9.97 9.97 0 011.563-3.029m5.858.908a3 3 0 114.243 4.243M9.878 9.878l4.242 4.242M9.88 9.88l-3.29-3.29m7.532 7.532l3.29 3.29M3 3l3.59 3.59m0 0A9.953 9.953 0 0112 5c4.478 0 8.268 2.943 9.543 7a10.025 10.025 0 01-4.132 5.411m0 0L21 21",
+      "sizes_used": ["h-5 w-5"],
+      "usage_count": 8,
+      "files": [
+        "app/(dashboard)/products/page.tsx",
+        "app/(dashboard)/categories/page.tsx",
+        "app/(auth)/password-recovery/page.tsx",
+        "app/(auth)/reset-password/page.tsx"
+      ]
+    },
+    {
+      "id": "image-placeholder",
+      "name": "Image Placeholder",
+      "description": "Placeholder for missing images",
+      "category": "status",
+      "path": "M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z",
+      "sizes_used": ["h-6 w-6"],
+      "usage_count": 3,
+      "files": [
+        "app/(dashboard)/products/page.tsx",
+        "app/(dashboard)/categories/page.tsx"
+      ]
+    },
+    {
+      "id": "edit",
+      "name": "Edit/Pencil",
+      "description": "Edit or modify item",
+      "category": "actions",
+      "path": "M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z",
+      "sizes_used": ["h-4 w-4"],
+      "usage_count": 20,
+      "files": [
+        "app/(dashboard)/products/page.tsx",
+        "app/(dashboard)/products/[id]/page.tsx",
+        "app/(dashboard)/categories/page.tsx",
+        "app/(dashboard)/tables/page.tsx",
+        "app/(admin)/admin/organizations/page.tsx",
+        "app/(admin)/admin/plans/page.tsx",
+        "app/(admin)/admin/overrides/page.tsx"
+      ]
+    },
+    {
+      "id": "delete",
+      "name": "Delete/Trash",
+      "description": "Delete or remove item",
+      "category": "actions",
+      "path": "M19 7l-.867 12.142A2 2 0 0116.138 21H7.862a2 2 0 01-1.995-1.858L5 7m5 4v6m4-6v6m1-10V4a1 1 0 00-1-1h-4a1 1 0 00-1 1v3M4 7h16",
+      "sizes_used": ["h-4 w-4"],
+      "usage_count": 20,
+      "files": [
+        "app/(dashboard)/products/page.tsx",
+        "app/(dashboard)/products/[id]/page.tsx",
+        "app/(dashboard)/categories/page.tsx",
+        "app/(dashboard)/tables/page.tsx",
+        "app/(admin)/admin/organizations/page.tsx",
+        "app/(admin)/admin/plans/page.tsx",
+        "app/(admin)/admin/overrides/page.tsx"
+      ]
+    },
+    {
+      "id": "check",
+      "name": "Checkmark",
+      "description": "Success, completed, or included feature",
+      "category": "actions",
+      "path": "M5 13l4 4L19 7",
+      "sizes_used": ["h-4 w-4", "h-5 w-5", "h-3 w-3", "h-6 w-6"],
+      "usage_count": 30,
+      "files": [
+        "app/page.tsx",
+        "app/pricing/page.tsx",
+        "app/(auth)/verify-email/page.tsx",
+        "app/(admin)/admin-layout-client.tsx",
+        "components/snapshots/version-comparison-modal.tsx"
+      ]
+    },
+    {
+      "id": "plus",
+      "name": "Plus/Add",
+      "description": "Add or create new item",
+      "category": "actions",
+      "path": "M12 6v6m0 0v6m0-6h6m-6 0H6",
+      "sizes_used": ["h-4 w-4", "h-5 w-5"],
+      "usage_count": 15,
+      "files": [
+        "app/(dashboard)/products/page.tsx",
+        "app/(dashboard)/categories/page.tsx",
+        "app/(dashboard)/tables/page.tsx",
+        "app/(dashboard)/products/new/page.tsx",
+        "app/(admin)/admin/organizations/page.tsx",
+        "app/(admin)/admin/plans/page.tsx",
+        "components/snapshots/version-comparison-modal.tsx"
+      ]
+    },
+    {
+      "id": "minus",
+      "name": "Minus/Subtract",
+      "description": "Remove or subtract",
+      "category": "actions",
+      "path": "M20 12H4",
+      "sizes_used": ["h-4 w-4"],
+      "usage_count": 2,
+      "files": [
+        "components/snapshots/version-comparison-modal.tsx"
+      ]
+    },
+    {
+      "id": "search",
+      "name": "Search/Magnifying Glass",
+      "description": "Search or filter",
+      "category": "actions",
+      "path": "M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z",
+      "sizes_used": ["h-4 w-4"],
+      "usage_count": 12,
+      "files": [
+        "app/(dashboard)/products/page.tsx",
+        "app/(dashboard)/categories/page.tsx",
+        "app/(dashboard)/audit/page.tsx",
+        "app/(admin)/admin/organizations/page.tsx",
+        "app/(admin)/admin/ai/page.tsx"
+      ]
+    },
+    {
+      "id": "menu",
+      "name": "Hamburger Menu",
+      "description": "Mobile menu toggle",
+      "category": "navigation",
+      "path": "M4 6h16M4 12h16M4 18h16",
+      "sizes_used": ["h-6 w-6"],
+      "usage_count": 3,
+      "files": [
+        "components/dashboard/header.tsx",
+        "app/(admin)/admin-layout-client.tsx"
+      ]
+    },
+    {
+      "id": "chevron-right",
+      "name": "Chevron Right",
+      "description": "Navigate forward or expand",
+      "category": "navigation",
+      "path": "M9 5l7 7-7 7",
+      "sizes_used": ["h-4 w-4", "h-5 w-5"],
+      "usage_count": 5,
+      "files": [
+        "components/dashboard/header.tsx",
+        "app/(admin)/admin/page.tsx",
+        "components/snapshots/version-comparison-modal.tsx"
+      ]
+    },
+    {
+      "id": "arrow-right",
+      "name": "Arrow Right",
+      "description": "Next or continue action",
+      "category": "navigation",
+      "path": "M13 7l5 5m0 0l-5 5m5-5H6",
+      "sizes_used": ["h-5 w-5"],
+      "usage_count": 8,
+      "files": [
+        "app/page.tsx",
+        "app/pricing/page.tsx",
+        "components/snapshots/version-comparison-modal.tsx"
+      ]
+    },
+    {
+      "id": "arrow-left",
+      "name": "Arrow Left",
+      "description": "Go back or return",
+      "category": "navigation",
+      "path": "M11 17l-5-5m0 0l5-5m-5 5h12",
+      "sizes_used": ["h-5 w-5"],
+      "usage_count": 3,
+      "files": [
+        "app/not-found.tsx",
+        "app/(admin)/admin-layout-client.tsx"
+      ]
+    },
+    {
+      "id": "check-circle",
+      "name": "Checkmark Circle",
+      "description": "Verified or confirmed success",
+      "category": "status",
+      "path": "M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z",
+      "sizes_used": ["h-12 w-12", "h-5 w-5"],
+      "usage_count": 3,
+      "files": [
+        "app/(auth)/verify-email/page.tsx",
+        "components/snapshots/version-comparison-modal.tsx"
+      ]
+    },
+    {
+      "id": "shield-check",
+      "name": "Shield Check",
+      "description": "Security or admin verification",
+      "category": "status",
+      "path": "M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z",
+      "sizes_used": ["h-5 w-5"],
+      "usage_count": 2,
+      "files": [
+        "app/(admin)/admin-layout-client.tsx"
+      ]
+    },
+    {
+      "id": "warning",
+      "name": "Warning Triangle",
+      "description": "Alert or warning message",
+      "category": "status",
+      "path": "M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z",
+      "sizes_used": ["h-5 w-5", "h-4 w-4"],
+      "usage_count": 6,
+      "files": [
+        "app/(admin)/admin/page.tsx",
+        "app/(admin)/admin-layout-client.tsx",
+        "app/error.tsx"
+      ]
+    },
+    {
+      "id": "loading-spinner",
+      "name": "Loading Spinner",
+      "description": "Loading state indicator",
+      "category": "status",
+      "type": "custom",
+      "note": "Uses circle + path animation, not simple stroke path",
+      "sizes_used": ["h-4 w-4", "h-8 w-8", "h-10 w-10"],
+      "usage_count": 25,
+      "files": [
+        "components/ui/button.tsx",
+        "app/(dashboard)/products/page.tsx",
+        "app/(dashboard)/categories/page.tsx",
+        "app/(admin)/admin/page.tsx",
+        "app/(admin)/admin/organizations/page.tsx"
+      ]
+    },
+    {
+      "id": "building",
+      "name": "Building/Organization",
+      "description": "Organization or company",
+      "category": "organization",
+      "path": "M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4",
+      "sizes_used": ["h-5 w-5"],
+      "usage_count": 4,
+      "files": [
+        "app/(admin)/admin/page.tsx",
+        "app/(admin)/admin/organizations/page.tsx",
+        "app/(admin)/admin-layout-client.tsx"
+      ]
+    },
+    {
+      "id": "users",
+      "name": "Users/Group",
+      "description": "Multiple users or team",
+      "category": "organization",
+      "path": "M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z",
+      "sizes_used": ["h-5 w-5"],
+      "usage_count": 2,
+      "files": [
+        "app/(admin)/admin/page.tsx"
+      ]
+    },
+    {
+      "id": "document",
+      "name": "Document/File",
+      "description": "Document or file icon",
+      "category": "features",
+      "path": "M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z",
+      "sizes_used": ["h-5 w-5"],
+      "usage_count": 4,
+      "files": [
+        "app/(admin)/admin/page.tsx",
+        "app/(admin)/admin/plans/page.tsx",
+        "app/(admin)/admin-layout-client.tsx"
+      ]
+    },
+    {
+      "id": "external-link",
+      "name": "External Link",
+      "description": "Open in new tab or window",
+      "category": "special",
+      "path": "M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14",
+      "sizes_used": ["h-4 w-4"],
+      "usage_count": 2,
+      "files": [
+        "components/dashboard/header.tsx",
+        "app/r/[slug]/page.tsx"
+      ]
+    },
+    {
+      "id": "sliders",
+      "name": "Sliders/Controls",
+      "description": "Settings or feature controls",
+      "category": "admin",
+      "path": "M12 6V4m0 2a2 2 0 100 4m0-4a2 2 0 110 4m-6 8a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4m6 6v10m6-2a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4",
+      "sizes_used": ["h-5 w-5"],
+      "usage_count": 2,
+      "files": [
+        "app/(admin)/admin/page.tsx",
+        "app/(admin)/admin/overrides/page.tsx",
+        "app/(admin)/admin-layout-client.tsx"
+      ]
+    },
+    {
+      "id": "tv-monitor",
+      "name": "TV/Monitor",
+      "description": "AI features or display screen",
+      "category": "admin",
+      "path": "M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z",
+      "sizes_used": ["h-5 w-5"],
+      "usage_count": 2,
+      "files": [
+        "app/(admin)/admin/page.tsx",
+        "app/(admin)/admin/ai/page.tsx",
+        "app/(admin)/admin-layout-client.tsx"
+      ]
+    },
+    {
+      "id": "book-open",
+      "name": "Book/Documentation",
+      "description": "Help or documentation",
+      "category": "admin",
+      "path": "M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253",
+      "sizes_used": ["h-4 w-4"],
+      "usage_count": 1,
+      "files": [
+        "app/(admin)/admin-layout-client.tsx"
+      ]
+    },
+    {
+      "id": "chart-bar",
+      "name": "Bar Chart",
+      "description": "Analytics or statistics",
+      "category": "admin",
+      "path": "M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z",
+      "sizes_used": ["h-5 w-5"],
+      "usage_count": 2,
+      "files": [
+        "app/(admin)/admin/page.tsx"
+      ]
+    },
+    {
+      "id": "arrow-up",
+      "name": "Arrow Up/Trend Up",
+      "description": "Upward trend or increase",
+      "category": "status",
+      "path": "M5 10l7-7m0 0l7 7m-7-7v18",
+      "sizes_used": ["h-4 w-4"],
+      "usage_count": 2,
+      "files": [
+        "app/(admin)/admin/page.tsx"
+      ]
+    },
+    {
+      "id": "exclamation-circle",
+      "name": "Exclamation Circle",
+      "description": "Information or alert",
+      "category": "status",
+      "path": "M12 8v4m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z",
+      "sizes_used": ["h-5 w-5"],
+      "usage_count": 2,
+      "files": [
+        "app/(admin)/admin/page.tsx",
+        "app/error.tsx"
+      ]
+    },
+    {
+      "id": "logout",
+      "name": "Logout/Sign Out",
+      "description": "Sign out or logout action",
+      "category": "actions",
+      "path": "M17 16l4-4m0 0l-4-4m4 4H7m6 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h4a3 3 0 013 3v1",
+      "sizes_used": ["h-5 w-5"],
+      "usage_count": 2,
+      "files": [
+        "components/dashboard/sidebar.tsx"
+      ]
+    },
+    {
+      "id": "qr-code",
+      "name": "QR Code",
+      "description": "QR code for menu access",
+      "category": "special",
+      "type": "custom",
+      "note": "Custom multi-rect SVG component, not a simple path",
+      "sizes_used": ["h-5 w-5", "h-6 w-6", "h-8 w-8"],
+      "usage_count": 5,
+      "files": [
+        "app/page.tsx",
+        "app/pricing/page.tsx"
+      ]
+    }
+  ]
+}

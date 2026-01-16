@@ -1,0 +1,10 @@
+{
+  "sourceType": "ideation",
+  "ideationType": "code_quality",
+  "ideaId": "cq-004",
+  "rationale": "UI consistency is compromised when the same pattern is implemented differently across files. If the design team wants to update error styling, 36 files must be modified. A shared Alert component also enables adding features like auto-dismiss, different severity levels, and accessibility improvements in one place.",
+  "category": "refactoring",
+  "codeQualitySeverity": "minor",
+  "priority": "medium",
+  "archivedAt": "2026-01-16T06:22:12.442Z"
+}

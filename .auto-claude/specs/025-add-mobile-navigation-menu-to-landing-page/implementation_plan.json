@@ -1,0 +1,217 @@
+{
+  "feature": "Add Mobile Navigation Menu to Landing Page",
+  "workflow_type": "simple",
+  "workflow_rationale": "This is a simple, single-file UI enhancement that only adds a hamburger menu to the existing navigation component. No database changes, no API changes, just frontend state management and responsive UI.",
+  "phases": [
+    {
+      "id": "phase-1-mobile-nav",
+      "name": "Add Mobile Hamburger Menu",
+      "type": "implementation",
+      "description": "Convert Navigation component to client component and add hamburger menu with slide-in panel for mobile users",
+      "depends_on": [],
+      "parallel_safe": true,
+      "subtasks": [
+        {
+          "id": "subtask-1-1",
+          "description": "Add mobile hamburger menu to Navigation component",
+          "service": "frontend",
+          "files_to_modify": [
+            "app/page.tsx"
+          ],
+          "files_to_create": [],
+          "patterns_from": [
+            "components/dashboard/sidebar.tsx"
+          ],
+          "implementation_details": {
+            "changes": [
+              "Add 'use client' directive to enable useState",
+              "Add useState for mobile menu open/close state",
+              "Replace mobile 'Başla' button with hamburger icon button",
+              "Add slide-in mobile menu panel with overlay",
+              "Include all navigation links (Özellikler, Fiyatlandırma, Giriş Yap) in mobile menu",
+              "Add Ücretsiz Dene CTA button in mobile menu",
+              "Add close button (X) in mobile menu header",
+              "Style with Tailwind animations and transitions"
+            ]
+          },
+          "verification": {
+            "type": "browser",
+            "url": "http://localhost:3000",
+            "checks": [
+              "On mobile viewport (<768px), hamburger icon is visible",
+              "Clicking hamburger opens slide-in menu from right",
+              "Mobile menu shows all navigation links",
+              "Clicking overlay closes the menu",
+              "Clicking X button closes the menu",
+              "Clicking a nav link closes the menu and navigates",
+              "Desktop navigation remains unchanged (hidden md:flex)",
+              "No console errors",
+              "Smooth animations work correctly"
+            ]
+          },
+          "status": "completed",
+          "notes": "Created client component components/landing/navigation.tsx with mobile hamburger menu. Menu slides in from right with backdrop overlay, includes close button (X) and closes on link clicks. Desktop navigation remains unchanged with hidden md:flex pattern. Follows sidebar.tsx pattern for transitions and z-index layering.",
+          "updated_at": "2026-01-15T10:05:27.695912+00:00"
+        }
+      ]
+    }
+  ],
+  "summary": {
+    "total_phases": 1,
+    "total_subtasks": 1,
+    "services_involved": [
+      "frontend"
+    ],
+    "estimated_time": "30-45 minutes",
+    "parallelism": {
+      "max_parallel_phases": 1,
+      "parallel_groups": [],
+      "recommended_workers": 1,
+      "speedup_estimate": "N/A - single sequential task"
+    },
+    "startup_command": "npm run dev"
+  },
+  "verification_strategy": {
+    "risk_level": "low",
+    "skip_validation": false,
+    "test_creation_phase": "post_implementation",
+    "test_types_required": [
+      "manual"
+    ],
+    "security_scanning_required": false,
+    "staging_deployment_required": false,
+    "acceptance_criteria": [
+      "Mobile users can access all navigation links via hamburger menu",
+      "Desktop navigation remains unchanged",
+      "Menu opens/closes smoothly with animations",
+      "No layout shift or console errors"
+    ],
+    "verification_steps": [
+      {
+        "name": "Visual Inspection",
+        "command": "npm run dev",
+        "expected_outcome": "Dev server starts on localhost:3000",
+        "type": "manual",
+        "required": true,
+        "blocking": true
+      },
+      {
+        "name": "Mobile Viewport Test",
+        "command": "Open browser DevTools, set viewport to 375px width",
+        "expected_outcome": "Hamburger menu visible, desktop nav hidden",
+        "type": "browser",
+        "required": true,
+        "blocking": true
+      },
+      {
+        "name": "Desktop Viewport Test",
+        "command": "Open browser DevTools, set viewport to 1024px width",
+        "expected_outcome": "Desktop nav visible, hamburger hidden",
+        "type": "browser",
+        "required": true,
+        "blocking": true
+      },
+      {
+        "name": "TypeScript Check",
+        "command": "npm run typecheck",
+        "expected_outcome": "No TypeScript errors",
+        "type": "test",
+        "required": true,
+        "blocking": true
+      },
+      {
+        "name": "Lint Check",
+        "command": "npm run lint",
+        "expected_outcome": "No linting errors",
+        "type": "test",
+        "required": true,
+        "blocking": false
+      }
+    ],
+    "reasoning": "Low risk UI-only change. Manual browser testing is sufficient since this is a visual/interactive feature. No business logic to unit test. TypeScript and linting ensure code quality."
+  },
+  "qa_acceptance": {
+    "unit_tests": {
+      "required": false,
+      "commands": [],
+      "minimum_coverage": null,
+      "reasoning": "Simple UI component with no complex logic - manual testing is more appropriate"
+    },
+    "integration_tests": {
+      "required": false,
+      "commands": [],
+      "services_to_test": []
+    },
+    "e2e_tests": {
+      "required": false,
+      "commands": [],
+      "flows": []
+    },
+    "browser_verification": {
+      "required": true,
+      "pages": [
+        {
+          "url": "http://localhost:3000/",
+          "checks": [
+            "renders",
+            "no-console-errors",
+            "mobile-menu-works",
+            "desktop-nav-unchanged"
+          ]
+        }
+      ]
+    },
+    "database_verification": {
+      "required": false,
+      "checks": []
+    }
+  },
+  "qa_signoff": null,
+  "status": "done",
+  "planStatus": "completed",
+  "updated_at": "2026-01-15T13:31:30.472Z",
+  "last_updated": "2026-01-15T10:05:27.695932+00:00",
+  "qa_iteration_history": [
+    {
+      "iteration": 1,
+      "status": "error",
+      "timestamp": "2026-01-15T10:07:19.782180+00:00",
+      "issues": [
+        {
+          "title": "QA error",
+          "description": "QA agent did not update implementation_plan.json"
+        }
+      ]
+    },
+    {
+      "iteration": 2,
+      "status": "error",
+      "timestamp": "2026-01-15T10:07:22.363014+00:00",
+      "issues": [
+        {
+          "title": "QA error",
+          "description": "QA agent did not update implementation_plan.json (No tools were used by agent)"
+        }
+      ]
+    },
+    {
+      "iteration": 3,
+      "status": "error",
+      "timestamp": "2026-01-15T10:07:25.326705+00:00",
+      "issues": [
+        {
+          "title": "QA error",
+          "description": "QA agent did not update implementation_plan.json (No tools were used by agent)"
+        }
+      ]
+    }
+  ],
+  "qa_stats": {
+    "total_iterations": 3,
+    "last_iteration": 3,
+    "last_status": "error",
+    "issues_by_type": {
+      "unknown": 3
+    }
+  }
+}

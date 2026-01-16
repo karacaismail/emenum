@@ -1,0 +1,34 @@
+{
+  "files_to_modify": {
+    "frontend": ["app/page.tsx"]
+  },
+  "files_to_reference": [
+    "components/ui/modal.tsx",
+    "components/ui/button.tsx"
+  ],
+  "patterns": {
+    "icon_pattern": "Inline SVG components (see QRCodeIcon in app/page.tsx lines 35-54)",
+    "state_management": "React useState for component state",
+    "styling": "Tailwind CSS with responsive utilities (md: breakpoint)",
+    "overlay_pattern": "Modal component uses portal, overlay backdrop, escape key handling, body scroll lock",
+    "server_vs_client": "Page components are server by default, need 'use client' for interactivity"
+  },
+  "existing_implementations": {
+    "description": "Navigation component exists at lines 338-382 in app/page.tsx. Desktop nav shows all links (hidden md:flex). Mobile shows only 'Başla' button.",
+    "relevant_files": [
+      "app/page.tsx",
+      "components/ui/modal.tsx"
+    ]
+  },
+  "technical_notes": {
+    "current_navigation": "Lines 338-382 in app/page.tsx",
+    "navigation_links": [
+      "Özellikler (/features)",
+      "Fiyatlandırma (/pricing)",
+      "Giriş Yap (/login)",
+      "Ücretsiz Dene (/register)"
+    ],
+    "mobile_breakpoint": "md (768px)",
+    "needs_client_component": true
+  }
+}

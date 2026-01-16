@@ -1,0 +1,52 @@
+{
+  "files_to_modify": {},
+  "files_to_create": {
+    "frontend": [
+      "docs/COMPONENTS.md",
+      "docs/UI_COMPONENTS.md",
+      "docs/DESIGN_TOKENS.md"
+    ]
+  },
+  "files_to_reference": [
+    "components/ui/button.tsx",
+    "components/ui/card.tsx",
+    "components/ui/input.tsx",
+    "components/ui/modal.tsx",
+    "components/dashboard/header.tsx",
+    "components/dashboard/sidebar.tsx",
+    "components/providers/auth-provider.tsx",
+    "components/providers/providers.tsx",
+    "docs/ROUTES.md"
+  ],
+  "patterns": {
+    "component_pattern": "All UI components use forwardRef, TypeScript interfaces with JSDoc comments, and include inline usage examples in code",
+    "documentation_pattern": "Existing docs use markdown in docs/ folder with clear structure (see docs/ROUTES.md)",
+    "prop_documentation": "Props are documented inline with /** */ JSDoc comments describing their purpose",
+    "styling_pattern": "Tailwind CSS with dark mode support, custom color tokens (primary, secondary), responsive design",
+    "variant_pattern": "Components support multiple variants (primary, secondary, outline, ghost, danger) and sizes (sm, md, lg)"
+  },
+  "existing_implementations": {
+    "description": "Components already have inline JSDoc with basic examples but lack comprehensive external documentation",
+    "relevant_files": [
+      "components/ui/button.tsx - Has ButtonProps interface with JSDoc, variantStyles, sizeStyles",
+      "components/ui/card.tsx - Card with sub-components (CardHeader, CardFooter, CardContent)",
+      "components/ui/input.tsx - Input and Textarea with label, error, helperText support",
+      "components/ui/modal.tsx - Modal with ConfirmModal variant, portal rendering",
+      "docs/ROUTES.md - Example of documentation style to follow"
+    ]
+  },
+  "design_tokens": {
+    "colors": {
+      "primary": "primary-500, primary-600, primary-700, primary-800",
+      "secondary": "secondary-100 through secondary-900",
+      "red": "red-400 through red-900 (for errors and danger states)",
+      "yellow": "yellow-600, yellow-700 (for warnings)"
+    },
+    "sizes": {
+      "button": "sm: px-3 py-1.5, md: px-4 py-2, lg: px-6 py-3",
+      "text": "sm: text-sm, base: text-base, lg: text-lg",
+      "spacing": "Standard Tailwind spacing scale"
+    },
+    "dark_mode": "All components support dark mode with dark: prefix variants"
+  }
+}

@@ -1,0 +1,25 @@
+{
+  "discovered_files": {
+    "app/(dashboard)/products/page.tsx": {
+      "description": "Products page with complex CRUD operations, price ledger integration (immutable), search/filter functionality, and ProductListItem sub-component. Includes three files: main list page, new product page, and edit product page.",
+      "category": "component",
+      "discovered_at": "2026-01-14T20:03:44.295888+00:00"
+    },
+    "app/(dashboard)/categories/page.tsx": {
+      "description": "Categories page with hierarchical tree structure using recursive CategoryTreeNode component. Includes Turkish slug generation, parent-child relationship management, and prevents circular dependencies.",
+      "category": "component",
+      "discovered_at": "2026-01-14T20:03:44.374009+00:00"
+    },
+    "app/(dashboard)/tables/page.tsx": {
+      "description": "Tables page with QR code generation for restaurant tables. Supports multiple QR formats (SVG/PNG/PDF), table status management (empty/occupied/service_needed), and statistics display. Uses TableListItem sub-component.",
+      "category": "component",
+      "discovered_at": "2026-01-14T20:03:44.432211+00:00"
+    },
+    "app/(admin)/admin/plans/page.tsx": {
+      "description": "Plans management page (admin-only) with dynamic plan-feature system. Supports feature catalog with boolean/limit types, plan-feature assignments, and subscriber tracking. Uses tab-based UI for plans and features.",
+      "category": "component",
+      "discovered_at": "2026-01-14T20:03:44.489639+00:00"
+    }
+  },
+  "last_updated": "2026-01-14T20:03:44.489653+00:00"
+}

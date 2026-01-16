@@ -1,0 +1,28 @@
+{
+  "files_to_modify": {
+    "frontend": ["app/page.tsx"]
+  },
+  "files_to_reference": [
+    "components/dashboard/sidebar.tsx",
+    "components/dashboard/header.tsx"
+  ],
+  "patterns": {
+    "mobile_menu_pattern": "Use useState for isOpen state, transform transitions for slide-in, backdrop overlay with click-to-close",
+    "responsive_pattern": "Use md: breakpoint for desktop, default styles for mobile",
+    "icon_pattern": "Inline SVG icons with stroke-based design",
+    "styling_pattern": "Tailwind utility classes with dark mode support"
+  },
+  "existing_implementations": {
+    "description": "Dashboard already has mobile sidebar with hamburger menu implementation",
+    "relevant_files": [
+      "components/dashboard/sidebar.tsx",
+      "components/dashboard/header.tsx"
+    ],
+    "key_features": [
+      "Mobile backdrop overlay (fixed inset-0 z-40 bg-black/50)",
+      "Slide-in animation using transform transitions",
+      "Hamburger icon (3 horizontal lines SVG)",
+      "Close button (X icon)"
+    ]
+  }
+}

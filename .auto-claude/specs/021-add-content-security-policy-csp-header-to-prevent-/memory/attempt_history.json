@@ -1,0 +1,33 @@
+{
+  "subtasks": {
+    "subtask-1-1": {
+      "attempts": [
+        {
+          "session": 2,
+          "timestamp": "2026-01-14T18:57:13.023522",
+          "approach": "Implemented: Add Content-Security-Policy header to next.config.ts",
+          "success": true,
+          "error": null
+        }
+      ],
+      "status": "completed"
+    },
+    "subtask-1-2": {
+      "attempts": [
+        {
+          "session": 3,
+          "timestamp": "2026-01-14T19:05:10.013281",
+          "approach": "Implemented: Verify application functionality with CSP enabled",
+          "success": true,
+          "error": null
+        }
+      ],
+      "status": "completed"
+    }
+  },
+  "stuck_subtasks": [],
+  "metadata": {
+    "created_at": "2026-01-14T18:51:00.744033",
+    "last_updated": "2026-01-14T19:05:10.013313"
+  }
+}

@@ -1,0 +1,228 @@
+{
+  "file_path": ".gitignore",
+  "main_branch_history": [],
+  "task_views": {
+    "001-ozon-e-menum-net-vibe-coding-v1": {
+      "task_id": "001-ozon-e-menum-net-vibe-coding-v1",
+      "branch_point": {
+        "commit_hash": "2b028be920d271c6e53b44319d1c871dc3d27076",
+        "content": "",
+        "timestamp": "2026-01-14T09:55:04.472899"
+      },
+      "worktree_state": {
+        "content": "# Dependencies\n/node_modules\n/.pnp\n.pnp.js\n.yarn/install-state.gz\n\n# Testing\n/coverage\n\n# Next.js\n/.next/\n/out/\n\n# Production\n/build\n\n# Misc\n.DS_Store\n*.pem\n\n# Debug\nnpm-debug.log*\nyarn-debug.log*\nyarn-error.log*\n\n# Local env files\n.env*.local\n.env\n\n# Vercel\n.vercel\n\n# TypeScript\n*.tsbuildinfo\nnext-env.d.ts\n\n# IDE\n.idea/\n.vscode/\n*.swp\n*.swo\n\n# Supabase\n.supabase/\n\n# OS files\nThumbs.db\n\n# Turbopack\n.turbo/\n",
+        "last_modified": "2026-01-14T09:55:05.848439"
+      },
+      "task_intent": {
+        "title": "001-ozon-e-menum-net-vibe-coding-v1",
+        "description": "",
+        "from_plan": false
+      },
+      "commits_behind_main": 0,
+      "status": "active",
+      "merged_at": null
+    },
+    "037-add-search-to-categories-page": {
+      "task_id": "037-add-search-to-categories-page",
+      "branch_point": {
+        "commit_hash": "2b028be920d271c6e53b44319d1c871dc3d27076",
+        "content": "",
+        "timestamp": "2026-01-14T18:38:07.376896"
+      },
+      "worktree_state": {
+        "content": "# Dependencies\nnode_modules/\n.pnpm-store/\n\n# Environment (KRITIK - ASLA COMMIT ETME!)\n.env\n.env.local\n.env.*.local\n.env.development.local\n.env.test.local\n.env.production.local\n\n# Next.js build\n.next/\nout/\nbuild/\n.swc/\n\n# Debug logs\nnpm-debug.log*\nyarn-debug.log*\nyarn-error.log*\n.pnpm-debug.log*\n\n# IDE\n.idea/\n.vscode/\n*.swp\n*.swo\n*.sublime-workspace\n*.sublime-project\n\n# OS files\n.DS_Store\n.DS_Store?\n._*\n.Spotlight-V100\n.Trashes\nehthumbs.db\nThumbs.db\n\n# Supabase local\n.supabase/\n\n# Test outputs\ncoverage/\n.nyc_output/\n\n# Auto-claude / AI tools\n.auto-claude/\n.auto-claude-status\n\n# Vercel\n.vercel/\n\n# TypeScript\n*.tsbuildinfo\nnext-env.d.ts\n\n# Optional: Local config\n*.local\n",
+        "last_modified": "2026-01-15T15:07:08.870845"
+      },
+      "task_intent": {
+        "title": "037-add-search-to-categories-page",
+        "description": "Add search functionality to the categories page, allowing users to filter categories by name. This mirrors the existing search pattern already implemented in the products page.",
+        "from_plan": true
+      },
+      "commits_behind_main": 0,
+      "status": "active",
+      "merged_at": null
+    },
+    "032-add-mobile-navigation-menu-to-landing-page": {
+      "task_id": "032-add-mobile-navigation-menu-to-landing-page",
+      "branch_point": {
+        "commit_hash": "2b028be920d271c6e53b44319d1c871dc3d27076",
+        "content": "",
+        "timestamp": "2026-01-14T18:38:22.963353"
+      },
+      "worktree_state": {
+        "content": "# Dependencies\nnode_modules/\n.pnpm-store/\n\n# Environment (KRITIK - ASLA COMMIT ETME!)\n.env\n.env.local\n.env.*.local\n.env.development.local\n.env.test.local\n.env.production.local\n\n# Next.js build\n.next/\nout/\nbuild/\n.swc/\n\n# Debug logs\nnpm-debug.log*\nyarn-debug.log*\nyarn-error.log*\n.pnpm-debug.log*\n\n# IDE\n.idea/\n.vscode/\n*.swp\n*.swo\n*.sublime-workspace\n*.sublime-project\n\n# OS files\n.DS_Store\n.DS_Store?\n._*\n.Spotlight-V100\n.Trashes\nehthumbs.db\nThumbs.db\n\n# Supabase local\n.supabase/\n\n# Test outputs\ncoverage/\n.nyc_output/\n\n# Auto-claude / AI tools\n.auto-claude/\n.auto-claude-status\n\n# Vercel\n.vercel/\n\n# TypeScript\n*.tsbuildinfo\nnext-env.d.ts\n\n# Optional: Local config\n*.local\n",
+        "last_modified": "2026-01-15T15:05:31.840676"
+      },
+      "task_intent": {
+        "title": "032-add-mobile-navigation-menu-to-landing-page",
+        "description": "The landing page navigation on mobile devices only shows a 'Basla' button, hiding all other navigation links. Add a proper hamburger menu for mobile users.",
+        "from_plan": true
+      },
+      "commits_behind_main": 0,
+      "status": "active",
+      "merged_at": null
+    },
+    "031-add-mobile-navigation-menu-to-landing-page": {
+      "task_id": "031-add-mobile-navigation-menu-to-landing-page",
+      "branch_point": {
+        "commit_hash": "2b028be920d271c6e53b44319d1c871dc3d27076",
+        "content": "",
+        "timestamp": "2026-01-14T18:50:42.638180"
+      },
+      "worktree_state": {
+        "content": "# Dependencies\nnode_modules/\n.pnpm-store/\n\n# Environment (KRITIK - ASLA COMMIT ETME!)\n.env\n.env.local\n.env.*.local\n.env.development.local\n.env.test.local\n.env.production.local\n\n# Next.js build\n.next/\nout/\nbuild/\n.swc/\n\n# Debug logs\nnpm-debug.log*\nyarn-debug.log*\nyarn-error.log*\n.pnpm-debug.log*\n\n# IDE\n.idea/\n.vscode/\n*.swp\n*.swo\n*.sublime-workspace\n*.sublime-project\n\n# OS files\n.DS_Store\n.DS_Store?\n._*\n.Spotlight-V100\n.Trashes\nehthumbs.db\nThumbs.db\n\n# Supabase local\n.supabase/\n\n# Test outputs\ncoverage/\n.nyc_output/\n\n# Auto-claude / AI tools\n.auto-claude/\n.auto-claude-status\n\n# Vercel\n.vercel/\n\n# TypeScript\n*.tsbuildinfo\nnext-env.d.ts\n\n# Optional: Local config\n*.local\n",
+        "last_modified": "2026-01-15T15:03:39.251166"
+      },
+      "task_intent": {
+        "title": "031-add-mobile-navigation-menu-to-landing-page",
+        "description": "The landing page navigation on mobile devices only shows a 'Basla' button, hiding all other navigation links. Add a proper hamburger menu for mobile users.",
+        "from_plan": true
+      },
+      "commits_behind_main": 0,
+      "status": "active",
+      "merged_at": null
+    },
+    "040-add-bulk-qr-code-download-for-all-tables": {
+      "task_id": "040-add-bulk-qr-code-download-for-all-tables",
+      "branch_point": {
+        "commit_hash": "2b028be920d271c6e53b44319d1c871dc3d27076",
+        "content": "",
+        "timestamp": "2026-01-14T18:53:11.069414"
+      },
+      "worktree_state": {
+        "content": "# Dependencies\nnode_modules/\n.pnpm-store/\n\n# Environment (KRITIK - ASLA COMMIT ETME!)\n.env\n.env.local\n.env.*.local\n.env.development.local\n.env.test.local\n.env.production.local\n\n# Next.js build\n.next/\nout/\nbuild/\n.swc/\n\n# Debug logs\nnpm-debug.log*\nyarn-debug.log*\nyarn-error.log*\n.pnpm-debug.log*\n\n# IDE\n.idea/\n.vscode/\n*.swp\n*.swo\n*.sublime-workspace\n*.sublime-project\n\n# OS files\n.DS_Store\n.DS_Store?\n._*\n.Spotlight-V100\n.Trashes\nehthumbs.db\nThumbs.db\n\n# Supabase local\n.supabase/\n\n# Test outputs\ncoverage/\n.nyc_output/\n\n# Auto-claude / AI tools\n.auto-claude/\n.auto-claude-status\n\n# Vercel\n.vercel/\n\n# TypeScript\n*.tsbuildinfo\nnext-env.d.ts\n\n# Optional: Local config\n*.local\n",
+        "last_modified": "2026-01-14T18:53:20.459943"
+      },
+      "task_intent": {
+        "title": "040-add-bulk-qr-code-download-for-all-tables",
+        "description": "",
+        "from_plan": false
+      },
+      "commits_behind_main": 0,
+      "status": "active",
+      "merged_at": null
+    },
+    "008-optimize-authprovider-to-avoid-unnecessary-re-fetc": {
+      "task_id": "008-optimize-authprovider-to-avoid-unnecessary-re-fetc",
+      "branch_point": {
+        "commit_hash": "2b028be920d271c6e53b44319d1c871dc3d27076",
+        "content": "",
+        "timestamp": "2026-01-15T02:37:17.742478"
+      },
+      "worktree_state": {
+        "content": "# Auto Claude data directory\n.auto-claude/\n",
+        "last_modified": "2026-01-15T14:52:29.248080"
+      },
+      "task_intent": {
+        "title": "008-optimize-authprovider-to-avoid-unnecessary-re-fetc",
+        "description": "",
+        "from_plan": false
+      },
+      "commits_behind_main": 5,
+      "status": "active",
+      "merged_at": null
+    },
+    "005-extract-duplicated-crud-state-management-into-reus": {
+      "task_id": "005-extract-duplicated-crud-state-management-into-reus",
+      "branch_point": {
+        "commit_hash": "2b028be920d271c6e53b44319d1c871dc3d27076",
+        "content": "",
+        "timestamp": "2026-01-15T06:33:12.581832"
+      },
+      "worktree_state": {
+        "content": "# Dependencies\nnode_modules/\n.pnpm-store/\n\n# Environment (KRITIK - ASLA COMMIT ETME!)\n.env\n.env.local\n.env.*.local\n.env.development.local\n.env.test.local\n.env.production.local\n\n# Next.js build\n.next/\nout/\nbuild/\n.swc/\n\n# Debug logs\nnpm-debug.log*\nyarn-debug.log*\nyarn-error.log*\n.pnpm-debug.log*\n\n# IDE\n.idea/\n.vscode/\n*.swp\n*.swo\n*.sublime-workspace\n*.sublime-project\n\n# OS files\n.DS_Store\n.DS_Store?\n._*\n.Spotlight-V100\n.Trashes\nehthumbs.db\nThumbs.db\n\n# Supabase local\n.supabase/\n\n# Test outputs\ncoverage/\n.nyc_output/\n\n# Auto-claude / AI tools\n.auto-claude/\n.auto-claude-status\n\n# Vercel\n.vercel/\n\n# TypeScript\n*.tsbuildinfo\nnext-env.d.ts\n\n# Optional: Local config\n*.local\n\n# Auto Claude generated files\n.auto-claude-security.json\n.claude_settings.json\n.worktrees/\n.security-key\nlogs/security/\n",
+        "last_modified": "2026-01-15T16:04:15.539805"
+      },
+      "task_intent": {
+        "title": "005-extract-duplicated-crud-state-management-into-reus",
+        "description": "",
+        "from_plan": false
+      },
+      "commits_behind_main": 5,
+      "status": "active",
+      "merged_at": null
+    },
+    "002-add-unit-test-coverage-for-dashboard-page-componen": {
+      "task_id": "002-add-unit-test-coverage-for-dashboard-page-componen",
+      "branch_point": {
+        "commit_hash": "2b028be920d271c6e53b44319d1c871dc3d27076",
+        "content": "",
+        "timestamp": "2026-01-15T14:04:12.520457"
+      },
+      "worktree_state": {
+        "content": "# Dependencies\nnode_modules/\n.pnpm-store/\n\n# Environment (KRITIK - ASLA COMMIT ETME!)\n.env\n.env.local\n.env.*.local\n.env.development.local\n.env.test.local\n.env.production.local\n\n# Next.js build\n.next/\nout/\nbuild/\n.swc/\n\n# Debug logs\nnpm-debug.log*\nyarn-debug.log*\nyarn-error.log*\n.pnpm-debug.log*\n\n# IDE\n.idea/\n.vscode/\n*.swp\n*.swo\n*.sublime-workspace\n*.sublime-project\n\n# OS files\n.DS_Store\n.DS_Store?\n._*\n.Spotlight-V100\n.Trashes\nehthumbs.db\nThumbs.db\n\n# Supabase local\n.supabase/\n\n# Test outputs\ncoverage/\n.nyc_output/\n\n# Auto-claude / AI tools\n.auto-claude/\n.auto-claude-status\n\n# Vercel\n.vercel/\n\n# TypeScript\n*.tsbuildinfo\nnext-env.d.ts\n\n# Optional: Local config\n*.local\n",
+        "last_modified": "2026-01-15T16:20:44.266172"
+      },
+      "task_intent": {
+        "title": "002-add-unit-test-coverage-for-dashboard-page-componen",
+        "description": "",
+        "from_plan": false
+      },
+      "commits_behind_main": 5,
+      "status": "active",
+      "merged_at": null
+    },
+    "028-add-mobile-navigation-menu-to-landing-page": {
+      "task_id": "028-add-mobile-navigation-menu-to-landing-page",
+      "branch_point": {
+        "commit_hash": "2b028be920d271c6e53b44319d1c871dc3d27076",
+        "content": "",
+        "timestamp": "2026-01-15T13:21:43.550879"
+      },
+      "worktree_state": {
+        "content": "# Auto Claude data directory\n.auto-claude/\n",
+        "last_modified": "2026-01-15T15:13:32.514184"
+      },
+      "task_intent": {
+        "title": "028-add-mobile-navigation-menu-to-landing-page",
+        "description": "",
+        "from_plan": false
+      },
+      "commits_behind_main": 5,
+      "status": "active",
+      "merged_at": null
+    },
+    "034-create-reusable-select-component-for-consistent-fo": {
+      "task_id": "034-create-reusable-select-component-for-consistent-fo",
+      "branch_point": {
+        "commit_hash": "2b028be920d271c6e53b44319d1c871dc3d27076",
+        "content": "",
+        "timestamp": "2026-01-15T14:05:37.956433"
+      },
+      "worktree_state": {
+        "content": "# Dependencies\nnode_modules/\n.pnpm-store/\n\n# Environment (KRITIK - ASLA COMMIT ETME!)\n.env\n.env.local\n.env.*.local\n.env.development.local\n.env.test.local\n.env.production.local\n\n# Next.js build\n.next/\nout/\nbuild/\n.swc/\n\n# Debug logs\nnpm-debug.log*\nyarn-debug.log*\nyarn-error.log*\n.pnpm-debug.log*\n\n# IDE\n.idea/\n.vscode/\n*.swp\n*.swo\n*.sublime-workspace\n*.sublime-project\n\n# OS files\n.DS_Store\n.DS_Store?\n._*\n.Spotlight-V100\n.Trashes\nehthumbs.db\nThumbs.db\n\n# Supabase local\n.supabase/\n\n# Test outputs\ncoverage/\n.nyc_output/\n\n# Auto-claude / AI tools\n.auto-claude/\n.auto-claude-status\n\n# Vercel\n.vercel/\n\n# TypeScript\n*.tsbuildinfo\nnext-env.d.ts\n\n# Optional: Local config\n*.local\n",
+        "last_modified": "2026-01-15T14:05:43.741873"
+      },
+      "task_intent": {
+        "title": "034-create-reusable-select-component-for-consistent-fo",
+        "description": "",
+        "from_plan": false
+      },
+      "commits_behind_main": 5,
+      "status": "active",
+      "merged_at": null
+    },
+    "026-add-mobile-navigation-menu-to-landing-page": {
+      "task_id": "026-add-mobile-navigation-menu-to-landing-page",
+      "branch_point": {
+        "commit_hash": "2b028be920d271c6e53b44319d1c871dc3d27076",
+        "content": "",
+        "timestamp": "2026-01-15T14:15:55.210168"
+      },
+      "worktree_state": {
+        "content": "# Dependencies\nnode_modules/\n.pnpm-store/\n\n# Environment (KRITIK - ASLA COMMIT ETME!)\n.env\n.env.local\n.env.*.local\n.env.development.local\n.env.test.local\n.env.production.local\n\n# Next.js build\n.next/\nout/\nbuild/\n.swc/\n\n# Debug logs\nnpm-debug.log*\nyarn-debug.log*\nyarn-error.log*\n.pnpm-debug.log*\n\n# IDE\n.idea/\n.vscode/\n*.swp\n*.swo\n*.sublime-workspace\n*.sublime-project\n\n# OS files\n.DS_Store\n.DS_Store?\n._*\n.Spotlight-V100\n.Trashes\nehthumbs.db\nThumbs.db\n\n# Supabase local\n.supabase/\n\n# Test outputs\ncoverage/\n.nyc_output/\n\n# Auto-claude / AI tools\n.auto-claude/\n.auto-claude-status\n\n# Vercel\n.vercel/\n\n# TypeScript\n*.tsbuildinfo\nnext-env.d.ts\n\n# Optional: Local config\n*.local\n",
+        "last_modified": "2026-01-15T14:16:01.001286"
+      },
+      "task_intent": {
+        "title": "026-add-mobile-navigation-menu-to-landing-page",
+        "description": "",
+        "from_plan": false
+      },
+      "commits_behind_main": 5,
+      "status": "active",
+      "merged_at": null
+    }
+  },
+  "created_at": "2026-01-14T09:55:05.133138",
+  "last_updated": "2026-01-15T14:15:56.764132"
+}

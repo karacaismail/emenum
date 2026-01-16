@@ -1,0 +1,86 @@
+{
+  "task_overview": {
+    "problem": "175+ inline SVG icons are scattered across 25+ files with duplicate definitions and inconsistent sizing (h-4 w-4, h-5 w-5, h-6 w-6) and stroke widths",
+    "goal": "Create a centralized, reusable icon component system",
+    "benefits": [
+      "Reduce bundle size by eliminating duplication",
+      "Enable consistent iconography across the application",
+      "Simplify icon updates (change once, apply everywhere)",
+      "Support theming and customization",
+      "Enable tree-shaking optimizations"
+    ]
+  },
+  "files_to_modify": {
+    "frontend": [
+      "app/(admin)/admin-layout-client.tsx",
+      "app/(admin)/admin/ai/page.tsx",
+      "app/(admin)/admin/organizations/page.tsx",
+      "app/(admin)/admin/overrides/page.tsx",
+      "app/(admin)/admin/page.tsx",
+      "app/(admin)/admin/plans/page.tsx",
+      "app/(dashboard)/audit/page.tsx",
+      "app/(dashboard)/categories/page.tsx",
+      "app/(dashboard)/dashboard-layout-client.tsx",
+      "app/(dashboard)/dashboard/dashboard-client.tsx",
+      "app/(dashboard)/products/page.tsx",
+      "app/(dashboard)/products/[id]/page.tsx",
+      "app/(dashboard)/products/new/page.tsx",
+      "app/(dashboard)/settings/page.tsx",
+      "app/(dashboard)/snapshots/page.tsx",
+      "app/(dashboard)/tables/page.tsx",
+      "app/(dashboard)/waiter/page.tsx",
+      "app/features/page.tsx",
+      "app/error.tsx",
+      "app/not-found.tsx"
+    ]
+  },
+  "files_to_create": [
+    "components/ui/icon.tsx",
+    "components/ui/icons/index.ts",
+    "components/ui/icons/types.ts"
+  ],
+  "files_to_reference": [
+    "components/ui/button.tsx",
+    "components/ui/card.tsx"
+  ],
+  "patterns": {
+    "component_pattern": "React functional components with TypeScript",
+    "ui_component_location": "components/ui/ directory for reusable UI elements",
+    "client_components": "Use 'use client' directive for interactive components",
+    "styling": "Tailwind CSS utility classes with dark mode support",
+    "export_pattern": "Export from index.ts for clean imports"
+  },
+  "existing_implementations": {
+    "description": "Project has inline SVG icons with Tailwind classes (h-4 w-4, h-5 w-5, h-6 w-6) and varying strokeWidth values",
+    "relevant_files": [
+      "app/(dashboard)/products/page.tsx - Contains eye, eye-off, edit, delete, plus icons",
+      "components/ui/button.tsx - Shows UI component pattern",
+      "components/ui/card.tsx - Shows UI component structure"
+    ]
+  },
+  "common_icons_found": [
+    "edit",
+    "delete",
+    "trash",
+    "plus",
+    "check",
+    "eye",
+    "eye-off",
+    "image-placeholder",
+    "loading-spinner",
+    "search",
+    "menu",
+    "close",
+    "chevron-down",
+    "chevron-up",
+    "chevron-left",
+    "chevron-right",
+    "arrow-left",
+    "arrow-right"
+  ],
+  "icon_sizing_variations": [
+    "h-4 w-4",
+    "h-5 w-5",
+    "h-6 w-6"
+  ]
+}

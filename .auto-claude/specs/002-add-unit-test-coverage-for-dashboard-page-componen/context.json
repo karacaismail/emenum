@@ -1,0 +1,197 @@
+{
+  "task_description": "Add unit test coverage for dashboard and admin page components focusing on products, categories, tables, and plans pages. These components contain complex business logic for CRUD operations, form validation, and state management that should be tested in isolation.",
+  "existing_test_infrastructure": {
+    "framework": "vitest",
+    "integration_tests": "19 test files exist",
+    "unit_tests": "Missing for dashboard/admin components",
+    "testing_library": "@testing-library/react (assumed)"
+  },
+  "components_to_test": {
+    "products_page": {
+      "files": [
+        "app/(dashboard)/products/page.tsx",
+        "app/(dashboard)/products/new/page.tsx",
+        "app/(dashboard)/products/[id]/page.tsx"
+      ],
+      "main_component": "ProductsPage (app/(dashboard)/products/page.tsx)",
+      "sub_components": [
+        "ProductListItem - renders individual product in list",
+        "ProductForm - handles create/edit forms in both new and edit pages"
+      ],
+      "functionality": [
+        "List products with filtering by search and category",
+        "Create new products with price ledger integration",
+        "Edit existing products with immutable price history",
+        "Delete products with confirmation",
+        "Toggle product visibility",
+        "Form validation for product fields",
+        "Allergen management (comma-separated list)",
+        "Image URL support with preview",
+        "Category association"
+      ],
+      "state_management": [
+        "fetchProducts - fetches products with current prices and category details",
+        "handleSubmit - creates/updates products and manages price ledger",
+        "handleToggleVisibility - toggles product visibility",
+        "handleDeleteConfirm - deletes products",
+        "Search and filter state (searchQuery, filterCategory)"
+      ],
+      "business_logic": [
+        "Immutable price ledger pattern (price changes create new entries)",
+        "Price change detection (only creates ledger entry if price changed)",
+        "Allergen parsing from comma-separated string to array",
+        "Product-price-category data joining"
+      ],
+      "dependencies": [
+        "Supabase client for database operations",
+        "useAuth hook for organization context",
+        "formatCurrency utility function"
+      ],
+      "complexity": "high"
+    },
+    "categories_page": {
+      "files": [
+        "app/(dashboard)/categories/page.tsx"
+      ],
+      "main_component": "CategoriesPage",
+      "sub_components": [
+        "CategoryTreeNode - recursive component for hierarchical category display"
+      ],
+      "functionality": [
+        "List categories in hierarchical tree structure",
+        "Create new categories with optional parent",
+        "Edit existing categories",
+        "Delete categories (checks for children first)",
+        "Toggle category visibility",
+        "Auto-generate URL slugs from category names",
+        "Sort categories by sort_order",
+        "Support Turkish characters in slug generation"
+      ],
+      "state_management": [
+        "fetchCategories - fetches all categories sorted by sort_order",
+        "handleSubmit - creates/updates categories",
+        "handleToggleVisibility - toggles category visibility",
+        "handleDeleteConfirm - deletes categories with child check"
+      ],
+      "business_logic": [
+        "generateSlug - converts Turkish text to URL-safe slugs",
+        "Hierarchical parent-child relationship management",
+        "Prevent deleting categories with children",
+        "Prevent circular parent-child relationships in edit mode",
+        "getAvailableParents - filters descendant categories from parent dropdown"
+      ],
+      "dependencies": [
+        "Supabase client for database operations",
+        "useAuth hook for organization context"
+      ],
+      "complexity": "medium-high"
+    },
+    "tables_page": {
+      "files": [
+        "app/(dashboard)/tables/page.tsx"
+      ],
+      "main_component": "TablesPage",
+      "sub_components": [
+        "TableListItem - renders table with QR code preview and status"
+      ],
+      "functionality": [
+        "List restaurant tables with status indicators",
+        "Create new tables with auto-generated QR codes",
+        "Edit table numbers",
+        "Delete tables",
+        "Change table status (empty/occupied/service_needed)",
+        "Generate and preview QR codes",
+        "Download QR codes in multiple formats (SVG, PNG, PDF)",
+        "Display table statistics by status"
+      ],
+      "state_management": [
+        "fetchTables - fetches all tables sorted by table_number",
+        "handleSubmit - creates/updates tables",
+        "handleStatusChange - updates table status",
+        "handleDeleteConfirm - deletes tables",
+        "handleDownloadQR - generates and downloads QR codes in various formats"
+      ],
+      "business_logic": [
+        "QR code generation with organization slug and table UUID",
+        "Status-based color coding and badges",
+        "Table statistics calculation (empty, occupied, service_needed counts)",
+        "QR preview loading on demand",
+        "File download handling for different formats"
+      ],
+      "dependencies": [
+        "Supabase client for database operations",
+        "useAuth hook for organization context",
+        "QR code generation library (generateQRCodeSVG, generateQRCodePNG, generateQRCodePDF)"
+      ],
+      "complexity": "medium"
+    },
+    "plans_page": {
+      "files": [
+        "app/(admin)/admin/plans/page.tsx"
+      ],
+      "main_component": "PlansPage",
+      "sub_components": [
+        "StatusBadge - displays plan active/inactive status",
+        "FeatureTypeBadge - displays feature type (boolean/limit)"
+      ],
+      "functionality": [
+        "List all subscription plans with feature counts and subscriber counts",
+        "Create/edit plans with pricing and sort order",
+        "Toggle plan active/inactive status",
+        "Manage feature catalog (create/edit features)",
+        "Assign features to plans with boolean or limit values",
+        "Tab-based UI for plans and features",
+        "Feature type support: boolean (on/off) and limit (numeric)",
+        "Dynamic plan system (no hard-coded plan checks)"
+      ],
+      "state_management": [
+        "fetchPlans - fetches plans with feature and subscriber counts",
+        "fetchFeatures - fetches all features from catalog",
+        "fetchPlanFeatures - fetches features assigned to specific plan",
+        "handlePlanSubmit - creates/updates plans",
+        "handleTogglePlan - toggles plan active status",
+        "handleFeatureSubmit - creates/updates features",
+        "handleTogglePlanFeature - toggles boolean feature for plan",
+        "handleUpdatePlanFeatureLimit - updates limit value for plan feature"
+      ],
+      "business_logic": [
+        "Feature count aggregation per plan",
+        "Active subscriber count per plan",
+        "Plan-feature association with value types (boolean/limit)",
+        "Limit value handling: -1 = unlimited, null = not set, positive number = limit",
+        "Feature key immutability (cannot change after creation)"
+      ],
+      "dependencies": [
+        "Supabase client for database operations",
+        "No organization context (admin-only, system-wide)"
+      ],
+      "complexity": "high"
+    }
+  },
+  "test_strategy": {
+    "approach": "bottom-up",
+    "priorities": [
+      "utility functions and hooks first",
+      "individual components second",
+      "page-level components last"
+    ],
+    "coverage_goals": {
+      "target_coverage": "80%",
+      "focus_areas": ["business logic", "form validation", "state management", "error handling"]
+    }
+  },
+  "patterns": {
+    "test_structure": "Describe-It pattern with clear test names",
+    "mocking": "Mock Supabase client and external dependencies",
+    "test_data": "Use factory functions for test data",
+    "assertions": "Use @testing-library/react best practices (user-centric queries)"
+  },
+  "dependencies_to_verify": [
+    "vitest",
+    "@testing-library/react",
+    "@testing-library/jest-dom",
+    "@testing-library/user-event",
+    "@vitejs/plugin-react",
+    "happy-dom or jsdom"
+  ]
+}

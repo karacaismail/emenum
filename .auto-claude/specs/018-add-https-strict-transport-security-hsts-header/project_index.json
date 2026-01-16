@@ -1,0 +1,34 @@
+{
+  "project_type": "single",
+  "services": {
+    "frontend": {
+      "path": ".",
+      "tech_stack": ["next.js", "react", "typescript", "tailwind"],
+      "version": "15.5.x",
+      "port": 3000,
+      "dev_command": "npm run dev",
+      "build_command": "npm run build",
+      "test_command": "npm run test"
+    }
+  },
+  "infrastructure": {
+    "docker": false,
+    "database": "postgresql",
+    "database_provider": "supabase",
+    "deployment": "vercel",
+    "authentication": "supabase-auth"
+  },
+  "conventions": {
+    "linter": "eslint",
+    "formatter": "prettier",
+    "testing": "vitest",
+    "typescript": "strict"
+  },
+  "key_files": {
+    "config": "next.config.ts",
+    "package": "package.json",
+    "tsconfig": "tsconfig.json",
+    "tailwind": "tailwind.config.ts",
+    "middleware": "middleware.ts"
+  }
+}

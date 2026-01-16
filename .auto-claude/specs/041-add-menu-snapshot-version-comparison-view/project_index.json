@@ -1,0 +1,35 @@
+{
+  "project_type": "single",
+  "services": {
+    "frontend": {
+      "path": ".",
+      "tech_stack": ["next.js", "react", "typescript", "tailwindcss", "supabase"],
+      "port": 3000,
+      "dev_command": "npm run dev",
+      "test_command": "npm test",
+      "build_command": "npm run build"
+    }
+  },
+  "infrastructure": {
+    "docker": false,
+    "database": "supabase (postgresql)",
+    "hosting": "vercel"
+  },
+  "conventions": {
+    "linter": "eslint",
+    "formatter": "next/prettier",
+    "testing": "vitest",
+    "styling": "tailwindcss",
+    "component_pattern": "client components for interactivity, server components by default",
+    "file_structure": "app router (Next.js 15)",
+    "naming": "kebab-case for files, PascalCase for components"
+  },
+  "key_directories": {
+    "pages": "app/",
+    "components": "components/",
+    "services": "lib/services/",
+    "api": "app/api/",
+    "types": "types/",
+    "ui_components": "components/ui/"
+  }
+}

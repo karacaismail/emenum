@@ -1,0 +1,83 @@
+{
+  "task_type": "documentation",
+  "files_to_modify": {},
+  "files_to_create": {
+    "documentation": ["API.md"]
+  },
+  "files_to_reference": [
+    "README.md",
+    "ek_ozellikler.md"
+  ],
+  "patterns": {
+    "documentation_style": "Existing docs use Turkish with technical terms in English",
+    "structure": "Clear sections with tables and code examples",
+    "technical_details": "README.md shows Supabase RLS, authentication patterns, and Next.js API routes"
+  },
+  "existing_implementations": {
+    "description": "No existing API.md file. ROUTES.md supposedly references './API.md' but the file doesn't exist yet.",
+    "endpoints_to_document": [
+      {
+        "path": "auth/logout",
+        "category": "Authentication",
+        "description": "User logout endpoint"
+      },
+      {
+        "path": "locations",
+        "category": "Location Management",
+        "description": "Organization/restaurant location management"
+      },
+      {
+        "path": "qr/generate",
+        "category": "QR Code",
+        "description": "Generate QR codes for table-based menu access"
+      },
+      {
+        "path": "menu/publish",
+        "category": "Menu Management",
+        "description": "Publish menu changes with price ledger updates"
+      },
+      {
+        "path": "menu/snapshot",
+        "category": "Menu Management",
+        "description": "Create SHA-256 hashed snapshot of menu state for audit trail"
+      },
+      {
+        "path": "service-request",
+        "category": "Waiter Service",
+        "description": "Customer service request from QR menu (public endpoint)"
+      }
+    ],
+    "authentication_patterns": {
+      "browser_client": "createBrowserClient() for client components",
+      "server_client": "createServerSupabaseClient() for API routes",
+      "rls": "Row Level Security enforced at database level",
+      "public_endpoints": ["service-request"]
+    },
+    "platform_features": {
+      "multi_tenant": "organization_id based isolation",
+      "immutable_price_ledger": "INSERT-only pattern for price history",
+      "audit_trail": "SHA-256 snapshots for menu changes",
+      "realtime": "Supabase Realtime for waiter notifications",
+      "rbac": "Owner, Admin, Manager, Waiter, Viewer roles"
+    }
+  },
+  "documentation_requirements": {
+    "for_each_endpoint": [
+      "Endpoint path and HTTP method",
+      "Authentication requirements",
+      "Request body schema",
+      "Response schema with status codes",
+      "Error responses",
+      "Example request/response",
+      "Notes on RLS and permissions"
+    ],
+    "overall_structure": [
+      "Overview and base URL",
+      "Authentication section",
+      "Grouped endpoints by category",
+      "Common error codes",
+      "Rate limiting (if applicable)",
+      "Changelog/versioning"
+    ]
+  }
+}

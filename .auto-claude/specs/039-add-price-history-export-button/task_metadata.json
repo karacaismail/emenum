@@ -1,0 +1,14 @@
+{
+  "sourceType": "ideation",
+  "ideationType": "code_improvements",
+  "ideaId": "ci-003",
+  "rationale": "The lib/services/price-ledger.ts file has exportPriceLedgerForCompliance() function (lines 517-559) that generates properly formatted compliance data with date ranges. No UI triggers this function currently. The audit page already has date filtering and export paradigm.",
+  "category": "feature",
+  "estimatedEffort": "small",
+  "complexity": "small",
+  "affectedFiles": [
+    ".worktrees/001-ozon-e-menum-net-vibe-coding-v1/app/(dashboard)/audit/page.tsx",
+    ".worktrees/001-ozon-e-menum-net-vibe-coding-v1/lib/services/price-ledger.ts"
+  ],
+  "archivedAt": "2026-01-15T13:28:37.257Z"
+}

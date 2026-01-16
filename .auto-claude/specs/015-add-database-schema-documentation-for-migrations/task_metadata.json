@@ -1,0 +1,9 @@
+{
+  "sourceType": "ideation",
+  "ideationType": "documentation_gaps",
+  "ideaId": "doc-002",
+  "rationale": "The price_ledger immutability pattern is a core compliance requirement (Turkish Trade Ministry regulations) but is only documented in the spec.md and inline code comments. New developers or DBAs reviewing the schema need to understand why UPDATE/DELETE are blocked, how the current_prices view works, and the relationship between subscriptions, plans, and feature_overrides.",
+  "category": "documentation",
+  "priority": "high",
+  "archivedAt": "2026-01-15T13:38:26.476Z"
+}

@@ -1,0 +1,60 @@
+{
+  "project_type": "single",
+  "services": {
+    "frontend": {
+      "path": ".",
+      "tech_stack": ["typescript", "nextjs", "react", "tailwindcss"],
+      "framework": "Next.js 15.5 (App Router)",
+      "port": 3000,
+      "dev_command": "npm run dev",
+      "build_command": "npm run build",
+      "test_command": "npm run test",
+      "package_manager": "npm"
+    }
+  },
+  "infrastructure": {
+    "docker": false,
+    "database": "supabase-postgresql",
+    "backend_service": "supabase",
+    "hosting": "vercel"
+  },
+  "conventions": {
+    "linter": "eslint",
+    "formatter": "prettier",
+    "testing": "vitest",
+    "styling": "tailwindcss",
+    "typescript": "strict mode",
+    "component_pattern": "functional components with hooks"
+  },
+  "project_structure": {
+    "app": "Next.js App Router pages and routes",
+    "components": "Reusable React components",
+    "components/ui": "Base UI components (Button, Input, Modal, etc.)",
+    "components/dashboard": "Dashboard-specific components (Header, Sidebar)",
+    "components/providers": "React Context providers (Auth, Theme, Toast)",
+    "lib": "Utility functions and services",
+    "types": "TypeScript type definitions",
+    "hooks": "Custom React hooks"
+  },
+  "existing_ui_components": {
+    "Button": {
+      "path": "components/ui/button.tsx",
+      "variants": ["primary", "secondary", "danger", "outline", "ghost"],
+      "sizes": ["sm", "md", "lg"]
+    },
+    "Card": {
+      "path": "components/ui/card.tsx"
+    },
+    "Input": {
+      "path": "components/ui/input.tsx"
+    },
+    "Modal": {
+      "path": "components/ui/modal.tsx"
+    }
+  },
+  "existing_providers": {
+    "AuthProvider": "components/providers/auth-provider.tsx",
+    "ThemeProvider": "components/providers/theme-provider.tsx",
+    "Providers": "components/providers/providers.tsx (wrapper for all providers)"
+  }
+}

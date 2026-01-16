@@ -1,0 +1,355 @@
+{
+  "feature": "Add Mobile Navigation Menu to Landing Page",
+  "workflow_type": "simple",
+  "workflow_rationale": "This is a single-file, frontend-only UI enhancement with no backend dependencies. It adds a hamburger menu for mobile users to access navigation links that are currently hidden on mobile viewports.",
+  "phases": [
+    {
+      "id": "phase-1-mobile-nav",
+      "name": "Mobile Navigation Implementation",
+      "type": "implementation",
+      "description": "Add hamburger menu and mobile navigation overlay to the landing page Navigation component",
+      "depends_on": [],
+      "parallel_safe": true,
+      "subtasks": [
+        {
+          "id": "subtask-1-1",
+          "description": "Convert Navigation to client component and add hamburger menu icons",
+          "service": "frontend",
+          "files_to_modify": [
+            "app/page.tsx"
+          ],
+          "files_to_create": [],
+          "patterns_from": [
+            "components/ui/modal.tsx"
+          ],
+          "implementation_details": {
+            "changes": [
+              "Add 'use client' directive at the top of the file",
+              "Import useState from react",
+              "Create MenuIcon component (hamburger icon with 3 horizontal lines)",
+              "Create XIcon component (close X icon) following the CloseIcon pattern in modal.tsx"
+            ],
+            "icon_specs": {
+              "MenuIcon": "Three horizontal lines (≡) using SVG rect or line elements",
+              "XIcon": "Two diagonal lines forming an X, similar to CloseIcon in modal.tsx"
+            }
+          },
+          "verification": {
+            "type": "command",
+            "command": "grep -n \"'use client'\" app/page.tsx && grep -n \"MenuIcon\\|XIcon\" app/page.tsx",
+            "expected": "File contains 'use client' directive and both icon components"
+          },
+          "status": "completed",
+          "notes": "Successfully converted page.tsx to client component by adding 'use client' directive at the top. Added MenuIcon and XIcon components inline following the pattern from modal.tsx. Removed metadata export as it's incompatible with client components (metadata should be in layout.tsx). Verification passed: 'use client' directive and both icon components are present in app/page.tsx.",
+          "updated_at": "2026-01-15T10:04:10.535797+00:00"
+        },
+        {
+          "id": "subtask-1-2",
+          "description": "Add mobile menu state management and hamburger button",
+          "service": "frontend",
+          "files_to_modify": [
+            "app/page.tsx"
+          ],
+          "files_to_create": [],
+          "patterns_from": [
+            "components/ui/modal.tsx"
+          ],
+          "implementation_details": {
+            "changes": [
+              "Add useState hook for isMobileMenuOpen state in Navigation component",
+              "Replace the mobile 'Başla' button (lines 372-378) with a flex container containing both hamburger button and 'Başla' button",
+              "Hamburger button should be visible only on mobile (md:hidden)",
+              "Add onClick handler to toggle isMobileMenuOpen state"
+            ],
+            "ui_requirements": {
+              "button_style": "Simple icon button with padding, hover effect, and transition",
+              "layout": "Flex row with gap between hamburger and 'Başla' button"
+            }
+          },
+          "verification": {
+            "type": "command",
+            "command": "grep -n \"useState.*MobileMenu\\|isMobileMenuOpen\" app/page.tsx",
+            "expected": "File contains useState for mobile menu state"
+          },
+          "status": "completed",
+          "notes": "Successfully added mobile menu state management with useState hook in HomePage component. Created hamburger button in Navigation component that toggles between MenuIcon and XIcon based on isMobileMenuOpen state. Button includes proper accessibility attributes (aria-label, aria-expanded) and keyboard support. Verification passed: useState for mobile menu state is present in app/page.tsx.",
+          "updated_at": "2026-01-15T10:05:38.583661+00:00"
+        },
+        {
+          "id": "subtask-1-3",
+          "description": "Create mobile menu overlay with navigation links",
+          "service": "frontend",
+          "files_to_modify": [
+            "app/page.tsx"
+          ],
+          "files_to_create": [],
+          "patterns_from": [
+            "components/ui/modal.tsx"
+          ],
+          "implementation_details": {
+            "changes": [
+              "Add mobile menu overlay that appears when isMobileMenuOpen is true",
+              "Use conditional rendering: {isMobileMenuOpen && (<div>...</div>)}",
+              "Create backdrop overlay with semi-transparent background",
+              "Create slide-in menu panel from the right or top",
+              "Add close button (X icon) at the top of the menu",
+              "Include all navigation links: Özellikler, Fiyatlandırma, Giriş Yap",
+              "Include primary CTA button: Ücretsiz Dene",
+              "Add onClick handlers to close menu when a link is clicked",
+              "Add transitions for smooth open/close animation"
+            ],
+            "ui_requirements": {
+              "menu_visibility": "Mobile only (md:hidden)",
+              "animation": "Smooth slide-in/out transition",
+              "backdrop": "Semi-transparent dark overlay that closes menu when clicked",
+              "z_index": "Higher than navigation (z-50 for nav, use z-[60] for mobile menu)",
+              "close_behavior": "Close on backdrop click, close button click, or link click"
+            },
+            "accessibility": {
+              "focus_management": "Consider focus trapping in menu",
+              "keyboard": "Escape key should close menu (optional but recommended)",
+              "aria_labels": "Add aria-label to hamburger and close buttons"
+            }
+          },
+          "verification": {
+            "type": "browser",
+            "url": "http://localhost:3000",
+            "checks": [
+              "Page loads without errors",
+              "Hamburger menu button visible on mobile viewport (< 768px width)",
+              "Clicking hamburger opens mobile menu overlay",
+              "Mobile menu contains all navigation links (Özellikler, Fiyatlandırma, Giriş Yap, Ücretsiz Dene)",
+              "Clicking a link closes the menu",
+              "Clicking backdrop closes the menu",
+              "Clicking X button closes the menu",
+              "Smooth transition animation when opening/closing",
+              "Desktop navigation (>= 768px) unchanged and working",
+              "No console errors"
+            ]
+          },
+          "status": "completed",
+          "notes": "Mobile menu overlay successfully implemented with all required features: backdrop click to close, X button, escape key handler, all navigation links (Özellikler, Fiyatlandırma, Giriş Yap, Ücretsiz Dene), smooth slide-in animation, body scroll lock, and mobile-only visibility (md:hidden). Follows the modal.tsx pattern.",
+          "updated_at": "2026-01-15T11:04:13.929346+00:00"
+        }
+      ]
+    }
+  ],
+  "summary": {
+    "total_phases": 1,
+    "total_subtasks": 3,
+    "services_involved": [
+      "frontend"
+    ],
+    "estimated_time": "30-60 minutes",
+    "complexity": "low",
+    "parallelism": {
+      "max_parallel_phases": 1,
+      "parallel_groups": [],
+      "recommended_workers": 1,
+      "speedup_estimate": "Sequential implementation required (subtasks build on each other)"
+    },
+    "startup_command": "npm run dev"
+  },
+  "verification_strategy": {
+    "risk_level": "low",
+    "skip_validation": false,
+    "test_creation_phase": "not_required",
+    "test_types_required": [],
+    "security_scanning_required": false,
+    "staging_deployment_required": false,
+    "acceptance_criteria": [
+      "Mobile users can access all navigation links via hamburger menu",
+      "Desktop navigation remains unchanged",
+      "Mobile menu has smooth transitions",
+      "Menu closes properly on all interaction types",
+      "No console errors or TypeScript errors",
+      "Page builds successfully with npm run build"
+    ],
+    "verification_steps": [
+      {
+        "name": "TypeScript Type Check",
+        "command": "npm run typecheck",
+        "expected_outcome": "No TypeScript errors",
+        "type": "build",
+        "required": true,
+        "blocking": true
+      },
+      {
+        "name": "ESLint Check",
+        "command": "npm run lint",
+        "expected_outcome": "No linting errors",
+        "type": "lint",
+        "required": true,
+        "blocking": false
+      },
+      {
+        "name": "Production Build",
+        "command": "npm run build",
+        "expected_outcome": "Build completes successfully",
+        "type": "build",
+        "required": true,
+        "blocking": true
+      },
+      {
+        "name": "Browser Verification",
+        "command": "manual",
+        "expected_outcome": "Mobile menu works correctly on mobile viewport, desktop nav unchanged",
+        "type": "manual",
+        "required": true,
+        "blocking": true
+      }
+    ],
+    "reasoning": "Low risk UI-only change requires build verification and manual browser testing. No unit tests needed for simple UI component with visual interaction."
+  },
+  "qa_acceptance": {
+    "unit_tests": {
+      "required": false,
+      "commands": [],
+      "minimum_coverage": null,
+      "reasoning": "Simple UI component with visual interaction - manual browser testing is sufficient"
+    },
+    "integration_tests": {
+      "required": false,
+      "commands": [],
+      "services_to_test": []
+    },
+    "e2e_tests": {
+      "required": false,
+      "commands": [],
+      "flows": []
+    },
+    "browser_verification": {
+      "required": true,
+      "pages": [
+        {
+          "url": "http://localhost:3000/",
+          "viewport": "mobile",
+          "width": 375,
+          "height": 667,
+          "checks": [
+            "Hamburger menu button is visible",
+            "Clicking hamburger opens menu overlay",
+            "All navigation links are present in mobile menu",
+            "Clicking a link closes the menu",
+            "Clicking backdrop closes the menu",
+            "Smooth animation transitions",
+            "No console errors"
+          ]
+        },
+        {
+          "url": "http://localhost:3000/",
+          "viewport": "desktop",
+          "width": 1280,
+          "height": 800,
+          "checks": [
+            "Desktop navigation is visible and unchanged",
+            "No hamburger menu button visible",
+            "All navigation links work correctly",
+            "No console errors"
+          ]
+        }
+      ]
+    },
+    "build_verification": {
+      "required": true,
+      "checks": [
+        "npm run typecheck passes",
+        "npm run lint passes",
+        "npm run build succeeds"
+      ]
+    }
+  },
+  "qa_signoff": {
+    "status": "conditional_approval",
+    "timestamp": "2026-01-15T14:45:00.000Z",
+    "qa_session": 3,
+    "report_file": "qa_report.md",
+    "code_review": {
+      "security": "passed",
+      "pattern_compliance": "passed",
+      "accessibility": "passed",
+      "implementation_completeness": "passed",
+      "code_quality": "excellent"
+    },
+    "tests_passed": {
+      "unit": "N/A (not required)",
+      "integration": "N/A (not required)",
+      "e2e": "N/A (not required)",
+      "code_review": "passed",
+      "security_scan": "passed",
+      "typecheck": "not_run_tooling_restricted",
+      "lint": "not_run_tooling_restricted",
+      "build": "not_run_tooling_restricted"
+    },
+    "manual_verification_required": {
+      "browser_testing": "REQUIRED - see qa_report.md checklist",
+      "build_verification": "REQUIRED - npm run build, typecheck, lint",
+      "console_errors": "REQUIRED - check browser DevTools",
+      "animation_verification": "REQUIRED - verify slide-in works",
+      "responsive_testing": "REQUIRED - test mobile and desktop viewports"
+    },
+    "tooling_limitations": [
+      "npm commands restricted in QA environment",
+      "Cannot start development server",
+      "Cannot run build verification",
+      "Cannot test in browser"
+    ],
+    "notes": "QA Session 3: Comprehensive code review passed with EXCELLENT quality rating. All 3 subtasks completed successfully. Implementation perfectly follows modal.tsx pattern, has complete accessibility (ARIA attributes on lines 415-417, 435, 523-524, keyboard support with Escape key handler), proper security (no eval, no dangerouslySetInnerHTML, no hardcoded secrets, no console statements), and clean code (no TODO comments, no debug statements). All navigation links present in mobile menu (Özellikler, Fiyatlandırma, Giriş Yap, Ücretsiz Dene on lines 444-470). All close mechanisms implemented (backdrop click, X button, escape key, link clicks). Desktop navigation preserved (lines 500-516). MenuIcon and XIcon components follow CloseIcon pattern from modal.tsx. Body scroll lock implemented correctly with cleanup. However, critical runtime verification (build commands, browser testing) could not be performed due to npm command restrictions. Human developer MUST complete manual testing checklist in qa_report.md before merging.",
+    "verified_by": "qa_agent_session_3",
+    "next_action": "human_manual_testing_required"
+  },
+  "status": "done",
+  "planStatus": "completed",
+  "updated_at": "2026-01-15T12:15:21.298Z",
+  "last_updated": "2026-01-15T14:15:00.000Z",
+  "recoveryNote": "Task recovered from stuck state at 2026-01-15T11:03:08.467Z",
+  "qa_iteration_history": [
+    {
+      "iteration": 1,
+      "status": "error",
+      "timestamp": "2026-01-15T11:09:18.715870+00:00",
+      "issues": [
+        {
+          "title": "QA error",
+          "description": "QA agent did not update implementation_plan.json"
+        }
+      ]
+    },
+    {
+      "iteration": 2,
+      "status": "error",
+      "timestamp": "2026-01-15T11:13:46.125513+00:00",
+      "issues": [
+        {
+          "title": "QA error",
+          "description": "QA agent did not update implementation_plan.json"
+        }
+      ]
+    },
+    {
+      "iteration": 3,
+      "status": "conditional_approval",
+      "timestamp": "2026-01-15T14:45:00.000Z",
+      "issues": []
+    },
+    {
+      "iteration": 3,
+      "status": "error",
+      "timestamp": "2026-01-15T11:17:09.126874+00:00",
+      "issues": [
+        {
+          "title": "QA error",
+          "description": "QA agent did not update implementation_plan.json"
+        }
+      ]
+    }
+  ],
+  "qa_stats": {
+    "total_iterations": 4,
+    "last_iteration": 3,
+    "last_status": "error",
+    "issues_by_type": {
+      "unknown": 3
+    }
+  }
+}

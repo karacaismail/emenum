@@ -1,0 +1,205 @@
+{
+  "file_path": ".auto-claude/specs/001-ozon-e-menum-net-vibe-coding-v1/memory/codebase_map.json",
+  "main_branch_history": [],
+  "task_views": {
+    "001-ozon-e-menum-net-vibe-coding-v1": {
+      "task_id": "001-ozon-e-menum-net-vibe-coding-v1",
+      "branch_point": {
+        "commit_hash": "2b028be920d271c6e53b44319d1c871dc3d27076",
+        "content": "",
+        "timestamp": "2026-01-14T09:55:04.472899"
+      },
+      "worktree_state": null,
+      "task_intent": {
+        "title": "001-ozon-e-menum-net-vibe-coding-v1",
+        "description": "",
+        "from_plan": false
+      },
+      "commits_behind_main": 0,
+      "status": "active",
+      "merged_at": null
+    },
+    "037-add-search-to-categories-page": {
+      "task_id": "037-add-search-to-categories-page",
+      "branch_point": {
+        "commit_hash": "2b028be920d271c6e53b44319d1c871dc3d27076",
+        "content": "",
+        "timestamp": "2026-01-14T18:38:07.376896"
+      },
+      "worktree_state": {
+        "content": "{\n  \"discovered_files\": {\n    \"app/(admin)/admin/ai/page.tsx\": {\n      \"description\": \"AI token management page for Super Admin. Shows organization AI status, plan AI features, toggle AI access via overrides, and adjust quotas. Follows admin page patterns with Card, Modal, Button components and Turkish UI.\",\n      \"category\": \"admin-pages\",\n      \"discovered_at\": \"2026-01-14T07:04:02.727732+00:00\"\n    },\n    \"app/page.tsx\": {\n      \"description\": \"Awwwards-level landing page with hero section (animated gradient orbs, phone mockup), stats, features grid, how-it-works steps, testimonials, pricing preview, and footer. Turkish localized. Uses CSS animations from globals.css (blob, float, fadeIn, scrollDown). Server Component - no 'use client' directive.\",\n      \"category\": \"landing\",\n      \"discovered_at\": \"2026-01-14T07:11:47.959132+00:00\"\n    },\n    \"app/pricing/page.tsx\": {\n      \"description\": \"Comprehensive pricing page with plan comparison table. Follows awwwards-level design pattern with Navigation/Footer components, 4 plans (Lite, Gold, Platinum, Enterprise), detailed feature comparison table organized by categories, FAQ section, and CTA. Uses Turkish localization, primary/secondary color scheme, and responsive design.\",\n      \"category\": \"component\",\n      \"discovered_at\": \"2026-01-14T07:22:53.360299+00:00\"\n    },\n    \"app/(dashboard)/layout.tsx\": {\n      \"description\": \"Dashboard and admin layouts use server component wrappers with 'dynamic = force-dynamic' to prevent static generation issues. AuthProvider is added at the route group level, not root layout.\",\n      \"category\": \"architecture\",\n      \"discovered_at\": \"2026-01-14T08:01:59.078216+00:00\"\n    },\n    \"scripts/e2e-verification.md\": {\n      \"description\": \"Comprehensive E2E verification documentation for the Register -> QR Download -> Menu View flow. Documents all 6 verification steps, key implementation files, database tables involved, and testing results. All 202 tests pass, build successful with 31 routes.\",\n      \"category\": \"documentation\",\n      \"discovered_at\": \"2026-01-14T08:15:02.227330+00:00\"\n    }\n  },\n  \"last_updated\": \"2026-01-14T08:15:02.227340+00:00\"\n}",
+        "last_modified": "2026-01-15T15:07:08.816092"
+      },
+      "task_intent": {
+        "title": "037-add-search-to-categories-page",
+        "description": "Add search functionality to the categories page, allowing users to filter categories by name. This mirrors the existing search pattern already implemented in the products page.",
+        "from_plan": true
+      },
+      "commits_behind_main": 0,
+      "status": "active",
+      "merged_at": null
+    },
+    "032-add-mobile-navigation-menu-to-landing-page": {
+      "task_id": "032-add-mobile-navigation-menu-to-landing-page",
+      "branch_point": {
+        "commit_hash": "2b028be920d271c6e53b44319d1c871dc3d27076",
+        "content": "",
+        "timestamp": "2026-01-14T18:38:22.963353"
+      },
+      "worktree_state": {
+        "content": "{\n  \"discovered_files\": {\n    \"app/(admin)/admin/ai/page.tsx\": {\n      \"description\": \"AI token management page for Super Admin. Shows organization AI status, plan AI features, toggle AI access via overrides, and adjust quotas. Follows admin page patterns with Card, Modal, Button components and Turkish UI.\",\n      \"category\": \"admin-pages\",\n      \"discovered_at\": \"2026-01-14T07:04:02.727732+00:00\"\n    },\n    \"app/page.tsx\": {\n      \"description\": \"Awwwards-level landing page with hero section (animated gradient orbs, phone mockup), stats, features grid, how-it-works steps, testimonials, pricing preview, and footer. Turkish localized. Uses CSS animations from globals.css (blob, float, fadeIn, scrollDown). Server Component - no 'use client' directive.\",\n      \"category\": \"landing\",\n      \"discovered_at\": \"2026-01-14T07:11:47.959132+00:00\"\n    },\n    \"app/pricing/page.tsx\": {\n      \"description\": \"Comprehensive pricing page with plan comparison table. Follows awwwards-level design pattern with Navigation/Footer components, 4 plans (Lite, Gold, Platinum, Enterprise), detailed feature comparison table organized by categories, FAQ section, and CTA. Uses Turkish localization, primary/secondary color scheme, and responsive design.\",\n      \"category\": \"component\",\n      \"discovered_at\": \"2026-01-14T07:22:53.360299+00:00\"\n    },\n    \"app/(dashboard)/layout.tsx\": {\n      \"description\": \"Dashboard and admin layouts use server component wrappers with 'dynamic = force-dynamic' to prevent static generation issues. AuthProvider is added at the route group level, not root layout.\",\n      \"category\": \"architecture\",\n      \"discovered_at\": \"2026-01-14T08:01:59.078216+00:00\"\n    },\n    \"scripts/e2e-verification.md\": {\n      \"description\": \"Comprehensive E2E verification documentation for the Register -> QR Download -> Menu View flow. Documents all 6 verification steps, key implementation files, database tables involved, and testing results. All 202 tests pass, build successful with 31 routes.\",\n      \"category\": \"documentation\",\n      \"discovered_at\": \"2026-01-14T08:15:02.227330+00:00\"\n    }\n  },\n  \"last_updated\": \"2026-01-14T08:15:02.227340+00:00\"\n}",
+        "last_modified": "2026-01-15T15:05:31.778339"
+      },
+      "task_intent": {
+        "title": "032-add-mobile-navigation-menu-to-landing-page",
+        "description": "The landing page navigation on mobile devices only shows a 'Basla' button, hiding all other navigation links. Add a proper hamburger menu for mobile users.",
+        "from_plan": true
+      },
+      "commits_behind_main": 0,
+      "status": "active",
+      "merged_at": null
+    },
+    "031-add-mobile-navigation-menu-to-landing-page": {
+      "task_id": "031-add-mobile-navigation-menu-to-landing-page",
+      "branch_point": {
+        "commit_hash": "2b028be920d271c6e53b44319d1c871dc3d27076",
+        "content": "",
+        "timestamp": "2026-01-14T18:50:42.638180"
+      },
+      "worktree_state": {
+        "content": "{\n  \"discovered_files\": {\n    \"app/(admin)/admin/ai/page.tsx\": {\n      \"description\": \"AI token management page for Super Admin. Shows organization AI status, plan AI features, toggle AI access via overrides, and adjust quotas. Follows admin page patterns with Card, Modal, Button components and Turkish UI.\",\n      \"category\": \"admin-pages\",\n      \"discovered_at\": \"2026-01-14T07:04:02.727732+00:00\"\n    },\n    \"app/page.tsx\": {\n      \"description\": \"Awwwards-level landing page with hero section (animated gradient orbs, phone mockup), stats, features grid, how-it-works steps, testimonials, pricing preview, and footer. Turkish localized. Uses CSS animations from globals.css (blob, float, fadeIn, scrollDown). Server Component - no 'use client' directive.\",\n      \"category\": \"landing\",\n      \"discovered_at\": \"2026-01-14T07:11:47.959132+00:00\"\n    },\n    \"app/pricing/page.tsx\": {\n      \"description\": \"Comprehensive pricing page with plan comparison table. Follows awwwards-level design pattern with Navigation/Footer components, 4 plans (Lite, Gold, Platinum, Enterprise), detailed feature comparison table organized by categories, FAQ section, and CTA. Uses Turkish localization, primary/secondary color scheme, and responsive design.\",\n      \"category\": \"component\",\n      \"discovered_at\": \"2026-01-14T07:22:53.360299+00:00\"\n    },\n    \"app/(dashboard)/layout.tsx\": {\n      \"description\": \"Dashboard and admin layouts use server component wrappers with 'dynamic = force-dynamic' to prevent static generation issues. AuthProvider is added at the route group level, not root layout.\",\n      \"category\": \"architecture\",\n      \"discovered_at\": \"2026-01-14T08:01:59.078216+00:00\"\n    },\n    \"scripts/e2e-verification.md\": {\n      \"description\": \"Comprehensive E2E verification documentation for the Register -> QR Download -> Menu View flow. Documents all 6 verification steps, key implementation files, database tables involved, and testing results. All 202 tests pass, build successful with 31 routes.\",\n      \"category\": \"documentation\",\n      \"discovered_at\": \"2026-01-14T08:15:02.227330+00:00\"\n    }\n  },\n  \"last_updated\": \"2026-01-14T08:15:02.227340+00:00\"\n}",
+        "last_modified": "2026-01-15T15:03:39.186063"
+      },
+      "task_intent": {
+        "title": "031-add-mobile-navigation-menu-to-landing-page",
+        "description": "The landing page navigation on mobile devices only shows a 'Basla' button, hiding all other navigation links. Add a proper hamburger menu for mobile users.",
+        "from_plan": true
+      },
+      "commits_behind_main": 0,
+      "status": "active",
+      "merged_at": null
+    },
+    "040-add-bulk-qr-code-download-for-all-tables": {
+      "task_id": "040-add-bulk-qr-code-download-for-all-tables",
+      "branch_point": {
+        "commit_hash": "2b028be920d271c6e53b44319d1c871dc3d27076",
+        "content": "",
+        "timestamp": "2026-01-14T18:53:11.069414"
+      },
+      "worktree_state": {
+        "content": "{\n  \"discovered_files\": {\n    \"app/(admin)/admin/ai/page.tsx\": {\n      \"description\": \"AI token management page for Super Admin. Shows organization AI status, plan AI features, toggle AI access via overrides, and adjust quotas. Follows admin page patterns with Card, Modal, Button components and Turkish UI.\",\n      \"category\": \"admin-pages\",\n      \"discovered_at\": \"2026-01-14T07:04:02.727732+00:00\"\n    },\n    \"app/page.tsx\": {\n      \"description\": \"Awwwards-level landing page with hero section (animated gradient orbs, phone mockup), stats, features grid, how-it-works steps, testimonials, pricing preview, and footer. Turkish localized. Uses CSS animations from globals.css (blob, float, fadeIn, scrollDown). Server Component - no 'use client' directive.\",\n      \"category\": \"landing\",\n      \"discovered_at\": \"2026-01-14T07:11:47.959132+00:00\"\n    },\n    \"app/pricing/page.tsx\": {\n      \"description\": \"Comprehensive pricing page with plan comparison table. Follows awwwards-level design pattern with Navigation/Footer components, 4 plans (Lite, Gold, Platinum, Enterprise), detailed feature comparison table organized by categories, FAQ section, and CTA. Uses Turkish localization, primary/secondary color scheme, and responsive design.\",\n      \"category\": \"component\",\n      \"discovered_at\": \"2026-01-14T07:22:53.360299+00:00\"\n    },\n    \"app/(dashboard)/layout.tsx\": {\n      \"description\": \"Dashboard and admin layouts use server component wrappers with 'dynamic = force-dynamic' to prevent static generation issues. AuthProvider is added at the route group level, not root layout.\",\n      \"category\": \"architecture\",\n      \"discovered_at\": \"2026-01-14T08:01:59.078216+00:00\"\n    },\n    \"scripts/e2e-verification.md\": {\n      \"description\": \"Comprehensive E2E verification documentation for the Register -> QR Download -> Menu View flow. Documents all 6 verification steps, key implementation files, database tables involved, and testing results. All 202 tests pass, build successful with 31 routes.\",\n      \"category\": \"documentation\",\n      \"discovered_at\": \"2026-01-14T08:15:02.227330+00:00\"\n    }\n  },\n  \"last_updated\": \"2026-01-14T08:15:02.227340+00:00\"\n}",
+        "last_modified": "2026-01-14T18:53:20.419365"
+      },
+      "task_intent": {
+        "title": "040-add-bulk-qr-code-download-for-all-tables",
+        "description": "",
+        "from_plan": false
+      },
+      "commits_behind_main": 0,
+      "status": "active",
+      "merged_at": null
+    },
+    "005-extract-duplicated-crud-state-management-into-reus": {
+      "task_id": "005-extract-duplicated-crud-state-management-into-reus",
+      "branch_point": {
+        "commit_hash": "2b028be920d271c6e53b44319d1c871dc3d27076",
+        "content": "",
+        "timestamp": "2026-01-15T06:33:12.581832"
+      },
+      "worktree_state": {
+        "content": "{\n  \"discovered_files\": {\n    \"app/(admin)/admin/ai/page.tsx\": {\n      \"description\": \"AI token management page for Super Admin. Shows organization AI status, plan AI features, toggle AI access via overrides, and adjust quotas. Follows admin page patterns with Card, Modal, Button components and Turkish UI.\",\n      \"category\": \"admin-pages\",\n      \"discovered_at\": \"2026-01-14T07:04:02.727732+00:00\"\n    },\n    \"app/page.tsx\": {\n      \"description\": \"Awwwards-level landing page with hero section (animated gradient orbs, phone mockup), stats, features grid, how-it-works steps, testimonials, pricing preview, and footer. Turkish localized. Uses CSS animations from globals.css (blob, float, fadeIn, scrollDown). Server Component - no 'use client' directive.\",\n      \"category\": \"landing\",\n      \"discovered_at\": \"2026-01-14T07:11:47.959132+00:00\"\n    },\n    \"app/pricing/page.tsx\": {\n      \"description\": \"Comprehensive pricing page with plan comparison table. Follows awwwards-level design pattern with Navigation/Footer components, 4 plans (Lite, Gold, Platinum, Enterprise), detailed feature comparison table organized by categories, FAQ section, and CTA. Uses Turkish localization, primary/secondary color scheme, and responsive design.\",\n      \"category\": \"component\",\n      \"discovered_at\": \"2026-01-14T07:22:53.360299+00:00\"\n    },\n    \"app/(dashboard)/layout.tsx\": {\n      \"description\": \"Dashboard and admin layouts use server component wrappers with 'dynamic = force-dynamic' to prevent static generation issues. AuthProvider is added at the route group level, not root layout.\",\n      \"category\": \"architecture\",\n      \"discovered_at\": \"2026-01-14T08:01:59.078216+00:00\"\n    },\n    \"scripts/e2e-verification.md\": {\n      \"description\": \"Comprehensive E2E verification documentation for the Register -> QR Download -> Menu View flow. Documents all 6 verification steps, key implementation files, database tables involved, and testing results. All 202 tests pass, build successful with 31 routes.\",\n      \"category\": \"documentation\",\n      \"discovered_at\": \"2026-01-14T08:15:02.227330+00:00\"\n    }\n  },\n  \"last_updated\": \"2026-01-14T08:15:02.227340+00:00\"\n}",
+        "last_modified": "2026-01-15T16:04:15.473970"
+      },
+      "task_intent": {
+        "title": "005-extract-duplicated-crud-state-management-into-reus",
+        "description": "",
+        "from_plan": false
+      },
+      "commits_behind_main": 5,
+      "status": "active",
+      "merged_at": null
+    },
+    "002-add-unit-test-coverage-for-dashboard-page-componen": {
+      "task_id": "002-add-unit-test-coverage-for-dashboard-page-componen",
+      "branch_point": {
+        "commit_hash": "2b028be920d271c6e53b44319d1c871dc3d27076",
+        "content": "",
+        "timestamp": "2026-01-15T14:04:12.520457"
+      },
+      "worktree_state": {
+        "content": "{\n  \"discovered_files\": {\n    \"app/(admin)/admin/ai/page.tsx\": {\n      \"description\": \"AI token management page for Super Admin. Shows organization AI status, plan AI features, toggle AI access via overrides, and adjust quotas. Follows admin page patterns with Card, Modal, Button components and Turkish UI.\",\n      \"category\": \"admin-pages\",\n      \"discovered_at\": \"2026-01-14T07:04:02.727732+00:00\"\n    },\n    \"app/page.tsx\": {\n      \"description\": \"Awwwards-level landing page with hero section (animated gradient orbs, phone mockup), stats, features grid, how-it-works steps, testimonials, pricing preview, and footer. Turkish localized. Uses CSS animations from globals.css (blob, float, fadeIn, scrollDown). Server Component - no 'use client' directive.\",\n      \"category\": \"landing\",\n      \"discovered_at\": \"2026-01-14T07:11:47.959132+00:00\"\n    },\n    \"app/pricing/page.tsx\": {\n      \"description\": \"Comprehensive pricing page with plan comparison table. Follows awwwards-level design pattern with Navigation/Footer components, 4 plans (Lite, Gold, Platinum, Enterprise), detailed feature comparison table organized by categories, FAQ section, and CTA. Uses Turkish localization, primary/secondary color scheme, and responsive design.\",\n      \"category\": \"component\",\n      \"discovered_at\": \"2026-01-14T07:22:53.360299+00:00\"\n    },\n    \"app/(dashboard)/layout.tsx\": {\n      \"description\": \"Dashboard and admin layouts use server component wrappers with 'dynamic = force-dynamic' to prevent static generation issues. AuthProvider is added at the route group level, not root layout.\",\n      \"category\": \"architecture\",\n      \"discovered_at\": \"2026-01-14T08:01:59.078216+00:00\"\n    },\n    \"scripts/e2e-verification.md\": {\n      \"description\": \"Comprehensive E2E verification documentation for the Register -> QR Download -> Menu View flow. Documents all 6 verification steps, key implementation files, database tables involved, and testing results. All 202 tests pass, build successful with 31 routes.\",\n      \"category\": \"documentation\",\n      \"discovered_at\": \"2026-01-14T08:15:02.227330+00:00\"\n    }\n  },\n  \"last_updated\": \"2026-01-14T08:15:02.227340+00:00\"\n}",
+        "last_modified": "2026-01-15T16:20:44.200633"
+      },
+      "task_intent": {
+        "title": "002-add-unit-test-coverage-for-dashboard-page-componen",
+        "description": "",
+        "from_plan": false
+      },
+      "commits_behind_main": 5,
+      "status": "active",
+      "merged_at": null
+    },
+    "034-create-reusable-select-component-for-consistent-fo": {
+      "task_id": "034-create-reusable-select-component-for-consistent-fo",
+      "branch_point": {
+        "commit_hash": "2b028be920d271c6e53b44319d1c871dc3d27076",
+        "content": "",
+        "timestamp": "2026-01-15T14:05:37.956433"
+      },
+      "worktree_state": {
+        "content": "{\n  \"discovered_files\": {\n    \"app/(admin)/admin/ai/page.tsx\": {\n      \"description\": \"AI token management page for Super Admin. Shows organization AI status, plan AI features, toggle AI access via overrides, and adjust quotas. Follows admin page patterns with Card, Modal, Button components and Turkish UI.\",\n      \"category\": \"admin-pages\",\n      \"discovered_at\": \"2026-01-14T07:04:02.727732+00:00\"\n    },\n    \"app/page.tsx\": {\n      \"description\": \"Awwwards-level landing page with hero section (animated gradient orbs, phone mockup), stats, features grid, how-it-works steps, testimonials, pricing preview, and footer. Turkish localized. Uses CSS animations from globals.css (blob, float, fadeIn, scrollDown). Server Component - no 'use client' directive.\",\n      \"category\": \"landing\",\n      \"discovered_at\": \"2026-01-14T07:11:47.959132+00:00\"\n    },\n    \"app/pricing/page.tsx\": {\n      \"description\": \"Comprehensive pricing page with plan comparison table. Follows awwwards-level design pattern with Navigation/Footer components, 4 plans (Lite, Gold, Platinum, Enterprise), detailed feature comparison table organized by categories, FAQ section, and CTA. Uses Turkish localization, primary/secondary color scheme, and responsive design.\",\n      \"category\": \"component\",\n      \"discovered_at\": \"2026-01-14T07:22:53.360299+00:00\"\n    },\n    \"app/(dashboard)/layout.tsx\": {\n      \"description\": \"Dashboard and admin layouts use server component wrappers with 'dynamic = force-dynamic' to prevent static generation issues. AuthProvider is added at the route group level, not root layout.\",\n      \"category\": \"architecture\",\n      \"discovered_at\": \"2026-01-14T08:01:59.078216+00:00\"\n    },\n    \"scripts/e2e-verification.md\": {\n      \"description\": \"Comprehensive E2E verification documentation for the Register -> QR Download -> Menu View flow. Documents all 6 verification steps, key implementation files, database tables involved, and testing results. All 202 tests pass, build successful with 31 routes.\",\n      \"category\": \"documentation\",\n      \"discovered_at\": \"2026-01-14T08:15:02.227330+00:00\"\n    }\n  },\n  \"last_updated\": \"2026-01-14T08:15:02.227340+00:00\"\n}",
+        "last_modified": "2026-01-15T14:05:43.658606"
+      },
+      "task_intent": {
+        "title": "034-create-reusable-select-component-for-consistent-fo",
+        "description": "",
+        "from_plan": false
+      },
+      "commits_behind_main": 5,
+      "status": "active",
+      "merged_at": null
+    },
+    "023-add-mobile-navigation-menu-to-landing-page": {
+      "task_id": "023-add-mobile-navigation-menu-to-landing-page",
+      "branch_point": {
+        "commit_hash": "c709a6c45b4887c1a0ad6e04c6142783760a46ec",
+        "content": "",
+        "timestamp": "2026-01-15T13:47:09.808921"
+      },
+      "worktree_state": {
+        "content": "{\n  \"discovered_files\": {\n    \"app/(admin)/admin/ai/page.tsx\": {\n      \"description\": \"AI token management page for Super Admin. Shows organization AI status, plan AI features, toggle AI access via overrides, and adjust quotas. Follows admin page patterns with Card, Modal, Button components and Turkish UI.\",\n      \"category\": \"admin-pages\",\n      \"discovered_at\": \"2026-01-14T07:04:02.727732+00:00\"\n    },\n    \"app/page.tsx\": {\n      \"description\": \"Awwwards-level landing page with hero section (animated gradient orbs, phone mockup), stats, features grid, how-it-works steps, testimonials, pricing preview, and footer. Turkish localized. Uses CSS animations from globals.css (blob, float, fadeIn, scrollDown). Server Component - no 'use client' directive.\",\n      \"category\": \"landing\",\n      \"discovered_at\": \"2026-01-14T07:11:47.959132+00:00\"\n    },\n    \"app/pricing/page.tsx\": {\n      \"description\": \"Comprehensive pricing page with plan comparison table. Follows awwwards-level design pattern with Navigation/Footer components, 4 plans (Lite, Gold, Platinum, Enterprise), detailed feature comparison table organized by categories, FAQ section, and CTA. Uses Turkish localization, primary/secondary color scheme, and responsive design.\",\n      \"category\": \"component\",\n      \"discovered_at\": \"2026-01-14T07:22:53.360299+00:00\"\n    },\n    \"app/(dashboard)/layout.tsx\": {\n      \"description\": \"Dashboard and admin layouts use server component wrappers with 'dynamic = force-dynamic' to prevent static generation issues. AuthProvider is added at the route group level, not root layout.\",\n      \"category\": \"architecture\",\n      \"discovered_at\": \"2026-01-14T08:01:59.078216+00:00\"\n    },\n    \"scripts/e2e-verification.md\": {\n      \"description\": \"Comprehensive E2E verification documentation for the Register -> QR Download -> Menu View flow. Documents all 6 verification steps, key implementation files, database tables involved, and testing results. All 202 tests pass, build successful with 31 routes.\",\n      \"category\": \"documentation\",\n      \"discovered_at\": \"2026-01-14T08:15:02.227330+00:00\"\n    }\n  },\n  \"last_updated\": \"2026-01-14T08:15:02.227340+00:00\"\n}",
+        "last_modified": "2026-01-15T13:47:16.687769"
+      },
+      "task_intent": {
+        "title": "023-add-mobile-navigation-menu-to-landing-page",
+        "description": "",
+        "from_plan": false
+      },
+      "commits_behind_main": 0,
+      "status": "active",
+      "merged_at": null
+    },
+    "026-add-mobile-navigation-menu-to-landing-page": {
+      "task_id": "026-add-mobile-navigation-menu-to-landing-page",
+      "branch_point": {
+        "commit_hash": "2b028be920d271c6e53b44319d1c871dc3d27076",
+        "content": "",
+        "timestamp": "2026-01-15T14:15:55.210168"
+      },
+      "worktree_state": {
+        "content": "{\n  \"discovered_files\": {\n    \"app/(admin)/admin/ai/page.tsx\": {\n      \"description\": \"AI token management page for Super Admin. Shows organization AI status, plan AI features, toggle AI access via overrides, and adjust quotas. Follows admin page patterns with Card, Modal, Button components and Turkish UI.\",\n      \"category\": \"admin-pages\",\n      \"discovered_at\": \"2026-01-14T07:04:02.727732+00:00\"\n    },\n    \"app/page.tsx\": {\n      \"description\": \"Awwwards-level landing page with hero section (animated gradient orbs, phone mockup), stats, features grid, how-it-works steps, testimonials, pricing preview, and footer. Turkish localized. Uses CSS animations from globals.css (blob, float, fadeIn, scrollDown). Server Component - no 'use client' directive.\",\n      \"category\": \"landing\",\n      \"discovered_at\": \"2026-01-14T07:11:47.959132+00:00\"\n    },\n    \"app/pricing/page.tsx\": {\n      \"description\": \"Comprehensive pricing page with plan comparison table. Follows awwwards-level design pattern with Navigation/Footer components, 4 plans (Lite, Gold, Platinum, Enterprise), detailed feature comparison table organized by categories, FAQ section, and CTA. Uses Turkish localization, primary/secondary color scheme, and responsive design.\",\n      \"category\": \"component\",\n      \"discovered_at\": \"2026-01-14T07:22:53.360299+00:00\"\n    },\n    \"app/(dashboard)/layout.tsx\": {\n      \"description\": \"Dashboard and admin layouts use server component wrappers with 'dynamic = force-dynamic' to prevent static generation issues. AuthProvider is added at the route group level, not root layout.\",\n      \"category\": \"architecture\",\n      \"discovered_at\": \"2026-01-14T08:01:59.078216+00:00\"\n    },\n    \"scripts/e2e-verification.md\": {\n      \"description\": \"Comprehensive E2E verification documentation for the Register -> QR Download -> Menu View flow. Documents all 6 verification steps, key implementation files, database tables involved, and testing results. All 202 tests pass, build successful with 31 routes.\",\n      \"category\": \"documentation\",\n      \"discovered_at\": \"2026-01-14T08:15:02.227330+00:00\"\n    }\n  },\n  \"last_updated\": \"2026-01-14T08:15:02.227340+00:00\"\n}",
+        "last_modified": "2026-01-15T14:16:00.941658"
+      },
+      "task_intent": {
+        "title": "026-add-mobile-navigation-menu-to-landing-page",
+        "description": "",
+        "from_plan": false
+      },
+      "commits_behind_main": 5,
+      "status": "active",
+      "merged_at": null
+    }
+  },
+  "created_at": "2026-01-14T09:55:04.560995",
+  "last_updated": "2026-01-15T14:15:55.663311"
+}

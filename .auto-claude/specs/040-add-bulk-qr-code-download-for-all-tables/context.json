@@ -1,0 +1,49 @@
+{
+  "files_to_modify": {
+    "frontend": [
+      "app/(dashboard)/tables/page.tsx"
+    ]
+  },
+  "files_to_create": [
+    "lib/qrcode/bulk-download.ts"
+  ],
+  "files_to_reference": [
+    "lib/qrcode/generator.ts",
+    "lib/guards/limits.ts",
+    "app/(dashboard)/tables/page.tsx"
+  ],
+  "patterns": {
+    "qr_generation": "Uses lib/qrcode/generator.ts with functions: generateQRCodeSVG, generateQRCodePNG, generateQRCodePDF. Returns QRCodeGenerationResult with success/data/error.",
+    "individual_download": "Tables page has handleDownloadQR function (lines 412-469) that generates QR and triggers browser download using createElement('a')",
+    "bulk_pattern": "lib/guards/limits.ts has validateBulkAdd function that checks if bulk operations are allowed against plan limits",
+    "client_component": "Tables page is a 'use client' component with React hooks for state management",
+    "error_handling": "Uses try/catch with setError state to display errors in UI"
+  },
+  "existing_implementations": {
+    "description": "QR code generation already exists for individual tables. The tables page (app/(dashboard)/tables/page.tsx) has handleDownloadQR function that downloads single table QR codes in SVG, PNG, or PDF format. The QR generator module (lib/qrcode/generator.ts) provides all necessary QR generation functions.",
+    "relevant_files": [
+      "lib/qrcode/generator.ts",
+      "app/(dashboard)/tables/page.tsx",
+      "lib/guards/limits.ts"
+    ],
+    "key_functions": {
+      "generateQRCodeSVG": "Generates SVG format QR code",
+      "generateQRCodePNG": "Generates PNG format (1024, 2048, 4096px)",
+      "generateQRCodePDF": "Generates A5 PDF with QR code",
+      "handleDownloadQR": "Downloads individual table QR using browser download",
+      "validateBulkAdd": "Pattern for validating bulk operations"
+    }
+  },
+  "feature_requirements": {
+    "primary_goal": "Add ability to download all table QR codes at once as either ZIP or combined PDF",
+    "download_formats": [
+      "ZIP file containing individual PNG QR codes for each table",
+      "Combined PDF containing all table QR codes in one document"
+    ],
+    "ui_location": "Tables page (app/(dashboard)/tables/page.tsx) - add bulk download button near 'New Table' button",
+    "file_naming": "Use organization slug and timestamp for file names",
+    "dependencies_to_add": [
+      "jszip - for creating ZIP files in browser"
+    ]
+  }
+}

@@ -1,0 +1,42 @@
+{
+  "files_to_modify": {
+    "frontend": ["app/page.tsx"]
+  },
+  "files_to_reference": [
+    "components/dashboard/header.tsx",
+    "components/dashboard/sidebar.tsx"
+  ],
+  "patterns": {
+    "client_components": "Components with interactivity use 'use client' directive at the top",
+    "mobile_menu_pattern": "Dashboard uses hamburger button + backdrop overlay + slide-in sidebar with transform translate-x",
+    "icon_pattern": "Inline SVG icons (no external library like heroicons)",
+    "hamburger_icon": "Three horizontal lines: M4 6h16M4 12h16M4 18h16",
+    "responsive_hiding": "Use Tailwind classes like 'hidden md:flex' and 'lg:hidden'",
+    "state_management": "React useState for component state",
+    "language": "Turkish UI (Özellikler, Fiyatlandırma, Giriş Yap, etc.)"
+  },
+  "existing_implementations": {
+    "description": "Dashboard has a complete mobile menu implementation with hamburger button, backdrop, and sliding sidebar",
+    "relevant_files": [
+      "components/dashboard/header.tsx - Hamburger button (lines 60-70)",
+      "components/dashboard/sidebar.tsx - Mobile menu with backdrop (lines 176-192)"
+    ],
+    "key_features": [
+      "Hamburger button hidden on desktop (lg:hidden)",
+      "Backdrop overlay with bg-black/50 opacity",
+      "Sidebar slides in from left with transform translate-x",
+      "Close button (X) inside the mobile menu",
+      "onClick handler on backdrop to close menu"
+    ]
+  },
+  "navigation_component_details": {
+    "location": "app/page.tsx lines 338-382",
+    "current_behavior": "Desktop shows all nav links (Özellikler, Fiyatlandırma, Giriş Yap, Ücretsiz Dene). Mobile only shows Başla button.",
+    "nav_items": [
+      {"text": "Özellikler", "href": "/features"},
+      {"text": "Fiyatlandırma", "href": "/pricing"},
+      {"text": "Giriş Yap", "href": "/login"},
+      {"text": "Ücretsiz Dene", "href": "/register", "button": true}
+    ]
+  }
+}

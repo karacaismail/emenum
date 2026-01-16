@@ -1,0 +1,40 @@
+{
+  "project_type": "single",
+  "services": {
+    "documentation": {
+      "path": ".",
+      "tech_stack": ["markdown"],
+      "description": "Documentation repository for ozaMenu platform",
+      "dev_command": "N/A",
+      "test_command": "N/A"
+    }
+  },
+  "infrastructure": {
+    "docker": false,
+    "database": "N/A"
+  },
+  "conventions": {
+    "documentation_format": "markdown",
+    "language": "turkish_english_mixed",
+    "structure": "flat_directory"
+  },
+  "notes": {
+    "repository_type": "documentation_only",
+    "main_application": {
+      "framework": "Next.js 15.5",
+      "language": "TypeScript 5.7",
+      "backend": "Supabase (PostgreSQL)",
+      "frontend": "React 19 with Tailwind CSS 4.x",
+      "api_pattern": "Next.js App Router API Routes"
+    },
+    "existing_docs": [
+      "README.md",
+      "chatgpt.md",
+      "gemini.md",
+      "gereksinimler.md",
+      "paketler.md",
+      "temel.md",
+      "ek_ozellikler.md"
+    ]
+  }
+}

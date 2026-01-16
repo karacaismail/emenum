@@ -1,0 +1,93 @@
+{
+  "subtasks": {
+    "subtask-1-1": {
+      "attempts": [
+        {
+          "session": 2,
+          "timestamp": "2026-01-15T14:34:24.713249",
+          "approach": "Implemented: Create API.md file structure with overview and authentication section",
+          "success": true,
+          "error": null
+        }
+      ],
+      "status": "completed"
+    },
+    "subtask-1-2": {
+      "attempts": [
+        {
+          "session": 3,
+          "timestamp": "2026-01-15T14:35:46.668836",
+          "approach": "Implemented: Document Authentication endpoints (auth/logout)",
+          "success": true,
+          "error": null
+        }
+      ],
+      "status": "completed"
+    },
+    "subtask-1-3": {
+      "attempts": [
+        {
+          "session": 4,
+          "timestamp": "2026-01-15T14:38:04.816793",
+          "approach": "Implemented: Document Location Management endpoint (locations)",
+          "success": true,
+          "error": null
+        }
+      ],
+      "status": "completed"
+    },
+    "subtask-1-4": {
+      "attempts": [
+        {
+          "session": 5,
+          "timestamp": "2026-01-15T14:40:22.427961",
+          "approach": "Implemented: Document QR Code Generation endpoint (qr/generate)",
+          "success": true,
+          "error": null
+        }
+      ],
+      "status": "completed"
+    },
+    "subtask-1-5": {
+      "attempts": [
+        {
+          "session": 6,
+          "timestamp": "2026-01-15T14:43:24.714477",
+          "approach": "Implemented: Document Menu Management endpoints (menu/publish, menu/snapshot)",
+          "success": true,
+          "error": null
+        }
+      ],
+      "status": "completed"
+    },
+    "subtask-1-6": {
+      "attempts": [
+        {
+          "session": 7,
+          "timestamp": "2026-01-15T14:46:14.059674",
+          "approach": "Implemented: Document Service Request endpoint (service-request)",
+          "success": true,
+          "error": null
+        }
+      ],
+      "status": "completed"
+    },
+    "subtask-1-7": {
+      "attempts": [
+        {
+          "session": 8,
+          "timestamp": "2026-01-15T14:49:03.476891",
+          "approach": "Implemented: Add Common Patterns, Error Codes, and Changelog sections",
+          "success": true,
+          "error": null
+        }
+      ],
+      "status": "completed"
+    }
+  },
+  "stuck_subtasks": [],
+  "metadata": {
+    "created_at": "2026-01-15T14:27:15.647289",
+    "last_updated": "2026-01-15T14:49:03.476915"
+  }
+}

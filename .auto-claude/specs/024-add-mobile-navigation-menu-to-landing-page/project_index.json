@@ -1,0 +1,33 @@
+{
+  "project_type": "single",
+  "services": {
+    "frontend": {
+      "path": ".",
+      "tech_stack": ["next.js", "react", "typescript", "tailwind"],
+      "version": {
+        "next": "15.5",
+        "react": "19.0",
+        "typescript": "5.7",
+        "tailwind": "3.4"
+      },
+      "port": 3000,
+      "dev_command": "npm run dev",
+      "build_command": "npm run build",
+      "test_command": "vitest"
+    }
+  },
+  "infrastructure": {
+    "docker": false,
+    "database": "supabase",
+    "auth": "supabase"
+  },
+  "conventions": {
+    "linter": "eslint",
+    "formatter": "prettier",
+    "testing": "vitest",
+    "component_pattern": "functional_components",
+    "client_components": "use 'use client' directive for interactivity",
+    "styling": "tailwind_utility_classes",
+    "icons": "inline_svg_components"
+  }
+}

@@ -1,0 +1,38 @@
+{
+  "files_to_modify": {
+    "frontend": ["components/providers/auth-provider.tsx"]
+  },
+  "files_to_reference": [
+    "lib/supabase/client.ts",
+    "types/database.ts",
+    "types/index.ts",
+    "components/ui/modal.tsx"
+  ],
+  "patterns": {
+    "memoization": "Codebase already uses useCallback extensively. Need to add useMemo for client memoization.",
+    "supabase_client": "Client created via createClient() from @supabase/ssr in lib/supabase/client.ts",
+    "database_queries": "Supabase queries use .from().select().eq() pattern. Support for JOIN via select('*, organizations(*)')",
+    "types": "All database types defined in types/database.ts with Organization and OrganizationMember interfaces"
+  },
+  "existing_implementations": {
+    "description": "AuthProvider already uses useCallback for all functions but creates Supabase client on every render (line 61). It makes 2 sequential queries: organization_members then organizations.",
+    "relevant_files": [
+      "components/providers/auth-provider.tsx",
+      "lib/supabase/client.ts"
+    ],
+    "optimization_targets": [
+      "Line 61: const supabase = createClient() - should be memoized",
+      "Lines 70-97: fetchUserOrganization - two sequential queries should be combined",
+      "Lines 161-183: setCurrentOrganization - same sequential query pattern"
+    ]
+  },
+  "database_schema": {
+    "organization_members": {
+      "columns": ["id", "organization_id", "user_id", "role", "created_at"],
+      "relationships": "organization_id -> organizations.id (foreign key)"
+    },
+    "organizations": {
+      "columns": ["id", "name", "slug", "logo_url", "cover_url", "settings", "is_active", "created_at"]
+    }
+  }
+}

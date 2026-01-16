@@ -1,0 +1,31 @@
+{
+  "project_type": "single",
+  "services": {
+    "frontend": {
+      "path": ".",
+      "tech_stack": ["nextjs", "react", "typescript", "tailwindcss"],
+      "port": 3000,
+      "dev_command": "npm run dev",
+      "test_command": "npm test",
+      "build_command": "npm run build"
+    }
+  },
+  "infrastructure": {
+    "docker": false,
+    "database": "supabase",
+    "ci_cd": false
+  },
+  "conventions": {
+    "linter": "eslint",
+    "formatter": "prettier",
+    "testing": "vitest",
+    "component_style": "tailwindcss",
+    "state_management": "react_hooks"
+  },
+  "patterns": {
+    "icons": "inline_svg",
+    "client_components": "use_client_directive",
+    "styling": "tailwind_utility_classes",
+    "responsive_breakpoints": "md_lg_xl"
+  }
+}

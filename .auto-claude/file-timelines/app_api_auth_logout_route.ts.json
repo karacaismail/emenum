@@ -1,0 +1,228 @@
+{
+  "file_path": "app/api/auth/logout/route.ts",
+  "main_branch_history": [],
+  "task_views": {
+    "001-ozon-e-menum-net-vibe-coding-v1": {
+      "task_id": "001-ozon-e-menum-net-vibe-coding-v1",
+      "branch_point": {
+        "commit_hash": "2b028be920d271c6e53b44319d1c871dc3d27076",
+        "content": "",
+        "timestamp": "2026-01-14T09:55:04.472899"
+      },
+      "worktree_state": {
+        "content": "import { createServerClient } from '@supabase/ssr'\nimport { cookies } from 'next/headers'\nimport { NextRequest, NextResponse } from 'next/server'\n\n/**\n * Logout API Route Handler\n *\n * This route handles user logout by:\n * 1. Signing out the user from Supabase Auth\n * 2. Clearing session cookies\n * 3. Redirecting to the home page\n *\n * POST /api/auth/logout\n */\nexport async function POST(request: NextRequest) {\n  const requestUrl = new URL(request.url)\n\n  // Create a Supabase client for this route\n  const cookieStore = await cookies()\n  const supabase = createServerClient(\n    process.env.NEXT_PUBLIC_SUPABASE_URL!,\n    process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!,\n    {\n      cookies: {\n        getAll() {\n          return cookieStore.getAll()\n        },\n        setAll(cookiesToSet) {\n          try {\n            cookiesToSet.forEach(({ name, value, options }) =>\n              cookieStore.set(name, value, options)\n            )\n          } catch {\n            // The `setAll` method was called from a Server Component.\n            // This can be ignored if you have middleware refreshing user sessions.\n          }\n        },\n      },\n    }\n  )\n\n  // Sign out the user\n  const { error } = await supabase.auth.signOut()\n\n  if (error) {\n    // Log the error for debugging (server-side only)\n    // Note: Do not expose detailed error messages to the client for security\n    return NextResponse.json(\n      { error: 'Oturum kapatma sirasinda bir hata olustu' },\n      { status: 500 }\n    )\n  }\n\n  // Redirect to home page after successful logout\n  return NextResponse.redirect(new URL('/', requestUrl.origin))\n}\n",
+        "last_modified": "2026-01-14T09:55:05.858059"
+      },
+      "task_intent": {
+        "title": "001-ozon-e-menum-net-vibe-coding-v1",
+        "description": "",
+        "from_plan": false
+      },
+      "commits_behind_main": 0,
+      "status": "active",
+      "merged_at": null
+    },
+    "037-add-search-to-categories-page": {
+      "task_id": "037-add-search-to-categories-page",
+      "branch_point": {
+        "commit_hash": "2b028be920d271c6e53b44319d1c871dc3d27076",
+        "content": "",
+        "timestamp": "2026-01-14T18:38:07.376896"
+      },
+      "worktree_state": {
+        "content": "import { createServerClient } from '@supabase/ssr'\nimport { cookies } from 'next/headers'\nimport { NextRequest, NextResponse } from 'next/server'\n\n/**\n * Logout API Route Handler\n *\n * This route handles user logout by:\n * 1. Signing out the user from Supabase Auth\n * 2. Clearing session cookies\n * 3. Redirecting to the home page\n *\n * POST /api/auth/logout\n */\nexport async function POST(request: NextRequest) {\n  const requestUrl = new URL(request.url)\n\n  // Create a Supabase client for this route\n  const cookieStore = await cookies()\n  const supabase = createServerClient(\n    process.env.NEXT_PUBLIC_SUPABASE_URL!,\n    process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!,\n    {\n      cookies: {\n        getAll() {\n          return cookieStore.getAll()\n        },\n        setAll(cookiesToSet) {\n          try {\n            cookiesToSet.forEach(({ name, value, options }) =>\n              cookieStore.set(name, value, options)\n            )\n          } catch {\n            // The `setAll` method was called from a Server Component.\n            // This can be ignored if you have middleware refreshing user sessions.\n          }\n        },\n      },\n    }\n  )\n\n  // Sign out the user\n  const { error } = await supabase.auth.signOut()\n\n  if (error) {\n    // Log the error for debugging (server-side only)\n    // Note: Do not expose detailed error messages to the client for security\n    return NextResponse.json(\n      { error: 'Oturum kapatma sirasinda bir hata olustu' },\n      { status: 500 }\n    )\n  }\n\n  // Redirect to home page after successful logout\n  return NextResponse.redirect(new URL('/', requestUrl.origin))\n}\n",
+        "last_modified": "2026-01-15T15:07:08.898110"
+      },
+      "task_intent": {
+        "title": "037-add-search-to-categories-page",
+        "description": "Add search functionality to the categories page, allowing users to filter categories by name. This mirrors the existing search pattern already implemented in the products page.",
+        "from_plan": true
+      },
+      "commits_behind_main": 0,
+      "status": "active",
+      "merged_at": null
+    },
+    "032-add-mobile-navigation-menu-to-landing-page": {
+      "task_id": "032-add-mobile-navigation-menu-to-landing-page",
+      "branch_point": {
+        "commit_hash": "2b028be920d271c6e53b44319d1c871dc3d27076",
+        "content": "",
+        "timestamp": "2026-01-14T18:38:22.963353"
+      },
+      "worktree_state": {
+        "content": "import { createServerClient } from '@supabase/ssr'\nimport { cookies } from 'next/headers'\nimport { NextRequest, NextResponse } from 'next/server'\n\n/**\n * Logout API Route Handler\n *\n * This route handles user logout by:\n * 1. Signing out the user from Supabase Auth\n * 2. Clearing session cookies\n * 3. Redirecting to the home page\n *\n * POST /api/auth/logout\n */\nexport async function POST(request: NextRequest) {\n  const requestUrl = new URL(request.url)\n\n  // Create a Supabase client for this route\n  const cookieStore = await cookies()\n  const supabase = createServerClient(\n    process.env.NEXT_PUBLIC_SUPABASE_URL!,\n    process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!,\n    {\n      cookies: {\n        getAll() {\n          return cookieStore.getAll()\n        },\n        setAll(cookiesToSet) {\n          try {\n            cookiesToSet.forEach(({ name, value, options }) =>\n              cookieStore.set(name, value, options)\n            )\n          } catch {\n            // The `setAll` method was called from a Server Component.\n            // This can be ignored if you have middleware refreshing user sessions.\n          }\n        },\n      },\n    }\n  )\n\n  // Sign out the user\n  const { error } = await supabase.auth.signOut()\n\n  if (error) {\n    // Log the error for debugging (server-side only)\n    // Note: Do not expose detailed error messages to the client for security\n    return NextResponse.json(\n      { error: 'Oturum kapatma sirasinda bir hata olustu' },\n      { status: 500 }\n    )\n  }\n\n  // Redirect to home page after successful logout\n  return NextResponse.redirect(new URL('/', requestUrl.origin))\n}\n",
+        "last_modified": "2026-01-15T15:05:31.878280"
+      },
+      "task_intent": {
+        "title": "032-add-mobile-navigation-menu-to-landing-page",
+        "description": "The landing page navigation on mobile devices only shows a 'Basla' button, hiding all other navigation links. Add a proper hamburger menu for mobile users.",
+        "from_plan": true
+      },
+      "commits_behind_main": 0,
+      "status": "active",
+      "merged_at": null
+    },
+    "031-add-mobile-navigation-menu-to-landing-page": {
+      "task_id": "031-add-mobile-navigation-menu-to-landing-page",
+      "branch_point": {
+        "commit_hash": "2b028be920d271c6e53b44319d1c871dc3d27076",
+        "content": "",
+        "timestamp": "2026-01-14T18:50:42.638180"
+      },
+      "worktree_state": {
+        "content": "import { createServerClient } from '@supabase/ssr'\nimport { cookies } from 'next/headers'\nimport { NextRequest, NextResponse } from 'next/server'\n\n/**\n * Logout API Route Handler\n *\n * This route handles user logout by:\n * 1. Signing out the user from Supabase Auth\n * 2. Clearing session cookies\n * 3. Redirecting to the home page\n *\n * POST /api/auth/logout\n */\nexport async function POST(request: NextRequest) {\n  const requestUrl = new URL(request.url)\n\n  // Create a Supabase client for this route\n  const cookieStore = await cookies()\n  const supabase = createServerClient(\n    process.env.NEXT_PUBLIC_SUPABASE_URL!,\n    process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!,\n    {\n      cookies: {\n        getAll() {\n          return cookieStore.getAll()\n        },\n        setAll(cookiesToSet) {\n          try {\n            cookiesToSet.forEach(({ name, value, options }) =>\n              cookieStore.set(name, value, options)\n            )\n          } catch {\n            // The `setAll` method was called from a Server Component.\n            // This can be ignored if you have middleware refreshing user sessions.\n          }\n        },\n      },\n    }\n  )\n\n  // Sign out the user\n  const { error } = await supabase.auth.signOut()\n\n  if (error) {\n    // Log the error for debugging (server-side only)\n    // Note: Do not expose detailed error messages to the client for security\n    return NextResponse.json(\n      { error: 'Oturum kapatma sirasinda bir hata olustu' },\n      { status: 500 }\n    )\n  }\n\n  // Redirect to home page after successful logout\n  return NextResponse.redirect(new URL('/', requestUrl.origin))\n}\n",
+        "last_modified": "2026-01-15T15:03:39.291192"
+      },
+      "task_intent": {
+        "title": "031-add-mobile-navigation-menu-to-landing-page",
+        "description": "The landing page navigation on mobile devices only shows a 'Basla' button, hiding all other navigation links. Add a proper hamburger menu for mobile users.",
+        "from_plan": true
+      },
+      "commits_behind_main": 0,
+      "status": "active",
+      "merged_at": null
+    },
+    "040-add-bulk-qr-code-download-for-all-tables": {
+      "task_id": "040-add-bulk-qr-code-download-for-all-tables",
+      "branch_point": {
+        "commit_hash": "2b028be920d271c6e53b44319d1c871dc3d27076",
+        "content": "",
+        "timestamp": "2026-01-14T18:53:11.069414"
+      },
+      "worktree_state": {
+        "content": "import { createServerClient } from '@supabase/ssr'\nimport { cookies } from 'next/headers'\nimport { NextRequest, NextResponse } from 'next/server'\n\n/**\n * Logout API Route Handler\n *\n * This route handles user logout by:\n * 1. Signing out the user from Supabase Auth\n * 2. Clearing session cookies\n * 3. Redirecting to the home page\n *\n * POST /api/auth/logout\n */\nexport async function POST(request: NextRequest) {\n  const requestUrl = new URL(request.url)\n\n  // Create a Supabase client for this route\n  const cookieStore = await cookies()\n  const supabase = createServerClient(\n    process.env.NEXT_PUBLIC_SUPABASE_URL!,\n    process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!,\n    {\n      cookies: {\n        getAll() {\n          return cookieStore.getAll()\n        },\n        setAll(cookiesToSet) {\n          try {\n            cookiesToSet.forEach(({ name, value, options }) =>\n              cookieStore.set(name, value, options)\n            )\n          } catch {\n            // The `setAll` method was called from a Server Component.\n            // This can be ignored if you have middleware refreshing user sessions.\n          }\n        },\n      },\n    }\n  )\n\n  // Sign out the user\n  const { error } = await supabase.auth.signOut()\n\n  if (error) {\n    // Log the error for debugging (server-side only)\n    // Note: Do not expose detailed error messages to the client for security\n    return NextResponse.json(\n      { error: 'Oturum kapatma sirasinda bir hata olustu' },\n      { status: 500 }\n    )\n  }\n\n  // Redirect to home page after successful logout\n  return NextResponse.redirect(new URL('/', requestUrl.origin))\n}\n",
+        "last_modified": "2026-01-14T18:53:20.491943"
+      },
+      "task_intent": {
+        "title": "040-add-bulk-qr-code-download-for-all-tables",
+        "description": "",
+        "from_plan": false
+      },
+      "commits_behind_main": 0,
+      "status": "active",
+      "merged_at": null
+    },
+    "005-extract-duplicated-crud-state-management-into-reus": {
+      "task_id": "005-extract-duplicated-crud-state-management-into-reus",
+      "branch_point": {
+        "commit_hash": "2b028be920d271c6e53b44319d1c871dc3d27076",
+        "content": "",
+        "timestamp": "2026-01-15T06:33:12.581832"
+      },
+      "worktree_state": {
+        "content": "import { createServerClient } from '@supabase/ssr'\nimport { cookies } from 'next/headers'\nimport { NextRequest, NextResponse } from 'next/server'\n\n/**\n * Logout API Route Handler\n *\n * This route handles user logout by:\n * 1. Signing out the user from Supabase Auth\n * 2. Clearing session cookies\n * 3. Redirecting to the home page\n *\n * POST /api/auth/logout\n */\nexport async function POST(request: NextRequest) {\n  const requestUrl = new URL(request.url)\n\n  // Create a Supabase client for this route\n  const cookieStore = await cookies()\n  const supabase = createServerClient(\n    process.env.NEXT_PUBLIC_SUPABASE_URL!,\n    process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!,\n    {\n      cookies: {\n        getAll() {\n          return cookieStore.getAll()\n        },\n        setAll(cookiesToSet) {\n          try {\n            cookiesToSet.forEach(({ name, value, options }) =>\n              cookieStore.set(name, value, options)\n            )\n          } catch {\n            // The `setAll` method was called from a Server Component.\n            // This can be ignored if you have middleware refreshing user sessions.\n          }\n        },\n      },\n    }\n  )\n\n  // Sign out the user\n  const { error } = await supabase.auth.signOut()\n\n  if (error) {\n    // Log the error for debugging (server-side only)\n    // Note: Do not expose detailed error messages to the client for security\n    return NextResponse.json(\n      { error: 'Oturum kapatma sirasinda bir hata olustu' },\n      { status: 500 }\n    )\n  }\n\n  // Redirect to home page after successful logout\n  return NextResponse.redirect(new URL('/', requestUrl.origin))\n}\n",
+        "last_modified": "2026-01-15T16:04:15.575984"
+      },
+      "task_intent": {
+        "title": "005-extract-duplicated-crud-state-management-into-reus",
+        "description": "",
+        "from_plan": false
+      },
+      "commits_behind_main": 5,
+      "status": "active",
+      "merged_at": null
+    },
+    "002-add-unit-test-coverage-for-dashboard-page-componen": {
+      "task_id": "002-add-unit-test-coverage-for-dashboard-page-componen",
+      "branch_point": {
+        "commit_hash": "2b028be920d271c6e53b44319d1c871dc3d27076",
+        "content": "",
+        "timestamp": "2026-01-15T14:04:12.520457"
+      },
+      "worktree_state": {
+        "content": "import { createServerClient } from '@supabase/ssr'\nimport { cookies } from 'next/headers'\nimport { NextRequest, NextResponse } from 'next/server'\n\n/**\n * Logout API Route Handler\n *\n * This route handles user logout by:\n * 1. Signing out the user from Supabase Auth\n * 2. Clearing session cookies\n * 3. Redirecting to the home page\n *\n * POST /api/auth/logout\n */\nexport async function POST(request: NextRequest) {\n  const requestUrl = new URL(request.url)\n\n  // Create a Supabase client for this route\n  const cookieStore = await cookies()\n  const supabase = createServerClient(\n    process.env.NEXT_PUBLIC_SUPABASE_URL!,\n    process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!,\n    {\n      cookies: {\n        getAll() {\n          return cookieStore.getAll()\n        },\n        setAll(cookiesToSet) {\n          try {\n            cookiesToSet.forEach(({ name, value, options }) =>\n              cookieStore.set(name, value, options)\n            )\n          } catch {\n            // The `setAll` method was called from a Server Component.\n            // This can be ignored if you have middleware refreshing user sessions.\n          }\n        },\n      },\n    }\n  )\n\n  // Sign out the user\n  const { error } = await supabase.auth.signOut()\n\n  if (error) {\n    // Log the error for debugging (server-side only)\n    // Note: Do not expose detailed error messages to the client for security\n    return NextResponse.json(\n      { error: 'Oturum kapatma sirasinda bir hata olustu' },\n      { status: 500 }\n    )\n  }\n\n  // Redirect to home page after successful logout\n  return NextResponse.redirect(new URL('/', requestUrl.origin))\n}\n",
+        "last_modified": "2026-01-15T16:20:44.313105"
+      },
+      "task_intent": {
+        "title": "002-add-unit-test-coverage-for-dashboard-page-componen",
+        "description": "",
+        "from_plan": false
+      },
+      "commits_behind_main": 5,
+      "status": "active",
+      "merged_at": null
+    },
+    "028-add-mobile-navigation-menu-to-landing-page": {
+      "task_id": "028-add-mobile-navigation-menu-to-landing-page",
+      "branch_point": {
+        "commit_hash": "2b028be920d271c6e53b44319d1c871dc3d27076",
+        "content": "",
+        "timestamp": "2026-01-15T13:21:43.550879"
+      },
+      "worktree_state": {
+        "content": "import { createServerClient } from '@supabase/ssr'\nimport { cookies } from 'next/headers'\nimport { NextRequest, NextResponse } from 'next/server'\n\n/**\n * Logout API Route Handler\n *\n * This route handles user logout by:\n * 1. Signing out the user from Supabase Auth\n * 2. Clearing session cookies\n * 3. Redirecting to the home page\n *\n * POST /api/auth/logout\n */\nexport async function POST(request: NextRequest) {\n  const requestUrl = new URL(request.url)\n\n  // Create a Supabase client for this route\n  const cookieStore = await cookies()\n  const supabase = createServerClient(\n    process.env.NEXT_PUBLIC_SUPABASE_URL!,\n    process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!,\n    {\n      cookies: {\n        getAll() {\n          return cookieStore.getAll()\n        },\n        setAll(cookiesToSet) {\n          try {\n            cookiesToSet.forEach(({ name, value, options }) =>\n              cookieStore.set(name, value, options)\n            )\n          } catch {\n            // The `setAll` method was called from a Server Component.\n            // This can be ignored if you have middleware refreshing user sessions.\n          }\n        },\n      },\n    }\n  )\n\n  // Sign out the user\n  const { error } = await supabase.auth.signOut()\n\n  if (error) {\n    // Log the error for debugging (server-side only)\n    // Note: Do not expose detailed error messages to the client for security\n    return NextResponse.json(\n      { error: 'Oturum kapatma sirasinda bir hata olustu' },\n      { status: 500 }\n    )\n  }\n\n  // Redirect to home page after successful logout\n  return NextResponse.redirect(new URL('/', requestUrl.origin))\n}\n",
+        "last_modified": "2026-01-15T15:13:32.545358"
+      },
+      "task_intent": {
+        "title": "028-add-mobile-navigation-menu-to-landing-page",
+        "description": "",
+        "from_plan": false
+      },
+      "commits_behind_main": 5,
+      "status": "active",
+      "merged_at": null
+    },
+    "034-create-reusable-select-component-for-consistent-fo": {
+      "task_id": "034-create-reusable-select-component-for-consistent-fo",
+      "branch_point": {
+        "commit_hash": "2b028be920d271c6e53b44319d1c871dc3d27076",
+        "content": "",
+        "timestamp": "2026-01-15T14:05:37.956433"
+      },
+      "worktree_state": {
+        "content": "import { createServerClient } from '@supabase/ssr'\nimport { cookies } from 'next/headers'\nimport { NextRequest, NextResponse } from 'next/server'\n\n/**\n * Logout API Route Handler\n *\n * This route handles user logout by:\n * 1. Signing out the user from Supabase Auth\n * 2. Clearing session cookies\n * 3. Redirecting to the home page\n *\n * POST /api/auth/logout\n */\nexport async function POST(request: NextRequest) {\n  const requestUrl = new URL(request.url)\n\n  // Create a Supabase client for this route\n  const cookieStore = await cookies()\n  const supabase = createServerClient(\n    process.env.NEXT_PUBLIC_SUPABASE_URL!,\n    process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!,\n    {\n      cookies: {\n        getAll() {\n          return cookieStore.getAll()\n        },\n        setAll(cookiesToSet) {\n          try {\n            cookiesToSet.forEach(({ name, value, options }) =>\n              cookieStore.set(name, value, options)\n            )\n          } catch {\n            // The `setAll` method was called from a Server Component.\n            // This can be ignored if you have middleware refreshing user sessions.\n          }\n        },\n      },\n    }\n  )\n\n  // Sign out the user\n  const { error } = await supabase.auth.signOut()\n\n  if (error) {\n    // Log the error for debugging (server-side only)\n    // Note: Do not expose detailed error messages to the client for security\n    return NextResponse.json(\n      { error: 'Oturum kapatma sirasinda bir hata olustu' },\n      { status: 500 }\n    )\n  }\n\n  // Redirect to home page after successful logout\n  return NextResponse.redirect(new URL('/', requestUrl.origin))\n}\n",
+        "last_modified": "2026-01-15T14:05:43.794138"
+      },
+      "task_intent": {
+        "title": "034-create-reusable-select-component-for-consistent-fo",
+        "description": "",
+        "from_plan": false
+      },
+      "commits_behind_main": 5,
+      "status": "active",
+      "merged_at": null
+    },
+    "023-add-mobile-navigation-menu-to-landing-page": {
+      "task_id": "023-add-mobile-navigation-menu-to-landing-page",
+      "branch_point": {
+        "commit_hash": "c709a6c45b4887c1a0ad6e04c6142783760a46ec",
+        "content": "",
+        "timestamp": "2026-01-15T13:47:09.808921"
+      },
+      "worktree_state": {
+        "content": "import { createServerClient } from '@supabase/ssr'\nimport { cookies } from 'next/headers'\nimport { NextRequest, NextResponse } from 'next/server'\n\n/**\n * Logout API Route Handler\n *\n * This route handles user logout by:\n * 1. Signing out the user from Supabase Auth\n * 2. Clearing session cookies\n * 3. Redirecting to the home page\n *\n * POST /api/auth/logout\n */\nexport async function POST(request: NextRequest) {\n  const requestUrl = new URL(request.url)\n\n  // Create a Supabase client for this route\n  const cookieStore = await cookies()\n  const supabase = createServerClient(\n    process.env.NEXT_PUBLIC_SUPABASE_URL!,\n    process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!,\n    {\n      cookies: {\n        getAll() {\n          return cookieStore.getAll()\n        },\n        setAll(cookiesToSet) {\n          try {\n            cookiesToSet.forEach(({ name, value, options }) =>\n              cookieStore.set(name, value, options)\n            )\n          } catch {\n            // The `setAll` method was called from a Server Component.\n            // This can be ignored if you have middleware refreshing user sessions.\n          }\n        },\n      },\n    }\n  )\n\n  // Sign out the user\n  const { error } = await supabase.auth.signOut()\n\n  if (error) {\n    // Log the error for debugging (server-side only)\n    // Note: Do not expose detailed error messages to the client for security\n    return NextResponse.json(\n      { error: 'Oturum kapatma sirasinda bir hata olustu' },\n      { status: 500 }\n    )\n  }\n\n  // Redirect to home page after successful logout\n  return NextResponse.redirect(new URL('/', requestUrl.origin))\n}\n",
+        "last_modified": "2026-01-15T13:47:16.781423"
+      },
+      "task_intent": {
+        "title": "023-add-mobile-navigation-menu-to-landing-page",
+        "description": "",
+        "from_plan": false
+      },
+      "commits_behind_main": 0,
+      "status": "active",
+      "merged_at": null
+    },
+    "026-add-mobile-navigation-menu-to-landing-page": {
+      "task_id": "026-add-mobile-navigation-menu-to-landing-page",
+      "branch_point": {
+        "commit_hash": "2b028be920d271c6e53b44319d1c871dc3d27076",
+        "content": "",
+        "timestamp": "2026-01-15T14:15:55.210168"
+      },
+      "worktree_state": {
+        "content": "import { createServerClient } from '@supabase/ssr'\nimport { cookies } from 'next/headers'\nimport { NextRequest, NextResponse } from 'next/server'\n\n/**\n * Logout API Route Handler\n *\n * This route handles user logout by:\n * 1. Signing out the user from Supabase Auth\n * 2. Clearing session cookies\n * 3. Redirecting to the home page\n *\n * POST /api/auth/logout\n */\nexport async function POST(request: NextRequest) {\n  const requestUrl = new URL(request.url)\n\n  // Create a Supabase client for this route\n  const cookieStore = await cookies()\n  const supabase = createServerClient(\n    process.env.NEXT_PUBLIC_SUPABASE_URL!,\n    process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!,\n    {\n      cookies: {\n        getAll() {\n          return cookieStore.getAll()\n        },\n        setAll(cookiesToSet) {\n          try {\n            cookiesToSet.forEach(({ name, value, options }) =>\n              cookieStore.set(name, value, options)\n            )\n          } catch {\n            // The `setAll` method was called from a Server Component.\n            // This can be ignored if you have middleware refreshing user sessions.\n          }\n        },\n      },\n    }\n  )\n\n  // Sign out the user\n  const { error } = await supabase.auth.signOut()\n\n  if (error) {\n    // Log the error for debugging (server-side only)\n    // Note: Do not expose detailed error messages to the client for security\n    return NextResponse.json(\n      { error: 'Oturum kapatma sirasinda bir hata olustu' },\n      { status: 500 }\n    )\n  }\n\n  // Redirect to home page after successful logout\n  return NextResponse.redirect(new URL('/', requestUrl.origin))\n}\n",
+        "last_modified": "2026-01-15T14:16:01.034829"
+      },
+      "task_intent": {
+        "title": "026-add-mobile-navigation-menu-to-landing-page",
+        "description": "",
+        "from_plan": false
+      },
+      "commits_behind_main": 5,
+      "status": "active",
+      "merged_at": null
+    }
+  },
+  "created_at": "2026-01-14T09:55:05.313176",
+  "last_updated": "2026-01-15T14:15:57.851515"
+}

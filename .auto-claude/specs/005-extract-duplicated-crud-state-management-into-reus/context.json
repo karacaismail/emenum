@@ -1,0 +1,39 @@
+{
+  "files_to_modify": {
+    "frontend": []
+  },
+  "files_to_create": [
+    "hooks/useCrudState.ts",
+    "hooks/useCrudOperations.ts"
+  ],
+  "files_to_reference": [
+    "hooks/useTableContext.ts",
+    "hooks/useAuth.ts",
+    "app/(dashboard)/products/page.tsx",
+    "app/(dashboard)/categories/page.tsx",
+    "app/(admin)/admin/organizations/page.tsx"
+  ],
+  "patterns": {
+    "hook_pattern": "Custom hooks follow a pattern of returning state and actions with TypeScript interfaces",
+    "state_pattern": "Each CRUD page uses 8-10 useState hooks: isLoading, error, isModalOpen, isSaving, editingItem, formData, formError, deleteTarget, isDeleting",
+    "handler_pattern": "Handlers follow try/catch pattern with loading state management and error handling",
+    "typescript_pattern": "All hooks are strongly typed with explicit interfaces for state and actions"
+  },
+  "existing_implementations": {
+    "description": "Found 20 CRUD pages with identical state management patterns across dashboard and admin sections",
+    "relevant_files": [
+      "app/(dashboard)/products/page.tsx",
+      "app/(dashboard)/categories/page.tsx",
+      "app/(dashboard)/tables/page.tsx",
+      "app/(dashboard)/waiter/page.tsx",
+      "app/(dashboard)/settings/page.tsx",
+      "app/(dashboard)/audit/page.tsx",
+      "app/(admin)/admin/organizations/page.tsx",
+      "app/(admin)/admin/plans/page.tsx",
+      "app/(admin)/admin/overrides/page.tsx",
+      "app/(admin)/admin/ai/page.tsx"
+    ],
+    "duplicate_patterns_count": 204,
+    "state_hooks_per_page": 8-10
+  }
+}

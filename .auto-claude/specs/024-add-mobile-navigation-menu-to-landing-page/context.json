@@ -1,0 +1,41 @@
+{
+  "files_to_modify": {
+    "frontend": ["app/page.tsx"]
+  },
+  "files_to_reference": [
+    "components/ui/modal.tsx",
+    "components/ui/button.tsx"
+  ],
+  "patterns": {
+    "client_interactivity": "Components with state management require 'use client' directive at the top",
+    "icon_pattern": "Icons are inline SVG components (see QRCodeIcon lines 34-59, CloseIcon in modal.tsx lines 54-70)",
+    "state_management": "Use React useState for open/close toggles (see modal.tsx example)",
+    "styling_pattern": "Tailwind utility classes with responsive breakpoints (md:, lg:)",
+    "navigation_links": "Existing nav links at lines 355-369 should be replicated in mobile menu",
+    "mobile_visibility": "Use 'md:hidden' for mobile-only elements, 'hidden md:flex' for desktop-only"
+  },
+  "existing_implementations": {
+    "description": "Navigation component at lines 338-382 is currently a server component with no interactivity. Desktop nav uses 'hidden md:flex' (line 354), mobile shows only 'Başla' button (lines 372-378)",
+    "relevant_files": [
+      "app/page.tsx",
+      "components/ui/modal.tsx"
+    ],
+    "navigation_links": [
+      {"text": "Özellikler", "href": "/features"},
+      {"text": "Fiyatlandırma", "href": "/pricing"},
+      {"text": "Giriş Yap", "href": "/login"},
+      {"text": "Ücretsiz Dene", "href": "/register"}
+    ]
+  },
+  "implementation_approach": {
+    "strategy": "Extract Navigation into a client component with hamburger menu for mobile",
+    "steps": [
+      "Add 'use client' directive to Navigation component",
+      "Create hamburger icon (MenuIcon) and close icon (XIcon) as inline SVG",
+      "Add useState to manage mobile menu open/close state",
+      "Add hamburger button for mobile (md:hidden)",
+      "Create mobile menu overlay with navigation links",
+      "Add click handlers and transitions"
+    ]
+  }
+}

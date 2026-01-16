@@ -1,0 +1,38 @@
+{
+  "files_to_create": [
+    "docs/ARCHITECTURE.md",
+    "docs/diagrams/system-overview.md",
+    "docs/diagrams/auth-flow.md",
+    "docs/diagrams/menu-publishing-flow.md",
+    "docs/diagrams/waiter-call-flow.md"
+  ],
+  "files_to_reference": [
+    "README.md",
+    "gereksinimler.md",
+    "ek_ozellikler.md",
+    "paketler.md"
+  ],
+  "patterns": {
+    "documentation_style": "Markdown with Mermaid diagrams for visualizations",
+    "diagram_format": "Mermaid.js syntax for flowcharts, sequence diagrams, and ER diagrams",
+    "structure": "Separate files for each major flow, consolidated in main ARCHITECTURE.md"
+  },
+  "existing_implementations": {
+    "description": "Documentation files exist (README.md with project structure, Turkish requirement docs), but no high-level architecture overview or system flow diagrams",
+    "relevant_files": [
+      "README.md - Contains tech stack, features, and project structure",
+      "gereksinimler.md - Contains detailed technical requirements for table QR and dynamic package management",
+      "ek_ozellikler.md - Contains feature module details and waiter call system",
+      "paketler.md - Contains package tier details (Lite, Pro, Premium)"
+    ]
+  },
+  "key_architectural_components": {
+    "multi_tenant_isolation": "RLS policies on all tables with organization_id checks",
+    "immutable_price_ledger": "INSERT-only pattern with database triggers preventing UPDATE/DELETE",
+    "dynamic_features": "Database-driven feature flags via features/plans/subscriptions tables",
+    "table_qr_system": "UUID-based QR codes with table context in URL parameters",
+    "realtime_notifications": "Supabase Realtime subscriptions for waiter call system",
+    "menu_snapshots": "SHA-256 hashing of menu state for legal compliance",
+    "rbac_abac": "Two-layer authorization: subscription-based features + role-based permissions"
+  }
+}

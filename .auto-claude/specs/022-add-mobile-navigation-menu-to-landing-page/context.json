@@ -1,0 +1,18 @@
+{
+  "files_to_modify": {
+    "frontend": ["app/page.tsx"]
+  },
+  "files_to_reference": [],
+  "patterns": {
+    "component_pattern": "The app/page.tsx file contains inline component definitions - Navigation, Footer, FeatureCard, etc. are all defined in the same file as functional components.",
+    "navigation_pattern": "Current Navigation component uses 'hidden md:flex' for desktop links and shows only a 'Başla' button on mobile. Need to add hamburger menu with slide-out drawer.",
+    "styling_pattern": "Uses Tailwind CSS utility classes with dark mode support (dark: prefix). Responsive breakpoints with md: prefix for desktop (768px+).",
+    "link_pattern": "Uses Next.js Link component for internal navigation",
+    "icon_pattern": "SVG icons defined inline within components"
+  },
+  "existing_implementations": {
+    "description": "Navigation component exists in app/page.tsx in branch auto-claude/001-ozon-e-menum-net-vibe-coding-v1. Current implementation only shows desktop nav links (hidden on mobile) and a 'Başla' CTA button on mobile.",
+    "relevant_files": ["app/page.tsx"],
+    "current_mobile_behavior": "Mobile users only see logo and 'Başla' button, cannot access Features, Pricing, or Login links"
+  }
+}

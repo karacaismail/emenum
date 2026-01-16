@@ -1,0 +1,9 @@
+{
+  "sourceType": "ideation",
+  "ideationType": "documentation_gaps",
+  "ideaId": "doc-005",
+  "rationale": "Consistent UI development requires developers to understand available components without reading source code. The project uses Tailwind CSS with custom variants but doesn't document the design system tokens or component API. This leads to inconsistent component usage and potential duplication.",
+  "category": "documentation",
+  "priority": "low",
+  "archivedAt": "2026-01-15T12:47:47.293Z"
+}

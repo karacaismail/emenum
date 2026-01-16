@@ -1,0 +1,42 @@
+{
+  "files_to_modify": {
+    "frontend": [
+      "app/(dashboard)/products/page.tsx",
+      "app/(dashboard)/categories/page.tsx",
+      "app/(dashboard)/dashboard/dashboard-client.tsx"
+    ]
+  },
+  "files_to_create": [
+    "components/ui/skeleton.tsx"
+  ],
+  "files_to_reference": [
+    "components/ui/card.tsx",
+    "components/ui/button.tsx",
+    "app/(dashboard)/products/page.tsx"
+  ],
+  "patterns": {
+    "component_pattern": "Functional React components with TypeScript, exported as default or named exports",
+    "loading_pattern": "Currently uses spinner with animate-spin class (lines 533-535 in products page)",
+    "styling_pattern": "Tailwind CSS utility classes for styling, responsive design with mobile-first approach",
+    "ui_component_pattern": "Reusable UI components in components/ui/ directory following shadcn/ui patterns"
+  },
+  "existing_implementations": {
+    "description": "Products page currently shows a centered spinner during loading. When products load, content suddenly appears causing layout shift.",
+    "current_loading": "Centered spinner using animate-spin Tailwind class",
+    "problem": "No content structure preview, causing jarring visual jumps when content loads",
+    "relevant_files": [
+      "app/(dashboard)/products/page.tsx (lines 533-535)",
+      "app/(dashboard)/categories/page.tsx",
+      "app/(dashboard)/dashboard/dashboard-client.tsx"
+    ]
+  },
+  "skeleton_requirements": {
+    "purpose": "Provide visual placeholders that match final content structure",
+    "benefits": [
+      "Better perceived performance",
+      "Reduced layout shift",
+      "Visual feedback of content structure"
+    ],
+    "implementation": "Create reusable skeleton component with variants for different content types"
+  }
+}

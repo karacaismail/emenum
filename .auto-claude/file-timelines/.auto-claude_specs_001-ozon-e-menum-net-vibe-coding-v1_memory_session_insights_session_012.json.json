@@ -1,0 +1,205 @@
+{
+  "file_path": ".auto-claude/specs/001-ozon-e-menum-net-vibe-coding-v1/memory/session_insights/session_012.json",
+  "main_branch_history": [],
+  "task_views": {
+    "001-ozon-e-menum-net-vibe-coding-v1": {
+      "task_id": "001-ozon-e-menum-net-vibe-coding-v1",
+      "branch_point": {
+        "commit_hash": "2b028be920d271c6e53b44319d1c871dc3d27076",
+        "content": "",
+        "timestamp": "2026-01-14T09:55:04.472899"
+      },
+      "worktree_state": null,
+      "task_intent": {
+        "title": "001-ozon-e-menum-net-vibe-coding-v1",
+        "description": "",
+        "from_plan": false
+      },
+      "commits_behind_main": 0,
+      "status": "active",
+      "merged_at": null
+    },
+    "037-add-search-to-categories-page": {
+      "task_id": "037-add-search-to-categories-page",
+      "branch_point": {
+        "commit_hash": "2b028be920d271c6e53b44319d1c871dc3d27076",
+        "content": "",
+        "timestamp": "2026-01-14T18:38:07.376896"
+      },
+      "worktree_state": {
+        "content": "{\n  \"session_number\": 12,\n  \"timestamp\": \"2026-01-14T08:02:20.122620+00:00\",\n  \"subtasks_completed\": [\n    \"subtask-13-3\"\n  ],\n  \"discoveries\": {\n    \"file_insights\": [\n      {\n        \"filename\": \"docs/ROUTES.md\",\n        \"type\": \"documentation\",\n        \"purpose\": \"Comprehensive route documentation for e-menum.net platform\"\n      },\n      {\n        \"filename\": \".auto-claude-status\",\n        \"type\": \"status_tracking\",\n        \"details\": {\n          \"subtasks_completed\": 63,\n          \"total_subtasks\": 66,\n          \"current_phase\": \"Integration & Polish\"\n        }\n      }\n    ],\n    \"patterns_discovered\": [\n      \"Systematic test suite and documentation process\",\n      \"Incremental project tracking with detailed status updates\",\n      \"Comprehensive route documentation strategy\"\n    ],\n    \"gotchas_discovered\": [\n      \"Complex project management with multiple tracking files\",\n      \"Large number of session insight files indicating intricate development process\",\n      \"Extensive file changes across multiple components\"\n    ],\n    \"approach_outcome\": {\n      \"subtask_id\": \"subtask-13-3\",\n      \"description\": \"Run full test suite and fix issues\",\n      \"status\": \"SUCCESS\",\n      \"commits_created\": 1,\n      \"files_changed\": 28\n    },\n    \"recommendations\": [\n      \"Continue comprehensive test coverage\",\n      \"Maintain detailed documentation across project routes\",\n      \"Keep refining incremental tracking and status update mechanisms\",\n      \"Monitor test suite for potential optimization opportunities\"\n    ],\n    \"subtask_id\": \"subtask-13-3\",\n    \"session_num\": 12,\n    \"success\": true,\n    \"changed_files\": [\n      \".auto-claude-status\",\n      \".auto-claude/specs/001-ozon-e-menum-net-vibe-coding-v1/implementation_plan.json\",\n      \".auto-claude/specs/001-ozon-e-menum-net-vibe-coding-v1/memory/attempt_history.json\",\n      \".auto-claude/specs/001-ozon-e-menum-net-vibe-coding-v1/memory/build_commits.json\",\n      \".auto-claude/specs/001-ozon-e-menum-net-vibe-coding-v1/memory/session_insights/session_011.json\",\n      \".auto-claude/specs/001-ozon-e-menum-net-vibe-coding-v1/task_logs.json\",\n      \"app/(admin)/admin-layout-client.tsx\",\n      \"app/(admin)/admin/organizations/page.tsx\",\n      \"app/(admin)/layout.tsx\",\n      \"app/(auth)/reset-password/page.tsx\",\n      \"app/(auth)/verify-email/page.tsx\",\n      \"app/(dashboard)/dashboard-layout-client.tsx\",\n      \"app/(dashboard)/dashboard/dashboard-client.tsx\",\n      \"app/(dashboard)/dashboard/page.tsx\",\n      \"app/(dashboard)/layout.tsx\",\n      \"app/(dashboard)/products/[id]/page.tsx\",\n      \"app/(dashboard)/products/page.tsx\",\n      \"app/error.tsx\",\n      \"app/global-error.tsx\",\n      \"app/layout.tsx\",\n      \"app/menu/[slug]/page.tsx\",\n      \"app/not-found.tsx\",\n      \"app/r/[slug]/page.tsx\",\n      \"components/providers/providers.tsx\",\n      \"hooks/useTableContext.ts\",\n      \"lib/qrcode/generator.ts\",\n      \"lib/supabase/server.ts\",\n      \"pages/_error.tsx\"\n    ]\n  },\n  \"what_worked\": [\n    \"Implemented subtask: subtask-13-3\"\n  ],\n  \"what_failed\": [],\n  \"recommendations_for_next_session\": []\n}",
+        "last_modified": "2026-01-15T15:07:08.824456"
+      },
+      "task_intent": {
+        "title": "037-add-search-to-categories-page",
+        "description": "Add search functionality to the categories page, allowing users to filter categories by name. This mirrors the existing search pattern already implemented in the products page.",
+        "from_plan": true
+      },
+      "commits_behind_main": 0,
+      "status": "active",
+      "merged_at": null
+    },
+    "032-add-mobile-navigation-menu-to-landing-page": {
+      "task_id": "032-add-mobile-navigation-menu-to-landing-page",
+      "branch_point": {
+        "commit_hash": "2b028be920d271c6e53b44319d1c871dc3d27076",
+        "content": "",
+        "timestamp": "2026-01-14T18:38:22.963353"
+      },
+      "worktree_state": {
+        "content": "{\n  \"session_number\": 12,\n  \"timestamp\": \"2026-01-14T08:02:20.122620+00:00\",\n  \"subtasks_completed\": [\n    \"subtask-13-3\"\n  ],\n  \"discoveries\": {\n    \"file_insights\": [\n      {\n        \"filename\": \"docs/ROUTES.md\",\n        \"type\": \"documentation\",\n        \"purpose\": \"Comprehensive route documentation for e-menum.net platform\"\n      },\n      {\n        \"filename\": \".auto-claude-status\",\n        \"type\": \"status_tracking\",\n        \"details\": {\n          \"subtasks_completed\": 63,\n          \"total_subtasks\": 66,\n          \"current_phase\": \"Integration & Polish\"\n        }\n      }\n    ],\n    \"patterns_discovered\": [\n      \"Systematic test suite and documentation process\",\n      \"Incremental project tracking with detailed status updates\",\n      \"Comprehensive route documentation strategy\"\n    ],\n    \"gotchas_discovered\": [\n      \"Complex project management with multiple tracking files\",\n      \"Large number of session insight files indicating intricate development process\",\n      \"Extensive file changes across multiple components\"\n    ],\n    \"approach_outcome\": {\n      \"subtask_id\": \"subtask-13-3\",\n      \"description\": \"Run full test suite and fix issues\",\n      \"status\": \"SUCCESS\",\n      \"commits_created\": 1,\n      \"files_changed\": 28\n    },\n    \"recommendations\": [\n      \"Continue comprehensive test coverage\",\n      \"Maintain detailed documentation across project routes\",\n      \"Keep refining incremental tracking and status update mechanisms\",\n      \"Monitor test suite for potential optimization opportunities\"\n    ],\n    \"subtask_id\": \"subtask-13-3\",\n    \"session_num\": 12,\n    \"success\": true,\n    \"changed_files\": [\n      \".auto-claude-status\",\n      \".auto-claude/specs/001-ozon-e-menum-net-vibe-coding-v1/implementation_plan.json\",\n      \".auto-claude/specs/001-ozon-e-menum-net-vibe-coding-v1/memory/attempt_history.json\",\n      \".auto-claude/specs/001-ozon-e-menum-net-vibe-coding-v1/memory/build_commits.json\",\n      \".auto-claude/specs/001-ozon-e-menum-net-vibe-coding-v1/memory/session_insights/session_011.json\",\n      \".auto-claude/specs/001-ozon-e-menum-net-vibe-coding-v1/task_logs.json\",\n      \"app/(admin)/admin-layout-client.tsx\",\n      \"app/(admin)/admin/organizations/page.tsx\",\n      \"app/(admin)/layout.tsx\",\n      \"app/(auth)/reset-password/page.tsx\",\n      \"app/(auth)/verify-email/page.tsx\",\n      \"app/(dashboard)/dashboard-layout-client.tsx\",\n      \"app/(dashboard)/dashboard/dashboard-client.tsx\",\n      \"app/(dashboard)/dashboard/page.tsx\",\n      \"app/(dashboard)/layout.tsx\",\n      \"app/(dashboard)/products/[id]/page.tsx\",\n      \"app/(dashboard)/products/page.tsx\",\n      \"app/error.tsx\",\n      \"app/global-error.tsx\",\n      \"app/layout.tsx\",\n      \"app/menu/[slug]/page.tsx\",\n      \"app/not-found.tsx\",\n      \"app/r/[slug]/page.tsx\",\n      \"components/providers/providers.tsx\",\n      \"hooks/useTableContext.ts\",\n      \"lib/qrcode/generator.ts\",\n      \"lib/supabase/server.ts\",\n      \"pages/_error.tsx\"\n    ]\n  },\n  \"what_worked\": [\n    \"Implemented subtask: subtask-13-3\"\n  ],\n  \"what_failed\": [],\n  \"recommendations_for_next_session\": []\n}",
+        "last_modified": "2026-01-15T15:05:31.788188"
+      },
+      "task_intent": {
+        "title": "032-add-mobile-navigation-menu-to-landing-page",
+        "description": "The landing page navigation on mobile devices only shows a 'Basla' button, hiding all other navigation links. Add a proper hamburger menu for mobile users.",
+        "from_plan": true
+      },
+      "commits_behind_main": 0,
+      "status": "active",
+      "merged_at": null
+    },
+    "031-add-mobile-navigation-menu-to-landing-page": {
+      "task_id": "031-add-mobile-navigation-menu-to-landing-page",
+      "branch_point": {
+        "commit_hash": "2b028be920d271c6e53b44319d1c871dc3d27076",
+        "content": "",
+        "timestamp": "2026-01-14T18:50:42.638180"
+      },
+      "worktree_state": {
+        "content": "{\n  \"session_number\": 12,\n  \"timestamp\": \"2026-01-14T08:02:20.122620+00:00\",\n  \"subtasks_completed\": [\n    \"subtask-13-3\"\n  ],\n  \"discoveries\": {\n    \"file_insights\": [\n      {\n        \"filename\": \"docs/ROUTES.md\",\n        \"type\": \"documentation\",\n        \"purpose\": \"Comprehensive route documentation for e-menum.net platform\"\n      },\n      {\n        \"filename\": \".auto-claude-status\",\n        \"type\": \"status_tracking\",\n        \"details\": {\n          \"subtasks_completed\": 63,\n          \"total_subtasks\": 66,\n          \"current_phase\": \"Integration & Polish\"\n        }\n      }\n    ],\n    \"patterns_discovered\": [\n      \"Systematic test suite and documentation process\",\n      \"Incremental project tracking with detailed status updates\",\n      \"Comprehensive route documentation strategy\"\n    ],\n    \"gotchas_discovered\": [\n      \"Complex project management with multiple tracking files\",\n      \"Large number of session insight files indicating intricate development process\",\n      \"Extensive file changes across multiple components\"\n    ],\n    \"approach_outcome\": {\n      \"subtask_id\": \"subtask-13-3\",\n      \"description\": \"Run full test suite and fix issues\",\n      \"status\": \"SUCCESS\",\n      \"commits_created\": 1,\n      \"files_changed\": 28\n    },\n    \"recommendations\": [\n      \"Continue comprehensive test coverage\",\n      \"Maintain detailed documentation across project routes\",\n      \"Keep refining incremental tracking and status update mechanisms\",\n      \"Monitor test suite for potential optimization opportunities\"\n    ],\n    \"subtask_id\": \"subtask-13-3\",\n    \"session_num\": 12,\n    \"success\": true,\n    \"changed_files\": [\n      \".auto-claude-status\",\n      \".auto-claude/specs/001-ozon-e-menum-net-vibe-coding-v1/implementation_plan.json\",\n      \".auto-claude/specs/001-ozon-e-menum-net-vibe-coding-v1/memory/attempt_history.json\",\n      \".auto-claude/specs/001-ozon-e-menum-net-vibe-coding-v1/memory/build_commits.json\",\n      \".auto-claude/specs/001-ozon-e-menum-net-vibe-coding-v1/memory/session_insights/session_011.json\",\n      \".auto-claude/specs/001-ozon-e-menum-net-vibe-coding-v1/task_logs.json\",\n      \"app/(admin)/admin-layout-client.tsx\",\n      \"app/(admin)/admin/organizations/page.tsx\",\n      \"app/(admin)/layout.tsx\",\n      \"app/(auth)/reset-password/page.tsx\",\n      \"app/(auth)/verify-email/page.tsx\",\n      \"app/(dashboard)/dashboard-layout-client.tsx\",\n      \"app/(dashboard)/dashboard/dashboard-client.tsx\",\n      \"app/(dashboard)/dashboard/page.tsx\",\n      \"app/(dashboard)/layout.tsx\",\n      \"app/(dashboard)/products/[id]/page.tsx\",\n      \"app/(dashboard)/products/page.tsx\",\n      \"app/error.tsx\",\n      \"app/global-error.tsx\",\n      \"app/layout.tsx\",\n      \"app/menu/[slug]/page.tsx\",\n      \"app/not-found.tsx\",\n      \"app/r/[slug]/page.tsx\",\n      \"components/providers/providers.tsx\",\n      \"hooks/useTableContext.ts\",\n      \"lib/qrcode/generator.ts\",\n      \"lib/supabase/server.ts\",\n      \"pages/_error.tsx\"\n    ]\n  },\n  \"what_worked\": [\n    \"Implemented subtask: subtask-13-3\"\n  ],\n  \"what_failed\": [],\n  \"recommendations_for_next_session\": []\n}",
+        "last_modified": "2026-01-15T15:03:39.196997"
+      },
+      "task_intent": {
+        "title": "031-add-mobile-navigation-menu-to-landing-page",
+        "description": "The landing page navigation on mobile devices only shows a 'Basla' button, hiding all other navigation links. Add a proper hamburger menu for mobile users.",
+        "from_plan": true
+      },
+      "commits_behind_main": 0,
+      "status": "active",
+      "merged_at": null
+    },
+    "040-add-bulk-qr-code-download-for-all-tables": {
+      "task_id": "040-add-bulk-qr-code-download-for-all-tables",
+      "branch_point": {
+        "commit_hash": "2b028be920d271c6e53b44319d1c871dc3d27076",
+        "content": "",
+        "timestamp": "2026-01-14T18:53:11.069414"
+      },
+      "worktree_state": {
+        "content": "{\n  \"session_number\": 12,\n  \"timestamp\": \"2026-01-14T08:02:20.122620+00:00\",\n  \"subtasks_completed\": [\n    \"subtask-13-3\"\n  ],\n  \"discoveries\": {\n    \"file_insights\": [\n      {\n        \"filename\": \"docs/ROUTES.md\",\n        \"type\": \"documentation\",\n        \"purpose\": \"Comprehensive route documentation for e-menum.net platform\"\n      },\n      {\n        \"filename\": \".auto-claude-status\",\n        \"type\": \"status_tracking\",\n        \"details\": {\n          \"subtasks_completed\": 63,\n          \"total_subtasks\": 66,\n          \"current_phase\": \"Integration & Polish\"\n        }\n      }\n    ],\n    \"patterns_discovered\": [\n      \"Systematic test suite and documentation process\",\n      \"Incremental project tracking with detailed status updates\",\n      \"Comprehensive route documentation strategy\"\n    ],\n    \"gotchas_discovered\": [\n      \"Complex project management with multiple tracking files\",\n      \"Large number of session insight files indicating intricate development process\",\n      \"Extensive file changes across multiple components\"\n    ],\n    \"approach_outcome\": {\n      \"subtask_id\": \"subtask-13-3\",\n      \"description\": \"Run full test suite and fix issues\",\n      \"status\": \"SUCCESS\",\n      \"commits_created\": 1,\n      \"files_changed\": 28\n    },\n    \"recommendations\": [\n      \"Continue comprehensive test coverage\",\n      \"Maintain detailed documentation across project routes\",\n      \"Keep refining incremental tracking and status update mechanisms\",\n      \"Monitor test suite for potential optimization opportunities\"\n    ],\n    \"subtask_id\": \"subtask-13-3\",\n    \"session_num\": 12,\n    \"success\": true,\n    \"changed_files\": [\n      \".auto-claude-status\",\n      \".auto-claude/specs/001-ozon-e-menum-net-vibe-coding-v1/implementation_plan.json\",\n      \".auto-claude/specs/001-ozon-e-menum-net-vibe-coding-v1/memory/attempt_history.json\",\n      \".auto-claude/specs/001-ozon-e-menum-net-vibe-coding-v1/memory/build_commits.json\",\n      \".auto-claude/specs/001-ozon-e-menum-net-vibe-coding-v1/memory/session_insights/session_011.json\",\n      \".auto-claude/specs/001-ozon-e-menum-net-vibe-coding-v1/task_logs.json\",\n      \"app/(admin)/admin-layout-client.tsx\",\n      \"app/(admin)/admin/organizations/page.tsx\",\n      \"app/(admin)/layout.tsx\",\n      \"app/(auth)/reset-password/page.tsx\",\n      \"app/(auth)/verify-email/page.tsx\",\n      \"app/(dashboard)/dashboard-layout-client.tsx\",\n      \"app/(dashboard)/dashboard/dashboard-client.tsx\",\n      \"app/(dashboard)/dashboard/page.tsx\",\n      \"app/(dashboard)/layout.tsx\",\n      \"app/(dashboard)/products/[id]/page.tsx\",\n      \"app/(dashboard)/products/page.tsx\",\n      \"app/error.tsx\",\n      \"app/global-error.tsx\",\n      \"app/layout.tsx\",\n      \"app/menu/[slug]/page.tsx\",\n      \"app/not-found.tsx\",\n      \"app/r/[slug]/page.tsx\",\n      \"components/providers/providers.tsx\",\n      \"hooks/useTableContext.ts\",\n      \"lib/qrcode/generator.ts\",\n      \"lib/supabase/server.ts\",\n      \"pages/_error.tsx\"\n    ]\n  },\n  \"what_worked\": [\n    \"Implemented subtask: subtask-13-3\"\n  ],\n  \"what_failed\": [],\n  \"recommendations_for_next_session\": []\n}",
+        "last_modified": "2026-01-14T18:53:20.425421"
+      },
+      "task_intent": {
+        "title": "040-add-bulk-qr-code-download-for-all-tables",
+        "description": "",
+        "from_plan": false
+      },
+      "commits_behind_main": 0,
+      "status": "active",
+      "merged_at": null
+    },
+    "005-extract-duplicated-crud-state-management-into-reus": {
+      "task_id": "005-extract-duplicated-crud-state-management-into-reus",
+      "branch_point": {
+        "commit_hash": "2b028be920d271c6e53b44319d1c871dc3d27076",
+        "content": "",
+        "timestamp": "2026-01-15T06:33:12.581832"
+      },
+      "worktree_state": {
+        "content": "{\n  \"session_number\": 12,\n  \"timestamp\": \"2026-01-14T08:02:20.122620+00:00\",\n  \"subtasks_completed\": [\n    \"subtask-13-3\"\n  ],\n  \"discoveries\": {\n    \"file_insights\": [\n      {\n        \"filename\": \"docs/ROUTES.md\",\n        \"type\": \"documentation\",\n        \"purpose\": \"Comprehensive route documentation for e-menum.net platform\"\n      },\n      {\n        \"filename\": \".auto-claude-status\",\n        \"type\": \"status_tracking\",\n        \"details\": {\n          \"subtasks_completed\": 63,\n          \"total_subtasks\": 66,\n          \"current_phase\": \"Integration & Polish\"\n        }\n      }\n    ],\n    \"patterns_discovered\": [\n      \"Systematic test suite and documentation process\",\n      \"Incremental project tracking with detailed status updates\",\n      \"Comprehensive route documentation strategy\"\n    ],\n    \"gotchas_discovered\": [\n      \"Complex project management with multiple tracking files\",\n      \"Large number of session insight files indicating intricate development process\",\n      \"Extensive file changes across multiple components\"\n    ],\n    \"approach_outcome\": {\n      \"subtask_id\": \"subtask-13-3\",\n      \"description\": \"Run full test suite and fix issues\",\n      \"status\": \"SUCCESS\",\n      \"commits_created\": 1,\n      \"files_changed\": 28\n    },\n    \"recommendations\": [\n      \"Continue comprehensive test coverage\",\n      \"Maintain detailed documentation across project routes\",\n      \"Keep refining incremental tracking and status update mechanisms\",\n      \"Monitor test suite for potential optimization opportunities\"\n    ],\n    \"subtask_id\": \"subtask-13-3\",\n    \"session_num\": 12,\n    \"success\": true,\n    \"changed_files\": [\n      \".auto-claude-status\",\n      \".auto-claude/specs/001-ozon-e-menum-net-vibe-coding-v1/implementation_plan.json\",\n      \".auto-claude/specs/001-ozon-e-menum-net-vibe-coding-v1/memory/attempt_history.json\",\n      \".auto-claude/specs/001-ozon-e-menum-net-vibe-coding-v1/memory/build_commits.json\",\n      \".auto-claude/specs/001-ozon-e-menum-net-vibe-coding-v1/memory/session_insights/session_011.json\",\n      \".auto-claude/specs/001-ozon-e-menum-net-vibe-coding-v1/task_logs.json\",\n      \"app/(admin)/admin-layout-client.tsx\",\n      \"app/(admin)/admin/organizations/page.tsx\",\n      \"app/(admin)/layout.tsx\",\n      \"app/(auth)/reset-password/page.tsx\",\n      \"app/(auth)/verify-email/page.tsx\",\n      \"app/(dashboard)/dashboard-layout-client.tsx\",\n      \"app/(dashboard)/dashboard/dashboard-client.tsx\",\n      \"app/(dashboard)/dashboard/page.tsx\",\n      \"app/(dashboard)/layout.tsx\",\n      \"app/(dashboard)/products/[id]/page.tsx\",\n      \"app/(dashboard)/products/page.tsx\",\n      \"app/error.tsx\",\n      \"app/global-error.tsx\",\n      \"app/layout.tsx\",\n      \"app/menu/[slug]/page.tsx\",\n      \"app/not-found.tsx\",\n      \"app/r/[slug]/page.tsx\",\n      \"components/providers/providers.tsx\",\n      \"hooks/useTableContext.ts\",\n      \"lib/qrcode/generator.ts\",\n      \"lib/supabase/server.ts\",\n      \"pages/_error.tsx\"\n    ]\n  },\n  \"what_worked\": [\n    \"Implemented subtask: subtask-13-3\"\n  ],\n  \"what_failed\": [],\n  \"recommendations_for_next_session\": []\n}",
+        "last_modified": "2026-01-15T16:04:15.484506"
+      },
+      "task_intent": {
+        "title": "005-extract-duplicated-crud-state-management-into-reus",
+        "description": "",
+        "from_plan": false
+      },
+      "commits_behind_main": 5,
+      "status": "active",
+      "merged_at": null
+    },
+    "002-add-unit-test-coverage-for-dashboard-page-componen": {
+      "task_id": "002-add-unit-test-coverage-for-dashboard-page-componen",
+      "branch_point": {
+        "commit_hash": "2b028be920d271c6e53b44319d1c871dc3d27076",
+        "content": "",
+        "timestamp": "2026-01-15T14:04:12.520457"
+      },
+      "worktree_state": {
+        "content": "{\n  \"session_number\": 12,\n  \"timestamp\": \"2026-01-14T08:02:20.122620+00:00\",\n  \"subtasks_completed\": [\n    \"subtask-13-3\"\n  ],\n  \"discoveries\": {\n    \"file_insights\": [\n      {\n        \"filename\": \"docs/ROUTES.md\",\n        \"type\": \"documentation\",\n        \"purpose\": \"Comprehensive route documentation for e-menum.net platform\"\n      },\n      {\n        \"filename\": \".auto-claude-status\",\n        \"type\": \"status_tracking\",\n        \"details\": {\n          \"subtasks_completed\": 63,\n          \"total_subtasks\": 66,\n          \"current_phase\": \"Integration & Polish\"\n        }\n      }\n    ],\n    \"patterns_discovered\": [\n      \"Systematic test suite and documentation process\",\n      \"Incremental project tracking with detailed status updates\",\n      \"Comprehensive route documentation strategy\"\n    ],\n    \"gotchas_discovered\": [\n      \"Complex project management with multiple tracking files\",\n      \"Large number of session insight files indicating intricate development process\",\n      \"Extensive file changes across multiple components\"\n    ],\n    \"approach_outcome\": {\n      \"subtask_id\": \"subtask-13-3\",\n      \"description\": \"Run full test suite and fix issues\",\n      \"status\": \"SUCCESS\",\n      \"commits_created\": 1,\n      \"files_changed\": 28\n    },\n    \"recommendations\": [\n      \"Continue comprehensive test coverage\",\n      \"Maintain detailed documentation across project routes\",\n      \"Keep refining incremental tracking and status update mechanisms\",\n      \"Monitor test suite for potential optimization opportunities\"\n    ],\n    \"subtask_id\": \"subtask-13-3\",\n    \"session_num\": 12,\n    \"success\": true,\n    \"changed_files\": [\n      \".auto-claude-status\",\n      \".auto-claude/specs/001-ozon-e-menum-net-vibe-coding-v1/implementation_plan.json\",\n      \".auto-claude/specs/001-ozon-e-menum-net-vibe-coding-v1/memory/attempt_history.json\",\n      \".auto-claude/specs/001-ozon-e-menum-net-vibe-coding-v1/memory/build_commits.json\",\n      \".auto-claude/specs/001-ozon-e-menum-net-vibe-coding-v1/memory/session_insights/session_011.json\",\n      \".auto-claude/specs/001-ozon-e-menum-net-vibe-coding-v1/task_logs.json\",\n      \"app/(admin)/admin-layout-client.tsx\",\n      \"app/(admin)/admin/organizations/page.tsx\",\n      \"app/(admin)/layout.tsx\",\n      \"app/(auth)/reset-password/page.tsx\",\n      \"app/(auth)/verify-email/page.tsx\",\n      \"app/(dashboard)/dashboard-layout-client.tsx\",\n      \"app/(dashboard)/dashboard/dashboard-client.tsx\",\n      \"app/(dashboard)/dashboard/page.tsx\",\n      \"app/(dashboard)/layout.tsx\",\n      \"app/(dashboard)/products/[id]/page.tsx\",\n      \"app/(dashboard)/products/page.tsx\",\n      \"app/error.tsx\",\n      \"app/global-error.tsx\",\n      \"app/layout.tsx\",\n      \"app/menu/[slug]/page.tsx\",\n      \"app/not-found.tsx\",\n      \"app/r/[slug]/page.tsx\",\n      \"components/providers/providers.tsx\",\n      \"hooks/useTableContext.ts\",\n      \"lib/qrcode/generator.ts\",\n      \"lib/supabase/server.ts\",\n      \"pages/_error.tsx\"\n    ]\n  },\n  \"what_worked\": [\n    \"Implemented subtask: subtask-13-3\"\n  ],\n  \"what_failed\": [],\n  \"recommendations_for_next_session\": []\n}",
+        "last_modified": "2026-01-15T16:20:44.211774"
+      },
+      "task_intent": {
+        "title": "002-add-unit-test-coverage-for-dashboard-page-componen",
+        "description": "",
+        "from_plan": false
+      },
+      "commits_behind_main": 5,
+      "status": "active",
+      "merged_at": null
+    },
+    "034-create-reusable-select-component-for-consistent-fo": {
+      "task_id": "034-create-reusable-select-component-for-consistent-fo",
+      "branch_point": {
+        "commit_hash": "2b028be920d271c6e53b44319d1c871dc3d27076",
+        "content": "",
+        "timestamp": "2026-01-15T14:05:37.956433"
+      },
+      "worktree_state": {
+        "content": "{\n  \"session_number\": 12,\n  \"timestamp\": \"2026-01-14T08:02:20.122620+00:00\",\n  \"subtasks_completed\": [\n    \"subtask-13-3\"\n  ],\n  \"discoveries\": {\n    \"file_insights\": [\n      {\n        \"filename\": \"docs/ROUTES.md\",\n        \"type\": \"documentation\",\n        \"purpose\": \"Comprehensive route documentation for e-menum.net platform\"\n      },\n      {\n        \"filename\": \".auto-claude-status\",\n        \"type\": \"status_tracking\",\n        \"details\": {\n          \"subtasks_completed\": 63,\n          \"total_subtasks\": 66,\n          \"current_phase\": \"Integration & Polish\"\n        }\n      }\n    ],\n    \"patterns_discovered\": [\n      \"Systematic test suite and documentation process\",\n      \"Incremental project tracking with detailed status updates\",\n      \"Comprehensive route documentation strategy\"\n    ],\n    \"gotchas_discovered\": [\n      \"Complex project management with multiple tracking files\",\n      \"Large number of session insight files indicating intricate development process\",\n      \"Extensive file changes across multiple components\"\n    ],\n    \"approach_outcome\": {\n      \"subtask_id\": \"subtask-13-3\",\n      \"description\": \"Run full test suite and fix issues\",\n      \"status\": \"SUCCESS\",\n      \"commits_created\": 1,\n      \"files_changed\": 28\n    },\n    \"recommendations\": [\n      \"Continue comprehensive test coverage\",\n      \"Maintain detailed documentation across project routes\",\n      \"Keep refining incremental tracking and status update mechanisms\",\n      \"Monitor test suite for potential optimization opportunities\"\n    ],\n    \"subtask_id\": \"subtask-13-3\",\n    \"session_num\": 12,\n    \"success\": true,\n    \"changed_files\": [\n      \".auto-claude-status\",\n      \".auto-claude/specs/001-ozon-e-menum-net-vibe-coding-v1/implementation_plan.json\",\n      \".auto-claude/specs/001-ozon-e-menum-net-vibe-coding-v1/memory/attempt_history.json\",\n      \".auto-claude/specs/001-ozon-e-menum-net-vibe-coding-v1/memory/build_commits.json\",\n      \".auto-claude/specs/001-ozon-e-menum-net-vibe-coding-v1/memory/session_insights/session_011.json\",\n      \".auto-claude/specs/001-ozon-e-menum-net-vibe-coding-v1/task_logs.json\",\n      \"app/(admin)/admin-layout-client.tsx\",\n      \"app/(admin)/admin/organizations/page.tsx\",\n      \"app/(admin)/layout.tsx\",\n      \"app/(auth)/reset-password/page.tsx\",\n      \"app/(auth)/verify-email/page.tsx\",\n      \"app/(dashboard)/dashboard-layout-client.tsx\",\n      \"app/(dashboard)/dashboard/dashboard-client.tsx\",\n      \"app/(dashboard)/dashboard/page.tsx\",\n      \"app/(dashboard)/layout.tsx\",\n      \"app/(dashboard)/products/[id]/page.tsx\",\n      \"app/(dashboard)/products/page.tsx\",\n      \"app/error.tsx\",\n      \"app/global-error.tsx\",\n      \"app/layout.tsx\",\n      \"app/menu/[slug]/page.tsx\",\n      \"app/not-found.tsx\",\n      \"app/r/[slug]/page.tsx\",\n      \"components/providers/providers.tsx\",\n      \"hooks/useTableContext.ts\",\n      \"lib/qrcode/generator.ts\",\n      \"lib/supabase/server.ts\",\n      \"pages/_error.tsx\"\n    ]\n  },\n  \"what_worked\": [\n    \"Implemented subtask: subtask-13-3\"\n  ],\n  \"what_failed\": [],\n  \"recommendations_for_next_session\": []\n}",
+        "last_modified": "2026-01-15T14:05:43.668175"
+      },
+      "task_intent": {
+        "title": "034-create-reusable-select-component-for-consistent-fo",
+        "description": "",
+        "from_plan": false
+      },
+      "commits_behind_main": 5,
+      "status": "active",
+      "merged_at": null
+    },
+    "023-add-mobile-navigation-menu-to-landing-page": {
+      "task_id": "023-add-mobile-navigation-menu-to-landing-page",
+      "branch_point": {
+        "commit_hash": "c709a6c45b4887c1a0ad6e04c6142783760a46ec",
+        "content": "",
+        "timestamp": "2026-01-15T13:47:09.808921"
+      },
+      "worktree_state": {
+        "content": "{\n  \"session_number\": 12,\n  \"timestamp\": \"2026-01-14T08:02:20.122620+00:00\",\n  \"subtasks_completed\": [\n    \"subtask-13-3\"\n  ],\n  \"discoveries\": {\n    \"file_insights\": [\n      {\n        \"filename\": \"docs/ROUTES.md\",\n        \"type\": \"documentation\",\n        \"purpose\": \"Comprehensive route documentation for e-menum.net platform\"\n      },\n      {\n        \"filename\": \".auto-claude-status\",\n        \"type\": \"status_tracking\",\n        \"details\": {\n          \"subtasks_completed\": 63,\n          \"total_subtasks\": 66,\n          \"current_phase\": \"Integration & Polish\"\n        }\n      }\n    ],\n    \"patterns_discovered\": [\n      \"Systematic test suite and documentation process\",\n      \"Incremental project tracking with detailed status updates\",\n      \"Comprehensive route documentation strategy\"\n    ],\n    \"gotchas_discovered\": [\n      \"Complex project management with multiple tracking files\",\n      \"Large number of session insight files indicating intricate development process\",\n      \"Extensive file changes across multiple components\"\n    ],\n    \"approach_outcome\": {\n      \"subtask_id\": \"subtask-13-3\",\n      \"description\": \"Run full test suite and fix issues\",\n      \"status\": \"SUCCESS\",\n      \"commits_created\": 1,\n      \"files_changed\": 28\n    },\n    \"recommendations\": [\n      \"Continue comprehensive test coverage\",\n      \"Maintain detailed documentation across project routes\",\n      \"Keep refining incremental tracking and status update mechanisms\",\n      \"Monitor test suite for potential optimization opportunities\"\n    ],\n    \"subtask_id\": \"subtask-13-3\",\n    \"session_num\": 12,\n    \"success\": true,\n    \"changed_files\": [\n      \".auto-claude-status\",\n      \".auto-claude/specs/001-ozon-e-menum-net-vibe-coding-v1/implementation_plan.json\",\n      \".auto-claude/specs/001-ozon-e-menum-net-vibe-coding-v1/memory/attempt_history.json\",\n      \".auto-claude/specs/001-ozon-e-menum-net-vibe-coding-v1/memory/build_commits.json\",\n      \".auto-claude/specs/001-ozon-e-menum-net-vibe-coding-v1/memory/session_insights/session_011.json\",\n      \".auto-claude/specs/001-ozon-e-menum-net-vibe-coding-v1/task_logs.json\",\n      \"app/(admin)/admin-layout-client.tsx\",\n      \"app/(admin)/admin/organizations/page.tsx\",\n      \"app/(admin)/layout.tsx\",\n      \"app/(auth)/reset-password/page.tsx\",\n      \"app/(auth)/verify-email/page.tsx\",\n      \"app/(dashboard)/dashboard-layout-client.tsx\",\n      \"app/(dashboard)/dashboard/dashboard-client.tsx\",\n      \"app/(dashboard)/dashboard/page.tsx\",\n      \"app/(dashboard)/layout.tsx\",\n      \"app/(dashboard)/products/[id]/page.tsx\",\n      \"app/(dashboard)/products/page.tsx\",\n      \"app/error.tsx\",\n      \"app/global-error.tsx\",\n      \"app/layout.tsx\",\n      \"app/menu/[slug]/page.tsx\",\n      \"app/not-found.tsx\",\n      \"app/r/[slug]/page.tsx\",\n      \"components/providers/providers.tsx\",\n      \"hooks/useTableContext.ts\",\n      \"lib/qrcode/generator.ts\",\n      \"lib/supabase/server.ts\",\n      \"pages/_error.tsx\"\n    ]\n  },\n  \"what_worked\": [\n    \"Implemented subtask: subtask-13-3\"\n  ],\n  \"what_failed\": [],\n  \"recommendations_for_next_session\": []\n}",
+        "last_modified": "2026-01-15T13:47:16.696688"
+      },
+      "task_intent": {
+        "title": "023-add-mobile-navigation-menu-to-landing-page",
+        "description": "",
+        "from_plan": false
+      },
+      "commits_behind_main": 0,
+      "status": "active",
+      "merged_at": null
+    },
+    "026-add-mobile-navigation-menu-to-landing-page": {
+      "task_id": "026-add-mobile-navigation-menu-to-landing-page",
+      "branch_point": {
+        "commit_hash": "2b028be920d271c6e53b44319d1c871dc3d27076",
+        "content": "",
+        "timestamp": "2026-01-15T14:15:55.210168"
+      },
+      "worktree_state": {
+        "content": "{\n  \"session_number\": 12,\n  \"timestamp\": \"2026-01-14T08:02:20.122620+00:00\",\n  \"subtasks_completed\": [\n    \"subtask-13-3\"\n  ],\n  \"discoveries\": {\n    \"file_insights\": [\n      {\n        \"filename\": \"docs/ROUTES.md\",\n        \"type\": \"documentation\",\n        \"purpose\": \"Comprehensive route documentation for e-menum.net platform\"\n      },\n      {\n        \"filename\": \".auto-claude-status\",\n        \"type\": \"status_tracking\",\n        \"details\": {\n          \"subtasks_completed\": 63,\n          \"total_subtasks\": 66,\n          \"current_phase\": \"Integration & Polish\"\n        }\n      }\n    ],\n    \"patterns_discovered\": [\n      \"Systematic test suite and documentation process\",\n      \"Incremental project tracking with detailed status updates\",\n      \"Comprehensive route documentation strategy\"\n    ],\n    \"gotchas_discovered\": [\n      \"Complex project management with multiple tracking files\",\n      \"Large number of session insight files indicating intricate development process\",\n      \"Extensive file changes across multiple components\"\n    ],\n    \"approach_outcome\": {\n      \"subtask_id\": \"subtask-13-3\",\n      \"description\": \"Run full test suite and fix issues\",\n      \"status\": \"SUCCESS\",\n      \"commits_created\": 1,\n      \"files_changed\": 28\n    },\n    \"recommendations\": [\n      \"Continue comprehensive test coverage\",\n      \"Maintain detailed documentation across project routes\",\n      \"Keep refining incremental tracking and status update mechanisms\",\n      \"Monitor test suite for potential optimization opportunities\"\n    ],\n    \"subtask_id\": \"subtask-13-3\",\n    \"session_num\": 12,\n    \"success\": true,\n    \"changed_files\": [\n      \".auto-claude-status\",\n      \".auto-claude/specs/001-ozon-e-menum-net-vibe-coding-v1/implementation_plan.json\",\n      \".auto-claude/specs/001-ozon-e-menum-net-vibe-coding-v1/memory/attempt_history.json\",\n      \".auto-claude/specs/001-ozon-e-menum-net-vibe-coding-v1/memory/build_commits.json\",\n      \".auto-claude/specs/001-ozon-e-menum-net-vibe-coding-v1/memory/session_insights/session_011.json\",\n      \".auto-claude/specs/001-ozon-e-menum-net-vibe-coding-v1/task_logs.json\",\n      \"app/(admin)/admin-layout-client.tsx\",\n      \"app/(admin)/admin/organizations/page.tsx\",\n      \"app/(admin)/layout.tsx\",\n      \"app/(auth)/reset-password/page.tsx\",\n      \"app/(auth)/verify-email/page.tsx\",\n      \"app/(dashboard)/dashboard-layout-client.tsx\",\n      \"app/(dashboard)/dashboard/dashboard-client.tsx\",\n      \"app/(dashboard)/dashboard/page.tsx\",\n      \"app/(dashboard)/layout.tsx\",\n      \"app/(dashboard)/products/[id]/page.tsx\",\n      \"app/(dashboard)/products/page.tsx\",\n      \"app/error.tsx\",\n      \"app/global-error.tsx\",\n      \"app/layout.tsx\",\n      \"app/menu/[slug]/page.tsx\",\n      \"app/not-found.tsx\",\n      \"app/r/[slug]/page.tsx\",\n      \"components/providers/providers.tsx\",\n      \"hooks/useTableContext.ts\",\n      \"lib/qrcode/generator.ts\",\n      \"lib/supabase/server.ts\",\n      \"pages/_error.tsx\"\n    ]\n  },\n  \"what_worked\": [\n    \"Implemented subtask: subtask-13-3\"\n  ],\n  \"what_failed\": [],\n  \"recommendations_for_next_session\": []\n}",
+        "last_modified": "2026-01-15T14:16:00.950094"
+      },
+      "task_intent": {
+        "title": "026-add-mobile-navigation-menu-to-landing-page",
+        "description": "",
+        "from_plan": false
+      },
+      "commits_behind_main": 5,
+      "status": "active",
+      "merged_at": null
+    }
+  },
+  "created_at": "2026-01-14T09:55:04.674650",
+  "last_updated": "2026-01-15T14:15:56.211768"
+}

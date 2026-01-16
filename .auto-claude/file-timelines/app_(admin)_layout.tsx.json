@@ -1,0 +1,228 @@
+{
+  "file_path": "app/(admin)/layout.tsx",
+  "main_branch_history": [],
+  "task_views": {
+    "001-ozon-e-menum-net-vibe-coding-v1": {
+      "task_id": "001-ozon-e-menum-net-vibe-coding-v1",
+      "branch_point": {
+        "commit_hash": "2b028be920d271c6e53b44319d1c871dc3d27076",
+        "content": "",
+        "timestamp": "2026-01-14T09:55:04.472899"
+      },
+      "worktree_state": {
+        "content": "'use client'\n\nimport { useState, useEffect } from 'react'\nimport Link from 'next/link'\nimport { usePathname, useRouter } from 'next/navigation'\nimport { useAuth } from '@/hooks/useAuth'\n\n/**\n * Admin navigation items for the Super Admin panel\n */\nconst adminNavItems = [\n  {\n    name: 'Admin Panel',\n    href: '/admin',\n    icon: (\n      <svg className=\"h-5 w-5\" fill=\"none\" viewBox=\"0 0 24 24\" stroke=\"currentColor\" strokeWidth={2}>\n        <path strokeLinecap=\"round\" strokeLinejoin=\"round\" d=\"M9 17V7m0 10a2 2 0 01-2 2H5a2 2 0 01-2-2V7a2 2 0 012-2h2a2 2 0 012 2m0 10a2 2 0 002 2h2a2 2 0 002-2M9 7a2 2 0 012-2h2a2 2 0 012 2m0 10V7m0 10a2 2 0 002 2h2a2 2 0 002-2V7a2 2 0 00-2-2h-2a2 2 0 00-2 2\" />\n      </svg>\n    ),\n  },\n  {\n    name: 'Organizasyonlar',\n    href: '/admin/organizations',\n    icon: (\n      <svg className=\"h-5 w-5\" fill=\"none\" viewBox=\"0 0 24 24\" stroke=\"currentColor\" strokeWidth={2}>\n        <path strokeLinecap=\"round\" strokeLinejoin=\"round\" d=\"M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4\" />\n      </svg>\n    ),\n  },\n  {\n    name: 'Plan Yonetimi',\n    href: '/admin/plans',\n    icon: (\n      <svg className=\"h-5 w-5\" fill=\"none\" viewBox=\"0 0 24 24\" stroke=\"currentColor\" strokeWidth={2}>\n        <path strokeLinecap=\"round\" strokeLinejoin=\"round\" d=\"M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z\" />\n      </svg>\n    ),\n  },\n  {\n    name: 'Ozellik Override',\n    href: '/admin/overrides',\n    icon: (\n      <svg className=\"h-5 w-5\" fill=\"none\" viewBox=\"0 0 24 24\" stroke=\"currentColor\" strokeWidth={2}>\n        <path strokeLinecap=\"round\" strokeLinejoin=\"round\" d=\"M12 6V4m0 2a2 2 0 100 4m0-4a2 2 0 110 4m-6 8a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4m6 6v10m6-2a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4\" />\n      </svg>\n    ),\n  },\n  {\n    name: 'AI Token Yonetimi',\n    href: '/admin/ai',\n    icon: (\n      <svg className=\"h-5 w-5\" fill=\"none\" viewBox=\"0 0 24 24\" stroke=\"currentColor\" strokeWidth={2}>\n        <path strokeLinecap=\"round\" strokeLinejoin=\"round\" d=\"M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z\" />\n      </svg>\n    ),\n  },\n]\n\n/**\n * Admin layout logo component with admin badge\n */\nconst AdminLogo = () => (\n  <Link\n    href=\"/admin\"\n    className=\"flex items-center gap-2 text-xl font-bold text-red-600 dark:text-red-400\"\n  >\n    <svg\n      className=\"h-8 w-8\"\n      viewBox=\"0 0 32 32\"\n      fill=\"none\"\n      xmlns=\"http://www.w3.org/2000/svg\"\n      aria-hidden=\"true\"\n    >\n      <rect width=\"32\" height=\"32\" rx=\"8\" className=\"fill-red-600\" />\n      <path\n        d=\"M8 12h16M8 16h16M8 20h12\"\n        stroke=\"white\"\n        strokeWidth=\"2\"\n        strokeLinecap=\"round\"\n      />\n      <circle cx=\"26\" cy=\"6\" r=\"5\" className=\"fill-yellow-400\" />\n      <path\n        d=\"M26 4v2m0 0v2m0-2h2m-2 0h-2\"\n        stroke=\"white\"\n        strokeWidth=\"1.5\"\n        strokeLinecap=\"round\"\n      />\n    </svg>\n    <div className=\"flex flex-col\">\n      <span>ozaMenu</span>\n      <span className=\"text-xs font-normal text-red-500 dark:text-red-400\">Super Admin</span>\n    </div>\n  </Link>\n)\n\n/**\n * Admin layout with role-based access control.\n *\n * This layout provides:\n * - Super Admin only access (redirects non-admins)\n * - Admin-specific navigation sidebar\n * - Visual distinction from regular dashboard (red theme)\n * - User impersonation support (future)\n *\n * Routes protected by this layout:\n * - /admin - Admin dashboard\n * - /admin/organizations - Tenant management\n * - /admin/plans - Plan/feature management\n * - /admin/overrides - Feature overrides\n * - /admin/ai - AI token management\n */\nexport default function AdminLayout({\n  children,\n}: Readonly<{\n  children: React.ReactNode\n}>) {\n  const pathname = usePathname()\n  const router = useRouter()\n  const { user, signOut, isLoading } = useAuth()\n  const [sidebarOpen, setSidebarOpen] = useState(false)\n  const [isSuperAdmin, setIsSuperAdmin] = useState<boolean | null>(null)\n\n  // Check super admin status from user's app_metadata\n  useEffect(() => {\n    if (!isLoading && user) {\n      const adminStatus = user.app_metadata?.is_super_admin === true\n      setIsSuperAdmin(adminStatus)\n\n      // Redirect non-admins to dashboard\n      if (!adminStatus) {\n        router.replace('/dashboard')\n      }\n    } else if (!isLoading && !user) {\n      // No user, redirect to login\n      router.replace('/login?redirectTo=' + pathname)\n    }\n  }, [user, isLoading, router, pathname])\n\n  const handleSignOut = async () => {\n    await signOut()\n    router.push('/')\n  }\n\n  // Show loading state while checking permissions\n  if (isLoading || isSuperAdmin === null) {\n    return (\n      <div className=\"flex h-screen items-center justify-center bg-secondary-50 dark:bg-secondary-900\">\n        <div className=\"flex flex-col items-center gap-4\">\n          <div className=\"h-12 w-12 animate-spin rounded-full border-4 border-red-600 border-t-transparent\" />\n          <p className=\"text-sm text-secondary-600 dark:text-secondary-400\">\n            Yetki kontrol ediliyor...\n          </p>\n        </div>\n      </div>\n    )\n  }\n\n  // If not super admin, don't render anything (redirect will happen)\n  if (!isSuperAdmin) {\n    return null\n  }\n\n  return (\n    <div className=\"flex h-screen bg-secondary-50 dark:bg-secondary-900\">\n      {/* Mobile sidebar backdrop */}\n      {sidebarOpen && (\n        <div\n          className=\"fixed inset-0 z-40 bg-black/50 lg:hidden\"\n          onClick={() => setSidebarOpen(false)}\n          aria-hidden=\"true\"\n        />\n      )}\n\n      {/* Sidebar */}\n      <aside\n        className={`\n          fixed inset-y-0 left-0 z-50 w-64 transform bg-white shadow-lg transition-transform duration-200 ease-in-out\n          dark:bg-secondary-800 lg:static lg:translate-x-0\n          ${sidebarOpen ? 'translate-x-0' : '-translate-x-full'}\n        `.trim().replace(/\\s+/g, ' ')}\n      >\n        {/* Logo */}\n        <div className=\"flex h-16 items-center justify-between border-b border-red-200 px-4 dark:border-red-900/30\">\n          <AdminLogo />\n          <button\n            type=\"button\"\n            className=\"rounded-lg p-1 text-secondary-500 hover:bg-secondary-100 dark:hover:bg-secondary-700 lg:hidden\"\n            onClick={() => setSidebarOpen(false)}\n            aria-label=\"Menuyu kapat\"\n          >\n            <svg className=\"h-6 w-6\" fill=\"none\" viewBox=\"0 0 24 24\" stroke=\"currentColor\" strokeWidth={2}>\n              <path strokeLinecap=\"round\" strokeLinejoin=\"round\" d=\"M6 18L18 6M6 6l12 12\" />\n            </svg>\n          </button>\n        </div>\n\n        {/* Admin badge */}\n        <div className=\"border-b border-red-200 px-4 py-3 dark:border-red-900/30\">\n          <div className=\"flex items-center gap-2 rounded-lg bg-red-50 px-3 py-2 dark:bg-red-900/20\">\n            <svg className=\"h-5 w-5 text-red-600 dark:text-red-400\" fill=\"none\" viewBox=\"0 0 24 24\" stroke=\"currentColor\" strokeWidth={2}>\n              <path strokeLinecap=\"round\" strokeLinejoin=\"round\" d=\"M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z\" />\n            </svg>\n            <div>\n              <p className=\"text-sm font-medium text-red-700 dark:text-red-300\">\n                Super Admin Modu\n              </p>\n              <p className=\"text-xs text-red-500 dark:text-red-400\">\n                Tum sistemlere erisim\n              </p>\n            </div>\n          </div>\n        </div>\n\n        {/* Navigation */}\n        <nav className=\"flex-1 overflow-y-auto px-3 py-4\">\n          <ul className=\"space-y-1\">\n            {adminNavItems.map((item) => {\n              const isActive = pathname === item.href || (item.href !== '/admin' && pathname.startsWith(item.href))\n              return (\n                <li key={item.href}>\n                  <Link\n                    href={item.href}\n                    className={`\n                      flex items-center gap-3 rounded-lg px-3 py-2 text-sm font-medium transition-colors\n                      ${\n                        isActive\n                          ? 'bg-red-50 text-red-700 dark:bg-red-900/20 dark:text-red-300'\n                          : 'text-secondary-700 hover:bg-secondary-100 dark:text-secondary-300 dark:hover:bg-secondary-700/50'\n                      }\n                    `.trim().replace(/\\s+/g, ' ')}\n                    aria-current={isActive ? 'page' : undefined}\n                  >\n                    {item.icon}\n                    {item.name}\n                  </Link>\n                </li>\n              )\n            })}\n          </ul>\n\n          {/* Divider */}\n          <div className=\"my-4 border-t border-secondary-200 dark:border-secondary-700\" />\n\n          {/* Quick link back to dashboard */}\n          <Link\n            href=\"/dashboard\"\n            className=\"flex items-center gap-3 rounded-lg px-3 py-2 text-sm font-medium text-secondary-500 transition-colors hover:bg-secondary-100 dark:text-secondary-400 dark:hover:bg-secondary-700/50\"\n          >\n            <svg className=\"h-5 w-5\" fill=\"none\" viewBox=\"0 0 24 24\" stroke=\"currentColor\" strokeWidth={2}>\n              <path strokeLinecap=\"round\" strokeLinejoin=\"round\" d=\"M11 17l-5-5m0 0l5-5m-5 5h12\" />\n            </svg>\n            Kullanici Paneline Don\n          </Link>\n        </nav>\n\n        {/* User info & logout */}\n        <div className=\"border-t border-secondary-200 px-4 py-3 dark:border-secondary-700\">\n          <div className=\"flex items-center gap-3\">\n            <div className=\"flex h-9 w-9 items-center justify-center rounded-full bg-red-100 text-sm font-medium text-red-700 dark:bg-red-900/30 dark:text-red-300\">\n              {user?.email?.[0].toUpperCase() || '?'}\n            </div>\n            <div className=\"min-w-0 flex-1\">\n              <p className=\"text-sm font-medium text-secondary-900 dark:text-secondary-100 truncate\">\n                {user?.email || 'Admin'}\n              </p>\n              <p className=\"text-xs text-red-500 dark:text-red-400\">\n                Super Admin\n              </p>\n            </div>\n            <button\n              type=\"button\"\n              onClick={handleSignOut}\n              disabled={isLoading}\n              className=\"rounded-lg p-1.5 text-secondary-500 hover:bg-secondary-100 hover:text-secondary-700 dark:hover:bg-secondary-700 dark:hover:text-secondary-300 transition-colors\"\n              aria-label=\"Cikis yap\"\n              title=\"Cikis yap\"\n            >\n              <svg className=\"h-5 w-5\" fill=\"none\" viewBox=\"0 0 24 24\" stroke=\"currentColor\" strokeWidth={2}>\n                <path strokeLinecap=\"round\" strokeLinejoin=\"round\" d=\"M17 16l4-4m0 0l-4-4m4 4H7m6 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h4a3 3 0 013 3v1\" />\n              </svg>\n            </button>\n          </div>\n        </div>\n      </aside>\n\n      {/* Main content area */}\n      <div className=\"flex flex-1 flex-col overflow-hidden\">\n        {/* Top header */}\n        <header className=\"flex h-16 items-center justify-between border-b border-secondary-200 bg-white px-4 dark:border-secondary-700 dark:bg-secondary-800 lg:px-6\">\n          {/* Mobile menu button */}\n          <button\n            type=\"button\"\n            className=\"rounded-lg p-2 text-secondary-500 hover:bg-secondary-100 dark:hover:bg-secondary-700 lg:hidden\"\n            onClick={() => setSidebarOpen(true)}\n            aria-label=\"Menuyu ac\"\n          >\n            <svg className=\"h-6 w-6\" fill=\"none\" viewBox=\"0 0 24 24\" stroke=\"currentColor\" strokeWidth={2}>\n              <path strokeLinecap=\"round\" strokeLinejoin=\"round\" d=\"M4 6h16M4 12h16M4 18h16\" />\n            </svg>\n          </button>\n\n          {/* Admin mode indicator */}\n          <div className=\"hidden items-center gap-2 rounded-lg bg-red-50 px-3 py-1.5 text-sm font-medium text-red-700 dark:bg-red-900/20 dark:text-red-300 lg:flex\">\n            <svg className=\"h-4 w-4\" fill=\"none\" viewBox=\"0 0 24 24\" stroke=\"currentColor\" strokeWidth={2}>\n              <path strokeLinecap=\"round\" strokeLinejoin=\"round\" d=\"M12 9v2m0 4h.01m-6.938 4h13.856c1.54 0 2.502-1.667 1.732-3L13.732 4c-.77-1.333-2.694-1.333-3.464 0L3.34 16c-.77 1.333.192 3 1.732 3z\" />\n            </svg>\n            Super Admin Modu Aktif\n          </div>\n\n          {/* Right side actions */}\n          <div className=\"flex items-center gap-3\">\n            {/* Documentation link */}\n            <a\n              href=\"https://docs.e-menum.net/admin\"\n              target=\"_blank\"\n              rel=\"noopener noreferrer\"\n              className=\"flex items-center gap-2 rounded-lg border border-secondary-300 px-3 py-1.5 text-sm font-medium text-secondary-700 transition-colors hover:bg-secondary-50 dark:border-secondary-600 dark:text-secondary-300 dark:hover:bg-secondary-700\"\n            >\n              <svg className=\"h-4 w-4\" fill=\"none\" viewBox=\"0 0 24 24\" stroke=\"currentColor\" strokeWidth={2}>\n                <path strokeLinecap=\"round\" strokeLinejoin=\"round\" d=\"M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253\" />\n              </svg>\n              Dokumantasyon\n            </a>\n          </div>\n        </header>\n\n        {/* Page content */}\n        <main className=\"flex-1 overflow-y-auto p-4 lg:p-6\">\n          {children}\n        </main>\n      </div>\n    </div>\n  )\n}\n",
+        "last_modified": "2026-01-14T09:55:05.850068"
+      },
+      "task_intent": {
+        "title": "001-ozon-e-menum-net-vibe-coding-v1",
+        "description": "",
+        "from_plan": false
+      },
+      "commits_behind_main": 0,
+      "status": "active",
+      "merged_at": null
+    },
+    "037-add-search-to-categories-page": {
+      "task_id": "037-add-search-to-categories-page",
+      "branch_point": {
+        "commit_hash": "2b028be920d271c6e53b44319d1c871dc3d27076",
+        "content": "",
+        "timestamp": "2026-01-14T18:38:07.376896"
+      },
+      "worktree_state": {
+        "content": "/**\n * Admin Layout - Server Component\n *\n * This server component wrapper enables dynamic rendering for all admin routes\n * which require authentication context. It wraps the client layout component.\n */\n\nimport { AuthProvider } from '@/components/providers/auth-provider'\nimport AdminLayoutClient from './admin-layout-client'\n\n// Force dynamic rendering - admin requires auth context\nexport const dynamic = 'force-dynamic'\n\nexport default function AdminLayout({\n  children,\n}: {\n  children: React.ReactNode\n}) {\n  return (\n    <AuthProvider>\n      <AdminLayoutClient>{children}</AdminLayoutClient>\n    </AuthProvider>\n  )\n}\n",
+        "last_modified": "2026-01-15T15:07:08.879918"
+      },
+      "task_intent": {
+        "title": "037-add-search-to-categories-page",
+        "description": "Add search functionality to the categories page, allowing users to filter categories by name. This mirrors the existing search pattern already implemented in the products page.",
+        "from_plan": true
+      },
+      "commits_behind_main": 0,
+      "status": "active",
+      "merged_at": null
+    },
+    "032-add-mobile-navigation-menu-to-landing-page": {
+      "task_id": "032-add-mobile-navigation-menu-to-landing-page",
+      "branch_point": {
+        "commit_hash": "2b028be920d271c6e53b44319d1c871dc3d27076",
+        "content": "",
+        "timestamp": "2026-01-14T18:38:22.963353"
+      },
+      "worktree_state": {
+        "content": "/**\n * Admin Layout - Server Component\n *\n * This server component wrapper enables dynamic rendering for all admin routes\n * which require authentication context. It wraps the client layout component.\n */\n\nimport { AuthProvider } from '@/components/providers/auth-provider'\nimport AdminLayoutClient from './admin-layout-client'\n\n// Force dynamic rendering - admin requires auth context\nexport const dynamic = 'force-dynamic'\n\nexport default function AdminLayout({\n  children,\n}: {\n  children: React.ReactNode\n}) {\n  return (\n    <AuthProvider>\n      <AdminLayoutClient>{children}</AdminLayoutClient>\n    </AuthProvider>\n  )\n}\n",
+        "last_modified": "2026-01-15T15:05:31.852244"
+      },
+      "task_intent": {
+        "title": "032-add-mobile-navigation-menu-to-landing-page",
+        "description": "The landing page navigation on mobile devices only shows a 'Basla' button, hiding all other navigation links. Add a proper hamburger menu for mobile users.",
+        "from_plan": true
+      },
+      "commits_behind_main": 0,
+      "status": "active",
+      "merged_at": null
+    },
+    "031-add-mobile-navigation-menu-to-landing-page": {
+      "task_id": "031-add-mobile-navigation-menu-to-landing-page",
+      "branch_point": {
+        "commit_hash": "2b028be920d271c6e53b44319d1c871dc3d27076",
+        "content": "",
+        "timestamp": "2026-01-14T18:50:42.638180"
+      },
+      "worktree_state": {
+        "content": "/**\n * Admin Layout - Server Component\n *\n * This server component wrapper enables dynamic rendering for all admin routes\n * which require authentication context. It wraps the client layout component.\n */\n\nimport { AuthProvider } from '@/components/providers/auth-provider'\nimport AdminLayoutClient from './admin-layout-client'\n\n// Force dynamic rendering - admin requires auth context\nexport const dynamic = 'force-dynamic'\n\nexport default function AdminLayout({\n  children,\n}: {\n  children: React.ReactNode\n}) {\n  return (\n    <AuthProvider>\n      <AdminLayoutClient>{children}</AdminLayoutClient>\n    </AuthProvider>\n  )\n}\n",
+        "last_modified": "2026-01-15T15:03:39.263707"
+      },
+      "task_intent": {
+        "title": "031-add-mobile-navigation-menu-to-landing-page",
+        "description": "The landing page navigation on mobile devices only shows a 'Basla' button, hiding all other navigation links. Add a proper hamburger menu for mobile users.",
+        "from_plan": true
+      },
+      "commits_behind_main": 0,
+      "status": "active",
+      "merged_at": null
+    },
+    "040-add-bulk-qr-code-download-for-all-tables": {
+      "task_id": "040-add-bulk-qr-code-download-for-all-tables",
+      "branch_point": {
+        "commit_hash": "2b028be920d271c6e53b44319d1c871dc3d27076",
+        "content": "",
+        "timestamp": "2026-01-14T18:53:11.069414"
+      },
+      "worktree_state": {
+        "content": "/**\n * Admin Layout - Server Component\n *\n * This server component wrapper enables dynamic rendering for all admin routes\n * which require authentication context. It wraps the client layout component.\n */\n\nimport { AuthProvider } from '@/components/providers/auth-provider'\nimport AdminLayoutClient from './admin-layout-client'\n\n// Force dynamic rendering - admin requires auth context\nexport const dynamic = 'force-dynamic'\n\nexport default function AdminLayout({\n  children,\n}: {\n  children: React.ReactNode\n}) {\n  return (\n    <AuthProvider>\n      <AdminLayoutClient>{children}</AdminLayoutClient>\n    </AuthProvider>\n  )\n}\n",
+        "last_modified": "2026-01-14T18:53:20.470738"
+      },
+      "task_intent": {
+        "title": "040-add-bulk-qr-code-download-for-all-tables",
+        "description": "",
+        "from_plan": false
+      },
+      "commits_behind_main": 0,
+      "status": "active",
+      "merged_at": null
+    },
+    "005-extract-duplicated-crud-state-management-into-reus": {
+      "task_id": "005-extract-duplicated-crud-state-management-into-reus",
+      "branch_point": {
+        "commit_hash": "2b028be920d271c6e53b44319d1c871dc3d27076",
+        "content": "",
+        "timestamp": "2026-01-15T06:33:12.581832"
+      },
+      "worktree_state": {
+        "content": "/**\n * Admin Layout - Server Component\n *\n * This server component wrapper enables dynamic rendering for all admin routes\n * which require authentication context. It wraps the client layout component.\n */\n\nimport { AuthProvider } from '@/components/providers/auth-provider'\nimport AdminLayoutClient from './admin-layout-client'\n\n// Force dynamic rendering - admin requires auth context\nexport const dynamic = 'force-dynamic'\n\nexport default function AdminLayout({\n  children,\n}: {\n  children: React.ReactNode\n}) {\n  return (\n    <AuthProvider>\n      <AdminLayoutClient>{children}</AdminLayoutClient>\n    </AuthProvider>\n  )\n}\n",
+        "last_modified": "2026-01-15T16:04:15.551526"
+      },
+      "task_intent": {
+        "title": "005-extract-duplicated-crud-state-management-into-reus",
+        "description": "",
+        "from_plan": false
+      },
+      "commits_behind_main": 5,
+      "status": "active",
+      "merged_at": null
+    },
+    "002-add-unit-test-coverage-for-dashboard-page-componen": {
+      "task_id": "002-add-unit-test-coverage-for-dashboard-page-componen",
+      "branch_point": {
+        "commit_hash": "2b028be920d271c6e53b44319d1c871dc3d27076",
+        "content": "",
+        "timestamp": "2026-01-15T14:04:12.520457"
+      },
+      "worktree_state": {
+        "content": "/**\n * Admin Layout - Server Component\n *\n * This server component wrapper enables dynamic rendering for all admin routes\n * which require authentication context. It wraps the client layout component.\n */\n\nimport { AuthProvider } from '@/components/providers/auth-provider'\nimport AdminLayoutClient from './admin-layout-client'\n\n// Force dynamic rendering - admin requires auth context\nexport const dynamic = 'force-dynamic'\n\nexport default function AdminLayout({\n  children,\n}: {\n  children: React.ReactNode\n}) {\n  return (\n    <AuthProvider>\n      <AdminLayoutClient>{children}</AdminLayoutClient>\n    </AuthProvider>\n  )\n}\n",
+        "last_modified": "2026-01-15T16:20:44.279765"
+      },
+      "task_intent": {
+        "title": "002-add-unit-test-coverage-for-dashboard-page-componen",
+        "description": "",
+        "from_plan": false
+      },
+      "commits_behind_main": 5,
+      "status": "active",
+      "merged_at": null
+    },
+    "028-add-mobile-navigation-menu-to-landing-page": {
+      "task_id": "028-add-mobile-navigation-menu-to-landing-page",
+      "branch_point": {
+        "commit_hash": "2b028be920d271c6e53b44319d1c871dc3d27076",
+        "content": "",
+        "timestamp": "2026-01-15T13:21:43.550879"
+      },
+      "worktree_state": {
+        "content": "/**\n * Admin Layout - Server Component\n *\n * This server component wrapper enables dynamic rendering for all admin routes\n * which require authentication context. It wraps the client layout component.\n */\n\nimport { AuthProvider } from '@/components/providers/auth-provider'\nimport AdminLayoutClient from './admin-layout-client'\n\n// Force dynamic rendering - admin requires auth context\nexport const dynamic = 'force-dynamic'\n\nexport default function AdminLayout({\n  children,\n}: {\n  children: React.ReactNode\n}) {\n  return (\n    <AuthProvider>\n      <AdminLayoutClient>{children}</AdminLayoutClient>\n    </AuthProvider>\n  )\n}\n",
+        "last_modified": "2026-01-15T15:13:32.524194"
+      },
+      "task_intent": {
+        "title": "028-add-mobile-navigation-menu-to-landing-page",
+        "description": "",
+        "from_plan": false
+      },
+      "commits_behind_main": 5,
+      "status": "active",
+      "merged_at": null
+    },
+    "034-create-reusable-select-component-for-consistent-fo": {
+      "task_id": "034-create-reusable-select-component-for-consistent-fo",
+      "branch_point": {
+        "commit_hash": "2b028be920d271c6e53b44319d1c871dc3d27076",
+        "content": "",
+        "timestamp": "2026-01-15T14:05:37.956433"
+      },
+      "worktree_state": {
+        "content": "/**\n * Admin Layout - Server Component\n *\n * This server component wrapper enables dynamic rendering for all admin routes\n * which require authentication context. It wraps the client layout component.\n */\n\nimport { AuthProvider } from '@/components/providers/auth-provider'\nimport AdminLayoutClient from './admin-layout-client'\n\n// Force dynamic rendering - admin requires auth context\nexport const dynamic = 'force-dynamic'\n\nexport default function AdminLayout({\n  children,\n}: {\n  children: React.ReactNode\n}) {\n  return (\n    <AuthProvider>\n      <AdminLayoutClient>{children}</AdminLayoutClient>\n    </AuthProvider>\n  )\n}\n",
+        "last_modified": "2026-01-15T14:05:43.766916"
+      },
+      "task_intent": {
+        "title": "034-create-reusable-select-component-for-consistent-fo",
+        "description": "",
+        "from_plan": false
+      },
+      "commits_behind_main": 5,
+      "status": "active",
+      "merged_at": null
+    },
+    "023-add-mobile-navigation-menu-to-landing-page": {
+      "task_id": "023-add-mobile-navigation-menu-to-landing-page",
+      "branch_point": {
+        "commit_hash": "c709a6c45b4887c1a0ad6e04c6142783760a46ec",
+        "content": "",
+        "timestamp": "2026-01-15T13:47:09.808921"
+      },
+      "worktree_state": {
+        "content": "/**\n * Admin Layout - Server Component\n *\n * This server component wrapper enables dynamic rendering for all admin routes\n * which require authentication context. It wraps the client layout component.\n */\n\nimport { AuthProvider } from '@/components/providers/auth-provider'\nimport AdminLayoutClient from './admin-layout-client'\n\n// Force dynamic rendering - admin requires auth context\nexport const dynamic = 'force-dynamic'\n\nexport default function AdminLayout({\n  children,\n}: {\n  children: React.ReactNode\n}) {\n  return (\n    <AuthProvider>\n      <AdminLayoutClient>{children}</AdminLayoutClient>\n    </AuthProvider>\n  )\n}\n",
+        "last_modified": "2026-01-15T13:47:16.755387"
+      },
+      "task_intent": {
+        "title": "023-add-mobile-navigation-menu-to-landing-page",
+        "description": "",
+        "from_plan": false
+      },
+      "commits_behind_main": 0,
+      "status": "active",
+      "merged_at": null
+    },
+    "026-add-mobile-navigation-menu-to-landing-page": {
+      "task_id": "026-add-mobile-navigation-menu-to-landing-page",
+      "branch_point": {
+        "commit_hash": "2b028be920d271c6e53b44319d1c871dc3d27076",
+        "content": "",
+        "timestamp": "2026-01-15T14:15:55.210168"
+      },
+      "worktree_state": {
+        "content": "/**\n * Admin Layout - Server Component\n *\n * This server component wrapper enables dynamic rendering for all admin routes\n * which require authentication context. It wraps the client layout component.\n */\n\nimport { AuthProvider } from '@/components/providers/auth-provider'\nimport AdminLayoutClient from './admin-layout-client'\n\n// Force dynamic rendering - admin requires auth context\nexport const dynamic = 'force-dynamic'\n\nexport default function AdminLayout({\n  children,\n}: {\n  children: React.ReactNode\n}) {\n  return (\n    <AuthProvider>\n      <AdminLayoutClient>{children}</AdminLayoutClient>\n    </AuthProvider>\n  )\n}\n",
+        "last_modified": "2026-01-15T14:16:01.011602"
+      },
+      "task_intent": {
+        "title": "026-add-mobile-navigation-menu-to-landing-page",
+        "description": "",
+        "from_plan": false
+      },
+      "commits_behind_main": 5,
+      "status": "active",
+      "merged_at": null
+    }
+  },
+  "created_at": "2026-01-14T09:55:05.167442",
+  "last_updated": "2026-01-15T14:15:57.057776"
+}

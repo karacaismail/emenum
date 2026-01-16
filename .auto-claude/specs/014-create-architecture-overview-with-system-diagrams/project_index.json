@@ -1,0 +1,34 @@
+{
+  "project_type": "single",
+  "services": {
+    "frontend": {
+      "path": ".",
+      "tech_stack": ["nextjs-15", "typescript", "react-19", "tailwind-4"],
+      "port": 3000,
+      "dev_command": "npm run dev",
+      "test_command": "npm test",
+      "build_command": "npm run build"
+    }
+  },
+  "infrastructure": {
+    "docker": false,
+    "database": "supabase-postgresql",
+    "hosting": "vercel",
+    "backend": "supabase",
+    "realtime": "supabase-realtime",
+    "storage": "supabase-storage",
+    "auth": "supabase-auth"
+  },
+  "conventions": {
+    "linter": "eslint",
+    "formatter": "prettier",
+    "testing": "vitest"
+  },
+  "architecture": {
+    "type": "multi-tenant-saas",
+    "auth_provider": "supabase",
+    "data_isolation": "row-level-security",
+    "feature_flags": "database-driven",
+    "realtime": "supabase-channels"
+  }
+}

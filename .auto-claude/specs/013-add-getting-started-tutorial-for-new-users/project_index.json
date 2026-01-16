@@ -1,0 +1,23 @@
+{
+  "project_type": "single",
+  "services": {
+    "documentation": {
+      "path": ".",
+      "tech_stack": ["markdown"],
+      "port": null,
+      "dev_command": null,
+      "test_command": null
+    }
+  },
+  "infrastructure": {
+    "docker": false,
+    "database": null,
+    "deployment": "github"
+  },
+  "conventions": {
+    "language": "turkish",
+    "documentation_format": "markdown",
+    "file_naming": "kebab-case or snake_case"
+  },
+  "notes": "This is a documentation-only repository. The actual ozaMenu application code is in a separate repository. This worktree contains planning documents and specifications in Turkish for a Next.js/Supabase QR menu platform."
+}

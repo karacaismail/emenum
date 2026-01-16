@@ -1,0 +1,59 @@
+{
+  "files_to_create": [
+    "supabase/DATABASE.md"
+  ],
+  "files_to_reference": [
+    "README.md",
+    "temel.md",
+    "gereksinimler.md"
+  ],
+  "patterns": {
+    "documentation_pattern": "Use markdown files for comprehensive documentation, similar to README.md structure",
+    "migration_pattern": "Migration files are numbered sequentially (001, 002, etc.) in supabase/migrations/ directory",
+    "compliance_pattern": "Turkish Trade Ministry regulations require immutable price records (INSERT-only, no UPDATE/DELETE)"
+  },
+  "existing_implementations": {
+    "description": "README.md contains brief migration descriptions and mentions the price_ledger immutability pattern",
+    "relevant_files": ["README.md"],
+    "key_concepts": {
+      "price_ledger_immutability": "Core compliance requirement - prices stored in separate table with INSERT-only pattern",
+      "rls_policies": "Row Level Security ensures multi-tenant data isolation",
+      "current_prices_view": "View that provides current active prices from the immutable ledger",
+      "package_management": "Dynamic feature flags and subscription plans stored in database"
+    }
+  },
+  "migrations_to_document": [
+    {
+      "file": "001_core_tables.sql",
+      "description": "Organizations, members, categories tables"
+    },
+    {
+      "file": "002_products_price_ledger.sql",
+      "description": "Products and immutable price_ledger with INSERT-only constraint"
+    },
+    {
+      "file": "003_package_management.sql",
+      "description": "Features, plans, subscriptions for dynamic package management"
+    },
+    {
+      "file": "004_tables_service_requests.sql",
+      "description": "Table QR system and waiter service requests"
+    },
+    {
+      "file": "005_audit_compliance.sql",
+      "description": "Menu snapshots with SHA-256 hash and audit logs"
+    },
+    {
+      "file": "006_views.sql",
+      "description": "Database views including current_prices view"
+    },
+    {
+      "file": "007_rls_policies.sql",
+      "description": "Row Level Security policies for multi-tenant isolation"
+    },
+    {
+      "file": "010_auto_snapshot_trigger.sql",
+      "description": "Automatic snapshot trigger on price changes"
+    }
+  ]
+}

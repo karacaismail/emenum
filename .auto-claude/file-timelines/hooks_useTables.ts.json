@@ -1,0 +1,28 @@
+{
+  "file_path": "hooks/useTables.ts",
+  "main_branch_history": [],
+  "task_views": {
+    "002-add-unit-test-coverage-for-dashboard-page-componen": {
+      "task_id": "002-add-unit-test-coverage-for-dashboard-page-componen",
+      "branch_point": {
+        "commit_hash": "2b028be920d271c6e53b44319d1c871dc3d27076",
+        "content": "",
+        "timestamp": "2026-01-15T14:04:12.520457"
+      },
+      "worktree_state": {
+        "content": "/**\n * useTables Hook\n *\n * Custom hook for managing restaurant table CRUD operations and state.\n * Provides methods for fetching, creating, updating, and deleting tables.\n *\n * Usage:\n *   const { tables, isLoading, error, fetchTables, createTable, updateTable, deleteTable, updateStatus } = useTables(organizationId)\n */\n\nimport { useState, useCallback } from 'react'\nimport { createClient } from '@/lib/supabase/client'\nimport type { RestaurantTable, TableStatus } from '@/types/database'\n\n/**\n * Table form data interface\n */\nexport interface TableFormData {\n  table_number: string\n  current_status?: TableStatus\n}\n\n/**\n * Hook return type\n */\nexport interface UseTablesReturn {\n  tables: RestaurantTable[]\n  isLoading: boolean\n  error: string | null\n  fetchTables: () => Promise<void>\n  createTable: (data: TableFormData) => Promise<string>\n  updateTable: (id: string, data: TableFormData) => Promise<void>\n  deleteTable: (id: string) => Promise<void>\n  updateStatus: (id: string, status: TableStatus) => Promise<void>\n}\n\n/**\n * Custom hook for table management\n *\n * @param organizationId - The organization ID to fetch tables for\n * @returns Table state and CRUD methods\n */\nexport function useTables(organizationId: string | undefined): UseTablesReturn {\n  const [tables, setTables] = useState<RestaurantTable[]>([])\n  const [isLoading, setIsLoading] = useState(false)\n  const [error, setError] = useState<string | null>(null)\n\n  /**\n   * Fetch tables for the organization\n   */\n  const fetchTables = useCallback(async () => {\n    if (!organizationId) return\n\n    setIsLoading(true)\n    setError(null)\n\n    try {\n      const supabase = createClient()\n\n      const { data, error: fetchError } = await supabase\n        .from('restaurant_tables')\n        .select('*')\n        .eq('organization_id', organizationId)\n        .order('table_number', { ascending: true })\n\n      if (fetchError) throw fetchError\n\n      setTables(data || [])\n    } catch (err) {\n      setError('Failed to fetch tables')\n    } finally {\n      setIsLoading(false)\n    }\n  }, [organizationId])\n\n  /**\n   * Create a new table\n   */\n  const createTable = useCallback(async (data: TableFormData): Promise<string> => {\n    if (!organizationId) throw new Error('Organization ID is required')\n\n    const supabase = createClient()\n\n    const tableData = {\n      table_number: data.table_number.trim(),\n      organization_id: organizationId,\n      current_status: (data.current_status || 'empty') as TableStatus,\n    }\n\n    const { data: newTable, error: insertError } = await supabase\n      .from('restaurant_tables')\n      .insert(tableData)\n      .select()\n      .single()\n\n    if (insertError) throw insertError\n\n    return newTable.id\n  }, [organizationId])\n\n  /**\n   * Update an existing table\n   */\n  const updateTable = useCallback(async (id: string, data: TableFormData): Promise<void> => {\n    if (!organizationId) throw new Error('Organization ID is required')\n\n    const supabase = createClient()\n\n    const tableData = {\n      table_number: data.table_number.trim(),\n    }\n\n    const { error: updateError } = await supabase\n      .from('restaurant_tables')\n      .update(tableData)\n      .eq('id', id)\n      .eq('organization_id', organizationId)\n\n    if (updateError) throw updateError\n  }, [organizationId])\n\n  /**\n   * Delete a table\n   */\n  const deleteTable = useCallback(async (id: string): Promise<void> => {\n    if (!organizationId) throw new Error('Organization ID is required')\n\n    const supabase = createClient()\n\n    const { error: deleteError } = await supabase\n      .from('restaurant_tables')\n      .delete()\n      .eq('id', id)\n      .eq('organization_id', organizationId)\n\n    if (deleteError) throw deleteError\n  }, [organizationId])\n\n  /**\n   * Update table status\n   */\n  const updateStatus = useCallback(async (id: string, status: TableStatus): Promise<void> => {\n    if (!organizationId) throw new Error('Organization ID is required')\n\n    const supabase = createClient()\n\n    const { error: updateError } = await supabase\n      .from('restaurant_tables')\n      .update({ current_status: status })\n      .eq('id', id)\n      .eq('organization_id', organizationId)\n\n    if (updateError) throw updateError\n  }, [organizationId])\n\n  return {\n    tables,\n    isLoading,\n    error,\n    fetchTables,\n    createTable,\n    updateTable,\n    deleteTable,\n    updateStatus,\n  }\n}\n",
+        "last_modified": "2026-01-15T14:04:19.160739"
+      },
+      "task_intent": {
+        "title": "002-add-unit-test-coverage-for-dashboard-page-componen",
+        "description": "",
+        "from_plan": false
+      },
+      "commits_behind_main": 5,
+      "status": "active",
+      "merged_at": null
+    }
+  },
+  "created_at": "2026-01-15T13:24:48.595433",
+  "last_updated": "2026-01-15T14:04:17.278451"
+}

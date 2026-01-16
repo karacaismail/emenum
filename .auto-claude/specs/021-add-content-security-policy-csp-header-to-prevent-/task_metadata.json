@@ -1,0 +1,11 @@
+{
+  "sourceType": "ideation",
+  "ideationType": "security_hardening",
+  "ideaId": "sec-001",
+  "rationale": "CSP is a critical security header that provides an additional layer of protection against XSS attacks. Even when input is properly sanitized, CSP can prevent exploitation if a vulnerability is discovered. The dangerouslySetInnerHTML usage creates potential XSS vectors that CSP would mitigate.",
+  "category": "security",
+  "securitySeverity": "high",
+  "impact": "high",
+  "priority": "high",
+  "archivedAt": "2026-01-15T13:32:31.956Z"
+}

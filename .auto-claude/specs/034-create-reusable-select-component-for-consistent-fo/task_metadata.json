@@ -1,0 +1,16 @@
+{
+  "sourceType": "ideation",
+  "ideationType": "ui_ux_improvements",
+  "ideaId": "uiux-003",
+  "rationale": "The Input component exists with proper label, helper text, and error states, but select elements throughout the app use inline Tailwind classes that vary slightly between pages. This creates visual inconsistency and requires duplicating accessibility attributes (aria-describedby, etc.).",
+  "category": "ui_ux",
+  "uiuxCategory": "visual",
+  "affectedFiles": [
+    "components/ui/select.tsx (new)",
+    "components/ui/input.tsx",
+    "app/(dashboard)/products/page.tsx",
+    "app/(dashboard)/categories/page.tsx"
+  ],
+  "problemSolved": "Select elements in products/page.tsx (lines 508-519, 618-630) use long inline className strings. The styling is similar but not identical across pages. No label association, helper text support, or error states are implemented for selects.",
+  "archivedAt": "2026-01-15T12:47:30.238Z"
+}

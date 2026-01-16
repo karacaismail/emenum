@@ -1,0 +1,68 @@
+# Dependencies
+node_modules/
+.pnpm-store/
+
+# Environment (KRITIK - ASLA COMMIT ETME!)
+.env
+.env.local
+.env.*.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+# Next.js build
+.next/
+out/
+build/
+.swc/
+
+# Debug logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+.pnpm-debug.log*
+
+# IDE
+.idea/
+.vscode/
+*.swp
+*.swo
+*.sublime-workspace
+*.sublime-project
+
+# OS files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# Supabase local
+.supabase/
+
+# Test outputs
+coverage/
+.nyc_output/
+
+# Auto-claude / AI tools
+.auto-claude/
+.auto-claude-status
+
+# Vercel
+.vercel/
+
+# TypeScript
+*.tsbuildinfo
+next-env.d.ts
+
+# Optional: Local config
+*.local
+
+# Auto Claude generated files
+.auto-claude-security.json
+.claude_settings.json
+.worktrees/
+.security-key
+logs/security/

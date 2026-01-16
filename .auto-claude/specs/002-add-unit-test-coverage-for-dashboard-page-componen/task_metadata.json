@@ -1,0 +1,10 @@
+{
+  "sourceType": "ideation",
+  "ideationType": "code_quality",
+  "ideaId": "cq-005",
+  "rationale": "Unit tests provide faster feedback than integration tests and help document expected component behavior. Testing hooks and utility functions in isolation catches bugs earlier in development. Current test coverage focuses on integration flows but misses edge cases in individual components.",
+  "category": "refactoring",
+  "codeQualitySeverity": "minor",
+  "priority": "medium",
+  "archivedAt": "2026-01-15T13:35:49.590Z"
+}

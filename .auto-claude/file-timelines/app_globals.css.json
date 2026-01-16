@@ -1,0 +1,228 @@
+{
+  "file_path": "app/globals.css",
+  "main_branch_history": [],
+  "task_views": {
+    "001-ozon-e-menum-net-vibe-coding-v1": {
+      "task_id": "001-ozon-e-menum-net-vibe-coding-v1",
+      "branch_point": {
+        "commit_hash": "2b028be920d271c6e53b44319d1c871dc3d27076",
+        "content": "",
+        "timestamp": "2026-01-14T09:55:04.472899"
+      },
+      "worktree_state": {
+        "content": "@tailwind base;\n@tailwind components;\n@tailwind utilities;\n\n:root {\n  --background: #ffffff;\n  --foreground: #171717;\n}\n\n@media (prefers-color-scheme: dark) {\n  :root {\n    --background: #0a0a0a;\n    --foreground: #ededed;\n  }\n}\n\nhtml {\n  scroll-behavior: smooth;\n}\n\nbody {\n  color: var(--foreground);\n  background: var(--background);\n  font-family: var(--font-inter), system-ui, sans-serif;\n  -webkit-font-smoothing: antialiased;\n  -moz-osx-font-smoothing: grayscale;\n}\n\n/* Focus visible styles for accessibility */\n:focus-visible {\n  outline: 2px solid theme('colors.primary.500');\n  outline-offset: 2px;\n}\n\n/* Custom scrollbar for webkit browsers */\n::-webkit-scrollbar {\n  width: 8px;\n  height: 8px;\n}\n\n::-webkit-scrollbar-track {\n  background: transparent;\n}\n\n::-webkit-scrollbar-thumb {\n  background: theme('colors.secondary.300');\n  border-radius: 4px;\n}\n\n::-webkit-scrollbar-thumb:hover {\n  background: theme('colors.secondary.400');\n}\n\n@media (prefers-color-scheme: dark) {\n  ::-webkit-scrollbar-thumb {\n    background: theme('colors.secondary.600');\n  }\n\n  ::-webkit-scrollbar-thumb:hover {\n    background: theme('colors.secondary.500');\n  }\n}\n",
+        "last_modified": "2026-01-14T09:55:05.860628"
+      },
+      "task_intent": {
+        "title": "001-ozon-e-menum-net-vibe-coding-v1",
+        "description": "",
+        "from_plan": false
+      },
+      "commits_behind_main": 0,
+      "status": "active",
+      "merged_at": null
+    },
+    "037-add-search-to-categories-page": {
+      "task_id": "037-add-search-to-categories-page",
+      "branch_point": {
+        "commit_hash": "2b028be920d271c6e53b44319d1c871dc3d27076",
+        "content": "",
+        "timestamp": "2026-01-14T18:38:07.376896"
+      },
+      "worktree_state": {
+        "content": "@tailwind base;\n@tailwind components;\n@tailwind utilities;\n\n:root {\n  --background: #ffffff;\n  --foreground: #171717;\n}\n\n@media (prefers-color-scheme: dark) {\n  :root {\n    --background: #0a0a0a;\n    --foreground: #ededed;\n  }\n}\n\nhtml {\n  scroll-behavior: smooth;\n}\n\nbody {\n  color: var(--foreground);\n  background: var(--background);\n  font-family: var(--font-inter), system-ui, sans-serif;\n  -webkit-font-smoothing: antialiased;\n  -moz-osx-font-smoothing: grayscale;\n}\n\n/* Focus visible styles for accessibility */\n:focus-visible {\n  outline: 2px solid theme('colors.primary.500');\n  outline-offset: 2px;\n}\n\n/* Custom scrollbar for webkit browsers */\n::-webkit-scrollbar {\n  width: 8px;\n  height: 8px;\n}\n\n::-webkit-scrollbar-track {\n  background: transparent;\n}\n\n::-webkit-scrollbar-thumb {\n  background: theme('colors.secondary.300');\n  border-radius: 4px;\n}\n\n::-webkit-scrollbar-thumb:hover {\n  background: theme('colors.secondary.400');\n}\n\n@media (prefers-color-scheme: dark) {\n  ::-webkit-scrollbar-thumb {\n    background: theme('colors.secondary.600');\n  }\n\n  ::-webkit-scrollbar-thumb:hover {\n    background: theme('colors.secondary.500');\n  }\n}\n\n/* Landing page animations */\n@keyframes blob {\n  0% { transform: translate(0px, 0px) scale(1); }\n  33% { transform: translate(30px, -50px) scale(1.1); }\n  66% { transform: translate(-20px, 20px) scale(0.9); }\n  100% { transform: translate(0px, 0px) scale(1); }\n}\n\n.animate-blob {\n  animation: blob 7s infinite;\n}\n\n.animation-delay-2000 {\n  animation-delay: 2s;\n}\n\n.animation-delay-4000 {\n  animation-delay: 4s;\n}\n\n@keyframes float {\n  0%, 100% { transform: translateY(0px); }\n  50% { transform: translateY(-10px); }\n}\n\n.animate-float {\n  animation: float 3s ease-in-out infinite;\n}\n\n@keyframes fadeIn {\n  from { opacity: 0; transform: translateY(10px); }\n  to { opacity: 1; transform: translateY(0); }\n}\n\n.animate-fadeIn {\n  animation: fadeIn 0.5s ease-out forwards;\n}\n\n@keyframes scrollDown {\n  0%, 100% { opacity: 1; transform: translateY(0); }\n  50% { opacity: 0.5; transform: translateY(4px); }\n}\n\n.animate-scrollDown {\n  animation: scrollDown 1.5s ease-in-out infinite;\n}\n",
+        "last_modified": "2026-01-15T15:07:08.906720"
+      },
+      "task_intent": {
+        "title": "037-add-search-to-categories-page",
+        "description": "Add search functionality to the categories page, allowing users to filter categories by name. This mirrors the existing search pattern already implemented in the products page.",
+        "from_plan": true
+      },
+      "commits_behind_main": 0,
+      "status": "active",
+      "merged_at": null
+    },
+    "032-add-mobile-navigation-menu-to-landing-page": {
+      "task_id": "032-add-mobile-navigation-menu-to-landing-page",
+      "branch_point": {
+        "commit_hash": "2b028be920d271c6e53b44319d1c871dc3d27076",
+        "content": "",
+        "timestamp": "2026-01-14T18:38:22.963353"
+      },
+      "worktree_state": {
+        "content": "@tailwind base;\n@tailwind components;\n@tailwind utilities;\n\n:root {\n  --background: #ffffff;\n  --foreground: #171717;\n}\n\n@media (prefers-color-scheme: dark) {\n  :root {\n    --background: #0a0a0a;\n    --foreground: #ededed;\n  }\n}\n\nhtml {\n  scroll-behavior: smooth;\n}\n\nbody {\n  color: var(--foreground);\n  background: var(--background);\n  font-family: var(--font-inter), system-ui, sans-serif;\n  -webkit-font-smoothing: antialiased;\n  -moz-osx-font-smoothing: grayscale;\n}\n\n/* Focus visible styles for accessibility */\n:focus-visible {\n  outline: 2px solid theme('colors.primary.500');\n  outline-offset: 2px;\n}\n\n/* Custom scrollbar for webkit browsers */\n::-webkit-scrollbar {\n  width: 8px;\n  height: 8px;\n}\n\n::-webkit-scrollbar-track {\n  background: transparent;\n}\n\n::-webkit-scrollbar-thumb {\n  background: theme('colors.secondary.300');\n  border-radius: 4px;\n}\n\n::-webkit-scrollbar-thumb:hover {\n  background: theme('colors.secondary.400');\n}\n\n@media (prefers-color-scheme: dark) {\n  ::-webkit-scrollbar-thumb {\n    background: theme('colors.secondary.600');\n  }\n\n  ::-webkit-scrollbar-thumb:hover {\n    background: theme('colors.secondary.500');\n  }\n}\n\n/* Landing page animations */\n@keyframes blob {\n  0% { transform: translate(0px, 0px) scale(1); }\n  33% { transform: translate(30px, -50px) scale(1.1); }\n  66% { transform: translate(-20px, 20px) scale(0.9); }\n  100% { transform: translate(0px, 0px) scale(1); }\n}\n\n.animate-blob {\n  animation: blob 7s infinite;\n}\n\n.animation-delay-2000 {\n  animation-delay: 2s;\n}\n\n.animation-delay-4000 {\n  animation-delay: 4s;\n}\n\n@keyframes float {\n  0%, 100% { transform: translateY(0px); }\n  50% { transform: translateY(-10px); }\n}\n\n.animate-float {\n  animation: float 3s ease-in-out infinite;\n}\n\n@keyframes fadeIn {\n  from { opacity: 0; transform: translateY(10px); }\n  to { opacity: 1; transform: translateY(0); }\n}\n\n.animate-fadeIn {\n  animation: fadeIn 0.5s ease-out forwards;\n}\n\n@keyframes scrollDown {\n  0%, 100% { opacity: 1; transform: translateY(0); }\n  50% { opacity: 0.5; transform: translateY(4px); }\n}\n\n.animate-scrollDown {\n  animation: scrollDown 1.5s ease-in-out infinite;\n}\n",
+        "last_modified": "2026-01-15T15:05:31.889986"
+      },
+      "task_intent": {
+        "title": "032-add-mobile-navigation-menu-to-landing-page",
+        "description": "The landing page navigation on mobile devices only shows a 'Basla' button, hiding all other navigation links. Add a proper hamburger menu for mobile users.",
+        "from_plan": true
+      },
+      "commits_behind_main": 0,
+      "status": "active",
+      "merged_at": null
+    },
+    "031-add-mobile-navigation-menu-to-landing-page": {
+      "task_id": "031-add-mobile-navigation-menu-to-landing-page",
+      "branch_point": {
+        "commit_hash": "2b028be920d271c6e53b44319d1c871dc3d27076",
+        "content": "",
+        "timestamp": "2026-01-14T18:50:42.638180"
+      },
+      "worktree_state": {
+        "content": "@tailwind base;\n@tailwind components;\n@tailwind utilities;\n\n:root {\n  --background: #ffffff;\n  --foreground: #171717;\n}\n\n@media (prefers-color-scheme: dark) {\n  :root {\n    --background: #0a0a0a;\n    --foreground: #ededed;\n  }\n}\n\nhtml {\n  scroll-behavior: smooth;\n}\n\nbody {\n  color: var(--foreground);\n  background: var(--background);\n  font-family: var(--font-inter), system-ui, sans-serif;\n  -webkit-font-smoothing: antialiased;\n  -moz-osx-font-smoothing: grayscale;\n}\n\n/* Focus visible styles for accessibility */\n:focus-visible {\n  outline: 2px solid theme('colors.primary.500');\n  outline-offset: 2px;\n}\n\n/* Custom scrollbar for webkit browsers */\n::-webkit-scrollbar {\n  width: 8px;\n  height: 8px;\n}\n\n::-webkit-scrollbar-track {\n  background: transparent;\n}\n\n::-webkit-scrollbar-thumb {\n  background: theme('colors.secondary.300');\n  border-radius: 4px;\n}\n\n::-webkit-scrollbar-thumb:hover {\n  background: theme('colors.secondary.400');\n}\n\n@media (prefers-color-scheme: dark) {\n  ::-webkit-scrollbar-thumb {\n    background: theme('colors.secondary.600');\n  }\n\n  ::-webkit-scrollbar-thumb:hover {\n    background: theme('colors.secondary.500');\n  }\n}\n\n/* Landing page animations */\n@keyframes blob {\n  0% { transform: translate(0px, 0px) scale(1); }\n  33% { transform: translate(30px, -50px) scale(1.1); }\n  66% { transform: translate(-20px, 20px) scale(0.9); }\n  100% { transform: translate(0px, 0px) scale(1); }\n}\n\n.animate-blob {\n  animation: blob 7s infinite;\n}\n\n.animation-delay-2000 {\n  animation-delay: 2s;\n}\n\n.animation-delay-4000 {\n  animation-delay: 4s;\n}\n\n@keyframes float {\n  0%, 100% { transform: translateY(0px); }\n  50% { transform: translateY(-10px); }\n}\n\n.animate-float {\n  animation: float 3s ease-in-out infinite;\n}\n\n@keyframes fadeIn {\n  from { opacity: 0; transform: translateY(10px); }\n  to { opacity: 1; transform: translateY(0); }\n}\n\n.animate-fadeIn {\n  animation: fadeIn 0.5s ease-out forwards;\n}\n\n@keyframes scrollDown {\n  0%, 100% { opacity: 1; transform: translateY(0); }\n  50% { opacity: 0.5; transform: translateY(4px); }\n}\n\n.animate-scrollDown {\n  animation: scrollDown 1.5s ease-in-out infinite;\n}\n",
+        "last_modified": "2026-01-15T15:03:39.302813"
+      },
+      "task_intent": {
+        "title": "031-add-mobile-navigation-menu-to-landing-page",
+        "description": "The landing page navigation on mobile devices only shows a 'Basla' button, hiding all other navigation links. Add a proper hamburger menu for mobile users.",
+        "from_plan": true
+      },
+      "commits_behind_main": 0,
+      "status": "active",
+      "merged_at": null
+    },
+    "040-add-bulk-qr-code-download-for-all-tables": {
+      "task_id": "040-add-bulk-qr-code-download-for-all-tables",
+      "branch_point": {
+        "commit_hash": "2b028be920d271c6e53b44319d1c871dc3d27076",
+        "content": "",
+        "timestamp": "2026-01-14T18:53:11.069414"
+      },
+      "worktree_state": {
+        "content": "@tailwind base;\n@tailwind components;\n@tailwind utilities;\n\n:root {\n  --background: #ffffff;\n  --foreground: #171717;\n}\n\n@media (prefers-color-scheme: dark) {\n  :root {\n    --background: #0a0a0a;\n    --foreground: #ededed;\n  }\n}\n\nhtml {\n  scroll-behavior: smooth;\n}\n\nbody {\n  color: var(--foreground);\n  background: var(--background);\n  font-family: var(--font-inter), system-ui, sans-serif;\n  -webkit-font-smoothing: antialiased;\n  -moz-osx-font-smoothing: grayscale;\n}\n\n/* Focus visible styles for accessibility */\n:focus-visible {\n  outline: 2px solid theme('colors.primary.500');\n  outline-offset: 2px;\n}\n\n/* Custom scrollbar for webkit browsers */\n::-webkit-scrollbar {\n  width: 8px;\n  height: 8px;\n}\n\n::-webkit-scrollbar-track {\n  background: transparent;\n}\n\n::-webkit-scrollbar-thumb {\n  background: theme('colors.secondary.300');\n  border-radius: 4px;\n}\n\n::-webkit-scrollbar-thumb:hover {\n  background: theme('colors.secondary.400');\n}\n\n@media (prefers-color-scheme: dark) {\n  ::-webkit-scrollbar-thumb {\n    background: theme('colors.secondary.600');\n  }\n\n  ::-webkit-scrollbar-thumb:hover {\n    background: theme('colors.secondary.500');\n  }\n}\n\n/* Landing page animations */\n@keyframes blob {\n  0% { transform: translate(0px, 0px) scale(1); }\n  33% { transform: translate(30px, -50px) scale(1.1); }\n  66% { transform: translate(-20px, 20px) scale(0.9); }\n  100% { transform: translate(0px, 0px) scale(1); }\n}\n\n.animate-blob {\n  animation: blob 7s infinite;\n}\n\n.animation-delay-2000 {\n  animation-delay: 2s;\n}\n\n.animation-delay-4000 {\n  animation-delay: 4s;\n}\n\n@keyframes float {\n  0%, 100% { transform: translateY(0px); }\n  50% { transform: translateY(-10px); }\n}\n\n.animate-float {\n  animation: float 3s ease-in-out infinite;\n}\n\n@keyframes fadeIn {\n  from { opacity: 0; transform: translateY(10px); }\n  to { opacity: 1; transform: translateY(0); }\n}\n\n.animate-fadeIn {\n  animation: fadeIn 0.5s ease-out forwards;\n}\n\n@keyframes scrollDown {\n  0%, 100% { opacity: 1; transform: translateY(0); }\n  50% { opacity: 0.5; transform: translateY(4px); }\n}\n\n.animate-scrollDown {\n  animation: scrollDown 1.5s ease-in-out infinite;\n}\n",
+        "last_modified": "2026-01-14T18:53:20.502406"
+      },
+      "task_intent": {
+        "title": "040-add-bulk-qr-code-download-for-all-tables",
+        "description": "",
+        "from_plan": false
+      },
+      "commits_behind_main": 0,
+      "status": "active",
+      "merged_at": null
+    },
+    "005-extract-duplicated-crud-state-management-into-reus": {
+      "task_id": "005-extract-duplicated-crud-state-management-into-reus",
+      "branch_point": {
+        "commit_hash": "2b028be920d271c6e53b44319d1c871dc3d27076",
+        "content": "",
+        "timestamp": "2026-01-15T06:33:12.581832"
+      },
+      "worktree_state": {
+        "content": "@tailwind base;\n@tailwind components;\n@tailwind utilities;\n\n:root {\n  --background: #ffffff;\n  --foreground: #171717;\n}\n\n@media (prefers-color-scheme: dark) {\n  :root {\n    --background: #0a0a0a;\n    --foreground: #ededed;\n  }\n}\n\nhtml {\n  scroll-behavior: smooth;\n}\n\nbody {\n  color: var(--foreground);\n  background: var(--background);\n  font-family: var(--font-inter), system-ui, sans-serif;\n  -webkit-font-smoothing: antialiased;\n  -moz-osx-font-smoothing: grayscale;\n}\n\n/* Focus visible styles for accessibility */\n:focus-visible {\n  outline: 2px solid theme('colors.primary.500');\n  outline-offset: 2px;\n}\n\n/* Custom scrollbar for webkit browsers */\n::-webkit-scrollbar {\n  width: 8px;\n  height: 8px;\n}\n\n::-webkit-scrollbar-track {\n  background: transparent;\n}\n\n::-webkit-scrollbar-thumb {\n  background: theme('colors.secondary.300');\n  border-radius: 4px;\n}\n\n::-webkit-scrollbar-thumb:hover {\n  background: theme('colors.secondary.400');\n}\n\n@media (prefers-color-scheme: dark) {\n  ::-webkit-scrollbar-thumb {\n    background: theme('colors.secondary.600');\n  }\n\n  ::-webkit-scrollbar-thumb:hover {\n    background: theme('colors.secondary.500');\n  }\n}\n\n/* Landing page animations */\n@keyframes blob {\n  0% { transform: translate(0px, 0px) scale(1); }\n  33% { transform: translate(30px, -50px) scale(1.1); }\n  66% { transform: translate(-20px, 20px) scale(0.9); }\n  100% { transform: translate(0px, 0px) scale(1); }\n}\n\n.animate-blob {\n  animation: blob 7s infinite;\n}\n\n.animation-delay-2000 {\n  animation-delay: 2s;\n}\n\n.animation-delay-4000 {\n  animation-delay: 4s;\n}\n\n@keyframes float {\n  0%, 100% { transform: translateY(0px); }\n  50% { transform: translateY(-10px); }\n}\n\n.animate-float {\n  animation: float 3s ease-in-out infinite;\n}\n\n@keyframes fadeIn {\n  from { opacity: 0; transform: translateY(10px); }\n  to { opacity: 1; transform: translateY(0); }\n}\n\n.animate-fadeIn {\n  animation: fadeIn 0.5s ease-out forwards;\n}\n\n@keyframes scrollDown {\n  0%, 100% { opacity: 1; transform: translateY(0); }\n  50% { opacity: 0.5; transform: translateY(4px); }\n}\n\n.animate-scrollDown {\n  animation: scrollDown 1.5s ease-in-out infinite;\n}\n",
+        "last_modified": "2026-01-15T16:04:15.588738"
+      },
+      "task_intent": {
+        "title": "005-extract-duplicated-crud-state-management-into-reus",
+        "description": "",
+        "from_plan": false
+      },
+      "commits_behind_main": 5,
+      "status": "active",
+      "merged_at": null
+    },
+    "002-add-unit-test-coverage-for-dashboard-page-componen": {
+      "task_id": "002-add-unit-test-coverage-for-dashboard-page-componen",
+      "branch_point": {
+        "commit_hash": "2b028be920d271c6e53b44319d1c871dc3d27076",
+        "content": "",
+        "timestamp": "2026-01-15T14:04:12.520457"
+      },
+      "worktree_state": {
+        "content": "@tailwind base;\n@tailwind components;\n@tailwind utilities;\n\n:root {\n  --background: #ffffff;\n  --foreground: #171717;\n}\n\n@media (prefers-color-scheme: dark) {\n  :root {\n    --background: #0a0a0a;\n    --foreground: #ededed;\n  }\n}\n\nhtml {\n  scroll-behavior: smooth;\n}\n\nbody {\n  color: var(--foreground);\n  background: var(--background);\n  font-family: var(--font-inter), system-ui, sans-serif;\n  -webkit-font-smoothing: antialiased;\n  -moz-osx-font-smoothing: grayscale;\n}\n\n/* Focus visible styles for accessibility */\n:focus-visible {\n  outline: 2px solid theme('colors.primary.500');\n  outline-offset: 2px;\n}\n\n/* Custom scrollbar for webkit browsers */\n::-webkit-scrollbar {\n  width: 8px;\n  height: 8px;\n}\n\n::-webkit-scrollbar-track {\n  background: transparent;\n}\n\n::-webkit-scrollbar-thumb {\n  background: theme('colors.secondary.300');\n  border-radius: 4px;\n}\n\n::-webkit-scrollbar-thumb:hover {\n  background: theme('colors.secondary.400');\n}\n\n@media (prefers-color-scheme: dark) {\n  ::-webkit-scrollbar-thumb {\n    background: theme('colors.secondary.600');\n  }\n\n  ::-webkit-scrollbar-thumb:hover {\n    background: theme('colors.secondary.500');\n  }\n}\n\n/* Landing page animations */\n@keyframes blob {\n  0% { transform: translate(0px, 0px) scale(1); }\n  33% { transform: translate(30px, -50px) scale(1.1); }\n  66% { transform: translate(-20px, 20px) scale(0.9); }\n  100% { transform: translate(0px, 0px) scale(1); }\n}\n\n.animate-blob {\n  animation: blob 7s infinite;\n}\n\n.animation-delay-2000 {\n  animation-delay: 2s;\n}\n\n.animation-delay-4000 {\n  animation-delay: 4s;\n}\n\n@keyframes float {\n  0%, 100% { transform: translateY(0px); }\n  50% { transform: translateY(-10px); }\n}\n\n.animate-float {\n  animation: float 3s ease-in-out infinite;\n}\n\n@keyframes fadeIn {\n  from { opacity: 0; transform: translateY(10px); }\n  to { opacity: 1; transform: translateY(0); }\n}\n\n.animate-fadeIn {\n  animation: fadeIn 0.5s ease-out forwards;\n}\n\n@keyframes scrollDown {\n  0%, 100% { opacity: 1; transform: translateY(0); }\n  50% { opacity: 0.5; transform: translateY(4px); }\n}\n\n.animate-scrollDown {\n  animation: scrollDown 1.5s ease-in-out infinite;\n}\n",
+        "last_modified": "2026-01-15T16:20:44.326162"
+      },
+      "task_intent": {
+        "title": "002-add-unit-test-coverage-for-dashboard-page-componen",
+        "description": "",
+        "from_plan": false
+      },
+      "commits_behind_main": 5,
+      "status": "active",
+      "merged_at": null
+    },
+    "028-add-mobile-navigation-menu-to-landing-page": {
+      "task_id": "028-add-mobile-navigation-menu-to-landing-page",
+      "branch_point": {
+        "commit_hash": "2b028be920d271c6e53b44319d1c871dc3d27076",
+        "content": "",
+        "timestamp": "2026-01-15T13:21:43.550879"
+      },
+      "worktree_state": {
+        "content": "@tailwind base;\n@tailwind components;\n@tailwind utilities;\n\n:root {\n  --background: #ffffff;\n  --foreground: #171717;\n}\n\n@media (prefers-color-scheme: dark) {\n  :root {\n    --background: #0a0a0a;\n    --foreground: #ededed;\n  }\n}\n\nhtml {\n  scroll-behavior: smooth;\n}\n\nbody {\n  color: var(--foreground);\n  background: var(--background);\n  font-family: var(--font-inter), system-ui, sans-serif;\n  -webkit-font-smoothing: antialiased;\n  -moz-osx-font-smoothing: grayscale;\n}\n\n/* Focus visible styles for accessibility */\n:focus-visible {\n  outline: 2px solid theme('colors.primary.500');\n  outline-offset: 2px;\n}\n\n/* Custom scrollbar for webkit browsers */\n::-webkit-scrollbar {\n  width: 8px;\n  height: 8px;\n}\n\n::-webkit-scrollbar-track {\n  background: transparent;\n}\n\n::-webkit-scrollbar-thumb {\n  background: theme('colors.secondary.300');\n  border-radius: 4px;\n}\n\n::-webkit-scrollbar-thumb:hover {\n  background: theme('colors.secondary.400');\n}\n\n@media (prefers-color-scheme: dark) {\n  ::-webkit-scrollbar-thumb {\n    background: theme('colors.secondary.600');\n  }\n\n  ::-webkit-scrollbar-thumb:hover {\n    background: theme('colors.secondary.500');\n  }\n}\n\n/* Landing page animations */\n@keyframes blob {\n  0% { transform: translate(0px, 0px) scale(1); }\n  33% { transform: translate(30px, -50px) scale(1.1); }\n  66% { transform: translate(-20px, 20px) scale(0.9); }\n  100% { transform: translate(0px, 0px) scale(1); }\n}\n\n.animate-blob {\n  animation: blob 7s infinite;\n}\n\n.animation-delay-2000 {\n  animation-delay: 2s;\n}\n\n.animation-delay-4000 {\n  animation-delay: 4s;\n}\n\n@keyframes float {\n  0%, 100% { transform: translateY(0px); }\n  50% { transform: translateY(-10px); }\n}\n\n.animate-float {\n  animation: float 3s ease-in-out infinite;\n}\n\n@keyframes fadeIn {\n  from { opacity: 0; transform: translateY(10px); }\n  to { opacity: 1; transform: translateY(0); }\n}\n\n.animate-fadeIn {\n  animation: fadeIn 0.5s ease-out forwards;\n}\n\n@keyframes scrollDown {\n  0%, 100% { opacity: 1; transform: translateY(0); }\n  50% { opacity: 0.5; transform: translateY(4px); }\n}\n\n.animate-scrollDown {\n  animation: scrollDown 1.5s ease-in-out infinite;\n}\n",
+        "last_modified": "2026-01-15T15:13:32.555578"
+      },
+      "task_intent": {
+        "title": "028-add-mobile-navigation-menu-to-landing-page",
+        "description": "",
+        "from_plan": false
+      },
+      "commits_behind_main": 5,
+      "status": "active",
+      "merged_at": null
+    },
+    "034-create-reusable-select-component-for-consistent-fo": {
+      "task_id": "034-create-reusable-select-component-for-consistent-fo",
+      "branch_point": {
+        "commit_hash": "2b028be920d271c6e53b44319d1c871dc3d27076",
+        "content": "",
+        "timestamp": "2026-01-15T14:05:37.956433"
+      },
+      "worktree_state": {
+        "content": "@tailwind base;\n@tailwind components;\n@tailwind utilities;\n\n:root {\n  --background: #ffffff;\n  --foreground: #171717;\n}\n\n@media (prefers-color-scheme: dark) {\n  :root {\n    --background: #0a0a0a;\n    --foreground: #ededed;\n  }\n}\n\nhtml {\n  scroll-behavior: smooth;\n}\n\nbody {\n  color: var(--foreground);\n  background: var(--background);\n  font-family: var(--font-inter), system-ui, sans-serif;\n  -webkit-font-smoothing: antialiased;\n  -moz-osx-font-smoothing: grayscale;\n}\n\n/* Focus visible styles for accessibility */\n:focus-visible {\n  outline: 2px solid theme('colors.primary.500');\n  outline-offset: 2px;\n}\n\n/* Custom scrollbar for webkit browsers */\n::-webkit-scrollbar {\n  width: 8px;\n  height: 8px;\n}\n\n::-webkit-scrollbar-track {\n  background: transparent;\n}\n\n::-webkit-scrollbar-thumb {\n  background: theme('colors.secondary.300');\n  border-radius: 4px;\n}\n\n::-webkit-scrollbar-thumb:hover {\n  background: theme('colors.secondary.400');\n}\n\n@media (prefers-color-scheme: dark) {\n  ::-webkit-scrollbar-thumb {\n    background: theme('colors.secondary.600');\n  }\n\n  ::-webkit-scrollbar-thumb:hover {\n    background: theme('colors.secondary.500');\n  }\n}\n\n/* Landing page animations */\n@keyframes blob {\n  0% { transform: translate(0px, 0px) scale(1); }\n  33% { transform: translate(30px, -50px) scale(1.1); }\n  66% { transform: translate(-20px, 20px) scale(0.9); }\n  100% { transform: translate(0px, 0px) scale(1); }\n}\n\n.animate-blob {\n  animation: blob 7s infinite;\n}\n\n.animation-delay-2000 {\n  animation-delay: 2s;\n}\n\n.animation-delay-4000 {\n  animation-delay: 4s;\n}\n\n@keyframes float {\n  0%, 100% { transform: translateY(0px); }\n  50% { transform: translateY(-10px); }\n}\n\n.animate-float {\n  animation: float 3s ease-in-out infinite;\n}\n\n@keyframes fadeIn {\n  from { opacity: 0; transform: translateY(10px); }\n  to { opacity: 1; transform: translateY(0); }\n}\n\n.animate-fadeIn {\n  animation: fadeIn 0.5s ease-out forwards;\n}\n\n@keyframes scrollDown {\n  0%, 100% { opacity: 1; transform: translateY(0); }\n  50% { opacity: 0.5; transform: translateY(4px); }\n}\n\n.animate-scrollDown {\n  animation: scrollDown 1.5s ease-in-out infinite;\n}\n",
+        "last_modified": "2026-01-15T14:05:43.806534"
+      },
+      "task_intent": {
+        "title": "034-create-reusable-select-component-for-consistent-fo",
+        "description": "",
+        "from_plan": false
+      },
+      "commits_behind_main": 5,
+      "status": "active",
+      "merged_at": null
+    },
+    "023-add-mobile-navigation-menu-to-landing-page": {
+      "task_id": "023-add-mobile-navigation-menu-to-landing-page",
+      "branch_point": {
+        "commit_hash": "c709a6c45b4887c1a0ad6e04c6142783760a46ec",
+        "content": "",
+        "timestamp": "2026-01-15T13:47:09.808921"
+      },
+      "worktree_state": {
+        "content": "@tailwind base;\n@tailwind components;\n@tailwind utilities;\n\n:root {\n  --background: #ffffff;\n  --foreground: #171717;\n}\n\n@media (prefers-color-scheme: dark) {\n  :root {\n    --background: #0a0a0a;\n    --foreground: #ededed;\n  }\n}\n\nhtml {\n  scroll-behavior: smooth;\n}\n\nbody {\n  color: var(--foreground);\n  background: var(--background);\n  font-family: var(--font-inter), system-ui, sans-serif;\n  -webkit-font-smoothing: antialiased;\n  -moz-osx-font-smoothing: grayscale;\n}\n\n/* Focus visible styles for accessibility */\n:focus-visible {\n  outline: 2px solid theme('colors.primary.500');\n  outline-offset: 2px;\n}\n\n/* Custom scrollbar for webkit browsers */\n::-webkit-scrollbar {\n  width: 8px;\n  height: 8px;\n}\n\n::-webkit-scrollbar-track {\n  background: transparent;\n}\n\n::-webkit-scrollbar-thumb {\n  background: theme('colors.secondary.300');\n  border-radius: 4px;\n}\n\n::-webkit-scrollbar-thumb:hover {\n  background: theme('colors.secondary.400');\n}\n\n@media (prefers-color-scheme: dark) {\n  ::-webkit-scrollbar-thumb {\n    background: theme('colors.secondary.600');\n  }\n\n  ::-webkit-scrollbar-thumb:hover {\n    background: theme('colors.secondary.500');\n  }\n}\n\n/* Landing page animations */\n@keyframes blob {\n  0% { transform: translate(0px, 0px) scale(1); }\n  33% { transform: translate(30px, -50px) scale(1.1); }\n  66% { transform: translate(-20px, 20px) scale(0.9); }\n  100% { transform: translate(0px, 0px) scale(1); }\n}\n\n.animate-blob {\n  animation: blob 7s infinite;\n}\n\n.animation-delay-2000 {\n  animation-delay: 2s;\n}\n\n.animation-delay-4000 {\n  animation-delay: 4s;\n}\n\n@keyframes float {\n  0%, 100% { transform: translateY(0px); }\n  50% { transform: translateY(-10px); }\n}\n\n.animate-float {\n  animation: float 3s ease-in-out infinite;\n}\n\n@keyframes fadeIn {\n  from { opacity: 0; transform: translateY(10px); }\n  to { opacity: 1; transform: translateY(0); }\n}\n\n.animate-fadeIn {\n  animation: fadeIn 0.5s ease-out forwards;\n}\n\n@keyframes scrollDown {\n  0%, 100% { opacity: 1; transform: translateY(0); }\n  50% { opacity: 0.5; transform: translateY(4px); }\n}\n\n.animate-scrollDown {\n  animation: scrollDown 1.5s ease-in-out infinite;\n}\n",
+        "last_modified": "2026-01-15T13:47:16.794292"
+      },
+      "task_intent": {
+        "title": "023-add-mobile-navigation-menu-to-landing-page",
+        "description": "",
+        "from_plan": false
+      },
+      "commits_behind_main": 0,
+      "status": "active",
+      "merged_at": null
+    },
+    "026-add-mobile-navigation-menu-to-landing-page": {
+      "task_id": "026-add-mobile-navigation-menu-to-landing-page",
+      "branch_point": {
+        "commit_hash": "2b028be920d271c6e53b44319d1c871dc3d27076",
+        "content": "",
+        "timestamp": "2026-01-15T14:15:55.210168"
+      },
+      "worktree_state": {
+        "content": "@tailwind base;\n@tailwind components;\n@tailwind utilities;\n\n:root {\n  --background: #ffffff;\n  --foreground: #171717;\n}\n\n@media (prefers-color-scheme: dark) {\n  :root {\n    --background: #0a0a0a;\n    --foreground: #ededed;\n  }\n}\n\nhtml {\n  scroll-behavior: smooth;\n}\n\nbody {\n  color: var(--foreground);\n  background: var(--background);\n  font-family: var(--font-inter), system-ui, sans-serif;\n  -webkit-font-smoothing: antialiased;\n  -moz-osx-font-smoothing: grayscale;\n}\n\n/* Focus visible styles for accessibility */\n:focus-visible {\n  outline: 2px solid theme('colors.primary.500');\n  outline-offset: 2px;\n}\n\n/* Custom scrollbar for webkit browsers */\n::-webkit-scrollbar {\n  width: 8px;\n  height: 8px;\n}\n\n::-webkit-scrollbar-track {\n  background: transparent;\n}\n\n::-webkit-scrollbar-thumb {\n  background: theme('colors.secondary.300');\n  border-radius: 4px;\n}\n\n::-webkit-scrollbar-thumb:hover {\n  background: theme('colors.secondary.400');\n}\n\n@media (prefers-color-scheme: dark) {\n  ::-webkit-scrollbar-thumb {\n    background: theme('colors.secondary.600');\n  }\n\n  ::-webkit-scrollbar-thumb:hover {\n    background: theme('colors.secondary.500');\n  }\n}\n\n/* Landing page animations */\n@keyframes blob {\n  0% { transform: translate(0px, 0px) scale(1); }\n  33% { transform: translate(30px, -50px) scale(1.1); }\n  66% { transform: translate(-20px, 20px) scale(0.9); }\n  100% { transform: translate(0px, 0px) scale(1); }\n}\n\n.animate-blob {\n  animation: blob 7s infinite;\n}\n\n.animation-delay-2000 {\n  animation-delay: 2s;\n}\n\n.animation-delay-4000 {\n  animation-delay: 4s;\n}\n\n@keyframes float {\n  0%, 100% { transform: translateY(0px); }\n  50% { transform: translateY(-10px); }\n}\n\n.animate-float {\n  animation: float 3s ease-in-out infinite;\n}\n\n@keyframes fadeIn {\n  from { opacity: 0; transform: translateY(10px); }\n  to { opacity: 1; transform: translateY(0); }\n}\n\n.animate-fadeIn {\n  animation: fadeIn 0.5s ease-out forwards;\n}\n\n@keyframes scrollDown {\n  0%, 100% { opacity: 1; transform: translateY(0); }\n  50% { opacity: 0.5; transform: translateY(4px); }\n}\n\n.animate-scrollDown {\n  animation: scrollDown 1.5s ease-in-out infinite;\n}\n",
+        "last_modified": "2026-01-15T14:16:01.045419"
+      },
+      "task_intent": {
+        "title": "026-add-mobile-navigation-menu-to-landing-page",
+        "description": "",
+        "from_plan": false
+      },
+      "commits_behind_main": 5,
+      "status": "active",
+      "merged_at": null
+    }
+  },
+  "created_at": "2026-01-14T09:55:05.382409",
+  "last_updated": "2026-01-15T14:15:58.295348"
+}

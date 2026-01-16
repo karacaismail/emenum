@@ -1,0 +1,39 @@
+{
+  "files_to_modify": {
+    "frontend": ["app/page.tsx"]
+  },
+  "files_to_reference": [
+    "components/dashboard/header.tsx",
+    "components/dashboard/sidebar.tsx"
+  ],
+  "patterns": {
+    "hamburger_button": "Inline SVG with 3 horizontal lines (M4 6h16M4 12h16M4 18h16), rounded-lg button with hover:bg-secondary-100",
+    "mobile_menu": "Fixed sidebar with backdrop overlay, transform translate-x animations, z-index layering (backdrop z-40, menu z-50)",
+    "close_button": "X icon SVG (M6 18L18 6M6 6l12 12) in top-right corner, visible on mobile only (lg:hidden)",
+    "responsive_pattern": "hidden md:flex for desktop, show on mobile with state toggle"
+  },
+  "existing_implementations": {
+    "description": "Dashboard already has complete mobile menu implementation with hamburger button, slide-in sidebar, and backdrop overlay",
+    "relevant_files": [
+      "components/dashboard/header.tsx",
+      "components/dashboard/sidebar.tsx"
+    ],
+    "key_observations": [
+      "Uses useState for isOpen state management",
+      "Hamburger button calls onMenuClick callback",
+      "Sidebar slides in from left with transform translate-x",
+      "Backdrop overlay closes menu on click",
+      "All icons are inline SVG (no icon library dependency)",
+      "Uses 'use client' directive for interactivity"
+    ]
+  },
+  "current_issue": {
+    "description": "Navigation component in app/page.tsx (lines 338-382) hides navigation links on mobile (hidden md:flex) and only shows register button",
+    "affected_lines": "372-378",
+    "missing_functionality": [
+      "No hamburger menu button on mobile",
+      "No mobile menu overlay/drawer",
+      "Users cannot access Features, Pricing, or Login pages from header on mobile"
+    ]
+  }
+}

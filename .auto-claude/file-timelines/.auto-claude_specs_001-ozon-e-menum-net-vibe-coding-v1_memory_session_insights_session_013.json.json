@@ -1,0 +1,205 @@
+{
+  "file_path": ".auto-claude/specs/001-ozon-e-menum-net-vibe-coding-v1/memory/session_insights/session_013.json",
+  "main_branch_history": [],
+  "task_views": {
+    "001-ozon-e-menum-net-vibe-coding-v1": {
+      "task_id": "001-ozon-e-menum-net-vibe-coding-v1",
+      "branch_point": {
+        "commit_hash": "2b028be920d271c6e53b44319d1c871dc3d27076",
+        "content": "",
+        "timestamp": "2026-01-14T09:55:04.472899"
+      },
+      "worktree_state": null,
+      "task_intent": {
+        "title": "001-ozon-e-menum-net-vibe-coding-v1",
+        "description": "",
+        "from_plan": false
+      },
+      "commits_behind_main": 0,
+      "status": "active",
+      "merged_at": null
+    },
+    "037-add-search-to-categories-page": {
+      "task_id": "037-add-search-to-categories-page",
+      "branch_point": {
+        "commit_hash": "2b028be920d271c6e53b44319d1c871dc3d27076",
+        "content": "",
+        "timestamp": "2026-01-14T18:38:07.376896"
+      },
+      "worktree_state": {
+        "content": "{\n  \"session_number\": 13,\n  \"timestamp\": \"2026-01-14T08:07:15.539815+00:00\",\n  \"subtasks_completed\": [\n    \"subtask-13-4\"\n  ],\n  \"discoveries\": {\n    \"file_insights\": [\n      {\n        \"filename\": \"scripts/verify-routes.mjs\",\n        \"purpose\": \"Automated route verification script\",\n        \"type\": \"utility\"\n      },\n      {\n        \"filename\": \".auto-claude/specs/001-ozon-e-menum-net-vibe-coding-v1/build-progress.txt\",\n        \"purpose\": \"Detailed route verification results\",\n        \"type\": \"log\"\n      }\n    ],\n    \"patterns_discovered\": [\n      \"Systematic route verification process\",\n      \"Comprehensive route status tracking\",\n      \"Automated testing of route compilation and response codes\"\n    ],\n    \"gotchas_discovered\": [\n      \"Routes returning 500 when Supabase environment variables are not set\",\n      \"Dynamic routes requiring database configuration\",\n      \"Different response codes for public vs protected routes\"\n    ],\n    \"approach_outcome\": {\n      \"subtask_id\": \"subtask-13-4\",\n      \"description\": \"Verify all routes return 200 or appropriate redirect\",\n      \"status\": \"SUCCESS\",\n      \"total_routes_verified\": 31,\n      \"routes_passed\": 31,\n      \"pass_percentage\": 100\n    },\n    \"recommendations\": [\n      \"Create environment-specific route configuration\",\n      \"Add more detailed error handling for routes requiring database\",\n      \"Implement fallback mechanisms for routes without complete configuration\",\n      \"Document expected behavior for routes in different environments\"\n    ],\n    \"subtask_id\": \"subtask-13-4\",\n    \"session_num\": 13,\n    \"success\": true,\n    \"changed_files\": [\n      \".auto-claude-status\",\n      \".auto-claude/specs/001-ozon-e-menum-net-vibe-coding-v1/build-progress.txt\",\n      \".auto-claude/specs/001-ozon-e-menum-net-vibe-coding-v1/implementation_plan.json\",\n      \".auto-claude/specs/001-ozon-e-menum-net-vibe-coding-v1/memory/attempt_history.json\",\n      \".auto-claude/specs/001-ozon-e-menum-net-vibe-coding-v1/memory/build_commits.json\",\n      \".auto-claude/specs/001-ozon-e-menum-net-vibe-coding-v1/memory/codebase_map.json\",\n      \".auto-claude/specs/001-ozon-e-menum-net-vibe-coding-v1/memory/gotchas.md\",\n      \".auto-claude/specs/001-ozon-e-menum-net-vibe-coding-v1/memory/session_insights/session_012.json\",\n      \".auto-claude/specs/001-ozon-e-menum-net-vibe-coding-v1/task_logs.json\",\n      \"scripts/verify-routes.mjs\"\n    ]\n  },\n  \"what_worked\": [\n    \"Implemented subtask: subtask-13-4\"\n  ],\n  \"what_failed\": [],\n  \"recommendations_for_next_session\": []\n}",
+        "last_modified": "2026-01-15T15:07:08.825009"
+      },
+      "task_intent": {
+        "title": "037-add-search-to-categories-page",
+        "description": "Add search functionality to the categories page, allowing users to filter categories by name. This mirrors the existing search pattern already implemented in the products page.",
+        "from_plan": true
+      },
+      "commits_behind_main": 0,
+      "status": "active",
+      "merged_at": null
+    },
+    "032-add-mobile-navigation-menu-to-landing-page": {
+      "task_id": "032-add-mobile-navigation-menu-to-landing-page",
+      "branch_point": {
+        "commit_hash": "2b028be920d271c6e53b44319d1c871dc3d27076",
+        "content": "",
+        "timestamp": "2026-01-14T18:38:22.963353"
+      },
+      "worktree_state": {
+        "content": "{\n  \"session_number\": 13,\n  \"timestamp\": \"2026-01-14T08:07:15.539815+00:00\",\n  \"subtasks_completed\": [\n    \"subtask-13-4\"\n  ],\n  \"discoveries\": {\n    \"file_insights\": [\n      {\n        \"filename\": \"scripts/verify-routes.mjs\",\n        \"purpose\": \"Automated route verification script\",\n        \"type\": \"utility\"\n      },\n      {\n        \"filename\": \".auto-claude/specs/001-ozon-e-menum-net-vibe-coding-v1/build-progress.txt\",\n        \"purpose\": \"Detailed route verification results\",\n        \"type\": \"log\"\n      }\n    ],\n    \"patterns_discovered\": [\n      \"Systematic route verification process\",\n      \"Comprehensive route status tracking\",\n      \"Automated testing of route compilation and response codes\"\n    ],\n    \"gotchas_discovered\": [\n      \"Routes returning 500 when Supabase environment variables are not set\",\n      \"Dynamic routes requiring database configuration\",\n      \"Different response codes for public vs protected routes\"\n    ],\n    \"approach_outcome\": {\n      \"subtask_id\": \"subtask-13-4\",\n      \"description\": \"Verify all routes return 200 or appropriate redirect\",\n      \"status\": \"SUCCESS\",\n      \"total_routes_verified\": 31,\n      \"routes_passed\": 31,\n      \"pass_percentage\": 100\n    },\n    \"recommendations\": [\n      \"Create environment-specific route configuration\",\n      \"Add more detailed error handling for routes requiring database\",\n      \"Implement fallback mechanisms for routes without complete configuration\",\n      \"Document expected behavior for routes in different environments\"\n    ],\n    \"subtask_id\": \"subtask-13-4\",\n    \"session_num\": 13,\n    \"success\": true,\n    \"changed_files\": [\n      \".auto-claude-status\",\n      \".auto-claude/specs/001-ozon-e-menum-net-vibe-coding-v1/build-progress.txt\",\n      \".auto-claude/specs/001-ozon-e-menum-net-vibe-coding-v1/implementation_plan.json\",\n      \".auto-claude/specs/001-ozon-e-menum-net-vibe-coding-v1/memory/attempt_history.json\",\n      \".auto-claude/specs/001-ozon-e-menum-net-vibe-coding-v1/memory/build_commits.json\",\n      \".auto-claude/specs/001-ozon-e-menum-net-vibe-coding-v1/memory/codebase_map.json\",\n      \".auto-claude/specs/001-ozon-e-menum-net-vibe-coding-v1/memory/gotchas.md\",\n      \".auto-claude/specs/001-ozon-e-menum-net-vibe-coding-v1/memory/session_insights/session_012.json\",\n      \".auto-claude/specs/001-ozon-e-menum-net-vibe-coding-v1/task_logs.json\",\n      \"scripts/verify-routes.mjs\"\n    ]\n  },\n  \"what_worked\": [\n    \"Implemented subtask: subtask-13-4\"\n  ],\n  \"what_failed\": [],\n  \"recommendations_for_next_session\": []\n}",
+        "last_modified": "2026-01-15T15:05:31.788730"
+      },
+      "task_intent": {
+        "title": "032-add-mobile-navigation-menu-to-landing-page",
+        "description": "The landing page navigation on mobile devices only shows a 'Basla' button, hiding all other navigation links. Add a proper hamburger menu for mobile users.",
+        "from_plan": true
+      },
+      "commits_behind_main": 0,
+      "status": "active",
+      "merged_at": null
+    },
+    "031-add-mobile-navigation-menu-to-landing-page": {
+      "task_id": "031-add-mobile-navigation-menu-to-landing-page",
+      "branch_point": {
+        "commit_hash": "2b028be920d271c6e53b44319d1c871dc3d27076",
+        "content": "",
+        "timestamp": "2026-01-14T18:50:42.638180"
+      },
+      "worktree_state": {
+        "content": "{\n  \"session_number\": 13,\n  \"timestamp\": \"2026-01-14T08:07:15.539815+00:00\",\n  \"subtasks_completed\": [\n    \"subtask-13-4\"\n  ],\n  \"discoveries\": {\n    \"file_insights\": [\n      {\n        \"filename\": \"scripts/verify-routes.mjs\",\n        \"purpose\": \"Automated route verification script\",\n        \"type\": \"utility\"\n      },\n      {\n        \"filename\": \".auto-claude/specs/001-ozon-e-menum-net-vibe-coding-v1/build-progress.txt\",\n        \"purpose\": \"Detailed route verification results\",\n        \"type\": \"log\"\n      }\n    ],\n    \"patterns_discovered\": [\n      \"Systematic route verification process\",\n      \"Comprehensive route status tracking\",\n      \"Automated testing of route compilation and response codes\"\n    ],\n    \"gotchas_discovered\": [\n      \"Routes returning 500 when Supabase environment variables are not set\",\n      \"Dynamic routes requiring database configuration\",\n      \"Different response codes for public vs protected routes\"\n    ],\n    \"approach_outcome\": {\n      \"subtask_id\": \"subtask-13-4\",\n      \"description\": \"Verify all routes return 200 or appropriate redirect\",\n      \"status\": \"SUCCESS\",\n      \"total_routes_verified\": 31,\n      \"routes_passed\": 31,\n      \"pass_percentage\": 100\n    },\n    \"recommendations\": [\n      \"Create environment-specific route configuration\",\n      \"Add more detailed error handling for routes requiring database\",\n      \"Implement fallback mechanisms for routes without complete configuration\",\n      \"Document expected behavior for routes in different environments\"\n    ],\n    \"subtask_id\": \"subtask-13-4\",\n    \"session_num\": 13,\n    \"success\": true,\n    \"changed_files\": [\n      \".auto-claude-status\",\n      \".auto-claude/specs/001-ozon-e-menum-net-vibe-coding-v1/build-progress.txt\",\n      \".auto-claude/specs/001-ozon-e-menum-net-vibe-coding-v1/implementation_plan.json\",\n      \".auto-claude/specs/001-ozon-e-menum-net-vibe-coding-v1/memory/attempt_history.json\",\n      \".auto-claude/specs/001-ozon-e-menum-net-vibe-coding-v1/memory/build_commits.json\",\n      \".auto-claude/specs/001-ozon-e-menum-net-vibe-coding-v1/memory/codebase_map.json\",\n      \".auto-claude/specs/001-ozon-e-menum-net-vibe-coding-v1/memory/gotchas.md\",\n      \".auto-claude/specs/001-ozon-e-menum-net-vibe-coding-v1/memory/session_insights/session_012.json\",\n      \".auto-claude/specs/001-ozon-e-menum-net-vibe-coding-v1/task_logs.json\",\n      \"scripts/verify-routes.mjs\"\n    ]\n  },\n  \"what_worked\": [\n    \"Implemented subtask: subtask-13-4\"\n  ],\n  \"what_failed\": [],\n  \"recommendations_for_next_session\": []\n}",
+        "last_modified": "2026-01-15T15:03:39.197838"
+      },
+      "task_intent": {
+        "title": "031-add-mobile-navigation-menu-to-landing-page",
+        "description": "The landing page navigation on mobile devices only shows a 'Basla' button, hiding all other navigation links. Add a proper hamburger menu for mobile users.",
+        "from_plan": true
+      },
+      "commits_behind_main": 0,
+      "status": "active",
+      "merged_at": null
+    },
+    "040-add-bulk-qr-code-download-for-all-tables": {
+      "task_id": "040-add-bulk-qr-code-download-for-all-tables",
+      "branch_point": {
+        "commit_hash": "2b028be920d271c6e53b44319d1c871dc3d27076",
+        "content": "",
+        "timestamp": "2026-01-14T18:53:11.069414"
+      },
+      "worktree_state": {
+        "content": "{\n  \"session_number\": 13,\n  \"timestamp\": \"2026-01-14T08:07:15.539815+00:00\",\n  \"subtasks_completed\": [\n    \"subtask-13-4\"\n  ],\n  \"discoveries\": {\n    \"file_insights\": [\n      {\n        \"filename\": \"scripts/verify-routes.mjs\",\n        \"purpose\": \"Automated route verification script\",\n        \"type\": \"utility\"\n      },\n      {\n        \"filename\": \".auto-claude/specs/001-ozon-e-menum-net-vibe-coding-v1/build-progress.txt\",\n        \"purpose\": \"Detailed route verification results\",\n        \"type\": \"log\"\n      }\n    ],\n    \"patterns_discovered\": [\n      \"Systematic route verification process\",\n      \"Comprehensive route status tracking\",\n      \"Automated testing of route compilation and response codes\"\n    ],\n    \"gotchas_discovered\": [\n      \"Routes returning 500 when Supabase environment variables are not set\",\n      \"Dynamic routes requiring database configuration\",\n      \"Different response codes for public vs protected routes\"\n    ],\n    \"approach_outcome\": {\n      \"subtask_id\": \"subtask-13-4\",\n      \"description\": \"Verify all routes return 200 or appropriate redirect\",\n      \"status\": \"SUCCESS\",\n      \"total_routes_verified\": 31,\n      \"routes_passed\": 31,\n      \"pass_percentage\": 100\n    },\n    \"recommendations\": [\n      \"Create environment-specific route configuration\",\n      \"Add more detailed error handling for routes requiring database\",\n      \"Implement fallback mechanisms for routes without complete configuration\",\n      \"Document expected behavior for routes in different environments\"\n    ],\n    \"subtask_id\": \"subtask-13-4\",\n    \"session_num\": 13,\n    \"success\": true,\n    \"changed_files\": [\n      \".auto-claude-status\",\n      \".auto-claude/specs/001-ozon-e-menum-net-vibe-coding-v1/build-progress.txt\",\n      \".auto-claude/specs/001-ozon-e-menum-net-vibe-coding-v1/implementation_plan.json\",\n      \".auto-claude/specs/001-ozon-e-menum-net-vibe-coding-v1/memory/attempt_history.json\",\n      \".auto-claude/specs/001-ozon-e-menum-net-vibe-coding-v1/memory/build_commits.json\",\n      \".auto-claude/specs/001-ozon-e-menum-net-vibe-coding-v1/memory/codebase_map.json\",\n      \".auto-claude/specs/001-ozon-e-menum-net-vibe-coding-v1/memory/gotchas.md\",\n      \".auto-claude/specs/001-ozon-e-menum-net-vibe-coding-v1/memory/session_insights/session_012.json\",\n      \".auto-claude/specs/001-ozon-e-menum-net-vibe-coding-v1/task_logs.json\",\n      \"scripts/verify-routes.mjs\"\n    ]\n  },\n  \"what_worked\": [\n    \"Implemented subtask: subtask-13-4\"\n  ],\n  \"what_failed\": [],\n  \"recommendations_for_next_session\": []\n}",
+        "last_modified": "2026-01-14T18:53:20.425900"
+      },
+      "task_intent": {
+        "title": "040-add-bulk-qr-code-download-for-all-tables",
+        "description": "",
+        "from_plan": false
+      },
+      "commits_behind_main": 0,
+      "status": "active",
+      "merged_at": null
+    },
+    "005-extract-duplicated-crud-state-management-into-reus": {
+      "task_id": "005-extract-duplicated-crud-state-management-into-reus",
+      "branch_point": {
+        "commit_hash": "2b028be920d271c6e53b44319d1c871dc3d27076",
+        "content": "",
+        "timestamp": "2026-01-15T06:33:12.581832"
+      },
+      "worktree_state": {
+        "content": "{\n  \"session_number\": 13,\n  \"timestamp\": \"2026-01-14T08:07:15.539815+00:00\",\n  \"subtasks_completed\": [\n    \"subtask-13-4\"\n  ],\n  \"discoveries\": {\n    \"file_insights\": [\n      {\n        \"filename\": \"scripts/verify-routes.mjs\",\n        \"purpose\": \"Automated route verification script\",\n        \"type\": \"utility\"\n      },\n      {\n        \"filename\": \".auto-claude/specs/001-ozon-e-menum-net-vibe-coding-v1/build-progress.txt\",\n        \"purpose\": \"Detailed route verification results\",\n        \"type\": \"log\"\n      }\n    ],\n    \"patterns_discovered\": [\n      \"Systematic route verification process\",\n      \"Comprehensive route status tracking\",\n      \"Automated testing of route compilation and response codes\"\n    ],\n    \"gotchas_discovered\": [\n      \"Routes returning 500 when Supabase environment variables are not set\",\n      \"Dynamic routes requiring database configuration\",\n      \"Different response codes for public vs protected routes\"\n    ],\n    \"approach_outcome\": {\n      \"subtask_id\": \"subtask-13-4\",\n      \"description\": \"Verify all routes return 200 or appropriate redirect\",\n      \"status\": \"SUCCESS\",\n      \"total_routes_verified\": 31,\n      \"routes_passed\": 31,\n      \"pass_percentage\": 100\n    },\n    \"recommendations\": [\n      \"Create environment-specific route configuration\",\n      \"Add more detailed error handling for routes requiring database\",\n      \"Implement fallback mechanisms for routes without complete configuration\",\n      \"Document expected behavior for routes in different environments\"\n    ],\n    \"subtask_id\": \"subtask-13-4\",\n    \"session_num\": 13,\n    \"success\": true,\n    \"changed_files\": [\n      \".auto-claude-status\",\n      \".auto-claude/specs/001-ozon-e-menum-net-vibe-coding-v1/build-progress.txt\",\n      \".auto-claude/specs/001-ozon-e-menum-net-vibe-coding-v1/implementation_plan.json\",\n      \".auto-claude/specs/001-ozon-e-menum-net-vibe-coding-v1/memory/attempt_history.json\",\n      \".auto-claude/specs/001-ozon-e-menum-net-vibe-coding-v1/memory/build_commits.json\",\n      \".auto-claude/specs/001-ozon-e-menum-net-vibe-coding-v1/memory/codebase_map.json\",\n      \".auto-claude/specs/001-ozon-e-menum-net-vibe-coding-v1/memory/gotchas.md\",\n      \".auto-claude/specs/001-ozon-e-menum-net-vibe-coding-v1/memory/session_insights/session_012.json\",\n      \".auto-claude/specs/001-ozon-e-menum-net-vibe-coding-v1/task_logs.json\",\n      \"scripts/verify-routes.mjs\"\n    ]\n  },\n  \"what_worked\": [\n    \"Implemented subtask: subtask-13-4\"\n  ],\n  \"what_failed\": [],\n  \"recommendations_for_next_session\": []\n}",
+        "last_modified": "2026-01-15T16:04:15.485534"
+      },
+      "task_intent": {
+        "title": "005-extract-duplicated-crud-state-management-into-reus",
+        "description": "",
+        "from_plan": false
+      },
+      "commits_behind_main": 5,
+      "status": "active",
+      "merged_at": null
+    },
+    "002-add-unit-test-coverage-for-dashboard-page-componen": {
+      "task_id": "002-add-unit-test-coverage-for-dashboard-page-componen",
+      "branch_point": {
+        "commit_hash": "2b028be920d271c6e53b44319d1c871dc3d27076",
+        "content": "",
+        "timestamp": "2026-01-15T14:04:12.520457"
+      },
+      "worktree_state": {
+        "content": "{\n  \"session_number\": 13,\n  \"timestamp\": \"2026-01-14T08:07:15.539815+00:00\",\n  \"subtasks_completed\": [\n    \"subtask-13-4\"\n  ],\n  \"discoveries\": {\n    \"file_insights\": [\n      {\n        \"filename\": \"scripts/verify-routes.mjs\",\n        \"purpose\": \"Automated route verification script\",\n        \"type\": \"utility\"\n      },\n      {\n        \"filename\": \".auto-claude/specs/001-ozon-e-menum-net-vibe-coding-v1/build-progress.txt\",\n        \"purpose\": \"Detailed route verification results\",\n        \"type\": \"log\"\n      }\n    ],\n    \"patterns_discovered\": [\n      \"Systematic route verification process\",\n      \"Comprehensive route status tracking\",\n      \"Automated testing of route compilation and response codes\"\n    ],\n    \"gotchas_discovered\": [\n      \"Routes returning 500 when Supabase environment variables are not set\",\n      \"Dynamic routes requiring database configuration\",\n      \"Different response codes for public vs protected routes\"\n    ],\n    \"approach_outcome\": {\n      \"subtask_id\": \"subtask-13-4\",\n      \"description\": \"Verify all routes return 200 or appropriate redirect\",\n      \"status\": \"SUCCESS\",\n      \"total_routes_verified\": 31,\n      \"routes_passed\": 31,\n      \"pass_percentage\": 100\n    },\n    \"recommendations\": [\n      \"Create environment-specific route configuration\",\n      \"Add more detailed error handling for routes requiring database\",\n      \"Implement fallback mechanisms for routes without complete configuration\",\n      \"Document expected behavior for routes in different environments\"\n    ],\n    \"subtask_id\": \"subtask-13-4\",\n    \"session_num\": 13,\n    \"success\": true,\n    \"changed_files\": [\n      \".auto-claude-status\",\n      \".auto-claude/specs/001-ozon-e-menum-net-vibe-coding-v1/build-progress.txt\",\n      \".auto-claude/specs/001-ozon-e-menum-net-vibe-coding-v1/implementation_plan.json\",\n      \".auto-claude/specs/001-ozon-e-menum-net-vibe-coding-v1/memory/attempt_history.json\",\n      \".auto-claude/specs/001-ozon-e-menum-net-vibe-coding-v1/memory/build_commits.json\",\n      \".auto-claude/specs/001-ozon-e-menum-net-vibe-coding-v1/memory/codebase_map.json\",\n      \".auto-claude/specs/001-ozon-e-menum-net-vibe-coding-v1/memory/gotchas.md\",\n      \".auto-claude/specs/001-ozon-e-menum-net-vibe-coding-v1/memory/session_insights/session_012.json\",\n      \".auto-claude/specs/001-ozon-e-menum-net-vibe-coding-v1/task_logs.json\",\n      \"scripts/verify-routes.mjs\"\n    ]\n  },\n  \"what_worked\": [\n    \"Implemented subtask: subtask-13-4\"\n  ],\n  \"what_failed\": [],\n  \"recommendations_for_next_session\": []\n}",
+        "last_modified": "2026-01-15T16:20:44.212408"
+      },
+      "task_intent": {
+        "title": "002-add-unit-test-coverage-for-dashboard-page-componen",
+        "description": "",
+        "from_plan": false
+      },
+      "commits_behind_main": 5,
+      "status": "active",
+      "merged_at": null
+    },
+    "034-create-reusable-select-component-for-consistent-fo": {
+      "task_id": "034-create-reusable-select-component-for-consistent-fo",
+      "branch_point": {
+        "commit_hash": "2b028be920d271c6e53b44319d1c871dc3d27076",
+        "content": "",
+        "timestamp": "2026-01-15T14:05:37.956433"
+      },
+      "worktree_state": {
+        "content": "{\n  \"session_number\": 13,\n  \"timestamp\": \"2026-01-14T08:07:15.539815+00:00\",\n  \"subtasks_completed\": [\n    \"subtask-13-4\"\n  ],\n  \"discoveries\": {\n    \"file_insights\": [\n      {\n        \"filename\": \"scripts/verify-routes.mjs\",\n        \"purpose\": \"Automated route verification script\",\n        \"type\": \"utility\"\n      },\n      {\n        \"filename\": \".auto-claude/specs/001-ozon-e-menum-net-vibe-coding-v1/build-progress.txt\",\n        \"purpose\": \"Detailed route verification results\",\n        \"type\": \"log\"\n      }\n    ],\n    \"patterns_discovered\": [\n      \"Systematic route verification process\",\n      \"Comprehensive route status tracking\",\n      \"Automated testing of route compilation and response codes\"\n    ],\n    \"gotchas_discovered\": [\n      \"Routes returning 500 when Supabase environment variables are not set\",\n      \"Dynamic routes requiring database configuration\",\n      \"Different response codes for public vs protected routes\"\n    ],\n    \"approach_outcome\": {\n      \"subtask_id\": \"subtask-13-4\",\n      \"description\": \"Verify all routes return 200 or appropriate redirect\",\n      \"status\": \"SUCCESS\",\n      \"total_routes_verified\": 31,\n      \"routes_passed\": 31,\n      \"pass_percentage\": 100\n    },\n    \"recommendations\": [\n      \"Create environment-specific route configuration\",\n      \"Add more detailed error handling for routes requiring database\",\n      \"Implement fallback mechanisms for routes without complete configuration\",\n      \"Document expected behavior for routes in different environments\"\n    ],\n    \"subtask_id\": \"subtask-13-4\",\n    \"session_num\": 13,\n    \"success\": true,\n    \"changed_files\": [\n      \".auto-claude-status\",\n      \".auto-claude/specs/001-ozon-e-menum-net-vibe-coding-v1/build-progress.txt\",\n      \".auto-claude/specs/001-ozon-e-menum-net-vibe-coding-v1/implementation_plan.json\",\n      \".auto-claude/specs/001-ozon-e-menum-net-vibe-coding-v1/memory/attempt_history.json\",\n      \".auto-claude/specs/001-ozon-e-menum-net-vibe-coding-v1/memory/build_commits.json\",\n      \".auto-claude/specs/001-ozon-e-menum-net-vibe-coding-v1/memory/codebase_map.json\",\n      \".auto-claude/specs/001-ozon-e-menum-net-vibe-coding-v1/memory/gotchas.md\",\n      \".auto-claude/specs/001-ozon-e-menum-net-vibe-coding-v1/memory/session_insights/session_012.json\",\n      \".auto-claude/specs/001-ozon-e-menum-net-vibe-coding-v1/task_logs.json\",\n      \"scripts/verify-routes.mjs\"\n    ]\n  },\n  \"what_worked\": [\n    \"Implemented subtask: subtask-13-4\"\n  ],\n  \"what_failed\": [],\n  \"recommendations_for_next_session\": []\n}",
+        "last_modified": "2026-01-15T14:05:43.668775"
+      },
+      "task_intent": {
+        "title": "034-create-reusable-select-component-for-consistent-fo",
+        "description": "",
+        "from_plan": false
+      },
+      "commits_behind_main": 5,
+      "status": "active",
+      "merged_at": null
+    },
+    "023-add-mobile-navigation-menu-to-landing-page": {
+      "task_id": "023-add-mobile-navigation-menu-to-landing-page",
+      "branch_point": {
+        "commit_hash": "c709a6c45b4887c1a0ad6e04c6142783760a46ec",
+        "content": "",
+        "timestamp": "2026-01-15T13:47:09.808921"
+      },
+      "worktree_state": {
+        "content": "{\n  \"session_number\": 13,\n  \"timestamp\": \"2026-01-14T08:07:15.539815+00:00\",\n  \"subtasks_completed\": [\n    \"subtask-13-4\"\n  ],\n  \"discoveries\": {\n    \"file_insights\": [\n      {\n        \"filename\": \"scripts/verify-routes.mjs\",\n        \"purpose\": \"Automated route verification script\",\n        \"type\": \"utility\"\n      },\n      {\n        \"filename\": \".auto-claude/specs/001-ozon-e-menum-net-vibe-coding-v1/build-progress.txt\",\n        \"purpose\": \"Detailed route verification results\",\n        \"type\": \"log\"\n      }\n    ],\n    \"patterns_discovered\": [\n      \"Systematic route verification process\",\n      \"Comprehensive route status tracking\",\n      \"Automated testing of route compilation and response codes\"\n    ],\n    \"gotchas_discovered\": [\n      \"Routes returning 500 when Supabase environment variables are not set\",\n      \"Dynamic routes requiring database configuration\",\n      \"Different response codes for public vs protected routes\"\n    ],\n    \"approach_outcome\": {\n      \"subtask_id\": \"subtask-13-4\",\n      \"description\": \"Verify all routes return 200 or appropriate redirect\",\n      \"status\": \"SUCCESS\",\n      \"total_routes_verified\": 31,\n      \"routes_passed\": 31,\n      \"pass_percentage\": 100\n    },\n    \"recommendations\": [\n      \"Create environment-specific route configuration\",\n      \"Add more detailed error handling for routes requiring database\",\n      \"Implement fallback mechanisms for routes without complete configuration\",\n      \"Document expected behavior for routes in different environments\"\n    ],\n    \"subtask_id\": \"subtask-13-4\",\n    \"session_num\": 13,\n    \"success\": true,\n    \"changed_files\": [\n      \".auto-claude-status\",\n      \".auto-claude/specs/001-ozon-e-menum-net-vibe-coding-v1/build-progress.txt\",\n      \".auto-claude/specs/001-ozon-e-menum-net-vibe-coding-v1/implementation_plan.json\",\n      \".auto-claude/specs/001-ozon-e-menum-net-vibe-coding-v1/memory/attempt_history.json\",\n      \".auto-claude/specs/001-ozon-e-menum-net-vibe-coding-v1/memory/build_commits.json\",\n      \".auto-claude/specs/001-ozon-e-menum-net-vibe-coding-v1/memory/codebase_map.json\",\n      \".auto-claude/specs/001-ozon-e-menum-net-vibe-coding-v1/memory/gotchas.md\",\n      \".auto-claude/specs/001-ozon-e-menum-net-vibe-coding-v1/memory/session_insights/session_012.json\",\n      \".auto-claude/specs/001-ozon-e-menum-net-vibe-coding-v1/task_logs.json\",\n      \"scripts/verify-routes.mjs\"\n    ]\n  },\n  \"what_worked\": [\n    \"Implemented subtask: subtask-13-4\"\n  ],\n  \"what_failed\": [],\n  \"recommendations_for_next_session\": []\n}",
+        "last_modified": "2026-01-15T13:47:16.697421"
+      },
+      "task_intent": {
+        "title": "023-add-mobile-navigation-menu-to-landing-page",
+        "description": "",
+        "from_plan": false
+      },
+      "commits_behind_main": 0,
+      "status": "active",
+      "merged_at": null
+    },
+    "026-add-mobile-navigation-menu-to-landing-page": {
+      "task_id": "026-add-mobile-navigation-menu-to-landing-page",
+      "branch_point": {
+        "commit_hash": "2b028be920d271c6e53b44319d1c871dc3d27076",
+        "content": "",
+        "timestamp": "2026-01-15T14:15:55.210168"
+      },
+      "worktree_state": {
+        "content": "{\n  \"session_number\": 13,\n  \"timestamp\": \"2026-01-14T08:07:15.539815+00:00\",\n  \"subtasks_completed\": [\n    \"subtask-13-4\"\n  ],\n  \"discoveries\": {\n    \"file_insights\": [\n      {\n        \"filename\": \"scripts/verify-routes.mjs\",\n        \"purpose\": \"Automated route verification script\",\n        \"type\": \"utility\"\n      },\n      {\n        \"filename\": \".auto-claude/specs/001-ozon-e-menum-net-vibe-coding-v1/build-progress.txt\",\n        \"purpose\": \"Detailed route verification results\",\n        \"type\": \"log\"\n      }\n    ],\n    \"patterns_discovered\": [\n      \"Systematic route verification process\",\n      \"Comprehensive route status tracking\",\n      \"Automated testing of route compilation and response codes\"\n    ],\n    \"gotchas_discovered\": [\n      \"Routes returning 500 when Supabase environment variables are not set\",\n      \"Dynamic routes requiring database configuration\",\n      \"Different response codes for public vs protected routes\"\n    ],\n    \"approach_outcome\": {\n      \"subtask_id\": \"subtask-13-4\",\n      \"description\": \"Verify all routes return 200 or appropriate redirect\",\n      \"status\": \"SUCCESS\",\n      \"total_routes_verified\": 31,\n      \"routes_passed\": 31,\n      \"pass_percentage\": 100\n    },\n    \"recommendations\": [\n      \"Create environment-specific route configuration\",\n      \"Add more detailed error handling for routes requiring database\",\n      \"Implement fallback mechanisms for routes without complete configuration\",\n      \"Document expected behavior for routes in different environments\"\n    ],\n    \"subtask_id\": \"subtask-13-4\",\n    \"session_num\": 13,\n    \"success\": true,\n    \"changed_files\": [\n      \".auto-claude-status\",\n      \".auto-claude/specs/001-ozon-e-menum-net-vibe-coding-v1/build-progress.txt\",\n      \".auto-claude/specs/001-ozon-e-menum-net-vibe-coding-v1/implementation_plan.json\",\n      \".auto-claude/specs/001-ozon-e-menum-net-vibe-coding-v1/memory/attempt_history.json\",\n      \".auto-claude/specs/001-ozon-e-menum-net-vibe-coding-v1/memory/build_commits.json\",\n      \".auto-claude/specs/001-ozon-e-menum-net-vibe-coding-v1/memory/codebase_map.json\",\n      \".auto-claude/specs/001-ozon-e-menum-net-vibe-coding-v1/memory/gotchas.md\",\n      \".auto-claude/specs/001-ozon-e-menum-net-vibe-coding-v1/memory/session_insights/session_012.json\",\n      \".auto-claude/specs/001-ozon-e-menum-net-vibe-coding-v1/task_logs.json\",\n      \"scripts/verify-routes.mjs\"\n    ]\n  },\n  \"what_worked\": [\n    \"Implemented subtask: subtask-13-4\"\n  ],\n  \"what_failed\": [],\n  \"recommendations_for_next_session\": []\n}",
+        "last_modified": "2026-01-15T14:16:00.951016"
+      },
+      "task_intent": {
+        "title": "026-add-mobile-navigation-menu-to-landing-page",
+        "description": "",
+        "from_plan": false
+      },
+      "commits_behind_main": 5,
+      "status": "active",
+      "merged_at": null
+    }
+  },
+  "created_at": "2026-01-14T09:55:04.683563",
+  "last_updated": "2026-01-15T14:15:56.251960"
+}

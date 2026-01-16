@@ -1,0 +1,37 @@
+{
+  "task_description": "Make product action buttons always visible on touch devices by removing hover-only opacity pattern",
+  "scoped_services": ["nextjs"],
+  "files_to_modify": {
+    "dashboard_pages": [
+      "app/(dashboard)/products/page.tsx",
+      "app/(dashboard)/categories/page.tsx",
+      "app/(dashboard)/tables/page.tsx",
+      "app/(dashboard)/audit/page.tsx"
+    ]
+  },
+  "files_to_reference": [
+    "app/(dashboard)/products/page.tsx",
+    "tailwind.config.ts"
+  ],
+  "patterns": {
+    "current_pattern": "opacity-0 transition-opacity group-hover:opacity-100 - buttons invisible until hover",
+    "new_pattern": "Always visible buttons with subtle opacity (opacity-70 group-hover:opacity-100) or touch-specific media queries",
+    "tailwind_classes": "Use Tailwind utility classes, no custom CSS needed",
+    "accessibility": "Buttons must be discoverable on touch devices (tablets, phones)"
+  },
+  "existing_implementations": {
+    "description": "Found 4 occurrences of opacity-0 group-hover pattern in dashboard pages",
+    "relevant_files": [
+      "app/(dashboard)/products/page.tsx:140",
+      "app/(dashboard)/categories/page.tsx:101",
+      "app/(dashboard)/tables/page.tsx:150",
+      "app/(dashboard)/audit/page.tsx:459"
+    ]
+  },
+  "problem_analysis": {
+    "issue": "Action buttons (edit, delete) are hidden with opacity-0 until mouse hover",
+    "impact": "Touch device users (tablets, phones) cannot access these critical actions",
+    "affected_users": "Restaurant staff using tablets for management",
+    "severity": "High - breaks core functionality on touch devices"
+  }
+}

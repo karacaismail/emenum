@@ -1,0 +1,10 @@
+{
+  "sourceType": "ideation",
+  "ideationType": "security_hardening",
+  "ideaId": "sec-004",
+  "rationale": "HSTS ensures browsers only communicate with the server over HTTPS, preventing man-in-the-middle attacks where an attacker could intercept traffic by forcing a downgrade to HTTP. This is critical for a SaaS platform handling restaurant business data and user authentication.",
+  "category": "security",
+  "securitySeverity": "medium",
+  "impact": "medium",
+  "priority": "medium"
+}

@@ -1,0 +1,20 @@
+{
+  "files_to_modify": {
+    "frontend": ["app/(dashboard)/categories/page.tsx"]
+  },
+  "files_to_reference": ["app/(dashboard)/products/page.tsx"],
+  "patterns": {
+    "search_pattern": "Products page uses searchQuery state with toLowerCase() filtering, search input with icon, and dynamic filtered count display",
+    "ui_pattern": "Card component with CardContent wrapper for filters, search input with absolute positioned icon",
+    "state_pattern": "useState for searchQuery, filter logic in computed variable before render"
+  },
+  "existing_implementations": {
+    "description": "Products page (app/(dashboard)/products/page.tsx) has complete search implementation with: (1) searchQuery state on line 176, (2) filteredProducts computed variable on lines 435-443, (3) search input UI on lines 488-505 with magnifying glass icon, (4) dynamic subtitle showing filtered count on line 529",
+    "relevant_files": ["app/(dashboard)/products/page.tsx"]
+  },
+  "task_details": {
+    "search_fields": ["category.name"],
+    "filter_behavior": "Case-insensitive substring match using toLowerCase() and includes()",
+    "ui_location": "Before the categories list Card, similar to products page layout"
+  }
+}

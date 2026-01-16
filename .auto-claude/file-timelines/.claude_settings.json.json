@@ -1,0 +1,228 @@
+{
+  "file_path": ".claude_settings.json",
+  "main_branch_history": [],
+  "task_views": {
+    "001-ozon-e-menum-net-vibe-coding-v1": {
+      "task_id": "001-ozon-e-menum-net-vibe-coding-v1",
+      "branch_point": {
+        "commit_hash": "2b028be920d271c6e53b44319d1c871dc3d27076",
+        "content": "",
+        "timestamp": "2026-01-14T09:55:04.472899"
+      },
+      "worktree_state": {
+        "content": "{\n  \"sandbox\": {\n    \"enabled\": true,\n    \"autoAllowBashIfSandboxed\": true\n  },\n  \"permissions\": {\n    \"defaultMode\": \"acceptEdits\",\n    \"allow\": [\n      \"Read(./**)\",\n      \"Write(./**)\",\n      \"Edit(./**)\",\n      \"Glob(./**)\",\n      \"Grep(./**)\",\n      \"Bash(*)\",\n      \"mcp__context7__resolve-library-id\",\n      \"mcp__context7__get-library-docs\",\n      \"mcp__graphiti-memory__search_nodes\",\n      \"mcp__graphiti-memory__search_facts\",\n      \"mcp__graphiti-memory__add_episode\",\n      \"mcp__graphiti-memory__get_episodes\",\n      \"mcp__graphiti-memory__get_entity_edge\"\n    ]\n  }\n}",
+        "last_modified": "2026-01-14T09:55:05.847633"
+      },
+      "task_intent": {
+        "title": "001-ozon-e-menum-net-vibe-coding-v1",
+        "description": "",
+        "from_plan": false
+      },
+      "commits_behind_main": 0,
+      "status": "active",
+      "merged_at": null
+    },
+    "037-add-search-to-categories-page": {
+      "task_id": "037-add-search-to-categories-page",
+      "branch_point": {
+        "commit_hash": "2b028be920d271c6e53b44319d1c871dc3d27076",
+        "content": "",
+        "timestamp": "2026-01-14T18:38:07.376896"
+      },
+      "worktree_state": {
+        "content": "{\n  \"sandbox\": {\n    \"enabled\": true,\n    \"autoAllowBashIfSandboxed\": true\n  },\n  \"permissions\": {\n    \"defaultMode\": \"acceptEdits\",\n    \"allow\": [\n      \"Read(./**)\",\n      \"Write(./**)\",\n      \"Edit(./**)\",\n      \"Glob(./**)\",\n      \"Grep(./**)\",\n      \"Read(/Users/karaca/Desktop/ozon/.auto-claude/worktrees/tasks/037-add-search-to-categories-page/**)\",\n      \"Write(/Users/karaca/Desktop/ozon/.auto-claude/worktrees/tasks/037-add-search-to-categories-page/**)\",\n      \"Edit(/Users/karaca/Desktop/ozon/.auto-claude/worktrees/tasks/037-add-search-to-categories-page/**)\",\n      \"Glob(/Users/karaca/Desktop/ozon/.auto-claude/worktrees/tasks/037-add-search-to-categories-page/**)\",\n      \"Grep(/Users/karaca/Desktop/ozon/.auto-claude/worktrees/tasks/037-add-search-to-categories-page/**)\",\n      \"Read(/Users/karaca/Desktop/ozon/.auto-claude/worktrees/tasks/037-add-search-to-categories-page/.auto-claude/specs/037-add-search-to-categories-page/**)\",\n      \"Write(/Users/karaca/Desktop/ozon/.auto-claude/worktrees/tasks/037-add-search-to-categories-page/.auto-claude/specs/037-add-search-to-categories-page/**)\",\n      \"Edit(/Users/karaca/Desktop/ozon/.auto-claude/worktrees/tasks/037-add-search-to-categories-page/.auto-claude/specs/037-add-search-to-categories-page/**)\",\n      \"Read(/Users/karaca/Desktop/ozon/.auto-claude/**)\",\n      \"Write(/Users/karaca/Desktop/ozon/.auto-claude/**)\",\n      \"Edit(/Users/karaca/Desktop/ozon/.auto-claude/**)\",\n      \"Glob(/Users/karaca/Desktop/ozon/.auto-claude/**)\",\n      \"Grep(/Users/karaca/Desktop/ozon/.auto-claude/**)\",\n      \"Read(/Users/karaca/Desktop/ozon/.worktrees/**)\",\n      \"Write(/Users/karaca/Desktop/ozon/.worktrees/**)\",\n      \"Edit(/Users/karaca/Desktop/ozon/.worktrees/**)\",\n      \"Glob(/Users/karaca/Desktop/ozon/.worktrees/**)\",\n      \"Grep(/Users/karaca/Desktop/ozon/.worktrees/**)\",\n      \"Bash(*)\",\n      \"WebFetch(*)\",\n      \"WebSearch(*)\",\n      \"mcp__context7__resolve-library-id(*)\",\n      \"mcp__context7__get-library-docs(*)\",\n      \"mcp__graphiti-memory__search_nodes(*)\",\n      \"mcp__graphiti-memory__search_facts(*)\",\n      \"mcp__graphiti-memory__add_episode(*)\",\n      \"mcp__graphiti-memory__get_episodes(*)\",\n      \"mcp__graphiti-memory__get_entity_edge(*)\"\n    ]\n  }\n}",
+        "last_modified": "2026-01-15T15:58:04.952195"
+      },
+      "task_intent": {
+        "title": "037-add-search-to-categories-page",
+        "description": "Add search functionality to the categories page, allowing users to filter categories by name. This mirrors the existing search pattern already implemented in the products page.",
+        "from_plan": true
+      },
+      "commits_behind_main": 0,
+      "status": "active",
+      "merged_at": null
+    },
+    "032-add-mobile-navigation-menu-to-landing-page": {
+      "task_id": "032-add-mobile-navigation-menu-to-landing-page",
+      "branch_point": {
+        "commit_hash": "2b028be920d271c6e53b44319d1c871dc3d27076",
+        "content": "",
+        "timestamp": "2026-01-14T18:38:22.963353"
+      },
+      "worktree_state": {
+        "content": "{\n  \"sandbox\": {\n    \"enabled\": true,\n    \"autoAllowBashIfSandboxed\": true\n  },\n  \"permissions\": {\n    \"defaultMode\": \"acceptEdits\",\n    \"allow\": [\n      \"Read(./**)\",\n      \"Write(./**)\",\n      \"Edit(./**)\",\n      \"Glob(./**)\",\n      \"Grep(./**)\",\n      \"Read(/Users/karaca/Desktop/ozon/.auto-claude/worktrees/tasks/032-add-mobile-navigation-menu-to-landing-page/**)\",\n      \"Write(/Users/karaca/Desktop/ozon/.auto-claude/worktrees/tasks/032-add-mobile-navigation-menu-to-landing-page/**)\",\n      \"Edit(/Users/karaca/Desktop/ozon/.auto-claude/worktrees/tasks/032-add-mobile-navigation-menu-to-landing-page/**)\",\n      \"Glob(/Users/karaca/Desktop/ozon/.auto-claude/worktrees/tasks/032-add-mobile-navigation-menu-to-landing-page/**)\",\n      \"Grep(/Users/karaca/Desktop/ozon/.auto-claude/worktrees/tasks/032-add-mobile-navigation-menu-to-landing-page/**)\",\n      \"Read(/Users/karaca/Desktop/ozon/.auto-claude/worktrees/tasks/032-add-mobile-navigation-menu-to-landing-page/.auto-claude/specs/032-add-mobile-navigation-menu-to-landing-page/**)\",\n      \"Write(/Users/karaca/Desktop/ozon/.auto-claude/worktrees/tasks/032-add-mobile-navigation-menu-to-landing-page/.auto-claude/specs/032-add-mobile-navigation-menu-to-landing-page/**)\",\n      \"Edit(/Users/karaca/Desktop/ozon/.auto-claude/worktrees/tasks/032-add-mobile-navigation-menu-to-landing-page/.auto-claude/specs/032-add-mobile-navigation-menu-to-landing-page/**)\",\n      \"Read(/Users/karaca/Desktop/ozon/.auto-claude/**)\",\n      \"Write(/Users/karaca/Desktop/ozon/.auto-claude/**)\",\n      \"Edit(/Users/karaca/Desktop/ozon/.auto-claude/**)\",\n      \"Glob(/Users/karaca/Desktop/ozon/.auto-claude/**)\",\n      \"Grep(/Users/karaca/Desktop/ozon/.auto-claude/**)\",\n      \"Read(/Users/karaca/Desktop/ozon/.worktrees/**)\",\n      \"Write(/Users/karaca/Desktop/ozon/.worktrees/**)\",\n      \"Edit(/Users/karaca/Desktop/ozon/.worktrees/**)\",\n      \"Glob(/Users/karaca/Desktop/ozon/.worktrees/**)\",\n      \"Grep(/Users/karaca/Desktop/ozon/.worktrees/**)\",\n      \"Bash(*)\",\n      \"WebFetch(*)\",\n      \"WebSearch(*)\",\n      \"mcp__context7__resolve-library-id(*)\",\n      \"mcp__context7__get-library-docs(*)\",\n      \"mcp__graphiti-memory__search_nodes(*)\",\n      \"mcp__graphiti-memory__search_facts(*)\",\n      \"mcp__graphiti-memory__add_episode(*)\",\n      \"mcp__graphiti-memory__get_episodes(*)\",\n      \"mcp__graphiti-memory__get_entity_edge(*)\"\n    ]\n  }\n}",
+        "last_modified": "2026-01-15T15:05:31.837705"
+      },
+      "task_intent": {
+        "title": "032-add-mobile-navigation-menu-to-landing-page",
+        "description": "The landing page navigation on mobile devices only shows a 'Basla' button, hiding all other navigation links. Add a proper hamburger menu for mobile users.",
+        "from_plan": true
+      },
+      "commits_behind_main": 0,
+      "status": "active",
+      "merged_at": null
+    },
+    "031-add-mobile-navigation-menu-to-landing-page": {
+      "task_id": "031-add-mobile-navigation-menu-to-landing-page",
+      "branch_point": {
+        "commit_hash": "2b028be920d271c6e53b44319d1c871dc3d27076",
+        "content": "",
+        "timestamp": "2026-01-14T18:50:42.638180"
+      },
+      "worktree_state": {
+        "content": "{\n  \"sandbox\": {\n    \"enabled\": true,\n    \"autoAllowBashIfSandboxed\": true\n  },\n  \"permissions\": {\n    \"defaultMode\": \"acceptEdits\",\n    \"allow\": [\n      \"Read(./**)\",\n      \"Write(./**)\",\n      \"Edit(./**)\",\n      \"Glob(./**)\",\n      \"Grep(./**)\",\n      \"Read(/Users/karaca/Desktop/ozon/.auto-claude/worktrees/tasks/031-add-mobile-navigation-menu-to-landing-page/**)\",\n      \"Write(/Users/karaca/Desktop/ozon/.auto-claude/worktrees/tasks/031-add-mobile-navigation-menu-to-landing-page/**)\",\n      \"Edit(/Users/karaca/Desktop/ozon/.auto-claude/worktrees/tasks/031-add-mobile-navigation-menu-to-landing-page/**)\",\n      \"Glob(/Users/karaca/Desktop/ozon/.auto-claude/worktrees/tasks/031-add-mobile-navigation-menu-to-landing-page/**)\",\n      \"Grep(/Users/karaca/Desktop/ozon/.auto-claude/worktrees/tasks/031-add-mobile-navigation-menu-to-landing-page/**)\",\n      \"Read(/Users/karaca/Desktop/ozon/.auto-claude/worktrees/tasks/031-add-mobile-navigation-menu-to-landing-page/.auto-claude/specs/031-add-mobile-navigation-menu-to-landing-page/**)\",\n      \"Write(/Users/karaca/Desktop/ozon/.auto-claude/worktrees/tasks/031-add-mobile-navigation-menu-to-landing-page/.auto-claude/specs/031-add-mobile-navigation-menu-to-landing-page/**)\",\n      \"Edit(/Users/karaca/Desktop/ozon/.auto-claude/worktrees/tasks/031-add-mobile-navigation-menu-to-landing-page/.auto-claude/specs/031-add-mobile-navigation-menu-to-landing-page/**)\",\n      \"Read(/Users/karaca/Desktop/ozon/.auto-claude/**)\",\n      \"Write(/Users/karaca/Desktop/ozon/.auto-claude/**)\",\n      \"Edit(/Users/karaca/Desktop/ozon/.auto-claude/**)\",\n      \"Glob(/Users/karaca/Desktop/ozon/.auto-claude/**)\",\n      \"Grep(/Users/karaca/Desktop/ozon/.auto-claude/**)\",\n      \"Read(/Users/karaca/Desktop/ozon/.worktrees/**)\",\n      \"Write(/Users/karaca/Desktop/ozon/.worktrees/**)\",\n      \"Edit(/Users/karaca/Desktop/ozon/.worktrees/**)\",\n      \"Glob(/Users/karaca/Desktop/ozon/.worktrees/**)\",\n      \"Grep(/Users/karaca/Desktop/ozon/.worktrees/**)\",\n      \"Bash(*)\",\n      \"WebFetch(*)\",\n      \"WebSearch(*)\",\n      \"mcp__context7__resolve-library-id(*)\",\n      \"mcp__context7__get-library-docs(*)\",\n      \"mcp__graphiti-memory__search_nodes(*)\",\n      \"mcp__graphiti-memory__search_facts(*)\",\n      \"mcp__graphiti-memory__add_episode(*)\",\n      \"mcp__graphiti-memory__get_episodes(*)\",\n      \"mcp__graphiti-memory__get_entity_edge(*)\"\n    ]\n  }\n}",
+        "last_modified": "2026-01-15T15:53:52.579515"
+      },
+      "task_intent": {
+        "title": "031-add-mobile-navigation-menu-to-landing-page",
+        "description": "The landing page navigation on mobile devices only shows a 'Basla' button, hiding all other navigation links. Add a proper hamburger menu for mobile users.",
+        "from_plan": true
+      },
+      "commits_behind_main": 0,
+      "status": "active",
+      "merged_at": null
+    },
+    "040-add-bulk-qr-code-download-for-all-tables": {
+      "task_id": "040-add-bulk-qr-code-download-for-all-tables",
+      "branch_point": {
+        "commit_hash": "2b028be920d271c6e53b44319d1c871dc3d27076",
+        "content": "",
+        "timestamp": "2026-01-14T18:53:11.069414"
+      },
+      "worktree_state": {
+        "content": "{\n  \"sandbox\": {\n    \"enabled\": true,\n    \"autoAllowBashIfSandboxed\": true\n  },\n  \"permissions\": {\n    \"defaultMode\": \"acceptEdits\",\n    \"allow\": [\n      \"Read(./**)\",\n      \"Write(./**)\",\n      \"Edit(./**)\",\n      \"Glob(./**)\",\n      \"Grep(./**)\",\n      \"Read(/Users/karaca/Desktop/ozon/.worktrees/040-add-bulk-qr-code-download-for-all-tables/**)\",\n      \"Write(/Users/karaca/Desktop/ozon/.worktrees/040-add-bulk-qr-code-download-for-all-tables/**)\",\n      \"Edit(/Users/karaca/Desktop/ozon/.worktrees/040-add-bulk-qr-code-download-for-all-tables/**)\",\n      \"Glob(/Users/karaca/Desktop/ozon/.worktrees/040-add-bulk-qr-code-download-for-all-tables/**)\",\n      \"Grep(/Users/karaca/Desktop/ozon/.worktrees/040-add-bulk-qr-code-download-for-all-tables/**)\",\n      \"Read(/Users/karaca/Desktop/ozon/.worktrees/040-add-bulk-qr-code-download-for-all-tables/.auto-claude/specs/040-add-bulk-qr-code-download-for-all-tables/**)\",\n      \"Write(/Users/karaca/Desktop/ozon/.worktrees/040-add-bulk-qr-code-download-for-all-tables/.auto-claude/specs/040-add-bulk-qr-code-download-for-all-tables/**)\",\n      \"Edit(/Users/karaca/Desktop/ozon/.worktrees/040-add-bulk-qr-code-download-for-all-tables/.auto-claude/specs/040-add-bulk-qr-code-download-for-all-tables/**)\",\n      \"Read(/Users/karaca/Desktop/ozon/.auto-claude/**)\",\n      \"Write(/Users/karaca/Desktop/ozon/.auto-claude/**)\",\n      \"Edit(/Users/karaca/Desktop/ozon/.auto-claude/**)\",\n      \"Glob(/Users/karaca/Desktop/ozon/.auto-claude/**)\",\n      \"Grep(/Users/karaca/Desktop/ozon/.auto-claude/**)\",\n      \"Read(/Users/karaca/Desktop/ozon/.worktrees/**)\",\n      \"Write(/Users/karaca/Desktop/ozon/.worktrees/**)\",\n      \"Edit(/Users/karaca/Desktop/ozon/.worktrees/**)\",\n      \"Glob(/Users/karaca/Desktop/ozon/.worktrees/**)\",\n      \"Grep(/Users/karaca/Desktop/ozon/.worktrees/**)\",\n      \"Bash(*)\",\n      \"WebFetch(*)\",\n      \"WebSearch(*)\",\n      \"mcp__context7__resolve-library-id(*)\",\n      \"mcp__context7__get-library-docs(*)\",\n      \"mcp__graphiti-memory__search_nodes(*)\",\n      \"mcp__graphiti-memory__search_facts(*)\",\n      \"mcp__graphiti-memory__add_episode(*)\",\n      \"mcp__graphiti-memory__get_episodes(*)\",\n      \"mcp__graphiti-memory__get_entity_edge(*)\"\n    ]\n  }\n}",
+        "last_modified": "2026-01-14T18:53:20.456441"
+      },
+      "task_intent": {
+        "title": "040-add-bulk-qr-code-download-for-all-tables",
+        "description": "",
+        "from_plan": false
+      },
+      "commits_behind_main": 0,
+      "status": "active",
+      "merged_at": null
+    },
+    "008-optimize-authprovider-to-avoid-unnecessary-re-fetc": {
+      "task_id": "008-optimize-authprovider-to-avoid-unnecessary-re-fetc",
+      "branch_point": {
+        "commit_hash": "2b028be920d271c6e53b44319d1c871dc3d27076",
+        "content": "",
+        "timestamp": "2026-01-15T02:37:17.742478"
+      },
+      "worktree_state": {
+        "content": "{\n  \"sandbox\": {\n    \"enabled\": true,\n    \"autoAllowBashIfSandboxed\": true\n  },\n  \"permissions\": {\n    \"defaultMode\": \"acceptEdits\",\n    \"allow\": [\n      \"Read(./**)\",\n      \"Write(./**)\",\n      \"Edit(./**)\",\n      \"Glob(./**)\",\n      \"Grep(./**)\",\n      \"Read(/Users/karaca/Desktop/ozon/.worktrees/008-optimize-authprovider-to-avoid-unnecessary-re-fetc/**)\",\n      \"Write(/Users/karaca/Desktop/ozon/.worktrees/008-optimize-authprovider-to-avoid-unnecessary-re-fetc/**)\",\n      \"Edit(/Users/karaca/Desktop/ozon/.worktrees/008-optimize-authprovider-to-avoid-unnecessary-re-fetc/**)\",\n      \"Glob(/Users/karaca/Desktop/ozon/.worktrees/008-optimize-authprovider-to-avoid-unnecessary-re-fetc/**)\",\n      \"Grep(/Users/karaca/Desktop/ozon/.worktrees/008-optimize-authprovider-to-avoid-unnecessary-re-fetc/**)\",\n      \"Read(/Users/karaca/Desktop/ozon/.worktrees/008-optimize-authprovider-to-avoid-unnecessary-re-fetc/.auto-claude/specs/008-optimize-authprovider-to-avoid-unnecessary-re-fetc/**)\",\n      \"Write(/Users/karaca/Desktop/ozon/.worktrees/008-optimize-authprovider-to-avoid-unnecessary-re-fetc/.auto-claude/specs/008-optimize-authprovider-to-avoid-unnecessary-re-fetc/**)\",\n      \"Edit(/Users/karaca/Desktop/ozon/.worktrees/008-optimize-authprovider-to-avoid-unnecessary-re-fetc/.auto-claude/specs/008-optimize-authprovider-to-avoid-unnecessary-re-fetc/**)\",\n      \"Read(/Users/karaca/Desktop/ozon/.auto-claude/**)\",\n      \"Write(/Users/karaca/Desktop/ozon/.auto-claude/**)\",\n      \"Edit(/Users/karaca/Desktop/ozon/.auto-claude/**)\",\n      \"Glob(/Users/karaca/Desktop/ozon/.auto-claude/**)\",\n      \"Grep(/Users/karaca/Desktop/ozon/.auto-claude/**)\",\n      \"Read(/Users/karaca/Desktop/ozon/.worktrees/**)\",\n      \"Write(/Users/karaca/Desktop/ozon/.worktrees/**)\",\n      \"Edit(/Users/karaca/Desktop/ozon/.worktrees/**)\",\n      \"Glob(/Users/karaca/Desktop/ozon/.worktrees/**)\",\n      \"Grep(/Users/karaca/Desktop/ozon/.worktrees/**)\",\n      \"Bash(*)\",\n      \"WebFetch(*)\",\n      \"WebSearch(*)\",\n      \"mcp__context7__resolve-library-id(*)\",\n      \"mcp__context7__get-library-docs(*)\",\n      \"mcp__graphiti-memory__search_nodes(*)\",\n      \"mcp__graphiti-memory__search_facts(*)\",\n      \"mcp__graphiti-memory__add_episode(*)\",\n      \"mcp__graphiti-memory__get_episodes(*)\",\n      \"mcp__graphiti-memory__get_entity_edge(*)\"\n    ]\n  }\n}",
+        "last_modified": "2026-01-15T14:52:29.247290"
+      },
+      "task_intent": {
+        "title": "008-optimize-authprovider-to-avoid-unnecessary-re-fetc",
+        "description": "",
+        "from_plan": false
+      },
+      "commits_behind_main": 5,
+      "status": "active",
+      "merged_at": null
+    },
+    "005-extract-duplicated-crud-state-management-into-reus": {
+      "task_id": "005-extract-duplicated-crud-state-management-into-reus",
+      "branch_point": {
+        "commit_hash": "2b028be920d271c6e53b44319d1c871dc3d27076",
+        "content": "",
+        "timestamp": "2026-01-15T06:33:12.581832"
+      },
+      "worktree_state": {
+        "content": "{\n  \"sandbox\": {\n    \"enabled\": true,\n    \"autoAllowBashIfSandboxed\": true\n  },\n  \"permissions\": {\n    \"defaultMode\": \"acceptEdits\",\n    \"allow\": [\n      \"Read(./**)\",\n      \"Write(./**)\",\n      \"Edit(./**)\",\n      \"Glob(./**)\",\n      \"Grep(./**)\",\n      \"Read(/Users/karaca/Desktop/ozon/.worktrees/005-extract-duplicated-crud-state-management-into-reus/**)\",\n      \"Write(/Users/karaca/Desktop/ozon/.worktrees/005-extract-duplicated-crud-state-management-into-reus/**)\",\n      \"Edit(/Users/karaca/Desktop/ozon/.worktrees/005-extract-duplicated-crud-state-management-into-reus/**)\",\n      \"Glob(/Users/karaca/Desktop/ozon/.worktrees/005-extract-duplicated-crud-state-management-into-reus/**)\",\n      \"Grep(/Users/karaca/Desktop/ozon/.worktrees/005-extract-duplicated-crud-state-management-into-reus/**)\",\n      \"Read(/Users/karaca/Desktop/ozon/.worktrees/005-extract-duplicated-crud-state-management-into-reus/.auto-claude/specs/005-extract-duplicated-crud-state-management-into-reus/**)\",\n      \"Write(/Users/karaca/Desktop/ozon/.worktrees/005-extract-duplicated-crud-state-management-into-reus/.auto-claude/specs/005-extract-duplicated-crud-state-management-into-reus/**)\",\n      \"Edit(/Users/karaca/Desktop/ozon/.worktrees/005-extract-duplicated-crud-state-management-into-reus/.auto-claude/specs/005-extract-duplicated-crud-state-management-into-reus/**)\",\n      \"Read(/Users/karaca/Desktop/ozon/.auto-claude/**)\",\n      \"Write(/Users/karaca/Desktop/ozon/.auto-claude/**)\",\n      \"Edit(/Users/karaca/Desktop/ozon/.auto-claude/**)\",\n      \"Glob(/Users/karaca/Desktop/ozon/.auto-claude/**)\",\n      \"Grep(/Users/karaca/Desktop/ozon/.auto-claude/**)\",\n      \"Read(/Users/karaca/Desktop/ozon/.worktrees/**)\",\n      \"Write(/Users/karaca/Desktop/ozon/.worktrees/**)\",\n      \"Edit(/Users/karaca/Desktop/ozon/.worktrees/**)\",\n      \"Glob(/Users/karaca/Desktop/ozon/.worktrees/**)\",\n      \"Grep(/Users/karaca/Desktop/ozon/.worktrees/**)\",\n      \"Bash(*)\",\n      \"WebFetch(*)\",\n      \"WebSearch(*)\",\n      \"mcp__context7__resolve-library-id(*)\",\n      \"mcp__context7__get-library-docs(*)\"\n    ]\n  }\n}",
+        "last_modified": "2026-01-15T16:04:15.537027"
+      },
+      "task_intent": {
+        "title": "005-extract-duplicated-crud-state-management-into-reus",
+        "description": "",
+        "from_plan": false
+      },
+      "commits_behind_main": 5,
+      "status": "active",
+      "merged_at": null
+    },
+    "002-add-unit-test-coverage-for-dashboard-page-componen": {
+      "task_id": "002-add-unit-test-coverage-for-dashboard-page-componen",
+      "branch_point": {
+        "commit_hash": "2b028be920d271c6e53b44319d1c871dc3d27076",
+        "content": "",
+        "timestamp": "2026-01-15T14:04:12.520457"
+      },
+      "worktree_state": {
+        "content": "{\n  \"sandbox\": {\n    \"enabled\": true,\n    \"autoAllowBashIfSandboxed\": true\n  },\n  \"permissions\": {\n    \"defaultMode\": \"acceptEdits\",\n    \"allow\": [\n      \"Read(./**)\",\n      \"Write(./**)\",\n      \"Edit(./**)\",\n      \"Glob(./**)\",\n      \"Grep(./**)\",\n      \"Read(/Users/karaca/Desktop/ozon/.worktrees/002-add-unit-test-coverage-for-dashboard-page-componen/**)\",\n      \"Write(/Users/karaca/Desktop/ozon/.worktrees/002-add-unit-test-coverage-for-dashboard-page-componen/**)\",\n      \"Edit(/Users/karaca/Desktop/ozon/.worktrees/002-add-unit-test-coverage-for-dashboard-page-componen/**)\",\n      \"Glob(/Users/karaca/Desktop/ozon/.worktrees/002-add-unit-test-coverage-for-dashboard-page-componen/**)\",\n      \"Grep(/Users/karaca/Desktop/ozon/.worktrees/002-add-unit-test-coverage-for-dashboard-page-componen/**)\",\n      \"Read(/Users/karaca/Desktop/ozon/.worktrees/002-add-unit-test-coverage-for-dashboard-page-componen/.auto-claude/specs/002-add-unit-test-coverage-for-dashboard-page-componen/**)\",\n      \"Write(/Users/karaca/Desktop/ozon/.worktrees/002-add-unit-test-coverage-for-dashboard-page-componen/.auto-claude/specs/002-add-unit-test-coverage-for-dashboard-page-componen/**)\",\n      \"Edit(/Users/karaca/Desktop/ozon/.worktrees/002-add-unit-test-coverage-for-dashboard-page-componen/.auto-claude/specs/002-add-unit-test-coverage-for-dashboard-page-componen/**)\",\n      \"Read(/Users/karaca/Desktop/ozon/.auto-claude/**)\",\n      \"Write(/Users/karaca/Desktop/ozon/.auto-claude/**)\",\n      \"Edit(/Users/karaca/Desktop/ozon/.auto-claude/**)\",\n      \"Glob(/Users/karaca/Desktop/ozon/.auto-claude/**)\",\n      \"Grep(/Users/karaca/Desktop/ozon/.auto-claude/**)\",\n      \"Read(/Users/karaca/Desktop/ozon/.worktrees/**)\",\n      \"Write(/Users/karaca/Desktop/ozon/.worktrees/**)\",\n      \"Edit(/Users/karaca/Desktop/ozon/.worktrees/**)\",\n      \"Glob(/Users/karaca/Desktop/ozon/.worktrees/**)\",\n      \"Grep(/Users/karaca/Desktop/ozon/.worktrees/**)\",\n      \"Bash(*)\",\n      \"WebFetch(*)\",\n      \"WebSearch(*)\",\n      \"mcp__context7__resolve-library-id(*)\",\n      \"mcp__context7__get-library-docs(*)\",\n      \"mcp__graphiti-memory__search_nodes(*)\",\n      \"mcp__graphiti-memory__search_facts(*)\",\n      \"mcp__graphiti-memory__add_episode(*)\",\n      \"mcp__graphiti-memory__get_episodes(*)\",\n      \"mcp__graphiti-memory__get_entity_edge(*)\"\n    ]\n  }\n}",
+        "last_modified": "2026-01-15T16:20:44.263138"
+      },
+      "task_intent": {
+        "title": "002-add-unit-test-coverage-for-dashboard-page-componen",
+        "description": "",
+        "from_plan": false
+      },
+      "commits_behind_main": 5,
+      "status": "active",
+      "merged_at": null
+    },
+    "028-add-mobile-navigation-menu-to-landing-page": {
+      "task_id": "028-add-mobile-navigation-menu-to-landing-page",
+      "branch_point": {
+        "commit_hash": "2b028be920d271c6e53b44319d1c871dc3d27076",
+        "content": "",
+        "timestamp": "2026-01-15T13:21:43.550879"
+      },
+      "worktree_state": {
+        "content": "{\n  \"sandbox\": {\n    \"enabled\": true,\n    \"autoAllowBashIfSandboxed\": true\n  },\n  \"permissions\": {\n    \"defaultMode\": \"acceptEdits\",\n    \"allow\": [\n      \"Read(./**)\",\n      \"Write(./**)\",\n      \"Edit(./**)\",\n      \"Glob(./**)\",\n      \"Grep(./**)\",\n      \"Read(/Users/karaca/Desktop/ozon/.worktrees/028-add-mobile-navigation-menu-to-landing-page/**)\",\n      \"Write(/Users/karaca/Desktop/ozon/.worktrees/028-add-mobile-navigation-menu-to-landing-page/**)\",\n      \"Edit(/Users/karaca/Desktop/ozon/.worktrees/028-add-mobile-navigation-menu-to-landing-page/**)\",\n      \"Glob(/Users/karaca/Desktop/ozon/.worktrees/028-add-mobile-navigation-menu-to-landing-page/**)\",\n      \"Grep(/Users/karaca/Desktop/ozon/.worktrees/028-add-mobile-navigation-menu-to-landing-page/**)\",\n      \"Read(/Users/karaca/Desktop/ozon/.worktrees/028-add-mobile-navigation-menu-to-landing-page/.auto-claude/specs/028-add-mobile-navigation-menu-to-landing-page/**)\",\n      \"Write(/Users/karaca/Desktop/ozon/.worktrees/028-add-mobile-navigation-menu-to-landing-page/.auto-claude/specs/028-add-mobile-navigation-menu-to-landing-page/**)\",\n      \"Edit(/Users/karaca/Desktop/ozon/.worktrees/028-add-mobile-navigation-menu-to-landing-page/.auto-claude/specs/028-add-mobile-navigation-menu-to-landing-page/**)\",\n      \"Read(/Users/karaca/Desktop/ozon/.auto-claude/**)\",\n      \"Write(/Users/karaca/Desktop/ozon/.auto-claude/**)\",\n      \"Edit(/Users/karaca/Desktop/ozon/.auto-claude/**)\",\n      \"Glob(/Users/karaca/Desktop/ozon/.auto-claude/**)\",\n      \"Grep(/Users/karaca/Desktop/ozon/.auto-claude/**)\",\n      \"Read(/Users/karaca/Desktop/ozon/.worktrees/**)\",\n      \"Write(/Users/karaca/Desktop/ozon/.worktrees/**)\",\n      \"Edit(/Users/karaca/Desktop/ozon/.worktrees/**)\",\n      \"Glob(/Users/karaca/Desktop/ozon/.worktrees/**)\",\n      \"Grep(/Users/karaca/Desktop/ozon/.worktrees/**)\",\n      \"Bash(*)\",\n      \"WebFetch(*)\",\n      \"WebSearch(*)\",\n      \"mcp__context7__resolve-library-id(*)\",\n      \"mcp__context7__get-library-docs(*)\",\n      \"mcp__graphiti-memory__search_nodes(*)\",\n      \"mcp__graphiti-memory__search_facts(*)\",\n      \"mcp__graphiti-memory__add_episode(*)\",\n      \"mcp__graphiti-memory__get_episodes(*)\",\n      \"mcp__graphiti-memory__get_entity_edge(*)\"\n    ]\n  }\n}",
+        "last_modified": "2026-01-15T15:13:32.513557"
+      },
+      "task_intent": {
+        "title": "028-add-mobile-navigation-menu-to-landing-page",
+        "description": "",
+        "from_plan": false
+      },
+      "commits_behind_main": 5,
+      "status": "active",
+      "merged_at": null
+    },
+    "034-create-reusable-select-component-for-consistent-fo": {
+      "task_id": "034-create-reusable-select-component-for-consistent-fo",
+      "branch_point": {
+        "commit_hash": "2b028be920d271c6e53b44319d1c871dc3d27076",
+        "content": "",
+        "timestamp": "2026-01-15T14:05:37.956433"
+      },
+      "worktree_state": {
+        "content": "{\n  \"sandbox\": {\n    \"enabled\": true,\n    \"autoAllowBashIfSandboxed\": true\n  },\n  \"permissions\": {\n    \"defaultMode\": \"acceptEdits\",\n    \"allow\": [\n      \"Read(./**)\",\n      \"Write(./**)\",\n      \"Edit(./**)\",\n      \"Glob(./**)\",\n      \"Grep(./**)\",\n      \"Read(/Users/karaca/Desktop/ozon/.worktrees/034-create-reusable-select-component-for-consistent-fo/**)\",\n      \"Write(/Users/karaca/Desktop/ozon/.worktrees/034-create-reusable-select-component-for-consistent-fo/**)\",\n      \"Edit(/Users/karaca/Desktop/ozon/.worktrees/034-create-reusable-select-component-for-consistent-fo/**)\",\n      \"Glob(/Users/karaca/Desktop/ozon/.worktrees/034-create-reusable-select-component-for-consistent-fo/**)\",\n      \"Grep(/Users/karaca/Desktop/ozon/.worktrees/034-create-reusable-select-component-for-consistent-fo/**)\",\n      \"Read(/Users/karaca/Desktop/ozon/.worktrees/034-create-reusable-select-component-for-consistent-fo/.auto-claude/specs/034-create-reusable-select-component-for-consistent-fo/**)\",\n      \"Write(/Users/karaca/Desktop/ozon/.worktrees/034-create-reusable-select-component-for-consistent-fo/.auto-claude/specs/034-create-reusable-select-component-for-consistent-fo/**)\",\n      \"Edit(/Users/karaca/Desktop/ozon/.worktrees/034-create-reusable-select-component-for-consistent-fo/.auto-claude/specs/034-create-reusable-select-component-for-consistent-fo/**)\",\n      \"Read(/Users/karaca/Desktop/ozon/.auto-claude/**)\",\n      \"Write(/Users/karaca/Desktop/ozon/.auto-claude/**)\",\n      \"Edit(/Users/karaca/Desktop/ozon/.auto-claude/**)\",\n      \"Glob(/Users/karaca/Desktop/ozon/.auto-claude/**)\",\n      \"Grep(/Users/karaca/Desktop/ozon/.auto-claude/**)\",\n      \"Read(/Users/karaca/Desktop/ozon/.worktrees/**)\",\n      \"Write(/Users/karaca/Desktop/ozon/.worktrees/**)\",\n      \"Edit(/Users/karaca/Desktop/ozon/.worktrees/**)\",\n      \"Glob(/Users/karaca/Desktop/ozon/.worktrees/**)\",\n      \"Grep(/Users/karaca/Desktop/ozon/.worktrees/**)\",\n      \"Bash(*)\",\n      \"WebFetch(*)\",\n      \"WebSearch(*)\",\n      \"mcp__context7__resolve-library-id(*)\",\n      \"mcp__context7__get-library-docs(*)\",\n      \"mcp__graphiti-memory__search_nodes(*)\",\n      \"mcp__graphiti-memory__search_facts(*)\",\n      \"mcp__graphiti-memory__add_episode(*)\",\n      \"mcp__graphiti-memory__get_episodes(*)\",\n      \"mcp__graphiti-memory__get_entity_edge(*)\"\n    ]\n  }\n}",
+        "last_modified": "2026-01-15T15:09:23.610819"
+      },
+      "task_intent": {
+        "title": "034-create-reusable-select-component-for-consistent-fo",
+        "description": "",
+        "from_plan": false
+      },
+      "commits_behind_main": 5,
+      "status": "active",
+      "merged_at": null
+    },
+    "026-add-mobile-navigation-menu-to-landing-page": {
+      "task_id": "026-add-mobile-navigation-menu-to-landing-page",
+      "branch_point": {
+        "commit_hash": "2b028be920d271c6e53b44319d1c871dc3d27076",
+        "content": "",
+        "timestamp": "2026-01-15T14:15:55.210168"
+      },
+      "worktree_state": {
+        "content": "{\n  \"sandbox\": {\n    \"enabled\": true,\n    \"autoAllowBashIfSandboxed\": true\n  },\n  \"permissions\": {\n    \"defaultMode\": \"acceptEdits\",\n    \"allow\": [\n      \"Read(./**)\",\n      \"Write(./**)\",\n      \"Edit(./**)\",\n      \"Glob(./**)\",\n      \"Grep(./**)\",\n      \"Read(/Users/karaca/Desktop/ozon/.worktrees/026-add-mobile-navigation-menu-to-landing-page/**)\",\n      \"Write(/Users/karaca/Desktop/ozon/.worktrees/026-add-mobile-navigation-menu-to-landing-page/**)\",\n      \"Edit(/Users/karaca/Desktop/ozon/.worktrees/026-add-mobile-navigation-menu-to-landing-page/**)\",\n      \"Glob(/Users/karaca/Desktop/ozon/.worktrees/026-add-mobile-navigation-menu-to-landing-page/**)\",\n      \"Grep(/Users/karaca/Desktop/ozon/.worktrees/026-add-mobile-navigation-menu-to-landing-page/**)\",\n      \"Read(/Users/karaca/Desktop/ozon/.worktrees/026-add-mobile-navigation-menu-to-landing-page/.auto-claude/specs/026-add-mobile-navigation-menu-to-landing-page/**)\",\n      \"Write(/Users/karaca/Desktop/ozon/.worktrees/026-add-mobile-navigation-menu-to-landing-page/.auto-claude/specs/026-add-mobile-navigation-menu-to-landing-page/**)\",\n      \"Edit(/Users/karaca/Desktop/ozon/.worktrees/026-add-mobile-navigation-menu-to-landing-page/.auto-claude/specs/026-add-mobile-navigation-menu-to-landing-page/**)\",\n      \"Read(/Users/karaca/Desktop/ozon/.auto-claude/**)\",\n      \"Write(/Users/karaca/Desktop/ozon/.auto-claude/**)\",\n      \"Edit(/Users/karaca/Desktop/ozon/.auto-claude/**)\",\n      \"Glob(/Users/karaca/Desktop/ozon/.auto-claude/**)\",\n      \"Grep(/Users/karaca/Desktop/ozon/.auto-claude/**)\",\n      \"Read(/Users/karaca/Desktop/ozon/.worktrees/**)\",\n      \"Write(/Users/karaca/Desktop/ozon/.worktrees/**)\",\n      \"Edit(/Users/karaca/Desktop/ozon/.worktrees/**)\",\n      \"Glob(/Users/karaca/Desktop/ozon/.worktrees/**)\",\n      \"Grep(/Users/karaca/Desktop/ozon/.worktrees/**)\",\n      \"Bash(*)\",\n      \"WebFetch(*)\",\n      \"WebSearch(*)\",\n      \"mcp__context7__resolve-library-id(*)\",\n      \"mcp__context7__get-library-docs(*)\",\n      \"mcp__graphiti-memory__search_nodes(*)\",\n      \"mcp__graphiti-memory__search_facts(*)\",\n      \"mcp__graphiti-memory__add_episode(*)\",\n      \"mcp__graphiti-memory__get_episodes(*)\",\n      \"mcp__graphiti-memory__get_entity_edge(*)\"\n    ]\n  }\n}",
+        "last_modified": "2026-01-15T15:12:30.578144"
+      },
+      "task_intent": {
+        "title": "026-add-mobile-navigation-menu-to-landing-page",
+        "description": "",
+        "from_plan": false
+      },
+      "commits_behind_main": 5,
+      "status": "active",
+      "merged_at": null
+    }
+  },
+  "created_at": "2026-01-14T09:55:05.106543",
+  "last_updated": "2026-01-15T14:15:56.639421"
+}

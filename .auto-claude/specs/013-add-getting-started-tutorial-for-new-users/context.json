@@ -1,0 +1,45 @@
+{
+  "files_to_modify": {
+    "documentation": []
+  },
+  "files_to_create": [
+    "BASLANGIC_REHBERI.md"
+  ],
+  "files_to_reference": [
+    "README.md",
+    "gereksinimler.md",
+    "ek_ozellikler.md"
+  ],
+  "patterns": {
+    "documentation_style": "Turkish language, technical but accessible to non-technical restaurant owners",
+    "structure_pattern": "README.md uses badges, table of contents, step-by-step sections with code blocks and commands",
+    "formatting": "Markdown with emoji indicators, tables for feature comparisons, code blocks for examples"
+  },
+  "existing_implementations": {
+    "description": "README.md contains comprehensive installation and technical setup instructions but lacks a beginner-friendly tutorial for the complete registration-to-QR-code workflow",
+    "relevant_files": [
+      "README.md - Installation and technical documentation (555 lines)",
+      "gereksinimler.md - Requirements and analysis document (431 lines)",
+      "ek_ozellikler.md - Additional features specification (159 lines)",
+      "temel.md - Basic concepts document (92 lines)"
+    ]
+  },
+  "tutorial_requirements": {
+    "target_audience": "Non-technical restaurant owners",
+    "workflow_steps": [
+      "Registration",
+      "Creating organization",
+      "Adding products with prices",
+      "Generating QR codes",
+      "Publishing menu"
+    ],
+    "success_criteria": "Complete registration-to-QR-download flow in under 10 minutes",
+    "key_features_to_highlight": [
+      "Immutable price ledger (price history tracking)",
+      "Table-based QR codes (customer location awareness)",
+      "Legal compliance with Turkish Ministry of Trade regulations",
+      "Multi-tenant architecture (data isolation)",
+      "Dynamic package management"
+    ]
+  }
+}

@@ -1,0 +1,14 @@
+{
+  "sourceType": "ideation",
+  "ideationType": "ui_ux_improvements",
+  "ideaId": "uiux-002",
+  "rationale": "The opacity-0 group-hover:opacity-100 pattern in ProductListItem hides critical action buttons until mouse hover. Touch device users (tablets, phones) cannot hover, making these actions undiscoverable. This is both an accessibility and usability issue for the restaurant staff who may use tablets.",
+  "category": "ui_ux",
+  "uiuxCategory": "accessibility",
+  "affectedFiles": [
+    "app/(dashboard)/products/page.tsx",
+    "app/(dashboard)/categories/page.tsx"
+  ],
+  "problemSolved": "In ProductListItem component (line 140), action buttons have className 'opacity-0 transition-opacity group-hover:opacity-100'. This makes edit and delete buttons invisible until the user hovers over the row with a mouse cursor.",
+  "archivedAt": "2026-01-15T12:47:41.208Z"
+}

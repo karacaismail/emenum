@@ -1,0 +1,73 @@
+{
+  "files_to_modify": {
+    "frontend": [
+      "app/page.tsx"
+    ]
+  },
+  "files_to_create": {
+    "frontend": [
+      "components/home/animated-background.tsx",
+      "components/home/animated-qr-demo.tsx",
+      "components/home/hero-section.tsx",
+      "components/home/features-section.tsx",
+      "components/home/stats-section.tsx",
+      "components/home/testimonials-section.tsx",
+      "components/home/pricing-section.tsx",
+      "components/home/cta-section.tsx",
+      "components/home/navigation.tsx",
+      "components/home/footer.tsx",
+      "components/home/index.ts"
+    ]
+  },
+  "files_to_reference": [
+    "components/ui/card.tsx",
+    "components/dashboard/header.tsx",
+    "app/page.tsx"
+  ],
+  "patterns": {
+    "component_structure": "Use TypeScript with proper interfaces exported. Include 'use client' directive when components have client-side interactivity (useState, useEffect, event handlers). Use named exports + default export pattern.",
+    "lazy_loading": "Use Next.js dynamic() from 'next/dynamic' for code splitting. Pattern: const Component = dynamic(() => import('./component'), { loading: () => <div>Loading...</div>, ssr: false })",
+    "styling": "Use Tailwind CSS classes. Follow existing dark mode patterns with dark: prefix. Use responsive classes (sm:, md:, lg:)",
+    "documentation": "Add JSDoc comments for exported components with @example usage",
+    "file_organization": "Homepage components go in components/home/ directory. Export all from index.ts barrel file."
+  },
+  "existing_implementations": {
+    "description": "Found well-structured component patterns in components/ui/ and components/dashboard/. No existing lazy loading patterns found - this will be the first implementation.",
+    "relevant_files": [
+      "components/ui/card.tsx - TypeScript component pattern with forwardRef",
+      "components/dashboard/header.tsx - 'use client' directive usage pattern",
+      "components/ui/index.ts - barrel export pattern",
+      "next.config.ts - Next.js 15 configuration"
+    ],
+    "key_findings": {
+      "no_lazy_loading": "No existing dynamic imports or lazy loading found in codebase",
+      "large_page_file": "app/page.tsx is 844 lines with 11 inline components",
+      "components_to_extract": [
+        "AnimatedBackground",
+        "QRCodeIcon",
+        "AnimatedQRDemo",
+        "MenuItemPreview",
+        "FeatureCard",
+        "StatCard",
+        "TestimonialCard",
+        "PricingTier",
+        "Navigation",
+        "Footer"
+      ],
+      "sections_in_homepage": [
+        "Hero (above fold - keep eager loaded)",
+        "Features (lazy load)",
+        "Stats (lazy load)",
+        "Testimonials (lazy load)",
+        "Pricing (lazy load)",
+        "Final CTA (lazy load)",
+        "Footer (lazy load)"
+      ]
+    }
+  },
+  "performance_considerations": {
+    "keep_above_fold_eager": "Hero section with Navigation, AnimatedBackground, and AnimatedQRDemo should NOT be lazy loaded for fast First Contentful Paint",
+    "lazy_load_below_fold": "Features, Stats, Testimonials, Pricing, CTA, and Footer sections should be lazy loaded as user scrolls",
+    "bundle_size_impact": "Current page.tsx is large. Splitting into separate components will create smaller chunks loaded on demand"
+  }
+}

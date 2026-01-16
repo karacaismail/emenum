@@ -1,0 +1,47 @@
+{
+  "files_to_modify": {
+    "frontend": []
+  },
+  "files_to_create": {
+    "frontend": [
+      "app/(dashboard)/snapshots/page.tsx",
+      "components/snapshots/version-comparison-modal.tsx"
+    ]
+  },
+  "files_to_reference": {
+    "audit_page": "app/(dashboard)/audit/page.tsx",
+    "modal_component": "components/ui/modal.tsx",
+    "card_component": "components/ui/card.tsx",
+    "button_component": "components/ui/button.tsx",
+    "snapshot_service": "lib/services/snapshot.ts"
+  },
+  "patterns": {
+    "page_pattern": "Dashboard pages are client components in app/(dashboard)/ directory with 'use client' directive",
+    "modal_pattern": "Modal component from components/ui/modal.tsx for dialogs",
+    "diff_view_pattern": "Audit page shows old_data vs new_data in modal - similar pattern for showing differences",
+    "service_pattern": "Service functions in lib/services/ return {success, data, error} objects",
+    "styling": "Tailwind CSS with dark mode support, semantic color classes (secondary-*, primary-*)",
+    "turkish_language": "All UI text is in Turkish (Türkçe)"
+  },
+  "existing_implementations": {
+    "description": "compareSnapshots() function exists in lib/services/snapshot.ts (lines 611-654)",
+    "relevant_files": [
+      "lib/services/snapshot.ts",
+      "app/(dashboard)/audit/page.tsx",
+      "components/ui/modal.tsx"
+    ],
+    "key_findings": [
+      "compareSnapshots(organizationId, versionA, versionB) returns {success, addedProducts, removedProducts, addedCategories, removedCategories, error}",
+      "getSnapshotHistory(organizationId, options) returns list of snapshots with pagination",
+      "MenuSnapshotData interface defines complete snapshot structure with products and categories",
+      "Audit page demonstrates old_data vs new_data comparison in modal",
+      "All dashboard pages use Turkish language for UI text"
+    ]
+  },
+  "feature_requirements": {
+    "snapshot_list": "Display all menu snapshots with version numbers and dates",
+    "version_selection": "Allow selecting two snapshots to compare",
+    "comparison_view": "Show side-by-side or diff view of added/removed products and categories",
+    "integration": "Add link from dashboard to snapshots page"
+  }
+}

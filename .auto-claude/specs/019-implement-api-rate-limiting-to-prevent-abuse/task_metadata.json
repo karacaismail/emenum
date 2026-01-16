@@ -1,0 +1,11 @@
+{
+  "sourceType": "ideation",
+  "ideationType": "security_hardening",
+  "ideaId": "sec-003",
+  "rationale": "Without rate limiting, attackers can perform brute-force attacks on authentication, exhaust resources through API abuse, or spam the system with automated requests. This is especially critical for a SaaS platform where resource abuse affects all tenants.",
+  "category": "security",
+  "securitySeverity": "medium",
+  "impact": "medium",
+  "priority": "medium",
+  "archivedAt": "2026-01-15T13:25:49.825Z"
+}

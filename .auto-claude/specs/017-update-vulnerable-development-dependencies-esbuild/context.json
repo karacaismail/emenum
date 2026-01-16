@@ -1,0 +1,33 @@
+{
+  "files_to_modify": {
+    "frontend": [
+      "package.json",
+      "package-lock.json"
+    ]
+  },
+  "files_to_reference": [
+    "vitest.config.ts",
+    "tests/setup.ts",
+    "tests/example.test.ts"
+  ],
+  "patterns": {
+    "dependency_update": "Update devDependencies in package.json, then run npm install to update lock file",
+    "test_verification": "Run npm test and npm run build to verify nothing breaks"
+  },
+  "existing_implementations": {
+    "description": "Project uses vitest 2.0.0 for testing with jsdom environment. Has test setup with Next.js mocks and integration tests.",
+    "relevant_files": [
+      "vitest.config.ts",
+      "tests/setup.ts",
+      "tests/__tests__/integration/"
+    ]
+  },
+  "vulnerability_details": {
+    "cve": "GHSA-67mh-4wv8-2f99",
+    "description": "Allows any website to send requests to the development server and read responses, potentially leaking sensitive information during development",
+    "current_esbuild": "0.21.5",
+    "required_esbuild": ">=0.24.3",
+    "affected_packages": ["vite", "vitest"],
+    "mitigation": "Update vitest and @vitejs/plugin-react to versions that depend on esbuild >=0.24.3"
+  }
+}

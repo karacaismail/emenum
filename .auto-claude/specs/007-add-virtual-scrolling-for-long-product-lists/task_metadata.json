@@ -1,0 +1,10 @@
+{
+  "sourceType": "ideation",
+  "ideationType": "performance_optimizations",
+  "ideaId": "perf-005",
+  "rationale": "Each ProductListItem creates multiple DOM elements (image, buttons, text). With 200 products, this means 1000+ DOM nodes. Virtual scrolling reduces this to ~20-30 visible items, dramatically improving scroll performance and memory usage.",
+  "category": "performance",
+  "performanceCategory": "rendering",
+  "impact": "medium",
+  "archivedAt": "2026-01-16T06:22:00.682Z"
+}

@@ -1,0 +1,31 @@
+{
+  "project_type": "single",
+  "services": {
+    "frontend": {
+      "path": ".",
+      "tech_stack": ["next.js", "react", "typescript", "tailwindcss"],
+      "framework": "Next.js 15.5 (App Router)",
+      "port": 3000,
+      "dev_command": "npm run dev",
+      "build_command": "npm run build",
+      "test_command": "npm run test",
+      "test_integration_command": "npm run test:integration",
+      "lint_command": "npm run lint",
+      "typecheck_command": "npm run typecheck"
+    }
+  },
+  "infrastructure": {
+    "docker": false,
+    "database": "supabase",
+    "hosting": "vercel"
+  },
+  "conventions": {
+    "linter": "eslint",
+    "formatter": "prettier (via eslint)",
+    "testing": "vitest",
+    "path_alias": "@/* maps to root",
+    "ui_components_pattern": "components/ui/ with forwardRef and TypeScript",
+    "client_directive": "Use 'use client' for interactive components",
+    "dark_mode": "Tailwind dark: prefix for dark mode support"
+  }
+}

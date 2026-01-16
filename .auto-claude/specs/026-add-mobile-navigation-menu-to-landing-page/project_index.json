@@ -1,0 +1,35 @@
+{
+  "project_type": "single",
+  "services": {
+    "frontend": {
+      "path": ".",
+      "tech_stack": ["next.js", "react", "typescript", "tailwind"],
+      "port": 3000,
+      "dev_command": "npm run dev",
+      "build_command": "npm run build",
+      "test_command": "npm test",
+      "test_integration_command": "npm run test:integration",
+      "test_e2e_command": "npm run test:e2e"
+    }
+  },
+  "infrastructure": {
+    "docker": false,
+    "database": "supabase",
+    "auth": "supabase-auth"
+  },
+  "conventions": {
+    "linter": "eslint",
+    "formatter": "prettier",
+    "testing": "vitest",
+    "component_pattern": "functional components with TypeScript",
+    "styling": "tailwind-css",
+    "client_components": "use 'use client' directive for interactive components"
+  },
+  "directory_structure": {
+    "app": "Next.js app router pages and layouts",
+    "components": "Reusable UI components",
+    "components/ui": "Base UI primitives (button, input, modal, card)",
+    "components/dashboard": "Dashboard-specific components (header, sidebar)",
+    "lib": "Utility functions and services"
+  }
+}

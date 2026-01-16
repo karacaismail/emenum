@@ -1,0 +1,268 @@
+{
+  "file_path": "package.json",
+  "main_branch_history": [],
+  "task_views": {
+    "001-ozon-e-menum-net-vibe-coding-v1": {
+      "task_id": "001-ozon-e-menum-net-vibe-coding-v1",
+      "branch_point": {
+        "commit_hash": "2b028be920d271c6e53b44319d1c871dc3d27076",
+        "content": "",
+        "timestamp": "2026-01-14T09:55:04.472899"
+      },
+      "worktree_state": {
+        "content": "{\n  \"name\": \"ozon-qr-menu\",\n  \"version\": \"0.1.0\",\n  \"private\": true,\n  \"scripts\": {\n    \"dev\": \"next dev\",\n    \"build\": \"next build\",\n    \"start\": \"next start\",\n    \"lint\": \"next lint\",\n    \"typecheck\": \"tsc --noEmit\",\n    \"test\": \"vitest\",\n    \"test:run\": \"vitest run\",\n    \"test:integration\": \"vitest run tests/__tests__/integration/\",\n    \"test:e2e\": \"vitest run tests/__tests__/e2e/\"\n  },\n  \"dependencies\": {\n    \"@supabase/ssr\": \"^0.8.0\",\n    \"@supabase/supabase-js\": \"^2.90.1\",\n    \"next\": \"^15.5.9\",\n    \"qrcode\": \"^1.5.4\",\n    \"react\": \"^19.0.0\",\n    \"react-dom\": \"^19.0.0\"\n  },\n  \"devDependencies\": {\n    \"@testing-library/react\": \"^16.0.0\",\n    \"@types/node\": \"^20.10.0\",\n    \"@types/qrcode\": \"^1.5.5\",\n    \"@types/react\": \"^19.0.0\",\n    \"@types/react-dom\": \"^19.0.0\",\n    \"@vitejs/plugin-react\": \"^4.3.0\",\n    \"autoprefixer\": \"^10.4.16\",\n    \"eslint\": \"^8.56.0\",\n    \"eslint-config-next\": \"^15.5.9\",\n    \"jsdom\": \"^24.1.0\",\n    \"postcss\": \"^8.4.32\",\n    \"tailwindcss\": \"^3.4.0\",\n    \"typescript\": \"^5.7.2\",\n    \"vitest\": \"^2.0.0\"\n  },\n  \"engines\": {\n    \"node\": \">=20.9\"\n  }\n}\n",
+        "last_modified": "2026-01-14T09:55:05.877839"
+      },
+      "task_intent": {
+        "title": "001-ozon-e-menum-net-vibe-coding-v1",
+        "description": "",
+        "from_plan": false
+      },
+      "commits_behind_main": 0,
+      "status": "active",
+      "merged_at": null
+    },
+    "037-add-search-to-categories-page": {
+      "task_id": "037-add-search-to-categories-page",
+      "branch_point": {
+        "commit_hash": "2b028be920d271c6e53b44319d1c871dc3d27076",
+        "content": "",
+        "timestamp": "2026-01-14T18:38:07.376896"
+      },
+      "worktree_state": {
+        "content": "{\n  \"name\": \"ozon-qr-menu\",\n  \"version\": \"0.1.0\",\n  \"private\": true,\n  \"scripts\": {\n    \"dev\": \"next dev\",\n    \"build\": \"next build\",\n    \"start\": \"next start\",\n    \"lint\": \"next lint\",\n    \"typecheck\": \"tsc --noEmit\",\n    \"test\": \"vitest\",\n    \"test:run\": \"vitest run\",\n    \"test:integration\": \"vitest run tests/__tests__/integration/\",\n    \"test:e2e\": \"vitest run tests/__tests__/e2e/\"\n  },\n  \"dependencies\": {\n    \"@supabase/ssr\": \"^0.8.0\",\n    \"@supabase/supabase-js\": \"^2.90.1\",\n    \"next\": \"^15.5.9\",\n    \"qrcode\": \"^1.5.4\",\n    \"react\": \"^19.0.0\",\n    \"react-dom\": \"^19.0.0\"\n  },\n  \"devDependencies\": {\n    \"@testing-library/react\": \"^16.0.0\",\n    \"@types/node\": \"^20.10.0\",\n    \"@types/qrcode\": \"^1.5.5\",\n    \"@types/react\": \"^19.0.0\",\n    \"@types/react-dom\": \"^19.0.0\",\n    \"@vitejs/plugin-react\": \"^4.3.0\",\n    \"autoprefixer\": \"^10.4.16\",\n    \"eslint\": \"^8.56.0\",\n    \"eslint-config-next\": \"^15.5.9\",\n    \"jsdom\": \"^24.1.0\",\n    \"postcss\": \"^8.4.32\",\n    \"tailwindcss\": \"^3.4.0\",\n    \"typescript\": \"^5.7.2\",\n    \"vitest\": \"^2.0.0\"\n  },\n  \"engines\": {\n    \"node\": \">=20.9\"\n  }\n}\n",
+        "last_modified": "2026-01-15T15:07:08.942155"
+      },
+      "task_intent": {
+        "title": "037-add-search-to-categories-page",
+        "description": "Add search functionality to the categories page, allowing users to filter categories by name. This mirrors the existing search pattern already implemented in the products page.",
+        "from_plan": true
+      },
+      "commits_behind_main": 0,
+      "status": "active",
+      "merged_at": null
+    },
+    "032-add-mobile-navigation-menu-to-landing-page": {
+      "task_id": "032-add-mobile-navigation-menu-to-landing-page",
+      "branch_point": {
+        "commit_hash": "2b028be920d271c6e53b44319d1c871dc3d27076",
+        "content": "",
+        "timestamp": "2026-01-14T18:38:22.963353"
+      },
+      "worktree_state": {
+        "content": "{\n  \"name\": \"ozon-qr-menu\",\n  \"version\": \"0.1.0\",\n  \"private\": true,\n  \"scripts\": {\n    \"dev\": \"next dev\",\n    \"build\": \"next build\",\n    \"start\": \"next start\",\n    \"lint\": \"next lint\",\n    \"typecheck\": \"tsc --noEmit\",\n    \"test\": \"vitest\",\n    \"test:run\": \"vitest run\",\n    \"test:integration\": \"vitest run tests/__tests__/integration/\",\n    \"test:e2e\": \"vitest run tests/__tests__/e2e/\"\n  },\n  \"dependencies\": {\n    \"@supabase/ssr\": \"^0.8.0\",\n    \"@supabase/supabase-js\": \"^2.90.1\",\n    \"next\": \"^15.5.9\",\n    \"qrcode\": \"^1.5.4\",\n    \"react\": \"^19.0.0\",\n    \"react-dom\": \"^19.0.0\"\n  },\n  \"devDependencies\": {\n    \"@testing-library/react\": \"^16.0.0\",\n    \"@types/node\": \"^20.10.0\",\n    \"@types/qrcode\": \"^1.5.5\",\n    \"@types/react\": \"^19.0.0\",\n    \"@types/react-dom\": \"^19.0.0\",\n    \"@vitejs/plugin-react\": \"^4.3.0\",\n    \"autoprefixer\": \"^10.4.16\",\n    \"eslint\": \"^8.56.0\",\n    \"eslint-config-next\": \"^15.5.9\",\n    \"jsdom\": \"^24.1.0\",\n    \"postcss\": \"^8.4.32\",\n    \"tailwindcss\": \"^3.4.0\",\n    \"typescript\": \"^5.7.2\",\n    \"vitest\": \"^2.0.0\"\n  },\n  \"engines\": {\n    \"node\": \">=20.9\"\n  }\n}\n",
+        "last_modified": "2026-01-15T15:05:31.938275"
+      },
+      "task_intent": {
+        "title": "032-add-mobile-navigation-menu-to-landing-page",
+        "description": "The landing page navigation on mobile devices only shows a 'Basla' button, hiding all other navigation links. Add a proper hamburger menu for mobile users.",
+        "from_plan": true
+      },
+      "commits_behind_main": 0,
+      "status": "active",
+      "merged_at": null
+    },
+    "031-add-mobile-navigation-menu-to-landing-page": {
+      "task_id": "031-add-mobile-navigation-menu-to-landing-page",
+      "branch_point": {
+        "commit_hash": "2b028be920d271c6e53b44319d1c871dc3d27076",
+        "content": "",
+        "timestamp": "2026-01-14T18:50:42.638180"
+      },
+      "worktree_state": {
+        "content": "{\n  \"name\": \"ozon-qr-menu\",\n  \"version\": \"0.1.0\",\n  \"private\": true,\n  \"scripts\": {\n    \"dev\": \"next dev\",\n    \"build\": \"next build\",\n    \"start\": \"next start\",\n    \"lint\": \"next lint\",\n    \"typecheck\": \"tsc --noEmit\",\n    \"test\": \"vitest\",\n    \"test:run\": \"vitest run\",\n    \"test:integration\": \"vitest run tests/__tests__/integration/\",\n    \"test:e2e\": \"vitest run tests/__tests__/e2e/\"\n  },\n  \"dependencies\": {\n    \"@supabase/ssr\": \"^0.8.0\",\n    \"@supabase/supabase-js\": \"^2.90.1\",\n    \"next\": \"^15.5.9\",\n    \"qrcode\": \"^1.5.4\",\n    \"react\": \"^19.0.0\",\n    \"react-dom\": \"^19.0.0\"\n  },\n  \"devDependencies\": {\n    \"@testing-library/react\": \"^16.0.0\",\n    \"@types/node\": \"^20.10.0\",\n    \"@types/qrcode\": \"^1.5.5\",\n    \"@types/react\": \"^19.0.0\",\n    \"@types/react-dom\": \"^19.0.0\",\n    \"@vitejs/plugin-react\": \"^4.3.0\",\n    \"autoprefixer\": \"^10.4.16\",\n    \"eslint\": \"^8.56.0\",\n    \"eslint-config-next\": \"^15.5.9\",\n    \"jsdom\": \"^24.1.0\",\n    \"postcss\": \"^8.4.32\",\n    \"tailwindcss\": \"^3.4.0\",\n    \"typescript\": \"^5.7.2\",\n    \"vitest\": \"^2.0.0\"\n  },\n  \"engines\": {\n    \"node\": \">=20.9\"\n  }\n}\n",
+        "last_modified": "2026-01-15T15:03:39.350509"
+      },
+      "task_intent": {
+        "title": "031-add-mobile-navigation-menu-to-landing-page",
+        "description": "The landing page navigation on mobile devices only shows a 'Basla' button, hiding all other navigation links. Add a proper hamburger menu for mobile users.",
+        "from_plan": true
+      },
+      "commits_behind_main": 0,
+      "status": "active",
+      "merged_at": null
+    },
+    "040-add-bulk-qr-code-download-for-all-tables": {
+      "task_id": "040-add-bulk-qr-code-download-for-all-tables",
+      "branch_point": {
+        "commit_hash": "2b028be920d271c6e53b44319d1c871dc3d27076",
+        "content": "",
+        "timestamp": "2026-01-14T18:53:11.069414"
+      },
+      "worktree_state": {
+        "content": "{\n  \"name\": \"ozon-qr-menu\",\n  \"version\": \"0.1.0\",\n  \"private\": true,\n  \"scripts\": {\n    \"dev\": \"next dev\",\n    \"build\": \"next build\",\n    \"start\": \"next start\",\n    \"lint\": \"next lint\",\n    \"typecheck\": \"tsc --noEmit\",\n    \"test\": \"vitest\",\n    \"test:run\": \"vitest run\",\n    \"test:integration\": \"vitest run tests/__tests__/integration/\",\n    \"test:e2e\": \"vitest run tests/__tests__/e2e/\"\n  },\n  \"dependencies\": {\n    \"@supabase/ssr\": \"^0.8.0\",\n    \"@supabase/supabase-js\": \"^2.90.1\",\n    \"jszip\": \"^3.10.1\",\n    \"next\": \"^15.5.9\",\n    \"qrcode\": \"^1.5.4\",\n    \"react\": \"^19.0.0\",\n    \"react-dom\": \"^19.0.0\"\n  },\n  \"devDependencies\": {\n    \"@testing-library/react\": \"^16.0.0\",\n    \"@types/jszip\": \"^3.4.1\",\n    \"@types/node\": \"^20.10.0\",\n    \"@types/qrcode\": \"^1.5.5\",\n    \"@types/react\": \"^19.0.0\",\n    \"@types/react-dom\": \"^19.0.0\",\n    \"@vitejs/plugin-react\": \"^4.3.0\",\n    \"autoprefixer\": \"^10.4.16\",\n    \"eslint\": \"^8.56.0\",\n    \"eslint-config-next\": \"^15.5.9\",\n    \"jsdom\": \"^24.1.0\",\n    \"postcss\": \"^8.4.32\",\n    \"tailwindcss\": \"^3.4.0\",\n    \"typescript\": \"^5.7.2\",\n    \"vitest\": \"^2.0.0\"\n  },\n  \"engines\": {\n    \"node\": \">=20.9\"\n  }\n}\n",
+        "last_modified": "2026-01-14T18:53:20.536747"
+      },
+      "task_intent": {
+        "title": "040-add-bulk-qr-code-download-for-all-tables",
+        "description": "",
+        "from_plan": false
+      },
+      "commits_behind_main": 0,
+      "status": "active",
+      "merged_at": null
+    },
+    "005-extract-duplicated-crud-state-management-into-reus": {
+      "task_id": "005-extract-duplicated-crud-state-management-into-reus",
+      "branch_point": {
+        "commit_hash": "2b028be920d271c6e53b44319d1c871dc3d27076",
+        "content": "",
+        "timestamp": "2026-01-15T06:33:12.581832"
+      },
+      "worktree_state": {
+        "content": "{\n  \"name\": \"ozon-qr-menu\",\n  \"version\": \"0.1.0\",\n  \"private\": true,\n  \"scripts\": {\n    \"dev\": \"next dev\",\n    \"build\": \"next build\",\n    \"start\": \"next start\",\n    \"lint\": \"next lint\",\n    \"typecheck\": \"tsc --noEmit\",\n    \"test\": \"vitest\",\n    \"test:run\": \"vitest run\",\n    \"test:integration\": \"vitest run tests/__tests__/integration/\",\n    \"test:e2e\": \"vitest run tests/__tests__/e2e/\"\n  },\n  \"dependencies\": {\n    \"@supabase/ssr\": \"^0.8.0\",\n    \"@supabase/supabase-js\": \"^2.90.1\",\n    \"jszip\": \"^3.10.1\",\n    \"next\": \"^15.5.9\",\n    \"qrcode\": \"^1.5.4\",\n    \"react\": \"^19.0.0\",\n    \"react-dom\": \"^19.0.0\"\n  },\n  \"devDependencies\": {\n    \"@testing-library/react\": \"^16.0.0\",\n    \"@types/jszip\": \"^3.4.1\",\n    \"@types/node\": \"^20.10.0\",\n    \"@types/qrcode\": \"^1.5.5\",\n    \"@types/react\": \"^19.0.0\",\n    \"@types/react-dom\": \"^19.0.0\",\n    \"@vitejs/plugin-react\": \"^4.3.0\",\n    \"autoprefixer\": \"^10.4.16\",\n    \"eslint\": \"^8.56.0\",\n    \"eslint-config-next\": \"^15.5.9\",\n    \"jsdom\": \"^24.1.0\",\n    \"postcss\": \"^8.4.32\",\n    \"tailwindcss\": \"^3.4.0\",\n    \"typescript\": \"^5.7.2\",\n    \"vitest\": \"^2.0.0\"\n  },\n  \"engines\": {\n    \"node\": \">=20.9\"\n  }\n}\n",
+        "last_modified": "2026-01-15T16:04:15.653649"
+      },
+      "task_intent": {
+        "title": "005-extract-duplicated-crud-state-management-into-reus",
+        "description": "",
+        "from_plan": false
+      },
+      "commits_behind_main": 5,
+      "status": "active",
+      "merged_at": null
+    },
+    "002-add-unit-test-coverage-for-dashboard-page-componen": {
+      "task_id": "002-add-unit-test-coverage-for-dashboard-page-componen",
+      "branch_point": {
+        "commit_hash": "2b028be920d271c6e53b44319d1c871dc3d27076",
+        "content": "",
+        "timestamp": "2026-01-15T14:04:12.520457"
+      },
+      "worktree_state": {
+        "content": "{\n  \"name\": \"ozon-qr-menu\",\n  \"version\": \"0.1.0\",\n  \"private\": true,\n  \"scripts\": {\n    \"dev\": \"next dev\",\n    \"build\": \"next build\",\n    \"start\": \"next start\",\n    \"lint\": \"next lint\",\n    \"typecheck\": \"tsc --noEmit\",\n    \"test\": \"vitest\",\n    \"test:run\": \"vitest run\",\n    \"test:integration\": \"vitest run tests/__tests__/integration/\",\n    \"test:e2e\": \"vitest run tests/__tests__/e2e/\"\n  },\n  \"dependencies\": {\n    \"@supabase/ssr\": \"^0.8.0\",\n    \"@supabase/supabase-js\": \"^2.90.1\",\n    \"next\": \"^15.5.9\",\n    \"qrcode\": \"^1.5.4\",\n    \"react\": \"^19.0.0\",\n    \"react-dom\": \"^19.0.0\"\n  },\n  \"devDependencies\": {\n    \"@testing-library/jest-dom\": \"^6.1.5\",\n    \"@testing-library/react\": \"^16.0.0\",\n    \"@testing-library/user-event\": \"^14.5.1\",\n    \"@types/node\": \"^20.10.0\",\n    \"@types/qrcode\": \"^1.5.5\",\n    \"@types/react\": \"^19.0.0\",\n    \"@types/react-dom\": \"^19.0.0\",\n    \"@vitejs/plugin-react\": \"^4.3.0\",\n    \"autoprefixer\": \"^10.4.16\",\n    \"eslint\": \"^8.56.0\",\n    \"eslint-config-next\": \"^15.5.9\",\n    \"jsdom\": \"^24.1.0\",\n    \"postcss\": \"^8.4.32\",\n    \"tailwindcss\": \"^3.4.0\",\n    \"typescript\": \"^5.7.2\",\n    \"vitest\": \"^2.0.0\"\n  },\n  \"engines\": {\n    \"node\": \">=20.9\"\n  }\n}\n",
+        "last_modified": "2026-01-15T16:20:44.385830"
+      },
+      "task_intent": {
+        "title": "002-add-unit-test-coverage-for-dashboard-page-componen",
+        "description": "",
+        "from_plan": false
+      },
+      "commits_behind_main": 5,
+      "status": "active",
+      "merged_at": null
+    },
+    "028-add-mobile-navigation-menu-to-landing-page": {
+      "task_id": "028-add-mobile-navigation-menu-to-landing-page",
+      "branch_point": {
+        "commit_hash": "2b028be920d271c6e53b44319d1c871dc3d27076",
+        "content": "",
+        "timestamp": "2026-01-15T13:21:43.550879"
+      },
+      "worktree_state": {
+        "content": "{\n  \"name\": \"ozon-qr-menu\",\n  \"version\": \"0.1.0\",\n  \"private\": true,\n  \"scripts\": {\n    \"dev\": \"next dev\",\n    \"build\": \"next build\",\n    \"start\": \"next start\",\n    \"lint\": \"next lint\",\n    \"typecheck\": \"tsc --noEmit\",\n    \"test\": \"vitest\",\n    \"test:run\": \"vitest run\",\n    \"test:integration\": \"vitest run tests/__tests__/integration/\",\n    \"test:e2e\": \"vitest run tests/__tests__/e2e/\"\n  },\n  \"dependencies\": {\n    \"@supabase/ssr\": \"^0.8.0\",\n    \"@supabase/supabase-js\": \"^2.90.1\",\n    \"next\": \"^15.5.9\",\n    \"qrcode\": \"^1.5.4\",\n    \"react\": \"^19.0.0\",\n    \"react-dom\": \"^19.0.0\"\n  },\n  \"devDependencies\": {\n    \"@testing-library/react\": \"^16.0.0\",\n    \"@types/node\": \"^20.10.0\",\n    \"@types/qrcode\": \"^1.5.5\",\n    \"@types/react\": \"^19.0.0\",\n    \"@types/react-dom\": \"^19.0.0\",\n    \"@vitejs/plugin-react\": \"^4.3.0\",\n    \"autoprefixer\": \"^10.4.16\",\n    \"eslint\": \"^8.56.0\",\n    \"eslint-config-next\": \"^15.5.9\",\n    \"jsdom\": \"^24.1.0\",\n    \"postcss\": \"^8.4.32\",\n    \"tailwindcss\": \"^3.4.0\",\n    \"typescript\": \"^5.7.2\",\n    \"vitest\": \"^2.0.0\"\n  },\n  \"engines\": {\n    \"node\": \">=20.9\"\n  }\n}\n",
+        "last_modified": "2026-01-15T15:13:32.571675"
+      },
+      "task_intent": {
+        "title": "028-add-mobile-navigation-menu-to-landing-page",
+        "description": "",
+        "from_plan": false
+      },
+      "commits_behind_main": 5,
+      "status": "active",
+      "merged_at": null
+    },
+    "034-create-reusable-select-component-for-consistent-fo": {
+      "task_id": "034-create-reusable-select-component-for-consistent-fo",
+      "branch_point": {
+        "commit_hash": "2b028be920d271c6e53b44319d1c871dc3d27076",
+        "content": "",
+        "timestamp": "2026-01-15T14:05:37.956433"
+      },
+      "worktree_state": {
+        "content": "{\n  \"name\": \"ozon-qr-menu\",\n  \"version\": \"0.1.0\",\n  \"private\": true,\n  \"scripts\": {\n    \"dev\": \"next dev\",\n    \"build\": \"next build\",\n    \"start\": \"next start\",\n    \"lint\": \"next lint\",\n    \"typecheck\": \"tsc --noEmit\",\n    \"test\": \"vitest\",\n    \"test:run\": \"vitest run\",\n    \"test:integration\": \"vitest run tests/__tests__/integration/\",\n    \"test:e2e\": \"vitest run tests/__tests__/e2e/\"\n  },\n  \"dependencies\": {\n    \"@supabase/ssr\": \"^0.8.0\",\n    \"@supabase/supabase-js\": \"^2.90.1\",\n    \"next\": \"^15.5.9\",\n    \"qrcode\": \"^1.5.4\",\n    \"react\": \"^19.0.0\",\n    \"react-dom\": \"^19.0.0\"\n  },\n  \"devDependencies\": {\n    \"@testing-library/react\": \"^16.0.0\",\n    \"@types/node\": \"^20.10.0\",\n    \"@types/qrcode\": \"^1.5.5\",\n    \"@types/react\": \"^19.0.0\",\n    \"@types/react-dom\": \"^19.0.0\",\n    \"@vitejs/plugin-react\": \"^4.3.0\",\n    \"autoprefixer\": \"^10.4.16\",\n    \"eslint\": \"^8.56.0\",\n    \"eslint-config-next\": \"^15.5.9\",\n    \"jsdom\": \"^24.1.0\",\n    \"postcss\": \"^8.4.32\",\n    \"tailwindcss\": \"^3.4.0\",\n    \"typescript\": \"^5.7.2\",\n    \"vitest\": \"^2.0.0\"\n  },\n  \"engines\": {\n    \"node\": \">=20.9\"\n  }\n}\n",
+        "last_modified": "2026-01-15T14:05:43.915521"
+      },
+      "task_intent": {
+        "title": "034-create-reusable-select-component-for-consistent-fo",
+        "description": "",
+        "from_plan": false
+      },
+      "commits_behind_main": 5,
+      "status": "active",
+      "merged_at": null
+    },
+    "023-add-mobile-navigation-menu-to-landing-page": {
+      "task_id": "023-add-mobile-navigation-menu-to-landing-page",
+      "branch_point": {
+        "commit_hash": "c709a6c45b4887c1a0ad6e04c6142783760a46ec",
+        "content": "",
+        "timestamp": "2026-01-15T13:47:09.808921"
+      },
+      "worktree_state": {
+        "content": "{\n  \"name\": \"ozon-qr-menu\",\n  \"version\": \"0.1.0\",\n  \"private\": true,\n  \"scripts\": {\n    \"dev\": \"next dev\",\n    \"build\": \"next build\",\n    \"start\": \"next start\",\n    \"lint\": \"next lint\",\n    \"typecheck\": \"tsc --noEmit\",\n    \"test\": \"vitest\",\n    \"test:run\": \"vitest run\",\n    \"test:integration\": \"vitest run tests/__tests__/integration/\",\n    \"test:e2e\": \"vitest run tests/__tests__/e2e/\"\n  },\n  \"dependencies\": {\n    \"@supabase/ssr\": \"^0.8.0\",\n    \"@supabase/supabase-js\": \"^2.90.1\",\n    \"next\": \"^15.5.9\",\n    \"qrcode\": \"^1.5.4\",\n    \"react\": \"^19.0.0\",\n    \"react-dom\": \"^19.0.0\"\n  },\n  \"devDependencies\": {\n    \"@testing-library/react\": \"^16.0.0\",\n    \"@types/node\": \"^20.10.0\",\n    \"@types/qrcode\": \"^1.5.5\",\n    \"@types/react\": \"^19.0.0\",\n    \"@types/react-dom\": \"^19.0.0\",\n    \"@vitejs/plugin-react\": \"^4.3.0\",\n    \"autoprefixer\": \"^10.4.16\",\n    \"eslint\": \"^8.56.0\",\n    \"eslint-config-next\": \"^15.5.9\",\n    \"jsdom\": \"^24.1.0\",\n    \"postcss\": \"^8.4.32\",\n    \"tailwindcss\": \"^3.4.0\",\n    \"typescript\": \"^5.7.2\",\n    \"vitest\": \"^2.0.0\"\n  },\n  \"engines\": {\n    \"node\": \">=20.9\"\n  }\n}\n",
+        "last_modified": "2026-01-15T13:47:16.840828"
+      },
+      "task_intent": {
+        "title": "023-add-mobile-navigation-menu-to-landing-page",
+        "description": "",
+        "from_plan": false
+      },
+      "commits_behind_main": 0,
+      "status": "active",
+      "merged_at": null
+    },
+    "024-add-mobile-navigation-menu-to-landing-page": {
+      "task_id": "024-add-mobile-navigation-menu-to-landing-page",
+      "branch_point": {
+        "commit_hash": "2b028be920d271c6e53b44319d1c871dc3d27076",
+        "content": "",
+        "timestamp": "2026-01-15T14:03:15.177885"
+      },
+      "worktree_state": {
+        "content": "{\n  \"name\": \"ozon-qr-menu\",\n  \"version\": \"0.1.0\",\n  \"private\": true,\n  \"scripts\": {\n    \"dev\": \"next dev\",\n    \"build\": \"next build\",\n    \"start\": \"next start\",\n    \"lint\": \"next lint\",\n    \"typecheck\": \"tsc --noEmit\",\n    \"test\": \"vitest\",\n    \"test:run\": \"vitest run\",\n    \"test:integration\": \"vitest run tests/__tests__/integration/\",\n    \"test:e2e\": \"vitest run tests/__tests__/e2e/\"\n  },\n  \"dependencies\": {\n    \"@supabase/ssr\": \"^0.8.0\",\n    \"@supabase/supabase-js\": \"^2.90.1\",\n    \"next\": \"^15.5.9\",\n    \"qrcode\": \"^1.5.4\",\n    \"react\": \"^19.0.0\",\n    \"react-dom\": \"^19.0.0\"\n  },\n  \"devDependencies\": {\n    \"@testing-library/react\": \"^16.0.0\",\n    \"@types/node\": \"^20.10.0\",\n    \"@types/qrcode\": \"^1.5.5\",\n    \"@types/react\": \"^19.0.0\",\n    \"@types/react-dom\": \"^19.0.0\",\n    \"@vitejs/plugin-react\": \"^4.3.0\",\n    \"autoprefixer\": \"^10.4.16\",\n    \"eslint\": \"^8.56.0\",\n    \"eslint-config-next\": \"^15.5.9\",\n    \"jsdom\": \"^24.1.0\",\n    \"postcss\": \"^8.4.32\",\n    \"tailwindcss\": \"^3.4.0\",\n    \"typescript\": \"^5.7.2\",\n    \"vitest\": \"^2.0.0\"\n  },\n  \"engines\": {\n    \"node\": \">=20.9\"\n  }\n}\n",
+        "last_modified": "2026-01-15T15:15:16.132987"
+      },
+      "task_intent": {
+        "title": "024-add-mobile-navigation-menu-to-landing-page",
+        "description": "",
+        "from_plan": false
+      },
+      "commits_behind_main": 5,
+      "status": "active",
+      "merged_at": null
+    },
+    "026-add-mobile-navigation-menu-to-landing-page": {
+      "task_id": "026-add-mobile-navigation-menu-to-landing-page",
+      "branch_point": {
+        "commit_hash": "2b028be920d271c6e53b44319d1c871dc3d27076",
+        "content": "",
+        "timestamp": "2026-01-15T14:15:55.210168"
+      },
+      "worktree_state": {
+        "content": "{\n  \"name\": \"ozon-qr-menu\",\n  \"version\": \"0.1.0\",\n  \"private\": true,\n  \"scripts\": {\n    \"dev\": \"next dev\",\n    \"build\": \"next build\",\n    \"start\": \"next start\",\n    \"lint\": \"next lint\",\n    \"typecheck\": \"tsc --noEmit\",\n    \"test\": \"vitest\",\n    \"test:run\": \"vitest run\",\n    \"test:integration\": \"vitest run tests/__tests__/integration/\",\n    \"test:e2e\": \"vitest run tests/__tests__/e2e/\"\n  },\n  \"dependencies\": {\n    \"@supabase/ssr\": \"^0.8.0\",\n    \"@supabase/supabase-js\": \"^2.90.1\",\n    \"next\": \"^15.5.9\",\n    \"qrcode\": \"^1.5.4\",\n    \"react\": \"^19.0.0\",\n    \"react-dom\": \"^19.0.0\"\n  },\n  \"devDependencies\": {\n    \"@testing-library/react\": \"^16.0.0\",\n    \"@types/node\": \"^20.10.0\",\n    \"@types/qrcode\": \"^1.5.5\",\n    \"@types/react\": \"^19.0.0\",\n    \"@types/react-dom\": \"^19.0.0\",\n    \"@vitejs/plugin-react\": \"^4.3.0\",\n    \"autoprefixer\": \"^10.4.16\",\n    \"eslint\": \"^8.56.0\",\n    \"eslint-config-next\": \"^15.5.9\",\n    \"jsdom\": \"^24.1.0\",\n    \"postcss\": \"^8.4.32\",\n    \"tailwindcss\": \"^3.4.0\",\n    \"typescript\": \"^5.7.2\",\n    \"vitest\": \"^2.0.0\"\n  },\n  \"engines\": {\n    \"node\": \">=20.9\"\n  }\n}\n",
+        "last_modified": "2026-01-15T14:16:01.091192"
+      },
+      "task_intent": {
+        "title": "026-add-mobile-navigation-menu-to-landing-page",
+        "description": "",
+        "from_plan": false
+      },
+      "commits_behind_main": 5,
+      "status": "active",
+      "merged_at": null
+    },
+    "017-update-vulnerable-development-dependencies-esbuild": {
+      "task_id": "017-update-vulnerable-development-dependencies-esbuild",
+      "branch_point": {
+        "commit_hash": "e8843e43e3015359d948a65b1477b8b5aba460a7",
+        "content": "{\n  \"name\": \"ozon-qr-menu\",\n  \"version\": \"0.1.0\",\n  \"private\": true,\n  \"scripts\": {\n    \"dev\": \"next dev\",\n    \"build\": \"next build\",\n    \"start\": \"next start\",\n    \"lint\": \"next lint\",\n    \"typecheck\": \"tsc --noEmit\",\n    \"test\": \"vitest\",\n    \"test:run\": \"vitest run\",\n    \"test:integration\": \"vitest run tests/__tests__/integration/\",\n    \"test:e2e\": \"vitest run tests/__tests__/e2e/\"\n  },\n  \"dependencies\": {\n    \"@supabase/ssr\": \"^0.8.0\",\n    \"@supabase/supabase-js\": \"^2.90.1\",\n    \"next\": \"^15.5.9\",\n    \"qrcode\": \"^1.5.4\",\n    \"react\": \"^19.0.0\",\n    \"react-dom\": \"^19.0.0\"\n  },\n  \"devDependencies\": {\n    \"@testing-library/react\": \"^16.0.0\",\n    \"@types/node\": \"^20.10.0\",\n    \"@types/qrcode\": \"^1.5.5\",\n    \"@types/react\": \"^19.0.0\",\n    \"@types/react-dom\": \"^19.0.0\",\n    \"@vitejs/plugin-react\": \"^4.3.0\",\n    \"autoprefixer\": \"^10.4.16\",\n    \"eslint\": \"^8.56.0\",\n    \"eslint-config-next\": \"^15.5.9\",\n    \"jsdom\": \"^24.1.0\",\n    \"postcss\": \"^8.4.32\",\n    \"tailwindcss\": \"^3.4.0\",\n    \"typescript\": \"^5.7.2\",\n    \"vitest\": \"^2.0.0\"\n  },\n  \"engines\": {\n    \"node\": \">=20.9\"\n  }\n}\n",
+        "timestamp": "2026-01-15T15:26:08.302587"
+      },
+      "worktree_state": {
+        "content": "{\n  \"name\": \"ozon-qr-menu\",\n  \"version\": \"0.1.0\",\n  \"private\": true,\n  \"scripts\": {\n    \"dev\": \"next dev\",\n    \"build\": \"next build\",\n    \"start\": \"next start\",\n    \"lint\": \"next lint\",\n    \"typecheck\": \"tsc --noEmit\",\n    \"test\": \"vitest\",\n    \"test:run\": \"vitest run\",\n    \"test:integration\": \"vitest run tests/__tests__/integration/\",\n    \"test:e2e\": \"vitest run tests/__tests__/e2e/\"\n  },\n  \"dependencies\": {\n    \"@supabase/ssr\": \"^0.8.0\",\n    \"@supabase/supabase-js\": \"^2.90.1\",\n    \"next\": \"^15.5.9\",\n    \"qrcode\": \"^1.5.4\",\n    \"react\": \"^19.0.0\",\n    \"react-dom\": \"^19.0.0\"\n  },\n  \"devDependencies\": {\n    \"@testing-library/react\": \"^16.0.0\",\n    \"@types/node\": \"^20.10.0\",\n    \"@types/qrcode\": \"^1.5.5\",\n    \"@types/react\": \"^19.0.0\",\n    \"@types/react-dom\": \"^19.0.0\",\n    \"@vitejs/plugin-react\": \"^5.1.2\",\n    \"autoprefixer\": \"^10.4.16\",\n    \"eslint\": \"^8.56.0\",\n    \"eslint-config-next\": \"^15.5.9\",\n    \"jsdom\": \"^24.1.0\",\n    \"postcss\": \"^8.4.32\",\n    \"tailwindcss\": \"^3.4.0\",\n    \"typescript\": \"^5.7.2\",\n    \"vitest\": \"^4.0.17\"\n  },\n  \"engines\": {\n    \"node\": \">=20.9\"\n  }\n}\n",
+        "last_modified": "2026-01-15T15:26:08.565858"
+      },
+      "task_intent": {
+        "title": "017-update-vulnerable-development-dependencies-esbuild",
+        "description": "",
+        "from_plan": false
+      },
+      "commits_behind_main": 11,
+      "status": "active",
+      "merged_at": null
+    }
+  },
+  "created_at": "2026-01-14T09:55:05.644378",
+  "last_updated": "2026-01-15T15:26:08.431871"
+}

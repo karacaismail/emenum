@@ -1,0 +1,39 @@
+{
+  "files_to_modify": {
+    "frontend": ["app/page.tsx"]
+  },
+  "files_to_reference": [
+    "components/dashboard/header.tsx",
+    "components/dashboard/sidebar.tsx"
+  ],
+  "patterns": {
+    "mobile_menu_pattern": "The dashboard uses a hamburger button in the header that triggers a slide-in sidebar on mobile. The header has an onMenuClick callback and the sidebar manages open/closed state with animations.",
+    "component_structure": "Client components use 'use client' directive at the top. SVG icons are inline. Tailwind classes follow the project's primary/secondary color scheme.",
+    "navigation_links": "Desktop navigation is in a div with 'hidden md:flex' class. Mobile shows different content with 'md:hidden' class.",
+    "responsive_design": "Uses Tailwind responsive prefixes (md:, lg:) with mobile-first approach"
+  },
+  "existing_implementations": {
+    "description": "Dashboard already has a complete mobile menu implementation with hamburger button and slide-in sidebar",
+    "relevant_files": [
+      "components/dashboard/header.tsx",
+      "components/dashboard/sidebar.tsx"
+    ],
+    "key_features": [
+      "Hamburger button with SVG icon (3 horizontal lines)",
+      "onClick handler to open mobile menu",
+      "Slide-in animation from left side",
+      "Overlay backdrop to close menu",
+      "Active route highlighting",
+      "Responsive lg: breakpoint for showing/hiding"
+    ]
+  },
+  "landing_page_requirements": {
+    "navigation_items": [
+      { "label": "Özellikler", "href": "/features" },
+      { "label": "Fiyatlandırma", "href": "/pricing" },
+      { "label": "Giriş Yap", "href": "/login" }
+    ],
+    "cta_button": { "label": "Ücretsiz Dene", "href": "/register" },
+    "mobile_only_cta": { "label": "Başla", "href": "/register" }
+  }
+}

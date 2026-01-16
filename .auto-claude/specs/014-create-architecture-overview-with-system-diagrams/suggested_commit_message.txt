@@ -1,0 +1,3 @@
+chore(docs): add architecture overview with system diagrams
+
+Add comprehensive architecture documentation with visual diagrams showing how the Next.js app, Supabase, and modules interact. Includes diagrams for authentication flow, menu publishing flow, and waiter call flow to provide clear visualization of key system interactions.

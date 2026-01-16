@@ -1,0 +1,214 @@
+{
+  "feature": "Document UI Components with Props and Usage Examples",
+  "workflow_type": "simple",
+  "workflow_rationale": "This is a documentation-only task that involves creating markdown files to document existing UI components. No functional code changes are required, making this a simple workflow with sequential documentation subtasks.",
+  "phases": [
+    {
+      "id": "phase-1-documentation",
+      "name": "Component Documentation",
+      "type": "implementation",
+      "description": "Create comprehensive documentation for all UI components, dashboard components, and providers with props, variants, and usage examples",
+      "depends_on": [],
+      "parallel_safe": false,
+      "subtasks": [
+        {
+          "id": "subtask-1-1",
+          "description": "Create DESIGN_TOKENS.md documenting Tailwind color system and spacing",
+          "service": "frontend",
+          "files_to_modify": [],
+          "files_to_create": [
+            "docs/DESIGN_TOKENS.md"
+          ],
+          "patterns_from": [
+            "docs/ROUTES.md"
+          ],
+          "verification": {
+            "type": "manual",
+            "instructions": "Verify docs/DESIGN_TOKENS.md exists and documents: color palette (primary, secondary, red, yellow), size scales (button, text), spacing system, dark mode variants"
+          },
+          "status": "completed",
+          "notes": "Created comprehensive DESIGN_TOKENS.md documenting Tailwind color palette (primary, secondary, red, yellow), button and text size scales, spacing system with common patterns, and dark mode variants with testing instructions. File includes detailed tables, usage examples, and best practices.",
+          "updated_at": "2026-01-14T20:00:35.900607+00:00"
+        },
+        {
+          "id": "subtask-1-2",
+          "description": "Create UI_COMPONENTS.md documenting Button, Card, Input, Modal components",
+          "service": "frontend",
+          "files_to_modify": [],
+          "files_to_create": [
+            "docs/UI_COMPONENTS.md"
+          ],
+          "patterns_from": [
+            "components/ui/button.tsx",
+            "components/ui/card.tsx",
+            "components/ui/input.tsx",
+            "components/ui/modal.tsx",
+            "docs/ROUTES.md"
+          ],
+          "verification": {
+            "type": "manual",
+            "instructions": "Verify docs/UI_COMPONENTS.md exists and documents all 4 UI components with: component overview, props table, variants, usage examples, accessibility notes"
+          },
+          "status": "completed",
+          "notes": "Successfully created comprehensive UI_COMPONENTS.md documenting all 4 UI components (Button, Card, Input, Modal). Documentation includes: component overviews, detailed props tables, all variants (Button: 5 variants/3 sizes; Card: with sub-components; Input: with label/error states; Modal: including ConfirmModal), comprehensive usage examples, accessibility notes, and best practices. File follows the pattern established in DESIGN_TOKENS.md with clear structure and practical examples.",
+          "updated_at": "2026-01-14T20:02:58.441937+00:00"
+        },
+        {
+          "id": "subtask-1-3",
+          "description": "Create COMPONENTS.md documenting dashboard and provider components",
+          "service": "frontend",
+          "files_to_modify": [],
+          "files_to_create": [
+            "docs/COMPONENTS.md"
+          ],
+          "patterns_from": [
+            "components/dashboard/header.tsx",
+            "components/dashboard/sidebar.tsx",
+            "components/providers/auth-provider.tsx",
+            "components/providers/providers.tsx",
+            "docs/ROUTES.md"
+          ],
+          "verification": {
+            "type": "manual",
+            "instructions": "Verify docs/COMPONENTS.md exists and documents: Header component (props, mobile menu, actions), Sidebar component, AuthProvider (context API, usage), all with usage examples"
+          },
+          "status": "completed",
+          "notes": "Successfully created comprehensive COMPONENTS.md documenting dashboard and provider components. Documentation includes:\n\nDashboard Components:\n- Header: Props table, mobile menu features, custom actions, desktop/mobile layouts, user dropdown, usage examples, and accessibility notes\n- Sidebar: Props table, collapsible state, nested routes, role-based visibility, badge indicators, usage examples, and accessibility notes\n\nProvider Components:\n- AuthProvider: Context API with full TypeScript types, login/logout functionality, protected routes, role-based access control, error handling, and comprehensive usage examples\n- Providers: Single wrapper component for organizing all global providers with configuration options\n\nAdditional Content:\n- Complete integration example showing how all components work together\n- Best practices for dashboard layout, authentication, and provider setup\n- Common patterns for protected routes, conditional rendering, and role-based access\n- Component checklist for developers\n- Cross-references to related documentation\n\nFile follows the established documentation style from UI_COMPONENTS.md and DESIGN_TOKENS.md with clear structure, detailed tables, practical code examples, and accessibility considerations. Total 1,119 lines of comprehensive documentation.",
+          "updated_at": "2026-01-14T20:06:05.704561+00:00"
+        },
+        {
+          "id": "subtask-1-4",
+          "description": "Update README.md with link to component documentation",
+          "service": "frontend",
+          "files_to_modify": [
+            "README.md"
+          ],
+          "files_to_create": [],
+          "patterns_from": [
+            "README.md"
+          ],
+          "verification": {
+            "type": "manual",
+            "instructions": "Verify README.md has a 'Component Documentation' section with links to DESIGN_TOKENS.md, UI_COMPONENTS.md, and COMPONENTS.md"
+          },
+          "status": "completed",
+          "notes": "Successfully updated README.md with Component Documentation section. Added section to table of contents and created new section with links to DESIGN_TOKENS.md, UI_COMPONENTS.md, and COMPONENTS.md. Section follows existing README format with table presentation and Turkish descriptions. Changes committed to git.",
+          "updated_at": "2026-01-14T20:07:11.666731+00:00"
+        }
+      ]
+    }
+  ],
+  "summary": {
+    "total_phases": 1,
+    "total_subtasks": 4,
+    "services_involved": [
+      "frontend"
+    ],
+    "parallelism": {
+      "max_parallel_phases": 1,
+      "parallel_groups": [],
+      "recommended_workers": 1,
+      "speedup_estimate": "Sequential execution required"
+    },
+    "startup_command": "source auto-claude/.venv/bin/activate && python auto-claude/run.py --spec 012-document-ui-components-with-props-and-usage-exampl --parallel 1"
+  },
+  "verification_strategy": {
+    "risk_level": "trivial",
+    "skip_validation": true,
+    "test_creation_phase": "none",
+    "test_types_required": [],
+    "security_scanning_required": false,
+    "staging_deployment_required": false,
+    "acceptance_criteria": [
+      "All documentation files created (DESIGN_TOKENS.md, UI_COMPONENTS.md, COMPONENTS.md)",
+      "All components documented with props, variants, and usage examples",
+      "README.md updated with links to new documentation",
+      "Documentation follows existing pattern from docs/ROUTES.md"
+    ],
+    "verification_steps": [],
+    "reasoning": "Documentation-only change with no functional code modifications - no tests required"
+  },
+  "qa_acceptance": {
+    "unit_tests": {
+      "required": false,
+      "commands": [],
+      "minimum_coverage": null
+    },
+    "integration_tests": {
+      "required": false,
+      "commands": [],
+      "services_to_test": []
+    },
+    "e2e_tests": {
+      "required": false,
+      "commands": [],
+      "flows": []
+    },
+    "browser_verification": {
+      "required": false,
+      "pages": []
+    },
+    "database_verification": {
+      "required": false,
+      "checks": []
+    },
+    "documentation_verification": {
+      "required": true,
+      "checks": [
+        "All documentation files exist and are complete",
+        "Component props are accurately documented",
+        "Usage examples are clear and follow component API",
+        "Design tokens match actual Tailwind configuration",
+        "README.md links to new documentation"
+      ]
+    }
+  },
+  "qa_signoff": null,
+  "status": "done",
+  "planStatus": "completed",
+  "updated_at": "2026-01-14T20:53:08.752Z",
+  "last_updated": "2026-01-14T20:07:11.666754+00:00",
+  "qa_iteration_history": [
+    {
+      "iteration": 1,
+      "status": "error",
+      "timestamp": "2026-01-14T20:07:27.182794+00:00",
+      "issues": [
+        {
+          "title": "QA error",
+          "description": "QA agent did not update implementation_plan.json (No tools were used by agent)"
+        }
+      ]
+    },
+    {
+      "iteration": 2,
+      "status": "error",
+      "timestamp": "2026-01-14T20:07:29.223873+00:00",
+      "issues": [
+        {
+          "title": "QA error",
+          "description": "QA agent did not update implementation_plan.json (No tools were used by agent)"
+        }
+      ]
+    },
+    {
+      "iteration": 3,
+      "status": "error",
+      "timestamp": "2026-01-14T20:07:32.729442+00:00",
+      "issues": [
+        {
+          "title": "QA error",
+          "description": "QA agent did not update implementation_plan.json (No tools were used by agent)"
+        }
+      ]
+    }
+  ],
+  "qa_stats": {
+    "total_iterations": 3,
+    "last_iteration": 3,
+    "last_status": "error",
+    "issues_by_type": {
+      "unknown": 3
+    }
+  }
+}

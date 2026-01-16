@@ -1,0 +1,188 @@
+{
+  "file_path": "pages/_error.tsx",
+  "main_branch_history": [],
+  "task_views": {
+    "037-add-search-to-categories-page": {
+      "task_id": "037-add-search-to-categories-page",
+      "branch_point": {
+        "commit_hash": "2b028be920d271c6e53b44319d1c871dc3d27076",
+        "content": "",
+        "timestamp": "2026-01-14T18:38:07.376896"
+      },
+      "worktree_state": {
+        "content": "import { NextPageContext } from 'next'\nimport Link from 'next/link'\n\n/**\n * Custom error page for Pages Router fallback\n * This handles errors that occur outside the App Router\n */\nfunction Error({ statusCode }: { statusCode?: number }) {\n  return (\n    <div style={{\n      display: 'flex',\n      minHeight: '100vh',\n      flexDirection: 'column',\n      alignItems: 'center',\n      justifyContent: 'center',\n      backgroundColor: '#f9fafb',\n    }}>\n      <h1 style={{ fontSize: '6rem', fontWeight: 'bold', color: '#dc2626' }}>\n        {statusCode || 'Hata'}\n      </h1>\n      <p style={{ marginTop: '1rem', color: '#4b5563' }}>\n        {statusCode === 404\n          ? 'Sayfa bulunamadi'\n          : 'Bir hata olustu'}\n      </p>\n      <Link\n        href=\"/\"\n        style={{\n          marginTop: '2rem',\n          padding: '0.75rem 1.5rem',\n          backgroundColor: '#2563eb',\n          color: 'white',\n          borderRadius: '0.5rem',\n          textDecoration: 'none',\n        }}\n      >\n        Ana Sayfaya Don\n      </Link>\n    </div>\n  )\n}\n\nError.getInitialProps = ({ res, err }: NextPageContext) => {\n  const statusCode = res ? res.statusCode : err ? err.statusCode : 404\n  return { statusCode }\n}\n\nexport default Error\n",
+        "last_modified": "2026-01-15T15:07:08.942736"
+      },
+      "task_intent": {
+        "title": "037-add-search-to-categories-page",
+        "description": "Add search functionality to the categories page, allowing users to filter categories by name. This mirrors the existing search pattern already implemented in the products page.",
+        "from_plan": true
+      },
+      "commits_behind_main": 0,
+      "status": "active",
+      "merged_at": null
+    },
+    "032-add-mobile-navigation-menu-to-landing-page": {
+      "task_id": "032-add-mobile-navigation-menu-to-landing-page",
+      "branch_point": {
+        "commit_hash": "2b028be920d271c6e53b44319d1c871dc3d27076",
+        "content": "",
+        "timestamp": "2026-01-14T18:38:22.963353"
+      },
+      "worktree_state": {
+        "content": "import { NextPageContext } from 'next'\nimport Link from 'next/link'\n\n/**\n * Custom error page for Pages Router fallback\n * This handles errors that occur outside the App Router\n */\nfunction Error({ statusCode }: { statusCode?: number }) {\n  return (\n    <div style={{\n      display: 'flex',\n      minHeight: '100vh',\n      flexDirection: 'column',\n      alignItems: 'center',\n      justifyContent: 'center',\n      backgroundColor: '#f9fafb',\n    }}>\n      <h1 style={{ fontSize: '6rem', fontWeight: 'bold', color: '#dc2626' }}>\n        {statusCode || 'Hata'}\n      </h1>\n      <p style={{ marginTop: '1rem', color: '#4b5563' }}>\n        {statusCode === 404\n          ? 'Sayfa bulunamadi'\n          : 'Bir hata olustu'}\n      </p>\n      <Link\n        href=\"/\"\n        style={{\n          marginTop: '2rem',\n          padding: '0.75rem 1.5rem',\n          backgroundColor: '#2563eb',\n          color: 'white',\n          borderRadius: '0.5rem',\n          textDecoration: 'none',\n        }}\n      >\n        Ana Sayfaya Don\n      </Link>\n    </div>\n  )\n}\n\nError.getInitialProps = ({ res, err }: NextPageContext) => {\n  const statusCode = res ? res.statusCode : err ? err.statusCode : 404\n  return { statusCode }\n}\n\nexport default Error\n",
+        "last_modified": "2026-01-15T15:05:31.939589"
+      },
+      "task_intent": {
+        "title": "032-add-mobile-navigation-menu-to-landing-page",
+        "description": "The landing page navigation on mobile devices only shows a 'Basla' button, hiding all other navigation links. Add a proper hamburger menu for mobile users.",
+        "from_plan": true
+      },
+      "commits_behind_main": 0,
+      "status": "active",
+      "merged_at": null
+    },
+    "031-add-mobile-navigation-menu-to-landing-page": {
+      "task_id": "031-add-mobile-navigation-menu-to-landing-page",
+      "branch_point": {
+        "commit_hash": "2b028be920d271c6e53b44319d1c871dc3d27076",
+        "content": "",
+        "timestamp": "2026-01-14T18:50:42.638180"
+      },
+      "worktree_state": {
+        "content": "import { NextPageContext } from 'next'\nimport Link from 'next/link'\n\n/**\n * Custom error page for Pages Router fallback\n * This handles errors that occur outside the App Router\n */\nfunction Error({ statusCode }: { statusCode?: number }) {\n  return (\n    <div style={{\n      display: 'flex',\n      minHeight: '100vh',\n      flexDirection: 'column',\n      alignItems: 'center',\n      justifyContent: 'center',\n      backgroundColor: '#f9fafb',\n    }}>\n      <h1 style={{ fontSize: '6rem', fontWeight: 'bold', color: '#dc2626' }}>\n        {statusCode || 'Hata'}\n      </h1>\n      <p style={{ marginTop: '1rem', color: '#4b5563' }}>\n        {statusCode === 404\n          ? 'Sayfa bulunamadi'\n          : 'Bir hata olustu'}\n      </p>\n      <Link\n        href=\"/\"\n        style={{\n          marginTop: '2rem',\n          padding: '0.75rem 1.5rem',\n          backgroundColor: '#2563eb',\n          color: 'white',\n          borderRadius: '0.5rem',\n          textDecoration: 'none',\n        }}\n      >\n        Ana Sayfaya Don\n      </Link>\n    </div>\n  )\n}\n\nError.getInitialProps = ({ res, err }: NextPageContext) => {\n  const statusCode = res ? res.statusCode : err ? err.statusCode : 404\n  return { statusCode }\n}\n\nexport default Error\n",
+        "last_modified": "2026-01-15T15:03:39.351844"
+      },
+      "task_intent": {
+        "title": "031-add-mobile-navigation-menu-to-landing-page",
+        "description": "The landing page navigation on mobile devices only shows a 'Basla' button, hiding all other navigation links. Add a proper hamburger menu for mobile users.",
+        "from_plan": true
+      },
+      "commits_behind_main": 0,
+      "status": "active",
+      "merged_at": null
+    },
+    "040-add-bulk-qr-code-download-for-all-tables": {
+      "task_id": "040-add-bulk-qr-code-download-for-all-tables",
+      "branch_point": {
+        "commit_hash": "2b028be920d271c6e53b44319d1c871dc3d27076",
+        "content": "",
+        "timestamp": "2026-01-14T18:53:11.069414"
+      },
+      "worktree_state": {
+        "content": "import { NextPageContext } from 'next'\nimport Link from 'next/link'\n\n/**\n * Custom error page for Pages Router fallback\n * This handles errors that occur outside the App Router\n */\nfunction Error({ statusCode }: { statusCode?: number }) {\n  return (\n    <div style={{\n      display: 'flex',\n      minHeight: '100vh',\n      flexDirection: 'column',\n      alignItems: 'center',\n      justifyContent: 'center',\n      backgroundColor: '#f9fafb',\n    }}>\n      <h1 style={{ fontSize: '6rem', fontWeight: 'bold', color: '#dc2626' }}>\n        {statusCode || 'Hata'}\n      </h1>\n      <p style={{ marginTop: '1rem', color: '#4b5563' }}>\n        {statusCode === 404\n          ? 'Sayfa bulunamadi'\n          : 'Bir hata olustu'}\n      </p>\n      <Link\n        href=\"/\"\n        style={{\n          marginTop: '2rem',\n          padding: '0.75rem 1.5rem',\n          backgroundColor: '#2563eb',\n          color: 'white',\n          borderRadius: '0.5rem',\n          textDecoration: 'none',\n        }}\n      >\n        Ana Sayfaya Don\n      </Link>\n    </div>\n  )\n}\n\nError.getInitialProps = ({ res, err }: NextPageContext) => {\n  const statusCode = res ? res.statusCode : err ? err.statusCode : 404\n  return { statusCode }\n}\n\nexport default Error\n",
+        "last_modified": "2026-01-14T18:53:20.537262"
+      },
+      "task_intent": {
+        "title": "040-add-bulk-qr-code-download-for-all-tables",
+        "description": "",
+        "from_plan": false
+      },
+      "commits_behind_main": 0,
+      "status": "active",
+      "merged_at": null
+    },
+    "005-extract-duplicated-crud-state-management-into-reus": {
+      "task_id": "005-extract-duplicated-crud-state-management-into-reus",
+      "branch_point": {
+        "commit_hash": "2b028be920d271c6e53b44319d1c871dc3d27076",
+        "content": "",
+        "timestamp": "2026-01-15T06:33:12.581832"
+      },
+      "worktree_state": {
+        "content": "import { NextPageContext } from 'next'\nimport Link from 'next/link'\n\n/**\n * Custom error page for Pages Router fallback\n * This handles errors that occur outside the App Router\n */\nfunction Error({ statusCode }: { statusCode?: number }) {\n  return (\n    <div style={{\n      display: 'flex',\n      minHeight: '100vh',\n      flexDirection: 'column',\n      alignItems: 'center',\n      justifyContent: 'center',\n      backgroundColor: '#f9fafb',\n    }}>\n      <h1 style={{ fontSize: '6rem', fontWeight: 'bold', color: '#dc2626' }}>\n        {statusCode || 'Hata'}\n      </h1>\n      <p style={{ marginTop: '1rem', color: '#4b5563' }}>\n        {statusCode === 404\n          ? 'Sayfa bulunamadi'\n          : 'Bir hata olustu'}\n      </p>\n      <Link\n        href=\"/\"\n        style={{\n          marginTop: '2rem',\n          padding: '0.75rem 1.5rem',\n          backgroundColor: '#2563eb',\n          color: 'white',\n          borderRadius: '0.5rem',\n          textDecoration: 'none',\n        }}\n      >\n        Ana Sayfaya Don\n      </Link>\n    </div>\n  )\n}\n\nError.getInitialProps = ({ res, err }: NextPageContext) => {\n  const statusCode = res ? res.statusCode : err ? err.statusCode : 404\n  return { statusCode }\n}\n\nexport default Error\n",
+        "last_modified": "2026-01-15T16:04:15.654541"
+      },
+      "task_intent": {
+        "title": "005-extract-duplicated-crud-state-management-into-reus",
+        "description": "",
+        "from_plan": false
+      },
+      "commits_behind_main": 5,
+      "status": "active",
+      "merged_at": null
+    },
+    "002-add-unit-test-coverage-for-dashboard-page-componen": {
+      "task_id": "002-add-unit-test-coverage-for-dashboard-page-componen",
+      "branch_point": {
+        "commit_hash": "2b028be920d271c6e53b44319d1c871dc3d27076",
+        "content": "",
+        "timestamp": "2026-01-15T14:04:12.520457"
+      },
+      "worktree_state": {
+        "content": "import { NextPageContext } from 'next'\nimport Link from 'next/link'\n\n/**\n * Custom error page for Pages Router fallback\n * This handles errors that occur outside the App Router\n */\nfunction Error({ statusCode }: { statusCode?: number }) {\n  return (\n    <div style={{\n      display: 'flex',\n      minHeight: '100vh',\n      flexDirection: 'column',\n      alignItems: 'center',\n      justifyContent: 'center',\n      backgroundColor: '#f9fafb',\n    }}>\n      <h1 style={{ fontSize: '6rem', fontWeight: 'bold', color: '#dc2626' }}>\n        {statusCode || 'Hata'}\n      </h1>\n      <p style={{ marginTop: '1rem', color: '#4b5563' }}>\n        {statusCode === 404\n          ? 'Sayfa bulunamadi'\n          : 'Bir hata olustu'}\n      </p>\n      <Link\n        href=\"/\"\n        style={{\n          marginTop: '2rem',\n          padding: '0.75rem 1.5rem',\n          backgroundColor: '#2563eb',\n          color: 'white',\n          borderRadius: '0.5rem',\n          textDecoration: 'none',\n        }}\n      >\n        Ana Sayfaya Don\n      </Link>\n    </div>\n  )\n}\n\nError.getInitialProps = ({ res, err }: NextPageContext) => {\n  const statusCode = res ? res.statusCode : err ? err.statusCode : 404\n  return { statusCode }\n}\n\nexport default Error\n",
+        "last_modified": "2026-01-15T16:20:44.387942"
+      },
+      "task_intent": {
+        "title": "002-add-unit-test-coverage-for-dashboard-page-componen",
+        "description": "",
+        "from_plan": false
+      },
+      "commits_behind_main": 5,
+      "status": "active",
+      "merged_at": null
+    },
+    "034-create-reusable-select-component-for-consistent-fo": {
+      "task_id": "034-create-reusable-select-component-for-consistent-fo",
+      "branch_point": {
+        "commit_hash": "2b028be920d271c6e53b44319d1c871dc3d27076",
+        "content": "",
+        "timestamp": "2026-01-15T14:05:37.956433"
+      },
+      "worktree_state": {
+        "content": "import { NextPageContext } from 'next'\nimport Link from 'next/link'\n\n/**\n * Custom error page for Pages Router fallback\n * This handles errors that occur outside the App Router\n */\nfunction Error({ statusCode }: { statusCode?: number }) {\n  return (\n    <div style={{\n      display: 'flex',\n      minHeight: '100vh',\n      flexDirection: 'column',\n      alignItems: 'center',\n      justifyContent: 'center',\n      backgroundColor: '#f9fafb',\n    }}>\n      <h1 style={{ fontSize: '6rem', fontWeight: 'bold', color: '#dc2626' }}>\n        {statusCode || 'Hata'}\n      </h1>\n      <p style={{ marginTop: '1rem', color: '#4b5563' }}>\n        {statusCode === 404\n          ? 'Sayfa bulunamadi'\n          : 'Bir hata olustu'}\n      </p>\n      <Link\n        href=\"/\"\n        style={{\n          marginTop: '2rem',\n          padding: '0.75rem 1.5rem',\n          backgroundColor: '#2563eb',\n          color: 'white',\n          borderRadius: '0.5rem',\n          textDecoration: 'none',\n        }}\n      >\n        Ana Sayfaya Don\n      </Link>\n    </div>\n  )\n}\n\nError.getInitialProps = ({ res, err }: NextPageContext) => {\n  const statusCode = res ? res.statusCode : err ? err.statusCode : 404\n  return { statusCode }\n}\n\nexport default Error\n",
+        "last_modified": "2026-01-15T14:05:43.916315"
+      },
+      "task_intent": {
+        "title": "034-create-reusable-select-component-for-consistent-fo",
+        "description": "",
+        "from_plan": false
+      },
+      "commits_behind_main": 5,
+      "status": "active",
+      "merged_at": null
+    },
+    "023-add-mobile-navigation-menu-to-landing-page": {
+      "task_id": "023-add-mobile-navigation-menu-to-landing-page",
+      "branch_point": {
+        "commit_hash": "c709a6c45b4887c1a0ad6e04c6142783760a46ec",
+        "content": "",
+        "timestamp": "2026-01-15T13:47:09.808921"
+      },
+      "worktree_state": {
+        "content": "import { NextPageContext } from 'next'\nimport Link from 'next/link'\n\n/**\n * Custom error page for Pages Router fallback\n * This handles errors that occur outside the App Router\n */\nfunction Error({ statusCode }: { statusCode?: number }) {\n  return (\n    <div style={{\n      display: 'flex',\n      minHeight: '100vh',\n      flexDirection: 'column',\n      alignItems: 'center',\n      justifyContent: 'center',\n      backgroundColor: '#f9fafb',\n    }}>\n      <h1 style={{ fontSize: '6rem', fontWeight: 'bold', color: '#dc2626' }}>\n        {statusCode || 'Hata'}\n      </h1>\n      <p style={{ marginTop: '1rem', color: '#4b5563' }}>\n        {statusCode === 404\n          ? 'Sayfa bulunamadi'\n          : 'Bir hata olustu'}\n      </p>\n      <Link\n        href=\"/\"\n        style={{\n          marginTop: '2rem',\n          padding: '0.75rem 1.5rem',\n          backgroundColor: '#2563eb',\n          color: 'white',\n          borderRadius: '0.5rem',\n          textDecoration: 'none',\n        }}\n      >\n        Ana Sayfaya Don\n      </Link>\n    </div>\n  )\n}\n\nError.getInitialProps = ({ res, err }: NextPageContext) => {\n  const statusCode = res ? res.statusCode : err ? err.statusCode : 404\n  return { statusCode }\n}\n\nexport default Error\n",
+        "last_modified": "2026-01-15T13:47:16.841633"
+      },
+      "task_intent": {
+        "title": "023-add-mobile-navigation-menu-to-landing-page",
+        "description": "",
+        "from_plan": false
+      },
+      "commits_behind_main": 0,
+      "status": "active",
+      "merged_at": null
+    },
+    "026-add-mobile-navigation-menu-to-landing-page": {
+      "task_id": "026-add-mobile-navigation-menu-to-landing-page",
+      "branch_point": {
+        "commit_hash": "2b028be920d271c6e53b44319d1c871dc3d27076",
+        "content": "",
+        "timestamp": "2026-01-15T14:15:55.210168"
+      },
+      "worktree_state": {
+        "content": "import { NextPageContext } from 'next'\nimport Link from 'next/link'\n\n/**\n * Custom error page for Pages Router fallback\n * This handles errors that occur outside the App Router\n */\nfunction Error({ statusCode }: { statusCode?: number }) {\n  return (\n    <div style={{\n      display: 'flex',\n      minHeight: '100vh',\n      flexDirection: 'column',\n      alignItems: 'center',\n      justifyContent: 'center',\n      backgroundColor: '#f9fafb',\n    }}>\n      <h1 style={{ fontSize: '6rem', fontWeight: 'bold', color: '#dc2626' }}>\n        {statusCode || 'Hata'}\n      </h1>\n      <p style={{ marginTop: '1rem', color: '#4b5563' }}>\n        {statusCode === 404\n          ? 'Sayfa bulunamadi'\n          : 'Bir hata olustu'}\n      </p>\n      <Link\n        href=\"/\"\n        style={{\n          marginTop: '2rem',\n          padding: '0.75rem 1.5rem',\n          backgroundColor: '#2563eb',\n          color: 'white',\n          borderRadius: '0.5rem',\n          textDecoration: 'none',\n        }}\n      >\n        Ana Sayfaya Don\n      </Link>\n    </div>\n  )\n}\n\nError.getInitialProps = ({ res, err }: NextPageContext) => {\n  const statusCode = res ? res.statusCode : err ? err.statusCode : 404\n  return { statusCode }\n}\n\nexport default Error\n",
+        "last_modified": "2026-01-15T14:16:01.092063"
+      },
+      "task_intent": {
+        "title": "026-add-mobile-navigation-menu-to-landing-page",
+        "description": "",
+        "from_plan": false
+      },
+      "commits_behind_main": 5,
+      "status": "active",
+      "merged_at": null
+    }
+  },
+  "created_at": "2026-01-14T18:38:14.356421",
+  "last_updated": "2026-01-15T14:15:59.793989"
+}

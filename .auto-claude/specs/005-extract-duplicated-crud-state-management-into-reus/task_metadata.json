@@ -1,0 +1,10 @@
+{
+  "sourceType": "ideation",
+  "ideationType": "code_quality",
+  "ideaId": "cq-002",
+  "rationale": "DRY (Don't Repeat Yourself) violation leads to inconsistent behavior, more bugs, and increased maintenance burden. When a bug is found in one pattern, it must be fixed in 19 places. Extracting to custom hooks enables consistent error handling, loading states, and optimistic updates across the application.",
+  "category": "refactoring",
+  "codeQualitySeverity": "major",
+  "priority": "high",
+  "archivedAt": "2026-01-15T13:44:13.776Z"
+}

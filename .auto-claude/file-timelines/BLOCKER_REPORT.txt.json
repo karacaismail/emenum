@@ -1,0 +1,28 @@
+{
+  "file_path": "BLOCKER_REPORT.txt",
+  "main_branch_history": [],
+  "task_views": {
+    "008-optimize-authprovider-to-avoid-unnecessary-re-fetc": {
+      "task_id": "008-optimize-authprovider-to-avoid-unnecessary-re-fetc",
+      "branch_point": {
+        "commit_hash": "2b028be920d271c6e53b44319d1c871dc3d27076",
+        "content": "",
+        "timestamp": "2026-01-15T02:37:17.742478"
+      },
+      "worktree_state": {
+        "content": "CRITICAL BLOCKER - SPEC CONFIGURATION ERROR\n\nSpec: 008-optimize-authprovider-to-avoid-unnecessary-re-fetc\nSubtask: subtask-1-1\nAttempt: 1651\n\nISSUE:\nThe implementation plan references source files that do not exist in this repository.\n\nFILES EXPECTED BUT NOT FOUND:\n- components/providers/auth-provider.tsx\n- components/ui/modal.tsx  \n- lib/supabase/client.ts\n- types/database.ts\n\nREPOSITORY CONTENTS:\nThis repository contains ONLY documentation files:\n- README.md\n- chatgpt.md\n- ek_ozellikler.md\n- gemini.md\n- gereksinimler.md\n- paketler.md\n- temel.md\n\nVERIFICATION PERFORMED:\n\u2713 Checked current working directory\n\u2713 Checked main repository /Users/karaca/Desktop/ozon/\n\u2713 Searched all branches for source files\n\u2713 Verified git history and HEAD contents\n\nCONCLUSION:\nThis spec was incorrectly created against a documentation repository instead of\nthe actual Next.js application codebase. The planner likely analyzed the wrong\ndirectory or repository.\n\nRECOMMENDED ACTION:\n1. Identify the correct repository containing the Next.js application source\n2. Recreate this spec pointing to the correct repository\n3. Or mark this spec as invalid/cancelled\n\nThis explains why all 1650 previous attempts have failed.\nThe implementation cannot proceed until this configuration issue is resolved.\n\nGenerated: 2026-01-14\n",
+        "last_modified": "2026-01-15T14:52:29.248692"
+      },
+      "task_intent": {
+        "title": "008-optimize-authprovider-to-avoid-unnecessary-re-fetc",
+        "description": "",
+        "from_plan": false
+      },
+      "commits_behind_main": 5,
+      "status": "active",
+      "merged_at": null
+    }
+  },
+  "created_at": "2026-01-15T02:37:17.915169",
+  "last_updated": "2026-01-15T02:37:17.954777"
+}

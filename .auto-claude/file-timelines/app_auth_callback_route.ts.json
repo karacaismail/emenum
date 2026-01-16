@@ -1,0 +1,228 @@
+{
+  "file_path": "app/auth/callback/route.ts",
+  "main_branch_history": [],
+  "task_views": {
+    "001-ozon-e-menum-net-vibe-coding-v1": {
+      "task_id": "001-ozon-e-menum-net-vibe-coding-v1",
+      "branch_point": {
+        "commit_hash": "2b028be920d271c6e53b44319d1c871dc3d27076",
+        "content": "",
+        "timestamp": "2026-01-14T09:55:04.472899"
+      },
+      "worktree_state": {
+        "content": "import { createServerClient } from '@supabase/ssr'\nimport { cookies } from 'next/headers'\nimport { NextRequest, NextResponse } from 'next/server'\n\n/**\n * OAuth Callback Route Handler\n *\n * This route handles the callback from OAuth providers (Google, GitHub, etc.)\n * after the user has authenticated. It exchanges the authorization code for\n * a session and redirects the user appropriately.\n *\n * Flow:\n * 1. User clicks \"Login with Google\" (or other OAuth provider)\n * 2. User is redirected to provider's auth page\n * 3. Provider redirects back to this callback URL with a code\n * 4. This route exchanges the code for a session\n * 5. User is redirected to dashboard (or error page if something goes wrong)\n */\nexport async function GET(request: NextRequest) {\n  const requestUrl = new URL(request.url)\n  const code = requestUrl.searchParams.get('code')\n  const next = requestUrl.searchParams.get('next') ?? '/dashboard'\n  const error = requestUrl.searchParams.get('error')\n  const errorDescription = requestUrl.searchParams.get('error_description')\n\n  // Handle OAuth errors (e.g., user denied access)\n  if (error) {\n    const errorMessage = errorDescription || error\n    return NextResponse.redirect(\n      new URL(`/login?error=${encodeURIComponent(errorMessage)}`, requestUrl.origin)\n    )\n  }\n\n  // If no code is provided, redirect to login\n  if (!code) {\n    return NextResponse.redirect(\n      new URL('/login?error=Yetkilendirme kodu bulunamadi', requestUrl.origin)\n    )\n  }\n\n  // Create a Supabase client for this route\n  const cookieStore = await cookies()\n  const supabase = createServerClient(\n    process.env.NEXT_PUBLIC_SUPABASE_URL!,\n    process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!,\n    {\n      cookies: {\n        getAll() {\n          return cookieStore.getAll()\n        },\n        setAll(cookiesToSet) {\n          try {\n            cookiesToSet.forEach(({ name, value, options }) =>\n              cookieStore.set(name, value, options)\n            )\n          } catch {\n            // The `setAll` method was called from a Server Component.\n            // This can be ignored if you have middleware refreshing user sessions.\n          }\n        },\n      },\n    }\n  )\n\n  // Exchange the authorization code for a session\n  const { error: sessionError } = await supabase.auth.exchangeCodeForSession(code)\n\n  if (sessionError) {\n    // Log the error for debugging (server-side only)\n    // Note: Do not expose detailed error messages to the client for security\n    return NextResponse.redirect(\n      new URL('/login?error=Oturum olusturulamadi', requestUrl.origin)\n    )\n  }\n\n  // Successfully authenticated, redirect to the requested page or dashboard\n  return NextResponse.redirect(new URL(next, requestUrl.origin))\n}\n",
+        "last_modified": "2026-01-14T09:55:05.860355"
+      },
+      "task_intent": {
+        "title": "001-ozon-e-menum-net-vibe-coding-v1",
+        "description": "",
+        "from_plan": false
+      },
+      "commits_behind_main": 0,
+      "status": "active",
+      "merged_at": null
+    },
+    "037-add-search-to-categories-page": {
+      "task_id": "037-add-search-to-categories-page",
+      "branch_point": {
+        "commit_hash": "2b028be920d271c6e53b44319d1c871dc3d27076",
+        "content": "",
+        "timestamp": "2026-01-14T18:38:07.376896"
+      },
+      "worktree_state": {
+        "content": "import { createServerClient } from '@supabase/ssr'\nimport { cookies } from 'next/headers'\nimport { NextRequest, NextResponse } from 'next/server'\n\n/**\n * OAuth Callback Route Handler\n *\n * This route handles the callback from OAuth providers (Google, GitHub, etc.)\n * after the user has authenticated. It exchanges the authorization code for\n * a session and redirects the user appropriately.\n *\n * Flow:\n * 1. User clicks \"Login with Google\" (or other OAuth provider)\n * 2. User is redirected to provider's auth page\n * 3. Provider redirects back to this callback URL with a code\n * 4. This route exchanges the code for a session\n * 5. User is redirected to dashboard (or error page if something goes wrong)\n */\nexport async function GET(request: NextRequest) {\n  const requestUrl = new URL(request.url)\n  const code = requestUrl.searchParams.get('code')\n  const next = requestUrl.searchParams.get('next') ?? '/dashboard'\n  const error = requestUrl.searchParams.get('error')\n  const errorDescription = requestUrl.searchParams.get('error_description')\n\n  // Handle OAuth errors (e.g., user denied access)\n  if (error) {\n    const errorMessage = errorDescription || error\n    return NextResponse.redirect(\n      new URL(`/login?error=${encodeURIComponent(errorMessage)}`, requestUrl.origin)\n    )\n  }\n\n  // If no code is provided, redirect to login\n  if (!code) {\n    return NextResponse.redirect(\n      new URL('/login?error=Yetkilendirme kodu bulunamadi', requestUrl.origin)\n    )\n  }\n\n  // Create a Supabase client for this route\n  const cookieStore = await cookies()\n  const supabase = createServerClient(\n    process.env.NEXT_PUBLIC_SUPABASE_URL!,\n    process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!,\n    {\n      cookies: {\n        getAll() {\n          return cookieStore.getAll()\n        },\n        setAll(cookiesToSet) {\n          try {\n            cookiesToSet.forEach(({ name, value, options }) =>\n              cookieStore.set(name, value, options)\n            )\n          } catch {\n            // The `setAll` method was called from a Server Component.\n            // This can be ignored if you have middleware refreshing user sessions.\n          }\n        },\n      },\n    }\n  )\n\n  // Exchange the authorization code for a session\n  const { error: sessionError } = await supabase.auth.exchangeCodeForSession(code)\n\n  if (sessionError) {\n    // Log the error for debugging (server-side only)\n    // Note: Do not expose detailed error messages to the client for security\n    return NextResponse.redirect(\n      new URL('/login?error=Oturum olusturulamadi', requestUrl.origin)\n    )\n  }\n\n  // Successfully authenticated, redirect to the requested page or dashboard\n  return NextResponse.redirect(new URL(next, requestUrl.origin))\n}\n",
+        "last_modified": "2026-01-15T15:07:08.903786"
+      },
+      "task_intent": {
+        "title": "037-add-search-to-categories-page",
+        "description": "Add search functionality to the categories page, allowing users to filter categories by name. This mirrors the existing search pattern already implemented in the products page.",
+        "from_plan": true
+      },
+      "commits_behind_main": 0,
+      "status": "active",
+      "merged_at": null
+    },
+    "032-add-mobile-navigation-menu-to-landing-page": {
+      "task_id": "032-add-mobile-navigation-menu-to-landing-page",
+      "branch_point": {
+        "commit_hash": "2b028be920d271c6e53b44319d1c871dc3d27076",
+        "content": "",
+        "timestamp": "2026-01-14T18:38:22.963353"
+      },
+      "worktree_state": {
+        "content": "import { createServerClient } from '@supabase/ssr'\nimport { cookies } from 'next/headers'\nimport { NextRequest, NextResponse } from 'next/server'\n\n/**\n * OAuth Callback Route Handler\n *\n * This route handles the callback from OAuth providers (Google, GitHub, etc.)\n * after the user has authenticated. It exchanges the authorization code for\n * a session and redirects the user appropriately.\n *\n * Flow:\n * 1. User clicks \"Login with Google\" (or other OAuth provider)\n * 2. User is redirected to provider's auth page\n * 3. Provider redirects back to this callback URL with a code\n * 4. This route exchanges the code for a session\n * 5. User is redirected to dashboard (or error page if something goes wrong)\n */\nexport async function GET(request: NextRequest) {\n  const requestUrl = new URL(request.url)\n  const code = requestUrl.searchParams.get('code')\n  const next = requestUrl.searchParams.get('next') ?? '/dashboard'\n  const error = requestUrl.searchParams.get('error')\n  const errorDescription = requestUrl.searchParams.get('error_description')\n\n  // Handle OAuth errors (e.g., user denied access)\n  if (error) {\n    const errorMessage = errorDescription || error\n    return NextResponse.redirect(\n      new URL(`/login?error=${encodeURIComponent(errorMessage)}`, requestUrl.origin)\n    )\n  }\n\n  // If no code is provided, redirect to login\n  if (!code) {\n    return NextResponse.redirect(\n      new URL('/login?error=Yetkilendirme kodu bulunamadi', requestUrl.origin)\n    )\n  }\n\n  // Create a Supabase client for this route\n  const cookieStore = await cookies()\n  const supabase = createServerClient(\n    process.env.NEXT_PUBLIC_SUPABASE_URL!,\n    process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!,\n    {\n      cookies: {\n        getAll() {\n          return cookieStore.getAll()\n        },\n        setAll(cookiesToSet) {\n          try {\n            cookiesToSet.forEach(({ name, value, options }) =>\n              cookieStore.set(name, value, options)\n            )\n          } catch {\n            // The `setAll` method was called from a Server Component.\n            // This can be ignored if you have middleware refreshing user sessions.\n          }\n        },\n      },\n    }\n  )\n\n  // Exchange the authorization code for a session\n  const { error: sessionError } = await supabase.auth.exchangeCodeForSession(code)\n\n  if (sessionError) {\n    // Log the error for debugging (server-side only)\n    // Note: Do not expose detailed error messages to the client for security\n    return NextResponse.redirect(\n      new URL('/login?error=Oturum olusturulamadi', requestUrl.origin)\n    )\n  }\n\n  // Successfully authenticated, redirect to the requested page or dashboard\n  return NextResponse.redirect(new URL(next, requestUrl.origin))\n}\n",
+        "last_modified": "2026-01-15T15:05:31.886067"
+      },
+      "task_intent": {
+        "title": "032-add-mobile-navigation-menu-to-landing-page",
+        "description": "The landing page navigation on mobile devices only shows a 'Basla' button, hiding all other navigation links. Add a proper hamburger menu for mobile users.",
+        "from_plan": true
+      },
+      "commits_behind_main": 0,
+      "status": "active",
+      "merged_at": null
+    },
+    "031-add-mobile-navigation-menu-to-landing-page": {
+      "task_id": "031-add-mobile-navigation-menu-to-landing-page",
+      "branch_point": {
+        "commit_hash": "2b028be920d271c6e53b44319d1c871dc3d27076",
+        "content": "",
+        "timestamp": "2026-01-14T18:50:42.638180"
+      },
+      "worktree_state": {
+        "content": "import { createServerClient } from '@supabase/ssr'\nimport { cookies } from 'next/headers'\nimport { NextRequest, NextResponse } from 'next/server'\n\n/**\n * OAuth Callback Route Handler\n *\n * This route handles the callback from OAuth providers (Google, GitHub, etc.)\n * after the user has authenticated. It exchanges the authorization code for\n * a session and redirects the user appropriately.\n *\n * Flow:\n * 1. User clicks \"Login with Google\" (or other OAuth provider)\n * 2. User is redirected to provider's auth page\n * 3. Provider redirects back to this callback URL with a code\n * 4. This route exchanges the code for a session\n * 5. User is redirected to dashboard (or error page if something goes wrong)\n */\nexport async function GET(request: NextRequest) {\n  const requestUrl = new URL(request.url)\n  const code = requestUrl.searchParams.get('code')\n  const next = requestUrl.searchParams.get('next') ?? '/dashboard'\n  const error = requestUrl.searchParams.get('error')\n  const errorDescription = requestUrl.searchParams.get('error_description')\n\n  // Handle OAuth errors (e.g., user denied access)\n  if (error) {\n    const errorMessage = errorDescription || error\n    return NextResponse.redirect(\n      new URL(`/login?error=${encodeURIComponent(errorMessage)}`, requestUrl.origin)\n    )\n  }\n\n  // If no code is provided, redirect to login\n  if (!code) {\n    return NextResponse.redirect(\n      new URL('/login?error=Yetkilendirme kodu bulunamadi', requestUrl.origin)\n    )\n  }\n\n  // Create a Supabase client for this route\n  const cookieStore = await cookies()\n  const supabase = createServerClient(\n    process.env.NEXT_PUBLIC_SUPABASE_URL!,\n    process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!,\n    {\n      cookies: {\n        getAll() {\n          return cookieStore.getAll()\n        },\n        setAll(cookiesToSet) {\n          try {\n            cookiesToSet.forEach(({ name, value, options }) =>\n              cookieStore.set(name, value, options)\n            )\n          } catch {\n            // The `setAll` method was called from a Server Component.\n            // This can be ignored if you have middleware refreshing user sessions.\n          }\n        },\n      },\n    }\n  )\n\n  // Exchange the authorization code for a session\n  const { error: sessionError } = await supabase.auth.exchangeCodeForSession(code)\n\n  if (sessionError) {\n    // Log the error for debugging (server-side only)\n    // Note: Do not expose detailed error messages to the client for security\n    return NextResponse.redirect(\n      new URL('/login?error=Oturum olusturulamadi', requestUrl.origin)\n    )\n  }\n\n  // Successfully authenticated, redirect to the requested page or dashboard\n  return NextResponse.redirect(new URL(next, requestUrl.origin))\n}\n",
+        "last_modified": "2026-01-15T15:03:39.298565"
+      },
+      "task_intent": {
+        "title": "031-add-mobile-navigation-menu-to-landing-page",
+        "description": "The landing page navigation on mobile devices only shows a 'Basla' button, hiding all other navigation links. Add a proper hamburger menu for mobile users.",
+        "from_plan": true
+      },
+      "commits_behind_main": 0,
+      "status": "active",
+      "merged_at": null
+    },
+    "040-add-bulk-qr-code-download-for-all-tables": {
+      "task_id": "040-add-bulk-qr-code-download-for-all-tables",
+      "branch_point": {
+        "commit_hash": "2b028be920d271c6e53b44319d1c871dc3d27076",
+        "content": "",
+        "timestamp": "2026-01-14T18:53:11.069414"
+      },
+      "worktree_state": {
+        "content": "import { createServerClient } from '@supabase/ssr'\nimport { cookies } from 'next/headers'\nimport { NextRequest, NextResponse } from 'next/server'\n\n/**\n * OAuth Callback Route Handler\n *\n * This route handles the callback from OAuth providers (Google, GitHub, etc.)\n * after the user has authenticated. It exchanges the authorization code for\n * a session and redirects the user appropriately.\n *\n * Flow:\n * 1. User clicks \"Login with Google\" (or other OAuth provider)\n * 2. User is redirected to provider's auth page\n * 3. Provider redirects back to this callback URL with a code\n * 4. This route exchanges the code for a session\n * 5. User is redirected to dashboard (or error page if something goes wrong)\n */\nexport async function GET(request: NextRequest) {\n  const requestUrl = new URL(request.url)\n  const code = requestUrl.searchParams.get('code')\n  const next = requestUrl.searchParams.get('next') ?? '/dashboard'\n  const error = requestUrl.searchParams.get('error')\n  const errorDescription = requestUrl.searchParams.get('error_description')\n\n  // Handle OAuth errors (e.g., user denied access)\n  if (error) {\n    const errorMessage = errorDescription || error\n    return NextResponse.redirect(\n      new URL(`/login?error=${encodeURIComponent(errorMessage)}`, requestUrl.origin)\n    )\n  }\n\n  // If no code is provided, redirect to login\n  if (!code) {\n    return NextResponse.redirect(\n      new URL('/login?error=Yetkilendirme kodu bulunamadi', requestUrl.origin)\n    )\n  }\n\n  // Create a Supabase client for this route\n  const cookieStore = await cookies()\n  const supabase = createServerClient(\n    process.env.NEXT_PUBLIC_SUPABASE_URL!,\n    process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!,\n    {\n      cookies: {\n        getAll() {\n          return cookieStore.getAll()\n        },\n        setAll(cookiesToSet) {\n          try {\n            cookiesToSet.forEach(({ name, value, options }) =>\n              cookieStore.set(name, value, options)\n            )\n          } catch {\n            // The `setAll` method was called from a Server Component.\n            // This can be ignored if you have middleware refreshing user sessions.\n          }\n        },\n      },\n    }\n  )\n\n  // Exchange the authorization code for a session\n  const { error: sessionError } = await supabase.auth.exchangeCodeForSession(code)\n\n  if (sessionError) {\n    // Log the error for debugging (server-side only)\n    // Note: Do not expose detailed error messages to the client for security\n    return NextResponse.redirect(\n      new URL('/login?error=Oturum olusturulamadi', requestUrl.origin)\n    )\n  }\n\n  // Successfully authenticated, redirect to the requested page or dashboard\n  return NextResponse.redirect(new URL(next, requestUrl.origin))\n}\n",
+        "last_modified": "2026-01-14T18:53:20.498714"
+      },
+      "task_intent": {
+        "title": "040-add-bulk-qr-code-download-for-all-tables",
+        "description": "",
+        "from_plan": false
+      },
+      "commits_behind_main": 0,
+      "status": "active",
+      "merged_at": null
+    },
+    "005-extract-duplicated-crud-state-management-into-reus": {
+      "task_id": "005-extract-duplicated-crud-state-management-into-reus",
+      "branch_point": {
+        "commit_hash": "2b028be920d271c6e53b44319d1c871dc3d27076",
+        "content": "",
+        "timestamp": "2026-01-15T06:33:12.581832"
+      },
+      "worktree_state": {
+        "content": "import { createServerClient } from '@supabase/ssr'\nimport { cookies } from 'next/headers'\nimport { NextRequest, NextResponse } from 'next/server'\n\n/**\n * OAuth Callback Route Handler\n *\n * This route handles the callback from OAuth providers (Google, GitHub, etc.)\n * after the user has authenticated. It exchanges the authorization code for\n * a session and redirects the user appropriately.\n *\n * Flow:\n * 1. User clicks \"Login with Google\" (or other OAuth provider)\n * 2. User is redirected to provider's auth page\n * 3. Provider redirects back to this callback URL with a code\n * 4. This route exchanges the code for a session\n * 5. User is redirected to dashboard (or error page if something goes wrong)\n */\nexport async function GET(request: NextRequest) {\n  const requestUrl = new URL(request.url)\n  const code = requestUrl.searchParams.get('code')\n  const next = requestUrl.searchParams.get('next') ?? '/dashboard'\n  const error = requestUrl.searchParams.get('error')\n  const errorDescription = requestUrl.searchParams.get('error_description')\n\n  // Handle OAuth errors (e.g., user denied access)\n  if (error) {\n    const errorMessage = errorDescription || error\n    return NextResponse.redirect(\n      new URL(`/login?error=${encodeURIComponent(errorMessage)}`, requestUrl.origin)\n    )\n  }\n\n  // If no code is provided, redirect to login\n  if (!code) {\n    return NextResponse.redirect(\n      new URL('/login?error=Yetkilendirme kodu bulunamadi', requestUrl.origin)\n    )\n  }\n\n  // Create a Supabase client for this route\n  const cookieStore = await cookies()\n  const supabase = createServerClient(\n    process.env.NEXT_PUBLIC_SUPABASE_URL!,\n    process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!,\n    {\n      cookies: {\n        getAll() {\n          return cookieStore.getAll()\n        },\n        setAll(cookiesToSet) {\n          try {\n            cookiesToSet.forEach(({ name, value, options }) =>\n              cookieStore.set(name, value, options)\n            )\n          } catch {\n            // The `setAll` method was called from a Server Component.\n            // This can be ignored if you have middleware refreshing user sessions.\n          }\n        },\n      },\n    }\n  )\n\n  // Exchange the authorization code for a session\n  const { error: sessionError } = await supabase.auth.exchangeCodeForSession(code)\n\n  if (sessionError) {\n    // Log the error for debugging (server-side only)\n    // Note: Do not expose detailed error messages to the client for security\n    return NextResponse.redirect(\n      new URL('/login?error=Oturum olusturulamadi', requestUrl.origin)\n    )\n  }\n\n  // Successfully authenticated, redirect to the requested page or dashboard\n  return NextResponse.redirect(new URL(next, requestUrl.origin))\n}\n",
+        "last_modified": "2026-01-15T16:04:15.584147"
+      },
+      "task_intent": {
+        "title": "005-extract-duplicated-crud-state-management-into-reus",
+        "description": "",
+        "from_plan": false
+      },
+      "commits_behind_main": 5,
+      "status": "active",
+      "merged_at": null
+    },
+    "002-add-unit-test-coverage-for-dashboard-page-componen": {
+      "task_id": "002-add-unit-test-coverage-for-dashboard-page-componen",
+      "branch_point": {
+        "commit_hash": "2b028be920d271c6e53b44319d1c871dc3d27076",
+        "content": "",
+        "timestamp": "2026-01-15T14:04:12.520457"
+      },
+      "worktree_state": {
+        "content": "import { createServerClient } from '@supabase/ssr'\nimport { cookies } from 'next/headers'\nimport { NextRequest, NextResponse } from 'next/server'\n\n/**\n * OAuth Callback Route Handler\n *\n * This route handles the callback from OAuth providers (Google, GitHub, etc.)\n * after the user has authenticated. It exchanges the authorization code for\n * a session and redirects the user appropriately.\n *\n * Flow:\n * 1. User clicks \"Login with Google\" (or other OAuth provider)\n * 2. User is redirected to provider's auth page\n * 3. Provider redirects back to this callback URL with a code\n * 4. This route exchanges the code for a session\n * 5. User is redirected to dashboard (or error page if something goes wrong)\n */\nexport async function GET(request: NextRequest) {\n  const requestUrl = new URL(request.url)\n  const code = requestUrl.searchParams.get('code')\n  const next = requestUrl.searchParams.get('next') ?? '/dashboard'\n  const error = requestUrl.searchParams.get('error')\n  const errorDescription = requestUrl.searchParams.get('error_description')\n\n  // Handle OAuth errors (e.g., user denied access)\n  if (error) {\n    const errorMessage = errorDescription || error\n    return NextResponse.redirect(\n      new URL(`/login?error=${encodeURIComponent(errorMessage)}`, requestUrl.origin)\n    )\n  }\n\n  // If no code is provided, redirect to login\n  if (!code) {\n    return NextResponse.redirect(\n      new URL('/login?error=Yetkilendirme kodu bulunamadi', requestUrl.origin)\n    )\n  }\n\n  // Create a Supabase client for this route\n  const cookieStore = await cookies()\n  const supabase = createServerClient(\n    process.env.NEXT_PUBLIC_SUPABASE_URL!,\n    process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!,\n    {\n      cookies: {\n        getAll() {\n          return cookieStore.getAll()\n        },\n        setAll(cookiesToSet) {\n          try {\n            cookiesToSet.forEach(({ name, value, options }) =>\n              cookieStore.set(name, value, options)\n            )\n          } catch {\n            // The `setAll` method was called from a Server Component.\n            // This can be ignored if you have middleware refreshing user sessions.\n          }\n        },\n      },\n    }\n  )\n\n  // Exchange the authorization code for a session\n  const { error: sessionError } = await supabase.auth.exchangeCodeForSession(code)\n\n  if (sessionError) {\n    // Log the error for debugging (server-side only)\n    // Note: Do not expose detailed error messages to the client for security\n    return NextResponse.redirect(\n      new URL('/login?error=Oturum olusturulamadi', requestUrl.origin)\n    )\n  }\n\n  // Successfully authenticated, redirect to the requested page or dashboard\n  return NextResponse.redirect(new URL(next, requestUrl.origin))\n}\n",
+        "last_modified": "2026-01-15T16:20:44.322014"
+      },
+      "task_intent": {
+        "title": "002-add-unit-test-coverage-for-dashboard-page-componen",
+        "description": "",
+        "from_plan": false
+      },
+      "commits_behind_main": 5,
+      "status": "active",
+      "merged_at": null
+    },
+    "028-add-mobile-navigation-menu-to-landing-page": {
+      "task_id": "028-add-mobile-navigation-menu-to-landing-page",
+      "branch_point": {
+        "commit_hash": "2b028be920d271c6e53b44319d1c871dc3d27076",
+        "content": "",
+        "timestamp": "2026-01-15T13:21:43.550879"
+      },
+      "worktree_state": {
+        "content": "import { createServerClient } from '@supabase/ssr'\nimport { cookies } from 'next/headers'\nimport { NextRequest, NextResponse } from 'next/server'\n\n/**\n * OAuth Callback Route Handler\n *\n * This route handles the callback from OAuth providers (Google, GitHub, etc.)\n * after the user has authenticated. It exchanges the authorization code for\n * a session and redirects the user appropriately.\n *\n * Flow:\n * 1. User clicks \"Login with Google\" (or other OAuth provider)\n * 2. User is redirected to provider's auth page\n * 3. Provider redirects back to this callback URL with a code\n * 4. This route exchanges the code for a session\n * 5. User is redirected to dashboard (or error page if something goes wrong)\n */\nexport async function GET(request: NextRequest) {\n  const requestUrl = new URL(request.url)\n  const code = requestUrl.searchParams.get('code')\n  const next = requestUrl.searchParams.get('next') ?? '/dashboard'\n  const error = requestUrl.searchParams.get('error')\n  const errorDescription = requestUrl.searchParams.get('error_description')\n\n  // Handle OAuth errors (e.g., user denied access)\n  if (error) {\n    const errorMessage = errorDescription || error\n    return NextResponse.redirect(\n      new URL(`/login?error=${encodeURIComponent(errorMessage)}`, requestUrl.origin)\n    )\n  }\n\n  // If no code is provided, redirect to login\n  if (!code) {\n    return NextResponse.redirect(\n      new URL('/login?error=Yetkilendirme kodu bulunamadi', requestUrl.origin)\n    )\n  }\n\n  // Create a Supabase client for this route\n  const cookieStore = await cookies()\n  const supabase = createServerClient(\n    process.env.NEXT_PUBLIC_SUPABASE_URL!,\n    process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!,\n    {\n      cookies: {\n        getAll() {\n          return cookieStore.getAll()\n        },\n        setAll(cookiesToSet) {\n          try {\n            cookiesToSet.forEach(({ name, value, options }) =>\n              cookieStore.set(name, value, options)\n            )\n          } catch {\n            // The `setAll` method was called from a Server Component.\n            // This can be ignored if you have middleware refreshing user sessions.\n          }\n        },\n      },\n    }\n  )\n\n  // Exchange the authorization code for a session\n  const { error: sessionError } = await supabase.auth.exchangeCodeForSession(code)\n\n  if (sessionError) {\n    // Log the error for debugging (server-side only)\n    // Note: Do not expose detailed error messages to the client for security\n    return NextResponse.redirect(\n      new URL('/login?error=Oturum olusturulamadi', requestUrl.origin)\n    )\n  }\n\n  // Successfully authenticated, redirect to the requested page or dashboard\n  return NextResponse.redirect(new URL(next, requestUrl.origin))\n}\n",
+        "last_modified": "2026-01-15T15:13:32.552270"
+      },
+      "task_intent": {
+        "title": "028-add-mobile-navigation-menu-to-landing-page",
+        "description": "",
+        "from_plan": false
+      },
+      "commits_behind_main": 5,
+      "status": "active",
+      "merged_at": null
+    },
+    "034-create-reusable-select-component-for-consistent-fo": {
+      "task_id": "034-create-reusable-select-component-for-consistent-fo",
+      "branch_point": {
+        "commit_hash": "2b028be920d271c6e53b44319d1c871dc3d27076",
+        "content": "",
+        "timestamp": "2026-01-15T14:05:37.956433"
+      },
+      "worktree_state": {
+        "content": "import { createServerClient } from '@supabase/ssr'\nimport { cookies } from 'next/headers'\nimport { NextRequest, NextResponse } from 'next/server'\n\n/**\n * OAuth Callback Route Handler\n *\n * This route handles the callback from OAuth providers (Google, GitHub, etc.)\n * after the user has authenticated. It exchanges the authorization code for\n * a session and redirects the user appropriately.\n *\n * Flow:\n * 1. User clicks \"Login with Google\" (or other OAuth provider)\n * 2. User is redirected to provider's auth page\n * 3. Provider redirects back to this callback URL with a code\n * 4. This route exchanges the code for a session\n * 5. User is redirected to dashboard (or error page if something goes wrong)\n */\nexport async function GET(request: NextRequest) {\n  const requestUrl = new URL(request.url)\n  const code = requestUrl.searchParams.get('code')\n  const next = requestUrl.searchParams.get('next') ?? '/dashboard'\n  const error = requestUrl.searchParams.get('error')\n  const errorDescription = requestUrl.searchParams.get('error_description')\n\n  // Handle OAuth errors (e.g., user denied access)\n  if (error) {\n    const errorMessage = errorDescription || error\n    return NextResponse.redirect(\n      new URL(`/login?error=${encodeURIComponent(errorMessage)}`, requestUrl.origin)\n    )\n  }\n\n  // If no code is provided, redirect to login\n  if (!code) {\n    return NextResponse.redirect(\n      new URL('/login?error=Yetkilendirme kodu bulunamadi', requestUrl.origin)\n    )\n  }\n\n  // Create a Supabase client for this route\n  const cookieStore = await cookies()\n  const supabase = createServerClient(\n    process.env.NEXT_PUBLIC_SUPABASE_URL!,\n    process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!,\n    {\n      cookies: {\n        getAll() {\n          return cookieStore.getAll()\n        },\n        setAll(cookiesToSet) {\n          try {\n            cookiesToSet.forEach(({ name, value, options }) =>\n              cookieStore.set(name, value, options)\n            )\n          } catch {\n            // The `setAll` method was called from a Server Component.\n            // This can be ignored if you have middleware refreshing user sessions.\n          }\n        },\n      },\n    }\n  )\n\n  // Exchange the authorization code for a session\n  const { error: sessionError } = await supabase.auth.exchangeCodeForSession(code)\n\n  if (sessionError) {\n    // Log the error for debugging (server-side only)\n    // Note: Do not expose detailed error messages to the client for security\n    return NextResponse.redirect(\n      new URL('/login?error=Oturum olusturulamadi', requestUrl.origin)\n    )\n  }\n\n  // Successfully authenticated, redirect to the requested page or dashboard\n  return NextResponse.redirect(new URL(next, requestUrl.origin))\n}\n",
+        "last_modified": "2026-01-15T14:05:43.802780"
+      },
+      "task_intent": {
+        "title": "034-create-reusable-select-component-for-consistent-fo",
+        "description": "",
+        "from_plan": false
+      },
+      "commits_behind_main": 5,
+      "status": "active",
+      "merged_at": null
+    },
+    "023-add-mobile-navigation-menu-to-landing-page": {
+      "task_id": "023-add-mobile-navigation-menu-to-landing-page",
+      "branch_point": {
+        "commit_hash": "c709a6c45b4887c1a0ad6e04c6142783760a46ec",
+        "content": "",
+        "timestamp": "2026-01-15T13:47:09.808921"
+      },
+      "worktree_state": {
+        "content": "import { createServerClient } from '@supabase/ssr'\nimport { cookies } from 'next/headers'\nimport { NextRequest, NextResponse } from 'next/server'\n\n/**\n * OAuth Callback Route Handler\n *\n * This route handles the callback from OAuth providers (Google, GitHub, etc.)\n * after the user has authenticated. It exchanges the authorization code for\n * a session and redirects the user appropriately.\n *\n * Flow:\n * 1. User clicks \"Login with Google\" (or other OAuth provider)\n * 2. User is redirected to provider's auth page\n * 3. Provider redirects back to this callback URL with a code\n * 4. This route exchanges the code for a session\n * 5. User is redirected to dashboard (or error page if something goes wrong)\n */\nexport async function GET(request: NextRequest) {\n  const requestUrl = new URL(request.url)\n  const code = requestUrl.searchParams.get('code')\n  const next = requestUrl.searchParams.get('next') ?? '/dashboard'\n  const error = requestUrl.searchParams.get('error')\n  const errorDescription = requestUrl.searchParams.get('error_description')\n\n  // Handle OAuth errors (e.g., user denied access)\n  if (error) {\n    const errorMessage = errorDescription || error\n    return NextResponse.redirect(\n      new URL(`/login?error=${encodeURIComponent(errorMessage)}`, requestUrl.origin)\n    )\n  }\n\n  // If no code is provided, redirect to login\n  if (!code) {\n    return NextResponse.redirect(\n      new URL('/login?error=Yetkilendirme kodu bulunamadi', requestUrl.origin)\n    )\n  }\n\n  // Create a Supabase client for this route\n  const cookieStore = await cookies()\n  const supabase = createServerClient(\n    process.env.NEXT_PUBLIC_SUPABASE_URL!,\n    process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!,\n    {\n      cookies: {\n        getAll() {\n          return cookieStore.getAll()\n        },\n        setAll(cookiesToSet) {\n          try {\n            cookiesToSet.forEach(({ name, value, options }) =>\n              cookieStore.set(name, value, options)\n            )\n          } catch {\n            // The `setAll` method was called from a Server Component.\n            // This can be ignored if you have middleware refreshing user sessions.\n          }\n        },\n      },\n    }\n  )\n\n  // Exchange the authorization code for a session\n  const { error: sessionError } = await supabase.auth.exchangeCodeForSession(code)\n\n  if (sessionError) {\n    // Log the error for debugging (server-side only)\n    // Note: Do not expose detailed error messages to the client for security\n    return NextResponse.redirect(\n      new URL('/login?error=Oturum olusturulamadi', requestUrl.origin)\n    )\n  }\n\n  // Successfully authenticated, redirect to the requested page or dashboard\n  return NextResponse.redirect(new URL(next, requestUrl.origin))\n}\n",
+        "last_modified": "2026-01-15T13:47:16.789174"
+      },
+      "task_intent": {
+        "title": "023-add-mobile-navigation-menu-to-landing-page",
+        "description": "",
+        "from_plan": false
+      },
+      "commits_behind_main": 0,
+      "status": "active",
+      "merged_at": null
+    },
+    "026-add-mobile-navigation-menu-to-landing-page": {
+      "task_id": "026-add-mobile-navigation-menu-to-landing-page",
+      "branch_point": {
+        "commit_hash": "2b028be920d271c6e53b44319d1c871dc3d27076",
+        "content": "",
+        "timestamp": "2026-01-15T14:15:55.210168"
+      },
+      "worktree_state": {
+        "content": "import { createServerClient } from '@supabase/ssr'\nimport { cookies } from 'next/headers'\nimport { NextRequest, NextResponse } from 'next/server'\n\n/**\n * OAuth Callback Route Handler\n *\n * This route handles the callback from OAuth providers (Google, GitHub, etc.)\n * after the user has authenticated. It exchanges the authorization code for\n * a session and redirects the user appropriately.\n *\n * Flow:\n * 1. User clicks \"Login with Google\" (or other OAuth provider)\n * 2. User is redirected to provider's auth page\n * 3. Provider redirects back to this callback URL with a code\n * 4. This route exchanges the code for a session\n * 5. User is redirected to dashboard (or error page if something goes wrong)\n */\nexport async function GET(request: NextRequest) {\n  const requestUrl = new URL(request.url)\n  const code = requestUrl.searchParams.get('code')\n  const next = requestUrl.searchParams.get('next') ?? '/dashboard'\n  const error = requestUrl.searchParams.get('error')\n  const errorDescription = requestUrl.searchParams.get('error_description')\n\n  // Handle OAuth errors (e.g., user denied access)\n  if (error) {\n    const errorMessage = errorDescription || error\n    return NextResponse.redirect(\n      new URL(`/login?error=${encodeURIComponent(errorMessage)}`, requestUrl.origin)\n    )\n  }\n\n  // If no code is provided, redirect to login\n  if (!code) {\n    return NextResponse.redirect(\n      new URL('/login?error=Yetkilendirme kodu bulunamadi', requestUrl.origin)\n    )\n  }\n\n  // Create a Supabase client for this route\n  const cookieStore = await cookies()\n  const supabase = createServerClient(\n    process.env.NEXT_PUBLIC_SUPABASE_URL!,\n    process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!,\n    {\n      cookies: {\n        getAll() {\n          return cookieStore.getAll()\n        },\n        setAll(cookiesToSet) {\n          try {\n            cookiesToSet.forEach(({ name, value, options }) =>\n              cookieStore.set(name, value, options)\n            )\n          } catch {\n            // The `setAll` method was called from a Server Component.\n            // This can be ignored if you have middleware refreshing user sessions.\n          }\n        },\n      },\n    }\n  )\n\n  // Exchange the authorization code for a session\n  const { error: sessionError } = await supabase.auth.exchangeCodeForSession(code)\n\n  if (sessionError) {\n    // Log the error for debugging (server-side only)\n    // Note: Do not expose detailed error messages to the client for security\n    return NextResponse.redirect(\n      new URL('/login?error=Oturum olusturulamadi', requestUrl.origin)\n    )\n  }\n\n  // Successfully authenticated, redirect to the requested page or dashboard\n  return NextResponse.redirect(new URL(next, requestUrl.origin))\n}\n",
+        "last_modified": "2026-01-15T14:16:01.041617"
+      },
+      "task_intent": {
+        "title": "026-add-mobile-navigation-menu-to-landing-page",
+        "description": "",
+        "from_plan": false
+      },
+      "commits_behind_main": 5,
+      "status": "active",
+      "merged_at": null
+    }
+  },
+  "created_at": "2026-01-14T09:55:05.373983",
+  "last_updated": "2026-01-15T14:15:58.135553"
+}

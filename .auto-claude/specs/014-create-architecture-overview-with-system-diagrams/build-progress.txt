@@ -1,0 +1,60 @@
+=== AUTO-BUILD PROGRESS ===
+
+Project: ozaMenu - Architecture Overview with System Diagrams
+Workspace: /Users/karaca/Desktop/ozon/.worktrees/014-create-architecture-overview-with-system-diagrams
+Started: 2026-01-15
+
+Workflow Type: simple
+Rationale: Documentation-only task with no code changes. Creating markdown files with Mermaid diagrams to document existing architecture. No service dependencies, no integration complexity.
+
+Session 1 (Planner):
+- Created project_index.json
+- Created context.json
+- Created implementation_plan.json
+- Phases: 1
+- Total subtasks: 6
+- No init.sh needed (documentation task)
+
+Phase Summary:
+- Phase 1: Create Architecture Documentation - 6 subtasks, no dependencies
+  * subtask-1-1: Create docs directory structure
+  * subtask-1-2: Create main ARCHITECTURE.md file
+  * subtask-1-3: Create system overview diagram
+  * subtask-1-4: Create authentication flow diagram
+  * subtask-1-5: Create menu publishing flow diagram
+  * subtask-1-6: Create waiter call realtime notification flow diagram
+
+Services Involved:
+- documentation: Create comprehensive architecture docs with Mermaid.js diagrams
+
+Parallelism Analysis:
+- Max parallel phases: 1
+- Recommended workers: 1
+- Parallel groups: None (sequential documentation tasks)
+
+Documentation Scope:
+This task creates architecture documentation with visualizations for:
+1. System Overview - High-level component architecture showing Next.js, Supabase services, and their interactions
+2. Auth Flow - User authentication, JWT tokens, RLS policies, multi-tenant data access
+3. Menu Publishing Flow - Product creation → immutable price ledger → SHA-256 snapshots → QR code generation
+4. Waiter Call Flow - Table QR context → realtime notifications via Supabase Realtime
+
+Key Architectural Components to Document:
+- Multi-tenant isolation via Row Level Security (RLS)
+- Immutable price ledger (INSERT-only, no UPDATE/DELETE)
+- Dynamic feature flags (database-driven packages: Lite, Pro, Premium)
+- Table-based QR codes with UUID context
+- Supabase Realtime for waiter notifications
+- SHA-256 menu snapshots for legal compliance
+- Two-layer authorization: RBAC + ABAC (roles + feature subscriptions)
+
+=== STARTUP COMMAND ===
+
+To continue building this spec, run:
+
+  source auto-claude/.venv/bin/activate && python auto-claude/run.py --spec 014 --parallel 1
+
+Example:
+  source auto-claude/.venv/bin/activate && python auto-claude/run.py --spec 014 --parallel 1
+
+=== END SESSION 1 ===

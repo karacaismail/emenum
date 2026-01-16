@@ -1,0 +1,81 @@
+=== AUTO-BUILD PROGRESS ===
+
+Project: ozaMenu - Getting Started Tutorial
+Workspace: 013-add-getting-started-tutorial-for-new-users
+Started: 2026-01-15
+
+Workflow Type: simple
+Rationale: Straightforward documentation task - creating a single tutorial file to help new restaurant owners understand the complete workflow from registration to QR code download. No code changes, single service (documentation), low complexity.
+
+Session 1 (Planner):
+- Created implementation_plan.json
+- Created project_index.json
+- Created context.json
+- Created init.sh
+- Phases: 1
+- Total subtasks: 2
+
+Phase Summary:
+- Phase 1 (Create Getting Started Tutorial): 2 subtasks, no dependencies
+  - Subtask 1-1: Create BASLANGIC_REHBERI.md with complete tutorial content
+  - Subtask 1-2: Update README.md to link to the new tutorial
+
+Services Involved:
+- documentation: Documentation repository with markdown files
+
+Parallelism Analysis:
+- Max parallel phases: 1
+- Recommended workers: 1
+- Parallel groups: None (sequential documentation task)
+
+Risk Assessment:
+- Risk level: trivial
+- Skip validation: true
+- Reasoning: Documentation-only change with no functional code modifications
+
+=== INVESTIGATION FINDINGS ===
+
+Project Structure:
+- Documentation-only repository with Turkish markdown files
+- Main README.md has 555 lines covering technical setup
+- Additional planning docs: gereksinimler.md, ek_ozellikler.md, temel.md
+- Target platform: Next.js 15.5 + TypeScript 5.7 + Supabase
+
+Gap Identified:
+- README.md contains comprehensive installation and technical setup instructions
+- Missing: Beginner-friendly tutorial for complete registration-to-QR-code workflow
+- Target audience: Non-technical restaurant owners
+- Required workflow steps:
+  1. Registration
+  2. Creating organization
+  3. Adding products with prices
+  4. Generating QR codes
+  5. Publishing menu
+
+Key Platform Features to Highlight:
+- Immutable price ledger (price history tracking for legal compliance)
+- Table-based QR codes (customer location awareness)
+- Legal compliance with Turkish Ministry of Trade regulations
+- Multi-tenant architecture (data isolation)
+- Dynamic package management (Lite, Pro, Premium packages)
+
+Documentation Patterns Observed:
+- Turkish language throughout
+- Emoji indicators for visual appeal
+- Tables for feature comparisons
+- Code blocks with syntax highlighting
+- Step-by-step instructions with bash commands
+- Badges for tech stack
+- Table of contents (Icindekiler)
+
+=== STARTUP COMMAND ===
+
+To continue building this spec, run:
+
+  cd /Users/karaca/Desktop/ozon/.worktrees/013-add-getting-started-tutorial-for-new-users
+
+Or from auto-claude directory:
+
+  source .venv/bin/activate && python run.py --spec 013 --parallel 1
+
+=== END SESSION 1 ===

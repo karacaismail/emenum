@@ -1,0 +1,95 @@
+=== AUTO-BUILD PROGRESS ===
+
+Project: ozaMenu - Dijital QR Menu ve Fiyat Defteri Platformu
+Workspace: 012-document-ui-components-with-props-and-usage-exampl
+Started: 2026-01-14
+
+Workflow Type: simple
+Rationale: Documentation-only task that involves creating markdown files to document existing UI components. No functional code changes are required, making this a simple workflow with sequential documentation subtasks.
+
+Session 1 (Planner):
+- Created implementation_plan.json
+- Phases: 1
+- Total subtasks: 4
+- Created init.sh
+- Created project_index.json
+- Created context.json
+
+Phase Summary:
+- Phase 1 (Component Documentation): 4 subtasks, no dependencies
+  - Subtask 1-1: Create DESIGN_TOKENS.md (color system, spacing, dark mode)
+  - Subtask 1-2: Create UI_COMPONENTS.md (Button, Card, Input, Modal)
+  - Subtask 1-3: Create COMPONENTS.md (Header, Sidebar, AuthProvider)
+  - Subtask 1-4: Update README.md with documentation links
+
+Services Involved:
+- frontend: Next.js 15.5, React 19, TypeScript 5.7, Tailwind CSS
+
+Components to Document:
+  UI Components (4):
+    - Button: 5 variants (primary, secondary, outline, ghost, danger), 3 sizes (sm, md, lg)
+    - Card: Main card with sub-components (CardHeader, CardFooter, CardContent)
+    - Input: Input and Textarea with label, error, helperText support
+    - Modal: Main Modal with ConfirmModal variant, portal rendering
+
+  Dashboard Components (2):
+    - Header: Mobile menu toggle, page title, actions slot
+    - Sidebar: Navigation component (needs investigation)
+
+  Provider Components (2):
+    - AuthProvider: Authentication context provider
+    - Providers: Root providers wrapper (needs investigation)
+
+Design System Tokens:
+  Colors:
+    - primary: primary-500/600/700/800
+    - secondary: secondary-100 through secondary-900
+    - red: red-400 through red-900 (errors, danger)
+    - yellow: yellow-600/700 (warnings)
+
+  Sizes:
+    - button: sm (px-3 py-1.5), md (px-4 py-2), lg (px-6 py-3)
+    - text: sm, base, lg
+
+  Features:
+    - Dark mode support throughout
+    - Responsive design
+    - Accessibility (ARIA labels, focus states)
+
+Documentation Pattern:
+- Follow existing docs/ROUTES.md format
+- Clear sections with TOC
+- Props tables
+- Usage examples
+- Accessibility notes
+
+Parallelism Analysis:
+- Max parallel phases: 1
+- Recommended workers: 1
+- Sequential execution required (documentation builds on previous docs)
+
+Verification Strategy:
+- Risk level: trivial
+- Skip validation: true (documentation-only)
+- No tests required
+- Manual verification of documentation completeness
+
+=== STARTUP COMMAND ===
+
+To continue building this spec, run:
+
+  source auto-claude/.venv/bin/activate && python auto-claude/run.py --spec 012-document-ui-components-with-props-and-usage-exampl --parallel 1
+
+Or with the spec number shorthand:
+
+  source auto-claude/.venv/bin/activate && python auto-claude/run.py --spec 012 --parallel 1
+
+=== NOTES ===
+
+- This is a documentation-only task (no functional code changes)
+- Component files exist in origin/main but not in this worktree
+- Reference components from origin/main using: git show origin/main:path/to/file
+- Documentation will be created in docs/ folder
+- README.md will be updated to link to new documentation
+
+=== END SESSION 1 ===

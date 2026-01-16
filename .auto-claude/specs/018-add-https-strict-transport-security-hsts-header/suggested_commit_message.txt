@@ -1,0 +1,3 @@
+chore(security): add HSTS header configuration
+
+Add Strict-Transport-Security header to next.config.ts to prevent protocol downgrade attacks and cookie hijacking. Include HSTS configuration documentation and update related security settings.

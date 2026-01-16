@@ -1,0 +1,35 @@
+{
+  "project_type": "single",
+  "services": {
+    "frontend": {
+      "path": ".",
+      "tech_stack": ["nextjs", "react", "typescript", "supabase", "tailwindcss"],
+      "port": 3000,
+      "dev_command": "npm run dev",
+      "build_command": "npm run build",
+      "test_command": "npm test",
+      "test_integration_command": "npm run test:integration",
+      "test_e2e_command": "npm run test:e2e"
+    }
+  },
+  "infrastructure": {
+    "docker": false,
+    "database": "supabase",
+    "database_client": "@supabase/ssr"
+  },
+  "conventions": {
+    "linter": "eslint",
+    "formatter": "prettier (implicit)",
+    "testing": "vitest",
+    "type_checking": "typescript",
+    "react_patterns": "hooks with useCallback/useMemo for optimization"
+  },
+  "key_directories": {
+    "components": "components/",
+    "providers": "components/providers/",
+    "lib": "lib/",
+    "types": "types/",
+    "app": "app/",
+    "tests": "tests/"
+  }
+}

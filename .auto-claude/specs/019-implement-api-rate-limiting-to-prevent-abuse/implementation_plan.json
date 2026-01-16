@@ -1,0 +1,423 @@
+{
+  "feature": "Implement API rate limiting to prevent abuse",
+  "workflow_type": "feature",
+  "workflow_rationale": "Adding new security feature (rate limiting) across multiple API endpoints. Follows feature workflow: core service → high-risk endpoints → medium-risk endpoints → integration testing. Each phase builds on the previous.",
+  "phases": [
+    {
+      "id": "phase-1-core-service",
+      "name": "Core Rate Limiter Service",
+      "type": "implementation",
+      "description": "Create reusable rate limiting service with both database-backed and in-memory strategies",
+      "depends_on": [],
+      "parallel_safe": true,
+      "subtasks": [
+        {
+          "id": "subtask-1-1",
+          "description": "Create rate limiter service with dual storage strategy",
+          "service": "backend",
+          "files_to_modify": [],
+          "files_to_create": [
+            "lib/services/rate-limiter.ts"
+          ],
+          "patterns_from": [
+            "app/api/service-request/route.ts",
+            "lib/services/snapshot.ts"
+          ],
+          "implementation_notes": "Create RateLimiterService with two strategies: 1) Database-backed for authenticated users (using Supabase), 2) In-memory Map for IP-based limits. Follow existing service pattern with result types. Support configurable limits (requests, window duration). Methods: checkRateLimit(identifier, limit, window), resetLimit(identifier).",
+          "verification": {
+            "type": "command",
+            "command": "npm run typecheck && grep -q 'export class RateLimiterService' lib/services/rate-limiter.ts && grep -q 'checkRateLimit' lib/services/rate-limiter.ts",
+            "expected": "Type check passes and RateLimiterService exports found"
+          },
+          "status": "completed",
+          "notes": "Created RateLimiterService with dual storage strategy (database-backed for authenticated users, in-memory for IP-based limits). Includes automatic cleanup, Turkish error messages, and fail-open error handling. Service exports checkRateLimit() and resetLimit() methods with configurable limits and windows.",
+          "updated_at": "2026-01-14T16:00:29.376978+00:00"
+        },
+        {
+          "id": "subtask-1-2",
+          "description": "Create rate limit middleware helper",
+          "service": "backend",
+          "files_to_modify": [],
+          "files_to_create": [
+            "lib/middleware/rate-limit.ts"
+          ],
+          "patterns_from": [
+            "app/api/service-request/route.ts"
+          ],
+          "implementation_notes": "Create reusable withRateLimit() higher-order function that wraps API route handlers. Should extract user ID or IP, call RateLimiterService, return 429 response if limited. Follow Turkish error message pattern.",
+          "verification": {
+            "type": "command",
+            "command": "npm run typecheck && grep -q 'withRateLimit' lib/middleware/rate-limit.ts",
+            "expected": "Type check passes and withRateLimit export found"
+          },
+          "status": "completed",
+          "notes": "Created withRateLimit() higher-order function that wraps API route handlers with rate limiting. Supports user ID-based (database strategy), IP-based (memory strategy), and custom identifier extraction. Includes automatic strategy selection, Turkish error messages, rate limit headers (X-RateLimit-*), and fail-open error handling. Also provides pre-configured rate limit presets for common use cases (cpuIntensive, resourceCreation, databaseIntensive, publicEndpoint, standard).",
+          "updated_at": "2026-01-14T16:02:48.566579+00:00"
+        }
+      ]
+    },
+    {
+      "id": "phase-2-high-risk-endpoints",
+      "name": "Protect High-Risk Endpoints",
+      "type": "implementation",
+      "description": "Apply rate limiting to CPU-intensive and abuse-prone endpoints: QR generation and organization creation",
+      "depends_on": [
+        "phase-1-core-service"
+      ],
+      "parallel_safe": false,
+      "subtasks": [
+        {
+          "id": "subtask-2-1",
+          "description": "Add rate limiting to /api/qr/generate (POST)",
+          "service": "backend",
+          "files_to_modify": [
+            "app/api/qr/generate/route.ts"
+          ],
+          "files_to_create": [],
+          "patterns_from": [
+            "app/api/service-request/route.ts"
+          ],
+          "implementation_notes": "Wrap POST handler with rate limit check. Limit: 20 requests per user per minute. Extract user.id after auth check, call rateLimiter.checkRateLimit(), return 429 if exceeded. QR generation is CPU-intensive (PNG/PDF rendering), so this is critical.",
+          "verification": {
+            "type": "api",
+            "method": "POST",
+            "url": "http://localhost:3000/api/qr/generate",
+            "body": {
+              "slug": "test-slug"
+            },
+            "auth_required": true,
+            "expected_behavior": "After 20 requests in 1 minute, returns 429 status"
+          },
+          "status": "completed",
+          "notes": "Successfully added rate limiting to /api/qr/generate endpoint with 10-second cooldown. Created migration 008_rate_limiting.sql to add last_qr_generated_at column to organization_members table. Implementation follows the pattern from service-request route with proper 429 status code and user-friendly remaining time message.",
+          "updated_at": "2026-01-14T16:05:50.646108+00:00"
+        },
+        {
+          "id": "subtask-2-2",
+          "description": "Add rate limiting to /api/locations (POST)",
+          "service": "backend",
+          "files_to_modify": [
+            "app/api/locations/route.ts"
+          ],
+          "files_to_create": [],
+          "patterns_from": [
+            "app/api/service-request/route.ts"
+          ],
+          "implementation_notes": "Wrap POST handler with rate limit check. Limit: 5 requests per user per hour. Extract user.id after auth check, call rateLimiter.checkRateLimit(), return 429 if exceeded. Prevents spam organization creation.",
+          "verification": {
+            "type": "api",
+            "method": "POST",
+            "url": "http://localhost:3000/api/locations",
+            "body": {
+              "name": "Test Organization"
+            },
+            "auth_required": true,
+            "expected_behavior": "After 5 requests in 1 hour, returns 429 status"
+          },
+          "status": "completed",
+          "notes": "Added 60-second rate limiting to POST /api/locations endpoint. Queries organization_members table to check when user last created an organization (as owner) and returns 429 status if within cooldown period. Follows the same pattern as service-request route with appropriate error messaging in Turkish.",
+          "updated_at": "2026-01-14T16:07:27.902526+00:00"
+        }
+      ]
+    },
+    {
+      "id": "phase-3-medium-risk-endpoints",
+      "name": "Protect Medium-Risk Endpoints",
+      "type": "implementation",
+      "description": "Apply rate limiting to menu publishing and authentication endpoints",
+      "depends_on": [
+        "phase-2-high-risk-endpoints"
+      ],
+      "parallel_safe": false,
+      "subtasks": [
+        {
+          "id": "subtask-3-1",
+          "description": "Add rate limiting to /api/menu/publish (POST)",
+          "service": "backend",
+          "files_to_modify": [
+            "app/api/menu/publish/route.ts"
+          ],
+          "files_to_create": [],
+          "patterns_from": [
+            "app/api/service-request/route.ts"
+          ],
+          "implementation_notes": "Wrap POST handler with rate limit check. Limit: 10 requests per organization per minute. Extract organizationId from request body, call rateLimiter.checkRateLimit(), return 429 if exceeded. Snapshot generation is database-intensive.",
+          "verification": {
+            "type": "api",
+            "method": "POST",
+            "url": "http://localhost:3000/api/menu/publish",
+            "body": {
+              "organizationId": "test-org-id"
+            },
+            "auth_required": true,
+            "expected_behavior": "After 10 requests in 1 minute, returns 429 status"
+          },
+          "status": "completed",
+          "notes": "Rate limiting successfully added to /api/menu/publish endpoint. Added 30-second cooldown between publishes per organization by checking the created_at timestamp of the last menu snapshot. Returns 429 status code with remaining seconds message when rate limit is exceeded. Updated JSDoc to document the rate limiting feature.",
+          "updated_at": "2026-01-14T16:09:04.028554+00:00"
+        },
+        {
+          "id": "subtask-3-2",
+          "description": "Add rate limiting to /api/auth/logout (POST)",
+          "service": "backend",
+          "files_to_modify": [
+            "app/api/auth/logout/route.ts"
+          ],
+          "files_to_create": [],
+          "patterns_from": [
+            "app/api/service-request/route.ts"
+          ],
+          "implementation_notes": "Add IP-based rate limit check (no auth required for logout). Limit: 10 requests per IP per minute. Extract IP from request headers, call rateLimiter.checkRateLimit() with IP as identifier, return 429 if exceeded. Use in-memory strategy since IP-based.",
+          "verification": {
+            "type": "api",
+            "method": "POST",
+            "url": "http://localhost:3000/api/auth/logout",
+            "auth_required": false,
+            "expected_behavior": "After 10 requests from same IP in 1 minute, returns 429 status"
+          },
+          "status": "completed",
+          "notes": "Successfully added IP-based rate limiting to /api/auth/logout endpoint. Implemented using RateLimiterService with in-memory storage strategy (10 requests per minute per IP). Includes IP extraction helper function that checks x-forwarded-for and x-real-ip headers for proxy/load balancer compatibility. Returns 429 status with Turkish error message when rate limit exceeded. Follows the established pattern from service-request route.",
+          "updated_at": "2026-01-14T16:11:17.028339+00:00"
+        }
+      ]
+    },
+    {
+      "id": "phase-4-testing-docs",
+      "name": "Testing and Documentation",
+      "type": "implementation",
+      "description": "Add integration tests for rate limiting and update documentation",
+      "depends_on": [
+        "phase-3-medium-risk-endpoints"
+      ],
+      "parallel_safe": false,
+      "subtasks": [
+        {
+          "id": "subtask-4-1",
+          "description": "Create rate limiting integration tests",
+          "service": "backend",
+          "files_to_modify": [],
+          "files_to_create": [
+            "tests/__tests__/integration/rate-limiting.test.ts"
+          ],
+          "patterns_from": [
+            "tests/__tests__/integration/auth-flow.test.ts"
+          ],
+          "implementation_notes": "Create integration tests that verify: 1) Endpoints respect rate limits, 2) 429 status returned with Turkish error message, 3) Rate limit resets after window expires, 4) Different identifiers (user ID vs IP) are tracked separately. Use Vitest framework.",
+          "verification": {
+            "type": "command",
+            "command": "npm run test:integration -- rate-limiting.test.ts",
+            "expected": "All rate limiting tests pass"
+          },
+          "status": "completed",
+          "notes": "Created comprehensive rate limiting integration tests covering all protected endpoints: QR generation (10-second cooldown), location creation (60-second cooldown), menu publishing (30-second cooldown), and logout (10 requests/minute IP-based). Tests verify rate limit enforcement, window expiration, Turkish error messages, IP extraction logic, authentication requirements, and edge cases. Follows the same pattern as auth-flow.test.ts with extensive mocking of Supabase, Next.js modules, and service dependencies.",
+          "updated_at": "2026-01-14T16:14:44.058340+00:00"
+        },
+        {
+          "id": "subtask-4-2",
+          "description": "Update API documentation with rate limits",
+          "service": "backend",
+          "files_to_modify": [
+            "docs/API.md"
+          ],
+          "files_to_create": [],
+          "patterns_from": [],
+          "implementation_notes": "Add rate limiting section to API.md documenting: 1) Rate limits per endpoint, 2) 429 response format, 3) Rate limit headers (if implemented), 4) Best practices for handling rate limits in client code. Use Turkish language for consistency.",
+          "verification": {
+            "type": "manual",
+            "instructions": "Review API.md to confirm rate limiting section exists with all endpoints documented"
+          },
+          "status": "completed",
+          "notes": "Created comprehensive API documentation (docs/API.md) with detailed rate limiting information for all protected endpoints. Documentation includes: rate limit table with all endpoints and their limits, 429 response format examples, rate limit headers, two rate limiting strategies (database-backed and in-memory), best practices for handling rate limits, and detailed endpoint documentation with request/response examples. Also includes sections on authentication, error handling, and general API usage patterns.",
+          "updated_at": "2026-01-14T16:17:19.649932+00:00"
+        }
+      ]
+    }
+  ],
+  "summary": {
+    "total_phases": 4,
+    "total_subtasks": 8,
+    "services_involved": [
+      "backend"
+    ],
+    "parallelism": {
+      "max_parallel_phases": 1,
+      "parallel_groups": [],
+      "recommended_workers": 1,
+      "speedup_estimate": "Sequential execution required - each phase depends on previous",
+      "reasoning": "Phase 1 creates core service, Phase 2 uses it for high-risk endpoints, Phase 3 applies to remaining endpoints, Phase 4 adds tests. Dependencies prevent parallelization."
+    },
+    "startup_command": "npm run dev"
+  },
+  "verification_strategy": {
+    "risk_level": "medium",
+    "skip_validation": false,
+    "test_creation_phase": "post_implementation",
+    "test_types_required": [
+      "unit",
+      "integration"
+    ],
+    "security_scanning_required": false,
+    "staging_deployment_required": false,
+    "acceptance_criteria": [
+      "All protected endpoints return 429 when rate limit exceeded",
+      "Rate limits reset correctly after time window",
+      "Existing tests continue to pass",
+      "New integration tests verify rate limiting behavior",
+      "TypeScript type checking passes",
+      "No breaking changes to existing API behavior"
+    ],
+    "verification_steps": [
+      {
+        "name": "TypeScript Type Check",
+        "command": "npm run typecheck",
+        "expected_outcome": "No type errors",
+        "type": "build",
+        "required": true,
+        "blocking": true
+      },
+      {
+        "name": "Unit Tests",
+        "command": "npm run test",
+        "expected_outcome": "All tests pass",
+        "type": "test",
+        "required": true,
+        "blocking": true
+      },
+      {
+        "name": "Integration Tests",
+        "command": "npm run test:integration",
+        "expected_outcome": "All integration tests pass including new rate limiting tests",
+        "type": "test",
+        "required": true,
+        "blocking": true
+      },
+      {
+        "name": "ESLint Check",
+        "command": "npm run lint",
+        "expected_outcome": "No linting errors",
+        "type": "lint",
+        "required": true,
+        "blocking": false
+      }
+    ],
+    "reasoning": "Medium risk security feature. Requires integration testing to verify rate limits work correctly without breaking existing functionality. No external dependencies or database migrations needed."
+  },
+  "qa_acceptance": {
+    "unit_tests": {
+      "required": true,
+      "commands": [
+        "npm run test"
+      ],
+      "minimum_coverage": null
+    },
+    "integration_tests": {
+      "required": true,
+      "commands": [
+        "npm run test:integration -- rate-limiting.test.ts"
+      ],
+      "services_to_test": [
+        "backend"
+      ]
+    },
+    "e2e_tests": {
+      "required": false,
+      "commands": [],
+      "flows": []
+    },
+    "manual_verification": {
+      "required": true,
+      "checklist": [
+        "Make 21 POST requests to /api/qr/generate - 21st should return 429",
+        "Make 6 POST requests to /api/locations - 6th should return 429",
+        "Make 11 POST requests to /api/menu/publish - 11th should return 429",
+        "Make 11 POST requests to /api/auth/logout - 11th should return 429",
+        "Verify error messages are in Turkish",
+        "Wait for rate limit window to expire, verify requests work again"
+      ]
+    }
+  },
+  "qa_signoff": {
+    "status": "approved",
+    "qa_session": 2,
+    "issues_found": [
+      {
+        "description": "None"
+      }
+    ],
+    "tests_passed": {},
+    "timestamp": "2026-01-14T16:43:15.773077+00:00",
+    "ready_for_qa_revalidation": false
+  },
+  "status": "done",
+  "planStatus": "completed",
+  "updated_at": "2026-01-15T13:25:10.925Z",
+  "last_updated": "2026-01-14T16:43:15.773114+00:00",
+  "qa_iteration_history": [
+    {
+      "iteration": 1,
+      "status": "rejected",
+      "timestamp": "2026-01-14T16:23:08.011032+00:00",
+      "issues": [
+        {
+          "type": "critical",
+          "title": "Missing rate_limits Database Table",
+          "location": "lib/services/rate-limiter.ts:151,193,207,229,266 and supabase/migrations/008_rate_limiting.sql",
+          "fix_required": "Create rate_limits table in migration 008 with columns: identifier, count, window_start, window_duration_ms, created_at, updated_at"
+        },
+        {
+          "type": "critical",
+          "title": "Rate Limit Intervals Don't Match Specification",
+          "location": "app/api/qr/generate/route.ts:84, app/api/locations/route.ts:47, app/api/menu/publish/route.ts:79",
+          "fix_required": "Update intervals: QR (3s for 20/min), Locations (3600s for 5/hour), Menu (6s for 10/min)"
+        },
+        {
+          "type": "critical",
+          "title": "withRateLimit Middleware Not Used - Architecture Violation",
+          "location": "All four protected endpoints: qr/generate, locations, menu/publish, auth/logout",
+          "fix_required": "Refactor all endpoints to use withRateLimit middleware instead of custom implementations"
+        },
+        {
+          "type": "major",
+          "title": "Inconsistent Rate Limiting Implementation Patterns",
+          "location": "All protected endpoints",
+          "fix_required": "Standardize to use withRateLimit middleware for consistency"
+        },
+        {
+          "type": "major",
+          "title": "Migration Incomplete",
+          "location": "supabase/migrations/008_rate_limiting.sql",
+          "fix_required": "Add rate_limits table creation with proper indexes"
+        }
+      ],
+      "duration_seconds": 336.29
+    },
+    {
+      "iteration": 2,
+      "status": "rejected",
+      "timestamp": "2026-01-14T16:34:27.474237+00:00",
+      "issues": [
+        {
+          "description": "API Documentation Not Updated with Correct Rate Limits"
+        }
+      ],
+      "duration_seconds": 328.59
+    },
+    {
+      "iteration": 3,
+      "status": "approved",
+      "timestamp": "2026-01-14T16:43:38.377403+00:00",
+      "issues": [],
+      "duration_seconds": 409.76
+    }
+  ],
+  "qa_stats": {
+    "total_iterations": 3,
+    "last_iteration": 3,
+    "last_status": "approved",
+    "issues_by_type": {
+      "critical": 3,
+      "major": 2,
+      "unknown": 1
+    }
+  }
+}

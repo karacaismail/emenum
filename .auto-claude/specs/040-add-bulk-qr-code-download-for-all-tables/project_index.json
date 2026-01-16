@@ -1,0 +1,32 @@
+{
+  "project_type": "single",
+  "services": {
+    "frontend": {
+      "path": ".",
+      "tech_stack": ["next.js", "react", "typescript", "tailwindcss"],
+      "port": 3000,
+      "dev_command": "npm run dev",
+      "build_command": "npm run build",
+      "test_command": "npm run test"
+    }
+  },
+  "infrastructure": {
+    "docker": false,
+    "database": "supabase-postgresql",
+    "hosting": "vercel"
+  },
+  "conventions": {
+    "linter": "eslint",
+    "formatter": "next lint",
+    "testing": "vitest",
+    "component_pattern": "client components with 'use client' directive",
+    "state_management": "react hooks (useState, useCallback, useEffect)",
+    "styling": "tailwindcss utility classes"
+  },
+  "dependencies": {
+    "qrcode": "^1.5.4",
+    "@supabase/supabase-js": "^2.90.1",
+    "next": "^15.5.9",
+    "react": "^19.0.0"
+  }
+}

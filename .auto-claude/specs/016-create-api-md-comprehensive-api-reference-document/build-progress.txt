@@ -1,0 +1,123 @@
+=== AUTO-BUILD PROGRESS ===
+
+Project: ozaMenu - API Reference Documentation
+Workspace: 016-create-api-md-comprehensive-api-reference-document
+Started: 2026-01-15
+
+Workflow Type: simple
+Rationale: This is a single-service documentation task. No code changes, no multi-service coordination needed. Just creating a single API.md file with comprehensive endpoint documentation for the ozaMenu QR Menu platform.
+
+Session 1 (Planner):
+- Created project_index.json
+- Created context.json
+- Created implementation_plan.json
+- Created init.sh
+- Phases: 1
+- Total subtasks: 7
+
+Phase Summary:
+- Phase 1 (API Documentation): 7 subtasks, no dependencies
+  1. Create API.md structure with overview and authentication
+  2. Document auth/logout endpoint
+  3. Document locations endpoint (CRUD operations)
+  4. Document qr/generate endpoint
+  5. Document menu/publish and menu/snapshot endpoints
+  6. Document service-request endpoint (public)
+  7. Add common patterns, error codes, and changelog
+
+Services Involved:
+- documentation: Create comprehensive API reference for 6 endpoint categories
+
+Platform Context:
+- Next.js 15.5 with TypeScript 5.7
+- Supabase backend (PostgreSQL + Auth + Realtime)
+- Multi-tenant architecture with RLS
+- Immutable price ledger (INSERT-only pattern)
+- SHA-256 menu snapshots for audit trail
+- UUID-based table identifiers for security
+
+Endpoints to Document:
+1. Authentication:
+   - POST /api/auth/logout
+
+2. Location Management:
+   - GET /api/locations (list)
+   - POST /api/locations (create)
+   - PATCH /api/locations/:id (update)
+   - DELETE /api/locations/:id (delete)
+
+3. QR Code Generation:
+   - POST /api/qr/generate
+
+4. Menu Management:
+   - POST /api/menu/publish
+   - POST /api/menu/snapshot
+
+5. Waiter Service:
+   - POST /api/service-request (PUBLIC endpoint)
+
+Key Documentation Requirements:
+- Each endpoint needs: method, path, auth, request/response schemas, examples
+- Security considerations: RLS, UUID table_id, multi-tenant isolation
+- Public endpoint special handling (service-request)
+- Immutable price ledger pattern
+- SHA-256 snapshot mechanism
+- Realtime notification behavior
+- Error codes reference table
+- Rate limiting policy
+
+Parallelism Analysis:
+- Max parallel phases: 1
+- Recommended workers: 1
+- Parallel groups: None (sequential documentation task)
+- Speedup estimate: N/A (single-phase task)
+
+Verification Strategy:
+- Risk level: low
+- No code testing required (documentation only)
+- Verification: File existence, markdown syntax, content completeness
+- Manual review for accuracy and completeness
+
+=== STARTUP COMMAND ===
+
+To continue building this spec, run:
+
+  source auto-claude/.venv/bin/activate && python auto-claude/run.py --spec 016 --parallel 1
+
+Example:
+  source auto-claude/.venv/bin/activate && python auto-claude/run.py --spec 016 --parallel 1
+
+=== IMPLEMENTATION NOTES ===
+
+This is a documentation-only task. The coder agent should:
+
+1. Reference README.md for project context and architecture patterns
+2. Reference ek_ozellikler.md for security considerations (RLS, UUID table_id)
+3. Create API.md following the same documentation style as existing docs
+4. Use clear sections with tables and code examples
+5. Mix Turkish and English appropriately (technical terms in English)
+6. Include cURL examples for each endpoint
+7. Emphasize security features (RLS, multi-tenant isolation)
+8. Document the immutable price ledger pattern clearly
+9. Mark service-request as PUBLIC endpoint prominently
+
+No actual API route code exists in this worktree - this is a documentation repository.
+The API.md will serve as the single source of truth for API contracts.
+
+=== END SESSION 1 ===
+
+[2024-01-15 14:33] subtask-1-1 COMPLETED
+- Created API.md with comprehensive structure
+- Included: Document header with badges, overview section, base URL configuration
+- Documented: Supabase Authentication flow, JWT token usage, refresh patterns
+- Added: Authorization and RLS section with multi-tenant isolation details
+- Implemented: RBAC role definitions (Owner, Admin, Manager, Waiter, Viewer)
+- Created: Common response format standards (success, paginated, error, validation)
+- Added: Complete error code reference table with HTTP status codes
+- Included: Custom error codes (UNAUTHORIZED, RLS_POLICY_VIOLATION, etc.)
+- Documented: Rate limiting policy with per-endpoint limits
+- Added: Versioning strategy and changelog section
+- Verification: File exists check passed (test -f API.md = OK)
+- Git commit: f5b0b51 "auto-claude: subtask-1-1 - Create API.md file structure with overview and aut"
+- File stats: 546 lines of comprehensive documentation
+- Pattern compliance: Followed README.md and ek_ozellikler.md style (Turkish headers, technical English)

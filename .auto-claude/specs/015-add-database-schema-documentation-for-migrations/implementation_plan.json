@@ -1,0 +1,294 @@
+{
+  "feature": "Add Database Schema Documentation for Migrations",
+  "workflow_type": "simple",
+  "workflow_rationale": "This is a documentation-only task that doesn't require multi-phase implementation or service coordination. The task involves creating comprehensive documentation for existing database migration files.",
+  "phases": [
+    {
+      "id": "phase-1-documentation",
+      "name": "Database Schema Documentation",
+      "type": "implementation",
+      "description": "Create comprehensive DATABASE.md file documenting all migrations, schema design, and critical patterns",
+      "depends_on": [],
+      "parallel_safe": true,
+      "subtasks": [
+        {
+          "id": "subtask-1-1",
+          "description": "Create DATABASE.md with overview and table of contents",
+          "service": "database",
+          "files_to_create": [
+            "supabase/DATABASE.md"
+          ],
+          "files_to_modify": [],
+          "patterns_from": [
+            "README.md"
+          ],
+          "verification": {
+            "type": "manual",
+            "instructions": "Verify DATABASE.md exists and has proper table of contents structure"
+          },
+          "status": "completed"
+        },
+        {
+          "id": "subtask-1-2",
+          "description": "Document core tables migration (001_core_tables.sql)",
+          "service": "database",
+          "files_to_modify": [
+            "supabase/DATABASE.md"
+          ],
+          "files_to_create": [],
+          "patterns_from": [
+            "README.md"
+          ],
+          "verification": {
+            "type": "manual",
+            "instructions": "Verify documentation includes organizations, organization_members, and categories tables with their columns, constraints, and relationships"
+          },
+          "status": "completed",
+          "notes": "Document: organizations table (id, name, slug, settings), organization_members table (user_id, organization_id, role), categories table structure"
+        },
+        {
+          "id": "subtask-1-3",
+          "description": "Document price_ledger immutability pattern (002_products_price_ledger.sql)",
+          "service": "database",
+          "files_to_modify": [
+            "supabase/DATABASE.md"
+          ],
+          "files_to_create": [],
+          "patterns_from": [
+            "README.md"
+          ],
+          "verification": {
+            "type": "manual",
+            "instructions": "Verify documentation explains: (1) Why UPDATE/DELETE are blocked, (2) INSERT-only pattern, (3) Turkish Trade Ministry compliance requirement, (4) How price history is preserved"
+          },
+          "status": "completed",
+          "notes": "Documented price_ledger immutability pattern in DATABASE.md. Included: (1) trigger code preventing UPDATE/DELETE, (2) INSERT-only pattern with examples, (3) Turkish Trade Ministry compliance requirements with specific regulations, (4) price history preservation queries, (5) RLS policies, (6) anti-patterns and best practices. Documentation follows the established pattern from section 001.",
+          "updated_at": "2026-01-15T11:51:30.898196+00:00"
+        },
+        {
+          "id": "subtask-1-4",
+          "description": "Document package management system (003_package_management.sql)",
+          "service": "database",
+          "files_to_modify": [
+            "supabase/DATABASE.md"
+          ],
+          "files_to_create": [],
+          "patterns_from": [
+            "README.md"
+          ],
+          "verification": {
+            "type": "manual",
+            "instructions": "Verify documentation explains: features table, plans table, subscriptions table, feature_overrides table, and their relationships"
+          },
+          "status": "completed",
+          "notes": "Documented package management system in DATABASE.md. Included comprehensive documentation for: (1) features table - platform features catalog with key, name, category, and metadata, (2) plans table - subscription plans (lite, professional, premium) with pricing and feature lists, (3) subscriptions table - organization subscriptions with status lifecycle (trial, active, expired, cancelled, suspended), (4) feature_overrides table - custom permissions for special cases with expiration and audit trail. Documentation includes table structures, important notes, example SQL queries, relationship diagrams, RLS policy strategy, common queries for feature access control, and anti-patterns. Follows the established pattern from sections 001 and 002.",
+          "updated_at": "2026-01-15T11:55:29.262827+00:00"
+        },
+        {
+          "id": "subtask-1-5",
+          "description": "Document tables and service requests (004_tables_service_requests.sql)",
+          "service": "database",
+          "files_to_modify": [
+            "supabase/DATABASE.md"
+          ],
+          "files_to_create": [],
+          "patterns_from": [
+            "README.md"
+          ],
+          "verification": {
+            "type": "manual",
+            "instructions": "Verify documentation explains: tables table (for QR codes per table), service_requests table, and the waiter notification system"
+          },
+          "status": "completed",
+          "notes": "Successfully documented tables and service_requests tables in DATABASE.md. Included comprehensive documentation for QR code system, waiter notification system, request types, status workflow, Realtime integration, package limits, RLS policies, and anti-pattern warnings. Followed established documentation patterns from previous sections.",
+          "updated_at": "2026-01-15T11:58:56.121105+00:00"
+        },
+        {
+          "id": "subtask-1-6",
+          "description": "Document audit and compliance system (005_audit_compliance.sql)",
+          "service": "database",
+          "files_to_modify": [
+            "supabase/DATABASE.md"
+          ],
+          "files_to_create": [],
+          "patterns_from": [
+            "README.md"
+          ],
+          "verification": {
+            "type": "manual",
+            "instructions": "Verify documentation explains: menu_snapshots table with SHA-256 hash, audit_logs table, and compliance purpose"
+          },
+          "status": "completed",
+          "notes": "Successfully documented audit and compliance system in DATABASE.md. Included comprehensive documentation for: (1) menu_snapshots table - captures menu state with SHA-256 hash for cryptographic verification, JSONB snapshot data structure, automatic trigger creation, hash verification queries, and compliance usage examples, (2) audit_logs table - immutable audit trail with INSERT-only pattern, standardized action types, automatic trigger-based logging, query examples for security analysis and compliance reporting. Documentation includes table structures, relationship diagrams, RLS policy strategy, anti-patterns, and important reminders. Follows the established pattern from sections 001-005.",
+          "updated_at": "2026-01-15T12:02:50.960262+00:00"
+        },
+        {
+          "id": "subtask-1-7",
+          "description": "Document database views (006_views.sql)",
+          "service": "database",
+          "files_to_modify": [
+            "supabase/DATABASE.md"
+          ],
+          "files_to_create": [],
+          "patterns_from": [
+            "README.md"
+          ],
+          "verification": {
+            "type": "manual",
+            "instructions": "Verify documentation explains: current_prices view (how it gets latest price from ledger), and any other views with their purpose"
+          },
+          "status": "completed",
+          "notes": "Successfully documented database views in DATABASE.md. Included comprehensive documentation for: (1) current_prices VIEW - uses DISTINCT ON and ORDER BY to extract the latest price from immutable price_ledger for each product, (2) VIEW structure with all columns (product_id, price, effective_from, created_at, created_by, change_reason, previous_price), (3) SQL definition showing DISTINCT ON (product_id) and ORDER BY product_id, effective_from DESC pattern, (4) detailed explanation of how it works (4 steps), (5) reasons why this VIEW is needed (performance, simplicity, consistency, immutability preservation), (6) extensive usage examples (SQL and TypeScript/Supabase integration), (7) important notes about RLS, real-time updates, performance indexes, and historical price queries, (8) VIEW update instructions, (9) anti-patterns and correct patterns, (10) future views that could be added (active_subscriptions, organization_features, pending_service_requests, table_status_summary). Documentation follows the established pattern from sections 001-005.",
+          "updated_at": "2026-01-15T12:05:30.000000+00:00"
+        },
+        {
+          "id": "subtask-1-8",
+          "description": "Document RLS policies (007_rls_policies.sql)",
+          "service": "database",
+          "files_to_modify": [
+            "supabase/DATABASE.md"
+          ],
+          "files_to_create": [],
+          "patterns_from": [
+            "README.md"
+          ],
+          "verification": {
+            "type": "manual",
+            "instructions": "Verify documentation explains: RLS policy for each table, multi-tenant isolation strategy, how organization_members table is used in policies"
+          },
+          "status": "completed",
+          "notes": "Successfully documented RLS policies in DATABASE.md. Included comprehensive documentation for: (1) What RLS is and why it's critical for multi-tenant isolation - explaining how RLS works at database level to prevent cross-tenant data access, (2) Multi-tenant isolation strategy - explaining the 4-step flow from authentication to automatic filtering through organization_members table, (3) Two helper functions (auth.is_org_member and auth.user_org_ids) with SQL definitions, usage examples, and performance notes, (4) All 10 RLS policies documented individually with SQL code, explanations, TypeScript examples, and special notes (organizations, organization_members, categories, products, price_ledger, restaurant_tables, service_requests, menu_snapshots, audit_logs, subscriptions), (5) How organization_members table is used as the isolation boundary in all policies - explaining the role-based access control foundation, (6) Testing strategies with 3 concrete test scenarios (tenant isolation, authorization control, price_ledger immutability+RLS), (7) Anti-patterns section with 3 common mistakes and correct approaches (client-side filtering, service role misuse, helper function misuse), (8) Important reminders about RLS best practices, (9) Table summary showing RLS status and policy types for all tables, (10) External documentation links. Documentation includes 688 lines, follows established patterns from previous sections, uses Turkish language throughout, and covers all verification requirements.",
+          "updated_at": "2026-01-15T12:06:50.000000+00:00"
+        },
+        {
+          "id": "subtask-1-9",
+          "description": "Document auto-snapshot trigger (010_auto_snapshot_trigger.sql)",
+          "service": "database",
+          "files_to_modify": [
+            "supabase/DATABASE.md"
+          ],
+          "files_to_create": [],
+          "patterns_from": [
+            "README.md"
+          ],
+          "verification": {
+            "type": "manual",
+            "instructions": "Verify documentation explains: trigger function, when it fires, what snapshot data includes, SHA-256 calculation"
+          },
+          "status": "completed",
+          "notes": "Successfully documented auto-snapshot trigger in DATABASE.md. Included comprehensive documentation for: (1) create_menu_snapshot() trigger function - full SQL definition with DECLARE variables (v_snapshot_data, v_snapshot_hash, v_organization_id), function parameters table (NEW record details), and function variables table, (2) auto_create_menu_snapshot trigger definition - AFTER INSERT on price_ledger, FOR EACH ROW execution, with detailed trigger properties table explaining timing, event, level, and function, (3) When the trigger fires - 3 scenarios with SQL examples (single product price change, bulk price updates, new product with initial price), plus list of when trigger does NOT fire, (4) Complete snapshot_data JSONB structure - full JSON example with categories array containing products with all fields (id, name, description, current_price, is_available, display_order, image_url), plus summary object with total counts and snapshot_version, detailed table explaining each field with type and examples, important details about current_price source, sorting, NULL values, and versioning, (5) SHA-256 hash calculation - 3-step process (JSONB→text, SHA-256 digest binary, hex encode), hash calculation formula, hash properties table (algorithm, output length, hex length, deterministic, collision resistant), hash verification SQL example with expected results, and hash usage areas (legal audit, data integrity, fraud detection, compliance audit), (6) Metadata structure - JSON example, field descriptions table, usage purposes, and example query to find which price change triggered a snapshot, (7) Performance considerations - cost table (menu data collection, JSONB aggregate, SHA-256, snapshot insert), bulk update warnings with solutions (disable trigger temporarily, use scheduled snapshots), and best practices list, (8) Trigger lifecycle and management - trigger status check query, disable/enable commands, drop/recreate trigger, and function update example, (9) Error handling and rollback - 3 scenarios with SQL examples (snapshot INSERT failure, organization_id not found, foreign key error), all showing automatic rollback behavior with transaction safety guarantees, (10) Anti-patterns and best practices - 4 examples showing wrong vs correct approaches (duplicate manual INSERT, bulk operations without disabling trigger, updating snapshot hash, manual hash changes), (11) Related tables and relationships - ASCII diagram showing flow from price_ledger INSERT through trigger to menu_snapshots, plus table showing all related tables with their roles, (12) Important reminders - 7 key points about trigger automation, transaction safety, performance, hash validation, compliance, monitoring, and version control. Documentation spans 670 lines, follows established patterns from previous sections (001-007), uses Turkish language throughout, and covers all 4 verification requirements: trigger function explanation, when it fires, snapshot data contents, and SHA-256 calculation details.",
+          "updated_at": "2026-01-15T12:19:29.214429+00:00"
+        },
+        {
+          "id": "subtask-1-10",
+          "description": "Add schema relationships diagram and usage examples",
+          "service": "database",
+          "files_to_modify": [
+            "supabase/DATABASE.md"
+          ],
+          "files_to_create": [],
+          "patterns_from": [
+            "README.md"
+          ],
+          "verification": {
+            "type": "manual",
+            "instructions": "Verify documentation includes: (1) Entity relationship diagram in ASCII/Mermaid, (2) Code examples for common operations, (3) Anti-patterns to avoid"
+          },
+          "status": "completed",
+          "notes": "Successfully added comprehensive schema documentation including: (1) Mermaid ER diagram with all table relationships, (2) 7 sections of TypeScript code examples covering all major operations, (3) 9 categories of anti-patterns with correct and incorrect usage examples. Documentation includes multi-tenant architecture, immutable price ledger pattern, feature management, realtime subscriptions, and compliance requirements.",
+          "updated_at": "2026-01-15T12:25:31.268778+00:00"
+        }
+      ]
+    }
+  ],
+  "summary": {
+    "total_phases": 1,
+    "total_subtasks": 10,
+    "services_involved": [
+      "database"
+    ],
+    "parallelism": {
+      "max_parallel_phases": 1,
+      "parallel_groups": [],
+      "recommended_workers": 1,
+      "speedup_estimate": "N/A - sequential documentation task"
+    },
+    "startup_command": "source auto-claude/.venv/bin/activate && python auto-claude/run.py --spec 015 --parallel 1"
+  },
+  "verification_strategy": {
+    "risk_level": "trivial",
+    "skip_validation": true,
+    "test_creation_phase": "none",
+    "test_types_required": [],
+    "security_scanning_required": false,
+    "staging_deployment_required": false,
+    "acceptance_criteria": [
+      "DATABASE.md file exists in supabase/ directory",
+      "All 8 migrations are documented with purpose and table details",
+      "Price_ledger immutability pattern is thoroughly explained",
+      "RLS policies are documented with multi-tenant isolation strategy",
+      "Documentation includes practical examples and anti-patterns"
+    ],
+    "verification_steps": [
+      {
+        "name": "File Existence Check",
+        "command": "test -f supabase/DATABASE.md && echo 'OK' || echo 'MISSING'",
+        "expected_outcome": "OK",
+        "type": "command",
+        "required": true,
+        "blocking": true
+      },
+      {
+        "name": "Documentation Completeness",
+        "command": "grep -c 'price_ledger\\|current_prices\\|RLS' supabase/DATABASE.md",
+        "expected_outcome": "At least 10 mentions of key concepts",
+        "type": "manual",
+        "required": true,
+        "blocking": false
+      }
+    ],
+    "reasoning": "Trivial risk - documentation-only change with no functional code modifications. Verification is primarily manual review of documentation quality and completeness."
+  },
+  "qa_acceptance": {
+    "unit_tests": {
+      "required": false,
+      "commands": [],
+      "minimum_coverage": null
+    },
+    "integration_tests": {
+      "required": false,
+      "commands": [],
+      "services_to_test": []
+    },
+    "e2e_tests": {
+      "required": false,
+      "commands": [],
+      "flows": []
+    },
+    "browser_verification": {
+      "required": false,
+      "pages": []
+    },
+    "database_verification": {
+      "required": false,
+      "checks": []
+    },
+    "documentation_review": {
+      "required": true,
+      "checks": [
+        "All 8 migrations are documented",
+        "Price_ledger immutability pattern is explained with compliance rationale",
+        "RLS policies are documented with examples",
+        "Current_prices view logic is explained",
+        "Table relationships are clear",
+        "Code examples show correct usage patterns",
+        "Anti-patterns are documented"
+      ]
+    }
+  },
+  "qa_signoff": null,
+  "status": "done",
+  "planStatus": "completed",
+  "updated_at": "2026-01-15T13:38:19.787Z",
+  "last_updated": "2026-01-15T12:25:31.268798+00:00"
+}

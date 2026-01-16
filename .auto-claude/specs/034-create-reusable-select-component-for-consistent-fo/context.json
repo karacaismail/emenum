@@ -1,0 +1,54 @@
+{
+  "files_to_modify": {
+    "nextjs": [
+      "components/ui/index.ts"
+    ]
+  },
+  "files_to_create": {
+    "nextjs": [
+      "components/ui/select.tsx",
+      "components/ui/__tests__/select.test.tsx"
+    ]
+  },
+  "files_to_reference": [
+    "components/ui/input.tsx",
+    "components/ui/button.tsx",
+    "components/ui/card.tsx",
+    "lib/guards/__tests__/permission.test.ts"
+  ],
+  "patterns": {
+    "component_pattern": "All UI components use forwardRef, support label/helperText/error props, and follow the Input component API design",
+    "styling_pattern": "Components use shared base styles with normal and error variants, dark mode support via Tailwind dark: prefix",
+    "accessibility_pattern": "Components use automatic ID generation (useId), aria-invalid, aria-describedby for error/helper text association",
+    "export_pattern": "Components are exported from components/ui/index.ts with named exports including component and type definitions",
+    "testing_pattern": "Tests use Vitest + @testing-library/react, located in __tests__ subdirectories"
+  },
+  "existing_implementations": {
+    "description": "Found existing Input component with comprehensive label, error, helper text, and accessibility features. Also found 15+ inline select elements that need to be replaced.",
+    "relevant_files": [
+      "components/ui/input.tsx",
+      "app/(dashboard)/products/new/page.tsx",
+      "app/(dashboard)/products/[id]/page.tsx",
+      "app/(dashboard)/categories/page.tsx",
+      "app/(dashboard)/tables/page.tsx",
+      "app/(admin)/admin/organizations/page.tsx"
+    ],
+    "inline_select_locations": [
+      "app/(dashboard)/products/new/page.tsx:249",
+      "app/(dashboard)/products/[id]/page.tsx:366",
+      "app/(dashboard)/products/page.tsx:508",
+      "app/(dashboard)/products/page.tsx:618",
+      "app/(dashboard)/categories/page.tsx:491",
+      "app/(dashboard)/tables/page.tsx:121",
+      "app/(dashboard)/audit/page.tsx:330",
+      "app/(dashboard)/audit/page.tsx:352",
+      "app/(admin)/admin/ai/page.tsx:646",
+      "app/(admin)/admin/organizations/page.tsx:473",
+      "app/(admin)/admin/overrides/page.tsx:612",
+      "app/(admin)/admin/overrides/page.tsx:624",
+      "app/(admin)/admin/overrides/page.tsx:807",
+      "app/(admin)/admin/overrides/page.tsx:832",
+      "app/(admin)/admin/plans/page.tsx:950"
+    ]
+  }
+}

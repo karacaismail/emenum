@@ -1,0 +1,45 @@
+{
+  "project_type": "single",
+  "services": {
+    "frontend": {
+      "path": ".",
+      "tech_stack": ["nextjs", "react", "typescript", "tailwind"],
+      "version": {
+        "nextjs": "15.5",
+        "react": "19.x",
+        "typescript": "5.7"
+      },
+      "port": 3000,
+      "dev_command": "npm run dev",
+      "build_command": "npm run build",
+      "test_command": "npm run test",
+      "test_framework": "vitest"
+    },
+    "backend": {
+      "path": ".",
+      "tech_stack": ["supabase", "postgresql"],
+      "description": "Supabase backend for auth, database, and realtime"
+    }
+  },
+  "infrastructure": {
+    "docker": false,
+    "database": "postgresql",
+    "backend_service": "supabase",
+    "hosting": "vercel"
+  },
+  "conventions": {
+    "linter": "eslint",
+    "formatter": "prettier",
+    "testing": "vitest",
+    "test_framework": "vitest + @testing-library/react",
+    "component_pattern": "app router with TypeScript",
+    "styling": "tailwind-css"
+  },
+  "directory_structure": {
+    "app": "Next.js 15 app directory (App Router)",
+    "components": "Reusable React components",
+    "lib": "Utility functions and shared logic",
+    "types": "TypeScript type definitions",
+    "tests": "Test files (.test.ts, .test.tsx)"
+  }
+}

@@ -1,0 +1,145 @@
+=== AUTO-BUILD PROGRESS ===
+
+Project: ozaMenu - QR Menu & Digital Price Ledger Platform
+Spec: 015 - Add Database Schema Documentation for Migrations
+Workspace: .worktrees/015-add-database-schema-documentation-for-migrations
+Started: 2026-01-15
+
+Workflow Type: simple
+Rationale: Documentation-only task that doesn't require multi-phase implementation or service coordination. The goal is to create comprehensive documentation for the existing 8 database migration files in the supabase/migrations/ directory.
+
+Session 1 (Planner):
+- Created project_index.json
+- Created context.json
+- Created implementation_plan.json
+- Created init.sh
+- Phases: 1
+- Total subtasks: 10
+
+Phase Summary:
+- Phase 1 (Database Schema Documentation): 10 subtasks, no dependencies
+  - Create DATABASE.md file structure
+  - Document core tables (001)
+  - Document price_ledger immutability pattern (002) - CRITICAL
+  - Document package management (003)
+  - Document tables & service requests (004)
+  - Document audit & compliance (005)
+  - Document views (006)
+  - Document RLS policies (007)
+  - Document auto-snapshot trigger (010)
+  - Add diagrams and usage examples
+
+Services Involved:
+- database: Supabase PostgreSQL schema documentation
+
+Key Concepts to Document:
+1. Price_ledger Immutability Pattern
+   - Turkish Trade Ministry compliance requirement
+   - INSERT-only pattern (UPDATE/DELETE blocked by trigger)
+   - How price history is preserved for legal audit
+   - current_prices view for getting active prices
+
+2. Multi-Tenant Architecture
+   - Row Level Security (RLS) policies
+   - organization_members table as isolation boundary
+   - How each organization only sees their own data
+
+3. Dynamic Feature Management
+   - features, plans, subscriptions tables
+   - feature_overrides for custom permissions
+   - No hard-coded limits in code
+
+4. Audit Trail
+   - menu_snapshots with SHA-256 hash
+   - audit_logs for all operations
+   - Automatic snapshot on price changes
+
+Parallelism Analysis:
+- Max parallel phases: 1
+- Recommended workers: 1
+- Parallel groups: N/A (sequential documentation)
+
+Verification Strategy:
+- Risk Level: trivial
+- Skip Validation: true (documentation-only)
+- Acceptance Criteria:
+  * DATABASE.md file exists in supabase/ directory
+  * All 8 migrations documented with table details
+  * Price_ledger immutability pattern thoroughly explained
+  * RLS policies documented with examples
+  * Code examples and anti-patterns included
+
+=== STARTUP COMMAND ===
+
+To continue building this spec, run:
+
+  source auto-claude/.venv/bin/activate && python auto-claude/run.py --spec 015 --parallel 1
+
+This will start the coder agent to implement the documentation subtasks.
+
+=== FILES CREATED IN THIS SESSION ===
+
+Planning Files (in .auto-claude/specs/015-add-database-schema-documentation-for-migrations/):
+- project_index.json - Project structure and tech stack
+- context.json - Migration files to document and patterns to follow
+- implementation_plan.json - Complete subtask-based implementation plan
+- init.sh - Environment setup script (minimal for docs task)
+- build-progress.txt - This file
+
+No source code files created (planning phase only).
+
+=== NEXT STEPS ===
+
+The coder agent will:
+1. Read implementation_plan.json for subtask list
+2. Execute subtasks sequentially (dependencies respected)
+3. Create supabase/DATABASE.md with comprehensive documentation
+4. Document all 8 migration files with their purpose and design
+5. Explain the critical price_ledger immutability pattern
+6. Document RLS policies and multi-tenant isolation
+7. Add code examples, diagrams, and anti-patterns
+8. Commit documentation with appropriate commit message
+
+=== END SESSION 1 ===
+
+=== SESSION 2 (Coder - subtask-1-1) ===
+Date: 2026-01-15
+Subtask: subtask-1-1 - Create DATABASE.md with overview and table of contents
+
+COMPLETED SUCCESSFULLY ✓
+
+Changes Made:
+- Created supabase/ directory
+- Created supabase/DATABASE.md with comprehensive structure
+- Included:
+  * Project overview and compliance requirements
+  * Table of contents with all migration sections
+  * Architectural principles (Multi-Tenant, INSERT-Only, Views, Feature Flags)
+  * Migration file summary table
+  * Placeholder sections for subtasks 1-2 through 1-10
+  * Turkish language documentation following README.md pattern
+  * Badges for PostgreSQL, Supabase, and Compliance
+  * 263 lines of structured documentation
+
+File Structure:
+- 26 major sections (## headers)
+- Key sections: Veritabani Hakkinda, Mimari Prensipler, Migrasyon Dosyalari
+- All 8 migrations listed with descriptions
+- Critical compliance explanation included
+- Contribution guidelines added
+
+Verification:
+✓ File exists: supabase/DATABASE.md
+✓ Table of contents properly structured
+✓ Follows README.md documentation pattern
+✓ Turkish language throughout
+✓ Ready for subsequent documentation subtasks
+
+Commit:
+- SHA: 5aa751b
+- Message: "auto-claude: subtask-1-1 - Create DATABASE.md with overview and table of cont"
+- Files changed: 1 file, 263 insertions(+)
+
+Status: READY FOR SUBTASK-1-2
+
+=== END SESSION 2 ===

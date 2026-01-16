@@ -1,0 +1,25 @@
+{
+  "active": true,
+  "spec": "018-add-https-strict-transport-security-hsts-header",
+  "state": "building",
+  "subtasks": {
+    "completed": 4,
+    "total": 5,
+    "in_progress": 1,
+    "failed": 0
+  },
+  "phase": {
+    "current": "Verification",
+    "id": null,
+    "total": 2
+  },
+  "workers": {
+    "active": 0,
+    "max": 1
+  },
+  "session": {
+    "number": 605,
+    "started_at": "2026-01-15T02:45:27.999230"
+  },
+  "last_update": "2026-01-15T03:59:58.642627"
+}

@@ -1,0 +1,40 @@
+{
+  "task_description": "Add Content Security Policy (CSP) header to prevent XSS attacks",
+  "scoped_services": ["nextjs"],
+  "files_to_modify": {
+    "nextjs": ["next.config.ts"]
+  },
+  "files_to_reference": [
+    "next.config.ts",
+    "app/(dashboard)/tables/page.tsx",
+    "app/(dashboard)/dashboard/dashboard-client.tsx"
+  ],
+  "patterns": {
+    "security_headers": "Security headers are defined in next.config.ts via async headers() function",
+    "header_structure": "Headers apply to all routes with pattern '/(.*)', returned as array of objects with source and headers fields",
+    "existing_headers": "Current headers: X-Frame-Options, X-Content-Type-Options, Referrer-Policy",
+    "dangerouslySetInnerHTML_usage": "Used in tables/page.tsx:192 and dashboard-client.tsx:442 for QR code SVG rendering from trusted qrcode library"
+  },
+  "existing_implementations": {
+    "description": "next.config.ts already has security headers defined. Need to add CSP header to the existing headers array while preserving current headers.",
+    "relevant_files": ["next.config.ts"],
+    "current_security_headers": [
+      "X-Frame-Options: DENY",
+      "X-Content-Type-Options: nosniff",
+      "Referrer-Policy: strict-origin-when-cross-origin"
+    ]
+  },
+  "security_considerations": {
+    "xss_risk": "dangerouslySetInnerHTML creates potential XSS vectors if SVG content is compromised",
+    "csp_requirements": [
+      "Allow inline styles (Tailwind CSS)",
+      "Allow same-origin scripts",
+      "Allow Supabase API connections",
+      "Restrict external script sources",
+      "Block unsafe-eval",
+      "Allow data: URIs for images (QR codes may use this)"
+    ],
+    "defense_in_depth": "CSP provides additional security layer even when SVG is from trusted source"
+  },
+  "created_at": "2026-01-14T18:51:00.000Z"
+}

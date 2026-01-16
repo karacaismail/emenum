@@ -1,0 +1,13 @@
+{
+  "sourceType": "ideation",
+  "ideationType": "code_improvements",
+  "ideaId": "ci-001",
+  "rationale": "The products page at app/(dashboard)/products/page.tsx already has a working search input with searchQuery state and filtering logic. The categories page is missing this feature despite having the same UI component pattern. Direct pattern replication with minimal changes.",
+  "category": "feature",
+  "estimatedEffort": "trivial",
+  "complexity": "trivial",
+  "affectedFiles": [
+    ".worktrees/001-ozon-e-menum-net-vibe-coding-v1/app/(dashboard)/categories/page.tsx"
+  ],
+  "archivedAt": "2026-01-15T12:58:15.854Z"
+}

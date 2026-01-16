@@ -1,0 +1,78 @@
+{
+  "files_to_modify": {
+    "backend": [
+      "app/api/locations/route.ts",
+      "app/api/menu/publish/route.ts",
+      "app/api/qr/generate/route.ts",
+      "app/api/auth/logout/route.ts"
+    ]
+  },
+  "files_to_create": {
+    "backend": [
+      "lib/services/rate-limiter.ts",
+      "lib/middleware/rate-limit.ts"
+    ]
+  },
+  "files_to_reference": [
+    "app/api/service-request/route.ts",
+    "lib/services/snapshot.ts",
+    "lib/services/price-ledger.ts"
+  ],
+  "patterns": {
+    "service_pattern": "Services in lib/services/ return result objects with { success: boolean, data?: any, error?: string }",
+    "api_route_pattern": "API routes follow: auth check → validation → business logic → response",
+    "supabase_client": "Use createServerClient() from @supabase/ssr with cookie handling",
+    "existing_rate_limit": "Service request uses database timestamp (last_ping_at) with 30s cooldown, returns 429 status",
+    "error_messages": "All error messages are in Turkish",
+    "typescript_interfaces": "Define request body and result types for each route"
+  },
+  "existing_implementations": {
+    "description": "Found existing rate limiting in /api/service-request using database-backed timestamp approach",
+    "relevant_files": [
+      "app/api/service-request/route.ts (lines 52-185: spam prevention implementation)"
+    ],
+    "pattern_details": {
+      "storage": "PostgreSQL column (last_ping_at timestamp)",
+      "check_logic": "Compare current time with last request time",
+      "cooldown": "30 seconds (30 * 1000 ms)",
+      "response": "HTTP 429 with Turkish message showing remaining seconds",
+      "per_resource": "Rate limit applied per table ID"
+    }
+  },
+  "rate_limiting_strategy": {
+    "approach": "Hybrid - use existing database pattern for per-user limits, add in-memory for global/IP limits",
+    "reasons": [
+      "Database pattern already proven in codebase",
+      "No Redis infrastructure available",
+      "Multi-tenant app needs per-user tracking",
+      "In-memory Map sufficient for IP-based global limits (stateless Edge functions reset anyway)"
+    ],
+    "implementation_notes": "Create reusable rate-limiter service that can work with both database storage (for authenticated users) and in-memory storage (for unauthenticated/IP-based)"
+  },
+  "endpoints_to_protect": {
+    "/api/locations (POST)": {
+      "risk": "high",
+      "reason": "Prevents spam organization creation",
+      "limit": "5 requests per user per hour",
+      "auth_required": true
+    },
+    "/api/menu/publish (POST)": {
+      "risk": "medium",
+      "reason": "Snapshot generation is database intensive",
+      "limit": "10 requests per organization per minute",
+      "auth_required": true
+    },
+    "/api/qr/generate (POST)": {
+      "risk": "high",
+      "reason": "QR generation is CPU intensive (PDF/PNG rendering)",
+      "limit": "20 requests per user per minute",
+      "auth_required": true
+    },
+    "/api/auth/logout (POST)": {
+      "risk": "low",
+      "reason": "Prevent logout spam attacks",
+      "limit": "10 requests per IP per minute",
+      "auth_required": false
+    }
+  }
+}

@@ -1,0 +1,33 @@
+{
+  "files_to_modify": {
+    "frontend": [
+      "app/(auth)/register/page.tsx",
+      "app/(auth)/login/page.tsx",
+      "app/(auth)/reset-password/page.tsx",
+      "tests/__tests__/integration/auth-flow.test.ts"
+    ]
+  },
+  "files_to_reference": [
+    "app/(auth)/register/page.tsx",
+    "tests/__tests__/integration/auth-flow.test.ts"
+  ],
+  "patterns": {
+    "validation_pattern": "Client-side validation is done inline in component functions, no shared validation utility exists",
+    "error_messages": "All error messages are in Turkish, following existing patterns like 'Sifre en az 6 karakter olmalidir'",
+    "test_pattern": "Integration tests use mock Supabase clients with Vitest, validating password length at lines 226, 353, 576, 848"
+  },
+  "existing_implementations": {
+    "description": "Password validation currently requires minimum 6 characters, validated in register, login, and reset-password pages",
+    "relevant_files": [
+      "app/(auth)/register/page.tsx (lines 68-70)",
+      "app/(auth)/login/page.tsx (line 88)",
+      "app/(auth)/reset-password/page.tsx (lines 53-56)",
+      "tests/__tests__/integration/auth-flow.test.ts"
+    ]
+  },
+  "security_requirements": {
+    "current_minimum": 6,
+    "new_minimum": 8,
+    "rationale": "OWASP and NIST guidelines recommend minimum 8 characters for password security"
+  }
+}

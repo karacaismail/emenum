@@ -1,0 +1,406 @@
+{
+  "feature": "Create API.md - Comprehensive API Reference Documentation",
+  "workflow_type": "simple",
+  "workflow_rationale": "This is a single-service documentation task. No code changes, no multi-service coordination needed. Just creating a single API.md file with comprehensive endpoint documentation.",
+  "phases": [
+    {
+      "id": "phase-1-api-documentation",
+      "name": "Create API.md Documentation",
+      "type": "implementation",
+      "description": "Create comprehensive API reference documentation for the 6 main endpoints",
+      "depends_on": [],
+      "parallel_safe": true,
+      "subtasks": [
+        {
+          "id": "subtask-1-1",
+          "description": "Create API.md file structure with overview and authentication section",
+          "service": "documentation",
+          "files_to_modify": [],
+          "files_to_create": [
+            "API.md"
+          ],
+          "patterns_from": [
+            "README.md",
+            "ek_ozellikler.md"
+          ],
+          "verification": {
+            "type": "command",
+            "command": "test -f API.md && echo 'OK' || echo 'FAIL'",
+            "expected": "OK"
+          },
+          "status": "completed",
+          "details": {
+            "sections_to_include": [
+              "Document header and overview",
+              "Base URL configuration",
+              "Authentication section (Supabase Auth patterns)",
+              "RLS and authorization overview",
+              "Common response formats",
+              "Error code reference table"
+            ]
+          }
+        },
+        {
+          "id": "subtask-1-2",
+          "description": "Document Authentication endpoints (auth/logout)",
+          "service": "documentation",
+          "files_to_modify": [
+            "API.md"
+          ],
+          "files_to_create": [],
+          "patterns_from": [
+            "README.md"
+          ],
+          "verification": {
+            "type": "manual",
+            "instructions": "Review API.md to ensure auth/logout endpoint is documented with: HTTP method, request/response schemas, auth requirements, and example"
+          },
+          "status": "completed",
+          "details": {
+            "endpoint": "POST /api/auth/logout",
+            "authentication": "Required - Supabase session",
+            "documentation_includes": [
+              "Endpoint path and method",
+              "Authentication requirements",
+              "Request headers",
+              "Response format (success and error)",
+              "RLS considerations",
+              "Example cURL request"
+            ]
+          },
+          "notes": "Successfully documented POST /api/auth/logout endpoint with comprehensive details including HTTP method, authentication requirements (Bearer Token), request/response schemas, error responses, multiple code examples (cURL, JavaScript/Fetch, TypeScript), implementation notes, security considerations, and related endpoints. Documentation follows the established patterns from README.md with clear sections, code blocks, and detailed explanations.",
+          "updated_at": "2026-01-15T11:35:35.704729+00:00"
+        },
+        {
+          "id": "subtask-1-3",
+          "description": "Document Location Management endpoint (locations)",
+          "service": "documentation",
+          "files_to_modify": [
+            "API.md"
+          ],
+          "files_to_create": [],
+          "patterns_from": [
+            "README.md"
+          ],
+          "verification": {
+            "type": "manual",
+            "instructions": "Review API.md to ensure locations endpoint is documented with CRUD operations, multi-tenant isolation notes"
+          },
+          "status": "completed",
+          "details": {
+            "endpoints": [
+              "GET /api/locations - List all locations for organization",
+              "POST /api/locations - Create new location",
+              "PATCH /api/locations/:id - Update location",
+              "DELETE /api/locations/:id - Delete location"
+            ],
+            "authentication": "Required - organization member",
+            "rls_notes": "organization_id isolation enforced",
+            "documentation_includes": [
+              "All CRUD operations",
+              "Request/response schemas",
+              "Multi-tenant considerations",
+              "Permission requirements",
+              "Examples for each operation"
+            ]
+          },
+          "notes": "Documented Location Management endpoint with comprehensive CRUD operations (GET, POST, PATCH, DELETE). Included multi-tenant isolation notes with RLS policies, data model, request/response examples, error handling, TypeScript code samples, security considerations, and best practices. Total 715 lines added following the existing documentation pattern.",
+          "updated_at": "2026-01-15T11:37:47.120054+00:00"
+        },
+        {
+          "id": "subtask-1-4",
+          "description": "Document QR Code Generation endpoint (qr/generate)",
+          "service": "documentation",
+          "files_to_modify": [
+            "API.md"
+          ],
+          "files_to_create": [],
+          "patterns_from": [
+            "README.md",
+            "ek_ozellikler.md"
+          ],
+          "verification": {
+            "type": "manual",
+            "instructions": "Review API.md to ensure qr/generate endpoint documents UUID-based table_id security pattern"
+          },
+          "status": "completed",
+          "details": {
+            "endpoint": "POST /api/qr/generate",
+            "authentication": "Required - organization member",
+            "security_notes": [
+              "table_id must be UUID, not sequential numbers",
+              "QR codes are unique per table",
+              "organization_id isolation enforced"
+            ],
+            "documentation_includes": [
+              "Request body (table_id, organization_id, options)",
+              "Response (QR code URL/data)",
+              "Security considerations",
+              "Image format options",
+              "Example with UUID table_id"
+            ]
+          },
+          "notes": "Successfully documented POST /api/qr/generate endpoint with comprehensive coverage of UUID-based table_id security pattern. Documentation includes: overview section explaining the QR system, critical security note emphasizing UUID usage over sequential IDs (with examples showing insecure vs secure URL patterns), RestaurantTable data model with all fields, RLS policy for multi-tenant isolation, detailed endpoint specification with authentication/authorization requirements, feature flag notes, request/response schemas for both new QR creation and regeneration scenarios, comprehensive error responses (400, 403, 404, 409, 429), cURL and TypeScript code examples with multiple usage scenarios (create new table, regenerate QR), QR code download functionality, and 6-point security considerations section covering UUID v4, QR regeneration, RLS protection, rate limiting, spam prevention, and storage security. Total 401 lines added following existing API.md documentation patterns.",
+          "updated_at": "2026-01-15T11:40:10.187083+00:00"
+        },
+        {
+          "id": "subtask-1-5",
+          "description": "Document Menu Management endpoints (menu/publish, menu/snapshot)",
+          "service": "documentation",
+          "files_to_modify": [
+            "API.md"
+          ],
+          "files_to_create": [],
+          "patterns_from": [
+            "README.md"
+          ],
+          "verification": {
+            "type": "manual",
+            "instructions": "Review API.md to ensure menu endpoints document immutable price ledger and SHA-256 snapshot patterns"
+          },
+          "status": "completed",
+          "details": {
+            "endpoints": [
+              "POST /api/menu/publish - Publish menu with price changes",
+              "POST /api/menu/snapshot - Create SHA-256 snapshot for audit"
+            ],
+            "authentication": "Required - Manager role or higher",
+            "special_features": [
+              "Immutable price ledger (INSERT-only)",
+              "SHA-256 hash for menu state",
+              "Audit trail creation",
+              "Triggers automatic snapshot on price change"
+            ],
+            "documentation_includes": [
+              "Request body schemas",
+              "Price ledger structure",
+              "Snapshot hash calculation",
+              "Response formats",
+              "Audit compliance notes",
+              "Examples of publishing and snapshot creation"
+            ]
+          },
+          "notes": "Successfully documented Menu Management endpoints (POST /api/menu/publish and POST /api/menu/snapshot) with comprehensive coverage of:\n\n1. Immutable Price Ledger Pattern:\n   - INSERT-only pattern (no UPDATE/DELETE)\n   - Price ledger data model with all fields\n   - RLS policies for multi-tenant isolation\n   - Audit trail creation\n\n2. POST /api/menu/publish endpoint:\n   - Request/response schemas with price changes array\n   - Authentication and authorization requirements (manager+ role)\n   - Feature flag notes (module_menu_management)\n   - Comprehensive error responses (400, 403, 409)\n   - cURL and TypeScript code examples\n   - Implementation notes covering atomic operations, price format (kuruş), effective dates, and automatic snapshot creation\n   - Security considerations and best practices\n   - Related endpoints references\n\n3. POST /api/menu/snapshot endpoint:\n   - SHA-256 hash calculation explained\n   - Blockchain-style chain with previous_snapshot_hash\n   - Menu snapshot data model\n   - Request/response schemas with snapshot triggers\n   - Error responses including hash mismatch detection\n   - cURL and TypeScript code examples\n   - Client-side hash verification example\n   - Snapshot chain verification implementation\n   - Canonical JSON format explanation\n   - Automatic snapshot triggers (price_change, menu_update, scheduled, manual)\n   - Security considerations covering hash integrity and chain verification\n   - Use cases for legal compliance and audit trail\n\nTotal 875 lines added following the established API.md documentation patterns with detailed sections, code blocks, tables, and comprehensive explanations of the immutable price ledger and SHA-256 snapshot patterns as required.",
+          "updated_at": "2026-01-15T11:43:11.437995+00:00"
+        },
+        {
+          "id": "subtask-1-6",
+          "description": "Document Service Request endpoint (service-request)",
+          "service": "documentation",
+          "files_to_modify": [
+            "API.md"
+          ],
+          "files_to_create": [],
+          "patterns_from": [
+            "README.md",
+            "ek_ozellikler.md"
+          ],
+          "verification": {
+            "type": "manual",
+            "instructions": "Review API.md to ensure service-request is marked as public endpoint with realtime notification details"
+          },
+          "status": "completed",
+          "details": {
+            "endpoint": "POST /api/service-request",
+            "authentication": "None - Public endpoint (uses table_id for context)",
+            "public_access_notes": [
+              "Third-party integrations can use this",
+              "Rate limiting recommended",
+              "Requires valid table_id UUID",
+              "organization_id derived from table"
+            ],
+            "realtime_features": [
+              "Triggers Supabase Realtime notification",
+              "Waiter receives realtime alert",
+              "Table context included in notification"
+            ],
+            "documentation_includes": [
+              "Request body (table_id, request_type, message)",
+              "Public endpoint security considerations",
+              "Realtime notification behavior",
+              "Response format",
+              "Rate limiting information",
+              "Example request from QR menu"
+            ]
+          },
+          "notes": "Successfully documented POST /api/service-request endpoint with comprehensive coverage of:\n\n1. Public endpoint nature (no authentication required):\n   - Clearly marked as public endpoint in section header\n   - Explained that customers can call waiters without logging in\n   - Documented authentication field as \"❌ Not Required\"\n\n2. Realtime notification flow:\n   - Added mermaid sequence diagram showing Customer → API → PostgreSQL → Supabase Realtime → Waiter Panel flow\n   - Documented Realtime subscription setup for waiter panel with complete TypeScript code example\n   - Showed WebSocket endpoint URL\n   - Included notification payload with table_number, customer_note, priority\n\n3. Service Request data model:\n   - Complete TypeScript interface with all fields (id, organization_id, table_id, request_type, status, priority, etc.)\n   - Request types: call_waiter, bill_request, assistance\n   - Status tracking: pending, acknowledged, completed, cancelled\n   - Response time tracking for analytics\n\n4. Spam prevention mechanism:\n   - Documented 60-second cooldown between requests from same table\n   - Explained last_ping_at field checking\n   - SQL code example for spam check\n   - 429 error response with retry_after information\n\n5. Multi-tenant isolation with RLS policies:\n   - Public INSERT policy for customers (validated via table_id)\n   - Organization members SELECT policy\n   - Staff UPDATE policy (waiter, manager, admin, owner roles)\n\n6. Complete endpoint documentation:\n   - Request/response schemas with field descriptions\n   - All error responses (400, 403, 404, 429, 500)\n   - cURL examples (simple call, with note, bill request)\n   - TypeScript frontend example with React component\n   - Full backend API route implementation (250+ lines)\n\n7. Additional features:\n   - Feature flag checking (module_waiter_call)\n   - Customer note validation (200 char max)\n   - UUID validation\n   - Metadata capture (user_agent, ip_address)\n   - Related waiter panel management endpoints listed\n\nTotal 665 lines added following established API.md documentation patterns with detailed sections, code blocks, diagrams, and comprehensive explanations of the public endpoint and realtime notification system as required.",
+          "updated_at": "2026-01-15T11:45:59.436559+00:00"
+        },
+        {
+          "id": "subtask-1-7",
+          "description": "Add Common Patterns, Error Codes, and Changelog sections",
+          "service": "documentation",
+          "files_to_modify": [
+            "API.md"
+          ],
+          "files_to_create": [],
+          "patterns_from": [
+            "README.md"
+          ],
+          "verification": {
+            "type": "manual",
+            "instructions": "Review API.md for completeness: common patterns documented, all error codes listed, changelog present"
+          },
+          "status": "completed",
+          "details": {
+            "sections_to_add": [
+              "Common Request Patterns (pagination, filtering, sorting)",
+              "Common Response Format",
+              "Standard Error Codes (400, 401, 403, 404, 500)",
+              "RLS Error Scenarios",
+              "Rate Limiting Policy",
+              "Versioning Strategy",
+              "Changelog/Document Version"
+            ],
+            "error_codes": {
+              "400": "Bad Request - Invalid input",
+              "401": "Unauthorized - Missing or invalid auth token",
+              "403": "Forbidden - RLS policy violation or insufficient permissions",
+              "404": "Not Found - Resource doesn't exist",
+              "429": "Too Many Requests - Rate limit exceeded",
+              "500": "Internal Server Error"
+            }
+          },
+          "notes": "Successfully added comprehensive Common Patterns section with 12 API usage patterns, enhanced Changelog with detailed v1.0.0 release notes, and verified Error Codes section is complete. All sections are now comprehensive and developer-ready. Committed changes with 670+ lines added.",
+          "updated_at": "2026-01-15T11:48:49.423955+00:00"
+        }
+      ]
+    }
+  ],
+  "summary": {
+    "total_phases": 1,
+    "total_subtasks": 7,
+    "services_involved": [
+      "documentation"
+    ],
+    "parallelism": {
+      "max_parallel_phases": 1,
+      "parallel_groups": [],
+      "recommended_workers": 1,
+      "speedup_estimate": "N/A - sequential documentation task"
+    },
+    "startup_command": "source auto-claude/.venv/bin/activate && python auto-claude/run.py --spec 016 --parallel 1"
+  },
+  "verification_strategy": {
+    "risk_level": "low",
+    "skip_validation": false,
+    "test_creation_phase": "not_applicable",
+    "test_types_required": [],
+    "security_scanning_required": false,
+    "staging_deployment_required": false,
+    "acceptance_criteria": [
+      "API.md file exists",
+      "All 6 endpoint categories documented",
+      "Each endpoint has: method, path, auth requirements, request/response schemas, examples",
+      "Security considerations (RLS, UUID table_id) documented",
+      "Error codes reference included",
+      "Document follows markdown best practices"
+    ],
+    "verification_steps": [
+      {
+        "name": "File Existence Check",
+        "command": "test -f API.md && echo 'PASS' || echo 'FAIL'",
+        "expected_outcome": "PASS",
+        "type": "command",
+        "required": true,
+        "blocking": true
+      },
+      {
+        "name": "Markdown Syntax Validation",
+        "command": "command -v markdownlint >/dev/null && markdownlint API.md || echo 'markdownlint not available - skipping'",
+        "expected_outcome": "No syntax errors or tool not available",
+        "type": "command",
+        "required": false,
+        "blocking": false
+      },
+      {
+        "name": "Content Completeness Review",
+        "instructions": "Manually verify: (1) All 6 endpoint categories present, (2) Each has examples, (3) Security notes included, (4) Error codes documented",
+        "type": "manual",
+        "required": true,
+        "blocking": true
+      }
+    ],
+    "reasoning": "Low risk documentation task. No code changes, no tests needed. Verification focuses on completeness and markdown quality."
+  },
+  "qa_acceptance": {
+    "unit_tests": {
+      "required": false,
+      "commands": [],
+      "minimum_coverage": null
+    },
+    "integration_tests": {
+      "required": false,
+      "commands": [],
+      "services_to_test": []
+    },
+    "e2e_tests": {
+      "required": false,
+      "commands": [],
+      "flows": []
+    },
+    "browser_verification": {
+      "required": false,
+      "pages": []
+    },
+    "database_verification": {
+      "required": false,
+      "checks": []
+    },
+    "documentation_verification": {
+      "required": true,
+      "checks": [
+        "API.md exists and is readable",
+        "All 6 endpoint categories documented (auth, locations, qr, menu/publish, menu/snapshot, service-request)",
+        "Each endpoint includes: HTTP method, path, authentication requirements, request/response schemas, examples",
+        "Security patterns documented (RLS, UUID table_id, public endpoint considerations)",
+        "Error codes reference table included",
+        "Document is well-formatted markdown"
+      ]
+    }
+  },
+  "qa_signoff": {
+    "status": "approved",
+    "timestamp": "2026-01-15T12:00:00.000Z",
+    "qa_session": 1,
+    "report_file": "qa_report.md",
+    "tests_passed": {
+      "unit": "N/A",
+      "integration": "N/A",
+      "e2e": "N/A",
+      "documentation": "PASS"
+    },
+    "verified_by": "qa_agent",
+    "validation_summary": {
+      "subtasks_completed": "7/7",
+      "endpoints_documented": "9/9",
+      "security_patterns_verified": true,
+      "code_examples": 131,
+      "file_size_kb": 108,
+      "total_lines": 3986,
+      "critical_issues": 0,
+      "major_issues": 0,
+      "minor_issues": 0
+    },
+    "approval_notes": "API.md documentation is comprehensive, accurate, and production-ready. All acceptance criteria met or exceeded. Document provides complete coverage of all 9 API endpoints with extensive security pattern documentation, 131 code examples, and professional markdown formatting. Implementation exceeds specification requirements (9 endpoints vs 7 required). Ready for immediate use by developers."
+  },
+  "status": "done",
+  "planStatus": "completed",
+  "updated_at": "2026-01-15T13:37:28.411Z",
+  "last_updated": "2026-01-15T12:00:00.000Z",
+  "qa_iteration_history": [
+    {
+      "iteration": 1,
+      "status": "approved",
+      "timestamp": "2026-01-15T11:52:59.987360+00:00",
+      "issues": [],
+      "duration_seconds": 234.75
+    }
+  ],
+  "qa_stats": {
+    "total_iterations": 1,
+    "last_iteration": 1,
+    "last_status": "approved",
+    "issues_by_type": {}
+  }
+}

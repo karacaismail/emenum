@@ -1,0 +1,112 @@
+{
+  "ui_ux_improvements": [
+    {
+      "id": "uiux-001",
+      "type": "ui_ux_improvements",
+      "title": "Add Toast Notification System for User Feedback",
+      "description": "Implement a global toast notification component to provide consistent feedback for user actions like saving, deleting, and updating records across the application.",
+      "rationale": "Currently, success/error messages are shown inline within components (e.g., error divs in forms). Users lose feedback context when navigating or scrolling. A toast system provides non-intrusive, consistent feedback that persists briefly and doesn't disrupt workflow.",
+      "category": "usability",
+      "affected_components": [
+        "components/ui/toast.tsx (new)",
+        "components/providers/toast-provider.tsx (new)",
+        "app/(dashboard)/products/page.tsx",
+        "app/(dashboard)/categories/page.tsx",
+        "app/(dashboard)/settings/page.tsx"
+      ],
+      "screenshots": [],
+      "current_state": "Error and success messages are displayed inline within form components using div elements with role='alert'. When actions succeed (like product creation), there is no positive feedback - users only see the modal close. Error messages disappear when components unmount or users navigate away.",
+      "proposed_change": "Create a Toast component with variants (success, error, warning, info) and a ToastProvider context. Use react-hot-toast or build custom with Tailwind animations. Toast should: 1) Appear in bottom-right corner, 2) Auto-dismiss after 5 seconds, 3) Support manual dismiss, 4) Stack multiple toasts. Update all CRUD operations to show success toasts (e.g., 'Urun basariyla olusturuldu').",
+      "user_benefit": "Users receive clear, consistent feedback when actions complete successfully or fail. This builds confidence in the system and reduces uncertainty about whether actions were saved.",
+      "status": "draft",
+      "created_at": "2026-01-14T16:20:00.000Z"
+    },
+    {
+      "id": "uiux-002",
+      "type": "ui_ux_improvements",
+      "title": "Make Product Action Buttons Always Visible on Touch Devices",
+      "description": "Product list action buttons (edit, delete, visibility toggle) are only visible on hover, making them inaccessible on touch devices and difficult for keyboard users.",
+      "rationale": "The opacity-0 group-hover:opacity-100 pattern in ProductListItem hides critical action buttons until mouse hover. Touch device users (tablets, phones) cannot hover, making these actions undiscoverable. This is both an accessibility and usability issue for the restaurant staff who may use tablets.",
+      "category": "accessibility",
+      "affected_components": [
+        "app/(dashboard)/products/page.tsx",
+        "app/(dashboard)/categories/page.tsx"
+      ],
+      "screenshots": [],
+      "current_state": "In ProductListItem component (line 140), action buttons have className 'opacity-0 transition-opacity group-hover:opacity-100'. This makes edit and delete buttons invisible until the user hovers over the row with a mouse cursor.",
+      "proposed_change": "Replace hover-only visibility with: 1) Always-visible muted icons that become more prominent on hover (opacity-60 group-hover:opacity-100), 2) Or implement a mobile-friendly action menu (three-dot kebab menu) that expands on click for touch devices using media queries (sm:opacity-100 opacity-60). Add focus-visible styles so keyboard users can discover and access these buttons.",
+      "user_benefit": "Restaurant staff using tablets or touchscreen POS systems can access edit/delete actions without needing a mouse. Keyboard-only users can navigate to and activate these buttons.",
+      "status": "draft",
+      "created_at": "2026-01-14T16:21:00.000Z"
+    },
+    {
+      "id": "uiux-003",
+      "type": "ui_ux_improvements",
+      "title": "Create Reusable Select Component for Consistent Form Styling",
+      "description": "Add a Select component to the UI library to replace inline-styled select elements across forms, ensuring consistent styling and accessibility.",
+      "rationale": "The Input component exists with proper label, helper text, and error states, but select elements throughout the app use inline Tailwind classes that vary slightly between pages. This creates visual inconsistency and requires duplicating accessibility attributes (aria-describedby, etc.).",
+      "category": "visual",
+      "affected_components": [
+        "components/ui/select.tsx (new)",
+        "components/ui/input.tsx",
+        "app/(dashboard)/products/page.tsx",
+        "app/(dashboard)/categories/page.tsx"
+      ],
+      "screenshots": [],
+      "current_state": "Select elements in products/page.tsx (lines 508-519, 618-630) use long inline className strings. The styling is similar but not identical across pages. No label association, helper text support, or error states are implemented for selects.",
+      "proposed_change": "Create Select component mirroring Input's API: props for label, helperText, error, fullWidth. Include proper id generation with useId(), aria-describedby for helper/error, and consistent styling matching Input. Export from components/ui/select.tsx. Add custom dropdown arrow icon. Support disabled state and required attribute.",
+      "user_benefit": "Forms look consistent throughout the dashboard. Developers can quickly add properly-styled, accessible select inputs without copying CSS classes. Screen readers announce labels and errors correctly.",
+      "status": "draft",
+      "created_at": "2026-01-14T16:22:00.000Z"
+    },
+    {
+      "id": "uiux-004",
+      "type": "ui_ux_improvements",
+      "title": "Add Skeleton Loading States for Better Perceived Performance",
+      "description": "Replace spinner-only loading states with skeleton screens that show content placeholders, improving perceived loading speed and reducing layout shift.",
+      "rationale": "The app uses spinner loaders (animate-spin) that don't indicate what content is loading. Skeleton screens provide visual structure that matches the final content, making the app feel faster and preventing jarring layout shifts when content loads.",
+      "category": "performance",
+      "affected_components": [
+        "components/ui/skeleton.tsx (new)",
+        "app/(dashboard)/products/page.tsx",
+        "app/(dashboard)/categories/page.tsx",
+        "app/(dashboard)/dashboard/dashboard-client.tsx"
+      ],
+      "screenshots": [],
+      "current_state": "Products page (lines 533-535) shows a centered spinner during loading. When products load, the empty state message or product list suddenly appears. This causes a jarring visual jump and doesn't preview the upcoming content structure.",
+      "proposed_change": "Create a Skeleton component with variants (text, avatar, card, productListItem). Use Tailwind animate-pulse on gray backgrounds. In ProductsPage, show 5-6 ProductListItem skeletons during isLoading state. Each skeleton should match the real item's dimensions: 56x56 image placeholder, text lines for name/description, and price placeholder.",
+      "user_benefit": "Users perceive the page as loading faster because they see meaningful structure immediately. Content appears to 'fill in' rather than suddenly appearing, creating a smoother, more professional experience.",
+      "status": "draft",
+      "created_at": "2026-01-14T16:23:00.000Z"
+    },
+    {
+      "id": "uiux-005",
+      "type": "ui_ux_improvements",
+      "title": "Add Mobile Navigation Menu to Landing Page",
+      "description": "The landing page navigation on mobile devices only shows a 'Basla' button, hiding all other navigation links. Add a proper hamburger menu for mobile users.",
+      "rationale": "The Navigation component (app/page.tsx lines 338-382) hides the full navigation links on mobile (hidden md:flex) and only shows a register CTA. Users on mobile cannot access Features, Pricing, or Login pages from the header without scrolling through the entire landing page.",
+      "category": "usability",
+      "affected_components": [
+        "app/page.tsx"
+      ],
+      "screenshots": [],
+      "current_state": "Navigation component shows desktop nav links with 'hidden md:flex'. Mobile users only see the logo and a 'Basla' button linking to /register. No hamburger menu icon or slide-out navigation exists for mobile viewports.",
+      "proposed_change": "Add hamburger menu button visible on mobile (md:hidden). Create slide-in navigation panel with: 1) All nav links (Ozellikler, Fiyatlandirma, Giris Yap), 2) CTA button, 3) Close button. Use useState for menu open/close state. Add backdrop overlay when menu is open. Animate with translate-x or opacity transitions. Ensure focus trap when open.",
+      "user_benefit": "Mobile visitors can easily navigate to pricing, features, and login pages without scrolling through the entire landing page. This improves the mobile conversion rate and overall user experience.",
+      "status": "draft",
+      "created_at": "2026-01-14T16:24:00.000Z"
+    }
+  ],
+  "metadata": {
+    "generated_at": "2026-01-14T16:24:00.000Z",
+    "total_ideas": 5,
+    "analysis_method": "static_code_analysis",
+    "categories_covered": {
+      "usability": 2,
+      "accessibility": 1,
+      "performance": 1,
+      "visual": 1,
+      "interaction": 0
+    }
+  }
+}

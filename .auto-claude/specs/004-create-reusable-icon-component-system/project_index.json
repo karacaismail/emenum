@@ -1,0 +1,31 @@
+{
+  "project_type": "single",
+  "services": {
+    "frontend": {
+      "path": ".",
+      "tech_stack": ["next.js", "typescript", "react", "tailwind"],
+      "version": {
+        "next": "15.5.x",
+        "typescript": "5.7.x",
+        "react": "19.0.x",
+        "tailwind": "3.4.x"
+      },
+      "port": 3000,
+      "dev_command": "npm run dev",
+      "build_command": "npm run build",
+      "test_command": "npm run test"
+    }
+  },
+  "infrastructure": {
+    "docker": false,
+    "database": "supabase-postgresql",
+    "ci_cd": null
+  },
+  "conventions": {
+    "linter": "eslint",
+    "formatter": "built-in",
+    "testing": "vitest",
+    "component_pattern": "functional_components",
+    "import_alias": "@/ for root imports"
+  }
+}

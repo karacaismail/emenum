@@ -1,0 +1,13 @@
+{
+  "sourceType": "ideation",
+  "ideationType": "ui_ux_improvements",
+  "ideaId": "uiux-005",
+  "rationale": "The Navigation component (app/page.tsx lines 338-382) hides the full navigation links on mobile (hidden md:flex) and only shows a register CTA. Users on mobile cannot access Features, Pricing, or Login pages from the header without scrolling through the entire landing page.",
+  "category": "ui_ux",
+  "uiuxCategory": "usability",
+  "affectedFiles": [
+    "app/page.tsx"
+  ],
+  "problemSolved": "Navigation component shows desktop nav links with 'hidden md:flex'. Mobile users only see the logo and a 'Basla' button linking to /register. No hamburger menu icon or slide-out navigation exists for mobile viewports.",
+  "archivedAt": "2026-01-15T12:47:37.446Z"
+}

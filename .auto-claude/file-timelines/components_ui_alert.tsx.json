@@ -1,0 +1,28 @@
+{
+  "file_path": "components/ui/alert.tsx",
+  "main_branch_history": [],
+  "task_views": {
+    "003-extract-shared-alert-notification-component": {
+      "task_id": "003-extract-shared-alert-notification-component",
+      "branch_point": {
+        "commit_hash": "2b028be920d271c6e53b44319d1c871dc3d27076",
+        "content": "",
+        "timestamp": "2026-01-15T16:51:13.834353"
+      },
+      "worktree_state": {
+        "content": "'use client'\n\nimport { forwardRef, type HTMLAttributes, type ReactNode } from 'react'\n\nexport type AlertVariant = 'error' | 'success' | 'warning' | 'info'\nexport type AlertSize = 'sm' | 'md' | 'lg'\n\nexport interface AlertProps extends HTMLAttributes<HTMLDivElement> {\n  /** Visual style variant */\n  variant?: AlertVariant\n  /** Alert size */\n  size?: AlertSize\n  /** Optional icon to display before content */\n  icon?: ReactNode\n  /** Show dismiss button */\n  dismissible?: boolean\n  /** Callback when dismiss button is clicked */\n  onDismiss?: () => void\n}\n\nconst variantStyles: Record<AlertVariant, string> = {\n  error:\n    'bg-red-50 text-red-900 border-red-300 dark:bg-red-900/20 dark:text-red-200 dark:border-red-800',\n  success:\n    'bg-green-50 text-green-900 border-green-300 dark:bg-green-900/20 dark:text-green-200 dark:border-green-800',\n  warning:\n    'bg-amber-50 text-amber-900 border-amber-300 dark:bg-amber-900/20 dark:text-amber-200 dark:border-amber-800',\n  info:\n    'bg-blue-50 text-blue-900 border-blue-300 dark:bg-blue-900/20 dark:text-blue-200 dark:border-blue-800',\n}\n\nconst sizeStyles: Record<AlertSize, string> = {\n  sm: 'px-3 py-2 text-sm gap-2',\n  md: 'px-4 py-3 text-base gap-3',\n  lg: 'px-5 py-4 text-lg gap-4',\n}\n\nconst CloseIcon = () => (\n  <svg\n    xmlns=\"http://www.w3.org/2000/svg\"\n    viewBox=\"0 0 20 20\"\n    fill=\"currentColor\"\n    className=\"w-5 h-5\"\n    aria-hidden=\"true\"\n  >\n    <path d=\"M6.28 5.22a.75.75 0 00-1.06 1.06L8.94 10l-3.72 3.72a.75.75 0 101.06 1.06L10 11.06l3.72 3.72a.75.75 0 101.06-1.06L11.06 10l3.72-3.72a.75.75 0 00-1.06-1.06L10 8.94 6.28 5.22z\" />\n  </svg>\n)\n\n/**\n * Alert component for displaying important messages with different severity levels.\n *\n * @example\n * ```tsx\n * <Alert variant=\"error\">\n *   Something went wrong!\n * </Alert>\n *\n * <Alert variant=\"success\" dismissible onDismiss={() => console.log('dismissed')}>\n *   Operation completed successfully!\n * </Alert>\n *\n * <Alert variant=\"warning\" size=\"lg\">\n *   Please review your changes before submitting.\n * </Alert>\n * ```\n */\nexport const Alert = forwardRef<HTMLDivElement, AlertProps>(\n  (\n    {\n      children,\n      variant = 'info',\n      size = 'md',\n      icon,\n      dismissible = false,\n      onDismiss,\n      className = '',\n      ...props\n    },\n    ref\n  ) => {\n    return (\n      <div\n        ref={ref}\n        role=\"alert\"\n        className={`\n          flex items-start\n          border rounded-lg\n          ${variantStyles[variant]}\n          ${sizeStyles[size]}\n          ${className}\n        `.trim().replace(/\\s+/g, ' ')}\n        {...props}\n      >\n        {icon && <span className=\"shrink-0\">{icon}</span>}\n        <div className=\"flex-1 min-w-0\">{children}</div>\n        {dismissible && (\n          <button\n            type=\"button\"\n            onClick={onDismiss}\n            className=\"shrink-0 opacity-70 hover:opacity-100 transition-opacity\"\n            aria-label=\"Dismiss alert\"\n          >\n            <CloseIcon />\n          </button>\n        )}\n      </div>\n    )\n  }\n)\n\nAlert.displayName = 'Alert'\n\nexport default Alert\n",
+        "last_modified": "2026-01-15T16:51:14.006307"
+      },
+      "task_intent": {
+        "title": "003-extract-shared-alert-notification-component",
+        "description": "",
+        "from_plan": false
+      },
+      "commits_behind_main": 78,
+      "status": "active",
+      "merged_at": null
+    }
+  },
+  "created_at": "2026-01-15T16:51:13.834407",
+  "last_updated": "2026-01-15T16:51:13.876333"
+}

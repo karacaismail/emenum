@@ -1,0 +1,57 @@
+{
+  "project_type": "single",
+  "services": {
+    "frontend": {
+      "path": ".",
+      "tech_stack": ["nextjs", "typescript", "react", "tailwindcss"],
+      "port": 3000,
+      "dev_command": "npm run dev",
+      "build_command": "npm run build",
+      "test_command": "npm run test"
+    },
+    "backend": {
+      "path": ".",
+      "tech_stack": ["nextjs-api-routes", "typescript", "supabase"],
+      "api_prefix": "/api",
+      "description": "Next.js API routes for backend logic"
+    },
+    "database": {
+      "type": "supabase",
+      "provider": "postgresql",
+      "description": "Supabase PostgreSQL with Row Level Security"
+    }
+  },
+  "infrastructure": {
+    "hosting": "vercel",
+    "database": "supabase",
+    "auth": "supabase-auth",
+    "storage": "supabase-storage",
+    "docker": false,
+    "ci_cd": "vercel-git-integration"
+  },
+  "conventions": {
+    "language": "turkish",
+    "error_messages": "turkish",
+    "linter": "eslint",
+    "formatter": "prettier",
+    "testing": "vitest",
+    "api_response_format": "{ success: boolean, data?: any, error?: string }",
+    "status_codes": {
+      "success": 200,
+      "created": 201,
+      "bad_request": 400,
+      "unauthorized": 401,
+      "forbidden": 403,
+      "not_found": 404,
+      "rate_limited": 429,
+      "server_error": 500
+    }
+  },
+  "existing_rate_limiting": {
+    "pattern": "database-backed-timestamp",
+    "location": "app/api/service-request/route.ts",
+    "implementation": "Uses last_ping_at column in restaurant_tables table",
+    "interval": "30 seconds",
+    "http_status": 429
+  }
+}

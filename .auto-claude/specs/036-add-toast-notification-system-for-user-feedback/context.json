@@ -1,0 +1,72 @@
+{
+  "files_to_create": {
+    "frontend": [
+      "components/ui/toast.tsx",
+      "components/providers/toast-provider.tsx"
+    ]
+  },
+  "files_to_modify": {
+    "frontend": [
+      "components/providers/providers.tsx",
+      "app/(dashboard)/products/page.tsx",
+      "app/(dashboard)/categories/page.tsx",
+      "app/(dashboard)/settings/page.tsx"
+    ]
+  },
+  "files_to_reference": [
+    "components/ui/button.tsx",
+    "components/ui/modal.tsx",
+    "components/providers/auth-provider.tsx",
+    "components/providers/providers.tsx",
+    "docs/COMPONENTS.md",
+    "docs/UI_COMPONENTS.md"
+  ],
+  "patterns": {
+    "component_structure": "Functional components with TypeScript interfaces for props",
+    "provider_pattern": "React Context with custom hooks (useToast pattern following useAuth)",
+    "styling_pattern": "Tailwind CSS utility classes with dark mode support (dark: prefix)",
+    "variant_pattern": "Component variants using discriminated unions (primary, secondary, success, warning, error)",
+    "accessibility": "Semantic HTML, ARIA labels, keyboard navigation, screen reader support",
+    "animation": "Smooth transitions using Tailwind transitions and transforms"
+  },
+  "existing_implementations": {
+    "description": "The application has existing UI components (Button, Modal, Input) and providers (AuthProvider, ThemeProvider) that follow specific patterns we must match",
+    "relevant_files": [
+      "components/ui/button.tsx - Shows variant pattern and Tailwind styling approach",
+      "components/providers/auth-provider.tsx - Shows provider pattern with Context and custom hook",
+      "components/providers/providers.tsx - Shows how to integrate new providers into app",
+      "docs/COMPONENTS.md - Documents provider integration patterns and best practices"
+    ],
+    "provider_integration": "New providers must be added to components/providers/providers.tsx in the correct order. ToastProvider should be added after ThemeProvider but before QueryClientProvider",
+    "current_feedback_pattern": "Currently uses inline div elements with role='alert' for error messages. Success messages are not shown. Messages disappear on navigation or component unmount."
+  },
+  "problem_context": {
+    "current_state": "Error and success messages displayed inline within form components",
+    "pain_points": [
+      "No positive feedback when actions succeed (e.g., product creation)",
+      "Error messages disappear when navigating away or when component unmounts",
+      "Inconsistent feedback patterns across different pages",
+      "Messages don't persist briefly after successful actions"
+    ],
+    "desired_state": "Global toast notification system that provides consistent, non-intrusive feedback that persists briefly regardless of navigation"
+  },
+  "design_requirements": {
+    "toast_types": ["success", "error", "warning", "info"],
+    "positioning": "Fixed position, top-right corner of viewport",
+    "behavior": [
+      "Auto-dismiss after configurable duration (default: 4s)",
+      "Manual dismiss with close button",
+      "Stack multiple toasts vertically",
+      "Slide-in animation from right",
+      "Slide-out animation on dismiss",
+      "Maximum 5 toasts visible at once"
+    ],
+    "accessibility": [
+      "ARIA live region for screen readers",
+      "Keyboard dismissible (Escape key)",
+      "Focus management",
+      "Sufficient color contrast"
+    ],
+    "dark_mode": "Full dark mode support matching existing component patterns"
+  }
+}

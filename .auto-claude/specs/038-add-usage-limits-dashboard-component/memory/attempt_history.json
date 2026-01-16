@@ -1,0 +1,33 @@
+{
+  "subtasks": {
+    "subtask-1-1": {
+      "attempts": [
+        {
+          "session": 2,
+          "timestamp": "2026-01-15T06:42:28.072235",
+          "approach": "Implemented: Create UsageLimits component with progress bars",
+          "success": true,
+          "error": null
+        }
+      ],
+      "status": "completed"
+    },
+    "subtask-1-2": {
+      "attempts": [
+        {
+          "session": 3,
+          "timestamp": "2026-01-15T06:44:07.707231",
+          "approach": "Implemented: Integrate UsageLimits component into settings page",
+          "success": true,
+          "error": null
+        }
+      ],
+      "status": "completed"
+    }
+  },
+  "stuck_subtasks": [],
+  "metadata": {
+    "created_at": "2026-01-15T06:33:30.242180",
+    "last_updated": "2026-01-15T06:44:07.707281"
+  }
+}

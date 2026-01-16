@@ -1,0 +1,57 @@
+{
+  "subtasks": {
+    "subtask-1-1": {
+      "attempts": [
+        {
+          "session": 2,
+          "timestamp": "2026-01-14T18:44:18.335555",
+          "approach": "Implemented: Install JSZip package for ZIP file creation",
+          "success": true,
+          "error": null
+        }
+      ],
+      "status": "completed"
+    },
+    "subtask-2-1": {
+      "attempts": [
+        {
+          "session": 3,
+          "timestamp": "2026-01-14T18:46:15.500732",
+          "approach": "Implemented: Create bulk download utility with ZIP and PDF generation",
+          "success": true,
+          "error": null
+        }
+      ],
+      "status": "completed"
+    },
+    "subtask-3-1": {
+      "attempts": [
+        {
+          "session": 4,
+          "timestamp": "2026-01-14T18:47:39.791696",
+          "approach": "Implemented: Add bulk download dropdown button to tables page",
+          "success": true,
+          "error": null
+        }
+      ],
+      "status": "completed"
+    },
+    "subtask-4-1": {
+      "attempts": [
+        {
+          "session": 1,
+          "timestamp": "2026-01-14T18:56:39.132692",
+          "approach": "Implemented: Manual testing of bulk QR download feature",
+          "success": true,
+          "error": null
+        }
+      ],
+      "status": "completed"
+    }
+  },
+  "stuck_subtasks": [],
+  "metadata": {
+    "created_at": "2026-01-14T18:37:35.798034",
+    "last_updated": "2026-01-14T18:56:39.132733"
+  }
+}

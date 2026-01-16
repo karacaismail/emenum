@@ -1,0 +1,43 @@
+{
+  "task_description": "Add mobile navigation menu (hamburger menu) to the landing page. Currently, mobile users can only see a 'Başla' button and cannot access Features, Pricing, or Login pages from the header.",
+  "scoped_services": ["nextjs"],
+  "files_to_modify": {
+    "nextjs": [
+      "app/page.tsx"
+    ]
+  },
+  "files_to_reference": [
+    "components/dashboard/header.tsx",
+    "components/dashboard/sidebar.tsx",
+    "app/(dashboard)/dashboard-layout-client.tsx"
+  ],
+  "patterns": {
+    "mobile_menu_state": "Use useState hook to manage menu open/close state (isOpen boolean)",
+    "hamburger_icon": "Three horizontal lines SVG icon (similar to dashboard header lines 67-69)",
+    "backdrop_overlay": "Fixed overlay with bg-black/50 opacity, z-40, lg:hidden, onClick closes menu",
+    "slide_animation": "Transform -translate-x-full to translate-x-0 with transition-transform duration-200",
+    "responsive_breakpoints": "md: prefix for tablet+, lg: for desktop. Mobile menu shows below md breakpoint",
+    "client_component": "Landing page Navigation component needs 'use client' directive for useState",
+    "close_button": "X icon button in top-right of mobile menu to close",
+    "menu_links": "Same links as desktop: Özellikler (/features), Fiyatlandırma (/pricing), Giriş Yap (/login), Ücretsiz Dene (/register)"
+  },
+  "existing_implementations": {
+    "description": "Dashboard already has a working mobile menu pattern with hamburger button, slide-out sidebar, and backdrop overlay",
+    "relevant_files": [
+      "components/dashboard/header.tsx",
+      "components/dashboard/sidebar.tsx",
+      "app/(dashboard)/dashboard-layout-client.tsx"
+    ],
+    "key_patterns": {
+      "hamburger_button": "components/dashboard/header.tsx lines 59-71",
+      "mobile_sidebar": "components/dashboard/sidebar.tsx lines 161-199",
+      "state_management": "app/(dashboard)/dashboard-layout-client.tsx line 85"
+    }
+  },
+  "current_navigation": {
+    "location": "app/page.tsx lines 338-382",
+    "desktop": "Links visible with 'hidden md:flex' class (lines 354-370)",
+    "mobile": "Only 'Başla' button visible with 'md:hidden' class (lines 372-378)",
+    "problem": "No way for mobile users to access Features, Pricing, or Login pages from header"
+  }
+}

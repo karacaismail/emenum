@@ -1,0 +1,34 @@
+{
+  "project_type": "single",
+  "services": {
+    "frontend": {
+      "path": ".",
+      "tech_stack": ["next.js", "react", "typescript", "tailwindcss", "supabase"],
+      "port": 3000,
+      "dev_command": "npm run dev",
+      "test_command": "npm test",
+      "build_command": "npm run build"
+    }
+  },
+  "infrastructure": {
+    "docker": false,
+    "database": "supabase",
+    "framework": "next.js 15 (app router)"
+  },
+  "conventions": {
+    "linter": "eslint",
+    "formatter": "none",
+    "testing": "vitest",
+    "components_dir": "components/",
+    "ui_components_dir": "components/ui/",
+    "feature_components_pattern": "components/[feature-name]/",
+    "client_components": "'use client' directive required for interactive components",
+    "import_alias": "@/ for root imports"
+  },
+  "component_patterns": {
+    "max_lines": 300,
+    "separation_strategy": "Extract: badge components, list items, forms, modals, table rows",
+    "file_naming": "kebab-case.tsx",
+    "component_naming": "PascalCase"
+  }
+}

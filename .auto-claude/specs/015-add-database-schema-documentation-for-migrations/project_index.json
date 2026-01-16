@@ -1,0 +1,30 @@
+{
+  "project_type": "single",
+  "services": {
+    "frontend": {
+      "path": ".",
+      "tech_stack": ["nextjs", "typescript", "react", "tailwind"],
+      "port": 3000,
+      "dev_command": "npm run dev",
+      "test_command": "npm test"
+    },
+    "database": {
+      "path": "./supabase",
+      "tech_stack": ["supabase", "postgresql"],
+      "port": 54321,
+      "dev_command": "npx supabase start",
+      "test_command": null
+    }
+  },
+  "infrastructure": {
+    "docker": false,
+    "database": "supabase_postgresql",
+    "deployment": "vercel"
+  },
+  "conventions": {
+    "linter": "eslint",
+    "formatter": "prettier",
+    "testing": "vitest",
+    "documentation": "markdown"
+  }
+}

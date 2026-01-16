@@ -1,0 +1,14 @@
+{
+  "sourceType": "ideation",
+  "ideationType": "code_improvements",
+  "ideaId": "ci-002",
+  "rationale": "The lib/guards/limits.ts file has a fully implemented getAllLimitStatuses() function (lines 258-305) that returns currentCount, limit, usagePercent, and isUnlimited for each limit type. This data is ready but has no UI visualization. Similar stats card pattern exists in tables/page.tsx.",
+  "category": "feature",
+  "estimatedEffort": "small",
+  "complexity": "small",
+  "affectedFiles": [
+    ".worktrees/001-ozon-e-menum-net-vibe-coding-v1/app/(dashboard)/settings/page.tsx",
+    ".worktrees/001-ozon-e-menum-net-vibe-coding-v1/lib/guards/limits.ts"
+  ],
+  "archivedAt": "2026-01-15T13:25:49.840Z"
+}

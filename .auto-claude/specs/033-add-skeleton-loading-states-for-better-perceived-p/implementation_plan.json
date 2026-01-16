@@ -1,0 +1,322 @@
+{
+  "feature": "Add Skeleton Loading States for Better Perceived Performance",
+  "workflow_type": "feature",
+  "workflow_rationale": "This is a UI enhancement feature that requires creating a reusable component and then applying it across multiple dashboard pages. The feature workflow allows us to properly sequence the work (create component first, then use it) and verify each step independently.",
+  "phases": [
+    {
+      "id": "phase-1-skeleton-component",
+      "name": "Create Skeleton Component",
+      "type": "implementation",
+      "description": "Build a reusable skeleton loading component following Tailwind CSS patterns",
+      "depends_on": [],
+      "parallel_safe": true,
+      "subtasks": [
+        {
+          "id": "subtask-1-1",
+          "description": "Create skeleton component with animation and variants",
+          "service": "frontend",
+          "files_to_modify": [],
+          "files_to_create": [
+            "components/ui/skeleton.tsx"
+          ],
+          "patterns_from": [
+            "components/ui/card.tsx",
+            "components/ui/button.tsx"
+          ],
+          "verification": {
+            "type": "command",
+            "command": "npm run typecheck",
+            "expected": "No TypeScript errors in skeleton.tsx"
+          },
+          "implementation_notes": [
+            "Use Tailwind CSS animate-pulse for shimmer effect",
+            "Create base Skeleton component with configurable dimensions",
+            "Add variants: circle, rectangle, text (multiple sizes)",
+            "Export SkeletonCard, SkeletonTable, SkeletonList composite patterns",
+            "Follow shadcn/ui component patterns with className prop support"
+          ],
+          "status": "completed"
+        }
+      ]
+    },
+    {
+      "id": "phase-2-apply-skeletons",
+      "name": "Apply Skeleton Loading States",
+      "type": "implementation",
+      "description": "Replace spinner loading states with skeleton screens across dashboard pages",
+      "depends_on": [
+        "phase-1-skeleton-component"
+      ],
+      "parallel_safe": true,
+      "subtasks": [
+        {
+          "id": "subtask-2-1",
+          "description": "Replace spinner with product list skeleton in products page",
+          "service": "frontend",
+          "files_to_modify": [
+            "app/(dashboard)/products/page.tsx"
+          ],
+          "files_to_create": [],
+          "patterns_from": [
+            "components/ui/skeleton.tsx"
+          ],
+          "verification": {
+            "type": "browser",
+            "url": "http://localhost:3000/dashboard/products",
+            "checks": [
+              "Skeleton appears during loading instead of spinner",
+              "Skeleton structure matches final product list layout",
+              "No layout shift when products load",
+              "No console errors"
+            ]
+          },
+          "implementation_notes": [
+            "Find existing spinner at lines 533-535",
+            "Import Skeleton component",
+            "Create product list skeleton matching the grid/list layout",
+            "Show 5-10 skeleton items to fill viewport",
+            "Ensure skeleton respects responsive breakpoints"
+          ],
+          "status": "pending"
+        },
+        {
+          "id": "subtask-2-2",
+          "description": "Replace spinner with category list skeleton in categories page",
+          "service": "frontend",
+          "files_to_modify": [
+            "app/(dashboard)/categories/page.tsx"
+          ],
+          "files_to_create": [],
+          "patterns_from": [
+            "components/ui/skeleton.tsx",
+            "app/(dashboard)/products/page.tsx"
+          ],
+          "verification": {
+            "type": "browser",
+            "url": "http://localhost:3000/dashboard/categories",
+            "checks": [
+              "Skeleton appears during loading",
+              "Skeleton matches category list layout",
+              "Smooth transition to actual content",
+              "No console errors"
+            ]
+          },
+          "implementation_notes": [
+            "Find existing loading state",
+            "Import Skeleton component",
+            "Create category skeleton matching layout",
+            "Match the card/grid structure of categories"
+          ],
+          "status": "pending"
+        },
+        {
+          "id": "subtask-2-3",
+          "description": "Replace spinner with dashboard skeleton in dashboard client",
+          "service": "frontend",
+          "files_to_modify": [
+            "app/(dashboard)/dashboard/dashboard-client.tsx"
+          ],
+          "files_to_create": [],
+          "patterns_from": [
+            "components/ui/skeleton.tsx",
+            "app/(dashboard)/products/page.tsx"
+          ],
+          "verification": {
+            "type": "browser",
+            "url": "http://localhost:3000/dashboard",
+            "checks": [
+              "Skeleton appears during initial load",
+              "Skeleton matches dashboard widget layout",
+              "Stats cards show skeleton placeholders",
+              "No console errors"
+            ]
+          },
+          "implementation_notes": [
+            "Find existing loading state",
+            "Import Skeleton component",
+            "Create dashboard skeleton with stat cards",
+            "Match the grid layout of dashboard widgets"
+          ],
+          "status": "pending"
+        }
+      ]
+    },
+    {
+      "id": "phase-3-integration",
+      "name": "Integration & Polish",
+      "type": "integration",
+      "description": "Verify all skeleton implementations work correctly and consistently",
+      "depends_on": [
+        "phase-2-apply-skeletons"
+      ],
+      "parallel_safe": false,
+      "subtasks": [
+        {
+          "id": "subtask-3-1",
+          "description": "End-to-end verification of skeleton loading across all pages",
+          "service": "frontend",
+          "all_services": false,
+          "files_to_modify": [],
+          "files_to_create": [],
+          "patterns_from": [],
+          "verification": {
+            "type": "e2e",
+            "steps": [
+              "Clear browser cache and reload app",
+              "Navigate to products page - verify skeleton appears then loads",
+              "Navigate to categories page - verify skeleton appears then loads",
+              "Navigate to dashboard - verify skeleton appears then loads",
+              "Test on slow 3G network (Chrome DevTools) - skeletons should be more visible",
+              "Verify no layout shift using Chrome DevTools Layout Shift detection",
+              "Check accessibility - skeletons should have aria-busy or aria-label"
+            ]
+          },
+          "implementation_notes": [
+            "Test with network throttling to see skeletons in action",
+            "Verify consistent animation timing across components",
+            "Ensure skeletons match actual content dimensions",
+            "Add aria-busy='true' and aria-label for accessibility"
+          ],
+          "status": "pending"
+        }
+      ]
+    }
+  ],
+  "summary": {
+    "total_phases": 3,
+    "total_subtasks": 4,
+    "services_involved": [
+      "frontend"
+    ],
+    "parallelism": {
+      "max_parallel_phases": 1,
+      "parallel_groups": [],
+      "recommended_workers": 1,
+      "speedup_estimate": "Sequential execution required - component must be created before use"
+    },
+    "startup_command": "cd /Users/karaca/Desktop/ozon/.worktrees/033-add-skeleton-loading-states-for-better-perceived-p && npm run dev"
+  },
+  "verification_strategy": {
+    "risk_level": "low",
+    "skip_validation": false,
+    "test_creation_phase": "post_implementation",
+    "test_types_required": [
+      "unit",
+      "visual"
+    ],
+    "security_scanning_required": false,
+    "staging_deployment_required": false,
+    "acceptance_criteria": [
+      "All existing functionality continues to work",
+      "Skeleton components render correctly",
+      "No layout shift when content loads",
+      "Loading states provide better UX than spinners",
+      "No console errors or warnings",
+      "Accessible loading states with proper ARIA labels"
+    ],
+    "verification_steps": [
+      {
+        "name": "TypeScript Type Check",
+        "command": "npm run typecheck",
+        "expected_outcome": "No TypeScript errors",
+        "type": "test",
+        "required": true,
+        "blocking": true
+      },
+      {
+        "name": "ESLint Check",
+        "command": "npm run lint",
+        "expected_outcome": "No linting errors",
+        "type": "test",
+        "required": true,
+        "blocking": true
+      },
+      {
+        "name": "Build Check",
+        "command": "npm run build",
+        "expected_outcome": "Successful production build",
+        "type": "test",
+        "required": true,
+        "blocking": true
+      },
+      {
+        "name": "Visual Regression Test",
+        "command": "Manual browser testing with network throttling",
+        "expected_outcome": "Skeletons match content layout, smooth transitions",
+        "type": "manual",
+        "required": true,
+        "blocking": false
+      }
+    ],
+    "reasoning": "Low risk UI enhancement. Primarily visual changes that don't affect business logic. Manual visual testing is crucial to verify skeleton layouts match actual content."
+  },
+  "qa_acceptance": {
+    "unit_tests": {
+      "required": false,
+      "commands": [],
+      "minimum_coverage": null,
+      "note": "Skeleton component is presentational, visual testing more valuable than unit tests"
+    },
+    "integration_tests": {
+      "required": false,
+      "commands": [],
+      "services_to_test": []
+    },
+    "e2e_tests": {
+      "required": false,
+      "commands": [],
+      "flows": []
+    },
+    "browser_verification": {
+      "required": true,
+      "pages": [
+        {
+          "url": "http://localhost:3000/dashboard/products",
+          "checks": [
+            "Skeleton renders during loading",
+            "No layout shift on content load",
+            "Matches product grid layout"
+          ]
+        },
+        {
+          "url": "http://localhost:3000/dashboard/categories",
+          "checks": [
+            "Skeleton renders during loading",
+            "Matches category layout"
+          ]
+        },
+        {
+          "url": "http://localhost:3000/dashboard",
+          "checks": [
+            "Dashboard skeleton renders",
+            "Matches dashboard widget layout"
+          ]
+        }
+      ]
+    },
+    "accessibility_verification": {
+      "required": true,
+      "checks": [
+        "Skeletons have aria-busy='true'",
+        "Skeletons have descriptive aria-label",
+        "Screen reader announces loading state"
+      ]
+    },
+    "database_verification": {
+      "required": false,
+      "checks": []
+    },
+    "performance_verification": {
+      "required": true,
+      "checks": [
+        "Test with Chrome DevTools slow 3G throttling",
+        "Measure Layout Shift (CLS) - should be near 0",
+        "Verify skeleton animation is smooth (60fps)"
+      ]
+    }
+  },
+  "qa_signoff": null,
+  "status": "done",
+  "planStatus": "completed",
+  "updated_at": "2026-01-15T13:25:36.958Z"
+}

@@ -1,0 +1,10 @@
+{
+  "sourceType": "ideation",
+  "ideationType": "performance_optimizations",
+  "ideaId": "perf-004",
+  "rationale": "The sequential queries double the latency for auth initialization. Creating a new Supabase client on each render is wasteful and can cause issues with real-time subscriptions. These should be optimized for faster app initialization.",
+  "category": "performance",
+  "performanceCategory": "runtime",
+  "impact": "medium",
+  "archivedAt": "2026-01-15T12:47:47.697Z"
+}

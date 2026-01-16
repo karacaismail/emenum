@@ -1,0 +1,78 @@
+{
+  "files_to_modify": {
+    "frontend": [
+      "app/(admin)/admin/plans/page.tsx",
+      "app/(admin)/admin/overrides/page.tsx",
+      "app/(admin)/admin/ai/page.tsx",
+      "app/(admin)/admin/organizations/page.tsx",
+      "app/(dashboard)/tables/page.tsx"
+    ]
+  },
+  "files_to_reference": [
+    "app/(dashboard)/products/page.tsx",
+    "components/ui/card.tsx",
+    "components/ui/button.tsx",
+    "components/ui/modal.tsx",
+    "components/ui/input.tsx",
+    "components/dashboard/header.tsx",
+    "components/dashboard/sidebar.tsx",
+    "components/snapshots/version-comparison-modal.tsx"
+  ],
+  "patterns": {
+    "component_extraction": "Pages contain inline components (StatusBadge, ListItem, etc.) that should be extracted",
+    "file_structure": "Main page file imports from newly created component files in components/[feature]/ directory",
+    "state_management": "useState hooks for data, loading, error states; useCallback for data fetching",
+    "data_fetching": "Supabase client created via createClient() from @/lib/supabase/client",
+    "modal_pattern": "Modal state (isOpen, editing item, form data) managed at page level",
+    "form_pattern": "Form state in local state object, handleSubmit function, error handling",
+    "list_pattern": "Separate ListItem component with props for item data and callbacks"
+  },
+  "existing_implementations": {
+    "description": "Found component structure with ui/ directory for generic components and feature-specific subdirectories",
+    "relevant_files": [
+      "components/ui/modal.tsx",
+      "components/snapshots/version-comparison-modal.tsx",
+      "components/dashboard/header.tsx"
+    ],
+    "component_size_guideline": "Existing components range 16-339 lines, most under 300 lines"
+  },
+  "splitting_strategy": {
+    "per_file": {
+      "plans_page": {
+        "extract_components": [
+          "StatusBadge",
+          "FeatureTypeBadge",
+          "PlansList",
+          "PlanListItem",
+          "PlanFormModal",
+          "FeaturesList",
+          "FeatureListItem",
+          "FeatureFormModal",
+          "PlanFeaturesModal"
+        ],
+        "new_directory": "components/admin/plans/",
+        "estimated_main_page_lines": 200
+      },
+      "overrides_page": {
+        "extract_components": ["to be determined during implementation"],
+        "new_directory": "components/admin/overrides/",
+        "estimated_main_page_lines": 200
+      },
+      "ai_page": {
+        "extract_components": ["to be determined during implementation"],
+        "new_directory": "components/admin/ai/",
+        "estimated_main_page_lines": 200
+      },
+      "organizations_page": {
+        "extract_components": ["to be determined during implementation"],
+        "new_directory": "components/admin/organizations/",
+        "estimated_main_page_lines": 200
+      },
+      "tables_page": {
+        "extract_components": ["to be determined during implementation"],
+        "new_directory": "components/dashboard/tables/",
+        "estimated_main_page_lines": 200
+      }
+    }
+  }
+}

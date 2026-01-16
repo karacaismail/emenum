@@ -1,0 +1,205 @@
+{
+  "file_path": ".auto-claude/specs/001-ozon-e-menum-net-vibe-coding-v1/memory/build_commits.json",
+  "main_branch_history": [],
+  "task_views": {
+    "001-ozon-e-menum-net-vibe-coding-v1": {
+      "task_id": "001-ozon-e-menum-net-vibe-coding-v1",
+      "branch_point": {
+        "commit_hash": "2b028be920d271c6e53b44319d1c871dc3d27076",
+        "content": "",
+        "timestamp": "2026-01-14T09:55:04.472899"
+      },
+      "worktree_state": null,
+      "task_intent": {
+        "title": "001-ozon-e-menum-net-vibe-coding-v1",
+        "description": "",
+        "from_plan": false
+      },
+      "commits_behind_main": 0,
+      "status": "active",
+      "merged_at": null
+    },
+    "037-add-search-to-categories-page": {
+      "task_id": "037-add-search-to-categories-page",
+      "branch_point": {
+        "commit_hash": "2b028be920d271c6e53b44319d1c871dc3d27076",
+        "content": "",
+        "timestamp": "2026-01-14T18:38:07.376896"
+      },
+      "worktree_state": {
+        "content": "{\n  \"commits\": [\n    {\n      \"hash\": \"0eecb1cd321cef35da49ecddddb1151f03fd4b4d\",\n      \"subtask_id\": \"subtask-10-4\",\n      \"timestamp\": \"2026-01-14T09:59:56.242272\"\n    },\n    {\n      \"hash\": \"ac29f07b62a68ece50e9ac47a0f2824b41294d3e\",\n      \"subtask_id\": \"subtask-10-5\",\n      \"timestamp\": \"2026-01-14T10:04:12.572521\"\n    },\n    {\n      \"hash\": \"c1da0eb7e6d94b82f34cbc3304a1b77fed5b5610\",\n      \"subtask_id\": \"subtask-11-1\",\n      \"timestamp\": \"2026-01-14T10:11:59.393781\"\n    },\n    {\n      \"hash\": \"a4e1c934a6d2753317eccaf60d02b2dea6afcafe\",\n      \"subtask_id\": \"subtask-11-2\",\n      \"timestamp\": \"2026-01-14T10:17:26.288539\"\n    },\n    {\n      \"hash\": \"1878f1b191f81071869f36221dcf719693809be4\",\n      \"subtask_id\": \"subtask-11-3\",\n      \"timestamp\": \"2026-01-14T10:23:17.559862\"\n    },\n    {\n      \"hash\": \"70311421df300875413dadee25477071ae83050f\",\n      \"subtask_id\": \"subtask-12-1\",\n      \"timestamp\": \"2026-01-14T10:26:16.497952\"\n    },\n    {\n      \"hash\": \"a8da6d7dfe811c818e25ded53c698fb8bc99e930\",\n      \"subtask_id\": \"subtask-12-2\",\n      \"timestamp\": \"2026-01-14T10:29:03.005246\"\n    },\n    {\n      \"hash\": \"37aca1da4962cb169c6c99b863f1d64678fd9517\",\n      \"subtask_id\": \"subtask-12-3\",\n      \"timestamp\": \"2026-01-14T10:32:18.639541\"\n    },\n    {\n      \"hash\": \"ceee11fcbb2dfeee441ad97f6350f116eb7d8902\",\n      \"subtask_id\": \"subtask-12-4\",\n      \"timestamp\": \"2026-01-14T10:40:37.682572\"\n    },\n    {\n      \"hash\": \"4a0f3a030759fd8e3a45fd46908fda3b2586736c\",\n      \"subtask_id\": \"subtask-13-2\",\n      \"timestamp\": \"2026-01-14T10:43:14.322688\"\n    },\n    {\n      \"hash\": \"106d3698a389fc8dae28c1b0776b84822da88855\",\n      \"subtask_id\": \"subtask-13-3\",\n      \"timestamp\": \"2026-01-14T11:02:10.353968\"\n    },\n    {\n      \"hash\": \"b6b31393de72e083d6e18066de40765e9cada315\",\n      \"subtask_id\": \"subtask-13-4\",\n      \"timestamp\": \"2026-01-14T11:07:06.244254\"\n    },\n    {\n      \"hash\": \"28b31b4e85dca0a5ed29d4a9d2a355cacd35b463\",\n      \"subtask_id\": \"subtask-13-5\",\n      \"timestamp\": \"2026-01-14T11:15:16.705013\"\n    }\n  ],\n  \"last_good_commit\": \"28b31b4e85dca0a5ed29d4a9d2a355cacd35b463\",\n  \"metadata\": {\n    \"created_at\": \"2026-01-14T09:55:05.952673\",\n    \"last_updated\": \"2026-01-14T11:15:16.705015\"\n  }\n}",
+        "last_modified": "2026-01-15T15:07:08.815610"
+      },
+      "task_intent": {
+        "title": "037-add-search-to-categories-page",
+        "description": "Add search functionality to the categories page, allowing users to filter categories by name. This mirrors the existing search pattern already implemented in the products page.",
+        "from_plan": true
+      },
+      "commits_behind_main": 0,
+      "status": "active",
+      "merged_at": null
+    },
+    "032-add-mobile-navigation-menu-to-landing-page": {
+      "task_id": "032-add-mobile-navigation-menu-to-landing-page",
+      "branch_point": {
+        "commit_hash": "2b028be920d271c6e53b44319d1c871dc3d27076",
+        "content": "",
+        "timestamp": "2026-01-14T18:38:22.963353"
+      },
+      "worktree_state": {
+        "content": "{\n  \"commits\": [\n    {\n      \"hash\": \"0eecb1cd321cef35da49ecddddb1151f03fd4b4d\",\n      \"subtask_id\": \"subtask-10-4\",\n      \"timestamp\": \"2026-01-14T09:59:56.242272\"\n    },\n    {\n      \"hash\": \"ac29f07b62a68ece50e9ac47a0f2824b41294d3e\",\n      \"subtask_id\": \"subtask-10-5\",\n      \"timestamp\": \"2026-01-14T10:04:12.572521\"\n    },\n    {\n      \"hash\": \"c1da0eb7e6d94b82f34cbc3304a1b77fed5b5610\",\n      \"subtask_id\": \"subtask-11-1\",\n      \"timestamp\": \"2026-01-14T10:11:59.393781\"\n    },\n    {\n      \"hash\": \"a4e1c934a6d2753317eccaf60d02b2dea6afcafe\",\n      \"subtask_id\": \"subtask-11-2\",\n      \"timestamp\": \"2026-01-14T10:17:26.288539\"\n    },\n    {\n      \"hash\": \"1878f1b191f81071869f36221dcf719693809be4\",\n      \"subtask_id\": \"subtask-11-3\",\n      \"timestamp\": \"2026-01-14T10:23:17.559862\"\n    },\n    {\n      \"hash\": \"70311421df300875413dadee25477071ae83050f\",\n      \"subtask_id\": \"subtask-12-1\",\n      \"timestamp\": \"2026-01-14T10:26:16.497952\"\n    },\n    {\n      \"hash\": \"a8da6d7dfe811c818e25ded53c698fb8bc99e930\",\n      \"subtask_id\": \"subtask-12-2\",\n      \"timestamp\": \"2026-01-14T10:29:03.005246\"\n    },\n    {\n      \"hash\": \"37aca1da4962cb169c6c99b863f1d64678fd9517\",\n      \"subtask_id\": \"subtask-12-3\",\n      \"timestamp\": \"2026-01-14T10:32:18.639541\"\n    },\n    {\n      \"hash\": \"ceee11fcbb2dfeee441ad97f6350f116eb7d8902\",\n      \"subtask_id\": \"subtask-12-4\",\n      \"timestamp\": \"2026-01-14T10:40:37.682572\"\n    },\n    {\n      \"hash\": \"4a0f3a030759fd8e3a45fd46908fda3b2586736c\",\n      \"subtask_id\": \"subtask-13-2\",\n      \"timestamp\": \"2026-01-14T10:43:14.322688\"\n    },\n    {\n      \"hash\": \"106d3698a389fc8dae28c1b0776b84822da88855\",\n      \"subtask_id\": \"subtask-13-3\",\n      \"timestamp\": \"2026-01-14T11:02:10.353968\"\n    },\n    {\n      \"hash\": \"b6b31393de72e083d6e18066de40765e9cada315\",\n      \"subtask_id\": \"subtask-13-4\",\n      \"timestamp\": \"2026-01-14T11:07:06.244254\"\n    },\n    {\n      \"hash\": \"28b31b4e85dca0a5ed29d4a9d2a355cacd35b463\",\n      \"subtask_id\": \"subtask-13-5\",\n      \"timestamp\": \"2026-01-14T11:15:16.705013\"\n    }\n  ],\n  \"last_good_commit\": \"28b31b4e85dca0a5ed29d4a9d2a355cacd35b463\",\n  \"metadata\": {\n    \"created_at\": \"2026-01-14T09:55:05.952673\",\n    \"last_updated\": \"2026-01-14T11:15:16.705015\"\n  }\n}",
+        "last_modified": "2026-01-15T15:05:31.777629"
+      },
+      "task_intent": {
+        "title": "032-add-mobile-navigation-menu-to-landing-page",
+        "description": "The landing page navigation on mobile devices only shows a 'Basla' button, hiding all other navigation links. Add a proper hamburger menu for mobile users.",
+        "from_plan": true
+      },
+      "commits_behind_main": 0,
+      "status": "active",
+      "merged_at": null
+    },
+    "031-add-mobile-navigation-menu-to-landing-page": {
+      "task_id": "031-add-mobile-navigation-menu-to-landing-page",
+      "branch_point": {
+        "commit_hash": "2b028be920d271c6e53b44319d1c871dc3d27076",
+        "content": "",
+        "timestamp": "2026-01-14T18:50:42.638180"
+      },
+      "worktree_state": {
+        "content": "{\n  \"commits\": [\n    {\n      \"hash\": \"0eecb1cd321cef35da49ecddddb1151f03fd4b4d\",\n      \"subtask_id\": \"subtask-10-4\",\n      \"timestamp\": \"2026-01-14T09:59:56.242272\"\n    },\n    {\n      \"hash\": \"ac29f07b62a68ece50e9ac47a0f2824b41294d3e\",\n      \"subtask_id\": \"subtask-10-5\",\n      \"timestamp\": \"2026-01-14T10:04:12.572521\"\n    },\n    {\n      \"hash\": \"c1da0eb7e6d94b82f34cbc3304a1b77fed5b5610\",\n      \"subtask_id\": \"subtask-11-1\",\n      \"timestamp\": \"2026-01-14T10:11:59.393781\"\n    },\n    {\n      \"hash\": \"a4e1c934a6d2753317eccaf60d02b2dea6afcafe\",\n      \"subtask_id\": \"subtask-11-2\",\n      \"timestamp\": \"2026-01-14T10:17:26.288539\"\n    },\n    {\n      \"hash\": \"1878f1b191f81071869f36221dcf719693809be4\",\n      \"subtask_id\": \"subtask-11-3\",\n      \"timestamp\": \"2026-01-14T10:23:17.559862\"\n    },\n    {\n      \"hash\": \"70311421df300875413dadee25477071ae83050f\",\n      \"subtask_id\": \"subtask-12-1\",\n      \"timestamp\": \"2026-01-14T10:26:16.497952\"\n    },\n    {\n      \"hash\": \"a8da6d7dfe811c818e25ded53c698fb8bc99e930\",\n      \"subtask_id\": \"subtask-12-2\",\n      \"timestamp\": \"2026-01-14T10:29:03.005246\"\n    },\n    {\n      \"hash\": \"37aca1da4962cb169c6c99b863f1d64678fd9517\",\n      \"subtask_id\": \"subtask-12-3\",\n      \"timestamp\": \"2026-01-14T10:32:18.639541\"\n    },\n    {\n      \"hash\": \"ceee11fcbb2dfeee441ad97f6350f116eb7d8902\",\n      \"subtask_id\": \"subtask-12-4\",\n      \"timestamp\": \"2026-01-14T10:40:37.682572\"\n    },\n    {\n      \"hash\": \"4a0f3a030759fd8e3a45fd46908fda3b2586736c\",\n      \"subtask_id\": \"subtask-13-2\",\n      \"timestamp\": \"2026-01-14T10:43:14.322688\"\n    },\n    {\n      \"hash\": \"106d3698a389fc8dae28c1b0776b84822da88855\",\n      \"subtask_id\": \"subtask-13-3\",\n      \"timestamp\": \"2026-01-14T11:02:10.353968\"\n    },\n    {\n      \"hash\": \"b6b31393de72e083d6e18066de40765e9cada315\",\n      \"subtask_id\": \"subtask-13-4\",\n      \"timestamp\": \"2026-01-14T11:07:06.244254\"\n    },\n    {\n      \"hash\": \"28b31b4e85dca0a5ed29d4a9d2a355cacd35b463\",\n      \"subtask_id\": \"subtask-13-5\",\n      \"timestamp\": \"2026-01-14T11:15:16.705013\"\n    }\n  ],\n  \"last_good_commit\": \"28b31b4e85dca0a5ed29d4a9d2a355cacd35b463\",\n  \"metadata\": {\n    \"created_at\": \"2026-01-14T09:55:05.952673\",\n    \"last_updated\": \"2026-01-14T11:15:16.705015\"\n  }\n}",
+        "last_modified": "2026-01-15T15:03:39.185027"
+      },
+      "task_intent": {
+        "title": "031-add-mobile-navigation-menu-to-landing-page",
+        "description": "The landing page navigation on mobile devices only shows a 'Basla' button, hiding all other navigation links. Add a proper hamburger menu for mobile users.",
+        "from_plan": true
+      },
+      "commits_behind_main": 0,
+      "status": "active",
+      "merged_at": null
+    },
+    "040-add-bulk-qr-code-download-for-all-tables": {
+      "task_id": "040-add-bulk-qr-code-download-for-all-tables",
+      "branch_point": {
+        "commit_hash": "2b028be920d271c6e53b44319d1c871dc3d27076",
+        "content": "",
+        "timestamp": "2026-01-14T18:53:11.069414"
+      },
+      "worktree_state": {
+        "content": "{\n  \"commits\": [\n    {\n      \"hash\": \"0eecb1cd321cef35da49ecddddb1151f03fd4b4d\",\n      \"subtask_id\": \"subtask-10-4\",\n      \"timestamp\": \"2026-01-14T09:59:56.242272\"\n    },\n    {\n      \"hash\": \"ac29f07b62a68ece50e9ac47a0f2824b41294d3e\",\n      \"subtask_id\": \"subtask-10-5\",\n      \"timestamp\": \"2026-01-14T10:04:12.572521\"\n    },\n    {\n      \"hash\": \"c1da0eb7e6d94b82f34cbc3304a1b77fed5b5610\",\n      \"subtask_id\": \"subtask-11-1\",\n      \"timestamp\": \"2026-01-14T10:11:59.393781\"\n    },\n    {\n      \"hash\": \"a4e1c934a6d2753317eccaf60d02b2dea6afcafe\",\n      \"subtask_id\": \"subtask-11-2\",\n      \"timestamp\": \"2026-01-14T10:17:26.288539\"\n    },\n    {\n      \"hash\": \"1878f1b191f81071869f36221dcf719693809be4\",\n      \"subtask_id\": \"subtask-11-3\",\n      \"timestamp\": \"2026-01-14T10:23:17.559862\"\n    },\n    {\n      \"hash\": \"70311421df300875413dadee25477071ae83050f\",\n      \"subtask_id\": \"subtask-12-1\",\n      \"timestamp\": \"2026-01-14T10:26:16.497952\"\n    },\n    {\n      \"hash\": \"a8da6d7dfe811c818e25ded53c698fb8bc99e930\",\n      \"subtask_id\": \"subtask-12-2\",\n      \"timestamp\": \"2026-01-14T10:29:03.005246\"\n    },\n    {\n      \"hash\": \"37aca1da4962cb169c6c99b863f1d64678fd9517\",\n      \"subtask_id\": \"subtask-12-3\",\n      \"timestamp\": \"2026-01-14T10:32:18.639541\"\n    },\n    {\n      \"hash\": \"ceee11fcbb2dfeee441ad97f6350f116eb7d8902\",\n      \"subtask_id\": \"subtask-12-4\",\n      \"timestamp\": \"2026-01-14T10:40:37.682572\"\n    },\n    {\n      \"hash\": \"4a0f3a030759fd8e3a45fd46908fda3b2586736c\",\n      \"subtask_id\": \"subtask-13-2\",\n      \"timestamp\": \"2026-01-14T10:43:14.322688\"\n    },\n    {\n      \"hash\": \"106d3698a389fc8dae28c1b0776b84822da88855\",\n      \"subtask_id\": \"subtask-13-3\",\n      \"timestamp\": \"2026-01-14T11:02:10.353968\"\n    },\n    {\n      \"hash\": \"b6b31393de72e083d6e18066de40765e9cada315\",\n      \"subtask_id\": \"subtask-13-4\",\n      \"timestamp\": \"2026-01-14T11:07:06.244254\"\n    },\n    {\n      \"hash\": \"28b31b4e85dca0a5ed29d4a9d2a355cacd35b463\",\n      \"subtask_id\": \"subtask-13-5\",\n      \"timestamp\": \"2026-01-14T11:15:16.705013\"\n    }\n  ],\n  \"last_good_commit\": \"28b31b4e85dca0a5ed29d4a9d2a355cacd35b463\",\n  \"metadata\": {\n    \"created_at\": \"2026-01-14T09:55:05.952673\",\n    \"last_updated\": \"2026-01-14T11:15:16.705015\"\n  }\n}",
+        "last_modified": "2026-01-14T18:53:20.418820"
+      },
+      "task_intent": {
+        "title": "040-add-bulk-qr-code-download-for-all-tables",
+        "description": "",
+        "from_plan": false
+      },
+      "commits_behind_main": 0,
+      "status": "active",
+      "merged_at": null
+    },
+    "005-extract-duplicated-crud-state-management-into-reus": {
+      "task_id": "005-extract-duplicated-crud-state-management-into-reus",
+      "branch_point": {
+        "commit_hash": "2b028be920d271c6e53b44319d1c871dc3d27076",
+        "content": "",
+        "timestamp": "2026-01-15T06:33:12.581832"
+      },
+      "worktree_state": {
+        "content": "{\n  \"commits\": [\n    {\n      \"hash\": \"0eecb1cd321cef35da49ecddddb1151f03fd4b4d\",\n      \"subtask_id\": \"subtask-10-4\",\n      \"timestamp\": \"2026-01-14T09:59:56.242272\"\n    },\n    {\n      \"hash\": \"ac29f07b62a68ece50e9ac47a0f2824b41294d3e\",\n      \"subtask_id\": \"subtask-10-5\",\n      \"timestamp\": \"2026-01-14T10:04:12.572521\"\n    },\n    {\n      \"hash\": \"c1da0eb7e6d94b82f34cbc3304a1b77fed5b5610\",\n      \"subtask_id\": \"subtask-11-1\",\n      \"timestamp\": \"2026-01-14T10:11:59.393781\"\n    },\n    {\n      \"hash\": \"a4e1c934a6d2753317eccaf60d02b2dea6afcafe\",\n      \"subtask_id\": \"subtask-11-2\",\n      \"timestamp\": \"2026-01-14T10:17:26.288539\"\n    },\n    {\n      \"hash\": \"1878f1b191f81071869f36221dcf719693809be4\",\n      \"subtask_id\": \"subtask-11-3\",\n      \"timestamp\": \"2026-01-14T10:23:17.559862\"\n    },\n    {\n      \"hash\": \"70311421df300875413dadee25477071ae83050f\",\n      \"subtask_id\": \"subtask-12-1\",\n      \"timestamp\": \"2026-01-14T10:26:16.497952\"\n    },\n    {\n      \"hash\": \"a8da6d7dfe811c818e25ded53c698fb8bc99e930\",\n      \"subtask_id\": \"subtask-12-2\",\n      \"timestamp\": \"2026-01-14T10:29:03.005246\"\n    },\n    {\n      \"hash\": \"37aca1da4962cb169c6c99b863f1d64678fd9517\",\n      \"subtask_id\": \"subtask-12-3\",\n      \"timestamp\": \"2026-01-14T10:32:18.639541\"\n    },\n    {\n      \"hash\": \"ceee11fcbb2dfeee441ad97f6350f116eb7d8902\",\n      \"subtask_id\": \"subtask-12-4\",\n      \"timestamp\": \"2026-01-14T10:40:37.682572\"\n    },\n    {\n      \"hash\": \"4a0f3a030759fd8e3a45fd46908fda3b2586736c\",\n      \"subtask_id\": \"subtask-13-2\",\n      \"timestamp\": \"2026-01-14T10:43:14.322688\"\n    },\n    {\n      \"hash\": \"106d3698a389fc8dae28c1b0776b84822da88855\",\n      \"subtask_id\": \"subtask-13-3\",\n      \"timestamp\": \"2026-01-14T11:02:10.353968\"\n    },\n    {\n      \"hash\": \"b6b31393de72e083d6e18066de40765e9cada315\",\n      \"subtask_id\": \"subtask-13-4\",\n      \"timestamp\": \"2026-01-14T11:07:06.244254\"\n    },\n    {\n      \"hash\": \"28b31b4e85dca0a5ed29d4a9d2a355cacd35b463\",\n      \"subtask_id\": \"subtask-13-5\",\n      \"timestamp\": \"2026-01-14T11:15:16.705013\"\n    }\n  ],\n  \"last_good_commit\": \"28b31b4e85dca0a5ed29d4a9d2a355cacd35b463\",\n  \"metadata\": {\n    \"created_at\": \"2026-01-14T09:55:05.952673\",\n    \"last_updated\": \"2026-01-14T11:15:16.705015\"\n  }\n}",
+        "last_modified": "2026-01-15T16:04:15.473208"
+      },
+      "task_intent": {
+        "title": "005-extract-duplicated-crud-state-management-into-reus",
+        "description": "",
+        "from_plan": false
+      },
+      "commits_behind_main": 5,
+      "status": "active",
+      "merged_at": null
+    },
+    "002-add-unit-test-coverage-for-dashboard-page-componen": {
+      "task_id": "002-add-unit-test-coverage-for-dashboard-page-componen",
+      "branch_point": {
+        "commit_hash": "2b028be920d271c6e53b44319d1c871dc3d27076",
+        "content": "",
+        "timestamp": "2026-01-15T14:04:12.520457"
+      },
+      "worktree_state": {
+        "content": "{\n  \"commits\": [\n    {\n      \"hash\": \"0eecb1cd321cef35da49ecddddb1151f03fd4b4d\",\n      \"subtask_id\": \"subtask-10-4\",\n      \"timestamp\": \"2026-01-14T09:59:56.242272\"\n    },\n    {\n      \"hash\": \"ac29f07b62a68ece50e9ac47a0f2824b41294d3e\",\n      \"subtask_id\": \"subtask-10-5\",\n      \"timestamp\": \"2026-01-14T10:04:12.572521\"\n    },\n    {\n      \"hash\": \"c1da0eb7e6d94b82f34cbc3304a1b77fed5b5610\",\n      \"subtask_id\": \"subtask-11-1\",\n      \"timestamp\": \"2026-01-14T10:11:59.393781\"\n    },\n    {\n      \"hash\": \"a4e1c934a6d2753317eccaf60d02b2dea6afcafe\",\n      \"subtask_id\": \"subtask-11-2\",\n      \"timestamp\": \"2026-01-14T10:17:26.288539\"\n    },\n    {\n      \"hash\": \"1878f1b191f81071869f36221dcf719693809be4\",\n      \"subtask_id\": \"subtask-11-3\",\n      \"timestamp\": \"2026-01-14T10:23:17.559862\"\n    },\n    {\n      \"hash\": \"70311421df300875413dadee25477071ae83050f\",\n      \"subtask_id\": \"subtask-12-1\",\n      \"timestamp\": \"2026-01-14T10:26:16.497952\"\n    },\n    {\n      \"hash\": \"a8da6d7dfe811c818e25ded53c698fb8bc99e930\",\n      \"subtask_id\": \"subtask-12-2\",\n      \"timestamp\": \"2026-01-14T10:29:03.005246\"\n    },\n    {\n      \"hash\": \"37aca1da4962cb169c6c99b863f1d64678fd9517\",\n      \"subtask_id\": \"subtask-12-3\",\n      \"timestamp\": \"2026-01-14T10:32:18.639541\"\n    },\n    {\n      \"hash\": \"ceee11fcbb2dfeee441ad97f6350f116eb7d8902\",\n      \"subtask_id\": \"subtask-12-4\",\n      \"timestamp\": \"2026-01-14T10:40:37.682572\"\n    },\n    {\n      \"hash\": \"4a0f3a030759fd8e3a45fd46908fda3b2586736c\",\n      \"subtask_id\": \"subtask-13-2\",\n      \"timestamp\": \"2026-01-14T10:43:14.322688\"\n    },\n    {\n      \"hash\": \"106d3698a389fc8dae28c1b0776b84822da88855\",\n      \"subtask_id\": \"subtask-13-3\",\n      \"timestamp\": \"2026-01-14T11:02:10.353968\"\n    },\n    {\n      \"hash\": \"b6b31393de72e083d6e18066de40765e9cada315\",\n      \"subtask_id\": \"subtask-13-4\",\n      \"timestamp\": \"2026-01-14T11:07:06.244254\"\n    },\n    {\n      \"hash\": \"28b31b4e85dca0a5ed29d4a9d2a355cacd35b463\",\n      \"subtask_id\": \"subtask-13-5\",\n      \"timestamp\": \"2026-01-14T11:15:16.705013\"\n    }\n  ],\n  \"last_good_commit\": \"28b31b4e85dca0a5ed29d4a9d2a355cacd35b463\",\n  \"metadata\": {\n    \"created_at\": \"2026-01-14T09:55:05.952673\",\n    \"last_updated\": \"2026-01-14T11:15:16.705015\"\n  }\n}",
+        "last_modified": "2026-01-15T16:20:44.199881"
+      },
+      "task_intent": {
+        "title": "002-add-unit-test-coverage-for-dashboard-page-componen",
+        "description": "",
+        "from_plan": false
+      },
+      "commits_behind_main": 5,
+      "status": "active",
+      "merged_at": null
+    },
+    "034-create-reusable-select-component-for-consistent-fo": {
+      "task_id": "034-create-reusable-select-component-for-consistent-fo",
+      "branch_point": {
+        "commit_hash": "2b028be920d271c6e53b44319d1c871dc3d27076",
+        "content": "",
+        "timestamp": "2026-01-15T14:05:37.956433"
+      },
+      "worktree_state": {
+        "content": "{\n  \"commits\": [\n    {\n      \"hash\": \"0eecb1cd321cef35da49ecddddb1151f03fd4b4d\",\n      \"subtask_id\": \"subtask-10-4\",\n      \"timestamp\": \"2026-01-14T09:59:56.242272\"\n    },\n    {\n      \"hash\": \"ac29f07b62a68ece50e9ac47a0f2824b41294d3e\",\n      \"subtask_id\": \"subtask-10-5\",\n      \"timestamp\": \"2026-01-14T10:04:12.572521\"\n    },\n    {\n      \"hash\": \"c1da0eb7e6d94b82f34cbc3304a1b77fed5b5610\",\n      \"subtask_id\": \"subtask-11-1\",\n      \"timestamp\": \"2026-01-14T10:11:59.393781\"\n    },\n    {\n      \"hash\": \"a4e1c934a6d2753317eccaf60d02b2dea6afcafe\",\n      \"subtask_id\": \"subtask-11-2\",\n      \"timestamp\": \"2026-01-14T10:17:26.288539\"\n    },\n    {\n      \"hash\": \"1878f1b191f81071869f36221dcf719693809be4\",\n      \"subtask_id\": \"subtask-11-3\",\n      \"timestamp\": \"2026-01-14T10:23:17.559862\"\n    },\n    {\n      \"hash\": \"70311421df300875413dadee25477071ae83050f\",\n      \"subtask_id\": \"subtask-12-1\",\n      \"timestamp\": \"2026-01-14T10:26:16.497952\"\n    },\n    {\n      \"hash\": \"a8da6d7dfe811c818e25ded53c698fb8bc99e930\",\n      \"subtask_id\": \"subtask-12-2\",\n      \"timestamp\": \"2026-01-14T10:29:03.005246\"\n    },\n    {\n      \"hash\": \"37aca1da4962cb169c6c99b863f1d64678fd9517\",\n      \"subtask_id\": \"subtask-12-3\",\n      \"timestamp\": \"2026-01-14T10:32:18.639541\"\n    },\n    {\n      \"hash\": \"ceee11fcbb2dfeee441ad97f6350f116eb7d8902\",\n      \"subtask_id\": \"subtask-12-4\",\n      \"timestamp\": \"2026-01-14T10:40:37.682572\"\n    },\n    {\n      \"hash\": \"4a0f3a030759fd8e3a45fd46908fda3b2586736c\",\n      \"subtask_id\": \"subtask-13-2\",\n      \"timestamp\": \"2026-01-14T10:43:14.322688\"\n    },\n    {\n      \"hash\": \"106d3698a389fc8dae28c1b0776b84822da88855\",\n      \"subtask_id\": \"subtask-13-3\",\n      \"timestamp\": \"2026-01-14T11:02:10.353968\"\n    },\n    {\n      \"hash\": \"b6b31393de72e083d6e18066de40765e9cada315\",\n      \"subtask_id\": \"subtask-13-4\",\n      \"timestamp\": \"2026-01-14T11:07:06.244254\"\n    },\n    {\n      \"hash\": \"28b31b4e85dca0a5ed29d4a9d2a355cacd35b463\",\n      \"subtask_id\": \"subtask-13-5\",\n      \"timestamp\": \"2026-01-14T11:15:16.705013\"\n    }\n  ],\n  \"last_good_commit\": \"28b31b4e85dca0a5ed29d4a9d2a355cacd35b463\",\n  \"metadata\": {\n    \"created_at\": \"2026-01-14T09:55:05.952673\",\n    \"last_updated\": \"2026-01-14T11:15:16.705015\"\n  }\n}",
+        "last_modified": "2026-01-15T14:05:43.657657"
+      },
+      "task_intent": {
+        "title": "034-create-reusable-select-component-for-consistent-fo",
+        "description": "",
+        "from_plan": false
+      },
+      "commits_behind_main": 5,
+      "status": "active",
+      "merged_at": null
+    },
+    "023-add-mobile-navigation-menu-to-landing-page": {
+      "task_id": "023-add-mobile-navigation-menu-to-landing-page",
+      "branch_point": {
+        "commit_hash": "c709a6c45b4887c1a0ad6e04c6142783760a46ec",
+        "content": "",
+        "timestamp": "2026-01-15T13:47:09.808921"
+      },
+      "worktree_state": {
+        "content": "{\n  \"commits\": [\n    {\n      \"hash\": \"0eecb1cd321cef35da49ecddddb1151f03fd4b4d\",\n      \"subtask_id\": \"subtask-10-4\",\n      \"timestamp\": \"2026-01-14T09:59:56.242272\"\n    },\n    {\n      \"hash\": \"ac29f07b62a68ece50e9ac47a0f2824b41294d3e\",\n      \"subtask_id\": \"subtask-10-5\",\n      \"timestamp\": \"2026-01-14T10:04:12.572521\"\n    },\n    {\n      \"hash\": \"c1da0eb7e6d94b82f34cbc3304a1b77fed5b5610\",\n      \"subtask_id\": \"subtask-11-1\",\n      \"timestamp\": \"2026-01-14T10:11:59.393781\"\n    },\n    {\n      \"hash\": \"a4e1c934a6d2753317eccaf60d02b2dea6afcafe\",\n      \"subtask_id\": \"subtask-11-2\",\n      \"timestamp\": \"2026-01-14T10:17:26.288539\"\n    },\n    {\n      \"hash\": \"1878f1b191f81071869f36221dcf719693809be4\",\n      \"subtask_id\": \"subtask-11-3\",\n      \"timestamp\": \"2026-01-14T10:23:17.559862\"\n    },\n    {\n      \"hash\": \"70311421df300875413dadee25477071ae83050f\",\n      \"subtask_id\": \"subtask-12-1\",\n      \"timestamp\": \"2026-01-14T10:26:16.497952\"\n    },\n    {\n      \"hash\": \"a8da6d7dfe811c818e25ded53c698fb8bc99e930\",\n      \"subtask_id\": \"subtask-12-2\",\n      \"timestamp\": \"2026-01-14T10:29:03.005246\"\n    },\n    {\n      \"hash\": \"37aca1da4962cb169c6c99b863f1d64678fd9517\",\n      \"subtask_id\": \"subtask-12-3\",\n      \"timestamp\": \"2026-01-14T10:32:18.639541\"\n    },\n    {\n      \"hash\": \"ceee11fcbb2dfeee441ad97f6350f116eb7d8902\",\n      \"subtask_id\": \"subtask-12-4\",\n      \"timestamp\": \"2026-01-14T10:40:37.682572\"\n    },\n    {\n      \"hash\": \"4a0f3a030759fd8e3a45fd46908fda3b2586736c\",\n      \"subtask_id\": \"subtask-13-2\",\n      \"timestamp\": \"2026-01-14T10:43:14.322688\"\n    },\n    {\n      \"hash\": \"106d3698a389fc8dae28c1b0776b84822da88855\",\n      \"subtask_id\": \"subtask-13-3\",\n      \"timestamp\": \"2026-01-14T11:02:10.353968\"\n    },\n    {\n      \"hash\": \"b6b31393de72e083d6e18066de40765e9cada315\",\n      \"subtask_id\": \"subtask-13-4\",\n      \"timestamp\": \"2026-01-14T11:07:06.244254\"\n    },\n    {\n      \"hash\": \"28b31b4e85dca0a5ed29d4a9d2a355cacd35b463\",\n      \"subtask_id\": \"subtask-13-5\",\n      \"timestamp\": \"2026-01-14T11:15:16.705013\"\n    }\n  ],\n  \"last_good_commit\": \"28b31b4e85dca0a5ed29d4a9d2a355cacd35b463\",\n  \"metadata\": {\n    \"created_at\": \"2026-01-14T09:55:05.952673\",\n    \"last_updated\": \"2026-01-14T11:15:16.705015\"\n  }\n}",
+        "last_modified": "2026-01-15T13:47:16.687140"
+      },
+      "task_intent": {
+        "title": "023-add-mobile-navigation-menu-to-landing-page",
+        "description": "",
+        "from_plan": false
+      },
+      "commits_behind_main": 0,
+      "status": "active",
+      "merged_at": null
+    },
+    "026-add-mobile-navigation-menu-to-landing-page": {
+      "task_id": "026-add-mobile-navigation-menu-to-landing-page",
+      "branch_point": {
+        "commit_hash": "2b028be920d271c6e53b44319d1c871dc3d27076",
+        "content": "",
+        "timestamp": "2026-01-15T14:15:55.210168"
+      },
+      "worktree_state": {
+        "content": "{\n  \"commits\": [\n    {\n      \"hash\": \"0eecb1cd321cef35da49ecddddb1151f03fd4b4d\",\n      \"subtask_id\": \"subtask-10-4\",\n      \"timestamp\": \"2026-01-14T09:59:56.242272\"\n    },\n    {\n      \"hash\": \"ac29f07b62a68ece50e9ac47a0f2824b41294d3e\",\n      \"subtask_id\": \"subtask-10-5\",\n      \"timestamp\": \"2026-01-14T10:04:12.572521\"\n    },\n    {\n      \"hash\": \"c1da0eb7e6d94b82f34cbc3304a1b77fed5b5610\",\n      \"subtask_id\": \"subtask-11-1\",\n      \"timestamp\": \"2026-01-14T10:11:59.393781\"\n    },\n    {\n      \"hash\": \"a4e1c934a6d2753317eccaf60d02b2dea6afcafe\",\n      \"subtask_id\": \"subtask-11-2\",\n      \"timestamp\": \"2026-01-14T10:17:26.288539\"\n    },\n    {\n      \"hash\": \"1878f1b191f81071869f36221dcf719693809be4\",\n      \"subtask_id\": \"subtask-11-3\",\n      \"timestamp\": \"2026-01-14T10:23:17.559862\"\n    },\n    {\n      \"hash\": \"70311421df300875413dadee25477071ae83050f\",\n      \"subtask_id\": \"subtask-12-1\",\n      \"timestamp\": \"2026-01-14T10:26:16.497952\"\n    },\n    {\n      \"hash\": \"a8da6d7dfe811c818e25ded53c698fb8bc99e930\",\n      \"subtask_id\": \"subtask-12-2\",\n      \"timestamp\": \"2026-01-14T10:29:03.005246\"\n    },\n    {\n      \"hash\": \"37aca1da4962cb169c6c99b863f1d64678fd9517\",\n      \"subtask_id\": \"subtask-12-3\",\n      \"timestamp\": \"2026-01-14T10:32:18.639541\"\n    },\n    {\n      \"hash\": \"ceee11fcbb2dfeee441ad97f6350f116eb7d8902\",\n      \"subtask_id\": \"subtask-12-4\",\n      \"timestamp\": \"2026-01-14T10:40:37.682572\"\n    },\n    {\n      \"hash\": \"4a0f3a030759fd8e3a45fd46908fda3b2586736c\",\n      \"subtask_id\": \"subtask-13-2\",\n      \"timestamp\": \"2026-01-14T10:43:14.322688\"\n    },\n    {\n      \"hash\": \"106d3698a389fc8dae28c1b0776b84822da88855\",\n      \"subtask_id\": \"subtask-13-3\",\n      \"timestamp\": \"2026-01-14T11:02:10.353968\"\n    },\n    {\n      \"hash\": \"b6b31393de72e083d6e18066de40765e9cada315\",\n      \"subtask_id\": \"subtask-13-4\",\n      \"timestamp\": \"2026-01-14T11:07:06.244254\"\n    },\n    {\n      \"hash\": \"28b31b4e85dca0a5ed29d4a9d2a355cacd35b463\",\n      \"subtask_id\": \"subtask-13-5\",\n      \"timestamp\": \"2026-01-14T11:15:16.705013\"\n    }\n  ],\n  \"last_good_commit\": \"28b31b4e85dca0a5ed29d4a9d2a355cacd35b463\",\n  \"metadata\": {\n    \"created_at\": \"2026-01-14T09:55:05.952673\",\n    \"last_updated\": \"2026-01-14T11:15:16.705015\"\n  }\n}",
+        "last_modified": "2026-01-15T14:16:00.940962"
+      },
+      "task_intent": {
+        "title": "026-add-mobile-navigation-menu-to-landing-page",
+        "description": "",
+        "from_plan": false
+      },
+      "commits_behind_main": 5,
+      "status": "active",
+      "merged_at": null
+    }
+  },
+  "created_at": "2026-01-14T09:55:04.552244",
+  "last_updated": "2026-01-15T14:15:55.623993"
+}

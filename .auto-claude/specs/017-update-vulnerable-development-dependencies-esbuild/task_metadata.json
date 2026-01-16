@@ -1,0 +1,11 @@
+{
+  "sourceType": "ideation",
+  "ideationType": "security_hardening",
+  "ideaId": "sec-005",
+  "rationale": "Keeping dependencies up-to-date reduces the attack surface and prevents potential exploitation of known vulnerabilities. The vulnerability (GHSA-67mh-4wv8-2f99) allows any website to send requests to the development server and read responses, which could leak sensitive information during development.",
+  "category": "security",
+  "securitySeverity": "low",
+  "impact": "low",
+  "priority": "medium",
+  "archivedAt": "2026-01-16T06:22:13.922Z"
+}

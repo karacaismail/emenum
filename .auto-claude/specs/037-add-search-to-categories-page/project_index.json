@@ -1,0 +1,24 @@
+{
+  "project_type": "single",
+  "services": {
+    "frontend": {
+      "path": ".",
+      "tech_stack": ["nextjs", "react", "typescript", "tailwindcss", "supabase"],
+      "port": 3000,
+      "dev_command": "npm run dev",
+      "test_command": "npm test",
+      "test_integration_command": "npm run test:integration",
+      "test_e2e_command": "npm run test:e2e"
+    }
+  },
+  "infrastructure": {
+    "docker": false,
+    "database": "supabase-postgresql"
+  },
+  "conventions": {
+    "linter": "eslint",
+    "formatter": "prettier",
+    "testing": "vitest",
+    "ui_patterns": "tailwindcss with custom components"
+  }
+}

@@ -1,0 +1,31 @@
+{
+  "project_type": "single",
+  "services": {
+    "frontend": {
+      "path": ".",
+      "tech_stack": ["typescript", "react", "nextjs", "tailwind"],
+      "port": 3000,
+      "dev_command": "npm run dev",
+      "test_command": "npm run test",
+      "build_command": "npm run build"
+    }
+  },
+  "infrastructure": {
+    "docker": false,
+    "database": "supabase-postgresql",
+    "auth": "supabase-auth",
+    "realtime": "supabase-realtime"
+  },
+  "conventions": {
+    "linter": "eslint",
+    "formatter": "prettier",
+    "testing": "vitest",
+    "typescript": "strict"
+  },
+  "database_patterns": {
+    "client_browser": "lib/supabase/client.ts",
+    "client_server": "lib/supabase/server.ts",
+    "rls_enabled": true,
+    "query_pattern": "select with nested relationships"
+  }
+}

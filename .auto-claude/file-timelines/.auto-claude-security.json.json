@@ -1,0 +1,128 @@
+{
+  "file_path": ".auto-claude-security.json",
+  "main_branch_history": [],
+  "task_views": {
+    "008-optimize-authprovider-to-avoid-unnecessary-re-fetc": {
+      "task_id": "008-optimize-authprovider-to-avoid-unnecessary-re-fetc",
+      "branch_point": {
+        "commit_hash": "2b028be920d271c6e53b44319d1c871dc3d27076",
+        "content": "",
+        "timestamp": "2026-01-15T02:37:17.742478"
+      },
+      "worktree_state": {
+        "content": "{\n  \"base_commands\": [\n    \".\",\n    \"[\",\n    \"[[\",\n    \"ag\",\n    \"awk\",\n    \"basename\",\n    \"bash\",\n    \"bc\",\n    \"break\",\n    \"cat\",\n    \"cd\",\n    \"chmod\",\n    \"clear\",\n    \"cmp\",\n    \"column\",\n    \"comm\",\n    \"command\",\n    \"continue\",\n    \"cp\",\n    \"curl\",\n    \"cut\",\n    \"date\",\n    \"df\",\n    \"diff\",\n    \"dig\",\n    \"dirname\",\n    \"du\",\n    \"echo\",\n    \"egrep\",\n    \"env\",\n    \"eval\",\n    \"exec\",\n    \"exit\",\n    \"expand\",\n    \"export\",\n    \"expr\",\n    \"false\",\n    \"fd\",\n    \"fgrep\",\n    \"file\",\n    \"find\",\n    \"fmt\",\n    \"fold\",\n    \"gawk\",\n    \"gh\",\n    \"git\",\n    \"grep\",\n    \"gunzip\",\n    \"gzip\",\n    \"head\",\n    \"help\",\n    \"host\",\n    \"iconv\",\n    \"id\",\n    \"jobs\",\n    \"join\",\n    \"jq\",\n    \"kill\",\n    \"killall\",\n    \"less\",\n    \"let\",\n    \"ln\",\n    \"ls\",\n    \"lsof\",\n    \"man\",\n    \"mkdir\",\n    \"mktemp\",\n    \"more\",\n    \"mv\",\n    \"nl\",\n    \"paste\",\n    \"pgrep\",\n    \"ping\",\n    \"pkill\",\n    \"popd\",\n    \"printenv\",\n    \"printf\",\n    \"ps\",\n    \"pushd\",\n    \"pwd\",\n    \"read\",\n    \"readlink\",\n    \"realpath\",\n    \"reset\",\n    \"return\",\n    \"rev\",\n    \"rg\",\n    \"rm\",\n    \"rmdir\",\n    \"sed\",\n    \"seq\",\n    \"set\",\n    \"sh\",\n    \"shuf\",\n    \"sleep\",\n    \"sort\",\n    \"source\",\n    \"split\",\n    \"stat\",\n    \"tail\",\n    \"tar\",\n    \"tee\",\n    \"test\",\n    \"time\",\n    \"timeout\",\n    \"touch\",\n    \"tr\",\n    \"tree\",\n    \"true\",\n    \"type\",\n    \"uname\",\n    \"unexpand\",\n    \"uniq\",\n    \"unset\",\n    \"unzip\",\n    \"watch\",\n    \"wc\",\n    \"wget\",\n    \"whereis\",\n    \"which\",\n    \"whoami\",\n    \"xargs\",\n    \"yes\",\n    \"yq\",\n    \"zip\",\n    \"zsh\"\n  ],\n  \"stack_commands\": [],\n  \"script_commands\": [],\n  \"custom_commands\": [],\n  \"detected_stack\": {\n    \"languages\": [],\n    \"package_managers\": [],\n    \"frameworks\": [],\n    \"databases\": [],\n    \"infrastructure\": [],\n    \"cloud_providers\": [],\n    \"code_quality_tools\": [],\n    \"version_managers\": []\n  },\n  \"custom_scripts\": {\n    \"npm_scripts\": [],\n    \"make_targets\": [],\n    \"poetry_scripts\": [],\n    \"cargo_aliases\": [],\n    \"shell_scripts\": []\n  },\n  \"project_dir\": \"/Users/karaca/Desktop/ozon/.worktrees/012-document-ui-components-with-props-and-usage-exampl\",\n  \"created_at\": \"2026-01-14T19:05:33.377376\",\n  \"project_hash\": \"6d72bf34197a1db72f386265ea026abd\",\n  \"inherited_from\": \"/Users/karaca/Desktop/ozon\"\n}",
+        "last_modified": "2026-01-15T14:52:29.245452"
+      },
+      "task_intent": {
+        "title": "008-optimize-authprovider-to-avoid-unnecessary-re-fetc",
+        "description": "",
+        "from_plan": false
+      },
+      "commits_behind_main": 5,
+      "status": "active",
+      "merged_at": null
+    },
+    "005-extract-duplicated-crud-state-management-into-reus": {
+      "task_id": "005-extract-duplicated-crud-state-management-into-reus",
+      "branch_point": {
+        "commit_hash": "2b028be920d271c6e53b44319d1c871dc3d27076",
+        "content": "",
+        "timestamp": "2026-01-15T06:33:12.581832"
+      },
+      "worktree_state": {
+        "content": "{\n  \"base_commands\": [\n    \".\",\n    \"[\",\n    \"[[\",\n    \"ag\",\n    \"awk\",\n    \"basename\",\n    \"bash\",\n    \"bc\",\n    \"break\",\n    \"cat\",\n    \"cd\",\n    \"chmod\",\n    \"clear\",\n    \"cmp\",\n    \"column\",\n    \"comm\",\n    \"command\",\n    \"continue\",\n    \"cp\",\n    \"curl\",\n    \"cut\",\n    \"date\",\n    \"df\",\n    \"diff\",\n    \"dig\",\n    \"dirname\",\n    \"du\",\n    \"echo\",\n    \"egrep\",\n    \"env\",\n    \"eval\",\n    \"exec\",\n    \"exit\",\n    \"expand\",\n    \"export\",\n    \"expr\",\n    \"false\",\n    \"fd\",\n    \"fgrep\",\n    \"file\",\n    \"find\",\n    \"fmt\",\n    \"fold\",\n    \"gawk\",\n    \"gh\",\n    \"git\",\n    \"grep\",\n    \"gunzip\",\n    \"gzip\",\n    \"head\",\n    \"help\",\n    \"host\",\n    \"iconv\",\n    \"id\",\n    \"jobs\",\n    \"join\",\n    \"jq\",\n    \"kill\",\n    \"killall\",\n    \"less\",\n    \"let\",\n    \"ln\",\n    \"ls\",\n    \"lsof\",\n    \"man\",\n    \"mkdir\",\n    \"mktemp\",\n    \"more\",\n    \"mv\",\n    \"nl\",\n    \"paste\",\n    \"pgrep\",\n    \"ping\",\n    \"pkill\",\n    \"popd\",\n    \"printenv\",\n    \"printf\",\n    \"ps\",\n    \"pushd\",\n    \"pwd\",\n    \"read\",\n    \"readlink\",\n    \"realpath\",\n    \"reset\",\n    \"return\",\n    \"rev\",\n    \"rg\",\n    \"rm\",\n    \"rmdir\",\n    \"sed\",\n    \"seq\",\n    \"set\",\n    \"sh\",\n    \"shuf\",\n    \"sleep\",\n    \"sort\",\n    \"source\",\n    \"split\",\n    \"stat\",\n    \"tail\",\n    \"tar\",\n    \"tee\",\n    \"test\",\n    \"time\",\n    \"timeout\",\n    \"touch\",\n    \"tr\",\n    \"tree\",\n    \"true\",\n    \"type\",\n    \"uname\",\n    \"unexpand\",\n    \"uniq\",\n    \"unset\",\n    \"unzip\",\n    \"watch\",\n    \"wc\",\n    \"wget\",\n    \"whereis\",\n    \"which\",\n    \"whoami\",\n    \"xargs\",\n    \"yes\",\n    \"yq\",\n    \"zip\",\n    \"zsh\"\n  ],\n  \"stack_commands\": [\n    \"ar\",\n    \"clang\",\n    \"clang++\",\n    \"cmake\",\n    \"composer\",\n    \"eslint\",\n    \"g++\",\n    \"gcc\",\n    \"ipython\",\n    \"jupyter\",\n    \"ld\",\n    \"make\",\n    \"meson\",\n    \"next\",\n    \"ninja\",\n    \"nm\",\n    \"node\",\n    \"notebook\",\n    \"npm\",\n    \"npx\",\n    \"objdump\",\n    \"pdb\",\n    \"php\",\n    \"pip\",\n    \"pip3\",\n    \"pipx\",\n    \"pudb\",\n    \"python\",\n    \"python3\",\n    \"react-scripts\",\n    \"strip\",\n    \"supabase\",\n    \"ts-node\",\n    \"tsc\",\n    \"tsx\",\n    \"vitest\"\n  ],\n  \"script_commands\": [\n    \"bun\",\n    \"npm\",\n    \"pnpm\",\n    \"yarn\"\n  ],\n  \"custom_commands\": [],\n  \"detected_stack\": {\n    \"languages\": [\n      \"python\",\n      \"javascript\",\n      \"typescript\",\n      \"php\",\n      \"c\"\n    ],\n    \"package_managers\": [\n      \"npm\"\n    ],\n    \"frameworks\": [\n      \"nextjs\",\n      \"react\",\n      \"vitest\",\n      \"eslint\"\n    ],\n    \"databases\": [],\n    \"infrastructure\": [],\n    \"cloud_providers\": [\n      \"supabase\"\n    ],\n    \"code_quality_tools\": [],\n    \"version_managers\": []\n  },\n  \"custom_scripts\": {\n    \"npm_scripts\": [\n      \"dev\",\n      \"build\",\n      \"start\",\n      \"lint\",\n      \"typecheck\",\n      \"test\",\n      \"test:run\",\n      \"test:integration\",\n      \"test:e2e\"\n    ],\n    \"make_targets\": [],\n    \"poetry_scripts\": [],\n    \"cargo_aliases\": [],\n    \"shell_scripts\": []\n  },\n  \"project_dir\": \"/Users/karaca/Desktop/ozon/.worktrees/005-extract-duplicated-crud-state-management-into-reus\",\n  \"created_at\": \"2026-01-15T06:43:43.319056\",\n  \"project_hash\": \"094222184e66883f92508211688413f1\"\n}",
+        "last_modified": "2026-01-15T16:04:15.462408"
+      },
+      "task_intent": {
+        "title": "005-extract-duplicated-crud-state-management-into-reus",
+        "description": "",
+        "from_plan": false
+      },
+      "commits_behind_main": 5,
+      "status": "active",
+      "merged_at": null
+    },
+    "002-add-unit-test-coverage-for-dashboard-page-componen": {
+      "task_id": "002-add-unit-test-coverage-for-dashboard-page-componen",
+      "branch_point": {
+        "commit_hash": "2b028be920d271c6e53b44319d1c871dc3d27076",
+        "content": "",
+        "timestamp": "2026-01-15T14:04:12.520457"
+      },
+      "worktree_state": {
+        "content": "{\n  \"base_commands\": [\n    \".\",\n    \"[\",\n    \"[[\",\n    \"ag\",\n    \"awk\",\n    \"basename\",\n    \"bash\",\n    \"bc\",\n    \"break\",\n    \"cat\",\n    \"cd\",\n    \"chmod\",\n    \"clear\",\n    \"cmp\",\n    \"column\",\n    \"comm\",\n    \"command\",\n    \"continue\",\n    \"cp\",\n    \"curl\",\n    \"cut\",\n    \"date\",\n    \"df\",\n    \"diff\",\n    \"dig\",\n    \"dirname\",\n    \"du\",\n    \"echo\",\n    \"egrep\",\n    \"env\",\n    \"eval\",\n    \"exec\",\n    \"exit\",\n    \"expand\",\n    \"export\",\n    \"expr\",\n    \"false\",\n    \"fd\",\n    \"fgrep\",\n    \"file\",\n    \"find\",\n    \"fmt\",\n    \"fold\",\n    \"gawk\",\n    \"gh\",\n    \"git\",\n    \"grep\",\n    \"gunzip\",\n    \"gzip\",\n    \"head\",\n    \"help\",\n    \"host\",\n    \"iconv\",\n    \"id\",\n    \"jobs\",\n    \"join\",\n    \"jq\",\n    \"kill\",\n    \"killall\",\n    \"less\",\n    \"let\",\n    \"ln\",\n    \"ls\",\n    \"lsof\",\n    \"man\",\n    \"mkdir\",\n    \"mktemp\",\n    \"more\",\n    \"mv\",\n    \"nl\",\n    \"paste\",\n    \"pgrep\",\n    \"ping\",\n    \"pkill\",\n    \"popd\",\n    \"printenv\",\n    \"printf\",\n    \"ps\",\n    \"pushd\",\n    \"pwd\",\n    \"read\",\n    \"readlink\",\n    \"realpath\",\n    \"reset\",\n    \"return\",\n    \"rev\",\n    \"rg\",\n    \"rm\",\n    \"rmdir\",\n    \"sed\",\n    \"seq\",\n    \"set\",\n    \"sh\",\n    \"shuf\",\n    \"sleep\",\n    \"sort\",\n    \"source\",\n    \"split\",\n    \"stat\",\n    \"tail\",\n    \"tar\",\n    \"tee\",\n    \"test\",\n    \"time\",\n    \"timeout\",\n    \"touch\",\n    \"tr\",\n    \"tree\",\n    \"true\",\n    \"type\",\n    \"uname\",\n    \"unexpand\",\n    \"uniq\",\n    \"unset\",\n    \"unzip\",\n    \"watch\",\n    \"wc\",\n    \"wget\",\n    \"whereis\",\n    \"which\",\n    \"whoami\",\n    \"xargs\",\n    \"yes\",\n    \"yq\",\n    \"zip\",\n    \"zsh\"\n  ],\n  \"stack_commands\": [],\n  \"script_commands\": [],\n  \"custom_commands\": [],\n  \"detected_stack\": {\n    \"languages\": [],\n    \"package_managers\": [],\n    \"frameworks\": [],\n    \"databases\": [],\n    \"infrastructure\": [],\n    \"cloud_providers\": [],\n    \"code_quality_tools\": [],\n    \"version_managers\": []\n  },\n  \"custom_scripts\": {\n    \"npm_scripts\": [],\n    \"make_targets\": [],\n    \"poetry_scripts\": [],\n    \"cargo_aliases\": [],\n    \"shell_scripts\": []\n  },\n  \"project_dir\": \"/Users/karaca/Desktop/ozon/.worktrees/012-document-ui-components-with-props-and-usage-exampl\",\n  \"created_at\": \"2026-01-14T19:05:33.377376\",\n  \"project_hash\": \"6d72bf34197a1db72f386265ea026abd\",\n  \"inherited_from\": \"/Users/karaca/Desktop/ozon\"\n}",
+        "last_modified": "2026-01-15T16:20:44.187053"
+      },
+      "task_intent": {
+        "title": "002-add-unit-test-coverage-for-dashboard-page-componen",
+        "description": "",
+        "from_plan": false
+      },
+      "commits_behind_main": 5,
+      "status": "active",
+      "merged_at": null
+    },
+    "028-add-mobile-navigation-menu-to-landing-page": {
+      "task_id": "028-add-mobile-navigation-menu-to-landing-page",
+      "branch_point": {
+        "commit_hash": "2b028be920d271c6e53b44319d1c871dc3d27076",
+        "content": "",
+        "timestamp": "2026-01-15T13:21:43.550879"
+      },
+      "worktree_state": {
+        "content": "{\n  \"base_commands\": [\n    \".\",\n    \"[\",\n    \"[[\",\n    \"ag\",\n    \"awk\",\n    \"basename\",\n    \"bash\",\n    \"bc\",\n    \"break\",\n    \"cat\",\n    \"cd\",\n    \"chmod\",\n    \"clear\",\n    \"cmp\",\n    \"column\",\n    \"comm\",\n    \"command\",\n    \"continue\",\n    \"cp\",\n    \"curl\",\n    \"cut\",\n    \"date\",\n    \"df\",\n    \"diff\",\n    \"dig\",\n    \"dirname\",\n    \"du\",\n    \"echo\",\n    \"egrep\",\n    \"env\",\n    \"eval\",\n    \"exec\",\n    \"exit\",\n    \"expand\",\n    \"export\",\n    \"expr\",\n    \"false\",\n    \"fd\",\n    \"fgrep\",\n    \"file\",\n    \"find\",\n    \"fmt\",\n    \"fold\",\n    \"gawk\",\n    \"gh\",\n    \"git\",\n    \"grep\",\n    \"gunzip\",\n    \"gzip\",\n    \"head\",\n    \"help\",\n    \"host\",\n    \"iconv\",\n    \"id\",\n    \"jobs\",\n    \"join\",\n    \"jq\",\n    \"kill\",\n    \"killall\",\n    \"less\",\n    \"let\",\n    \"ln\",\n    \"ls\",\n    \"lsof\",\n    \"man\",\n    \"mkdir\",\n    \"mktemp\",\n    \"more\",\n    \"mv\",\n    \"nl\",\n    \"paste\",\n    \"pgrep\",\n    \"ping\",\n    \"pkill\",\n    \"popd\",\n    \"printenv\",\n    \"printf\",\n    \"ps\",\n    \"pushd\",\n    \"pwd\",\n    \"read\",\n    \"readlink\",\n    \"realpath\",\n    \"reset\",\n    \"return\",\n    \"rev\",\n    \"rg\",\n    \"rm\",\n    \"rmdir\",\n    \"sed\",\n    \"seq\",\n    \"set\",\n    \"sh\",\n    \"shuf\",\n    \"sleep\",\n    \"sort\",\n    \"source\",\n    \"split\",\n    \"stat\",\n    \"tail\",\n    \"tar\",\n    \"tee\",\n    \"test\",\n    \"time\",\n    \"timeout\",\n    \"touch\",\n    \"tr\",\n    \"tree\",\n    \"true\",\n    \"type\",\n    \"uname\",\n    \"unexpand\",\n    \"uniq\",\n    \"unset\",\n    \"unzip\",\n    \"watch\",\n    \"wc\",\n    \"wget\",\n    \"whereis\",\n    \"which\",\n    \"whoami\",\n    \"xargs\",\n    \"yes\",\n    \"yq\",\n    \"zip\",\n    \"zsh\"\n  ],\n  \"stack_commands\": [],\n  \"script_commands\": [],\n  \"custom_commands\": [],\n  \"detected_stack\": {\n    \"languages\": [],\n    \"package_managers\": [],\n    \"frameworks\": [],\n    \"databases\": [],\n    \"infrastructure\": [],\n    \"cloud_providers\": [],\n    \"code_quality_tools\": [],\n    \"version_managers\": []\n  },\n  \"custom_scripts\": {\n    \"npm_scripts\": [],\n    \"make_targets\": [],\n    \"poetry_scripts\": [],\n    \"cargo_aliases\": [],\n    \"shell_scripts\": []\n  },\n  \"project_dir\": \"/Users/karaca/Desktop/ozon/.worktrees/012-document-ui-components-with-props-and-usage-exampl\",\n  \"created_at\": \"2026-01-14T19:05:33.377376\",\n  \"project_hash\": \"6d72bf34197a1db72f386265ea026abd\",\n  \"inherited_from\": \"/Users/karaca/Desktop/ozon\"\n}",
+        "last_modified": "2026-01-15T15:13:32.512038"
+      },
+      "task_intent": {
+        "title": "028-add-mobile-navigation-menu-to-landing-page",
+        "description": "",
+        "from_plan": false
+      },
+      "commits_behind_main": 5,
+      "status": "active",
+      "merged_at": null
+    },
+    "034-create-reusable-select-component-for-consistent-fo": {
+      "task_id": "034-create-reusable-select-component-for-consistent-fo",
+      "branch_point": {
+        "commit_hash": "2b028be920d271c6e53b44319d1c871dc3d27076",
+        "content": "",
+        "timestamp": "2026-01-15T14:05:37.956433"
+      },
+      "worktree_state": {
+        "content": "{\n  \"base_commands\": [\n    \".\",\n    \"[\",\n    \"[[\",\n    \"ag\",\n    \"awk\",\n    \"basename\",\n    \"bash\",\n    \"bc\",\n    \"break\",\n    \"cat\",\n    \"cd\",\n    \"chmod\",\n    \"clear\",\n    \"cmp\",\n    \"column\",\n    \"comm\",\n    \"command\",\n    \"continue\",\n    \"cp\",\n    \"curl\",\n    \"cut\",\n    \"date\",\n    \"df\",\n    \"diff\",\n    \"dig\",\n    \"dirname\",\n    \"du\",\n    \"echo\",\n    \"egrep\",\n    \"env\",\n    \"eval\",\n    \"exec\",\n    \"exit\",\n    \"expand\",\n    \"export\",\n    \"expr\",\n    \"false\",\n    \"fd\",\n    \"fgrep\",\n    \"file\",\n    \"find\",\n    \"fmt\",\n    \"fold\",\n    \"gawk\",\n    \"gh\",\n    \"git\",\n    \"grep\",\n    \"gunzip\",\n    \"gzip\",\n    \"head\",\n    \"help\",\n    \"host\",\n    \"iconv\",\n    \"id\",\n    \"jobs\",\n    \"join\",\n    \"jq\",\n    \"kill\",\n    \"killall\",\n    \"less\",\n    \"let\",\n    \"ln\",\n    \"ls\",\n    \"lsof\",\n    \"man\",\n    \"mkdir\",\n    \"mktemp\",\n    \"more\",\n    \"mv\",\n    \"nl\",\n    \"paste\",\n    \"pgrep\",\n    \"ping\",\n    \"pkill\",\n    \"popd\",\n    \"printenv\",\n    \"printf\",\n    \"ps\",\n    \"pushd\",\n    \"pwd\",\n    \"read\",\n    \"readlink\",\n    \"realpath\",\n    \"reset\",\n    \"return\",\n    \"rev\",\n    \"rg\",\n    \"rm\",\n    \"rmdir\",\n    \"sed\",\n    \"seq\",\n    \"set\",\n    \"sh\",\n    \"shuf\",\n    \"sleep\",\n    \"sort\",\n    \"source\",\n    \"split\",\n    \"stat\",\n    \"tail\",\n    \"tar\",\n    \"tee\",\n    \"test\",\n    \"time\",\n    \"timeout\",\n    \"touch\",\n    \"tr\",\n    \"tree\",\n    \"true\",\n    \"type\",\n    \"uname\",\n    \"unexpand\",\n    \"uniq\",\n    \"unset\",\n    \"unzip\",\n    \"watch\",\n    \"wc\",\n    \"wget\",\n    \"whereis\",\n    \"which\",\n    \"whoami\",\n    \"xargs\",\n    \"yes\",\n    \"yq\",\n    \"zip\",\n    \"zsh\"\n  ],\n  \"stack_commands\": [],\n  \"script_commands\": [],\n  \"custom_commands\": [],\n  \"detected_stack\": {\n    \"languages\": [],\n    \"package_managers\": [],\n    \"frameworks\": [],\n    \"databases\": [],\n    \"infrastructure\": [],\n    \"cloud_providers\": [],\n    \"code_quality_tools\": [],\n    \"version_managers\": []\n  },\n  \"custom_scripts\": {\n    \"npm_scripts\": [],\n    \"make_targets\": [],\n    \"poetry_scripts\": [],\n    \"cargo_aliases\": [],\n    \"shell_scripts\": []\n  },\n  \"project_dir\": \"/Users/karaca/Desktop/ozon/.worktrees/012-document-ui-components-with-props-and-usage-exampl\",\n  \"created_at\": \"2026-01-14T19:05:33.377376\",\n  \"project_hash\": \"6d72bf34197a1db72f386265ea026abd\",\n  \"inherited_from\": \"/Users/karaca/Desktop/ozon\"\n}",
+        "last_modified": "2026-01-15T15:09:23.608945"
+      },
+      "task_intent": {
+        "title": "034-create-reusable-select-component-for-consistent-fo",
+        "description": "",
+        "from_plan": false
+      },
+      "commits_behind_main": 5,
+      "status": "active",
+      "merged_at": null
+    },
+    "017-update-vulnerable-development-dependencies-esbuild": {
+      "task_id": "017-update-vulnerable-development-dependencies-esbuild",
+      "branch_point": {
+        "commit_hash": "e8843e43e3015359d948a65b1477b8b5aba460a7",
+        "content": "",
+        "timestamp": "2026-01-15T15:26:08.302587"
+      },
+      "worktree_state": {
+        "content": "{\n  \"base_commands\": [\n    \".\",\n    \"[\",\n    \"[[\",\n    \"ag\",\n    \"awk\",\n    \"basename\",\n    \"bash\",\n    \"bc\",\n    \"break\",\n    \"cat\",\n    \"cd\",\n    \"chmod\",\n    \"clear\",\n    \"cmp\",\n    \"column\",\n    \"comm\",\n    \"command\",\n    \"continue\",\n    \"cp\",\n    \"curl\",\n    \"cut\",\n    \"date\",\n    \"df\",\n    \"diff\",\n    \"dig\",\n    \"dirname\",\n    \"du\",\n    \"echo\",\n    \"egrep\",\n    \"env\",\n    \"eval\",\n    \"exec\",\n    \"exit\",\n    \"expand\",\n    \"export\",\n    \"expr\",\n    \"false\",\n    \"fd\",\n    \"fgrep\",\n    \"file\",\n    \"find\",\n    \"fmt\",\n    \"fold\",\n    \"gawk\",\n    \"gh\",\n    \"git\",\n    \"grep\",\n    \"gunzip\",\n    \"gzip\",\n    \"head\",\n    \"help\",\n    \"host\",\n    \"iconv\",\n    \"id\",\n    \"jobs\",\n    \"join\",\n    \"jq\",\n    \"kill\",\n    \"killall\",\n    \"less\",\n    \"let\",\n    \"ln\",\n    \"ls\",\n    \"lsof\",\n    \"man\",\n    \"mkdir\",\n    \"mktemp\",\n    \"more\",\n    \"mv\",\n    \"nl\",\n    \"paste\",\n    \"pgrep\",\n    \"ping\",\n    \"pkill\",\n    \"popd\",\n    \"printenv\",\n    \"printf\",\n    \"ps\",\n    \"pushd\",\n    \"pwd\",\n    \"read\",\n    \"readlink\",\n    \"realpath\",\n    \"reset\",\n    \"return\",\n    \"rev\",\n    \"rg\",\n    \"rm\",\n    \"rmdir\",\n    \"sed\",\n    \"seq\",\n    \"set\",\n    \"sh\",\n    \"shuf\",\n    \"sleep\",\n    \"sort\",\n    \"source\",\n    \"split\",\n    \"stat\",\n    \"tail\",\n    \"tar\",\n    \"tee\",\n    \"test\",\n    \"time\",\n    \"timeout\",\n    \"touch\",\n    \"tr\",\n    \"tree\",\n    \"true\",\n    \"type\",\n    \"uname\",\n    \"unexpand\",\n    \"uniq\",\n    \"unset\",\n    \"unzip\",\n    \"watch\",\n    \"wc\",\n    \"wget\",\n    \"whereis\",\n    \"which\",\n    \"whoami\",\n    \"xargs\",\n    \"yes\",\n    \"yq\",\n    \"zip\",\n    \"zsh\"\n  ],\n  \"stack_commands\": [],\n  \"script_commands\": [],\n  \"custom_commands\": [],\n  \"detected_stack\": {\n    \"languages\": [],\n    \"package_managers\": [],\n    \"frameworks\": [],\n    \"databases\": [],\n    \"infrastructure\": [],\n    \"cloud_providers\": [],\n    \"code_quality_tools\": [],\n    \"version_managers\": []\n  },\n  \"custom_scripts\": {\n    \"npm_scripts\": [],\n    \"make_targets\": [],\n    \"poetry_scripts\": [],\n    \"cargo_aliases\": [],\n    \"shell_scripts\": []\n  },\n  \"project_dir\": \"/Users/karaca/Desktop/ozon/.worktrees/041-add-menu-snapshot-version-comparison-view\",\n  \"created_at\": \"2026-01-15T06:38:52.604524\",\n  \"project_hash\": \"87ead6d4ca3f4a98ae55dc1d8f846372\",\n  \"inherited_from\": \"/Users/karaca/Desktop/ozon\"\n}",
+        "last_modified": "2026-01-15T15:26:08.562120"
+      },
+      "task_intent": {
+        "title": "017-update-vulnerable-development-dependencies-esbuild",
+        "description": "",
+        "from_plan": false
+      },
+      "commits_behind_main": 11,
+      "status": "active",
+      "merged_at": null
+    }
+  },
+  "created_at": "2026-01-15T02:37:17.742529",
+  "last_updated": "2026-01-15T15:26:08.344983"
+}

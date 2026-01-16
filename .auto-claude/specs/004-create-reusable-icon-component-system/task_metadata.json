@@ -1,0 +1,10 @@
+{
+  "sourceType": "ideation",
+  "ideationType": "code_quality",
+  "ideaId": "cq-003",
+  "rationale": "Inline SVG duplication increases bundle size, makes icon updates tedious (must change in multiple places), and leads to visual inconsistency. A centralized icon system enables consistent iconography, easier theming, and potential tree-shaking optimizations.",
+  "category": "refactoring",
+  "codeQualitySeverity": "minor",
+  "priority": "medium",
+  "archivedAt": "2026-01-16T06:22:08.790Z"
+}

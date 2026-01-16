@@ -1,0 +1,10 @@
+{
+  "sourceType": "ideation",
+  "ideationType": "code_quality",
+  "ideaId": "cq-001",
+  "rationale": "Files over 500 lines significantly increase cognitive load, make code reviews difficult, and create merge conflicts. Large monolithic components are harder to test in isolation and violate single responsibility principle. Splitting into focused components enables better code reuse and faster development.",
+  "category": "refactoring",
+  "codeQualitySeverity": "major",
+  "priority": "high",
+  "archivedAt": "2026-01-16T06:22:11.467Z"
+}

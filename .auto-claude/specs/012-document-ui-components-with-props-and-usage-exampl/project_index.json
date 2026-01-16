@@ -1,0 +1,37 @@
+{
+  "project_type": "single",
+  "services": {
+    "frontend": {
+      "path": ".",
+      "tech_stack": ["next.js", "react", "typescript", "tailwind"],
+      "port": 3000,
+      "dev_command": "npm run dev",
+      "test_command": "npm run test",
+      "build_command": "npm run build",
+      "typecheck_command": "npm run typecheck"
+    }
+  },
+  "infrastructure": {
+    "docker": false,
+    "database": "supabase_postgresql",
+    "hosting": "vercel",
+    "auth": "supabase_auth"
+  },
+  "conventions": {
+    "linter": "eslint",
+    "formatter": "prettier",
+    "testing": "vitest",
+    "component_pattern": "functional_components_with_forwardRef",
+    "typing": "typescript_strict",
+    "styling": "tailwind_css",
+    "docs_pattern": "markdown_in_docs_folder"
+  },
+  "directory_structure": {
+    "components": "React components (ui/, dashboard/, providers/)",
+    "app": "Next.js App Router pages",
+    "lib": "Utility functions and business logic",
+    "types": "TypeScript type definitions",
+    "hooks": "Custom React hooks",
+    "docs": "Project documentation"
+  }
+}

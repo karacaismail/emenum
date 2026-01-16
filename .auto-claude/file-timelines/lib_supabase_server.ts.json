@@ -1,0 +1,228 @@
+{
+  "file_path": "lib/supabase/server.ts",
+  "main_branch_history": [],
+  "task_views": {
+    "001-ozon-e-menum-net-vibe-coding-v1": {
+      "task_id": "001-ozon-e-menum-net-vibe-coding-v1",
+      "branch_point": {
+        "commit_hash": "2b028be920d271c6e53b44319d1c871dc3d27076",
+        "content": "",
+        "timestamp": "2026-01-14T09:55:04.472899"
+      },
+      "worktree_state": {
+        "content": "import { createServerClient } from '@supabase/ssr'\nimport { cookies } from 'next/headers'\n\nexport const createServerSupabaseClient = async () => {\n  const cookieStore = await cookies()\n  return createServerClient(\n    process.env.NEXT_PUBLIC_SUPABASE_URL!,\n    process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!,\n    {\n      cookies: {\n        getAll() {\n          return cookieStore.getAll()\n        },\n        setAll(cookiesToSet) {\n          cookiesToSet.forEach(({ name, value, options }) =>\n            cookieStore.set(name, value, options)\n          )\n        },\n      },\n    }\n  )\n}\n",
+        "last_modified": "2026-01-14T09:55:05.873750"
+      },
+      "task_intent": {
+        "title": "001-ozon-e-menum-net-vibe-coding-v1",
+        "description": "",
+        "from_plan": false
+      },
+      "commits_behind_main": 0,
+      "status": "active",
+      "merged_at": null
+    },
+    "037-add-search-to-categories-page": {
+      "task_id": "037-add-search-to-categories-page",
+      "branch_point": {
+        "commit_hash": "2b028be920d271c6e53b44319d1c871dc3d27076",
+        "content": "",
+        "timestamp": "2026-01-14T18:38:07.376896"
+      },
+      "worktree_state": {
+        "content": "import { createServerClient } from '@supabase/ssr'\nimport { createClient } from '@supabase/supabase-js'\nimport { cookies } from 'next/headers'\n\nexport const createServerSupabaseClient = async () => {\n  const cookieStore = await cookies()\n  return createServerClient(\n    process.env.NEXT_PUBLIC_SUPABASE_URL!,\n    process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!,\n    {\n      cookies: {\n        getAll() {\n          return cookieStore.getAll()\n        },\n        setAll(cookiesToSet) {\n          cookiesToSet.forEach(({ name, value, options }) =>\n            cookieStore.set(name, value, options)\n          )\n        },\n      },\n    }\n  )\n}\n\n/**\n * Create a static Supabase client for use in static generation contexts\n * (generateStaticParams, etc.) where cookies are not available.\n * This client is unauthenticated and only has access to public data.\n * Returns null if environment variables are not set (during build).\n */\nexport const createStaticSupabaseClient = () => {\n  const url = process.env.NEXT_PUBLIC_SUPABASE_URL\n  const key = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY\n\n  if (!url || !key) {\n    return null\n  }\n\n  return createClient(url, key)\n}\n",
+        "last_modified": "2026-01-15T15:07:08.933650"
+      },
+      "task_intent": {
+        "title": "037-add-search-to-categories-page",
+        "description": "Add search functionality to the categories page, allowing users to filter categories by name. This mirrors the existing search pattern already implemented in the products page.",
+        "from_plan": true
+      },
+      "commits_behind_main": 0,
+      "status": "active",
+      "merged_at": null
+    },
+    "032-add-mobile-navigation-menu-to-landing-page": {
+      "task_id": "032-add-mobile-navigation-menu-to-landing-page",
+      "branch_point": {
+        "commit_hash": "2b028be920d271c6e53b44319d1c871dc3d27076",
+        "content": "",
+        "timestamp": "2026-01-14T18:38:22.963353"
+      },
+      "worktree_state": {
+        "content": "import { createServerClient } from '@supabase/ssr'\nimport { createClient } from '@supabase/supabase-js'\nimport { cookies } from 'next/headers'\n\nexport const createServerSupabaseClient = async () => {\n  const cookieStore = await cookies()\n  return createServerClient(\n    process.env.NEXT_PUBLIC_SUPABASE_URL!,\n    process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!,\n    {\n      cookies: {\n        getAll() {\n          return cookieStore.getAll()\n        },\n        setAll(cookiesToSet) {\n          cookiesToSet.forEach(({ name, value, options }) =>\n            cookieStore.set(name, value, options)\n          )\n        },\n      },\n    }\n  )\n}\n\n/**\n * Create a static Supabase client for use in static generation contexts\n * (generateStaticParams, etc.) where cookies are not available.\n * This client is unauthenticated and only has access to public data.\n * Returns null if environment variables are not set (during build).\n */\nexport const createStaticSupabaseClient = () => {\n  const url = process.env.NEXT_PUBLIC_SUPABASE_URL\n  const key = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY\n\n  if (!url || !key) {\n    return null\n  }\n\n  return createClient(url, key)\n}\n",
+        "last_modified": "2026-01-15T15:05:31.926856"
+      },
+      "task_intent": {
+        "title": "032-add-mobile-navigation-menu-to-landing-page",
+        "description": "The landing page navigation on mobile devices only shows a 'Basla' button, hiding all other navigation links. Add a proper hamburger menu for mobile users.",
+        "from_plan": true
+      },
+      "commits_behind_main": 0,
+      "status": "active",
+      "merged_at": null
+    },
+    "031-add-mobile-navigation-menu-to-landing-page": {
+      "task_id": "031-add-mobile-navigation-menu-to-landing-page",
+      "branch_point": {
+        "commit_hash": "2b028be920d271c6e53b44319d1c871dc3d27076",
+        "content": "",
+        "timestamp": "2026-01-14T18:50:42.638180"
+      },
+      "worktree_state": {
+        "content": "import { createServerClient } from '@supabase/ssr'\nimport { createClient } from '@supabase/supabase-js'\nimport { cookies } from 'next/headers'\n\nexport const createServerSupabaseClient = async () => {\n  const cookieStore = await cookies()\n  return createServerClient(\n    process.env.NEXT_PUBLIC_SUPABASE_URL!,\n    process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!,\n    {\n      cookies: {\n        getAll() {\n          return cookieStore.getAll()\n        },\n        setAll(cookiesToSet) {\n          cookiesToSet.forEach(({ name, value, options }) =>\n            cookieStore.set(name, value, options)\n          )\n        },\n      },\n    }\n  )\n}\n\n/**\n * Create a static Supabase client for use in static generation contexts\n * (generateStaticParams, etc.) where cookies are not available.\n * This client is unauthenticated and only has access to public data.\n * Returns null if environment variables are not set (during build).\n */\nexport const createStaticSupabaseClient = () => {\n  const url = process.env.NEXT_PUBLIC_SUPABASE_URL\n  const key = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY\n\n  if (!url || !key) {\n    return null\n  }\n\n  return createClient(url, key)\n}\n",
+        "last_modified": "2026-01-15T15:03:39.337801"
+      },
+      "task_intent": {
+        "title": "031-add-mobile-navigation-menu-to-landing-page",
+        "description": "The landing page navigation on mobile devices only shows a 'Basla' button, hiding all other navigation links. Add a proper hamburger menu for mobile users.",
+        "from_plan": true
+      },
+      "commits_behind_main": 0,
+      "status": "active",
+      "merged_at": null
+    },
+    "040-add-bulk-qr-code-download-for-all-tables": {
+      "task_id": "040-add-bulk-qr-code-download-for-all-tables",
+      "branch_point": {
+        "commit_hash": "2b028be920d271c6e53b44319d1c871dc3d27076",
+        "content": "",
+        "timestamp": "2026-01-14T18:53:11.069414"
+      },
+      "worktree_state": {
+        "content": "import { createServerClient } from '@supabase/ssr'\nimport { createClient } from '@supabase/supabase-js'\nimport { cookies } from 'next/headers'\n\nexport const createServerSupabaseClient = async () => {\n  const cookieStore = await cookies()\n  return createServerClient(\n    process.env.NEXT_PUBLIC_SUPABASE_URL!,\n    process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!,\n    {\n      cookies: {\n        getAll() {\n          return cookieStore.getAll()\n        },\n        setAll(cookiesToSet) {\n          cookiesToSet.forEach(({ name, value, options }) =>\n            cookieStore.set(name, value, options)\n          )\n        },\n      },\n    }\n  )\n}\n\n/**\n * Create a static Supabase client for use in static generation contexts\n * (generateStaticParams, etc.) where cookies are not available.\n * This client is unauthenticated and only has access to public data.\n * Returns null if environment variables are not set (during build).\n */\nexport const createStaticSupabaseClient = () => {\n  const url = process.env.NEXT_PUBLIC_SUPABASE_URL\n  const key = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY\n\n  if (!url || !key) {\n    return null\n  }\n\n  return createClient(url, key)\n}\n",
+        "last_modified": "2026-01-14T18:53:20.526078"
+      },
+      "task_intent": {
+        "title": "040-add-bulk-qr-code-download-for-all-tables",
+        "description": "",
+        "from_plan": false
+      },
+      "commits_behind_main": 0,
+      "status": "active",
+      "merged_at": null
+    },
+    "005-extract-duplicated-crud-state-management-into-reus": {
+      "task_id": "005-extract-duplicated-crud-state-management-into-reus",
+      "branch_point": {
+        "commit_hash": "2b028be920d271c6e53b44319d1c871dc3d27076",
+        "content": "",
+        "timestamp": "2026-01-15T06:33:12.581832"
+      },
+      "worktree_state": {
+        "content": "import { createServerClient } from '@supabase/ssr'\nimport { createClient } from '@supabase/supabase-js'\nimport { cookies } from 'next/headers'\n\nexport const createServerSupabaseClient = async () => {\n  const cookieStore = await cookies()\n  return createServerClient(\n    process.env.NEXT_PUBLIC_SUPABASE_URL!,\n    process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!,\n    {\n      cookies: {\n        getAll() {\n          return cookieStore.getAll()\n        },\n        setAll(cookiesToSet) {\n          cookiesToSet.forEach(({ name, value, options }) =>\n            cookieStore.set(name, value, options)\n          )\n        },\n      },\n    }\n  )\n}\n\n/**\n * Create a static Supabase client for use in static generation contexts\n * (generateStaticParams, etc.) where cookies are not available.\n * This client is unauthenticated and only has access to public data.\n * Returns null if environment variables are not set (during build).\n */\nexport const createStaticSupabaseClient = () => {\n  const url = process.env.NEXT_PUBLIC_SUPABASE_URL\n  const key = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY\n\n  if (!url || !key) {\n    return null\n  }\n\n  return createClient(url, key)\n}\n",
+        "last_modified": "2026-01-15T16:04:15.641787"
+      },
+      "task_intent": {
+        "title": "005-extract-duplicated-crud-state-management-into-reus",
+        "description": "",
+        "from_plan": false
+      },
+      "commits_behind_main": 5,
+      "status": "active",
+      "merged_at": null
+    },
+    "002-add-unit-test-coverage-for-dashboard-page-componen": {
+      "task_id": "002-add-unit-test-coverage-for-dashboard-page-componen",
+      "branch_point": {
+        "commit_hash": "2b028be920d271c6e53b44319d1c871dc3d27076",
+        "content": "",
+        "timestamp": "2026-01-15T14:04:12.520457"
+      },
+      "worktree_state": {
+        "content": "import { createServerClient } from '@supabase/ssr'\nimport { createClient } from '@supabase/supabase-js'\nimport { cookies } from 'next/headers'\n\nexport const createServerSupabaseClient = async () => {\n  const cookieStore = await cookies()\n  return createServerClient(\n    process.env.NEXT_PUBLIC_SUPABASE_URL!,\n    process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!,\n    {\n      cookies: {\n        getAll() {\n          return cookieStore.getAll()\n        },\n        setAll(cookiesToSet) {\n          cookiesToSet.forEach(({ name, value, options }) =>\n            cookieStore.set(name, value, options)\n          )\n        },\n      },\n    }\n  )\n}\n\n/**\n * Create a static Supabase client for use in static generation contexts\n * (generateStaticParams, etc.) where cookies are not available.\n * This client is unauthenticated and only has access to public data.\n * Returns null if environment variables are not set (during build).\n */\nexport const createStaticSupabaseClient = () => {\n  const url = process.env.NEXT_PUBLIC_SUPABASE_URL\n  const key = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY\n\n  if (!url || !key) {\n    return null\n  }\n\n  return createClient(url, key)\n}\n",
+        "last_modified": "2026-01-15T16:20:44.372361"
+      },
+      "task_intent": {
+        "title": "002-add-unit-test-coverage-for-dashboard-page-componen",
+        "description": "",
+        "from_plan": false
+      },
+      "commits_behind_main": 5,
+      "status": "active",
+      "merged_at": null
+    },
+    "034-create-reusable-select-component-for-consistent-fo": {
+      "task_id": "034-create-reusable-select-component-for-consistent-fo",
+      "branch_point": {
+        "commit_hash": "2b028be920d271c6e53b44319d1c871dc3d27076",
+        "content": "",
+        "timestamp": "2026-01-15T14:05:37.956433"
+      },
+      "worktree_state": {
+        "content": "import { createServerClient } from '@supabase/ssr'\nimport { createClient } from '@supabase/supabase-js'\nimport { cookies } from 'next/headers'\n\nexport const createServerSupabaseClient = async () => {\n  const cookieStore = await cookies()\n  return createServerClient(\n    process.env.NEXT_PUBLIC_SUPABASE_URL!,\n    process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!,\n    {\n      cookies: {\n        getAll() {\n          return cookieStore.getAll()\n        },\n        setAll(cookiesToSet) {\n          cookiesToSet.forEach(({ name, value, options }) =>\n            cookieStore.set(name, value, options)\n          )\n        },\n      },\n    }\n  )\n}\n\n/**\n * Create a static Supabase client for use in static generation contexts\n * (generateStaticParams, etc.) where cookies are not available.\n * This client is unauthenticated and only has access to public data.\n * Returns null if environment variables are not set (during build).\n */\nexport const createStaticSupabaseClient = () => {\n  const url = process.env.NEXT_PUBLIC_SUPABASE_URL\n  const key = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY\n\n  if (!url || !key) {\n    return null\n  }\n\n  return createClient(url, key)\n}\n",
+        "last_modified": "2026-01-15T14:05:43.902927"
+      },
+      "task_intent": {
+        "title": "034-create-reusable-select-component-for-consistent-fo",
+        "description": "",
+        "from_plan": false
+      },
+      "commits_behind_main": 5,
+      "status": "active",
+      "merged_at": null
+    },
+    "023-add-mobile-navigation-menu-to-landing-page": {
+      "task_id": "023-add-mobile-navigation-menu-to-landing-page",
+      "branch_point": {
+        "commit_hash": "c709a6c45b4887c1a0ad6e04c6142783760a46ec",
+        "content": "",
+        "timestamp": "2026-01-15T13:47:09.808921"
+      },
+      "worktree_state": {
+        "content": "import { createServerClient } from '@supabase/ssr'\nimport { createClient } from '@supabase/supabase-js'\nimport { cookies } from 'next/headers'\n\nexport const createServerSupabaseClient = async () => {\n  const cookieStore = await cookies()\n  return createServerClient(\n    process.env.NEXT_PUBLIC_SUPABASE_URL!,\n    process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!,\n    {\n      cookies: {\n        getAll() {\n          return cookieStore.getAll()\n        },\n        setAll(cookiesToSet) {\n          cookiesToSet.forEach(({ name, value, options }) =>\n            cookieStore.set(name, value, options)\n          )\n        },\n      },\n    }\n  )\n}\n\n/**\n * Create a static Supabase client for use in static generation contexts\n * (generateStaticParams, etc.) where cookies are not available.\n * This client is unauthenticated and only has access to public data.\n * Returns null if environment variables are not set (during build).\n */\nexport const createStaticSupabaseClient = () => {\n  const url = process.env.NEXT_PUBLIC_SUPABASE_URL\n  const key = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY\n\n  if (!url || !key) {\n    return null\n  }\n\n  return createClient(url, key)\n}\n",
+        "last_modified": "2026-01-15T13:47:16.830557"
+      },
+      "task_intent": {
+        "title": "023-add-mobile-navigation-menu-to-landing-page",
+        "description": "",
+        "from_plan": false
+      },
+      "commits_behind_main": 0,
+      "status": "active",
+      "merged_at": null
+    },
+    "024-add-mobile-navigation-menu-to-landing-page": {
+      "task_id": "024-add-mobile-navigation-menu-to-landing-page",
+      "branch_point": {
+        "commit_hash": "2b028be920d271c6e53b44319d1c871dc3d27076",
+        "content": "",
+        "timestamp": "2026-01-15T14:03:15.177885"
+      },
+      "worktree_state": {
+        "content": "import { createServerClient } from '@supabase/ssr'\nimport { createClient } from '@supabase/supabase-js'\nimport { cookies } from 'next/headers'\n\nexport const createServerSupabaseClient = async () => {\n  const cookieStore = await cookies()\n  return createServerClient(\n    process.env.NEXT_PUBLIC_SUPABASE_URL!,\n    process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!,\n    {\n      cookies: {\n        getAll() {\n          return cookieStore.getAll()\n        },\n        setAll(cookiesToSet) {\n          cookiesToSet.forEach(({ name, value, options }) =>\n            cookieStore.set(name, value, options)\n          )\n        },\n      },\n    }\n  )\n}\n\n/**\n * Create a static Supabase client for use in static generation contexts\n * (generateStaticParams, etc.) where cookies are not available.\n * This client is unauthenticated and only has access to public data.\n * Returns null if environment variables are not set (during build).\n */\nexport const createStaticSupabaseClient = () => {\n  const url = process.env.NEXT_PUBLIC_SUPABASE_URL\n  const key = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY\n\n  if (!url || !key) {\n    return null\n  }\n\n  return createClient(url, key)\n}\n",
+        "last_modified": "2026-01-15T15:15:16.132343"
+      },
+      "task_intent": {
+        "title": "024-add-mobile-navigation-menu-to-landing-page",
+        "description": "",
+        "from_plan": false
+      },
+      "commits_behind_main": 5,
+      "status": "active",
+      "merged_at": null
+    },
+    "026-add-mobile-navigation-menu-to-landing-page": {
+      "task_id": "026-add-mobile-navigation-menu-to-landing-page",
+      "branch_point": {
+        "commit_hash": "2b028be920d271c6e53b44319d1c871dc3d27076",
+        "content": "",
+        "timestamp": "2026-01-15T14:15:55.210168"
+      },
+      "worktree_state": {
+        "content": "import { createServerClient } from '@supabase/ssr'\nimport { createClient } from '@supabase/supabase-js'\nimport { cookies } from 'next/headers'\n\nexport const createServerSupabaseClient = async () => {\n  const cookieStore = await cookies()\n  return createServerClient(\n    process.env.NEXT_PUBLIC_SUPABASE_URL!,\n    process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!,\n    {\n      cookies: {\n        getAll() {\n          return cookieStore.getAll()\n        },\n        setAll(cookiesToSet) {\n          cookiesToSet.forEach(({ name, value, options }) =>\n            cookieStore.set(name, value, options)\n          )\n        },\n      },\n    }\n  )\n}\n\n/**\n * Create a static Supabase client for use in static generation contexts\n * (generateStaticParams, etc.) where cookies are not available.\n * This client is unauthenticated and only has access to public data.\n * Returns null if environment variables are not set (during build).\n */\nexport const createStaticSupabaseClient = () => {\n  const url = process.env.NEXT_PUBLIC_SUPABASE_URL\n  const key = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY\n\n  if (!url || !key) {\n    return null\n  }\n\n  return createClient(url, key)\n}\n",
+        "last_modified": "2026-01-15T14:16:01.078778"
+      },
+      "task_intent": {
+        "title": "026-add-mobile-navigation-menu-to-landing-page",
+        "description": "",
+        "from_plan": false
+      },
+      "commits_behind_main": 5,
+      "status": "active",
+      "merged_at": null
+    }
+  },
+  "created_at": "2026-01-14T09:55:05.607928",
+  "last_updated": "2026-01-15T14:15:59.579717"
+}

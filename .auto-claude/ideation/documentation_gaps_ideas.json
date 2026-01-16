@@ -1,0 +1,136 @@
+{
+  "documentation_gaps": [
+    {
+      "id": "doc-001",
+      "type": "documentation_gaps",
+      "title": "Create API.md - Comprehensive API Reference Documentation",
+      "description": "The ROUTES.md file references './API.md' for detailed API reference, but this file does not exist. The project has 7 API endpoints (auth/logout, locations, qr/generate, menu/publish, menu/snapshot, service-request) with varying authentication requirements and request/response formats that need documentation.",
+      "rationale": "Developers integrating with the platform or building client applications need a single source of truth for API contracts. Currently they must read the route handler source code to understand request formats, authentication requirements, and error responses. This is especially critical for public endpoints like service-request that third parties might need.",
+      "category": "api_docs",
+      "targetAudience": "developers",
+      "affectedAreas": [
+        "docs/API.md (missing)",
+        "app/api/qr/generate/route.ts",
+        "app/api/menu/publish/route.ts",
+        "app/api/service-request/route.ts",
+        "app/api/locations/route.ts",
+        "app/api/auth/logout/route.ts"
+      ],
+      "currentDocumentation": "Each API route has inline JSDoc comments describing request/response, but there is no unified API reference document",
+      "proposedContent": "Create docs/API.md with: OpenAPI-style documentation for each endpoint, request body schemas with TypeScript interfaces, response formats with success/error examples, authentication requirements, rate limiting info, and curl/fetch code examples",
+      "priority": "high",
+      "estimatedEffort": "medium"
+    },
+    {
+      "id": "doc-002",
+      "type": "documentation_gaps",
+      "title": "Add Database Schema Documentation for Migrations",
+      "description": "The supabase/migrations/ folder contains 8 SQL migration files (001-007 + 010) but lacks documentation explaining the schema design, table relationships, RLS policy intentions, and the critical immutable price_ledger pattern.",
+      "rationale": "The price_ledger immutability pattern is a core compliance requirement (Turkish Trade Ministry regulations) but is only documented in the spec.md and inline code comments. New developers or DBAs reviewing the schema need to understand why UPDATE/DELETE are blocked, how the current_prices view works, and the relationship between subscriptions, plans, and feature_overrides.",
+      "category": "architecture",
+      "targetAudience": "developers",
+      "affectedAreas": [
+        "supabase/migrations/001_core_tables.sql",
+        "supabase/migrations/002_products_price_ledger.sql",
+        "supabase/migrations/003_package_management.sql",
+        "supabase/migrations/007_rls_policies.sql",
+        "docs/DATABASE.md (missing)"
+      ],
+      "currentDocumentation": "SQL files have minimal inline comments, README mentions table names but not relationships",
+      "proposedContent": "Create docs/DATABASE.md with: ER diagram (Mermaid), table-by-table documentation with column descriptions, explanation of immutable price_ledger pattern, RLS policy overview, view definitions and their purpose, trigger documentation, and migration ordering guide",
+      "priority": "high",
+      "estimatedEffort": "medium"
+    },
+    {
+      "id": "doc-003",
+      "type": "documentation_gaps",
+      "title": "Create Architecture Overview with System Diagrams",
+      "description": "The project lacks high-level architecture documentation showing how the Next.js app, Supabase, and different modules interact. There is no visualization of the auth flow, menu publishing flow, or waiter call realtime notification system.",
+      "rationale": "New team members need to understand the big picture before diving into code. The platform has complex flows: multi-tenant isolation via RLS, dynamic feature flags from database, menu snapshot with SHA-256 hashing for compliance, and Supabase Realtime for waiter notifications. These architectural decisions are scattered across spec.md, todos.md, and inline comments.",
+      "category": "architecture",
+      "targetAudience": "developers",
+      "affectedAreas": [
+        "docs/ARCHITECTURE.md (missing)",
+        "lib/services/",
+        "lib/guards/",
+        "middleware.ts",
+        "components/providers/"
+      ],
+      "currentDocumentation": "spec.md contains detailed requirements but no visual diagrams; README has project structure but not data flow",
+      "proposedContent": "Create docs/ARCHITECTURE.md with: System overview diagram (Mermaid), authentication flow diagram, menu publishing and snapshot flow, waiter call realtime notification sequence diagram, multi-tenant RLS isolation explanation, and component dependency graph",
+      "priority": "medium",
+      "estimatedEffort": "medium"
+    },
+    {
+      "id": "doc-004",
+      "type": "documentation_gaps",
+      "title": "Add Getting Started Tutorial for New Users",
+      "description": "README.md covers installation and environment setup but lacks a step-by-step tutorial guiding a new restaurant owner through their first complete workflow: registration, creating organization, adding products with prices, generating QR codes, and publishing their menu.",
+      "rationale": "The target audience includes restaurant owners who may not be technical. A guided tutorial reduces onboarding friction and ensures users understand the platform's unique features like the immutable price ledger and table-based QR codes. The QA acceptance criteria in spec.md states 'Register-to-QR-download flow completes in under 10 minutes' but there's no guide showing this flow.",
+      "category": "examples",
+      "targetAudience": "users",
+      "affectedAreas": [
+        "docs/GETTING_STARTED.md (missing)",
+        "app/(auth)/register/",
+        "app/(dashboard)/products/",
+        "app/(dashboard)/categories/",
+        "app/(dashboard)/tables/"
+      ],
+      "currentDocumentation": "README has technical setup steps, spec.md has requirements, but no user-focused tutorial",
+      "proposedContent": "Create docs/GETTING_STARTED.md with: Step 1: Account registration, Step 2: Create your restaurant, Step 3: Add categories, Step 4: Add products with prices (explain price ledger), Step 5: Set up tables with QR codes, Step 6: Publish menu. Include screenshots and expected outcomes.",
+      "priority": "medium",
+      "estimatedEffort": "low"
+    },
+    {
+      "id": "doc-005",
+      "type": "documentation_gaps",
+      "title": "Document UI Components with Props and Usage Examples",
+      "description": "The components/ui/ folder contains 4 reusable components (Button, Card, Input, Modal) with no documentation on their available props, variants, or usage patterns. Similarly, components/dashboard/ and components/providers/ lack usage documentation.",
+      "rationale": "Consistent UI development requires developers to understand available components without reading source code. The project uses Tailwind CSS with custom variants but doesn't document the design system tokens or component API. This leads to inconsistent component usage and potential duplication.",
+      "category": "api_docs",
+      "targetAudience": "developers",
+      "affectedAreas": [
+        "components/ui/button.tsx",
+        "components/ui/card.tsx",
+        "components/ui/input.tsx",
+        "components/ui/modal.tsx",
+        "components/dashboard/header.tsx",
+        "components/dashboard/sidebar.tsx"
+      ],
+      "currentDocumentation": "Components have TypeScript types but no JSDoc or Storybook documentation",
+      "proposedContent": "Add JSDoc comments to each component with: @description explaining purpose, @param for each prop with types, @example showing common usage patterns. Consider adding a components/README.md with the component inventory and design system overview.",
+      "priority": "low",
+      "estimatedEffort": "low"
+    }
+  ],
+  "metadata": {
+    "filesAnalyzed": 47,
+    "documentedFunctions": 38,
+    "undocumentedFunctions": 12,
+    "existingDocFiles": [
+      "README.md",
+      "docs/ROUTES.md",
+      "spec.md",
+      "temel.md",
+      "ek_ozellikler.md",
+      "paketler.md"
+    ],
+    "missingDocFiles": [
+      "docs/API.md",
+      "docs/DATABASE.md",
+      "docs/ARCHITECTURE.md",
+      "docs/GETTING_STARTED.md"
+    ],
+    "codeDocumentationCoverage": {
+      "lib/services/*": "excellent",
+      "lib/guards/*": "excellent",
+      "lib/qrcode/*": "excellent",
+      "hooks/*": "excellent",
+      "types/*": "good",
+      "app/api/*": "good",
+      "components/*": "poor",
+      "middleware.ts": "good"
+    },
+    "generatedAt": "2026-01-14T16:14:12.362Z"
+  }
+}

@@ -1,0 +1,266 @@
+{
+  "feature": "Architecture Overview with System Diagrams",
+  "workflow_type": "simple",
+  "workflow_rationale": "This is a documentation-only task with no code changes. Creating markdown files with Mermaid diagrams to document existing architecture. No service dependencies, no integration complexity.",
+  "phases": [
+    {
+      "id": "phase-1-documentation",
+      "name": "Create Architecture Documentation",
+      "type": "implementation",
+      "description": "Create comprehensive architecture documentation with system flow diagrams using Mermaid.js",
+      "depends_on": [],
+      "parallel_safe": false,
+      "subtasks": [
+        {
+          "id": "subtask-1-1",
+          "description": "Create docs directory structure",
+          "service": "documentation",
+          "files_to_modify": [],
+          "files_to_create": [
+            "docs/diagrams/"
+          ],
+          "patterns_from": [],
+          "verification": {
+            "type": "command",
+            "command": "test -d docs/diagrams && echo 'OK' || echo 'FAIL'",
+            "expected": "OK"
+          },
+          "status": "completed",
+          "notes": "Created docs/diagrams/ directory structure with .gitkeep file to ensure directory is tracked in version control. Verification passed successfully.",
+          "updated_at": "2026-01-15T11:41:42.110755+00:00"
+        },
+        {
+          "id": "subtask-1-2",
+          "description": "Create main ARCHITECTURE.md file",
+          "service": "documentation",
+          "files_to_modify": [],
+          "files_to_create": [
+            "docs/ARCHITECTURE.md"
+          ],
+          "patterns_from": [
+            "README.md"
+          ],
+          "verification": {
+            "type": "command",
+            "command": "test -f docs/ARCHITECTURE.md && grep -q 'ozaMenu Architecture' docs/ARCHITECTURE.md && echo 'OK' || echo 'FAIL'",
+            "expected": "OK"
+          },
+          "status": "completed",
+          "notes": "Created comprehensive ARCHITECTURE.md file with detailed sections covering system architecture, database design, security (RLS, multi-tenancy), immutable price ledger pattern, feature flag system, RBAC, API architecture, realtime implementation, QR code system, audit/compliance, performance optimization, and deployment architecture. Verified and committed successfully.",
+          "updated_at": "2026-01-15T11:45:13.502659+00:00"
+        },
+        {
+          "id": "subtask-1-3",
+          "description": "Create system overview diagram",
+          "service": "documentation",
+          "files_to_modify": [],
+          "files_to_create": [
+            "docs/diagrams/system-overview.md"
+          ],
+          "patterns_from": [
+            "README.md",
+            "gereksinimler.md"
+          ],
+          "verification": {
+            "type": "command",
+            "command": "test -f docs/diagrams/system-overview.md && grep -q 'mermaid' docs/diagrams/system-overview.md && echo 'OK' || echo 'FAIL'",
+            "expected": "OK"
+          },
+          "status": "completed",
+          "notes": "Created comprehensive system overview diagram with 6 detailed Mermaid diagrams covering: (1) General system architecture showing Next.js, Supabase services, and Vercel infrastructure, (2) Component interaction diagram showing server/client components and data flow, (3) Supabase service architecture breakdown, (4) Multi-tenant data isolation with RLS visualization, (5) User flow architecture for different roles, (6) Deployment architecture with global edge network. Documented critical design decisions including immutable price ledger pattern, single database multi-tenancy, and server-first approach. All diagrams follow Turkish documentation style. Verification passed successfully.",
+          "updated_at": "2026-01-15T11:47:47.986147+00:00"
+        },
+        {
+          "id": "subtask-1-4",
+          "description": "Create authentication flow diagram",
+          "service": "documentation",
+          "files_to_modify": [],
+          "files_to_create": [
+            "docs/diagrams/auth-flow.md"
+          ],
+          "patterns_from": [
+            "README.md"
+          ],
+          "verification": {
+            "type": "command",
+            "command": "test -f docs/diagrams/auth-flow.md && grep -q 'mermaid' docs/diagrams/auth-flow.md && echo 'OK' || echo 'FAIL'",
+            "expected": "OK"
+          },
+          "status": "completed",
+          "notes": "Created comprehensive authentication flow diagram with mermaid diagrams covering: general auth flow, user registration, user login, JWT token management, middleware protection, RLS integration, role-based authorization, logout flow, and token refresh mechanism. Includes security best practices and detailed explanations in Turkish following the established documentation patterns.",
+          "updated_at": "2026-01-15T11:50:45.296001+00:00"
+        },
+        {
+          "id": "subtask-1-5",
+          "description": "Create menu publishing flow diagram",
+          "service": "documentation",
+          "files_to_modify": [],
+          "files_to_create": [
+            "docs/diagrams/menu-publishing-flow.md"
+          ],
+          "patterns_from": [
+            "README.md",
+            "gereksinimler.md"
+          ],
+          "verification": {
+            "type": "command",
+            "command": "test -f docs/diagrams/menu-publishing-flow.md && grep -q 'mermaid' docs/diagrams/menu-publishing-flow.md && echo 'OK' || echo 'FAIL'",
+            "expected": "OK"
+          },
+          "status": "completed",
+          "notes": "Created comprehensive menu publishing flow diagram with 8 detailed Mermaid diagrams covering: (1) General menu publishing flow from product creation to customer scanning, (2) Product creation flow with RLS validation, (3) Immutable price update flow showing INSERT-only pattern and trigger protection, (4) Menu snapshot creation with SHA-256 hash generation for compliance, (5) QR code generation and distribution per table, (6) Menu publishing and activation state diagram, (7) Table-based menu viewing with edge caching, (8) Compliance and audit reporting system. Included extensive code examples showing snapshot generation, QR code creation, price ledger triggers, and audit report generation. Documented critical design decisions: INSERT-only pattern for legal compliance, SHA-256 hashing for tamper-proof evidence, and table-based QR for waiter notification system. All diagrams follow Turkish documentation style and include security best practices. Verification passed successfully.",
+          "updated_at": "2026-01-15T11:53:21.847654+00:00"
+        },
+        {
+          "id": "subtask-1-6",
+          "description": "Create waiter call realtime notification flow diagram",
+          "service": "documentation",
+          "files_to_modify": [],
+          "files_to_create": [
+            "docs/diagrams/waiter-call-flow.md"
+          ],
+          "patterns_from": [
+            "ek_ozellikler.md",
+            "gereksinimler.md"
+          ],
+          "verification": {
+            "type": "command",
+            "command": "test -f docs/diagrams/waiter-call-flow.md && grep -q 'mermaid' docs/diagrams/waiter-call-flow.md && echo 'OK' || echo 'FAIL'",
+            "expected": "OK"
+          },
+          "status": "completed",
+          "notes": "Created comprehensive waiter call realtime notification flow diagram with mermaid sequence diagram, database schema, frontend implementation examples, security considerations, and test scenarios. File verified and committed successfully.",
+          "updated_at": "2026-01-15T11:57:48.547310+00:00"
+        }
+      ]
+    }
+  ],
+  "summary": {
+    "total_phases": 1,
+    "total_subtasks": 6,
+    "services_involved": [
+      "documentation"
+    ],
+    "parallelism": {
+      "max_parallel_phases": 1,
+      "parallel_groups": [],
+      "recommended_workers": 1,
+      "speedup_estimate": "N/A - sequential documentation tasks"
+    },
+    "startup_command": "source auto-claude/.venv/bin/activate && python auto-claude/run.py --spec 014 --parallel 1"
+  },
+  "verification_strategy": {
+    "risk_level": "trivial",
+    "skip_validation": true,
+    "test_creation_phase": "none",
+    "test_types_required": [],
+    "security_scanning_required": false,
+    "staging_deployment_required": false,
+    "acceptance_criteria": [
+      "All documentation files created in docs/ directory",
+      "ARCHITECTURE.md provides comprehensive overview with links to diagrams",
+      "All flow diagrams use Mermaid.js syntax for visualization",
+      "Documentation accurately reflects the system architecture described in README.md and requirement docs"
+    ],
+    "verification_steps": [
+      {
+        "name": "Documentation Files Exist",
+        "command": "test -f docs/ARCHITECTURE.md && test -f docs/diagrams/system-overview.md && test -f docs/diagrams/auth-flow.md && test -f docs/diagrams/menu-publishing-flow.md && test -f docs/diagrams/waiter-call-flow.md && echo 'All files exist' || echo 'Missing files'",
+        "expected_outcome": "All files exist",
+        "type": "manual",
+        "required": true,
+        "blocking": false
+      }
+    ],
+    "reasoning": "Documentation-only change with no functional code modifications - trivial risk level. Manual review to ensure accuracy and completeness is sufficient."
+  },
+  "qa_acceptance": {
+    "unit_tests": {
+      "required": false,
+      "commands": [],
+      "minimum_coverage": null
+    },
+    "integration_tests": {
+      "required": false,
+      "commands": [],
+      "services_to_test": []
+    },
+    "e2e_tests": {
+      "required": false,
+      "commands": [],
+      "flows": []
+    },
+    "browser_verification": {
+      "required": false,
+      "pages": []
+    },
+    "database_verification": {
+      "required": false,
+      "checks": []
+    },
+    "manual_review": {
+      "required": true,
+      "checklist": [
+        "ARCHITECTURE.md is comprehensive and easy to understand",
+        "All Mermaid diagrams render correctly on GitHub/GitLab",
+        "Diagrams accurately represent the system flows",
+        "Documentation is consistent with README.md and requirement docs",
+        "All key architectural decisions are documented"
+      ]
+    }
+  },
+  "qa_signoff": {
+    "status": "approved",
+    "timestamp": "2026-01-15T12:00:00.000Z",
+    "qa_session": 1,
+    "report_file": "qa_report.md",
+    "tests_passed": {
+      "unit": "N/A",
+      "integration": "N/A",
+      "e2e": "N/A"
+    },
+    "manual_review": {
+      "required": true,
+      "checklist_items": 5,
+      "passed": 5,
+      "failed": 0
+    },
+    "files_verified": [
+      "docs/ARCHITECTURE.md",
+      "docs/diagrams/system-overview.md",
+      "docs/diagrams/auth-flow.md",
+      "docs/diagrams/menu-publishing-flow.md",
+      "docs/diagrams/waiter-call-flow.md"
+    ],
+    "documentation_quality": {
+      "total_lines": 3912,
+      "mermaid_diagrams": 27,
+      "code_examples": true,
+      "cross_references": true,
+      "consistency": "excellent"
+    },
+    "verified_by": "qa_agent",
+    "verdict": "APPROVED - All acceptance criteria met. Comprehensive architecture documentation with 27 Mermaid diagrams covering all major system flows. Ready for merge to main."
+  },
+  "status": "done",
+  "planStatus": "completed",
+  "updated_at": "2026-01-15T13:27:57.867Z",
+  "last_updated": "2026-01-15T12:00:00.000000+00:00",
+  "qa_iteration_history": [
+    {
+      "iteration": 1,
+      "status": "approved",
+      "timestamp": "2026-01-15T12:01:46.490406+00:00",
+      "issues": [],
+      "duration_seconds": 225.14
+    }
+  ],
+  "qa_stats": {
+    "total_iterations": 1,
+    "last_iteration": 1,
+    "last_status": "approved",
+    "issues_by_type": {}
+  },
+  "stagedAt": "2026-01-15T12:29:34.138Z",
+  "stagedInMainProject": true
+}

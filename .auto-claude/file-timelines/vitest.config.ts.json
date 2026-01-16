@@ -1,0 +1,208 @@
+{
+  "file_path": "vitest.config.ts",
+  "main_branch_history": [],
+  "task_views": {
+    "001-ozon-e-menum-net-vibe-coding-v1": {
+      "task_id": "001-ozon-e-menum-net-vibe-coding-v1",
+      "branch_point": {
+        "commit_hash": "2b028be920d271c6e53b44319d1c871dc3d27076",
+        "content": "",
+        "timestamp": "2026-01-14T09:55:04.472899"
+      },
+      "worktree_state": {
+        "content": "import { defineConfig } from 'vitest/config'\nimport react from '@vitejs/plugin-react'\nimport path from 'path'\n\nexport default defineConfig({\n  plugins: [react()],\n  test: {\n    environment: 'jsdom',\n    globals: true,\n    setupFiles: ['./tests/setup.ts'],\n    include: [\n      'tests/**/*.{test,spec}.{js,mjs,cjs,ts,mts,cts,jsx,tsx}',\n      'lib/**/__tests__/*.{test,spec}.{js,mjs,cjs,ts,mts,cts,jsx,tsx}',\n    ],\n    exclude: ['node_modules', '.next', 'dist'],\n    coverage: {\n      provider: 'v8',\n      reporter: ['text', 'json', 'html'],\n      exclude: [\n        'node_modules/',\n        '.next/',\n        'tests/',\n        '**/*.d.ts',\n        '**/*.config.{js,ts}',\n      ],\n    },\n    alias: {\n      '@': path.resolve(__dirname, './'),\n    },\n  },\n  resolve: {\n    alias: {\n      '@': path.resolve(__dirname, './'),\n    },\n  },\n})\n",
+        "last_modified": "2026-01-14T09:55:05.884923"
+      },
+      "task_intent": {
+        "title": "001-ozon-e-menum-net-vibe-coding-v1",
+        "description": "",
+        "from_plan": false
+      },
+      "commits_behind_main": 0,
+      "status": "active",
+      "merged_at": null
+    },
+    "037-add-search-to-categories-page": {
+      "task_id": "037-add-search-to-categories-page",
+      "branch_point": {
+        "commit_hash": "2b028be920d271c6e53b44319d1c871dc3d27076",
+        "content": "",
+        "timestamp": "2026-01-14T18:38:07.376896"
+      },
+      "worktree_state": {
+        "content": "import { defineConfig } from 'vitest/config'\nimport react from '@vitejs/plugin-react'\nimport path from 'path'\n\nexport default defineConfig({\n  plugins: [react()],\n  test: {\n    environment: 'jsdom',\n    globals: true,\n    setupFiles: ['./tests/setup.ts'],\n    include: [\n      'tests/**/*.{test,spec}.{js,mjs,cjs,ts,mts,cts,jsx,tsx}',\n      'lib/**/__tests__/*.{test,spec}.{js,mjs,cjs,ts,mts,cts,jsx,tsx}',\n    ],\n    exclude: ['node_modules', '.next', 'dist'],\n    coverage: {\n      provider: 'v8',\n      reporter: ['text', 'json', 'html'],\n      exclude: [\n        'node_modules/',\n        '.next/',\n        'tests/',\n        '**/*.d.ts',\n        '**/*.config.{js,ts}',\n      ],\n    },\n    alias: {\n      '@': path.resolve(__dirname, './'),\n    },\n  },\n  resolve: {\n    alias: {\n      '@': path.resolve(__dirname, './'),\n    },\n  },\n})\n",
+        "last_modified": "2026-01-15T15:07:08.960589"
+      },
+      "task_intent": {
+        "title": "037-add-search-to-categories-page",
+        "description": "Add search functionality to the categories page, allowing users to filter categories by name. This mirrors the existing search pattern already implemented in the products page.",
+        "from_plan": true
+      },
+      "commits_behind_main": 0,
+      "status": "active",
+      "merged_at": null
+    },
+    "032-add-mobile-navigation-menu-to-landing-page": {
+      "task_id": "032-add-mobile-navigation-menu-to-landing-page",
+      "branch_point": {
+        "commit_hash": "2b028be920d271c6e53b44319d1c871dc3d27076",
+        "content": "",
+        "timestamp": "2026-01-14T18:38:22.963353"
+      },
+      "worktree_state": {
+        "content": "import { defineConfig } from 'vitest/config'\nimport react from '@vitejs/plugin-react'\nimport path from 'path'\n\nexport default defineConfig({\n  plugins: [react()],\n  test: {\n    environment: 'jsdom',\n    globals: true,\n    setupFiles: ['./tests/setup.ts'],\n    include: [\n      'tests/**/*.{test,spec}.{js,mjs,cjs,ts,mts,cts,jsx,tsx}',\n      'lib/**/__tests__/*.{test,spec}.{js,mjs,cjs,ts,mts,cts,jsx,tsx}',\n    ],\n    exclude: ['node_modules', '.next', 'dist'],\n    coverage: {\n      provider: 'v8',\n      reporter: ['text', 'json', 'html'],\n      exclude: [\n        'node_modules/',\n        '.next/',\n        'tests/',\n        '**/*.d.ts',\n        '**/*.config.{js,ts}',\n      ],\n    },\n    alias: {\n      '@': path.resolve(__dirname, './'),\n    },\n  },\n  resolve: {\n    alias: {\n      '@': path.resolve(__dirname, './'),\n    },\n  },\n})\n",
+        "last_modified": "2026-01-15T15:05:31.972022"
+      },
+      "task_intent": {
+        "title": "032-add-mobile-navigation-menu-to-landing-page",
+        "description": "The landing page navigation on mobile devices only shows a 'Basla' button, hiding all other navigation links. Add a proper hamburger menu for mobile users.",
+        "from_plan": true
+      },
+      "commits_behind_main": 0,
+      "status": "active",
+      "merged_at": null
+    },
+    "031-add-mobile-navigation-menu-to-landing-page": {
+      "task_id": "031-add-mobile-navigation-menu-to-landing-page",
+      "branch_point": {
+        "commit_hash": "2b028be920d271c6e53b44319d1c871dc3d27076",
+        "content": "",
+        "timestamp": "2026-01-14T18:50:42.638180"
+      },
+      "worktree_state": {
+        "content": "import { defineConfig } from 'vitest/config'\nimport react from '@vitejs/plugin-react'\nimport path from 'path'\n\nexport default defineConfig({\n  plugins: [react()],\n  test: {\n    environment: 'jsdom',\n    globals: true,\n    setupFiles: ['./tests/setup.ts'],\n    include: [\n      'tests/**/*.{test,spec}.{js,mjs,cjs,ts,mts,cts,jsx,tsx}',\n      'lib/**/__tests__/*.{test,spec}.{js,mjs,cjs,ts,mts,cts,jsx,tsx}',\n    ],\n    exclude: ['node_modules', '.next', 'dist'],\n    coverage: {\n      provider: 'v8',\n      reporter: ['text', 'json', 'html'],\n      exclude: [\n        'node_modules/',\n        '.next/',\n        'tests/',\n        '**/*.d.ts',\n        '**/*.config.{js,ts}',\n      ],\n    },\n    alias: {\n      '@': path.resolve(__dirname, './'),\n    },\n  },\n  resolve: {\n    alias: {\n      '@': path.resolve(__dirname, './'),\n    },\n  },\n})\n",
+        "last_modified": "2026-01-15T15:03:39.377691"
+      },
+      "task_intent": {
+        "title": "031-add-mobile-navigation-menu-to-landing-page",
+        "description": "The landing page navigation on mobile devices only shows a 'Basla' button, hiding all other navigation links. Add a proper hamburger menu for mobile users.",
+        "from_plan": true
+      },
+      "commits_behind_main": 0,
+      "status": "active",
+      "merged_at": null
+    },
+    "040-add-bulk-qr-code-download-for-all-tables": {
+      "task_id": "040-add-bulk-qr-code-download-for-all-tables",
+      "branch_point": {
+        "commit_hash": "2b028be920d271c6e53b44319d1c871dc3d27076",
+        "content": "",
+        "timestamp": "2026-01-14T18:53:11.069414"
+      },
+      "worktree_state": {
+        "content": "import { defineConfig } from 'vitest/config'\nimport react from '@vitejs/plugin-react'\nimport path from 'path'\n\nexport default defineConfig({\n  plugins: [react()],\n  test: {\n    environment: 'jsdom',\n    globals: true,\n    setupFiles: ['./tests/setup.ts'],\n    include: [\n      'tests/**/*.{test,spec}.{js,mjs,cjs,ts,mts,cts,jsx,tsx}',\n      'lib/**/__tests__/*.{test,spec}.{js,mjs,cjs,ts,mts,cts,jsx,tsx}',\n    ],\n    exclude: ['node_modules', '.next', 'dist'],\n    coverage: {\n      provider: 'v8',\n      reporter: ['text', 'json', 'html'],\n      exclude: [\n        'node_modules/',\n        '.next/',\n        'tests/',\n        '**/*.d.ts',\n        '**/*.config.{js,ts}',\n      ],\n    },\n    alias: {\n      '@': path.resolve(__dirname, './'),\n    },\n  },\n  resolve: {\n    alias: {\n      '@': path.resolve(__dirname, './'),\n    },\n  },\n})\n",
+        "last_modified": "2026-01-14T18:53:20.553932"
+      },
+      "task_intent": {
+        "title": "040-add-bulk-qr-code-download-for-all-tables",
+        "description": "",
+        "from_plan": false
+      },
+      "commits_behind_main": 0,
+      "status": "active",
+      "merged_at": null
+    },
+    "005-extract-duplicated-crud-state-management-into-reus": {
+      "task_id": "005-extract-duplicated-crud-state-management-into-reus",
+      "branch_point": {
+        "commit_hash": "2b028be920d271c6e53b44319d1c871dc3d27076",
+        "content": "",
+        "timestamp": "2026-01-15T06:33:12.581832"
+      },
+      "worktree_state": {
+        "content": "import { defineConfig } from 'vitest/config'\nimport react from '@vitejs/plugin-react'\nimport path from 'path'\n\nexport default defineConfig({\n  plugins: [react()],\n  test: {\n    environment: 'jsdom',\n    globals: true,\n    setupFiles: ['./tests/setup.ts'],\n    include: [\n      'tests/**/*.{test,spec}.{js,mjs,cjs,ts,mts,cts,jsx,tsx}',\n      'lib/**/__tests__/*.{test,spec}.{js,mjs,cjs,ts,mts,cts,jsx,tsx}',\n    ],\n    exclude: ['node_modules', '.next', 'dist'],\n    coverage: {\n      provider: 'v8',\n      reporter: ['text', 'json', 'html'],\n      exclude: [\n        'node_modules/',\n        '.next/',\n        'tests/',\n        '**/*.d.ts',\n        '**/*.config.{js,ts}',\n      ],\n    },\n    alias: {\n      '@': path.resolve(__dirname, './'),\n    },\n  },\n  resolve: {\n    alias: {\n      '@': path.resolve(__dirname, './'),\n    },\n  },\n})\n",
+        "last_modified": "2026-01-15T16:04:15.678880"
+      },
+      "task_intent": {
+        "title": "005-extract-duplicated-crud-state-management-into-reus",
+        "description": "",
+        "from_plan": false
+      },
+      "commits_behind_main": 5,
+      "status": "active",
+      "merged_at": null
+    },
+    "002-add-unit-test-coverage-for-dashboard-page-componen": {
+      "task_id": "002-add-unit-test-coverage-for-dashboard-page-componen",
+      "branch_point": {
+        "commit_hash": "2b028be920d271c6e53b44319d1c871dc3d27076",
+        "content": "",
+        "timestamp": "2026-01-15T14:04:12.520457"
+      },
+      "worktree_state": {
+        "content": "import { defineConfig } from 'vitest/config'\nimport react from '@vitejs/plugin-react'\nimport path from 'path'\n\nexport default defineConfig({\n  plugins: [react()],\n  test: {\n    environment: 'jsdom',\n    globals: true,\n    setupFiles: ['./tests/setup.ts'],\n    include: [\n      'tests/**/*.{test,spec}.{js,mjs,cjs,ts,mts,cts,jsx,tsx}',\n      'lib/**/__tests__/*.{test,spec}.{js,mjs,cjs,ts,mts,cts,jsx,tsx}',\n      'app/**/__tests__/*.{test,spec}.{js,mjs,cjs,ts,mts,cts,jsx,tsx}',\n    ],\n    exclude: ['node_modules', '.next', 'dist'],\n    coverage: {\n      provider: 'v8',\n      reporter: ['text', 'json', 'html'],\n      exclude: [\n        'node_modules/',\n        '.next/',\n        'tests/',\n        '**/*.d.ts',\n        '**/*.config.{js,ts}',\n      ],\n    },\n    alias: {\n      '@': path.resolve(__dirname, './'),\n    },\n  },\n  resolve: {\n    alias: {\n      '@': path.resolve(__dirname, './'),\n    },\n  },\n})\n",
+        "last_modified": "2026-01-15T16:20:44.413025"
+      },
+      "task_intent": {
+        "title": "002-add-unit-test-coverage-for-dashboard-page-componen",
+        "description": "",
+        "from_plan": false
+      },
+      "commits_behind_main": 5,
+      "status": "active",
+      "merged_at": null
+    },
+    "034-create-reusable-select-component-for-consistent-fo": {
+      "task_id": "034-create-reusable-select-component-for-consistent-fo",
+      "branch_point": {
+        "commit_hash": "2b028be920d271c6e53b44319d1c871dc3d27076",
+        "content": "",
+        "timestamp": "2026-01-15T14:05:37.956433"
+      },
+      "worktree_state": {
+        "content": "import { defineConfig } from 'vitest/config'\nimport react from '@vitejs/plugin-react'\nimport path from 'path'\n\nexport default defineConfig({\n  plugins: [react()],\n  test: {\n    environment: 'jsdom',\n    globals: true,\n    setupFiles: ['./tests/setup.ts'],\n    include: [\n      'tests/**/*.{test,spec}.{js,mjs,cjs,ts,mts,cts,jsx,tsx}',\n      'lib/**/__tests__/*.{test,spec}.{js,mjs,cjs,ts,mts,cts,jsx,tsx}',\n      'components/**/__tests__/*.{test,spec}.{js,mjs,cjs,ts,mts,cts,jsx,tsx}',\n    ],\n    exclude: ['node_modules', '.next', 'dist'],\n    coverage: {\n      provider: 'v8',\n      reporter: ['text', 'json', 'html'],\n      exclude: [\n        'node_modules/',\n        '.next/',\n        'tests/',\n        '**/*.d.ts',\n        '**/*.config.{js,ts}',\n      ],\n    },\n    alias: {\n      '@': path.resolve(__dirname, './'),\n    },\n  },\n  resolve: {\n    alias: {\n      '@': path.resolve(__dirname, './'),\n    },\n  },\n})\n",
+        "last_modified": "2026-01-15T15:09:23.632037"
+      },
+      "task_intent": {
+        "title": "034-create-reusable-select-component-for-consistent-fo",
+        "description": "",
+        "from_plan": false
+      },
+      "commits_behind_main": 5,
+      "status": "active",
+      "merged_at": null
+    },
+    "023-add-mobile-navigation-menu-to-landing-page": {
+      "task_id": "023-add-mobile-navigation-menu-to-landing-page",
+      "branch_point": {
+        "commit_hash": "c709a6c45b4887c1a0ad6e04c6142783760a46ec",
+        "content": "",
+        "timestamp": "2026-01-15T13:47:09.808921"
+      },
+      "worktree_state": {
+        "content": "import { defineConfig } from 'vitest/config'\nimport react from '@vitejs/plugin-react'\nimport path from 'path'\n\nexport default defineConfig({\n  plugins: [react()],\n  test: {\n    environment: 'jsdom',\n    globals: true,\n    setupFiles: ['./tests/setup.ts'],\n    include: [\n      'tests/**/*.{test,spec}.{js,mjs,cjs,ts,mts,cts,jsx,tsx}',\n      'lib/**/__tests__/*.{test,spec}.{js,mjs,cjs,ts,mts,cts,jsx,tsx}',\n    ],\n    exclude: ['node_modules', '.next', 'dist'],\n    coverage: {\n      provider: 'v8',\n      reporter: ['text', 'json', 'html'],\n      exclude: [\n        'node_modules/',\n        '.next/',\n        'tests/',\n        '**/*.d.ts',\n        '**/*.config.{js,ts}',\n      ],\n    },\n    alias: {\n      '@': path.resolve(__dirname, './'),\n    },\n  },\n  resolve: {\n    alias: {\n      '@': path.resolve(__dirname, './'),\n    },\n  },\n})\n",
+        "last_modified": "2026-01-15T13:47:16.864259"
+      },
+      "task_intent": {
+        "title": "023-add-mobile-navigation-menu-to-landing-page",
+        "description": "",
+        "from_plan": false
+      },
+      "commits_behind_main": 0,
+      "status": "active",
+      "merged_at": null
+    },
+    "026-add-mobile-navigation-menu-to-landing-page": {
+      "task_id": "026-add-mobile-navigation-menu-to-landing-page",
+      "branch_point": {
+        "commit_hash": "2b028be920d271c6e53b44319d1c871dc3d27076",
+        "content": "",
+        "timestamp": "2026-01-15T14:15:55.210168"
+      },
+      "worktree_state": {
+        "content": "import { defineConfig } from 'vitest/config'\nimport react from '@vitejs/plugin-react'\nimport path from 'path'\n\nexport default defineConfig({\n  plugins: [react()],\n  test: {\n    environment: 'jsdom',\n    globals: true,\n    setupFiles: ['./tests/setup.ts'],\n    include: [\n      'tests/**/*.{test,spec}.{js,mjs,cjs,ts,mts,cts,jsx,tsx}',\n      'lib/**/__tests__/*.{test,spec}.{js,mjs,cjs,ts,mts,cts,jsx,tsx}',\n    ],\n    exclude: ['node_modules', '.next', 'dist'],\n    coverage: {\n      provider: 'v8',\n      reporter: ['text', 'json', 'html'],\n      exclude: [\n        'node_modules/',\n        '.next/',\n        'tests/',\n        '**/*.d.ts',\n        '**/*.config.{js,ts}',\n      ],\n    },\n    alias: {\n      '@': path.resolve(__dirname, './'),\n    },\n  },\n  resolve: {\n    alias: {\n      '@': path.resolve(__dirname, './'),\n    },\n  },\n})\n",
+        "last_modified": "2026-01-15T14:16:01.115847"
+      },
+      "task_intent": {
+        "title": "026-add-mobile-navigation-menu-to-landing-page",
+        "description": "",
+        "from_plan": false
+      },
+      "commits_behind_main": 5,
+      "status": "active",
+      "merged_at": null
+    }
+  },
+  "created_at": "2026-01-14T09:55:05.801832",
+  "last_updated": "2026-01-15T14:16:00.801027"
+}

@@ -1,0 +1,38 @@
+{
+  "project_type": "single",
+  "services": {
+    "frontend": {
+      "path": ".",
+      "tech_stack": ["nextjs", "typescript", "react", "tailwind"],
+      "framework": "Next.js 15.5",
+      "port": 3000,
+      "dev_command": "npm run dev",
+      "build_command": "npm run build",
+      "test_command": "npm test"
+    }
+  },
+  "infrastructure": {
+    "docker": false,
+    "database": "supabase-postgresql",
+    "auth": "supabase-auth",
+    "realtime": "supabase-realtime"
+  },
+  "conventions": {
+    "linter": "eslint",
+    "formatter": "prettier",
+    "testing": "vitest",
+    "styling": "tailwind-css",
+    "typescript": true
+  },
+  "project_info": {
+    "name": "ozaMenu",
+    "description": "Digital QR Menu and Price Registry Platform for Turkish businesses",
+    "main_features": [
+      "Multi-tenant SaaS platform",
+      "Legal compliance with Turkish regulations",
+      "QR code table system",
+      "Real-time notifications",
+      "Immutable price history"
+    ]
+  }
+}

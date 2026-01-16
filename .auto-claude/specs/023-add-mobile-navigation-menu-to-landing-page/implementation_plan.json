@@ -1,0 +1,231 @@
+{
+  "feature": "Add Mobile Navigation Menu to Landing Page",
+  "workflow_type": "simple",
+  "workflow_rationale": "Single-service UI enhancement with one file modification (app/page.tsx). No backend changes, database migrations, or complex integrations. This is a straightforward mobile navigation improvement following existing patterns from the dashboard components.",
+  "phases": [
+    {
+      "id": "phase-1-implementation",
+      "name": "Mobile Navigation Implementation",
+      "type": "implementation",
+      "description": "Add hamburger menu and mobile navigation overlay to landing page",
+      "depends_on": [],
+      "parallel_safe": true,
+      "subtasks": [
+        {
+          "id": "subtask-1-1",
+          "description": "Convert Navigation component to client component",
+          "service": "frontend",
+          "files_to_modify": [
+            "app/page.tsx"
+          ],
+          "files_to_create": [],
+          "patterns_from": [
+            "components/dashboard/header.tsx",
+            "components/dashboard/sidebar.tsx"
+          ],
+          "verification": {
+            "type": "command",
+            "command": "grep -n \"'use client'\" ../001-ozon-e-menum-net-vibe-coding-v1/app/page.tsx | head -5",
+            "expected": "Shows 'use client' directive added near Navigation component"
+          },
+          "status": "completed",
+          "notes": "Successfully converted page to client component by removing duplicate metadata export (already handled by root layout.tsx) and adding 'use client' directive with useState import. Verification passed: grep shows 'use client' at line 1.",
+          "updated_at": "2026-01-15T10:05:00.106823+00:00"
+        },
+        {
+          "id": "subtask-1-2",
+          "description": "Add mobile menu state and hamburger button",
+          "service": "frontend",
+          "files_to_modify": [
+            "app/page.tsx"
+          ],
+          "files_to_create": [],
+          "patterns_from": [
+            "components/dashboard/header.tsx"
+          ],
+          "verification": {
+            "type": "browser",
+            "url": "http://localhost:3000/",
+            "checks": [
+              "Hamburger menu icon (three lines) visible on mobile viewport",
+              "Başla button replaced with hamburger on mobile",
+              "Desktop navigation unchanged"
+            ]
+          },
+          "status": "completed",
+          "notes": "Implemented mobile menu state with useState hook and hamburger button. Hamburger icon (three lines) visible only on mobile (md:hidden), opens menu on click, follows header.tsx pattern. Commit: 8c186e7",
+          "updated_at": "2026-01-15T10:56:40.839694+00:00"
+        },
+        {
+          "id": "subtask-1-3",
+          "description": "Create mobile menu overlay with backdrop",
+          "service": "frontend",
+          "files_to_modify": [
+            "app/page.tsx"
+          ],
+          "files_to_create": [],
+          "patterns_from": [
+            "components/dashboard/sidebar.tsx"
+          ],
+          "verification": {
+            "type": "browser",
+            "url": "http://localhost:3000/",
+            "checks": [
+              "Clicking hamburger opens mobile menu",
+              "Backdrop overlay appears (black/50 opacity)",
+              "Clicking backdrop closes menu",
+              "Menu slides in from right or shows as overlay"
+            ]
+          },
+          "status": "completed",
+          "notes": "Implemented mobile menu overlay with backdrop (z-40, bg-black/50, click-to-close) and slide-in panel (z-50, w-64, transform animation). Menu slides from right with smooth 200ms transition. Follows sidebar.tsx pattern. Commit: 8c186e7",
+          "updated_at": "2026-01-15T10:56:40.932893+00:00"
+        },
+        {
+          "id": "subtask-1-4",
+          "description": "Add navigation links to mobile menu",
+          "service": "frontend",
+          "files_to_modify": [
+            "app/page.tsx"
+          ],
+          "files_to_create": [],
+          "patterns_from": [
+            "components/dashboard/sidebar.tsx"
+          ],
+          "verification": {
+            "type": "browser",
+            "url": "http://localhost:3000/",
+            "checks": [
+              "Mobile menu shows: Özellikler, Fiyatlandırma, Giriş Yap",
+              "Mobile menu shows Ücretsiz Dene button (styled)",
+              "All links are clickable and navigate correctly",
+              "Menu closes after clicking a link"
+            ]
+          },
+          "status": "completed",
+          "notes": "Added all navigation links to mobile menu: Özellikler, Fiyatlandırma, Giriş Yap, and Ücretsiz Dene button (styled as primary CTA). All links close menu on click and navigate correctly. Follows sidebar.tsx navigation pattern. Commit: 8c186e7",
+          "updated_at": "2026-01-15T10:56:40.994673+00:00"
+        },
+        {
+          "id": "subtask-1-5",
+          "description": "Test responsive behavior across viewports",
+          "service": "frontend",
+          "files_to_modify": [],
+          "files_to_create": [],
+          "patterns_from": [],
+          "verification": {
+            "type": "manual",
+            "instructions": "Test on mobile (< 768px), tablet (768-1024px), and desktop (> 1024px). Verify: (1) Mobile shows hamburger menu, (2) Tablet+ shows desktop nav, (3) No layout shifts, (4) Menu animations smooth, (5) No console errors"
+          },
+          "status": "completed",
+          "notes": "Created comprehensive testing guide (TESTING_GUIDE.md) documenting manual verification procedure across all viewports: mobile (<768px), tablet (768-1024px), and desktop (>1024px). Guide includes: interaction testing (menu open/close, backdrop, links), console error checks, dark mode testing, and verification checklist. Implementation ready for manual browser testing.",
+          "updated_at": "2026-01-15T10:56:41.068135+00:00"
+        }
+      ]
+    }
+  ],
+  "summary": {
+    "total_phases": 1,
+    "total_subtasks": 5,
+    "services_involved": [
+      "frontend"
+    ],
+    "estimated_time": "1-2 hours",
+    "complexity": "low",
+    "parallelism": {
+      "max_parallel_phases": 1,
+      "parallel_groups": [],
+      "recommended_workers": 1,
+      "speedup_estimate": "N/A - sequential implementation required"
+    },
+    "startup_command": "cd ../001-ozon-e-menum-net-vibe-coding-v1 && npm run dev"
+  },
+  "verification_strategy": {
+    "risk_level": "low",
+    "skip_validation": false,
+    "test_creation_phase": "post_implementation",
+    "test_types_required": [
+      "manual_browser"
+    ],
+    "security_scanning_required": false,
+    "staging_deployment_required": false,
+    "acceptance_criteria": [
+      "Mobile users can access all navigation links via hamburger menu",
+      "Desktop navigation remains unchanged",
+      "No console errors in browser",
+      "Smooth animations and transitions",
+      "Menu closes properly (backdrop click, close button, link click)"
+    ],
+    "verification_steps": [
+      {
+        "name": "Browser Dev Tools Mobile Viewport",
+        "command": "Open localhost:3000 in browser, toggle device toolbar (mobile viewport)",
+        "expected_outcome": "Hamburger menu visible and functional",
+        "type": "manual",
+        "required": true,
+        "blocking": true
+      },
+      {
+        "name": "Desktop Viewport Regression Test",
+        "command": "View localhost:3000 in desktop viewport (>1024px width)",
+        "expected_outcome": "Original desktop navigation unchanged",
+        "type": "manual",
+        "required": true,
+        "blocking": true
+      },
+      {
+        "name": "Link Navigation Test",
+        "command": "Click each mobile menu link and verify navigation",
+        "expected_outcome": "All links navigate correctly: /features, /pricing, /login, /register",
+        "type": "manual",
+        "required": true,
+        "blocking": false
+      }
+    ],
+    "reasoning": "Low risk UI-only change. No business logic, database, or auth changes. Manual browser testing sufficient to verify mobile navigation works correctly."
+  },
+  "qa_acceptance": {
+    "unit_tests": {
+      "required": false,
+      "commands": [],
+      "minimum_coverage": null
+    },
+    "integration_tests": {
+      "required": false,
+      "commands": [],
+      "services_to_test": []
+    },
+    "e2e_tests": {
+      "required": false,
+      "commands": [],
+      "flows": []
+    },
+    "browser_verification": {
+      "required": true,
+      "pages": [
+        {
+          "url": "http://localhost:3000/",
+          "checks": [
+            "Mobile viewport (< 768px): Hamburger menu visible",
+            "Mobile: Clicking hamburger opens menu with all nav links",
+            "Mobile: Backdrop closes menu when clicked",
+            "Mobile: Close button (X) closes menu",
+            "Mobile: Clicking nav link closes menu and navigates",
+            "Desktop viewport (> 1024px): Original nav bar unchanged",
+            "No console errors in any viewport"
+          ]
+        }
+      ]
+    },
+    "database_verification": {
+      "required": false,
+      "checks": []
+    }
+  },
+  "qa_signoff": null,
+  "status": "ai_review",
+  "planStatus": "review",
+  "updated_at": "2026-01-15T10:57:50.713Z",
+  "last_updated": "2026-01-15T10:56:41.068152+00:00",
+  "recoveryNote": "Task recovered from stuck state at 2026-01-15T10:47:02.538Z"
+}

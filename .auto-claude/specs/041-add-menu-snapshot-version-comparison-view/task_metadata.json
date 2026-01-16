@@ -1,0 +1,14 @@
+{
+  "sourceType": "ideation",
+  "ideationType": "code_improvements",
+  "ideaId": "ci-005",
+  "rationale": "The lib/services/snapshot.ts already has compareSnapshots() function (lines 611-654) that returns addedProducts, removedProducts, addedCategories, removedCategories arrays. This comparison logic exists but has no UI. Similar diff-view pattern exists in the audit detail modal showing old_data vs new_data.",
+  "category": "feature",
+  "estimatedEffort": "medium",
+  "complexity": "medium",
+  "affectedFiles": [
+    ".worktrees/001-ozon-e-menum-net-vibe-coding-v1/app/(dashboard)/audit/page.tsx",
+    ".worktrees/001-ozon-e-menum-net-vibe-coding-v1/lib/services/snapshot.ts"
+  ],
+  "archivedAt": "2026-01-15T12:47:39.324Z"
+}

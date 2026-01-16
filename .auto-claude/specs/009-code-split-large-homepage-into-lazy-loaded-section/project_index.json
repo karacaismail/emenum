@@ -1,0 +1,41 @@
+{
+  "project_type": "single",
+  "services": {
+    "frontend": {
+      "path": ".",
+      "tech_stack": ["next.js", "react", "typescript", "tailwindcss"],
+      "version": {
+        "next": "15.5.9",
+        "react": "19.0.0",
+        "typescript": "5.7.2"
+      },
+      "port": 3000,
+      "dev_command": "npm run dev",
+      "build_command": "npm run build",
+      "test_command": "npm test",
+      "test_integration_command": "npm run test:integration"
+    }
+  },
+  "infrastructure": {
+    "docker": false,
+    "database": "supabase",
+    "hosting": "vercel"
+  },
+  "conventions": {
+    "linter": "eslint",
+    "formatter": "prettier",
+    "testing": "vitest",
+    "component_pattern": "functional_components_with_typescript",
+    "styling": "tailwindcss",
+    "file_naming": "kebab-case for files, PascalCase for components"
+  },
+  "directory_structure": {
+    "app": "Next.js App Router pages",
+    "components": "Reusable React components",
+    "components/ui": "UI primitives (button, card, input, modal)",
+    "components/dashboard": "Dashboard-specific components",
+    "lib": "Utility functions and configurations",
+    "hooks": "Custom React hooks",
+    "types": "TypeScript type definitions"
+  }
+}

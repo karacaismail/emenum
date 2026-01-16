@@ -1,0 +1,116 @@
+{
+  "performance_optimizations": [
+    {
+      "id": "perf-001",
+      "type": "performance_optimizations",
+      "title": "Optimize Products Page with Database JOIN Instead of Multiple Queries",
+      "description": "The Products page (app/(dashboard)/products/page.tsx) executes 3 separate database queries sequentially: one for products, one for current_prices, and one for categories. These should be consolidated into a single query with JOINs or a Supabase select with nested relationships.",
+      "rationale": "The current N+1-like pattern increases latency by requiring 3 round trips to the database. With 100+ products, this becomes a significant bottleneck. A single query with proper JOINs reduces network latency and database load.",
+      "category": "database",
+      "impact": "high",
+      "affectedAreas": [
+        ".worktrees/001-ozon-e-menum-net-vibe-coding-v1/app/(dashboard)/products/page.tsx"
+      ],
+      "currentMetric": "3 sequential database queries for products, prices, and categories",
+      "expectedImprovement": "~60-70% reduction in API call latency, single round-trip instead of 3",
+      "implementation": "1. Use Supabase's nested select syntax: .select('*, current_prices(*), categories(*)')\n2. Or create a database view that joins products with current_prices and categories\n3. Remove the manual mapping code that combines results\n4. Update TypeScript types to match the new response shape",
+      "tradeoffs": "Supabase's nested selects may return slightly more data than needed, but the latency improvement outweighs this",
+      "estimatedEffort": "small"
+    },
+    {
+      "id": "perf-002",
+      "type": "performance_optimizations",
+      "title": "Add React.memo to ProductListItem Component for Render Optimization",
+      "description": "The ProductListItem component in the Products page is re-rendered for every item whenever parent state changes (search, filter, modal state). Wrapping it with React.memo would prevent unnecessary re-renders when product data hasn't changed.",
+      "rationale": "Each state update (typing in search, opening modals) triggers a full re-render of all product list items. With 50+ products, this creates noticeable lag. React.memo ensures items only re-render when their props actually change.",
+      "category": "rendering",
+      "impact": "medium",
+      "affectedAreas": [
+        ".worktrees/001-ozon-e-menum-net-vibe-coding-v1/app/(dashboard)/products/page.tsx"
+      ],
+      "currentMetric": "All ProductListItem components re-render on any state change",
+      "expectedImprovement": "~80% reduction in unnecessary re-renders during search/filter operations",
+      "implementation": "1. Extract ProductListItem to a separate file\n2. Wrap with React.memo\n3. Use useCallback for the onEdit, onDelete, onToggleVisibility handlers\n4. Consider virtualizing the list if product count exceeds 100",
+      "tradeoffs": "Slightly more complex component structure, but significant performance gain",
+      "estimatedEffort": "small"
+    },
+    {
+      "id": "perf-003",
+      "type": "performance_optimizations",
+      "title": "Code Split Large Homepage into Lazy-Loaded Sections",
+      "description": "The homepage (app/page.tsx) is 845 lines containing 15+ components (AnimatedBackground, AnimatedQRDemo, FeatureCard, StatCard, TestimonialCard, PricingTier, Navigation, Footer, etc.). These should be extracted and lazy-loaded for faster initial page load.",
+      "rationale": "All components are bundled together, increasing initial JavaScript payload. Sections below the fold (testimonials, pricing, footer) can be lazy-loaded as the user scrolls, significantly reducing Time to Interactive.",
+      "category": "bundle_size",
+      "impact": "high",
+      "affectedAreas": [
+        ".worktrees/001-ozon-e-menum-net-vibe-coding-v1/app/page.tsx"
+      ],
+      "currentMetric": "Single 845-line file with all components bundled together",
+      "expectedImprovement": "~30-40% reduction in initial bundle size, faster LCP and TTI",
+      "implementation": "1. Extract each major section (Features, HowItWorks, Testimonials, Pricing, CTA) to separate component files\n2. Use dynamic import with next/dynamic for below-fold sections\n3. Add Suspense boundaries with skeleton loading states\n4. Consider Intersection Observer for triggering loads",
+      "tradeoffs": "More files to manage, slight delay when scrolling to lazy-loaded sections",
+      "estimatedEffort": "medium"
+    },
+    {
+      "id": "perf-004",
+      "type": "performance_optimizations",
+      "title": "Optimize AuthProvider to Avoid Unnecessary Re-fetches",
+      "description": "The AuthProvider (components/providers/auth-provider.tsx) performs 2 sequential database queries (organization_members, then organizations) on every auth state change. It also creates a new Supabase client on each render instead of memoizing it.",
+      "rationale": "The sequential queries double the latency for auth initialization. Creating a new Supabase client on each render is wasteful and can cause issues with real-time subscriptions. These should be optimized for faster app initialization.",
+      "category": "runtime",
+      "impact": "medium",
+      "affectedAreas": [
+        ".worktrees/001-ozon-e-menum-net-vibe-coding-v1/components/providers/auth-provider.tsx"
+      ],
+      "currentMetric": "2 sequential queries + new client creation on each render",
+      "expectedImprovement": "~50% faster auth initialization, reduced memory allocation",
+      "implementation": "1. Use useMemo to memoize the Supabase client creation\n2. Combine the two queries using a JOIN: .select('*, organizations(*)')\n3. Consider caching the organization data in localStorage for faster subsequent loads\n4. Add error boundaries for auth failures",
+      "tradeoffs": "localStorage caching requires cache invalidation strategy",
+      "estimatedEffort": "small"
+    },
+    {
+      "id": "perf-005",
+      "type": "performance_optimizations",
+      "title": "Add Virtual Scrolling for Long Product Lists",
+      "description": "The Products page renders all products in a simple div with .map(). For restaurants with 100+ products, this creates DOM bloat and slow scroll performance. Implementing virtual scrolling would render only visible items.",
+      "rationale": "Each ProductListItem creates multiple DOM elements (image, buttons, text). With 200 products, this means 1000+ DOM nodes. Virtual scrolling reduces this to ~20-30 visible items, dramatically improving scroll performance and memory usage.",
+      "category": "rendering",
+      "impact": "medium",
+      "affectedAreas": [
+        ".worktrees/001-ozon-e-menum-net-vibe-coding-v1/app/(dashboard)/products/page.tsx"
+      ],
+      "currentMetric": "All products rendered to DOM regardless of viewport visibility",
+      "expectedImprovement": "~90% reduction in DOM nodes for large product lists, smoother scrolling",
+      "implementation": "1. Install @tanstack/react-virtual or react-window\n2. Wrap the product list with a virtualized container\n3. Set fixed or estimated row heights for optimal performance\n4. Handle dynamic row heights if product descriptions vary significantly",
+      "tradeoffs": "Adds dependency, slightly more complex list rendering code, fixed heights may require design adjustments",
+      "estimatedEffort": "medium"
+    }
+  ],
+  "metadata": {
+    "totalBundleSize": "Unknown - requires build analysis",
+    "largestDependencies": [
+      "react-dom",
+      "next",
+      "@supabase/supabase-js",
+      "qrcode"
+    ],
+    "filesAnalyzed": 25,
+    "potentialSavings": "Estimated 30-50% improvement in page load and interaction times",
+    "generatedAt": "2026-01-14T16:15:00.000Z",
+    "analysisNotes": {
+      "positives": [
+        "ISR with 60s revalidation on menu pages is well implemented",
+        "Dashboard uses Promise.all for parallel stat fetching",
+        "Next.js Image component used for image optimization",
+        "Font loading with display:swap configured correctly"
+      ],
+      "concerns": [
+        "Large homepage file (845 lines) needs code splitting",
+        "Multiple sequential database queries in Products and Auth",
+        "No React.memo usage on list item components",
+        "No virtual scrolling for potentially long lists",
+        "Supabase client created on each render in AuthProvider"
+      ]
+    }
+  }
+}

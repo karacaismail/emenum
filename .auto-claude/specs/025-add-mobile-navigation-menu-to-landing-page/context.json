@@ -1,0 +1,23 @@
+{
+  "files_to_modify": {
+    "frontend": ["app/page.tsx"]
+  },
+  "files_to_reference": [
+    "components/dashboard/sidebar.tsx"
+  ],
+  "patterns": {
+    "mobile_menu_pattern": "The sidebar component demonstrates mobile menu state management with isOpen boolean state and onClose callback",
+    "client_component_pattern": "Use 'use client' directive at the top of files that use React hooks like useState",
+    "styling_pattern": "Tailwind CSS utility classes with responsive breakpoints (md:hidden for mobile-only, hidden md:flex for desktop-only)",
+    "icon_pattern": "Inline SVG icons with className for styling",
+    "color_scheme": "primary-600 (green) for CTAs, secondary colors for text"
+  },
+  "existing_implementations": {
+    "description": "Navigation component exists in app/page.tsx (lines 338-382). It currently hides all nav links on mobile and only shows a 'Başla' button.",
+    "relevant_files": [
+      "app/page.tsx",
+      "components/dashboard/sidebar.tsx"
+    ],
+    "current_behavior": "Desktop nav (hidden md:flex) shows Özellikler, Fiyatlandırma, Giriş Yap, and Ücretsiz Dene. Mobile shows only Başla button."
+  }
+}

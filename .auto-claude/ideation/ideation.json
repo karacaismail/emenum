@@ -1,0 +1,785 @@
+{
+  "id": "ideation-20260114-161700",
+  "project_id": "/Users/karaca/Desktop/ozon",
+  "config": {
+    "enabled_types": [
+      "code_improvements",
+      "ui_ux_improvements",
+      "security_hardening",
+      "documentation_gaps",
+      "performance_optimizations",
+      "code_quality"
+    ],
+    "include_roadmap_context": true,
+    "include_kanban_context": true,
+    "max_ideas_per_type": 5
+  },
+  "ideas": [
+    {
+      "id": "ci-001",
+      "type": "code_improvements",
+      "title": "Add Search to Categories Page",
+      "description": "Add search functionality to the categories page, allowing users to filter categories by name. This mirrors the existing search pattern already implemented in the products page.",
+      "rationale": "The products page at app/(dashboard)/products/page.tsx already has a working search input with searchQuery state and filtering logic. The categories page is missing this feature despite having the same UI component pattern. Direct pattern replication with minimal changes.",
+      "builds_upon": [
+        "Products page search pattern",
+        "Categories page CRUD pattern"
+      ],
+      "estimated_effort": "trivial",
+      "affected_files": [
+        ".worktrees/001-ozon-e-menum-net-vibe-coding-v1/app/(dashboard)/categories/page.tsx"
+      ],
+      "existing_patterns": [
+        "Search input with state in products/page.tsx (lines 176, 435-443)",
+        "Input component from @/components/ui/input",
+        "Card wrapper for filter section"
+      ],
+      "implementation_approach": "Copy the searchQuery state and filtering logic from products/page.tsx. Add a Card section with search input above the categories list. Filter rootCategories by name.toLowerCase().includes(searchQuery.toLowerCase()) before rendering.",
+      "status": "archived",
+      "created_at": "2026-01-14T16:15:00.000Z",
+      "linked_task_id": "037-add-search-to-categories-page"
+    },
+    {
+      "id": "ci-002",
+      "type": "code_improvements",
+      "title": "Add Usage Limits Dashboard Component",
+      "description": "Create a dashboard component showing organization usage limits (products, categories, tables) with progress bars. The getAllLimitStatuses() function already returns all limit data with usage percentages.",
+      "rationale": "The lib/guards/limits.ts file has a fully implemented getAllLimitStatuses() function (lines 258-305) that returns currentCount, limit, usagePercent, and isUnlimited for each limit type. This data is ready but has no UI visualization. Similar stats card pattern exists in tables/page.tsx.",
+      "builds_upon": [
+        "getAllLimitStatuses() in limits.ts",
+        "Stats cards pattern in tables/page.tsx"
+      ],
+      "estimated_effort": "small",
+      "affected_files": [
+        ".worktrees/001-ozon-e-menum-net-vibe-coding-v1/app/(dashboard)/settings/page.tsx",
+        ".worktrees/001-ozon-e-menum-net-vibe-coding-v1/lib/guards/limits.ts"
+      ],
+      "existing_patterns": [
+        "Stats cards in tables/page.tsx (lines 516-590)",
+        "Card/CardContent components",
+        "getAllLimitStatuses() function returning LimitStatus[]"
+      ],
+      "implementation_approach": "Add a 'Usage Limits' Card section in the settings page. Call getAllLimitStatuses(organization.id) on mount. Display each limit as a progress bar with currentCount/limit text. Show percentage and color-coded status (green <70%, yellow 70-90%, red >90%).",
+      "status": "archived",
+      "created_at": "2026-01-14T16:15:00.000Z",
+      "linked_task_id": "038-add-usage-limits-dashboard-component"
+    },
+    {
+      "id": "ci-003",
+      "type": "code_improvements",
+      "title": "Add Price History Export Button",
+      "description": "Add a button to export price change history for compliance reporting. The exportPriceLedgerForCompliance() function already exists and formats data for regulatory submission.",
+      "rationale": "The lib/services/price-ledger.ts file has exportPriceLedgerForCompliance() function (lines 517-559) that generates properly formatted compliance data with date ranges. No UI triggers this function currently. The audit page already has date filtering and export paradigm.",
+      "builds_upon": [
+        "exportPriceLedgerForCompliance() in price-ledger.ts",
+        "Audit page filtering pattern"
+      ],
+      "estimated_effort": "small",
+      "affected_files": [
+        ".worktrees/001-ozon-e-menum-net-vibe-coding-v1/app/(dashboard)/audit/page.tsx",
+        ".worktrees/001-ozon-e-menum-net-vibe-coding-v1/lib/services/price-ledger.ts"
+      ],
+      "existing_patterns": [
+        "exportPriceLedgerForCompliance() in price-ledger.ts",
+        "Download pattern from tables QR export",
+        "Button component with variant='secondary'"
+      ],
+      "implementation_approach": "Add an 'Export Price History' button in the audit page header next to the Refresh button. Add date range picker modal. Call exportPriceLedgerForCompliance() and trigger JSON/CSV download using the same blob download pattern from tables QR export.",
+      "status": "archived",
+      "created_at": "2026-01-14T16:15:00.000Z",
+      "linked_task_id": "039-add-price-history-export-button"
+    },
+    {
+      "id": "ci-004",
+      "type": "code_improvements",
+      "title": "Add Bulk QR Code Download for All Tables",
+      "description": "Add functionality to download all table QR codes at once as a ZIP file or combined PDF, instead of downloading each table's QR individually.",
+      "rationale": "The tables page already has individual QR download functionality (handleDownloadQR) with SVG/PNG/PDF formats. The QR generator functions already exist in lib/qrcode/generator.ts. Extending to bulk download follows the existing validateBulkAdd pattern in limits.ts for handling multiple items.",
+      "builds_upon": [
+        "Individual QR download in tables/page.tsx",
+        "QR generator library",
+        "Bulk pattern from validateBulkAdd()"
+      ],
+      "estimated_effort": "medium",
+      "affected_files": [
+        ".worktrees/001-ozon-e-menum-net-vibe-coding-v1/app/(dashboard)/tables/page.tsx",
+        ".worktrees/001-ozon-e-menum-net-vibe-coding-v1/lib/qrcode/generator.ts"
+      ],
+      "existing_patterns": [
+        "handleDownloadQR function in tables/page.tsx (lines 412-469)",
+        "generateQRCodeSVG, generateQRCodePNG, generateQRCodePDF functions",
+        "Blob download pattern"
+      ],
+      "implementation_approach": "Add 'Download All QR Codes' button in page header. Create handleBulkDownloadQR that iterates through tables array, generates QR for each, and either: (a) uses JSZip library to create combined ZIP, or (b) generates multi-page PDF using existing PDF generator. Show loading progress indicator.",
+      "status": "archived",
+      "created_at": "2026-01-14T16:15:00.000Z",
+      "linked_task_id": "040-add-bulk-qr-code-download-for-all-tables"
+    },
+    {
+      "id": "ci-005",
+      "type": "code_improvements",
+      "title": "Add Menu Snapshot Version Comparison View",
+      "description": "Add UI to compare two menu snapshot versions side-by-side, showing what products/categories were added or removed between publishes.",
+      "rationale": "The lib/services/snapshot.ts already has compareSnapshots() function (lines 611-654) that returns addedProducts, removedProducts, addedCategories, removedCategories arrays. This comparison logic exists but has no UI. Similar diff-view pattern exists in the audit detail modal showing old_data vs new_data.",
+      "builds_upon": [
+        "compareSnapshots() in snapshot.ts",
+        "Audit detail modal diff pattern",
+        "Snapshot history functionality"
+      ],
+      "estimated_effort": "medium",
+      "affected_files": [
+        ".worktrees/001-ozon-e-menum-net-vibe-coding-v1/app/(dashboard)/audit/page.tsx",
+        ".worktrees/001-ozon-e-menum-net-vibe-coding-v1/lib/services/snapshot.ts"
+      ],
+      "existing_patterns": [
+        "compareSnapshots() returning diff arrays",
+        "Modal component for detailed views",
+        "Old/new data display in audit modal (lines 591-612)",
+        "getSnapshotHistory() for version listing"
+      ],
+      "implementation_approach": "Add a 'Menu History' tab or page section. List snapshot versions using getSnapshotHistory(). Allow selecting two versions. Call compareSnapshots() and display results in a modal showing added items in green, removed items in red, using the same pre/code styling from audit detail modal.",
+      "status": "archived",
+      "created_at": "2026-01-14T16:15:00.000Z",
+      "linked_task_id": "041-add-menu-snapshot-version-comparison-view"
+    },
+    {
+      "id": "uiux-001",
+      "type": "ui_ux_improvements",
+      "title": "Add Toast Notification System for User Feedback",
+      "description": "Implement a global toast notification component to provide consistent feedback for user actions like saving, deleting, and updating records across the application.",
+      "rationale": "Currently, success/error messages are shown inline within components (e.g., error divs in forms). Users lose feedback context when navigating or scrolling. A toast system provides non-intrusive, consistent feedback that persists briefly and doesn't disrupt workflow.",
+      "category": "usability",
+      "affected_components": [
+        "components/ui/toast.tsx (new)",
+        "components/providers/toast-provider.tsx (new)",
+        "app/(dashboard)/products/page.tsx",
+        "app/(dashboard)/categories/page.tsx",
+        "app/(dashboard)/settings/page.tsx"
+      ],
+      "screenshots": [],
+      "current_state": "Error and success messages are displayed inline within form components using div elements with role='alert'. When actions succeed (like product creation), there is no positive feedback - users only see the modal close. Error messages disappear when components unmount or users navigate away.",
+      "proposed_change": "Create a Toast component with variants (success, error, warning, info) and a ToastProvider context. Use react-hot-toast or build custom with Tailwind animations. Toast should: 1) Appear in bottom-right corner, 2) Auto-dismiss after 5 seconds, 3) Support manual dismiss, 4) Stack multiple toasts. Update all CRUD operations to show success toasts (e.g., 'Urun basariyla olusturuldu').",
+      "user_benefit": "Users receive clear, consistent feedback when actions complete successfully or fail. This builds confidence in the system and reduces uncertainty about whether actions were saved.",
+      "status": "archived",
+      "created_at": "2026-01-14T16:20:00.000Z",
+      "linked_task_id": "036-add-toast-notification-system-for-user-feedback"
+    },
+    {
+      "id": "uiux-002",
+      "type": "ui_ux_improvements",
+      "title": "Make Product Action Buttons Always Visible on Touch Devices",
+      "description": "Product list action buttons (edit, delete, visibility toggle) are only visible on hover, making them inaccessible on touch devices and difficult for keyboard users.",
+      "rationale": "The opacity-0 group-hover:opacity-100 pattern in ProductListItem hides critical action buttons until mouse hover. Touch device users (tablets, phones) cannot hover, making these actions undiscoverable. This is both an accessibility and usability issue for the restaurant staff who may use tablets.",
+      "category": "accessibility",
+      "affected_components": [
+        "app/(dashboard)/products/page.tsx",
+        "app/(dashboard)/categories/page.tsx"
+      ],
+      "screenshots": [],
+      "current_state": "In ProductListItem component (line 140), action buttons have className 'opacity-0 transition-opacity group-hover:opacity-100'. This makes edit and delete buttons invisible until the user hovers over the row with a mouse cursor.",
+      "proposed_change": "Replace hover-only visibility with: 1) Always-visible muted icons that become more prominent on hover (opacity-60 group-hover:opacity-100), 2) Or implement a mobile-friendly action menu (three-dot kebab menu) that expands on click for touch devices using media queries (sm:opacity-100 opacity-60). Add focus-visible styles so keyboard users can discover and access these buttons.",
+      "user_benefit": "Restaurant staff using tablets or touchscreen POS systems can access edit/delete actions without needing a mouse. Keyboard-only users can navigate to and activate these buttons.",
+      "status": "archived",
+      "created_at": "2026-01-14T16:21:00.000Z",
+      "linked_task_id": "035-make-product-action-buttons-always-visible-on-touc"
+    },
+    {
+      "id": "uiux-003",
+      "type": "ui_ux_improvements",
+      "title": "Create Reusable Select Component for Consistent Form Styling",
+      "description": "Add a Select component to the UI library to replace inline-styled select elements across forms, ensuring consistent styling and accessibility.",
+      "rationale": "The Input component exists with proper label, helper text, and error states, but select elements throughout the app use inline Tailwind classes that vary slightly between pages. This creates visual inconsistency and requires duplicating accessibility attributes (aria-describedby, etc.).",
+      "category": "visual",
+      "affected_components": [
+        "components/ui/select.tsx (new)",
+        "components/ui/input.tsx",
+        "app/(dashboard)/products/page.tsx",
+        "app/(dashboard)/categories/page.tsx"
+      ],
+      "screenshots": [],
+      "current_state": "Select elements in products/page.tsx (lines 508-519, 618-630) use long inline className strings. The styling is similar but not identical across pages. No label association, helper text support, or error states are implemented for selects.",
+      "proposed_change": "Create Select component mirroring Input's API: props for label, helperText, error, fullWidth. Include proper id generation with useId(), aria-describedby for helper/error, and consistent styling matching Input. Export from components/ui/select.tsx. Add custom dropdown arrow icon. Support disabled state and required attribute.",
+      "user_benefit": "Forms look consistent throughout the dashboard. Developers can quickly add properly-styled, accessible select inputs without copying CSS classes. Screen readers announce labels and errors correctly.",
+      "status": "archived",
+      "created_at": "2026-01-14T16:22:00.000Z",
+      "linked_task_id": "034-create-reusable-select-component-for-consistent-fo"
+    },
+    {
+      "id": "uiux-004",
+      "type": "ui_ux_improvements",
+      "title": "Add Skeleton Loading States for Better Perceived Performance",
+      "description": "Replace spinner-only loading states with skeleton screens that show content placeholders, improving perceived loading speed and reducing layout shift.",
+      "rationale": "The app uses spinner loaders (animate-spin) that don't indicate what content is loading. Skeleton screens provide visual structure that matches the final content, making the app feel faster and preventing jarring layout shifts when content loads.",
+      "category": "performance",
+      "affected_components": [
+        "components/ui/skeleton.tsx (new)",
+        "app/(dashboard)/products/page.tsx",
+        "app/(dashboard)/categories/page.tsx",
+        "app/(dashboard)/dashboard/dashboard-client.tsx"
+      ],
+      "screenshots": [],
+      "current_state": "Products page (lines 533-535) shows a centered spinner during loading. When products load, the empty state message or product list suddenly appears. This causes a jarring visual jump and doesn't preview the upcoming content structure.",
+      "proposed_change": "Create a Skeleton component with variants (text, avatar, card, productListItem). Use Tailwind animate-pulse on gray backgrounds. In ProductsPage, show 5-6 ProductListItem skeletons during isLoading state. Each skeleton should match the real item's dimensions: 56x56 image placeholder, text lines for name/description, and price placeholder.",
+      "user_benefit": "Users perceive the page as loading faster because they see meaningful structure immediately. Content appears to 'fill in' rather than suddenly appearing, creating a smoother, more professional experience.",
+      "status": "archived",
+      "created_at": "2026-01-14T16:23:00.000Z",
+      "linked_task_id": "033-add-skeleton-loading-states-for-better-perceived-p"
+    },
+    {
+      "id": "uiux-005",
+      "type": "ui_ux_improvements",
+      "title": "Add Mobile Navigation Menu to Landing Page",
+      "description": "The landing page navigation on mobile devices only shows a 'Basla' button, hiding all other navigation links. Add a proper hamburger menu for mobile users.",
+      "rationale": "The Navigation component (app/page.tsx lines 338-382) hides the full navigation links on mobile (hidden md:flex) and only shows a register CTA. Users on mobile cannot access Features, Pricing, or Login pages from the header without scrolling through the entire landing page.",
+      "category": "usability",
+      "affected_components": [
+        "app/page.tsx"
+      ],
+      "screenshots": [],
+      "current_state": "Navigation component shows desktop nav links with 'hidden md:flex'. Mobile users only see the logo and a 'Basla' button linking to /register. No hamburger menu icon or slide-out navigation exists for mobile viewports.",
+      "proposed_change": "Add hamburger menu button visible on mobile (md:hidden). Create slide-in navigation panel with: 1) All nav links (Ozellikler, Fiyatlandirma, Giris Yap), 2) CTA button, 3) Close button. Use useState for menu open/close state. Add backdrop overlay when menu is open. Animate with translate-x or opacity transitions. Ensure focus trap when open.",
+      "user_benefit": "Mobile visitors can easily navigate to pricing, features, and login pages without scrolling through the entire landing page. This improves the mobile conversion rate and overall user experience.",
+      "status": "archived",
+      "created_at": "2026-01-14T16:24:00.000Z",
+      "linked_task_id": "032-add-mobile-navigation-menu-to-landing-page"
+    },
+    {
+      "id": "sec-001",
+      "type": "security_hardening",
+      "title": "Add Content Security Policy (CSP) header to prevent XSS attacks",
+      "description": "The application uses dangerouslySetInnerHTML for QR code SVG rendering in app/(dashboard)/tables/page.tsx and app/(dashboard)/dashboard/dashboard-client.tsx. While the SVG is generated from a trusted library (qrcode), there's no Content Security Policy header to provide defense-in-depth against XSS attacks. The current next.config.ts only includes X-Frame-Options, X-Content-Type-Options, and Referrer-Policy headers.",
+      "rationale": "CSP is a critical security header that provides an additional layer of protection against XSS attacks. Even when input is properly sanitized, CSP can prevent exploitation if a vulnerability is discovered. The dangerouslySetInnerHTML usage creates potential XSS vectors that CSP would mitigate.",
+      "category": "configuration",
+      "severity": "high",
+      "affectedFiles": [
+        ".worktrees/001-ozon-e-menum-net-vibe-coding-v1/next.config.ts",
+        ".worktrees/001-ozon-e-menum-net-vibe-coding-v1/app/(dashboard)/tables/page.tsx",
+        ".worktrees/001-ozon-e-menum-net-vibe-coding-v1/app/(dashboard)/dashboard/dashboard-client.tsx"
+      ],
+      "vulnerability": "CWE-79: Improper Neutralization of Input During Web Page Generation",
+      "currentRisk": "Without CSP, any successful XSS attack could execute arbitrary scripts, steal session cookies, or perform actions on behalf of users",
+      "remediation": "Add a Content-Security-Policy header to next.config.ts: script-src 'self' 'unsafe-inline' for necessary inline scripts; style-src 'self' 'unsafe-inline'; img-src 'self' data: https://*.supabase.co; connect-src 'self' https://*.supabase.co; Also consider using DOMPurify to sanitize SVG content before using dangerouslySetInnerHTML.",
+      "references": [
+        "https://owasp.org/www-community/attacks/xss/",
+        "https://developer.mozilla.org/en-US/docs/Web/HTTP/CSP"
+      ],
+      "compliance": [
+        "SOC2",
+        "PCI-DSS"
+      ],
+      "status": "archived",
+      "linked_task_id": "021-add-content-security-policy-csp-header-to-prevent-"
+    },
+    {
+      "id": "sec-002",
+      "type": "security_hardening",
+      "title": "Strengthen password policy requirements",
+      "description": "The current password policy only requires a minimum of 6 characters (app/(auth)/register/page.tsx line 68, app/(auth)/login/page.tsx line 88). This is below industry standards and makes user accounts vulnerable to brute-force and dictionary attacks.",
+      "rationale": "OWASP and NIST guidelines recommend stronger password requirements. A 6-character password can be cracked in seconds with modern tools. Weak passwords are one of the most common causes of account compromise in SaaS applications.",
+      "category": "authentication",
+      "severity": "medium",
+      "affectedFiles": [
+        ".worktrees/001-ozon-e-menum-net-vibe-coding-v1/app/(auth)/register/page.tsx",
+        ".worktrees/001-ozon-e-menum-net-vibe-coding-v1/app/(auth)/login/page.tsx",
+        ".worktrees/001-ozon-e-menum-net-vibe-coding-v1/app/(auth)/reset-password/page.tsx"
+      ],
+      "vulnerability": "CWE-521: Weak Password Requirements",
+      "currentRisk": "User accounts are vulnerable to brute-force attacks due to weak password requirements",
+      "remediation": "Implement stronger password requirements: minimum 8 characters, require at least one uppercase, one lowercase, one number, and one special character. Consider using a password strength meter library like zxcvbn. Update Supabase auth configuration to enforce these requirements server-side.",
+      "references": [
+        "https://cheatsheetseries.owasp.org/cheatsheets/Authentication_Cheat_Sheet.html",
+        "https://pages.nist.gov/800-63-3/sp800-63b.html"
+      ],
+      "compliance": [
+        "SOC2",
+        "PCI-DSS"
+      ],
+      "status": "archived",
+      "linked_task_id": "020-strengthen-password-policy-requirements"
+    },
+    {
+      "id": "sec-003",
+      "type": "security_hardening",
+      "title": "Implement API rate limiting to prevent abuse",
+      "description": "Most API routes lack rate limiting protection. While the /api/service-request endpoint has a 30-second cooldown per table, other sensitive endpoints like /api/locations (POST), /api/menu/publish (POST), /api/qr/generate (POST), and authentication endpoints have no rate limiting.",
+      "rationale": "Without rate limiting, attackers can perform brute-force attacks on authentication, exhaust resources through API abuse, or spam the system with automated requests. This is especially critical for a SaaS platform where resource abuse affects all tenants.",
+      "category": "configuration",
+      "severity": "medium",
+      "affectedFiles": [
+        ".worktrees/001-ozon-e-menum-net-vibe-coding-v1/app/api/locations/route.ts",
+        ".worktrees/001-ozon-e-menum-net-vibe-coding-v1/app/api/menu/publish/route.ts",
+        ".worktrees/001-ozon-e-menum-net-vibe-coding-v1/app/api/qr/generate/route.ts",
+        ".worktrees/001-ozon-e-menum-net-vibe-coding-v1/middleware.ts"
+      ],
+      "vulnerability": "CWE-770: Allocation of Resources Without Limits or Throttling",
+      "currentRisk": "APIs are vulnerable to brute-force attacks, denial of service, and resource exhaustion attacks",
+      "remediation": "Implement rate limiting using Upstash Rate Limit (@upstash/ratelimit) with Redis for distributed rate limiting. Add IP-based and user-based limits to middleware.ts. Suggested limits: 100 requests/minute for authenticated users, 20 requests/minute for unauthenticated endpoints, 5 requests/minute for authentication endpoints.",
+      "references": [
+        "https://owasp.org/www-community/controls/Blocking_Brute_Force_Attacks",
+        "https://upstash.com/docs/oss/sdks/ts/ratelimit/overview"
+      ],
+      "compliance": [
+        "SOC2"
+      ],
+      "status": "archived",
+      "linked_task_id": "019-implement-api-rate-limiting-to-prevent-abuse"
+    },
+    {
+      "id": "sec-004",
+      "type": "security_hardening",
+      "title": "Add HTTPS Strict Transport Security (HSTS) header",
+      "description": "The next.config.ts security headers configuration is missing the Strict-Transport-Security header. This header is essential to prevent protocol downgrade attacks and cookie hijacking, especially when the application handles authentication cookies and sensitive business data.",
+      "rationale": "HSTS ensures browsers only communicate with the server over HTTPS, preventing man-in-the-middle attacks where an attacker could intercept traffic by forcing a downgrade to HTTP. This is critical for a SaaS platform handling restaurant business data and user authentication.",
+      "category": "configuration",
+      "severity": "medium",
+      "affectedFiles": [
+        ".worktrees/001-ozon-e-menum-net-vibe-coding-v1/next.config.ts"
+      ],
+      "vulnerability": "CWE-319: Cleartext Transmission of Sensitive Information",
+      "currentRisk": "Without HSTS, users could be vulnerable to SSL stripping attacks, especially on public WiFi networks commonly used in restaurants",
+      "remediation": "Add HSTS header to next.config.ts headers configuration: { key: 'Strict-Transport-Security', value: 'max-age=31536000; includeSubDomains; preload' }. Also add 'Permissions-Policy' to restrict browser features: { key: 'Permissions-Policy', value: 'camera=(), microphone=(), geolocation=()' }",
+      "references": [
+        "https://developer.mozilla.org/en-US/docs/Web/HTTP/Headers/Strict-Transport-Security",
+        "https://hstspreload.org/"
+      ],
+      "compliance": [
+        "SOC2",
+        "PCI-DSS"
+      ],
+      "status": "archived",
+      "linked_task_id": "018-add-https-strict-transport-security-hsts-header"
+    },
+    {
+      "id": "sec-005",
+      "type": "security_hardening",
+      "title": "Update vulnerable development dependencies (esbuild/vite)",
+      "description": "npm audit reports 5 moderate severity vulnerabilities in esbuild (<=0.24.2) affecting vite and vitest. While these are development dependencies, they could still pose risks in certain scenarios like supply chain attacks or if development environment is compromised.",
+      "rationale": "Keeping dependencies up-to-date reduces the attack surface and prevents potential exploitation of known vulnerabilities. The vulnerability (GHSA-67mh-4wv8-2f99) allows any website to send requests to the development server and read responses, which could leak sensitive information during development.",
+      "category": "dependencies",
+      "severity": "low",
+      "affectedFiles": [
+        ".worktrees/001-ozon-e-menum-net-vibe-coding-v1/package.json",
+        ".worktrees/001-ozon-e-menum-net-vibe-coding-v1/package-lock.json"
+      ],
+      "vulnerability": "GHSA-67mh-4wv8-2f99: esbuild development server information disclosure",
+      "currentRisk": "Development environment could be compromised, potentially leaking environment variables or source code during local development",
+      "remediation": "Run 'npm audit fix --force' to update vitest to version 4.x which includes patched esbuild. Note: This is a major version upgrade that may require test updates. Alternatively, wait for a minor version fix if breaking changes are unacceptable. Add 'npm audit' to CI/CD pipeline to catch future vulnerabilities.",
+      "references": [
+        "https://github.com/advisories/GHSA-67mh-4wv8-2f99",
+        "https://docs.npmjs.com/cli/v8/commands/npm-audit"
+      ],
+      "compliance": [
+        "SOC2"
+      ],
+      "status": "archived",
+      "linked_task_id": "017-update-vulnerable-development-dependencies-esbuild"
+    },
+    {
+      "id": "doc-001",
+      "type": "documentation_gaps",
+      "title": "Create API.md - Comprehensive API Reference Documentation",
+      "description": "The ROUTES.md file references './API.md' for detailed API reference, but this file does not exist. The project has 7 API endpoints (auth/logout, locations, qr/generate, menu/publish, menu/snapshot, service-request) with varying authentication requirements and request/response formats that need documentation.",
+      "rationale": "Developers integrating with the platform or building client applications need a single source of truth for API contracts. Currently they must read the route handler source code to understand request formats, authentication requirements, and error responses. This is especially critical for public endpoints like service-request that third parties might need.",
+      "category": "api_docs",
+      "targetAudience": "developers",
+      "affectedAreas": [
+        "docs/API.md (missing)",
+        "app/api/qr/generate/route.ts",
+        "app/api/menu/publish/route.ts",
+        "app/api/service-request/route.ts",
+        "app/api/locations/route.ts",
+        "app/api/auth/logout/route.ts"
+      ],
+      "currentDocumentation": "Each API route has inline JSDoc comments describing request/response, but there is no unified API reference document",
+      "proposedContent": "Create docs/API.md with: OpenAPI-style documentation for each endpoint, request body schemas with TypeScript interfaces, response formats with success/error examples, authentication requirements, rate limiting info, and curl/fetch code examples",
+      "priority": "high",
+      "estimatedEffort": "medium",
+      "status": "archived",
+      "linked_task_id": "016-create-api-md-comprehensive-api-reference-document"
+    },
+    {
+      "id": "doc-002",
+      "type": "documentation_gaps",
+      "title": "Add Database Schema Documentation for Migrations",
+      "description": "The supabase/migrations/ folder contains 8 SQL migration files (001-007 + 010) but lacks documentation explaining the schema design, table relationships, RLS policy intentions, and the critical immutable price_ledger pattern.",
+      "rationale": "The price_ledger immutability pattern is a core compliance requirement (Turkish Trade Ministry regulations) but is only documented in the spec.md and inline code comments. New developers or DBAs reviewing the schema need to understand why UPDATE/DELETE are blocked, how the current_prices view works, and the relationship between subscriptions, plans, and feature_overrides.",
+      "category": "architecture",
+      "targetAudience": "developers",
+      "affectedAreas": [
+        "supabase/migrations/001_core_tables.sql",
+        "supabase/migrations/002_products_price_ledger.sql",
+        "supabase/migrations/003_package_management.sql",
+        "supabase/migrations/007_rls_policies.sql",
+        "docs/DATABASE.md (missing)"
+      ],
+      "currentDocumentation": "SQL files have minimal inline comments, README mentions table names but not relationships",
+      "proposedContent": "Create docs/DATABASE.md with: ER diagram (Mermaid), table-by-table documentation with column descriptions, explanation of immutable price_ledger pattern, RLS policy overview, view definitions and their purpose, trigger documentation, and migration ordering guide",
+      "priority": "high",
+      "estimatedEffort": "medium",
+      "status": "archived",
+      "linked_task_id": "015-add-database-schema-documentation-for-migrations"
+    },
+    {
+      "id": "doc-003",
+      "type": "documentation_gaps",
+      "title": "Create Architecture Overview with System Diagrams",
+      "description": "The project lacks high-level architecture documentation showing how the Next.js app, Supabase, and different modules interact. There is no visualization of the auth flow, menu publishing flow, or waiter call realtime notification system.",
+      "rationale": "New team members need to understand the big picture before diving into code. The platform has complex flows: multi-tenant isolation via RLS, dynamic feature flags from database, menu snapshot with SHA-256 hashing for compliance, and Supabase Realtime for waiter notifications. These architectural decisions are scattered across spec.md, todos.md, and inline comments.",
+      "category": "architecture",
+      "targetAudience": "developers",
+      "affectedAreas": [
+        "docs/ARCHITECTURE.md (missing)",
+        "lib/services/",
+        "lib/guards/",
+        "middleware.ts",
+        "components/providers/"
+      ],
+      "currentDocumentation": "spec.md contains detailed requirements but no visual diagrams; README has project structure but not data flow",
+      "proposedContent": "Create docs/ARCHITECTURE.md with: System overview diagram (Mermaid), authentication flow diagram, menu publishing and snapshot flow, waiter call realtime notification sequence diagram, multi-tenant RLS isolation explanation, and component dependency graph",
+      "priority": "medium",
+      "estimatedEffort": "medium",
+      "status": "archived",
+      "linked_task_id": "014-create-architecture-overview-with-system-diagrams"
+    },
+    {
+      "id": "doc-004",
+      "type": "documentation_gaps",
+      "title": "Add Getting Started Tutorial for New Users",
+      "description": "README.md covers installation and environment setup but lacks a step-by-step tutorial guiding a new restaurant owner through their first complete workflow: registration, creating organization, adding products with prices, generating QR codes, and publishing their menu.",
+      "rationale": "The target audience includes restaurant owners who may not be technical. A guided tutorial reduces onboarding friction and ensures users understand the platform's unique features like the immutable price ledger and table-based QR codes. The QA acceptance criteria in spec.md states 'Register-to-QR-download flow completes in under 10 minutes' but there's no guide showing this flow.",
+      "category": "examples",
+      "targetAudience": "users",
+      "affectedAreas": [
+        "docs/GETTING_STARTED.md (missing)",
+        "app/(auth)/register/",
+        "app/(dashboard)/products/",
+        "app/(dashboard)/categories/",
+        "app/(dashboard)/tables/"
+      ],
+      "currentDocumentation": "README has technical setup steps, spec.md has requirements, but no user-focused tutorial",
+      "proposedContent": "Create docs/GETTING_STARTED.md with: Step 1: Account registration, Step 2: Create your restaurant, Step 3: Add categories, Step 4: Add products with prices (explain price ledger), Step 5: Set up tables with QR codes, Step 6: Publish menu. Include screenshots and expected outcomes.",
+      "priority": "medium",
+      "estimatedEffort": "low",
+      "status": "archived",
+      "linked_task_id": "013-add-getting-started-tutorial-for-new-users"
+    },
+    {
+      "id": "doc-005",
+      "type": "documentation_gaps",
+      "title": "Document UI Components with Props and Usage Examples",
+      "description": "The components/ui/ folder contains 4 reusable components (Button, Card, Input, Modal) with no documentation on their available props, variants, or usage patterns. Similarly, components/dashboard/ and components/providers/ lack usage documentation.",
+      "rationale": "Consistent UI development requires developers to understand available components without reading source code. The project uses Tailwind CSS with custom variants but doesn't document the design system tokens or component API. This leads to inconsistent component usage and potential duplication.",
+      "category": "api_docs",
+      "targetAudience": "developers",
+      "affectedAreas": [
+        "components/ui/button.tsx",
+        "components/ui/card.tsx",
+        "components/ui/input.tsx",
+        "components/ui/modal.tsx",
+        "components/dashboard/header.tsx",
+        "components/dashboard/sidebar.tsx"
+      ],
+      "currentDocumentation": "Components have TypeScript types but no JSDoc or Storybook documentation",
+      "proposedContent": "Add JSDoc comments to each component with: @description explaining purpose, @param for each prop with types, @example showing common usage patterns. Consider adding a components/README.md with the component inventory and design system overview.",
+      "priority": "low",
+      "estimatedEffort": "low",
+      "status": "archived",
+      "linked_task_id": "012-document-ui-components-with-props-and-usage-exampl"
+    },
+    {
+      "id": "perf-001",
+      "type": "performance_optimizations",
+      "title": "Optimize Products Page with Database JOIN Instead of Multiple Queries",
+      "description": "The Products page (app/(dashboard)/products/page.tsx) executes 3 separate database queries sequentially: one for products, one for current_prices, and one for categories. These should be consolidated into a single query with JOINs or a Supabase select with nested relationships.",
+      "rationale": "The current N+1-like pattern increases latency by requiring 3 round trips to the database. With 100+ products, this becomes a significant bottleneck. A single query with proper JOINs reduces network latency and database load.",
+      "category": "database",
+      "impact": "high",
+      "affectedAreas": [
+        ".worktrees/001-ozon-e-menum-net-vibe-coding-v1/app/(dashboard)/products/page.tsx"
+      ],
+      "currentMetric": "3 sequential database queries for products, prices, and categories",
+      "expectedImprovement": "~60-70% reduction in API call latency, single round-trip instead of 3",
+      "implementation": "1. Use Supabase's nested select syntax: .select('*, current_prices(*), categories(*)')\n2. Or create a database view that joins products with current_prices and categories\n3. Remove the manual mapping code that combines results\n4. Update TypeScript types to match the new response shape",
+      "tradeoffs": "Supabase's nested selects may return slightly more data than needed, but the latency improvement outweighs this",
+      "estimatedEffort": "small",
+      "status": "archived",
+      "linked_task_id": "011-optimize-products-page-with-database-join-instead-"
+    },
+    {
+      "id": "perf-002",
+      "type": "performance_optimizations",
+      "title": "Add React.memo to ProductListItem Component for Render Optimization",
+      "description": "The ProductListItem component in the Products page is re-rendered for every item whenever parent state changes (search, filter, modal state). Wrapping it with React.memo would prevent unnecessary re-renders when product data hasn't changed.",
+      "rationale": "Each state update (typing in search, opening modals) triggers a full re-render of all product list items. With 50+ products, this creates noticeable lag. React.memo ensures items only re-render when their props actually change.",
+      "category": "rendering",
+      "impact": "medium",
+      "affectedAreas": [
+        ".worktrees/001-ozon-e-menum-net-vibe-coding-v1/app/(dashboard)/products/page.tsx"
+      ],
+      "currentMetric": "All ProductListItem components re-render on any state change",
+      "expectedImprovement": "~80% reduction in unnecessary re-renders during search/filter operations",
+      "implementation": "1. Extract ProductListItem to a separate file\n2. Wrap with React.memo\n3. Use useCallback for the onEdit, onDelete, onToggleVisibility handlers\n4. Consider virtualizing the list if product count exceeds 100",
+      "tradeoffs": "Slightly more complex component structure, but significant performance gain",
+      "estimatedEffort": "small",
+      "status": "archived",
+      "linked_task_id": "010-add-react-memo-to-productlistitem-component-for-re"
+    },
+    {
+      "id": "perf-003",
+      "type": "performance_optimizations",
+      "title": "Code Split Large Homepage into Lazy-Loaded Sections",
+      "description": "The homepage (app/page.tsx) is 845 lines containing 15+ components (AnimatedBackground, AnimatedQRDemo, FeatureCard, StatCard, TestimonialCard, PricingTier, Navigation, Footer, etc.). These should be extracted and lazy-loaded for faster initial page load.",
+      "rationale": "All components are bundled together, increasing initial JavaScript payload. Sections below the fold (testimonials, pricing, footer) can be lazy-loaded as the user scrolls, significantly reducing Time to Interactive.",
+      "category": "bundle_size",
+      "impact": "high",
+      "affectedAreas": [
+        ".worktrees/001-ozon-e-menum-net-vibe-coding-v1/app/page.tsx"
+      ],
+      "currentMetric": "Single 845-line file with all components bundled together",
+      "expectedImprovement": "~30-40% reduction in initial bundle size, faster LCP and TTI",
+      "implementation": "1. Extract each major section (Features, HowItWorks, Testimonials, Pricing, CTA) to separate component files\n2. Use dynamic import with next/dynamic for below-fold sections\n3. Add Suspense boundaries with skeleton loading states\n4. Consider Intersection Observer for triggering loads",
+      "tradeoffs": "More files to manage, slight delay when scrolling to lazy-loaded sections",
+      "estimatedEffort": "medium",
+      "status": "archived",
+      "linked_task_id": "009-code-split-large-homepage-into-lazy-loaded-section"
+    },
+    {
+      "id": "perf-004",
+      "type": "performance_optimizations",
+      "title": "Optimize AuthProvider to Avoid Unnecessary Re-fetches",
+      "description": "The AuthProvider (components/providers/auth-provider.tsx) performs 2 sequential database queries (organization_members, then organizations) on every auth state change. It also creates a new Supabase client on each render instead of memoizing it.",
+      "rationale": "The sequential queries double the latency for auth initialization. Creating a new Supabase client on each render is wasteful and can cause issues with real-time subscriptions. These should be optimized for faster app initialization.",
+      "category": "runtime",
+      "impact": "medium",
+      "affectedAreas": [
+        ".worktrees/001-ozon-e-menum-net-vibe-coding-v1/components/providers/auth-provider.tsx"
+      ],
+      "currentMetric": "2 sequential queries + new client creation on each render",
+      "expectedImprovement": "~50% faster auth initialization, reduced memory allocation",
+      "implementation": "1. Use useMemo to memoize the Supabase client creation\n2. Combine the two queries using a JOIN: .select('*, organizations(*)')\n3. Consider caching the organization data in localStorage for faster subsequent loads\n4. Add error boundaries for auth failures",
+      "tradeoffs": "localStorage caching requires cache invalidation strategy",
+      "estimatedEffort": "small",
+      "status": "archived",
+      "linked_task_id": "008-optimize-authprovider-to-avoid-unnecessary-re-fetc"
+    },
+    {
+      "id": "perf-005",
+      "type": "performance_optimizations",
+      "title": "Add Virtual Scrolling for Long Product Lists",
+      "description": "The Products page renders all products in a simple div with .map(). For restaurants with 100+ products, this creates DOM bloat and slow scroll performance. Implementing virtual scrolling would render only visible items.",
+      "rationale": "Each ProductListItem creates multiple DOM elements (image, buttons, text). With 200 products, this means 1000+ DOM nodes. Virtual scrolling reduces this to ~20-30 visible items, dramatically improving scroll performance and memory usage.",
+      "category": "rendering",
+      "impact": "medium",
+      "affectedAreas": [
+        ".worktrees/001-ozon-e-menum-net-vibe-coding-v1/app/(dashboard)/products/page.tsx"
+      ],
+      "currentMetric": "All products rendered to DOM regardless of viewport visibility",
+      "expectedImprovement": "~90% reduction in DOM nodes for large product lists, smoother scrolling",
+      "implementation": "1. Install @tanstack/react-virtual or react-window\n2. Wrap the product list with a virtualized container\n3. Set fixed or estimated row heights for optimal performance\n4. Handle dynamic row heights if product descriptions vary significantly",
+      "tradeoffs": "Adds dependency, slightly more complex list rendering code, fixed heights may require design adjustments",
+      "estimatedEffort": "medium",
+      "status": "archived",
+      "linked_task_id": "007-add-virtual-scrolling-for-long-product-lists"
+    },
+    {
+      "id": "cq-001",
+      "type": "code_quality",
+      "title": "Split large admin page files into smaller components",
+      "description": "Multiple admin and dashboard pages exceed 700-1000+ lines, combining data fetching, state management, form handling, list rendering, and modal logic in single files. Files like plans/page.tsx (1086 lines), overrides/page.tsx (977 lines), ai/page.tsx (919 lines), organizations/page.tsx (811 lines), and tables/page.tsx (744 lines) are far too large for maintainability.",
+      "rationale": "Files over 500 lines significantly increase cognitive load, make code reviews difficult, and create merge conflicts. Large monolithic components are harder to test in isolation and violate single responsibility principle. Splitting into focused components enables better code reuse and faster development.",
+      "category": "large_files",
+      "severity": "major",
+      "affectedFiles": [
+        "app/(admin)/admin/plans/page.tsx",
+        "app/(admin)/admin/overrides/page.tsx",
+        "app/(admin)/admin/ai/page.tsx",
+        "app/(admin)/admin/organizations/page.tsx",
+        "app/(dashboard)/tables/page.tsx",
+        "app/(dashboard)/products/page.tsx",
+        "app/(dashboard)/waiter/page.tsx"
+      ],
+      "currentState": "Single large page files containing all state management, data fetching, rendering logic, and multiple modals (e.g., plans/page.tsx has 1086 lines handling Plans tab, Features tab, plan modals, feature modals, and plan-feature assignment modals)",
+      "proposedChange": "Extract into smaller focused components:\n1. Create components/admin/plans/ folder with: PlansList.tsx, FeaturesTab.tsx, PlanModal.tsx, FeatureModal.tsx, PlanFeaturesModal.tsx\n2. Create components/dashboard/tables/ with: TablesList.tsx, TableItem.tsx, TableModal.tsx, QRCodeModal.tsx\n3. Move shared state patterns into custom hooks (usePlansCRUD, useTablesCRUD)\n4. Keep page.tsx files under 200 lines as container components",
+      "codeExample": "// Current plans/page.tsx structure (1086 lines):\nexport default function PlansPage() {\n  // 20+ useState calls\n  // 10+ handler functions\n  // 2 useEffect hooks\n  // 600+ lines of JSX with tables, tabs, modals\n}\n\n// Proposed structure:\n// page.tsx (~100 lines)\nexport default function PlansPage() {\n  return (\n    <PlansProvider>\n      <PlansHeader />\n      <PlansTabs>\n        <PlansTab />\n        <FeaturesTab />\n      </PlansTabs>\n      <PlanModals />\n    </PlansProvider>\n  )\n}",
+      "bestPractice": "Component files should ideally be under 300 lines. Container components handle orchestration while presentational components handle rendering.",
+      "metrics": {
+        "lineCount": 5847,
+        "complexity": null,
+        "duplicateLines": null,
+        "testCoverage": null
+      },
+      "estimatedEffort": "large",
+      "breakingChange": false,
+      "prerequisites": [
+        "Create shared component architecture in components/ folder",
+        "Document component naming conventions"
+      ],
+      "status": "archived",
+      "linked_task_id": "006-split-large-admin-page-files-into-smaller-componen"
+    },
+    {
+      "id": "cq-002",
+      "type": "code_quality",
+      "title": "Extract duplicated CRUD state management into reusable hooks",
+      "description": "Nearly identical state management patterns are repeated across 19+ page components with 204 occurrences of setIsLoading/setError/setIsSaving calls. Each CRUD page duplicates: loading state, error state, saving state, modal open/close state, form data state, delete confirmation state, and their associated handlers.",
+      "rationale": "DRY (Don't Repeat Yourself) violation leads to inconsistent behavior, more bugs, and increased maintenance burden. When a bug is found in one pattern, it must be fixed in 19 places. Extracting to custom hooks enables consistent error handling, loading states, and optimistic updates across the application.",
+      "category": "duplication",
+      "severity": "major",
+      "affectedFiles": [
+        "app/(dashboard)/products/page.tsx",
+        "app/(dashboard)/categories/page.tsx",
+        "app/(dashboard)/tables/page.tsx",
+        "app/(admin)/admin/plans/page.tsx",
+        "app/(admin)/admin/organizations/page.tsx",
+        "app/(admin)/admin/overrides/page.tsx",
+        "app/(dashboard)/settings/page.tsx",
+        "app/(dashboard)/waiter/page.tsx",
+        "app/(dashboard)/audit/page.tsx"
+      ],
+      "currentState": "Each page independently declares and manages:\n- const [isLoading, setIsLoading] = useState(true)\n- const [error, setError] = useState<string | null>(null)\n- const [isSaving, setIsSaving] = useState(false)\n- const [isModalOpen, setIsModalOpen] = useState(false)\n- const [editingItem, setEditingItem] = useState(null)\n- const [deleteTarget, setDeleteTarget] = useState(null)\n- fetchData(), handleSubmit(), handleDelete() functions with similar try/catch patterns",
+      "proposedChange": "Create hooks/useCRUD.ts with generic CRUD operations:\n1. useCRUD<T>(tableName, options) - handles fetch, create, update, delete\n2. useFormModal<T>() - handles modal state, form data, validation\n3. useDeleteConfirmation<T>() - handles delete confirmation flow\n4. useAsyncOperation() - handles loading/error/success states",
+      "codeExample": "// Current pattern (repeated in 19 files):\nconst [isLoading, setIsLoading] = useState(true)\nconst [error, setError] = useState<string | null>(null)\nconst [data, setData] = useState<T[]>([])\n\nconst fetchData = useCallback(async () => {\n  setIsLoading(true)\n  setError(null)\n  try {\n    const { data, error } = await supabase.from('table').select('*')\n    if (error) throw error\n    setData(data || [])\n  } catch {\n    setError('Error message')\n  } finally {\n    setIsLoading(false)\n  }\n}, [])\n\n// Proposed pattern:\nconst {\n  data,\n  isLoading,\n  error,\n  refetch,\n  create,\n  update,\n  remove\n} = useCRUD<Product>('products', {\n  organizationId: org?.id,\n  orderBy: { column: 'name', ascending: true }\n})",
+      "bestPractice": "Custom hooks should encapsulate reusable stateful logic. Generic CRUD hooks reduce boilerplate and ensure consistent UX patterns.",
+      "metrics": {
+        "lineCount": null,
+        "complexity": null,
+        "duplicateLines": 380,
+        "testCoverage": null
+      },
+      "estimatedEffort": "medium",
+      "breakingChange": false,
+      "prerequisites": [
+        "Define standard error message format",
+        "Add unit tests for the new hooks"
+      ],
+      "status": "archived",
+      "linked_task_id": "005-extract-duplicated-crud-state-management-into-reus"
+    },
+    {
+      "id": "cq-003",
+      "type": "code_quality",
+      "title": "Create reusable icon component system",
+      "description": "175 inline SVG icons are scattered across 19 files with duplicate icon definitions. Icons like edit, delete, plus, check, eye, eye-off, and loading spinner are copy-pasted repeatedly with inconsistent sizing (h-4 w-4, h-5 w-5, h-6 w-6) and stroke widths.",
+      "rationale": "Inline SVG duplication increases bundle size, makes icon updates tedious (must change in multiple places), and leads to visual inconsistency. A centralized icon system enables consistent iconography, easier theming, and potential tree-shaking optimizations.",
+      "category": "duplication",
+      "severity": "minor",
+      "affectedFiles": [
+        "app/(admin)/admin/plans/page.tsx",
+        "app/(dashboard)/tables/page.tsx",
+        "app/(dashboard)/products/page.tsx",
+        "app/(dashboard)/categories/page.tsx",
+        "app/(dashboard)/dashboard/dashboard-client.tsx",
+        "app/(admin)/admin-layout-client.tsx",
+        "app/(dashboard)/dashboard-layout-client.tsx",
+        "app/features/page.tsx"
+      ],
+      "currentState": "SVG icons are embedded inline with varying sizes:\n<svg className=\"h-4 w-4\" fill=\"none\" viewBox=\"0 0 24 24\" stroke=\"currentColor\" strokeWidth={2}>\n  <path strokeLinecap=\"round\" strokeLinejoin=\"round\" d=\"M11 5H6a2 2 0 00-2 2v11...\" />\n</svg>\n(This edit icon pattern appears 15+ times with slight variations)",
+      "proposedChange": "Create components/ui/icons/ with:\n1. Icon.tsx - base wrapper component with size prop ('sm' | 'md' | 'lg')\n2. icons/index.ts - barrel export of all icons\n3. Individual icon files or icon sprite\nAlternatively, adopt lucide-react or heroicons library which are already compatible with the existing icon style",
+      "codeExample": "// Current (repeated 15+ times):\n<svg className=\"h-4 w-4\" fill=\"none\" viewBox=\"0 0 24 24\" stroke=\"currentColor\" strokeWidth={2}>\n  <path strokeLinecap=\"round\" strokeLinejoin=\"round\" d=\"M11 5H6a2 2 0 00-2 2v11a2 2 0 002 2h11a2 2 0 002-2v-5m-1.414-9.414a2 2 0 112.828 2.828L11.828 15H9v-2.828l8.586-8.586z\" />\n</svg>\n\n// Proposed:\nimport { EditIcon, TrashIcon, PlusIcon } from '@/components/ui/icons'\n\n<EditIcon size=\"sm\" />\n<TrashIcon size=\"sm\" className=\"text-red-500\" />",
+      "bestPractice": "Use a consistent icon system (library or custom) with standardized sizes and accessible defaults",
+      "metrics": {
+        "lineCount": null,
+        "complexity": null,
+        "duplicateLines": 875,
+        "testCoverage": null
+      },
+      "estimatedEffort": "small",
+      "breakingChange": false,
+      "prerequisites": null,
+      "status": "archived",
+      "linked_task_id": "004-create-reusable-icon-component-system"
+    },
+    {
+      "id": "cq-004",
+      "type": "code_quality",
+      "title": "Extract shared alert/notification component",
+      "description": "Error alert pattern is duplicated 36 times across 19 files with nearly identical JSX structure for displaying error messages. Each file has its own implementation of the red-bordered error box with dismiss button.",
+      "rationale": "UI consistency is compromised when the same pattern is implemented differently across files. If the design team wants to update error styling, 36 files must be modified. A shared Alert component also enables adding features like auto-dismiss, different severity levels, and accessibility improvements in one place.",
+      "category": "duplication",
+      "severity": "minor",
+      "affectedFiles": [
+        "app/(dashboard)/products/page.tsx",
+        "app/(dashboard)/tables/page.tsx",
+        "app/(admin)/admin/plans/page.tsx",
+        "app/(auth)/login/page.tsx",
+        "app/(auth)/register/page.tsx",
+        "app/(dashboard)/categories/page.tsx"
+      ],
+      "currentState": "Error display pattern copied across files:\n{error && (\n  <div\n    className=\"rounded-lg bg-red-50 border border-red-200 p-4 text-sm text-red-700 dark:bg-red-900/20 dark:border-red-800 dark:text-red-400\"\n    role=\"alert\"\n  >\n    {error}\n    <button onClick={() => setError(null)} className=\"ml-2 font-medium underline hover:no-underline\">\n      Kapat\n    </button>\n  </div>\n)}",
+      "proposedChange": "Create components/ui/alert.tsx with variants:\n- Alert component with props: variant ('error' | 'warning' | 'success' | 'info'), dismissible, onDismiss\n- Support for title + description\n- Auto-dismiss timeout option\n- Toast notification variant for transient messages",
+      "codeExample": "// Current (36 occurrences):\n{error && (\n  <div className=\"rounded-lg bg-red-50 border border-red-200 p-4...\" role=\"alert\">\n    {error}\n    <button onClick={() => setError(null)}>Kapat</button>\n  </div>\n)}\n\n// Proposed:\nimport { Alert } from '@/components/ui/alert'\n\n{error && (\n  <Alert variant=\"error\" dismissible onDismiss={() => setError(null)}>\n    {error}\n  </Alert>\n)}",
+      "bestPractice": "UI patterns should be implemented once as reusable components. Alert/notification components should follow WAI-ARIA guidelines.",
+      "metrics": {
+        "lineCount": null,
+        "complexity": null,
+        "duplicateLines": 288,
+        "testCoverage": null
+      },
+      "estimatedEffort": "small",
+      "breakingChange": false,
+      "prerequisites": null,
+      "status": "archived",
+      "linked_task_id": "003-extract-shared-alert-notification-component"
+    },
+    {
+      "id": "cq-005",
+      "type": "code_quality",
+      "title": "Add unit test coverage for dashboard page components",
+      "description": "While integration tests exist (19 test files), the dashboard and admin page components have no unit tests. The products, categories, tables, and plans pages contain complex business logic for CRUD operations, form validation, and state management that should be tested in isolation.",
+      "rationale": "Unit tests provide faster feedback than integration tests and help document expected component behavior. Testing hooks and utility functions in isolation catches bugs earlier in development. Current test coverage focuses on integration flows but misses edge cases in individual components.",
+      "category": "testing",
+      "severity": "minor",
+      "affectedFiles": [
+        "app/(dashboard)/products/page.tsx",
+        "app/(dashboard)/categories/page.tsx",
+        "app/(dashboard)/tables/page.tsx",
+        "app/(admin)/admin/plans/page.tsx",
+        "hooks/useAuth.ts",
+        "hooks/useTableContext.ts",
+        "lib/qrcode/generator.ts"
+      ],
+      "currentState": "Tests exist for:\n- lib/__tests__/price-ledger-immutability.test.ts\n- lib/__tests__/snapshot-hash.test.ts  \n- lib/guards/__tests__/permission.test.ts\n- tests/__tests__/integration/*.test.ts\n\nNo tests for:\n- Dashboard page components\n- useAuth hook\n- useTableContext hook\n- QR code generator utilities",
+      "proposedChange": "Add test files:\n1. hooks/__tests__/useAuth.test.ts\n2. hooks/__tests__/useTableContext.test.ts\n3. lib/qrcode/__tests__/generator.test.ts\n4. app/(dashboard)/__tests__/products.test.tsx\n5. components/ui/__tests__/*.test.tsx for UI components",
+      "codeExample": "// hooks/__tests__/useAuth.test.ts\nimport { renderHook, waitFor } from '@testing-library/react'\nimport { useAuth } from '../useAuth'\n\ndescribe('useAuth', () => {\n  it('should return user and organization when authenticated', async () => {\n    const { result } = renderHook(() => useAuth())\n    await waitFor(() => {\n      expect(result.current.user).toBeDefined()\n    })\n  })\n  \n  it('should handle logout correctly', async () => {\n    // Test logout flow\n  })\n})",
+      "bestPractice": "Aim for 80%+ coverage on business logic. Test hooks with @testing-library/react-hooks. Mock Supabase client for isolated tests.",
+      "metrics": {
+        "lineCount": null,
+        "complexity": null,
+        "duplicateLines": null,
+        "testCoverage": 35
+      },
+      "estimatedEffort": "medium",
+      "breakingChange": false,
+      "prerequisites": [
+        "Set up component testing utilities",
+        "Create Supabase mock factory"
+      ],
+      "status": "archived",
+      "linked_task_id": "002-add-unit-test-coverage-for-dashboard-page-componen"
+    }
+  ],
+  "project_context": {
+    "existing_features": [],
+    "tech_stack": [],
+    "target_audience": null,
+    "planned_features": [
+      "Specification: e-menum.net - Hygienic QR Menu SaaS Platform"
+    ]
+  },
+  "summary": {
+    "total_ideas": 30,
+    "by_type": {
+      "code_improvements": 5,
+      "ui_ux_improvements": 5,
+      "security_hardening": 5,
+      "documentation_gaps": 5,
+      "performance_optimizations": 5,
+      "code_quality": 5
+    },
+    "by_status": {
+      "draft": 30
+    }
+  },
+  "generated_at": "2026-01-14T16:17:00.248952",
+  "updated_at": "2026-01-14T15:24:47.973Z"
+}

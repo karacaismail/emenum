@@ -1,0 +1,16 @@
+{
+  "sourceType": "ideation",
+  "ideationType": "ui_ux_improvements",
+  "ideaId": "uiux-004",
+  "rationale": "The app uses spinner loaders (animate-spin) that don't indicate what content is loading. Skeleton screens provide visual structure that matches the final content, making the app feel faster and preventing jarring layout shifts when content loads.",
+  "category": "ui_ux",
+  "uiuxCategory": "performance",
+  "affectedFiles": [
+    "components/ui/skeleton.tsx (new)",
+    "app/(dashboard)/products/page.tsx",
+    "app/(dashboard)/categories/page.tsx",
+    "app/(dashboard)/dashboard/dashboard-client.tsx"
+  ],
+  "problemSolved": "Products page (lines 533-535) shows a centered spinner during loading. When products load, the empty state message or product list suddenly appears. This causes a jarring visual jump and doesn't preview the upcoming content structure.",
+  "archivedAt": "2026-01-15T13:25:46.194Z"
+}

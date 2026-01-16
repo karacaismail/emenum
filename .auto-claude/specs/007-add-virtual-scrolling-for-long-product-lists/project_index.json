@@ -1,0 +1,38 @@
+{
+  "project_type": "single",
+  "services": {
+    "frontend": {
+      "path": ".",
+      "tech_stack": ["nextjs", "react", "typescript", "tailwindcss"],
+      "version": {
+        "nextjs": "15.5.9",
+        "react": "19.0.0",
+        "typescript": "5.7.2"
+      },
+      "port": 3000,
+      "dev_command": "npm run dev",
+      "build_command": "npm run build",
+      "test_command": "vitest"
+    }
+  },
+  "infrastructure": {
+    "docker": false,
+    "database": "supabase-postgresql",
+    "auth": "supabase-auth",
+    "realtime": "supabase-realtime"
+  },
+  "conventions": {
+    "linter": "eslint",
+    "formatter": "prettier-implicit",
+    "testing": "vitest",
+    "ui_library": "custom-tailwind",
+    "component_pattern": "client-components",
+    "routing": "app-router"
+  },
+  "architecture": {
+    "pattern": "app-router",
+    "state_management": "react-hooks",
+    "styling": "tailwind-utility-first",
+    "auth_pattern": "supabase-auth-hooks"
+  }
+}

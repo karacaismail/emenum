@@ -1,0 +1,9 @@
+{
+  "sourceType": "ideation",
+  "ideationType": "documentation_gaps",
+  "ideaId": "doc-004",
+  "rationale": "The target audience includes restaurant owners who may not be technical. A guided tutorial reduces onboarding friction and ensures users understand the platform's unique features like the immutable price ledger and table-based QR codes. The QA acceptance criteria in spec.md states 'Register-to-QR-download flow completes in under 10 minutes' but there's no guide showing this flow.",
+  "category": "documentation",
+  "priority": "medium",
+  "archivedAt": "2026-01-15T13:35:52.677Z"
+}

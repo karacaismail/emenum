@@ -1,0 +1,109 @@
+{
+  "code_improvements": [
+    {
+      "id": "ci-001",
+      "type": "code_improvements",
+      "title": "Add Search to Categories Page",
+      "description": "Add search functionality to the categories page, allowing users to filter categories by name. This mirrors the existing search pattern already implemented in the products page.",
+      "rationale": "The products page at app/(dashboard)/products/page.tsx already has a working search input with searchQuery state and filtering logic. The categories page is missing this feature despite having the same UI component pattern. Direct pattern replication with minimal changes.",
+      "builds_upon": ["Products page search pattern", "Categories page CRUD pattern"],
+      "estimated_effort": "trivial",
+      "affected_files": [
+        ".worktrees/001-ozon-e-menum-net-vibe-coding-v1/app/(dashboard)/categories/page.tsx"
+      ],
+      "existing_patterns": [
+        "Search input with state in products/page.tsx (lines 176, 435-443)",
+        "Input component from @/components/ui/input",
+        "Card wrapper for filter section"
+      ],
+      "implementation_approach": "Copy the searchQuery state and filtering logic from products/page.tsx. Add a Card section with search input above the categories list. Filter rootCategories by name.toLowerCase().includes(searchQuery.toLowerCase()) before rendering.",
+      "status": "draft",
+      "created_at": "2026-01-14T16:15:00.000Z"
+    },
+    {
+      "id": "ci-002",
+      "type": "code_improvements",
+      "title": "Add Usage Limits Dashboard Component",
+      "description": "Create a dashboard component showing organization usage limits (products, categories, tables) with progress bars. The getAllLimitStatuses() function already returns all limit data with usage percentages.",
+      "rationale": "The lib/guards/limits.ts file has a fully implemented getAllLimitStatuses() function (lines 258-305) that returns currentCount, limit, usagePercent, and isUnlimited for each limit type. This data is ready but has no UI visualization. Similar stats card pattern exists in tables/page.tsx.",
+      "builds_upon": ["getAllLimitStatuses() in limits.ts", "Stats cards pattern in tables/page.tsx"],
+      "estimated_effort": "small",
+      "affected_files": [
+        ".worktrees/001-ozon-e-menum-net-vibe-coding-v1/app/(dashboard)/settings/page.tsx",
+        ".worktrees/001-ozon-e-menum-net-vibe-coding-v1/lib/guards/limits.ts"
+      ],
+      "existing_patterns": [
+        "Stats cards in tables/page.tsx (lines 516-590)",
+        "Card/CardContent components",
+        "getAllLimitStatuses() function returning LimitStatus[]"
+      ],
+      "implementation_approach": "Add a 'Usage Limits' Card section in the settings page. Call getAllLimitStatuses(organization.id) on mount. Display each limit as a progress bar with currentCount/limit text. Show percentage and color-coded status (green <70%, yellow 70-90%, red >90%).",
+      "status": "draft",
+      "created_at": "2026-01-14T16:15:00.000Z"
+    },
+    {
+      "id": "ci-003",
+      "type": "code_improvements",
+      "title": "Add Price History Export Button",
+      "description": "Add a button to export price change history for compliance reporting. The exportPriceLedgerForCompliance() function already exists and formats data for regulatory submission.",
+      "rationale": "The lib/services/price-ledger.ts file has exportPriceLedgerForCompliance() function (lines 517-559) that generates properly formatted compliance data with date ranges. No UI triggers this function currently. The audit page already has date filtering and export paradigm.",
+      "builds_upon": ["exportPriceLedgerForCompliance() in price-ledger.ts", "Audit page filtering pattern"],
+      "estimated_effort": "small",
+      "affected_files": [
+        ".worktrees/001-ozon-e-menum-net-vibe-coding-v1/app/(dashboard)/audit/page.tsx",
+        ".worktrees/001-ozon-e-menum-net-vibe-coding-v1/lib/services/price-ledger.ts"
+      ],
+      "existing_patterns": [
+        "exportPriceLedgerForCompliance() in price-ledger.ts",
+        "Download pattern from tables QR export",
+        "Button component with variant='secondary'"
+      ],
+      "implementation_approach": "Add an 'Export Price History' button in the audit page header next to the Refresh button. Add date range picker modal. Call exportPriceLedgerForCompliance() and trigger JSON/CSV download using the same blob download pattern from tables QR export.",
+      "status": "draft",
+      "created_at": "2026-01-14T16:15:00.000Z"
+    },
+    {
+      "id": "ci-004",
+      "type": "code_improvements",
+      "title": "Add Bulk QR Code Download for All Tables",
+      "description": "Add functionality to download all table QR codes at once as a ZIP file or combined PDF, instead of downloading each table's QR individually.",
+      "rationale": "The tables page already has individual QR download functionality (handleDownloadQR) with SVG/PNG/PDF formats. The QR generator functions already exist in lib/qrcode/generator.ts. Extending to bulk download follows the existing validateBulkAdd pattern in limits.ts for handling multiple items.",
+      "builds_upon": ["Individual QR download in tables/page.tsx", "QR generator library", "Bulk pattern from validateBulkAdd()"],
+      "estimated_effort": "medium",
+      "affected_files": [
+        ".worktrees/001-ozon-e-menum-net-vibe-coding-v1/app/(dashboard)/tables/page.tsx",
+        ".worktrees/001-ozon-e-menum-net-vibe-coding-v1/lib/qrcode/generator.ts"
+      ],
+      "existing_patterns": [
+        "handleDownloadQR function in tables/page.tsx (lines 412-469)",
+        "generateQRCodeSVG, generateQRCodePNG, generateQRCodePDF functions",
+        "Blob download pattern"
+      ],
+      "implementation_approach": "Add 'Download All QR Codes' button in page header. Create handleBulkDownloadQR that iterates through tables array, generates QR for each, and either: (a) uses JSZip library to create combined ZIP, or (b) generates multi-page PDF using existing PDF generator. Show loading progress indicator.",
+      "status": "draft",
+      "created_at": "2026-01-14T16:15:00.000Z"
+    },
+    {
+      "id": "ci-005",
+      "type": "code_improvements",
+      "title": "Add Menu Snapshot Version Comparison View",
+      "description": "Add UI to compare two menu snapshot versions side-by-side, showing what products/categories were added or removed between publishes.",
+      "rationale": "The lib/services/snapshot.ts already has compareSnapshots() function (lines 611-654) that returns addedProducts, removedProducts, addedCategories, removedCategories arrays. This comparison logic exists but has no UI. Similar diff-view pattern exists in the audit detail modal showing old_data vs new_data.",
+      "builds_upon": ["compareSnapshots() in snapshot.ts", "Audit detail modal diff pattern", "Snapshot history functionality"],
+      "estimated_effort": "medium",
+      "affected_files": [
+        ".worktrees/001-ozon-e-menum-net-vibe-coding-v1/app/(dashboard)/audit/page.tsx",
+        ".worktrees/001-ozon-e-menum-net-vibe-coding-v1/lib/services/snapshot.ts"
+      ],
+      "existing_patterns": [
+        "compareSnapshots() returning diff arrays",
+        "Modal component for detailed views",
+        "Old/new data display in audit modal (lines 591-612)",
+        "getSnapshotHistory() for version listing"
+      ],
+      "implementation_approach": "Add a 'Menu History' tab or page section. List snapshot versions using getSnapshotHistory(). Allow selecting two versions. Call compareSnapshots() and display results in a modal showing added items in green, removed items in red, using the same pre/code styling from audit detail modal.",
+      "status": "draft",
+      "created_at": "2026-01-14T16:15:00.000Z"
+    }
+  ]
+}

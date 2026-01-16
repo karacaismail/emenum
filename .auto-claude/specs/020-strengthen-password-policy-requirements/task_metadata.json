@@ -1,0 +1,11 @@
+{
+  "sourceType": "ideation",
+  "ideationType": "security_hardening",
+  "ideaId": "sec-002",
+  "rationale": "OWASP and NIST guidelines recommend stronger password requirements. A 6-character password can be cracked in seconds with modern tools. Weak passwords are one of the most common causes of account compromise in SaaS applications.",
+  "category": "security",
+  "securitySeverity": "medium",
+  "impact": "medium",
+  "priority": "medium",
+  "archivedAt": "2026-01-15T13:37:36.609Z"
+}

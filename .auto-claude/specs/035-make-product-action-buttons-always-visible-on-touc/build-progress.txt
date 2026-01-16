@@ -1,0 +1,168 @@
+=== AUTO-BUILD PROGRESS ===
+
+Project: Ozon QR Menu - Make Product Action Buttons Always Visible on Touch Devices
+Workspace: .worktrees/035-make-product-action-buttons-always-visible-on-touc
+Started: 2026-01-15T06:35:00Z
+
+Workflow Type: simple
+Rationale: This is a straightforward CSS fix affecting only frontend UI components. No backend changes, no dependencies, no complex integration. Simple workflow is appropriate for quick, isolated UI improvements.
+
+=== PROBLEM STATEMENT ===
+
+Product list action buttons (edit, delete, visibility toggle) are only visible on hover, making them inaccessible on touch devices and difficult for keyboard users.
+
+Current Implementation:
+- Uses opacity-0 group-hover:opacity-100 pattern
+- Buttons are completely hidden until mouse hover
+- Touch device users (tablets, phones) cannot access edit/delete actions
+
+Impact:
+- High severity - breaks core functionality on touch devices
+- Affects restaurant staff who may use tablets for management
+- Accessibility issue for keyboard users
+
+=== INVESTIGATION FINDINGS ===
+
+Affected Files (4 occurrences found):
+1. app/(dashboard)/products/page.tsx (line 140)
+   - ProductListItem component
+   - Edit and delete buttons for products
+
+2. app/(dashboard)/categories/page.tsx (line 101)
+   - CategoryTreeNode component
+   - Edit and delete buttons for categories
+
+3. app/(dashboard)/tables/page.tsx (line 150)
+   - Table list item component
+   - Edit and delete buttons for tables
+
+4. app/(dashboard)/audit/page.tsx (line 459)
+   - Audit log entry component
+   - Arrow indicator (less critical)
+
+Pattern Found:
+  className="... opacity-0 transition-opacity group-hover:opacity-100"
+
+Tech Stack:
+- Next.js 15.5.9 (App Router)
+- React 19
+- TypeScript 5.7.2
+- Tailwind CSS 3.4
+- Vitest for testing
+
+=== SESSION 1 (PLANNER) ===
+
+Tasks Completed:
+✅ Deep codebase investigation
+✅ Searched for all occurrences of opacity-0 group-hover pattern
+✅ Analyzed affected files and components
+✅ Created project_index.json
+✅ Created context.json
+✅ Created implementation_plan.json
+✅ Created init.sh setup script
+✅ Created build-progress.txt
+
+Phases: 1
+Total Subtasks: 4
+
+Phase Summary:
+- Phase 1 (UI Accessibility Fix): 4 subtasks, no dependencies
+  - Subtask 1-1: Update products page action buttons
+  - Subtask 1-2: Update categories page action buttons
+  - Subtask 1-3: Update tables page action buttons
+  - Subtask 1-4: Update audit page arrow indicator
+
+Services Involved:
+- nextjs: Frontend UI fixes only
+
+=== IMPLEMENTATION STRATEGY ===
+
+Approach:
+Change opacity-0 to opacity-70 (or remove entirely) to make buttons always visible while maintaining hover effect for visual feedback.
+
+Options Considered:
+1. Remove opacity-0 entirely → Always 100% visible
+2. Use opacity-70 → Subtle but visible, becomes 100% on hover
+3. Use @media (hover: none) → Touch-specific visibility
+4. Use Tailwind md:opacity-0 → Responsive approach
+
+Recommended: Option 2 (opacity-70 group-hover:opacity-100)
+- Balances visibility with clean UI
+- Maintains hover feedback
+- Works on all devices
+- Simple CSS change, no media queries needed
+
+=== VERIFICATION STRATEGY ===
+
+Risk Level: Low
+- CSS-only changes
+- No functional logic affected
+- No backend changes
+- No database changes
+
+Testing Approach:
+1. Manual browser verification (required)
+   - Test all 4 dashboard pages
+   - Use Chrome DevTools device emulation
+   - Verify on iPad/tablet viewport
+   - Confirm buttons are discoverable without hover
+
+2. TypeScript type checking (npm run typecheck)
+3. Production build verification (npm run build)
+
+No unit/integration tests required - pure UI/CSS change.
+
+=== PARALLELISM ANALYSIS ===
+
+Max Parallel Phases: 1
+Recommended Workers: 1
+Parallel Groups: None
+
+Reasoning:
+- Single phase with 4 small subtasks
+- Sequential execution preferred for consistency
+- Each subtask is quick (1-2 minute change)
+- No benefit from parallelism on this scale
+
+=== STARTUP COMMAND ===
+
+To continue building this spec, run:
+
+  cd /Users/karaca/Desktop/ozon/.worktrees/035-make-product-action-buttons-always-visible-on-touc
+  ./.auto-claude/specs/035-make-product-action-buttons-always-visible-on-touc/init.sh
+
+Or start manually:
+
+  npm run dev
+
+Then test at:
+  - http://localhost:3000/dashboard/products
+  - http://localhost:3000/dashboard/categories
+  - http://localhost:3000/dashboard/tables
+  - http://localhost:3000/dashboard/audit
+
+=== FILES CREATED ===
+
+Planning Artifacts (gitignored):
+- .auto-claude/specs/035-make-product-action-buttons-always-visible-on-touc/project_index.json
+- .auto-claude/specs/035-make-product-action-buttons-always-visible-on-touc/context.json
+- .auto-claude/specs/035-make-product-action-buttons-always-visible-on-touc/implementation_plan.json
+- .auto-claude/specs/035-make-product-action-buttons-always-visible-on-touc/init.sh
+- .auto-claude/specs/035-make-product-action-buttons-always-visible-on-touc/build-progress.txt
+
+Note: These files are NOT committed to git. They are gitignored and managed locally by the auto-claude system.
+
+=== NEXT STEPS ===
+
+1. Coder agent will read implementation_plan.json
+2. Execute subtasks sequentially:
+   - Subtask 1-1: Products page
+   - Subtask 1-2: Categories page
+   - Subtask 1-3: Tables page
+   - Subtask 1-4: Audit page
+3. Create git commit for each completed subtask
+4. Manual verification in browser
+5. Run TypeScript check and production build
+6. Mark task as complete
+
+=== END SESSION 1 (PLANNER) ===

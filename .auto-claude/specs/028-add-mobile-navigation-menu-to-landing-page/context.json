@@ -1,0 +1,51 @@
+{
+  "files_to_modify": {
+    "frontend": ["app/page.tsx"]
+  },
+  "files_to_reference": [
+    "components/dashboard/sidebar.tsx",
+    "components/dashboard/header.tsx"
+  ],
+  "patterns": {
+    "mobile_menu_pattern": "Use isOpen state with backdrop overlay and slide-in animation (see Sidebar component)",
+    "hamburger_icon": "3-line SVG icon with path 'M4 6h16M4 12h16M4 18h16'",
+    "close_icon": "X SVG icon with path 'M6 18L18 6M6 6l12 12'",
+    "backdrop_pattern": "fixed inset-0 z-40 bg-black/50 with onClick to close",
+    "slide_animation": "Transform classes: translate-x-0 (open) vs -translate-x-full (closed)",
+    "responsive_visibility": "Use hidden md:flex for desktop-only, md:hidden for mobile-only",
+    "client_component": "Must add 'use client' directive to use useState hooks"
+  },
+  "existing_implementations": {
+    "description": "Dashboard has a fully functional mobile sidebar with hamburger menu",
+    "relevant_files": [
+      "components/dashboard/sidebar.tsx (lines 175-283: mobile sidebar with backdrop and slide-in)",
+      "components/dashboard/header.tsx (lines 60-71: hamburger button that toggles sidebar)"
+    ],
+    "key_features": [
+      "useState for isOpen state",
+      "Mobile backdrop with onClick to close",
+      "Slide-in animation with transform classes",
+      "Close button inside the mobile menu",
+      "Proper z-index layering (backdrop z-40, menu z-50)",
+      "ARIA labels for accessibility"
+    ]
+  },
+  "current_issue": {
+    "description": "Navigation component in app/page.tsx hides navigation links on mobile",
+    "line_range": "338-382",
+    "desktop_nav": "Lines 354-370 show all links with 'hidden md:flex'",
+    "mobile_nav": "Lines 372-378 only show 'Başla' button, no hamburger menu",
+    "missing_functionality": "No way for mobile users to access Features, Pricing, or Login pages from header"
+  },
+  "design_requirements": {
+    "navigation_links": [
+      "Özellikler (/features)",
+      "Fiyatlandırma (/pricing)",
+      "Giriş Yap (/login)",
+      "Ücretsiz Dene (/register) - primary CTA button"
+    ],
+    "mobile_behavior": "Hamburger icon opens slide-in menu from right side",
+    "desktop_behavior": "No changes to existing desktop navigation",
+    "styling": "Follow existing Tailwind patterns with primary/secondary colors and dark mode support"
+  }
+}

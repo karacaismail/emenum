@@ -1,0 +1,228 @@
+{
+  "file_path": ".auto-claude-status",
+  "main_branch_history": [],
+  "task_views": {
+    "001-ozon-e-menum-net-vibe-coding-v1": {
+      "task_id": "001-ozon-e-menum-net-vibe-coding-v1",
+      "branch_point": {
+        "commit_hash": "2b028be920d271c6e53b44319d1c871dc3d27076",
+        "content": "",
+        "timestamp": "2026-01-14T09:55:04.472899"
+      },
+      "worktree_state": {
+        "content": "{\n  \"active\": true,\n  \"spec\": \"001-ozon-e-menum-net-vibe-coding-v1\",\n  \"state\": \"building\",\n  \"subtasks\": {\n    \"completed\": 52,\n    \"total\": 66,\n    \"in_progress\": 1,\n    \"failed\": 0\n  },\n  \"phase\": {\n    \"current\": \"Super Admin Panel\",\n    \"id\": null,\n    \"total\": 5\n  },\n  \"workers\": {\n    \"active\": 0,\n    \"max\": 1\n  },\n  \"session\": {\n    \"number\": 53,\n    \"started_at\": \"2026-01-13T20:01:21.133148\"\n  },\n  \"last_update\": \"2026-01-13T22:37:35.144050\"\n}",
+        "last_modified": "2026-01-14T09:55:05.842691"
+      },
+      "task_intent": {
+        "title": "001-ozon-e-menum-net-vibe-coding-v1",
+        "description": "",
+        "from_plan": false
+      },
+      "commits_behind_main": 0,
+      "status": "active",
+      "merged_at": null
+    },
+    "037-add-search-to-categories-page": {
+      "task_id": "037-add-search-to-categories-page",
+      "branch_point": {
+        "commit_hash": "2b028be920d271c6e53b44319d1c871dc3d27076",
+        "content": "",
+        "timestamp": "2026-01-14T18:38:07.376896"
+      },
+      "worktree_state": {
+        "content": "{\n  \"active\": true,\n  \"spec\": \"037-add-search-to-categories-page\",\n  \"state\": \"complete\",\n  \"subtasks\": {\n    \"completed\": 2,\n    \"total\": 2,\n    \"in_progress\": 0,\n    \"failed\": 0\n  },\n  \"phase\": {\n    \"current\": \"Add Search Functionality\",\n    \"id\": null,\n    \"total\": 2\n  },\n  \"workers\": {\n    \"active\": 0,\n    \"max\": 1\n  },\n  \"session\": {\n    \"number\": 3,\n    \"started_at\": \"2026-01-14T18:38:17.284623\"\n  },\n  \"last_update\": \"2026-01-14T18:43:41.040776\"\n}",
+        "last_modified": "2026-01-15T15:58:04.950848"
+      },
+      "task_intent": {
+        "title": "037-add-search-to-categories-page",
+        "description": "Add search functionality to the categories page, allowing users to filter categories by name. This mirrors the existing search pattern already implemented in the products page.",
+        "from_plan": true
+      },
+      "commits_behind_main": 0,
+      "status": "active",
+      "merged_at": null
+    },
+    "032-add-mobile-navigation-menu-to-landing-page": {
+      "task_id": "032-add-mobile-navigation-menu-to-landing-page",
+      "branch_point": {
+        "commit_hash": "2b028be920d271c6e53b44319d1c871dc3d27076",
+        "content": "",
+        "timestamp": "2026-01-14T18:38:22.963353"
+      },
+      "worktree_state": {
+        "content": "{\n  \"active\": true,\n  \"spec\": \"032-add-mobile-navigation-menu-to-landing-page\",\n  \"state\": \"complete\",\n  \"subtasks\": {\n    \"completed\": 4,\n    \"total\": 4,\n    \"in_progress\": 0,\n    \"failed\": 0\n  },\n  \"phase\": {\n    \"current\": \"Mobile Navigation Implementation\",\n    \"id\": null,\n    \"total\": 4\n  },\n  \"workers\": {\n    \"active\": 0,\n    \"max\": 1\n  },\n  \"session\": {\n    \"number\": 5,\n    \"started_at\": \"2026-01-14T18:38:35.594195\"\n  },\n  \"last_update\": \"2026-01-14T18:50:17.783430\"\n}",
+        "last_modified": "2026-01-15T15:05:31.768714"
+      },
+      "task_intent": {
+        "title": "032-add-mobile-navigation-menu-to-landing-page",
+        "description": "The landing page navigation on mobile devices only shows a 'Basla' button, hiding all other navigation links. Add a proper hamburger menu for mobile users.",
+        "from_plan": true
+      },
+      "commits_behind_main": 0,
+      "status": "active",
+      "merged_at": null
+    },
+    "031-add-mobile-navigation-menu-to-landing-page": {
+      "task_id": "031-add-mobile-navigation-menu-to-landing-page",
+      "branch_point": {
+        "commit_hash": "2b028be920d271c6e53b44319d1c871dc3d27076",
+        "content": "",
+        "timestamp": "2026-01-14T18:50:42.638180"
+      },
+      "worktree_state": {
+        "content": "{\n  \"active\": true,\n  \"spec\": \"031-add-mobile-navigation-menu-to-landing-page\",\n  \"state\": \"complete\",\n  \"subtasks\": {\n    \"completed\": 5,\n    \"total\": 5,\n    \"in_progress\": 0,\n    \"failed\": 0\n  },\n  \"phase\": {\n    \"current\": \"Mobile Navigation Menu Implementation\",\n    \"id\": null,\n    \"total\": 5\n  },\n  \"workers\": {\n    \"active\": 0,\n    \"max\": 1\n  },\n  \"session\": {\n    \"number\": 6,\n    \"started_at\": \"2026-01-14T18:50:50.406894\"\n  },\n  \"last_update\": \"2026-01-14T19:07:55.641985\"\n}",
+        "last_modified": "2026-01-15T15:53:52.577684"
+      },
+      "task_intent": {
+        "title": "031-add-mobile-navigation-menu-to-landing-page",
+        "description": "The landing page navigation on mobile devices only shows a 'Basla' button, hiding all other navigation links. Add a proper hamburger menu for mobile users.",
+        "from_plan": true
+      },
+      "commits_behind_main": 0,
+      "status": "active",
+      "merged_at": null
+    },
+    "040-add-bulk-qr-code-download-for-all-tables": {
+      "task_id": "040-add-bulk-qr-code-download-for-all-tables",
+      "branch_point": {
+        "commit_hash": "2b028be920d271c6e53b44319d1c871dc3d27076",
+        "content": "",
+        "timestamp": "2026-01-14T18:53:11.069414"
+      },
+      "worktree_state": {
+        "content": "{\n  \"active\": true,\n  \"spec\": \"040-add-bulk-qr-code-download-for-all-tables\",\n  \"state\": \"paused\",\n  \"subtasks\": {\n    \"completed\": 3,\n    \"total\": 4,\n    \"in_progress\": 1,\n    \"failed\": 0\n  },\n  \"phase\": {\n    \"current\": \"End-to-End Verification\",\n    \"id\": null,\n    \"total\": 1\n  },\n  \"workers\": {\n    \"active\": 0,\n    \"max\": 1\n  },\n  \"session\": {\n    \"number\": 6,\n    \"started_at\": \"2026-01-14T18:37:35.798794\"\n  },\n  \"last_update\": \"2026-01-14T18:50:49.865241\"\n}",
+        "last_modified": "2026-01-14T18:53:20.410167"
+      },
+      "task_intent": {
+        "title": "040-add-bulk-qr-code-download-for-all-tables",
+        "description": "",
+        "from_plan": false
+      },
+      "commits_behind_main": 0,
+      "status": "active",
+      "merged_at": null
+    },
+    "008-optimize-authprovider-to-avoid-unnecessary-re-fetc": {
+      "task_id": "008-optimize-authprovider-to-avoid-unnecessary-re-fetc",
+      "branch_point": {
+        "commit_hash": "2b028be920d271c6e53b44319d1c871dc3d27076",
+        "content": "",
+        "timestamp": "2026-01-15T02:37:17.742478"
+      },
+      "worktree_state": {
+        "content": "{\n  \"active\": true,\n  \"spec\": \"008-optimize-authprovider-to-avoid-unnecessary-re-fetc\",\n  \"state\": \"complete\",\n  \"subtasks\": {\n    \"completed\": 4,\n    \"total\": 4,\n    \"in_progress\": 0,\n    \"failed\": 0\n  },\n  \"phase\": {\n    \"current\": \"Performance Optimization\",\n    \"id\": null,\n    \"total\": 4\n  },\n  \"workers\": {\n    \"active\": 0,\n    \"max\": 1\n  },\n  \"session\": {\n    \"number\": 2,\n    \"started_at\": \"2026-01-15T02:37:18.301120\"\n  },\n  \"last_update\": \"2026-01-15T02:40:58.348552\"\n}",
+        "last_modified": "2026-01-15T14:52:29.246596"
+      },
+      "task_intent": {
+        "title": "008-optimize-authprovider-to-avoid-unnecessary-re-fetc",
+        "description": "",
+        "from_plan": false
+      },
+      "commits_behind_main": 5,
+      "status": "active",
+      "merged_at": null
+    },
+    "005-extract-duplicated-crud-state-management-into-reus": {
+      "task_id": "005-extract-duplicated-crud-state-management-into-reus",
+      "branch_point": {
+        "commit_hash": "2b028be920d271c6e53b44319d1c871dc3d27076",
+        "content": "",
+        "timestamp": "2026-01-15T06:33:12.581832"
+      },
+      "worktree_state": {
+        "content": "{\n  \"active\": true,\n  \"spec\": \"005-extract-duplicated-crud-state-management-into-reus\",\n  \"state\": \"complete\",\n  \"subtasks\": {\n    \"completed\": 15,\n    \"total\": 15,\n    \"in_progress\": 0,\n    \"failed\": 0\n  },\n  \"phase\": {\n    \"current\": \"Final Verification\",\n    \"id\": null,\n    \"total\": 1\n  },\n  \"workers\": {\n    \"active\": 0,\n    \"max\": 1\n  },\n  \"session\": {\n    \"number\": 4,\n    \"started_at\": \"2026-01-15T06:33:20.343060\"\n  },\n  \"last_update\": \"2026-01-15T06:44:33.595547\"\n}",
+        "last_modified": "2026-01-15T16:04:15.463605"
+      },
+      "task_intent": {
+        "title": "005-extract-duplicated-crud-state-management-into-reus",
+        "description": "",
+        "from_plan": false
+      },
+      "commits_behind_main": 5,
+      "status": "active",
+      "merged_at": null
+    },
+    "002-add-unit-test-coverage-for-dashboard-page-componen": {
+      "task_id": "002-add-unit-test-coverage-for-dashboard-page-componen",
+      "branch_point": {
+        "commit_hash": "2b028be920d271c6e53b44319d1c871dc3d27076",
+        "content": "",
+        "timestamp": "2026-01-15T14:04:12.520457"
+      },
+      "worktree_state": {
+        "content": "{\n  \"active\": true,\n  \"spec\": \"002-add-unit-test-coverage-for-dashboard-page-componen\",\n  \"state\": \"complete\",\n  \"subtasks\": {\n    \"completed\": 18,\n    \"total\": 18,\n    \"in_progress\": 0,\n    \"failed\": 0\n  },\n  \"phase\": {\n    \"current\": \"Coverage Verification\",\n    \"id\": null,\n    \"total\": 3\n  },\n  \"workers\": {\n    \"active\": 0,\n    \"max\": 1\n  },\n  \"session\": {\n    \"number\": 6,\n    \"started_at\": \"2026-01-15T14:04:19.464431\"\n  },\n  \"last_update\": \"2026-01-15T14:19:36.225959\"\n}",
+        "last_modified": "2026-01-15T16:20:44.188485"
+      },
+      "task_intent": {
+        "title": "002-add-unit-test-coverage-for-dashboard-page-componen",
+        "description": "",
+        "from_plan": false
+      },
+      "commits_behind_main": 5,
+      "status": "active",
+      "merged_at": null
+    },
+    "028-add-mobile-navigation-menu-to-landing-page": {
+      "task_id": "028-add-mobile-navigation-menu-to-landing-page",
+      "branch_point": {
+        "commit_hash": "2b028be920d271c6e53b44319d1c871dc3d27076",
+        "content": "",
+        "timestamp": "2026-01-15T13:21:43.550879"
+      },
+      "worktree_state": {
+        "content": "{\n  \"active\": true,\n  \"spec\": \"028-add-mobile-navigation-menu-to-landing-page\",\n  \"state\": \"complete\",\n  \"subtasks\": {\n    \"completed\": 6,\n    \"total\": 6,\n    \"in_progress\": 0,\n    \"failed\": 0\n  },\n  \"phase\": {\n    \"current\": \"Testing and Verification\",\n    \"id\": null,\n    \"total\": 1\n  },\n  \"workers\": {\n    \"active\": 0,\n    \"max\": 1\n  },\n  \"session\": {\n    \"number\": 1,\n    \"started_at\": \"2026-01-15T13:21:46.366480\"\n  },\n  \"last_update\": \"2026-01-15T13:23:53.873901\"\n}",
+        "last_modified": "2026-01-15T15:13:32.512993"
+      },
+      "task_intent": {
+        "title": "028-add-mobile-navigation-menu-to-landing-page",
+        "description": "",
+        "from_plan": false
+      },
+      "commits_behind_main": 5,
+      "status": "active",
+      "merged_at": null
+    },
+    "034-create-reusable-select-component-for-consistent-fo": {
+      "task_id": "034-create-reusable-select-component-for-consistent-fo",
+      "branch_point": {
+        "commit_hash": "2b028be920d271c6e53b44319d1c871dc3d27076",
+        "content": "",
+        "timestamp": "2026-01-15T14:05:37.956433"
+      },
+      "worktree_state": {
+        "content": "{\n  \"active\": true,\n  \"spec\": \"034-create-reusable-select-component-for-consistent-fo\",\n  \"state\": \"complete\",\n  \"subtasks\": {\n    \"completed\": 12,\n    \"total\": 12,\n    \"in_progress\": 0,\n    \"failed\": 0\n  },\n  \"phase\": {\n    \"current\": \"Final Verification\",\n    \"id\": null,\n    \"total\": 2\n  },\n  \"workers\": {\n    \"active\": 0,\n    \"max\": 1\n  },\n  \"session\": {\n    \"number\": 7,\n    \"started_at\": \"2026-01-15T14:05:44.231773\"\n  },\n  \"last_update\": \"2026-01-15T14:15:38.878316\"\n}",
+        "last_modified": "2026-01-15T15:09:23.610154"
+      },
+      "task_intent": {
+        "title": "034-create-reusable-select-component-for-consistent-fo",
+        "description": "",
+        "from_plan": false
+      },
+      "commits_behind_main": 5,
+      "status": "active",
+      "merged_at": null
+    },
+    "026-add-mobile-navigation-menu-to-landing-page": {
+      "task_id": "026-add-mobile-navigation-menu-to-landing-page",
+      "branch_point": {
+        "commit_hash": "2b028be920d271c6e53b44319d1c871dc3d27076",
+        "content": "",
+        "timestamp": "2026-01-15T14:15:55.210168"
+      },
+      "worktree_state": {
+        "content": "{\n  \"active\": true,\n  \"spec\": \"026-add-mobile-navigation-menu-to-landing-page\",\n  \"state\": \"complete\",\n  \"subtasks\": {\n    \"completed\": 4,\n    \"total\": 4,\n    \"in_progress\": 0,\n    \"failed\": 0\n  },\n  \"phase\": {\n    \"current\": \"Mobile Navigation Implementation\",\n    \"id\": null,\n    \"total\": 4\n  },\n  \"workers\": {\n    \"active\": 0,\n    \"max\": 1\n  },\n  \"session\": {\n    \"number\": 3,\n    \"started_at\": \"2026-01-15T14:16:01.412073\"\n  },\n  \"last_update\": \"2026-01-15T14:21:21.569667\"\n}",
+        "last_modified": "2026-01-15T15:12:30.577079"
+      },
+      "task_intent": {
+        "title": "026-add-mobile-navigation-menu-to-landing-page",
+        "description": "",
+        "from_plan": false
+      },
+      "commits_behind_main": 5,
+      "status": "active",
+      "merged_at": null
+    }
+  },
+  "created_at": "2026-01-14T09:55:04.472927",
+  "last_updated": "2026-01-15T14:15:55.290027"
+}

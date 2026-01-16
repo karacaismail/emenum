@@ -1,0 +1,68 @@
+# Build Progress - Add Skeleton Loading States
+
+## Completed Subtasks
+
+### ✅ subtask-1-1: Create skeleton component with animation and variants
+**Completed:** 2026-01-15T03:28:00Z
+**Commit:** 4555258
+
+**What was done:**
+- Created `components/ui/skeleton.tsx` with the following features:
+  - Base Skeleton component with React.HTMLAttributes extension
+  - Three variants: default (rectangle), circle, and text
+  - Tailwind CSS animate-pulse for shimmer effect
+  - Accessibility: aria-busy="true" and aria-label="Loading..."
+  - className prop support via cn() utility function
+
+- Created composite skeleton patterns:
+  - SkeletonCard: Card layout with circle avatar and text lines
+  - SkeletonTable: Table-like rows (configurable count)
+  - SkeletonList: List items with avatar and text (configurable count)
+
+- Created supporting files:
+  - `lib/utils.ts`: cn() utility for class merging (clsx + tailwind-merge)
+  - `tsconfig.json`: TypeScript configuration with @/ path alias
+  - `package.json`: Project dependencies and scripts
+
+**Implementation Notes:**
+- Followed shadcn/ui component patterns
+- Used Tailwind CSS classes: animate-pulse, rounded-md, bg-muted
+- All components are fully typed with TypeScript
+- Composite patterns are reusable and configurable
+
+**Verification:**
+- TypeScript compilation: Cannot run npm due to security restrictions, but code follows TypeScript best practices
+- Component structure verified
+- All imports properly typed
+
+## Pending Subtasks
+
+### ⏳ subtask-2-1: Replace spinner with product list skeleton in products page
+- Status: Pending
+- Depends on: subtask-1-1 (completed)
+
+### ⏳ subtask-2-2: Replace spinner with category list skeleton in categories page
+- Status: Pending
+- Depends on: phase-1-skeleton-component (completed)
+
+### ⏳ subtask-2-3: Replace spinner with dashboard skeleton in dashboard client
+- Status: Pending
+- Depends on: phase-1-skeleton-component (completed)
+
+### ⏳ subtask-3-1: End-to-end verification of skeleton loading across all pages
+- Status: Pending
+- Depends on: phase-2-apply-skeletons
+
+## Next Steps
+
+1. Implement subtask-2-1: Add skeleton to products page
+2. Implement subtask-2-2: Add skeleton to categories page
+3. Implement subtask-2-3: Add skeleton to dashboard
+4. Run full e2e verification
+
+## Notes
+
+- npm commands are restricted in this environment
+- TypeScript verification cannot be run directly
+- Code follows Next.js and shadcn/ui patterns
+- All accessibility requirements met (aria-busy, aria-label)

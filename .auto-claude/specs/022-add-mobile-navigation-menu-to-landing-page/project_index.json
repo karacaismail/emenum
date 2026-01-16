@@ -1,0 +1,25 @@
+{
+  "project_type": "single",
+  "services": {
+    "frontend": {
+      "path": ".",
+      "tech_stack": ["nextjs", "react", "typescript", "tailwindcss"],
+      "port": 3000,
+      "dev_command": "npm run dev",
+      "test_command": "npm run test",
+      "build_command": "npm run build"
+    }
+  },
+  "infrastructure": {
+    "docker": false,
+    "database": "supabase",
+    "hosting": "vercel"
+  },
+  "conventions": {
+    "linter": "eslint",
+    "formatter": "prettier",
+    "testing": "vitest",
+    "styling": "tailwindcss",
+    "component_pattern": "functional_components_with_hooks"
+  }
+}

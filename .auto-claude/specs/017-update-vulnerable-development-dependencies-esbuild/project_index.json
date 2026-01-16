@@ -1,0 +1,37 @@
+{
+  "project_type": "single",
+  "services": {
+    "frontend": {
+      "path": ".",
+      "tech_stack": ["nextjs", "react", "typescript", "tailwindcss", "vitest"],
+      "port": 3000,
+      "dev_command": "npm run dev",
+      "test_command": "npm test",
+      "build_command": "npm run build"
+    }
+  },
+  "infrastructure": {
+    "docker": false,
+    "database": "supabase",
+    "ci_cd": false
+  },
+  "conventions": {
+    "linter": "eslint",
+    "formatter": "prettier",
+    "testing": "vitest",
+    "package_manager": "npm"
+  },
+  "dependencies": {
+    "current_versions": {
+      "esbuild": "0.21.5",
+      "vitest": "^2.0.0",
+      "@vitejs/plugin-react": "^4.3.0"
+    },
+    "vulnerability": {
+      "id": "GHSA-67mh-4wv8-2f99",
+      "severity": "moderate",
+      "affected": "esbuild <=0.24.2",
+      "required": "esbuild >=0.24.3"
+    }
+  }
+}

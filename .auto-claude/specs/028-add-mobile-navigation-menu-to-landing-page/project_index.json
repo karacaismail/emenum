@@ -1,0 +1,42 @@
+{
+  "project_type": "single",
+  "services": {
+    "frontend": {
+      "path": ".",
+      "tech_stack": ["nextjs", "react", "typescript", "tailwindcss"],
+      "version": {
+        "next": "15.5.9",
+        "react": "19.0.0",
+        "typescript": "5.7.2",
+        "tailwindcss": "3.4.0"
+      },
+      "port": 3000,
+      "dev_command": "npm run dev",
+      "build_command": "npm run build",
+      "test_command": "npm test",
+      "lint_command": "npm run lint"
+    }
+  },
+  "infrastructure": {
+    "docker": false,
+    "database": "supabase-postgresql",
+    "backend": "supabase"
+  },
+  "conventions": {
+    "linter": "eslint",
+    "formatter": "prettier",
+    "testing": "vitest",
+    "component_pattern": "functional components with TypeScript",
+    "styling": "tailwindcss with design tokens",
+    "state_management": "react hooks (useState, useEffect)",
+    "icons": "inline SVG elements (not icon libraries)",
+    "client_components": "'use client' directive when using hooks or browser APIs"
+  },
+  "directory_structure": {
+    "app": "Next.js app router pages and layouts",
+    "components": "Reusable React components (dashboard, providers, ui)",
+    "lib": "Utility functions and configurations",
+    "types": "TypeScript type definitions",
+    "tests": "Vitest test files"
+  }
+}

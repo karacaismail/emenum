@@ -1,0 +1,14 @@
+{
+  "sourceType": "ideation",
+  "ideationType": "code_improvements",
+  "ideaId": "ci-004",
+  "rationale": "The tables page already has individual QR download functionality (handleDownloadQR) with SVG/PNG/PDF formats. The QR generator functions already exist in lib/qrcode/generator.ts. Extending to bulk download follows the existing validateBulkAdd pattern in limits.ts for handling multiple items.",
+  "category": "feature",
+  "estimatedEffort": "medium",
+  "complexity": "medium",
+  "affectedFiles": [
+    ".worktrees/001-ozon-e-menum-net-vibe-coding-v1/app/(dashboard)/tables/page.tsx",
+    ".worktrees/001-ozon-e-menum-net-vibe-coding-v1/lib/qrcode/generator.ts"
+  ],
+  "archivedAt": "2026-01-15T13:28:36.237Z"
+}

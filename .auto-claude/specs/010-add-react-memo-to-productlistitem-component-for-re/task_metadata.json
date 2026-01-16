@@ -1,0 +1,10 @@
+{
+  "sourceType": "ideation",
+  "ideationType": "performance_optimizations",
+  "ideaId": "perf-002",
+  "rationale": "Each state update (typing in search, opening modals) triggers a full re-render of all product list items. With 50+ products, this creates noticeable lag. React.memo ensures items only re-render when their props actually change.",
+  "category": "performance",
+  "performanceCategory": "rendering",
+  "impact": "medium",
+  "archivedAt": "2026-01-15T13:35:48.919Z"
+}

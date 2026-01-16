@@ -1,0 +1,59 @@
+{
+  "files_to_modify": {
+    "frontend": [
+      "app/(dashboard)/products/page.tsx",
+      "package.json"
+    ]
+  },
+  "files_to_create": {
+    "frontend": [
+      "components/products/VirtualizedProductList.tsx"
+    ]
+  },
+  "files_to_reference": [
+    "app/(dashboard)/categories/page.tsx",
+    "components/ui/card.tsx",
+    "app/(dashboard)/products/page.tsx"
+  ],
+  "patterns": {
+    "component_pattern": "All dashboard pages use 'use client' directive for client-side interactivity",
+    "list_rendering": "Current pattern uses direct .map() on filtered arrays inside Card components",
+    "ui_components": "Custom UI components in components/ui/ (Card, Input, Button, Modal)",
+    "styling": "Tailwind CSS with dark mode support (dark: prefix), responsive breakpoints (sm:, md:)",
+    "state_management": "useState and useEffect hooks for local state, useAuth for organization context",
+    "supabase_client": "Uses createClient() from @/lib/supabase/client for data fetching",
+    "error_handling": "Try-catch with error state messages displayed in alert boxes"
+  },
+  "existing_implementations": {
+    "description": "ProductListItem component renders each product with image, visibility toggle, edit/delete actions. Categories page has similar tree-node rendering pattern.",
+    "relevant_files": [
+      "app/(dashboard)/products/page.tsx",
+      "app/(dashboard)/categories/page.tsx"
+    ],
+    "current_rendering": {
+      "location": "app/(dashboard)/products/page.tsx line ~650",
+      "pattern": "filteredProducts.map(product => <ProductListItem />)",
+      "container": "div with divide-y classes inside CardContent"
+    },
+    "product_list_item": {
+      "props": ["product", "onEdit", "onDelete", "onToggleVisibility"],
+      "features": ["Image display", "Visibility toggle", "Edit button", "Delete button", "Category badge", "Price display"]
+    }
+  },
+  "dependencies": {
+    "current": {
+      "react": "^19.0.0",
+      "next": "^15.5.9",
+      "typescript": "^5.7.2"
+    },
+    "to_add": {
+      "@tanstack/react-virtual": "^3.0.0"
+    },
+    "rationale": "@tanstack/react-virtual is lightweight, well-maintained, React 19 compatible, and works seamlessly with Next.js App Router"
+  },
+  "performance_context": {
+    "current_issue": "All products rendered in DOM simultaneously causing bloat with 100+ items",
+    "target": "Only render visible items (~20-30) regardless of total count",
+    "expected_improvement": "90% reduction in DOM nodes, smoother scrolling, reduced memory usage"
+  }
+}

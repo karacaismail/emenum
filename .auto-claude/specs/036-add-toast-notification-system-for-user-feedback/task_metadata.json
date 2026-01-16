@@ -1,0 +1,17 @@
+{
+  "sourceType": "ideation",
+  "ideationType": "ui_ux_improvements",
+  "ideaId": "uiux-001",
+  "rationale": "Currently, success/error messages are shown inline within components (e.g., error divs in forms). Users lose feedback context when navigating or scrolling. A toast system provides non-intrusive, consistent feedback that persists briefly and doesn't disrupt workflow.",
+  "category": "ui_ux",
+  "uiuxCategory": "usability",
+  "affectedFiles": [
+    "components/ui/toast.tsx (new)",
+    "components/providers/toast-provider.tsx (new)",
+    "app/(dashboard)/products/page.tsx",
+    "app/(dashboard)/categories/page.tsx",
+    "app/(dashboard)/settings/page.tsx"
+  ],
+  "problemSolved": "Error and success messages are displayed inline within form components using div elements with role='alert'. When actions succeed (like product creation), there is no positive feedback - users only see the modal close. Error messages disappear when components unmount or users navigate away.",
+  "archivedAt": "2026-01-15T13:25:51.259Z"
+}
