@@ -473,7 +473,4 @@ function formatPrice(price: number, currency: string): string {
   })
   return formatter.format(price)
 }
-const nextConfig = {
-  eslint: {
-    ignoreDuringBuilds: true,
-  }
+
