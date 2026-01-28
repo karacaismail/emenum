@@ -1,6 +1,0 @@
-# This directory contains shared utilities, services, and Supabase client configuration
-# Key subdirectories:
-# - lib/supabase/ - Supabase client (browser + server)
-# - lib/guards/ - Permission and feature guards
-# - lib/services/ - Business logic services (price-ledger, snapshot, etc.)
-# - lib/utils/ - Shared utility functions

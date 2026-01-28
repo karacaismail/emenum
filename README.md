@@ -1,570 +1,316 @@
-# ozaMenu - Dijital QR Menu ve Fiyat Defteri Platformu
+# E-Menum Web Application
 
-[![Next.js](https://img.shields.io/badge/Next.js-15.5-black?logo=next.js)](https://nextjs.org/)
-[![TypeScript](https://img.shields.io/badge/TypeScript-5.7-blue?logo=typescript)](https://www.typescriptlang.org/)
-[![Supabase](https://img.shields.io/badge/Supabase-PostgreSQL-green?logo=supabase)](https://supabase.com/)
-[![Tailwind CSS](https://img.shields.io/badge/Tailwind-4.x-38B2AC?logo=tailwind-css)](https://tailwindcss.com/)
+Digital QR Menu and Price Ledger SaaS Platform for the Turkish Food & Beverage industry.
 
-**Turkiye'deki restoran, kafe ve benzeri isletmeler icin Ticaret Bakanligi regulasyonlarina uyumlu Dijital Fiyat Defteri ve QR Menu SaaS platformu.**
+## Overview
 
-## Icindekiler
+E-Menum is a comprehensive multi-tenant SaaS platform that enables restaurants, cafes, and F&B establishments to:
+- Create and manage digital QR menus
+- Process customer orders in real-time
+- Track prices with an immutable price ledger (Turkish regulatory compliance)
+- Generate branded QR codes for tables
+- Manage kitchen operations with real-time updates
 
-- [Proje Hakkinda](#proje-hakkinda)
-- [Ozellikler](#ozellikler)
-- [Teknoloji Yigini](#teknoloji-yigini)
-- [On Kosullar](#on-kosullar)
-- [Kurulum](#kurulum)
-- [Ortam Degiskenleri](#ortam-degiskenleri)
-- [Veritabani Kurulumu](#veritabani-kurulumu)
-- [Gelistirme](#gelistirme)
-- [Component Documentation](#component-documentation)
-- [Test](#test)
-- [Proje Yapisi](#proje-yapisi)
-- [Paket Ozellikleri](#paket-ozellikleri)
-- [Deployment](#deployment)
-- [Mimari Kararlar](#mimari-kararlar)
-- [Katki](#katki)
-- [Lisans](#lisans)
+## Tech Stack
 
----
+| Technology | Version | Purpose |
+|------------|---------|---------|
+| Next.js | 15.1.x | Full-stack React framework (App Router) |
+| React | 19.x | UI library |
+| TypeScript | 5.7.x | Type-safe JavaScript (strict mode) |
+| Tailwind CSS | 3.4.x | Utility-first CSS framework |
+| Supabase | Latest | PostgreSQL, Auth, Storage, Realtime |
+| TanStack Query | v5.62+ | Server state management |
+| Zustand | v5 | Client state management |
+| Zod | v3.24+ | Schema validation |
+| React Hook Form | v7.54+ | Form handling |
+| Vitest | v3+ | Unit and integration testing |
 
-## Proje Hakkinda
+## Prerequisites
 
-ozaMenu, isletmelerin dijital menuleri yonetmelerini saglayan, hukuki uyumlu bir SaaS platformudur. Platform, sadece gorsel bir menu degil, **yasal olarak gecerli, denetlenebilir ve degismez fiyat kaydi tutan** bir sistemdir.
+Before you begin, ensure you have the following installed:
 
-### Temel Avantajlar
+- **Node.js >= 20.9.0** (Required for Supabase v2.79+ compatibility)
+  ```bash
+  node --version  # Should output v20.9.0 or higher
+  ```
+- **npm** (comes with Node.js)
+- **Supabase CLI** (optional, for local development)
+  ```bash
+  npm install -g supabase
+  ```
 
-- **Hukuki Uyumluluk**: Ticaret Bakanligi regulasyonlarina uygun fiyat defteri
-- **Degismez Kayit**: Fiyat degisiklikleri INSERT-only pattern ile saklanir, UPDATE/DELETE yasak
-- **Multi-Tenant Mimari**: Her isletme sadece kendi verisine erisebilir (RLS ile korunur)
-- **Masa Bazli QR**: Musterinin hangi masada oturdugu bilinir, garson bildirimleri
-- **Dinamik Paket Yonetimi**: Hard-coded limit yok, tum ozellikler veritabanindan yonetilir
+## Installation
 
----
+### Step 1: Clone the Repository
 
-## Ozellikler
+```bash
+git clone <repository-url>
+cd e-menum-web
+```
 
-### Temel Ozellikler
+### Step 2: Install Dependencies
 
-| Ozellik | Aciklama |
-|---------|----------|
-| Degismez Fiyat Defteri | Tum fiyat degisiklikleri tarihce olarak saklanir, hukuki kanit niteliginde |
-| Multi-Tenant Izolasyon | RLS politikalari ile isletmeler arasi veri izolasyonu |
-| Dinamik Feature Flags | Paket ozellikleri veritabanindan yonetilir, kod degisikligi gerektirmez |
-| Masa QR Sistemi | Her masaya ozel QR kod, musteri takibi |
-| Realtime Garson Bildirimleri | Supabase Realtime ile anlik bildirimler |
-| SHA-256 Menu Snapshot | Her fiyat degisikliginde menu durumu hash'lenir |
-| RBAC Yetkilendirme | Owner, Admin, Manager, Waiter, Viewer rolleri |
+> **Important**: Always use `--legacy-peer-deps` flag due to React 19 peer dependency requirements.
 
-### Panel Ozellikleri
+```bash
+npm install --legacy-peer-deps
+```
 
-- **Merchant Paneli**: Urun, kategori, masa yonetimi, fiyat guncelleme
-- **Super Admin Paneli**: Isletme aktivasyonu, paket yonetimi, ozel izinler
-- **Garson Paneli**: Realtime servis talepleri, masa durumu
-- **Audit Log**: Tum islemlerin denetim kaydi
+### Step 3: Environment Configuration
 
----
-
-## Teknoloji Yigini
-
-### Frontend
-| Teknoloji | Versiyon | Aciklama |
-|-----------|----------|----------|
-| Next.js | 15.5.x | React framework (App Router) |
-| TypeScript | 5.7.x | Tip guvenli JavaScript |
-| Tailwind CSS | 4.x | Utility-first CSS framework |
-| React | 19.x | UI kutuphanesi |
-
-### Backend & Veritabani
-| Teknoloji | Aciklama |
-|-----------|----------|
-| Supabase | PostgreSQL, Auth, Realtime, Storage |
-| PostgreSQL | Iliskisel veritabani |
-| Row Level Security | Veri izolasyonu |
-
-### Araclar
-| Arac | Aciklama |
-|------|----------|
-| Vitest | Test framework |
-| ESLint | Kod kalitesi |
-| QRCode | QR kod uretimi |
-
----
-
-## On Kosullar
-
-Projeyi calistirmadan once asagidakilerin kurulu olmasi gerekmektedir:
-
-1. **Node.js** >= 20.9
+1. Copy the example environment file:
    ```bash
-   # Node.js versiyonunu kontrol edin
-   node --version
-
-   # nvm kullaniyorsaniz
-   nvm install 20
-   nvm use 20
+   cp .env.example .env.local
    ```
 
-2. **npm** veya **pnpm**
-   ```bash
-   npm --version
+2. Edit `.env.local` with your Supabase credentials:
+   ```env
+   # Supabase Configuration (Required)
+   NEXT_PUBLIC_SUPABASE_URL=your_supabase_project_url
+   NEXT_PUBLIC_SUPABASE_ANON_KEY=your_supabase_anon_key
+   SUPABASE_SERVICE_ROLE_KEY=your_supabase_service_role_key
+
+   # Optional: AI Features
+   OPENAI_API_KEY=your_openai_api_key
+
+   # Optional: Rate Limiting
+   UPSTASH_REDIS_REST_URL=your_upstash_url
+   UPSTASH_REDIS_REST_TOKEN=your_upstash_token
    ```
 
-3. **Supabase Hesabi**
-   - [supabase.com](https://supabase.com) adresinden ucretsiz hesap olusturun
-   - Yeni bir proje olusturun
+### Step 4: Database Setup
 
-4. **Git**
+#### Option A: Using Supabase Cloud
+
+1. Create a project at [supabase.com](https://supabase.com)
+2. Copy your project URL and keys to `.env.local`
+3. Apply database migrations:
    ```bash
-   git --version
+   # Using Supabase CLI
+   supabase link --project-ref your-project-ref
+   supabase db push
    ```
 
----
+#### Option B: Using Supabase Local (Development)
 
-## Kurulum
+1. Start local Supabase:
+   ```bash
+   supabase start
+   ```
+2. Apply migrations:
+   ```bash
+   supabase db push
+   ```
+3. Access Supabase Studio at http://localhost:54323
 
-### 1. Repoyu Klonlama
+### Step 5: Create Storage Buckets
 
-```bash
-git clone https://github.com/your-org/ozon-qr-menu.git
-cd ozon-qr-menu
-```
+In Supabase Dashboard, create the following storage buckets:
 
-### 2. Bagimliliklari Yukleme
+| Bucket Name | Access | Purpose |
+|-------------|--------|---------|
+| `product-images` | Public | Product/menu item images |
+| `organization-assets` | Private | Restaurant logos, covers |
 
-```bash
-npm install
-```
+### Step 6: Seed Demo Data (Optional)
 
-### 3. Ortam Degiskenlerini Ayarlama
-
-```bash
-# Ornek dosyayi kopyalayin
-cp .env.local.example .env.local
-
-# Dosyayi duzenleyin ve Supabase bilgilerinizi girin
-nano .env.local  # veya tercih ettiginiz editoru kullanin
-```
-
-### 4. Veritabani Migrasyonlarini Calistirma
-
-Supabase Dashboard uzerinden veya Supabase CLI ile migrasyonlari calistirin:
+To populate the database with realistic Turkish restaurant demo data:
 
 ```bash
-# Supabase CLI kurulumu (opsiyonel)
-npm install -g supabase
-
-# Local Supabase baslat (opsiyonel - gelistirme icin)
-npx supabase start
-
-# Migrasyonlari uygula
-npx supabase db push
+npm run seed
 ```
 
-Manuel olarak Supabase Dashboard > SQL Editor uzerinden de calistirabilirsiniz:
-1. `supabase/migrations/` klasorundeki dosyalari sirayla calistirin
-2. `supabase/seed.sql` dosyasini calistirarak baslangic verisini ekleyin
+To clear existing data before seeding:
+```bash
+npm run seed:clean
+```
 
-### 5. Gelistirme Sunucusunu Baslatma
+### Step 7: Start Development Server
 
 ```bash
 npm run dev
 ```
 
-Uygulama [http://localhost:3000](http://localhost:3000) adresinde calisacaktir.
+Open [http://localhost:3000](http://localhost:3000) to view the application.
 
----
+## Available Scripts
 
-## Ortam Degiskenleri
+| Command | Description |
+|---------|-------------|
+| `npm run dev` | Start development server on port 3000 |
+| `npm run build` | Create optimized production build |
+| `npm run start` | Start production server |
+| `npm run lint` | Run ESLint for code quality |
+| `npm run typecheck` | Run TypeScript type checking |
+| `npm run test` | Run unit tests with Vitest |
+| `npm run test:ui` | Run tests with Vitest UI |
+| `npm run test:coverage` | Run tests with coverage report |
+| `npm run seed` | Seed database with demo data |
+| `npm run seed:clean` | Clear and reseed database |
 
-`.env.local` dosyasinda asagidaki degiskenleri tanimlayin:
+## Project Structure
 
-```env
-# Supabase Project URL
-# Supabase Dashboard > Settings > API > Project URL
-NEXT_PUBLIC_SUPABASE_URL=https://your-project-ref.supabase.co
-
-# Supabase Anonymous (Public) Key
-# Supabase Dashboard > Settings > API > Project API keys > anon public
-# Bu anahtar client-side'da guvenle kullanilabilir (RLS ile korunur)
-NEXT_PUBLIC_SUPABASE_ANON_KEY=your-anon-key-here
-
-# Supabase Service Role Key (GIZLI - ASLA CLIENT'A EXPOSE ETME!)
-# Supabase Dashboard > Settings > API > Project API keys > service_role
-# Bu anahtar RLS'i bypass eder, sadece server-side'da kullanin
-SUPABASE_SERVICE_ROLE_KEY=your-service-role-key-here
+```
+e-menum-web/
+├── src/
+│   ├── app/                      # Next.js App Router pages
+│   │   ├── (auth)/               # Authentication pages (login, register, etc.)
+│   │   ├── (dashboard)/          # Restaurant dashboard pages
+│   │   ├── (public)/             # Public menu pages
+│   │   ├── layout.tsx            # Root layout with providers
+│   │   └── page.tsx              # Landing page
+│   ├── components/
+│   │   ├── features/             # Feature-specific components
+│   │   │   ├── menu/             # Menu management components
+│   │   │   ├── orders/           # Order management components
+│   │   │   ├── public-menu/      # Public menu components
+│   │   │   └── qr/               # QR code components
+│   │   ├── layout/               # Layout components (sidebar, header)
+│   │   ├── providers/            # Context providers
+│   │   └── ui/                   # shadcn/ui components
+│   ├── lib/
+│   │   ├── actions/              # Server Actions
+│   │   ├── dal/                  # Data Access Layer
+│   │   ├── hooks/                # Custom React hooks
+│   │   ├── stores/               # Zustand stores
+│   │   ├── supabase/             # Supabase client utilities
+│   │   ├── utils/                # Utility functions
+│   │   └── validations/          # Zod validation schemas
+│   ├── styles/                   # Global styles
+│   └── types/                    # TypeScript type definitions
+├── supabase/
+│   └── migrations/               # Database migrations
+├── scripts/                      # Utility scripts
+├── public/                       # Static assets
+├── middleware.ts                 # Auth middleware
+├── next.config.ts                # Next.js configuration
+├── tailwind.config.ts            # Tailwind CSS configuration
+├── vitest.config.mts             # Vitest test configuration
+└── package.json                  # Dependencies and scripts
 ```
 
-### Ortam Degiskenlerini Bulma
+## Development Guidelines
 
-1. [Supabase Dashboard](https://supabase.com/dashboard) adresine gidin
-2. Projenizi secin
-3. **Settings** > **API** bolumune gidin
-4. Asagidaki degerleri kopyalayin:
-   - **Project URL** → `NEXT_PUBLIC_SUPABASE_URL`
-   - **anon public** → `NEXT_PUBLIC_SUPABASE_ANON_KEY`
-   - **service_role** → `SUPABASE_SERVICE_ROLE_KEY`
+### Code Style
 
-> **UYARI**: `SUPABASE_SERVICE_ROLE_KEY` anahtarini asla client-side kodunda kullanmayin veya Git'e commit etmeyin!
+- **TypeScript**: Strict mode is enabled. Never use `any` type.
+- **Imports**: Use path alias `@/` for all imports:
+  ```typescript
+  // Good
+  import { Button } from '@/components/ui/button'
 
----
+  // Bad
+  import { Button } from '../../../components/ui/button'
+  ```
+- **Components**: Server Components by default. Add `'use client'` only for interactive components.
+- **Styling**: Use Tailwind CSS utilities. Custom CSS only when necessary.
+- **Console**: Remove all `console.log` statements before committing.
+- **Language**: Turkish-first UI with English code comments.
 
-## Veritabani Kurulumu
+### Database Access
 
-### Migrasyon Dosyalari
+- Always use the Data Access Layer (`@/lib/dal/`) for database operations
+- Never expose `SUPABASE_SERVICE_ROLE_KEY` to client-side code
+- Use Server Actions (`@/lib/actions/`) for mutations
 
-Veritabani semasi asagidaki migrasyon dosyalariyla olusturulur:
+### Form Handling
 
-| Dosya | Aciklama |
-|-------|----------|
-| `001_core_tables.sql` | Organizations, members, categories tablolari |
-| `002_products_price_ledger.sql` | Products ve immutable price_ledger |
-| `003_package_management.sql` | Features, plans, subscriptions |
-| `004_tables_service_requests.sql` | Masa ve garson sistemi |
-| `005_audit_compliance.sql` | Menu snapshots ve audit logs |
-| `006_views.sql` | current_prices ve diger view'lar |
-| `007_rls_policies.sql` | Row Level Security politikalari |
-| `010_auto_snapshot_trigger.sql` | Otomatik snapshot trigger'i |
+- Use React Hook Form with Zod resolvers
+- Validation schemas are in `@/lib/validations/`
+- Error messages should be in Turkish
 
-### Seed Data
+### Testing
 
-`supabase/seed.sql` dosyasi asagidaki baslangic verisini icerir:
+- Write unit tests for validation schemas and utility functions
+- Test files should be in `__tests__` directories
+- Run tests before committing: `npm run test`
 
-- **Features Katalogu**: 27 farkli ozellik tanimlamasi
-- **Paket Tanimlari**: Lite, Pro, Premium paketleri
-- **Paket-Ozellik Eslesmeleri**: Her paketin hangi ozelliklere sahip oldugu
+## Verification
 
-### Migrasyonlari Elle Calistirma
-
-Supabase Dashboard > SQL Editor'de sirayla:
-
-```sql
--- Her dosyayi sirayla kopyalayip calistirin
--- 1. supabase/migrations/001_core_tables.sql
--- 2. supabase/migrations/002_products_price_ledger.sql
--- ... devam edin
--- Son olarak seed.sql dosyasini calistirin
-```
-
----
-
-## Gelistirme
-
-### Kullanilabilir Komutlar
+Before deploying or creating a PR, verify your changes:
 
 ```bash
-# Gelistirme sunucusu
-npm run dev
-
-# Production build
-npm run build
-
-# Production sunucusu
-npm start
-
-# ESLint kontrolu
-npm run lint
-
-# TypeScript tip kontrolu
-npm run typecheck
-
-# Testleri calistir
-npm run test
-
-# Testleri izleme modunda calistir
-npm run test:watch
-
-# Tek seferlik test calistir
-npm run test:run
-
-# Coverage raporu
-npm run test:coverage
-
-# Test UI
-npm run test:ui
+# Run all verification commands
+npm run build && npm run lint && npm run typecheck && npm run test
 ```
 
-### Kod Stili
+All commands should pass without errors.
 
-- **TypeScript**: Strict mode aktif
-- **ESLint**: Next.js recommended kurallar
-- **Import Sirasi**: React, Next.js, harici, dahili
+## Troubleshooting
 
-### Hot Module Replacement
-
-Gelistirme modunda dosya degisiklikleri otomatik olarak tarayiciya yansir.
-
----
-
-## Component Documentation
-
-Projenin UI componentleri ve tasarim sistemi hakkinda detayli dokumantasyon:
-
-| Dokuman | Aciklama |
-|---------|----------|
-| [DESIGN_TOKENS.md](./DESIGN_TOKENS.md) | Tasarim tokenlari (renkler, tipografi, boyutlar) |
-| [UI_COMPONENTS.md](./UI_COMPONENTS.md) | Temel UI componentleri (Button, Input, Card, vb.) |
-| [COMPONENTS.md](./COMPONENTS.md) | Uygulama componentleri (ProductCard, MenuView, vb.) |
-
-Bu dokumanlar, componentlerin kullanimi, props'lari ve ornek kodlari icerir.
-
----
-
-## Test
-
-### Test Calistirma
+### "peer dependency" errors during npm install
 
 ```bash
-# Tum testleri calistir
-npm run test
-
-# Belirli bir dosyayi test et
-npm run test lib/guards/__tests__/permission.test.ts
-
-# Coverage ile calistir
-npm run test:coverage
+# Always use --legacy-peer-deps with React 19
+npm install --legacy-peer-deps
+npm install <package> --legacy-peer-deps
 ```
 
-### Test Yapisi
-
-```
-tests/
-├── __mocks__/           # Mock dosyalari
-│   └── supabase.ts      # Supabase client mock
-lib/
-├── guards/
-│   └── __tests__/
-│       └── permission.test.ts
-├── __tests__/
-│   └── price-ledger-immutability.test.ts
-tests/
-└── __tests__/
-    └── integration/
-        ├── auth-flow.test.ts
-        ├── price-change-flow.test.ts
-        ├── waiter-call-flow.test.ts
-        └── rls-isolation.test.ts
-```
-
----
-
-## Proje Yapisi
-
-```
-ozon-qr-menu/
-├── app/                          # Next.js App Router
-│   ├── (auth)/                   # Auth sayfalari (login, register)
-│   │   ├── login/
-│   │   └── register/
-│   ├── (dashboard)/              # Merchant paneli
-│   │   ├── dashboard/
-│   │   ├── products/
-│   │   ├── categories/
-│   │   ├── tables/
-│   │   ├── waiter/
-│   │   ├── audit/
-│   │   └── settings/
-│   ├── (admin)/                  # Super Admin paneli
-│   │   └── admin/
-│   │       ├── organizations/
-│   │       ├── plans/
-│   │       └── overrides/
-│   ├── menu/[slug]/              # Public menu sayfasi
-│   ├── api/                      # API Route Handlers
-│   │   └── auth/
-│   ├── layout.tsx                # Root layout
-│   ├── page.tsx                  # Landing page
-│   └── globals.css               # Global stiller
-├── components/                   # React componentleri
-│   ├── ui/                       # Temel UI componentleri
-│   ├── admin/                    # Admin componentleri
-│   ├── auth/                     # Auth componentleri
-│   └── providers/                # Context providers
-├── lib/                          # Utility fonksiyonlari
-│   ├── supabase/                 # Supabase clients
-│   │   ├── client.ts             # Browser client
-│   │   └── server.ts             # Server client
-│   ├── guards/                   # Permission guards
-│   │   ├── permission.ts
-│   │   └── limits.ts
-│   ├── services/                 # Business logic
-│   │   ├── price-ledger.ts
-│   │   └── snapshot.ts
-│   ├── actions/                  # Server actions
-│   └── qrcode/                   # QR kod utilities
-├── hooks/                        # Custom React hooks
-│   └── useTableContext.ts
-├── types/                        # TypeScript tipleri
-│   ├── database.ts               # Supabase tipleri
-│   └── index.ts
-├── supabase/                     # Supabase dosyalari
-│   ├── migrations/               # SQL migrasyonlari
-│   └── seed.sql                  # Baslangic verisi
-├── tests/                        # Test dosyalari
-├── middleware.ts                 # Next.js middleware
-├── package.json
-├── tsconfig.json
-├── tailwind.config.ts
-└── README.md                     # Bu dosya
-```
-
----
-
-## Paket Ozellikleri
-
-### Paket Karsilastirmasi
-
-| Ozellik | Lite | Pro | Premium |
-|---------|:----:|:---:|:-------:|
-| Kategori Limiti | 3 | Sinirsiz | Sinirsiz |
-| Urun Limiti | 20 | Sinirsiz | Sinirsiz |
-| Aylik Fiyat Degisikligi | 2 | Sinirsiz | Sinirsiz |
-| Gorsel Yukleme | - | + | + |
-| Logo Kullanimi | - | + | + |
-| Arka Plan Renklendirme | - | + | + |
-| Sefin Tavsiyesi Etiketi | - | + | + |
-| Gunun Spesiyeli Etiketi | - | + | + |
-| Coklu Dil Destegi | - | 1 Dil | 3 Dil |
-| Hizli Destek Hatti | - | + | + |
-| Bununla Iyi Gider (Capraz Satis) | - | - | + |
-| Happy Hour Zamanlayici | - | - | + |
-| Sosyal Medyada Paylas | - | - | + |
-| Besin Degerleri | - | - | + |
-| Google Isletmem Entegrasyonu | - | - | + |
-| WhatsApp Destek | - | - | + |
-
-### Fiyatlandirma
-
-- **Lite**: Ucretsiz - Temel ozellikler
-- **Pro**: 299 TL/ay - Profesyonel ozellikler
-- **Premium**: 599 TL/ay - Tum ozellikler + oncelikli destek
-
----
-
-## Deployment
-
-### Vercel ile Deployment
-
-1. [Vercel](https://vercel.com) hesabi olusturun
-2. GitHub reposunu baglayın
-3. Ortam degiskenlerini Vercel Dashboard'da tanimlayın:
-   - `NEXT_PUBLIC_SUPABASE_URL`
-   - `NEXT_PUBLIC_SUPABASE_ANON_KEY`
-   - `SUPABASE_SERVICE_ROLE_KEY`
-4. Deploy edin
+### TypeScript errors after schema changes
 
 ```bash
-# Vercel CLI ile (opsiyonel)
-npm i -g vercel
-vercel
+# Regenerate types from Supabase
+supabase gen types typescript --local > src/types/database.ts
 ```
 
-### Production Kontrol Listesi
+### RLS blocking queries
 
-- [ ] Tum ortam degiskenleri tanimli
-- [ ] Supabase RLS politikalari aktif
-- [ ] SSL/HTTPS aktif (Vercel otomatik saglar)
-- [ ] Veritabani migrasyonlari tamamlandi
-- [ ] Seed data yuklendi
-- [ ] Super Admin kullanicisi olusturuldu
+1. Check if user is authenticated
+2. Verify organization membership
+3. Check role permissions
+4. Review RLS policies in Supabase Dashboard
 
-### Supabase Production Ayarlari
+### Price ledger UPDATE/DELETE failing
 
-1. **RLS Kontrolu**: Tum tablolarda RLS aktif olmali
-2. **Auth Settings**: Email dogrulama aktif
-3. **Database**: Connection pooling aktif
-4. **Storage**: Public bucket'lar icin CORS ayarlari
+This is **expected behavior**. The price ledger is immutable by design (Turkish regulatory compliance). To change a price:
+
+1. Update the product's `price` column
+2. A new `price_ledger` entry is created automatically via database trigger
+
+### Build fails with "Module not found"
+
+1. Clear Next.js cache:
+   ```bash
+   rm -rf .next
+   ```
+2. Reinstall dependencies:
+   ```bash
+   rm -rf node_modules package-lock.json
+   npm install --legacy-peer-deps
+   ```
+
+### Supabase connection issues
+
+1. Verify environment variables are set correctly
+2. Check if Supabase project is active
+3. Verify network connectivity to Supabase
+
+## Security Considerations
+
+- **RLS Policies**: All tables have Row Level Security enabled
+- **Multi-tenancy**: Data is isolated by `organization_id`
+- **Auth**: Uses Supabase Auth with session management
+- **Secrets**: Never commit `.env.local` or expose service role keys
+- **Immutable Price Ledger**: Database triggers prevent modifications
+
+## API Routes
+
+The application uses Server Actions instead of traditional API routes for most operations. The only API routes are for webhooks:
+
+- `/api/webhooks/` - External service webhooks
+
+## Contributing
+
+1. Follow the code style guidelines above
+2. Write tests for new features
+3. Run verification commands before PR
+4. Use conventional commit messages
+
+## License
+
+Private - All rights reserved.
 
 ---
 
-## Mimari Kararlar
-
-### 1. Degismez Fiyat Defteri (Price Ledger)
-
-Fiyatlar `products` tablosunda degil, ayri bir `price_ledger` tablosunda tutulur:
-
-```sql
--- YANLIS: Fiyati dogrudan urun tablosunda guncelleme
-UPDATE products SET price = 100 WHERE id = 'xxx'; -- YASAK!
-
--- DOGRU: Yeni fiyat kaydi ekleme
-INSERT INTO price_ledger (product_id, price, change_reason)
-VALUES ('xxx', 100, 'Yeni sezon fiyati');
-```
-
-Bu yaklasim:
-- Tum fiyat gecmisini korur
-- Hukuki uyumluluk saglar
-- Audit trail olusturur
-- Database trigger ile UPDATE/DELETE engellenir
-
-### 2. Feature Permission Guard
-
-Paket kontrolleri hard-coded degil, dinamik olarak veritabanindan yapilir:
-
-```typescript
-// YANLIS
-if (user.package === 'Pro') { ... } // YASAK!
-
-// DOGRU
-if (await hasPermission(orgId, 'module_waiter_call')) { ... }
-```
-
-### 3. Row Level Security (RLS)
-
-Her isletme sadece kendi verisine erisebilir:
-
-```sql
-CREATE POLICY "Users can view own organization products"
-ON products FOR SELECT
-USING (
-  organization_id IN (
-    SELECT organization_id FROM organization_members
-    WHERE user_id = auth.uid()
-  )
-);
-```
-
-### 4. Supabase Client Pattern
-
-- **Browser**: `createBrowserClient()` - Client components icin
-- **Server**: `createServerSupabaseClient()` - Server components ve API routes icin
-
----
-
-## Katki
-
-1. Fork edin
-2. Feature branch olusturun (`git checkout -b feature/amazing-feature`)
-3. Degisikliklerinizi commit edin (`git commit -m 'feat: Add amazing feature'`)
-4. Branch'i push edin (`git push origin feature/amazing-feature`)
-5. Pull Request acin
-
-### Commit Mesaji Formati
-
-```
-<type>: <description>
-
-[optional body]
-```
-
-Tipler: `feat`, `fix`, `docs`, `style`, `refactor`, `test`, `chore`
-
----
-
-## Lisans
-
-Bu proje ozel lisans altindadir. Tum haklari saklidir.
-
----
-
-## Destek
-
-Sorulariniz veya sorunlariniz icin:
-- GitHub Issues acin
-- Email: support@ozamenu.com
-
----
-
-**ozaMenu** - Turkiye'nin hukuki uyumlu dijital menu platformu
-
+*For more detailed information, see `development_roadmap.md`*
